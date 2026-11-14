@@ -43,7 +43,7 @@ export async function runPublicPaidReportJob(store: ReliabilityStore, runtime: N
   };
   // v5 작가(P3.5 B): 플래그가 켠 상품만. 비어 있으면 v5 훅 없음 = 기존과 같다.
   const v5Products = writerV5Products();
-  // P6d-ops 7: 생성 감독이 정식본(Sonnet)만 발행하고, 아니면 시간표대로 보류(paid_defer), 24시간이면 포기 + 자동 환불 요청.
+  // P6d-ops 7 → W3 P2: 생성 감독이 Sonnet 원고만 발행하고, 아니면 2차로 미룸(paid_defer, 1번), 그래도 안 되면 포기 + 자동 환불(결제 + 30분 안).
   // 장은 결제 경로 장 저장(ops_writer_chapters)에 남아 다음 시도가 빠진 장만 쓴다. 결정론 완성(recover)은 쓰지 않는다.
   const v5: PaidV5Builder | undefined = v5Products.length ? async (job, finish) => {
     if (!v5Products.includes(job.product_type) || !isRecord(job.payload)) return null;

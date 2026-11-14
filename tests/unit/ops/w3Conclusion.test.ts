@@ -113,7 +113,8 @@ describe("정책(순수): 30분 결론", () => {
   });
 });
 
-describe("시뮬레이션: 모든 경로가 30분 안에 결론", () => {
+// 가짜 시계라 실제로는 몇 초지만, 전체 시험 부하에서 기본 5초를 넘을 수 있다.
+describe("시뮬레이션: 모든 경로가 30분 안에 결론", { timeout: 60_000 }, () => {
   it("정상: 1차 한 번에 발행(약 3분)", async () => {
     const o = await simulate([{ kind: "ok" }]);
     within30(o); expect(o.conclusion).toBe("published"); expect(o.decisions).toEqual(["publish"]); expect(o.atMin).toBeLessThan(8); // 작가 160초 + (목업) 검수 529 재시도

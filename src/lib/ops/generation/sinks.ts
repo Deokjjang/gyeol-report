@@ -5,7 +5,7 @@ export type OpsStore = { call(action: string, data: Record<string, unknown>): Pr
 
 /* 최종판 0-1: 짧거나 비어 결정론이 된 장의 저장본을 버리던 filteredSink는 없앴다(저장된 장은 버리지 않고 빠진 장만 이어 쓴다). */
 
-/** 임시본(OpenAI) 시도용: Sonnet 장 저장본과 섞지 않는다. */
+/** 메모리 장 저장(시험·도구용). */
 export function memorySink(): ChapterSink {
   const saved = new Map<number, SavedChapter>();
   return { async save(c) { saved.set(c.n, c); return true; }, async load() { return [...saved.values()]; } };

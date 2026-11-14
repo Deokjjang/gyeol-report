@@ -94,7 +94,7 @@ export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | n
     const workers = Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let c = queue.shift(); c; c = queue.shift()) await one(c); });
     await Promise.all([head, ...workers]);
     // AM2-3 6-1 ②(덕짱님 결정 2026-11-12): 빈 원고 재호출(chunkCall 안 1회) 뒤에도 못 끝낸 묶음(장·key가 빠짐)은 같은 시도 안에서 한 번 더.
-    // 그래도 못 끝내면 빠진 자리는 결정론 채움 표시로 남고, 발행 관문(policy judgeBuild)이 보류 → 다음 시도는 임시본(OpenAI).
+    // 그래도 못 끝내면 빠진 자리는 결정론 채움 표시로 남고, 발행 관문(policy judgeBuild)이 내보내지 않는다 → 2차 또는 결론(W3 P2).
     const left = todo.filter(c => !chunkDone(c, drafts)), q2 = [...left];
     await Promise.all(Array.from({ length: Math.min(concurrency(), q2.length) }, async () => { for (let c = q2.shift(); c; c = q2.shift()) await one(c, undefined, true); }));
   }

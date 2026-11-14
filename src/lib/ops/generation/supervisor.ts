@@ -1,12 +1,11 @@
 /**
- * 생성 감독(P6d-ops 7). 책 생성 진입 함수(buildV5Snapshot)는 호출만 하고, deps로 모델·대체·fetch만 정한다.
- * - 정식본: Sonnet만(대체 모델 없음). 결정론 장이 하나라도 있으면 내보내지 않고 시간표대로 다시 시도한다.
- * - 임시본: Sonnet이 첫 실패부터 2시간 넘게 실패하고 OpenAI를 쓸 수 있을 때만 terra로, "임시본" 표시. 이후 교체 레인이 Sonnet 정식본으로 바꾼다.
- * - OpenAI 잔액 부족을 보면 OpenAI 경로를 끈다(llm_provider_switch).
+ * 생성 감독(P6d-ops 7 → W3 P2). 책 생성 진입 함수(buildV5Snapshot)는 호출만 하고, deps로 모델·fetch만 정한다.
+ * - 발행: Sonnet만(대체 작가·임시본 없음). 결정론 장이 하나라도 있으면 내보내지 않는다.
+ * - W3 P2 30분 결론: 1차 → 실패 분류(policy failClassOf) → 2차 1번(nextAfterFailure) → 그래도 실패하거나 시작 + 25분이면 포기(결제 자동 환불·이용권 반환).
  * - 모든 시도·비용·사유는 book_generation_runs에, 상태는 book_generation_state에.
- * 최종판 0-1: 작가 원고가 나오면 그 책은 완성본이 된다(짧은 장도 버리지 않음). 다시 시도하는 것은 출력 전 실패·중간 끊김뿐이고, 다음 시도는 저장된 장 다음부터 빠진 장만 이어 쓴다.
- * 최종판 0-6: 주문당 비용 상한(orderCostCap, 기본 $0.60) — 지난 시도들의 비용 합이 상한에 이르면 부르지 않고 보류(hold): 관리자 "지연" 목록에 사유(cost_cap)와 함께 남는다(자동 환불 없음).
- * 최종판 0-2: 교체 레인은 저장된 Book의 원문(meta.raw)을 저장소로 넘긴다(같은 입력이면 다시 부르지 않는다).
+ * 최종판 0-1: 작가 원고가 나오면 그 책은 완성본이 된다(짧은 장도 버리지 않음). 다음 시도는 저장된 장 다음부터 빠진 장만 이어 쓴다.
+ * 주문당 비용 상한(orderCostCap): 1차 + 2차 + 검수·수리 몫. 상한에 이르면 부르지 않고 포기한다.
+ * 최종판 0-2: 교체 레인(관리자 재생성)은 저장된 Book의 원문(meta.raw)을 저장소로 넘긴다(같은 입력이면 다시 부르지 않는다).
  */
 import type { ReportInputPayload } from "../../report-generation/reportInputTypes";
 import type { WriterMeta } from "../../writer/book";
@@ -81,14 +80,14 @@ const productOf = (p: unknown) => { const k = (p as { productKey?: unknown } | n
 /** HOTFIX-W1: 작가 사다리 입력(지난 기록에서). end면 부르지 않는다. */
 type Ladder = { startStage: LadderStage; exhaustedMaxTokens: number; end: boolean };
 
-/** 한 번 만들어 판정한다(정식본=Sonnet, 임시본=terra). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
+/** 한 번 만들어 판정한다(Sonnet). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
 async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder; fresh?: boolean }, lane: "official" | "interim") {
   const seen: QuotaSeen = {};
   // 운영 경로는 모델을 넘기지 않는다 → 정식본은 항상 Sonnet. 시험·측정 도구가 모델을 명시하면 그 모델로(대체 모델은 어느 쪽이든 없음).
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
   const target = lane === "interim" ? INTERIM_TARGET : injected ?? OFFICIAL_TARGET;
   const base = env.deps?.fetchImpl ?? ((...a: Parameters<typeof fetch>) => fetch(...a));
-  // OPS_FORCE_ANTHROPIC_DOWN: 정식본(Anthropic) 시도만 출력 전 529로 실패시킨다(개발 전용). 임시본은 실제 호출.
+  // OPS_FORCE_ANTHROPIC_DOWN: Anthropic 시도를 출력 전 529로 실패시킨다(개발 전용).
   const mock = devMockMode() ?? (lane === "official" && devForceAnthropicDown() ? "fail" as const : null);
   // 개발 서버의 실제 호출은 예산 관문(tools/llm/budget.ts)을 지난다(최종판 0-5). 목업·시험 주입 stream이 있으면 그대로.
   const gate = mock || env.deps?.stream ? null : await devBudget(`${lane} ${job.reportId}`);
@@ -182,7 +181,7 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
 type LaneJob = { reportId: string; origin: "paid" | "ticket"; token: string; phase: string; regenerate: boolean; firstFailureAt: string | null; failures: number; rejected: number[]; snapshot: Record<string, unknown> | null; regenRequestedAt?: string | null; regenFailures?: number };
 
 /**
- * 교체 레인 한 건: 임시본 → Sonnet 정식본, 또는 관리자 재생성. 공개된 Book을 바꿀 때는 이전 Book을 보관한 뒤 바꾼다(lane_replace).
+ * 교체 레인 한 건: 관리자 재생성(W3 P2 — 임시본 교체는 없다). 공개된 Book을 바꿀 때는 이전 Book을 보관한 뒤 바꾼다(lane_replace).
  * 입력은 저장된 Book 근거(evidencePacket.input·generatedAt)에서 다시 읽는다(v5 Book만).
  */
 export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; empty?: boolean; reportId?: string; outcome?: string }> {
@@ -230,7 +229,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
   const first = ms(job.firstFailureAt) || t;
   const next = nextRetryAt(first, job.failures + 1, t);
   await release({ nextAt: next === null ? null : iso(next) });
-  // 24시간이 지나면 정식본 교체를 멈춘다(임시본은 그대로 열린다).
+  // 재생성 시간표가 끝나면 멈춘다(공개된 Book은 그대로 열린다).
   await env.store.call("record", { reportId: job.reportId, run: { ...runBase, outcome: next === null ? "gave_up" : "deferred", reason: a.reason },
     state: { failuresInc: 1, rejected, nextAt: next === null ? null : iso(next), ...(next === null ? { gaveUpAt: iso(t) } : {}) } });
   return { ok: true, reportId: job.reportId, outcome: next === null ? "gave_up" : "deferred" };

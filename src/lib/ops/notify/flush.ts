@@ -2,7 +2,7 @@ import "server-only";
 import type { OpsStore } from "../generation/sinks";
 import { generationLineOf } from "../generation/alerts";
 import { BOTS, messageIdOf, OPS_PUBLIC_ORIGIN, WAKE_PATH, webhookPath, webhookSecret, type BotName, type Telegram, type TelegramConfig } from "./telegram";
-import { apiCreditText, generationHoldText, bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, signupButtons, signupSurgeText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
+import { apiCreditText, bookComplete, esc, LINES, opsMessage, refundDoneLine, salesPaymentText, salesRefundText, shareFailedText, signupButtons, signupSurgeText, type ItemFacts, type Message, type OrderFacts, type Stats } from "./render";
 
 /**
  * 알림 통로(운영 Q 4부). 대기표(ops_notifications)를 비우고, 처리 봇 메시지를 그때의 상태로 정리한다.
@@ -88,7 +88,6 @@ async function build(deps: NotifyDeps, x: Claimed): Promise<Message> {
   // F: 가입 급증 경보([지급 멈춤]·[다시 켜기] — 그 순간 상태)·API 잔액 경보(버튼 없음).
   if (x.kind === "signup_surge") return { text: signupSurgeText(x.payload), buttons: signupButtons(x.payload.on !== false) };
   if (x.kind === "api_credit") return { text: apiCreditText(x.payload), buttons: [] };
-  if (x.kind === "generation_hold") return { text: generationHoldText(x.payload), buttons: [] };
   const f = await itemFacts(deps.notify, x.id, deps.generation);
   if (!f) throw new Error("ITEM_MISSING");
   return renderOps(deps, f);

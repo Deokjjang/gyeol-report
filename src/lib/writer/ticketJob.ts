@@ -38,7 +38,7 @@ export function ticketChapterSink(store: TicketPublicationStore, user: string, o
 }
 
 /**
- * 이용권 v5 작업(P6d-ops 7): 생성 감독이 정식본(Sonnet)만 발행한다. 아니면 큐로 보류(defer, 시간표), 24시간이면 이용권 환급(reverse).
+ * 이용권 v5 작업(P6d-ops 7 → W3 P2): 생성 감독이 Sonnet 원고만 발행한다. 아니면 2차로 미룸(defer, 1번), 그래도 안 되면 이용권 반환(reverse) — 접수 + 30분 안.
  * 결정론으로 완성해 발행하지 않는다(회수 크론도 큐로 되돌리기만 한다).
  */
 export async function runV5TicketJob(store: TicketPublicationStore, job: TicketResult, deps?: V5JobDeps): Promise<TicketResult> {

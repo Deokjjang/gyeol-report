@@ -2,8 +2,7 @@
  * 로컬 개발 전용 목업 작가(P6d-ops E2E, API 호출 0). next dev + OPS_MOCK_WRITER일 때만 켜진다.
  * OPS_MOCK_WRITER=ok: 결정론 장면 은행 글에 장마다 다른 문단을 덧붙여 "작가 원고"처럼 흘려보낸다(시험용, 고객 원고 아님).
  * OPS_MOCK_WRITER=fail: 출력 전 529(과부하)로 실패한다(제본 중·재시도 화면 확인용).
- * OPS_FORCE_ANTHROPIC_DOWN=1 (P6e-ops 8): "Anthropic 장애"를 강제한다. 정식본(Anthropic) 시도만 출력 전 529로 실패시키고,
- *   임시본(OpenAI) 시도는 그대로 실제 호출한다. 실호출로 "장애 → 임시본 → 정식본 교체" 경로를 한 번 돌려 볼 때만 쓴다. next dev에서만 켜진다.
+ * OPS_FORCE_ANTHROPIC_DOWN=1 (P6e-ops 8): "Anthropic 장애"를 강제한다. Anthropic 시도를 출력 전 529로 실패시킨다(W3 P2: 2차 → 자동 환불 경로 확인용). next dev에서만 켜진다.
  */
 import type { Brief } from "../../brief/schema";
 import type { ReportInputPayload } from "../../report-generation/reportInputTypes";

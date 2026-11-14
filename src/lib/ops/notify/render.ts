@@ -251,13 +251,6 @@ export function anthropicAlarmText(a: { code: string; paused: boolean }): string
     a.paused ? "4종 판매를 자동으로 멈췄어요. 이미 결제한 책은 다시 시도해요." : "4종 판매는 이미 멈춰 있어요.", "풀리면 [다시 열기]를 눌러 주세요. (이 경보는 1시간에 1번)"].join("\n");
 }
 /** 「🚨 생성 실패: API 잔액 확인 필요」(1시간 1번). */
-/** AM2-3 6-1: 정식본(Sonnet)·임시본(OpenAI) 모두 못 만들어 발행을 보류(결정론 대체본은 내보내지 않는다). 고객 화면은 지연 안내, 24시간 안에 못 만들면 자동 환불. */
-export function generationHoldText(p: Record<string, unknown>): string {
-  const id = String(p.reportId ?? "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
-  const who = p.origin === "ticket" ? "이용권 책" : "결제 주문";
-  const why = String(p.reason ?? "").replace(/[<>&]/g, "").slice(0, 120);
-  return [`⏸ <b>발행 보류: 책을 만들지 못했어요</b>`, `${who} · ${id}`, `사유 ${why || "작가 실패"} · ${p.lane === "interim" ? "임시본(OpenAI)도 실패" : "임시본을 쓸 수 없음"}`, "고객 화면은 지연 안내 · 감독이 계속 다시 시도 · 24시간 안에 못 만들면 자동 환불"].join("\n");
-}
 export function apiCreditText(p: Record<string, unknown>): string {
   const code = p.code === "openai_quota" ? "OpenAI(임시본) 할당량" : "Anthropic(작가) 잔액·결제";
   return [`🚨 <b>생성 실패: API 잔액 확인 필요</b>`, `${code} 문제로 작가 호출이 실패했어요 · 무료 책이 늘면 잔액이 빨리 줄어요`].join("\n");
