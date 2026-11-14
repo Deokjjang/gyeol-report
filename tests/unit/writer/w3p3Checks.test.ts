@@ -12,6 +12,12 @@ import { exposureHits, exposureOf, plainStrength } from "@/lib/writer/safety/exp
 import { HARD_RULES, HINT } from "@/lib/writer/safety/p6c";
 import { styleFlags } from "@/lib/writer/safety/style";
 import type { FinalChapter } from "@/lib/writer/safety";
+import type { LintFlag } from "@/lib/writer/safety/p6c";
+import { deleteFlagged, lostFactTokens, revertRepairRegressions, type AppliedRepair } from "@/lib/writer/repair3";
+import { buildV5Snapshot, coverNumberIssue } from "@/lib/writer/publish";
+import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
+import { memorySink } from "@/lib/ops/generation/sinks";
+import { RAW_FULL, llmDeps, mockTextFor } from "../../helpers/v5Scenarios";
 
 const ch = (n: number, paragraphs: string[][]): FinalChapter => ({ n, id: `c${n}`, title: `장 ${n}`, source: "writer", chars: 0, sections: paragraphs.map((ps, i) => ({ heading: `소제목 ${n}.${i}`, paragraphs: ps })) });
 
@@ -111,4 +117,70 @@ describe("W3 P3 5절 사실 대조: 궁합 관계 셈 하나로 · 개수 말", 
     expect(factCheck(`타고난 글자 사이에 관계가 ${n}가지 엮여 있어요.`, c1)?.rule).not.toBe("fact_count");
     expect(factCheck(`올해는 관계가 ${n + 3}가지 엮여 있어요.`, c1)?.rule).not.toBe("fact_count");
   });
+});
+
+describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
+  const C = (n: number, sections: string[][]): FinalChapter => ch(n, sections);
+  const applied = (at: string, before: string, after: string): AppliedRepair => ({ id: 1, kind: "sentence", at, before, after, source: ["lint"] });
+  const text = (cs: readonly FinalChapter[]) => cs.flatMap(c => c.sections.flatMap(s => s.paragraphs)).join(" ");
+  it("수리 문장이 다른 장 문장과 같으면 원문으로 되돌린다(repair_duplicate_book)", () => {
+    const other = "서운한 일이 생기면 그날이 가기 전에 짧게 말해 두세요.";
+    const cs = [C(1, [[`첫 장 문장이에요. ${other}`]]), C(2, [[`둘째 장 앞 문장이에요. ${other} 끝 문장이에요.`]])];
+    const r = revertRepairRegressions(cs, [applied("2.0.0", "원래는 다른 말이었어요.", other)], { flags: [], names: [] });
+    expect(r.reverted.map(x => x.rule.split(":")[0])).toEqual(["repair_duplicate_book"]);
+    expect(text(r.chapters)).toContain("원래는 다른 말이었어요.");
+  });
+  it("근거 낱말(관계·십성·신살 이름)을 잃은 수리는 되돌린다 — 그 사실을 고치라는 깃발이면 봐준다", () => {
+    const before = "일지와 월지의 축미충이 정관의 틀을 흔들어요.", after = "두 글자가 부딪쳐 틀이 흔들려요.";
+    const cs = [C(1, [[`앞 문장이에요. ${after}`]])];
+    const r = revertRepairRegressions(cs, [applied("1.0.0", before, after)], { flags: [], names: ["축미충", "도화살"] });
+    expect(r.reverted.map(x => x.rule.split(":")[0])).toEqual(["repair_fact_lost"]);
+    expect(r.reverted[0].rule).toMatch(/rel:축미충/); expect(r.reverted[0].rule).toMatch(/tg:정관/);
+    expect(lostFactTokens(before, after, ["축미충"], new Set(["rel", "tg"]))).toEqual([]);
+    const flag: LintFlag = { chapter: 1, section: 0, paragraph: 0, rule: "fact_relation", sentence: before, hint: "" };
+    const ok = revertRepairRegressions(cs, [applied("1.0.0", before, "두 글자가 부딪쳐 정관의 틀이 흔들려요.")], { flags: [flag], names: ["축미충"] });
+    expect(ok.reverted).toEqual([]);
+  });
+  it("예고만 남긴 수리는 되돌린다(repair_empty_preview)", () => {
+    const cs = [C(1, [["앞 문장이에요. 다음 두 가지를 볼게요."]])];
+    const r = revertRepairRegressions(cs, [applied("1.0.0", "먼저 쉬는 시간을 정해 두면 좋아요.", "다음 두 가지를 볼게요.")], { flags: [], names: [] });
+    expect(r.reverted.map(x => x.rule)).toEqual(["repair_empty_preview"]);
+  });
+  it("지운 문장이 앞 수사 물음의 답이면 물음도 함께 지운다(AM cut.ts ASKS), 넓힌 LEANS는 뒤 문장을 함께 지운다", () => {
+    const cs = [C(1, [["이 기운이 낯설죠? 내 힘의 세기는 신강이라서예요. 남는 문장이 하나 있어요.", "둘째 문단이에요."]])];
+    const flags: LintFlag[] = [{ chapter: 1, section: 0, paragraph: 0, rule: "grade_leak", sentence: "내 힘의 세기는 신강이라서예요.", hint: "" }];
+    const d = deleteFlagged(cs, flags, HARD_RULES);
+    expect(d.chapters[0].sections[0].paragraphs[0]).toBe("남는 문장이 하나 있어요.");
+    expect(d.deleted.map(x => x.rule).sort()).toEqual(["grade_leak", "grade_leak:question"]);
+    const cs2 = [C(1, [["앞 문장이에요. 내 힘의 세기는 신강이에요. 그렇다면 이 힘을 어디에 쓸까요. 마지막 문장이에요.", "둘째 문단이에요."]])];
+    const d2 = deleteFlagged(cs2, [{ ...flags[0], sentence: "내 힘의 세기는 신강이에요." }], HARD_RULES);
+    expect(d2.chapters[0].sections[0].paragraphs[0]).toBe("앞 문장이에요. 마지막 문장이에요.");
+  });
+  it("표지 숫자·간지: 한글 숫자 연차, 입력과 다른 나이, 이 사람에게 없는 간지는 hard", () => {
+    const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
+    const b = buildBrief({ product: "love_marriage_child", baseDate: "2026-11-04", person: { name: "장소담", gender: "FEMALE", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, mbtiType: "INTP", context: { relationshipStatus: "dating", jobStatus: "self_employed", detailJob: "카페 사장" } } }, k);
+    expect(coverNumberIssue("사 년째 같은 자리를 지키는 등불", b)).toMatch(/연차/);
+    expect(coverNumberIssue(`${b.person.age + 3}살 봄에 켜지는 작은 등불`, b)).toMatch(/나이/);
+    const own = b.chart.pillars.day.hangul, foreign = ["갑자", "을축", "병인", "정묘", "무진", "기사", "경오", "신미", "임신", "계유"].find(g => ![b.chart.pillars.year.hangul, b.chart.pillars.month.hangul, own, b.chart.pillars.hour?.hangul, b.chart.thisYear.ganji.hangul, b.chart.currentDayun?.ganji.hangul].includes(g))!;
+    expect(coverNumberIssue(`조용히 타오르는 등불 하나 ${foreign}`, b)).toMatch(/간지/);
+    expect(coverNumberIssue(`조용히 타오르는 ${own}일주의 등불`, b)).toBeNull();
+    expect(coverNumberIssue("갑자기 켜지는 작은 등불 하나", b)).toBeNull();
+  });
+  it("검수를 건너뛰어도(budget) 결정론 HARD 검사·지우기는 돈다", async () => {
+    const policyAt = "2026-10-27T03:00:00.000Z";
+    const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload");
+    const { text: t0 } = mockTextFor(n.value, policyAt);
+    const anchor = "이 모습은 하루아침에 생긴 것이 아니라 오래 다듬어진 결입니다 2(1).";
+    expect(t0).toContain(anchor);
+    const t1 = t0.replace(anchor, `${anchor} 내 힘의 세기는 신강이에요.`);
+    const { deps } = llmDeps([{ text: t1 }]);
+    const built = await buildV5Snapshot({ payload: n.value, reportId: "report_w3p3checks000001", policyAt, sink: memorySink() as never, deps: { ...deps, costCapUsd: 10 } as never });
+    const review = built.meta.review as { skipped: string | null; repair: { skipped: string | null }; deleted: { rule: string }[] };
+    expect(review.skipped).toBe("budget");
+    expect(review.repair.skipped).toBe("budget");
+    expect(review.deleted.some(d => d.rule === "grade_leak")).toBe(true);
+    const body = JSON.stringify(built.snapshot.draft.chapters);
+    expect(body).not.toContain("세기는 신강");
+    expect(body).toContain("다듬어진 결입니다");
+  }, 180_000);
 });

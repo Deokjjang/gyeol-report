@@ -37,7 +37,7 @@ import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
@@ -372,6 +372,8 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return { reason: "설명문", level: "hard" };
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
   if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
+  // W3 P3 6절(rw2 L1 「사 년째」를 수리가 표지로 옮김 · F7 표지 끝 「경인」): 한글 숫자 연차, 입력과 다른 나이, 이 사람 기둥·올해·지금 대운에 없는 간지.
+  { const w = coverNumberIssue(v, brief); if (w) return { reason: w, level: "hard" }; }
   { const j = brief.person.facts.job, w = !brief.compatibility && /^(employee|freelancer|self_employed|business_owner)$/.test(j.status) ? seniorityHit(v, `${j.detail ?? ""} ${j.status}`) : null; if (w) return { reason: `연차(${w}) — 입력에 없는 연차·나이 말 없이`, level: "hard" }; }
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
@@ -392,6 +394,18 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   const am = brief.product === "annual_fortune" || brief.product === "major_fortune";
   if (am && /(?<![가-힣])(그림|이야기|모습)$|[가-힣]의 (그림|해|한 해|10년|시간|이야기|시기|모습)$/.test(v)) return { reason: "채움말(「…의 그림」 「…의 해」) — 그 사람의 그림 자체로", level: "length" };
   if (n < (am ? 12 : 16) || n > 26) return { reason: `길이 ${n}자(공백 뺌, ${am ? 12 : 16}~26자)`, level: "length" };
+  return null;
+}
+/** 표지 숫자·간지 대조(W3 P3 6절): 한글 숫자 연차(「사 년째」), 입력 나이와 다른 「N살·N세」, 이 사람 기둥·올해·지금 대운에 없는 간지 이름. */
+export function coverNumberIssue(v: string, brief: Brief): string | null {
+  const y = v.match(/(?<![가-힣])(일|이|삼|사|오|육|칠|팔|구|십|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열) ?년 ?(차|째)/); if (y) return `연차(${y[0]}) — 입력에 없는 연차`;
+  const age = v.match(/(\d{1,3}) ?(살|세)(?![가-힣])/); if (age && Number(age[1]) !== brief.person.age) return `나이(${age[0]}) — 입력 나이 ${brief.person.age}와 다름`;
+  if (brief.compatibility) return null;
+  const own = new Set([...Object.values(brief.chart.pillars).flatMap(g => (g ? [g.hangul] : [])), brief.chart.thisYear.ganji.hangul, ...(brief.chart.currentDayun ? [brief.chart.currentDayun.ganji.hangul] : [])]);
+  for (const m of v.matchAll(/(?<![가-힣])([갑을병정무기경신임계][자축인묘진사오미신유술해])(?=년|월|일주|일|대운|의 |\s|$|[,.])/g)) {
+    const g = m[1], si = "갑을병정무기경신임계".indexOf(g[0]), bi = "자축인묘진사오미신유술해".indexOf(g[1]);
+    if (si % 2 === bi % 2 && !own.has(g)) return `간지(${g}) — 이 사람 기둥·올해·지금 대운에 없는 간지`;
+  }
   return null;
 }
 /**
@@ -515,7 +529,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     } catch { review.skipped = "call_failed"; }
   }
   // 수리 1회(작가 모델): 결정론 깃발 + 검수 지적 + 표지 문제를 문장 단위로 한 번에. 예산이 모자라면 건너뛴다.
-  const items = repairItems({ chapters, flags: lintBook(chapters, lctx), issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null });
+  const preRepairFlags = lintBook(chapters, lctx);
+  const items = repairItems({ chapters, flags: preRepairFlags, issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null });
   let repair: { items: number; calls: number; applied: AppliedRepair[]; skipped: string | null } = { items: items.length, calls: 0, applied: [], skipped: null };
   let repairedCover = "";
   if (items.length && canCall) {
@@ -533,7 +548,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const rv0 = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
   // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
   const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
-  const rv = { chapters: side.chapters, reverted: [...rv0.reverted, ...side.reverted] };
+  // W3 P3 6절: 수리가 책 안 다른 문장과 같은 말을 만들었거나, 원문의 근거 낱말(간지·십성·관계·신살)을 잃었거나, 예고만 남겼으면 되돌린다(호출 0).
+  const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet) });
+  const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;
