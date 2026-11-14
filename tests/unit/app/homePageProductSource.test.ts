@@ -34,7 +34,7 @@ describe("home page product source", () => {
       "궁합 리포트",
       "1,290원",
       "생성일로부터 90일 온라인 열람",
-      "최대 24시간 이내 제공",
+      "30분 안에 못 만들면 자동 전액 환불",
       "자동 생성 디지털 리포트",
       "상담이 아닌 참고용 리포트",
       "내 리포트 만들기",
@@ -120,9 +120,9 @@ describe("home page product source", () => {
       expect(card.match(/<a\b/g)).toHaveLength(1);
       expect(card).toMatch(/href="\/report\/new\?product=[a-z-]+"/);
       expect(card).toContain("시작하기");
-      expect(card).not.toMatch(/구매 가능|판매 상품|자동 생성 디지털|90일|최대 24시간/);
+      expect(card).not.toMatch(/구매 가능|판매 상품|자동 생성 디지털|90일|30분 안에 못 만들면/);
     }
-    expect(html.match(/최대 24시간 이내 제공/g)).toHaveLength(1);
+    expect(html.match(/30분 안에 못 만들면 자동 전액 환불/g)).toHaveLength(1);
     expect(html.indexOf("공통 상품 안내")).toBeGreaterThan(html.lastIndexOf("</article>"));
   });
 

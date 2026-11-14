@@ -66,7 +66,7 @@ export default function Home() {
           </HomeReveal>
           <aside className={styles.notice} aria-label="공통 상품 안내">
             <p className={styles.noticeTitle}>오픈 기념 · 모든 리포트 {REPORT_PRICE_LABEL_KO}</p>
-            <p>결제 완료 후 즉시 생성, 최대 24시간 이내 제공 · 생성일로부터 90일 온라인 열람</p>
+            <p>결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불 · 생성일로부터 90일 온라인 열람</p>
             <p className={styles.noticeNote}>자동 생성 디지털 리포트 · 상담이 아닌 참고용 리포트</p>
           </aside>
         </section>

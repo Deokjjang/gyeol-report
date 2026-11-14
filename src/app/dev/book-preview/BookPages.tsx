@@ -51,7 +51,7 @@ export function Receipt({ book, person, title, member, setMember, consents, setC
     <div className={s.receipt}>
       <p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER — PREVIEW</p>
       <dl>{[["TITLE", title ?? book.title.replace("\n", " ")], ["ISSUED TO", person.name], ["BIRTH", `${person.birth.replaceAll("-", ".")} / ${person.precision === "unknown" ? "시간 모름" : person.time + (person.precision === "approximate" ? "경" : "")}`], ["MBTI", person.mbti || "모름"], ["PRICE", REPORT_PRICE_LABEL_KO]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
-      <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 완료 후 즉시 생성, 최대 24시간 이내 제공<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
+      <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불<br />생성일로부터 90일 · 결제 후 온라인 열람</p>
       {member ? <p className={s.receiptNote}>회원 미리보기 · 가입 약관 동의 가정, 실제 적용 전 검토 필요.</p> : null}
       <fieldset className={s.consents}><legend className={s.srOnly}>약관 및 개인정보 동의</legend>
         <label className={s.allConsent}><input ref={allInput} type="checkbox" checked={all} disabled={!allowed} onChange={e => setConsents(toggleAll(items.map(c => c.id), e.target.checked, consents))} />전체 동의</label>

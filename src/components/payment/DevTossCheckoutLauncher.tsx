@@ -394,7 +394,7 @@ const result = await runDevTossCheckout(
           <h3>서비스 제공 방식</h3>
           <ul>
             <li>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님</li>
-            <li>결제 완료 후 즉시 생성, 최대 24시간 이내 제공</li>
+            <li>결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불</li>
             <li>생성일로부터 90일 · 결제 후 온라인 열람</li>
           </ul>
           {productType === "saju_mbti_compatibility" ? <p>상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.</p> : null}

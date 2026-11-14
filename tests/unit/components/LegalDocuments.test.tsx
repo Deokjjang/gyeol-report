@@ -48,7 +48,7 @@ describe("legal document rendering", () => {
       expect(html).toContain(`<h2>${section.titleKo}</h2>`);
       for (const paragraph of section.bodyKo) expect(text(html)).toContain(paragraph);
     }
-    for (const condition of ["상품 페이지와 결제 화면에 표시된 금액", "최대 24시간 이내 제공", "처음 발행일로부터 90일", "회원 탈퇴, 삭제 요청, 서비스 종료 시까지", "2026년 11월 30일 23:59:59까지", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
+    for (const condition of ["상품 페이지와 결제 화면에 표시된 금액", "30분 안에 제공하지 못하면 이용자가 요청하지 않아도 자동으로 전액 환불", "처음 발행일로부터 90일", "회원 탈퇴, 삭제 요청, 서비스 종료 시까지", "2026년 11월 30일 23:59:59까지", "만 19세 미만", "만 14세 미만", "고의 또는 중대한 과실", "7일 이내"]) {
       expect(text(html)).toContain(condition);
     }
     expect(html).not.toContain(business.businessAddressKo);
@@ -83,8 +83,8 @@ describe("legal document rendering", () => {
     expect(html.match(/data-policy-rows/g)).toHaveLength(1);
     expect(html.match(/<h2\b/g)).toHaveLength(privacy.privacyPolicySections.length + 1);
     expect(content).toContain("행태정보와 광고 성과 측정(Meta)");
-    // 배포 명령 0-1: OpenAI는 임시본 레인(Anthropic 장기 장애)이라 위탁·국외 이전 표에만 나온다.
-    expect(content).toContain("OpenAI, LLC · 미국"); expect(content).toContain("Anthropic이 오래 장애일 때 임시 리포트 문장 작성(AI)");
+    // W3 P2: 대체 작가(OpenAI 임시본)가 없어져 위탁·국외 이전에서도 뺐다.
+    expect(content).not.toContain("OpenAI, LLC"); expect(content).not.toMatch(/임시 리포트|임시본/); // 지난 판 변경 이력 한 줄에만 업체 이름이 기록으로 남는다
     expect(html).not.toContain("deterministic");
   });
 
