@@ -10,6 +10,7 @@
     "start": "next start",
     "lint": "eslint",
     "test": "vitest run",
+    "test:legacy": "vitest run --config vitest.legacy.config.ts",
     "test:watch": "vitest",
     "release:check": "pnpm test && pnpm lint && pnpm typecheck:all && pnpm build",
     "typecheck": "tsc --noEmit",

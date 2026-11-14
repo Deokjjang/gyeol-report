@@ -8,7 +8,7 @@ import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";
 import { ANTHROPIC_CREDIT, ANTHROPIC_OVERLOADED, OPENAI_QUOTA, fakeClock, memoryOpsStore, mockAnthropic, mockOpenAiWithBody, routedFetch, type AnthropicBehavior } from "../../helpers/opsMocks";
 import type { MockBehavior } from "../../helpers/llmMock";
 
-const MIN = 60_000;
+const MIN = 60_000, HOUR = 60 * MIN;
 const policyAt = "2026-10-27T03:00:00.000Z";
 const input = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload"); return n.value; })();
 const { text } = mockTextFor(input, policyAt);
@@ -73,7 +73,7 @@ describe("출력 전 실패·중간 끊김(같은 시도 안)", () => {
     expect(sources.filter(s => s === "writer").length).toBe(6); expect(sources.filter(s => s === "continuation").length).toBe(7);
   }, 60_000);
 
-  it("이어쓰기도 실패 → 결정론으로 채우지 않고 1분 보류 → 다음 시도는 임시본(AM2-3 6-1 첫 실패 직후) → 교체 레인의 Sonnet은 저장된 장 뒤 빠진 장만", async () => {
+  it("이어쓰기도 실패 → 결정론으로 채우지 않고 1분 보류 → 다음 시도는 빠진 장만", async () => {
     const h = harness([{ text, cutAt: cutAt(7) }, ANTHROPIC_OVERLOADED]);
     const d1 = await h.run();
     expect(d1.kind).toBe("defer");
@@ -81,8 +81,10 @@ describe("출력 전 실패·중간 끊김(같은 시도 안)", () => {
     h.clock.advanceTo(Date.parse((d1 as { until: string }).until));
     h.setAnthropic([{ text: from(6) }]);
     const d2 = await h.run();
-    expect(d2.kind === "publish" && d2.edition).toBe("interim");
-    expect(d2.kind === "publish" && d2.meta.writer?.provider).toBe("openai");
+    expect(d2.kind).toBe("publish");
+    // 첫 호출 없이 이어쓰기로 시작(뒤는 P6c 수리 호출뿐).
+    const kinds = ((h.ops.runs.at(-1) as { calls: { kind: string }[] }).calls).map(c => c.kind);
+    expect(kinds[0]).toBe("continuation"); expect(kinds).not.toContain("first");
     expect(h.ops.states.get(h.job.reportId)!.failures).toBe(1);
   }, 120_000);
 
@@ -95,7 +97,7 @@ describe("출력 전 실패·중간 끊김(같은 시도 안)", () => {
 });
 
 describe("Anthropic 24시간 장애", () => {
-  it("OpenAI 정상: 첫 실패 직후 임시본(terra) 공개(AM2-3 6-1) → 교체 레인이 24시간까지 Sonnet 재시도 → 실패하면 임시본 유지", async () => {
+  it("OpenAI 정상: 2시간에 임시본(terra) 공개 → 교체 레인이 24시간까지 Sonnet 재시도 → 실패하면 임시본 유지", async () => {
     const h = harness([ANTHROPIC_OVERLOADED], [{ text }]);
     let d = await h.run();
     const first = h.decisions[0].at;
@@ -103,9 +105,9 @@ describe("Anthropic 24시간 장애", () => {
     expect(d.kind).toBe("publish"); expect(d.kind === "publish" && d.edition).toBe("interim");
     expect(d.kind === "publish" && d.meta.writer?.provider).toBe("openai");
     const defers = h.decisions.filter(x => x.d.kind === "defer");
-    expect(defers).toHaveLength(1); // Sonnet 첫 실패 → 1분 뒤 다음 시도가 임시본
+    expect(defers).toHaveLength(5); // 1분·5분·15분·1시간 뒤, 그리고 2시간째로 맞춘 깨움
     const interimAt = h.decisions.at(-1)!.at;
-    expect(interimAt - first).toBeGreaterThanOrEqual(MIN); expect(interimAt - first).toBeLessThan(2 * MIN);
+    expect(interimAt - first).toBeGreaterThanOrEqual(2 * HOUR); expect(interimAt - first).toBeLessThan(2 * HOUR + 15 * MIN);
     const s = h.ops.states.get(h.job.reportId)!;
     expect(s.phase).toBe("interim");
     // 교체 레인: 다음 시각마다 Sonnet. 24시간이 지나면 멈춘다.
@@ -158,16 +160,6 @@ describe("OpenAI 잔액 부족", () => {
     expect(alerts.length).toBeGreaterThan(0); expect(alerts[0]).toMatchObject({ reportId: h.job.reportId, origin: "paid", lane: "official" });
   }, 600_000);
 
-  it("AM2-3 6-1: 임시본까지 실패하면 보류 경보(고객 화면은 지연 = RETRYING), 정식본 실패만으로는 경보하지 않는다", async () => {
-    const h = harness([ANTHROPIC_OVERLOADED], [OPENAI_QUOTA]);
-    const alerts: { lane: string }[] = []; (h.env as { holdAlert?: (x: { lane: string }) => Promise<unknown> }).holdAlert = async x => { alerts.push(x); return { ok: true }; };
-    const d1 = await h.run();
-    expect(d1.kind).toBe("defer"); expect(alerts).toHaveLength(0); // 첫 시도(정식본) 실패 — 다음 차례가 임시본이라 아직 보류 경보 없음
-    h.clock.advanceTo(Date.parse((d1 as { until: string }).until));
-    const d2 = await h.run();
-    expect(d2.kind).toBe("defer"); expect(alerts.map(a => a.lane)).toEqual(["interim"]);
-    expect(h.decisions.some(x => x.d.kind === "publish")).toBe(false);
-  }, 600_000);
 });
 
 describe("판정", () => {

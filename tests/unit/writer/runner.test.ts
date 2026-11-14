@@ -102,17 +102,17 @@ describe("작가 실행기 — 실패 주입(목업, 비용 0)", () => {
   });
 });
 
-// AM 7부(덕짱님 결정 2026-11-11): 생각 블록만으로 출력 상한을 다 쓴 빈 원고 → 작가 호출만 1회, 짧은 생각(adaptive, effort low)으로 다시.
+// AM 7부의 「빈 원고 → 짧은 생각(adaptive-low) 1회 재호출」은 W3 P1 병합에서 4종 작가 경로에서 뺐다(4종은 HOTFIX-W1 사다리만 — 명령 원칙). 세운·대운 장 묶음 재호출은 chunkCall 시험이 본다.
 describe("작가 실행기 — 생각만으로 상한 소진(본문 0자)", () => {
-  const empty = { text: "", finishReason: "length" as const, usage: { inputTokens: 100, cachedInputTokens: 0, outputTokens: 36_000 }, costUsd: 0.43, requestId: "r-empty", hidden: { blocks: { thinking: 1 }, chars: 0 } };
+  const empty = { text: "", finishReason: "length" as const, usage: { inputTokens: 100, cachedInputTokens: 0, outputTokens: 36_000 }, costUsd: 0.43, requestId: "r-empty", observed: { stop: "max_tokens", sent: { maxTokens: 36_000, thinking: "between_tools", effort: null }, blocks: { thinking: { n: 1, chars: 0 } }, firstTextMs: null } };
   const ok = (text: string) => ({ text, finishReason: "complete" as const, usage: { inputTokens: 100, cachedInputTokens: 0, outputTokens: 20_000 }, costUsd: 0.3, requestId: "r-ok" });
-  it("1회 다시 부르고(두 번째 호출만 thinking adaptive-low), 원고가 오면 작가 원고로 · 호출 기록 first → retry", async () => {
+  it("4종 작가는 짧은 생각으로 다시 부르지 않는다 — 같은 시도 안에서는 사다리 2단(더 큰 한도, between_tools 그대로)", async () => {
     const seen: (string | undefined)[] = [];
     const stream: typeof import("@/lib/llm").streamCompletion = async i => { seen.push(i.thinking); if (seen.length === 1) return empty; i.onText?.(full); return ok(full); };
     const r = await runWriter({ brief, provider: "anthropic", model: "claude-sonnet-5-5", apiKey: "k", sink: memorySink(), stream, sleep: async () => undefined });
-    expect(seen).toEqual([undefined, "adaptive-low"]);
-    expect(r.calls.map(c => `${c.kind}:${c.finish}:${c.chars > 0}`)).toEqual(["first:length:false", "retry:complete:true"]);
-    expect(r.calls[0].hidden).toEqual({ blocks: { thinking: 1 }, chars: 0 });
+    expect(seen.every(t => t === undefined)).toBe(true);
+    expect(r.calls[0]).toMatchObject({ kind: "first", finish: "length", chars: 0, cls: "thinking_exhausted" });
+    expect(r.calls[0].blocks).toEqual({ thinking: { n: 1, chars: 0 } });
     expect(applySafetyNet(brief, plan, r.drafts).chapters.every(c => c.source === "writer")).toBe(true);
   });
   it("두 번째도 빈 원고면 더 부르지 않는다(결정론 대체, 호출 2회)", async () => {
@@ -122,15 +122,13 @@ describe("작가 실행기 — 생각만으로 상한 소진(본문 0자)", () =
     expect(n).toBe(2);
     expect(applySafetyNet(brief, plan, r.drafts).chapters.every(c => c.source === "deterministic")).toBe(true);
   });
-  it("글자가 조금이라도 왔거나(잘린 원고) OpenAI면 이 재호출을 하지 않는다", async () => {
-    let n = 0;
+  it("잘린 원고·OpenAI도 짧은 생각(adaptive-low)으로 다시 부르지 않는다(W3 P1: 4종은 사다리·빠진 장 이어 쓰기만)", async () => {
+    const seen: (string | undefined)[] = [];
     const cut = full.slice(0, half);
-    const stream: typeof import("@/lib/llm").streamCompletion = async i => { n++; if (n === 1) { i.onText?.(cut); return { ...empty, text: cut }; } i.onText?.(full.slice(half)); return ok(full.slice(half)); };
+    const stream: typeof import("@/lib/llm").streamCompletion = async i => { seen.push(i.thinking); if (seen.length === 1) { i.onText?.(cut); return { ...empty, text: cut }; } i.onText?.(full.slice(half)); return ok(full.slice(half)); };
     await runWriter({ brief, provider: "anthropic", model: "claude-sonnet-5-5", apiKey: "k", sink: memorySink(), stream, sleep: async () => undefined });
-    expect(n).toBe(2); // 두 번째는 빠진 장 이어 쓰기(continuation), 이 재호출이 아니다
-    let m = 0;
-    const s2: typeof import("@/lib/llm").streamCompletion = async () => { m++; return empty; };
+    const s2: typeof import("@/lib/llm").streamCompletion = async i => { seen.push(i.thinking); return empty; };
     await runWriter({ brief, provider: "openai", model: "gpt-6.1-terra", apiKey: "k", sink: memorySink(), stream: s2, sleep: async () => undefined });
-    expect(m).toBe(1);
+    expect(seen.length).toBeGreaterThan(1); expect(seen.every(t => t === undefined)).toBe(true);
   });
 });
