@@ -270,7 +270,55 @@
 | 2026-11-14 16:48 | W3 P2 p2-forced2-career | anthropic/claude-sonnet-5-5 | 25140 | 0 | 13983 | 0.19011000 | complete | req_011Ch2T5w8ZqnDhSEkjxuES9 | 16.73532860 |
 | 2026-11-14 16:49 | W3 P2 p2-forced2-career review | anthropic/claude-haiku-5-5 | 21897 | 0 | 6927 | 0.00565320 | complete | req_011Ch2TD8mVnpJuVsEAwfiXL | 16.74098180 |
 | 2026-11-14 16:49 | W3 P2 p2-forced2-career repair | anthropic/claude-sonnet-5-5 | 11202 | 0 | 2509 | 0.04749400 | complete | req_011Ch2TFyzytLLDnP6BC8PrG | 16.78847580 |
-누적 합계: **$16.78847580** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-14 19:00 | W3 P4 p4-1-full-AL | anthropic/claude-sonnet-5-5 | 26117 | 0 | 10513 | 0.15736400 | complete | req_011Ch2d9GVeE6qKvAnKeCqfR | 16.94583980 |
+| 2026-11-14 19:00 | W3 P4 p4-1-full-AL review | anthropic/claude-haiku-5-5 | 18631 | 0 | 7724 | 0.00572510 | complete | req_011Ch2dF17bdu3yXq2QeLPCM | 16.95156490 |
+| 2026-11-14 19:00 | W3 P4 p4-1-full-AL repair | anthropic/claude-sonnet-5-5 | 7791 | 0 | 1570 | 0.03128200 | complete | req_011Ch2dHheCjrpnh72jKtYns | 16.98284690 |
+| 2026-11-14 19:02 | W3 P4 p4-1-love-AL | anthropic/claude-sonnet-5-5 | 22619 | 0 | 11690 | 0.16213800 | complete | req_011Ch2dJfEsVzQfCw1P8BCsg | 17.14498490 |
+| 2026-11-14 19:02 | W3 P4 p4-1-love-AL review | anthropic/claude-haiku-5-5 | 19782 | 0 | 3620 | 0.00378820 | complete | req_011Ch2dR9C3Rge6VJ5NxFKXw | 17.14877310 |
+| 2026-11-14 19:03 | W3 P4 p4-1-love-AL repair | anthropic/claude-sonnet-5-5 | 8524 | 0 | 1781 | 0.03485800 | complete | req_011Ch2dSLEbdaAZUA78ewjXb | 17.18363110 |
+| 2026-11-14 19:05 | W3 P4 p4-1-compat-AL | anthropic/claude-sonnet-5-5 | 33315 | 0 | 16119 | 0.22782000 | complete | req_011Ch2dTZz7rrYn4GYatk5Ko | 17.41145110 |
+| 2026-11-14 19:05 | W3 P4 p4-1-compat-AL review | anthropic/claude-haiku-5-5 | 27653 | 0 | 7874 | 0.00670230 | complete | req_011Ch2dcQrBxGyV6qUYXPL3F | 17.41815340 |
+| 2026-11-14 19:05 | W3 P4 p4-1-compat-AL repair | anthropic/claude-sonnet-5-5 | 13116 | 0 | 2539 | 0.05162200 | complete | req_011Ch2dewBsvhJ5JzfgNCJMD | 17.46977540 |
+| 2026-11-14 19:07 | W3 P4 p4-1-career-AL | anthropic/claude-sonnet-5-5 | 24695 | 0 | 13216 | 0.18155000 | complete | req_011Ch2dgLiFrCykwYcnayHve | 17.65132540 |
+| 2026-11-14 19:08 | W3 P4 p4-1-career-AL review | anthropic/claude-haiku-5-5 | 21143 | 0 | 8033 | 0.00613080 | complete | req_011Ch2doAbkHd2jxDqyE2Jan | 17.65745620 |
+| 2026-11-14 19:08 | W3 P4 p4-1-career-AL repair | anthropic/claude-sonnet-5-5 | 10722 | 0 | 2498 | 0.04642400 | complete | req_011Ch2dqqCWtSZ9LZrgELDWA | 17.70388020 |
+| 2026-11-14 19:54 | W3 P4 p4-2-full-A | anthropic/claude-sonnet-5-5 | 28354 | 0 | 15897 | 0.21567800 | complete | req_011Ch2hF4mphSLdDGgtGdWfK | 17.91955820 |
+| 2026-11-14 19:55 | W3 P4 p4-2-full-A review | anthropic/claude-haiku-5-5 | 24430 | 0 | 6283 | 0.00558450 | complete | req_011Ch2hQ4DbXm7jn9Ex36KZs | 17.92514270 |
+| 2026-11-14 19:55 | W3 P4 p4-2-full-A repair | anthropic/claude-sonnet-5-5 | 6229 | 0 | 1268 | 0.02513800 | complete | req_011Ch2hST4KiWkMx86NUMRgA | 17.95028070 |
+| 2026-11-14 19:57 | W3 P4 p4-2-career-A | anthropic/claude-sonnet-5-5 | 24979 | 0 | 15213 | 0.20208800 | complete | req_011Ch2hTNhRimKNFTdAq6RoE | 18.15236870 |
+| 2026-11-14 19:57 | W3 P4 p4-2-career-A review | anthropic/claude-haiku-5-5 | 23118 | 0 | 8050 | 0.00633680 | complete | req_011Ch2hbbrf2x3Zx7oRoRsZL | 18.15870550 |
+| 2026-11-14 19:58 | W3 P4 p4-2-career-A repair | anthropic/claude-sonnet-5-5 | 11140 | 0 | 1943 | 0.04171000 | complete | req_011Ch2heEQQwtEQciHjyBjds | 18.20041550 |
+| 2026-11-14 19:59 | W3 P4 p4-2-love-A | anthropic/claude-sonnet-5-5 | 24345 | 0 | 12900 | 0.17769000 | complete | req_011Ch2hfHSVXpbpznYqWyS7N | 18.37810550 |
+| 2026-11-14 20:00 | W3 P4 p4-2-love-A review | anthropic/claude-haiku-5-5 | 21058 | 0 | 6184 | 0.00519780 | complete | req_011Ch2hnmf5h5g8ngbRzpakJ | 18.38330330 |
+| 2026-11-14 20:00 | W3 P4 p4-2-love-A repair | anthropic/claude-sonnet-5-5 | 4870 | 0 | 751 | 0.01725000 | complete | req_011Ch2hpy8CMGiSoZDrnmQzh | 18.40055330 |
+| 2026-11-14 20:02 | W3 P4 p4-2-compat-A | anthropic/claude-sonnet-5-5 | 33138 | 0 | 14906 | 0.21533600 | complete | req_011Ch2hqW53HEBgfDRyuKdJe | 18.61588930 |
+| 2026-11-14 20:02 | W3 P4 p4-2-compat-A review | anthropic/claude-haiku-5-5 | 26302 | 0 | 5280 | 0.00527020 | complete | req_011Ch2hyaL18DiSJX7w7sheY | 18.62115950 |
+| 2026-11-14 20:02 | W3 P4 p4-2-compat-A repair | anthropic/claude-sonnet-5-5 | 8735 | 0 | 1591 | 0.03338000 | complete | req_011Ch2i1PpYMp3jr78YZAAeP | 18.65453950 |
+| 2026-11-14 20:05 | W3 P4 p4-1-full-AL2 | anthropic/claude-sonnet-5-5 | 26171 | 0 | 14922 | 0.20156200 | complete | req_011Ch2i3VtxgGtp5Cw29p38H | 18.85610150 |
+| 2026-11-14 20:05 | W3 P4 p4-1-full-AL2 review | anthropic/claude-haiku-5-5 | 24508 | 0 | 9926 | 0.00741380 | complete | req_011Ch2iBquxJw7W8MHncWkpC | 18.86351530 |
+| 2026-11-14 20:06 | W3 P4 p4-1-full-AL2 repair | anthropic/claude-sonnet-5-5 | 8380 | 0 | 1956 | 0.03632000 | complete | req_011Ch2iFCV3w4Meab48SAU9r | 18.89983530 |
+| 2026-11-14 20:07 | W3 P4 p4-1-love-AL2 | anthropic/claude-sonnet-5-5 | 22634 | 0 | 11463 | 0.15989800 | complete | req_011Ch2iGJ5fcx8PdBhgfzRCh | 19.05973330 |
+| 2026-11-14 20:08 | W3 P4 p4-1-love-AL2 review | anthropic/claude-haiku-5-5 | 19491 | 0 | 7340 | 0.00561910 | complete | req_011Ch2iNgZSYz2gNdSKjZkoj | 19.06535240 |
+| 2026-11-14 20:08 | W3 P4 p4-1-love-AL2 repair | anthropic/claude-sonnet-5-5 | 8472 | 0 | 1836 | 0.03530400 | complete | req_011Ch2iR8kLYM77EfPcYc5PG | 19.10065640 |
+| 2026-11-14 20:10 | W3 P4 p4-1-compat-AL2 | anthropic/claude-sonnet-5-5 | 33210 | 0 | 14205 | 0.20847000 | complete | req_011Ch2iSBBxUx9QjnD3xLzuE | 19.30912640 |
+| 2026-11-14 20:10 | W3 P4 p4-1-compat-AL2 review | anthropic/claude-haiku-5-5 | 26347 | 0 | 3501 | 0.00438520 | complete | req_011Ch2iZozEQLAhsNaW5qFP3 | 19.31351160 |
+| 2026-11-14 20:10 | W3 P4 p4-1-compat-AL2 repair | anthropic/claude-sonnet-5-5 | 13369 | 0 | 2665 | 0.05338800 | complete | req_011Ch2iatWsPsD44ReGASXgU | 19.36689960 |
+| 2026-11-14 20:12 | W3 P4 p4-1-career-AL2 | anthropic/claude-sonnet-5-5 | 24640 | 0 | 12907 | 0.17835000 | complete | req_011Ch2icD5bz2GHiqtJwXDB3 | 19.54524960 |
+| 2026-11-14 20:12 | W3 P4 p4-1-career-AL2 review | anthropic/claude-haiku-5-5 | 21302 | 0 | 7115 | 0.00568770 | complete | req_011Ch2iipCtBvRHaLc4PhAms | 19.55093730 |
+| 2026-11-14 20:12 | W3 P4 p4-1-career-AL2 repair | anthropic/claude-sonnet-5-5 | 11164 | 0 | 2266 | 0.04498800 | complete | req_011Ch2im8Jc7NxAS93EEpVGz | 19.59592530 |
+| 2026-11-14 20:14 | W3 P4 p4-2-full-AL | anthropic/claude-sonnet-5-5 | 26493 | 0 | 13232 | 0.18530600 | complete | req_011Ch2inNySgiE13zoENDpiU | 19.78123130 |
+| 2026-11-14 20:15 | W3 P4 p4-2-full-AL review | anthropic/claude-haiku-5-5 | 21591 | 0 | 6775 | 0.00554660 | complete | req_011Ch2iuefwrxR1vQWnwQ9wm | 19.78677790 |
+| 2026-11-14 20:15 | W3 P4 p4-2-full-AL repair | anthropic/claude-sonnet-5-5 | 6587 | 0 | 1252 | 0.02569400 | complete | req_011Ch2iwu2CqtQSWv8vFZu8f | 19.81247190 |
+| 2026-11-14 20:16 | W3 P4 p4-2-career-AL | anthropic/claude-sonnet-5-5 | 24471 | 0 | 14122 | 0.19016200 | complete | req_011Ch2ixju4fxFi5dJhFpGcu | 20.00263390 |
+| 2026-11-14 20:17 | W3 P4 p4-2-career-AL review | anthropic/claude-haiku-5-5 | 21874 | 0 | 8188 | 0.00628140 | complete | req_011Ch2j66C93THVn3fmRMuGe | 20.00891530 |
+| 2026-11-14 20:17 | W3 P4 p4-2-career-AL repair | anthropic/claude-sonnet-5-5 | 11140 | 0 | 2123 | 0.04351000 | complete | req_011Ch2j8rF5DGa3X1yND3rXQ | 20.05242530 |
+| 2026-11-14 20:19 | W3 P4 p4-2-love-AL | anthropic/claude-sonnet-5-5 | 23265 | 0 | 11846 | 0.16499000 | complete | req_011Ch2jA2PogBSQvYexNMUfc | 20.21741530 |
+| 2026-11-14 20:19 | W3 P4 p4-2-love-AL review | anthropic/claude-haiku-5-5 | 20120 | 0 | 5397 | 0.00471050 | complete | req_011Ch2jGZF74ahhprR9TAsxR | 20.22212580 |
+| 2026-11-14 20:19 | W3 P4 p4-2-love-AL repair | anthropic/claude-sonnet-5-5 | 9433 | 0 | 1546 | 0.03432600 | complete | req_011Ch2jJUQhxXbTCMqt9feAd | 20.25645180 |
+| 2026-11-14 20:21 | W3 P4 p4-2-compat-AL | anthropic/claude-sonnet-5-5 | 33130 | 0 | 11461 | 0.18087000 | complete | req_011Ch2jKMiuBSoDF67PWMwH4 | 20.43732180 |
+| 2026-11-14 20:21 | W3 P4 p4-2-compat-AL review | anthropic/claude-haiku-5-5 | 22212 | 0 | 4429 | 0.00443570 | complete | req_011Ch2jRKUdFBNUn5LJduoKE | 20.44175750 |
+| 2026-11-14 20:21 | W3 P4 p4-2-compat-AL repair | anthropic/claude-sonnet-5-5 | 9486 | 0 | 1737 | 0.03634200 | complete | req_011Ch2jSuQ6913wuroStmw1f | 20.47809950 |
+누적 합계: **$20.47809950** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |
