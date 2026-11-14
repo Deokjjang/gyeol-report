@@ -1,6 +1,6 @@
 import { formatKrw, REPORT_PRICE_TABLE_KRW } from "../payment/reportProductCatalog";
 const PRODUCT_POLICY_SUMMARY_KO =
-  "무형재화/디지털 콘텐츠 · 결제 완료 후 즉시 생성, 최대 24시간 이내 제공 · 생성일로부터 90일 온라인 열람";
+  "무형재화/디지털 콘텐츠 · 결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불 · 생성일로부터 90일 온라인 열람";
 const PRODUCT_REFUND_SUMMARY_KO =
   "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성 시작 또는 결과 제공 후에는 디지털 콘텐츠 특성상 환불이 제한될 수 있습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다.";
 const PRODUCT_CAUTION_KO =
@@ -34,7 +34,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:
@@ -68,7 +68,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:
@@ -102,7 +102,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:
@@ -136,7 +136,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:
@@ -170,7 +170,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:
@@ -204,7 +204,7 @@ export const GYEOL_PRODUCTS = [
     deliveryTypeKo: "결제 후 온라인 리포트 생성/열람",
     formatKo: "자동 생성 디지털 리포트",
     retentionKo: "생성일로부터 90일 열람",
-    servicePeriodKo: "결제 완료 후 즉시 생성, 최대 24시간 이내 제공",
+    servicePeriodKo: "결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불",
     refundSummaryKo: PRODUCT_REFUND_SUMMARY_KO,
     policySummaryKo: PRODUCT_POLICY_SUMMARY_KO,
     summaryKo:

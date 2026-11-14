@@ -53,17 +53,19 @@ describe("이용권 큐 v5 lease(PGlite)", () => {
 
 // 결과표: P3_TABLE_OUT=<파일> pnpm exec vitest run tests/unit/writer/ticketQueue.test.ts
 const table: string[] = ["| 시나리오 | 최종 상태 | Book 열림 | 장별 source | LLM 호출 | 소요(ms) | 비고 |", "|---|---|---|---|---|---|---|"];
-describe("실패 주입 → 정식본만 발행, 아니면 보류(목업 LLM, 비용 0)", () => {
+describe("실패 주입 → 정식본만 발행, 아니면 2차로 미룸 또는 이용권 반환(목업 LLM, 비용 0)", () => {
   beforeAll(() => { process.env.WRITER_V5_PRODUCTS = ALL; });
   afterAll(() => { if (process.env.P3_TABLE_OUT) writeFileSync(process.env.P3_TABLE_OUT, table.join("\n") + "\n"); });
   it.each(SCENARIOS)("$name", async ({ name, behaviors, opts }) => {
     const r = await scenario(h, name, behaviors, opts);
     table.push(`| ${r.name} | ${r.state} | ${r.opens ? "예" : "아니오"} | ${r.sources} | ${r.calls} | ${r.ms} | ${r.note ?? ""} |`);
-    // P6d-ops: 결정론 원고는 고객 최종본으로 내보내지 않는다 → 타임아웃·401은 보류(QUEUED), Book 없음.
-    const deferred = name.includes("보류");
-    if (deferred) expect(r.state).not.toBe("COMPLETED"); else expect(r.state).toBe("COMPLETED");
-    expect(r.opens).toBe(!deferred);
-    if (deferred) expect((await h.db.query<{ state: string }>("select state from report_ticket_redemptions order by created_at desc limit 1")).rows[0].state).toBe("QUEUED");
+    // P6d-ops: 결정론 원고는 고객 최종본으로 내보내지 않는다. W3 P2: 타임아웃은 2차 시도로 미룸(QUEUED), 401(잔액·인증)은 바로 이용권 반환(REVERSED). 둘 다 Book 없음.
+    const deferred = name.includes("보류"), returned = name.includes("반환");
+    if (deferred || returned) expect(r.state).not.toBe("COMPLETED"); else expect(r.state).toBe("COMPLETED");
+    expect(r.opens).toBe(!(deferred || returned));
+    if (deferred || returned) expect((await h.db.query<{ state: string }>("select state from report_ticket_redemptions order by created_at desc limit 1")).rows[0].state).toBe(returned ? "REVERSED" : "QUEUED");
+    // 미룬 작업(연결 아닌 실패는 바로 2차)이 뒤 시나리오의 워커에 집히지 않게 하루 뒤로 둔다.
+    if (deferred) { await h.db.exec("reset role"); await h.db.query("update report_ticket_redemptions set not_before=clock_timestamp()+interval '1 day' where state='QUEUED'"); await h.db.exec("set role service_role"); }
     if (name === "정상") expect(r.sources).toBe("writer 13");
     if (name.includes("이어쓰기")) expect(r.sources).toMatch(/continuation/);
     if (name.includes("강제 종료")) expect(r.sources).toBe("writer 3 · continuation 10");

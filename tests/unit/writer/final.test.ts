@@ -94,26 +94,29 @@ describe("0-2 원문 저장소·0-6 상한(runner)", () => {
 });
 
 describe("0-6 주문당 상한(감독)", () => {
-  it("주문 상한 기본 = 정상 1권 × 2.5(상품별), 설정값이 있으면 그 값, 지난 시도 비용 합", () => {
-    expect(orderCostCap("saju_mbti_full", {})).toBe(0.95); expect(orderCostCap("love_marriage_child", {})).toBe(0.85); expect(orderCostCap("career_money_study", {})).toBe(0.9); expect(orderCostCap("saju_mbti_compatibility", {})).toBe(0.9);
-    expect(orderCostCap(null, {})).toBe(1); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "abc" })).toBe(0.95);
+  // W3 P2: 4종 상한 = 1차 최악 + 2차 최악 + 검수·수리 몫(ORDER_COST_CAP_V2). 그 밖은 정상 1권 × 2.5.
+  it("주문 상한 기본 = 4종은 1차 + 2차 + 검수·수리 몫(상품별), 설정값이 있으면 그 값, 지난 시도 비용 합", () => {
+    expect(orderCostCap("saju_mbti_full", {})).toBe(1.65); expect(orderCostCap("love_marriage_child", {})).toBe(1.6); expect(orderCostCap("career_money_study", {})).toBe(1.6); expect(orderCostCap("saju_mbti_compatibility", {})).toBe(1.65);
+    expect(orderCostCap(null, {})).toBe(1); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "0.8" })).toBe(0.8); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_USD: "abc" })).toBe(1.65);
+    // AM2-3: 세운·대운은 따로 $1.0(ORDER_COST_CAP_AM_USD), 4종은 그대로(W3 P1 병합 — 인자 순서는 HOTFIX-W1(상품, 설정)).
+    expect(orderCostCap("annual_fortune", {})).toBe(1); expect(orderCostCap("major_fortune", { ORDER_COST_CAP_USD: "0.8" })).toBe(1);
+    expect(orderCostCap("major_fortune", { ORDER_COST_CAP_AM_USD: "1.4" })).toBe(1.4); expect(orderCostCap("saju_mbti_full", { ORDER_COST_CAP_AM_USD: "1.4" })).toBe(1.65);
     expect(spentOf([{ cost_usd: "0.2", created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }])).toBeCloseTo(0.65);
     expect(spentOf([{ cost_usd: 0.2, created_at: "2026-11-04T00:00:00Z" }, { cost_usd: 0.45, created_at: "2026-11-04T01:00:00Z" }], "2026-11-04T00:30:00Z")).toBeCloseTo(0.45);
   });
-  // HOTFIX-W1 2부 6: 지난 시도 비용으로 남은 예산이 본문도 못 쓸 만큼이면 작가도 부르지 않고 보류(진행 중인 주문도 다음 시도부터). 보류는 자동 환불 기한까지.
-  it("지난 시도 비용으로 남은 예산이 모자라면 작가를 부르지 않고 보류 — 기한은 첫 실패 + 자동 환불 시간", async () => {
+  // HOTFIX-W1 2부 6: 지난 시도 비용으로 남은 예산이 본문도 못 쓸 만큼이면 작가도 부르지 않는다. W3 P2: 보류 없이 바로 결론(포기 → 자동 환불).
+  it("지난 시도 비용으로 남은 예산이 모자라면 작가를 부르지 않고 바로 포기(비용 상한)", async () => {
     const policyAt = "2026-10-27T03:00:00.000Z", n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload");
     const { text } = mockTextFor(n.value, policyAt);
     const clock = fakeClock(), ops = memoryOpsStore(clock), a = mockAnthropic([{ text }]), o = mockOpenAiWithBody([]);
     const job = { reportId: "report_final_cap_0001", origin: "paid" as const, originRef: "po", payload: n.value, policyAt, sink: memorySink(), budgetMs: 480_000 };
     await ops.store.call("begin", { reportId: job.reportId, origin: "paid", originRef: "po" });
-    await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason: "x", costUsd: 0.61 }, state: {} });
+    await ops.store.call("record", { reportId: job.reportId, run: { lane: "queue", outcome: "deferred", reason: "x", costUsd: 1.6 }, state: {} });
     const decisions: Decision[] = [];
     const r = await superviseQueueJob(job, { store: ops.store, now: clock.now, openAiKey: null, deps: { fetchImpl: routedFetch(a, o), sleep: clock.sleep, now: clock.now, people: async () => [], apiKey: "k" } }, async d => { decisions.push(d); return { ok: true }; });
-    expect(r.decision.kind).toBe("hold"); expect(a.calls).toHaveLength(0);
-    expect(r.decision.kind === "hold" && r.decision.reason).toMatch(/cost_cap 주문당 비용 상한 \$0\.95/);
-    expect(r.decision.kind === "hold" && Date.parse(r.decision.until) - clock.now()).toBe(6 * 3_600_000);
-    expect(decisions.map(d => d.kind)).toEqual(["hold"]);
+    expect(r.decision.kind).toBe("give_up"); expect(a.calls.filter(c => /sonnet/.test(JSON.stringify((c as { body?: unknown }).body ?? "")))).toHaveLength(0);
+    expect(r.decision.kind === "give_up" && r.decision.reason).toMatch(/cost_cap/);
+    expect(decisions.map(d => d.kind)).toEqual(["give_up"]);
   });
 });
 
@@ -130,12 +133,14 @@ describe("0-5 예산 관문(tools/llm/budget.ts)", () => {
       const call = (maxOutputTokens: number, user = "u") => g.stream({ provider: "anthropic", model: "claude-sonnet-5-5", system: "s", user, maxOutputTokens, timeoutMs: 1000 });
       expect((await call(100)).text).toBe("x"); expect(inner).toBe(1);
       const big = await call(100_000); expect(big.error?.code).toBe("budget_refused"); expect(inner).toBe(1);
-      await g.cache.get("k1"); const r = B2.readLedger(); r.calls.push({ ...r.calls[0], key: "k1" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r));
+      // AM2: 키는 입력(모델·지침·사용자 메시지)에서 다시 센다(병렬 묶음 호출에서 get→stream 순서가 섞여도 엇갈리지 않게).
+      const { rawKey } = await import("@/lib/writer/runner");
+      expect(B2.readLedger().calls[0].key).toBe(rawKey("claude-sonnet-5-5", "s", "u"));
       await g.cache.get("k1"); expect((await call(100)).error?.code).toBe("budget_refused"); expect(g.refusals().some(x => /같은 입력 해시/.test(x))).toBe(true);
       expect(readFileSync(log, "utf8")).toMatch(/누적 합계: \*\*\$0\.00100000\*\*/);
       // 출력 0·비용 0인 실패(401 등)는 재생성으로 세지 않는다 — 같은 입력을 다시 부를 수 있다.
-      const r2 = B2.readLedger(); r2.calls.push({ ...r2.calls[0], key: "k401", output: 0, costUsd: 0, finish: "error:http_401" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r2));
-      await g.cache.get("k401"); expect((await call(100)).text).toBe("x"); expect(inner).toBe(2);
+      const r2 = B2.readLedger(); r2.calls.push({ ...r2.calls[0], key: rawKey("claude-sonnet-5-5", "s", "u401"), output: 0, costUsd: 0, finish: "error:http_401" }); writeFileSync(join(dir, "llm-ledger.json"), JSON.stringify(r2));
+      expect((await call(100, "u401")).text).toBe("x"); expect(inner).toBe(2);
       expect(B2.startGate({ scope: "t", runBudget: 1, books: 1, log: () => undefined }).ok).toBe(false);
       expect(() => B2.budgetGate({ scope: "t", run: "r2", runBudget: 0, stage: "x" })).toThrow();
     } finally { delete process.env.LLM_CACHE_DIR; delete process.env.LLM_COST_LOG; }
@@ -278,6 +283,7 @@ describe("1-9·1-10·1-14·1-15", () => {
     const startup = career("IT 서비스 창업(대표·개발)").replace(/"(?:\d순위 )?직군: [^"]*"/g, m => m.includes("지금 목표·직업 분야") ? m : "").replace(/부동산·땅: [^"]*/g, ""); // 투자 성향 줄(「작업실·매장처럼 쓰임이 있는 공간」)은 장면이 아니다
     expect(startup).toMatch(/출시 날짜와 첫 고객까지/);
     expect(startup).not.toMatch(/가게|단골|손님|매장|위생 점검|임대차|상권/);
+    // W3 P1: 커리어 문구는 4종 운영(master) 그대로 — AM 문구(「지키며 키울까 넓혀 갈까」)는 P3에서 판단.
     expect(startup).toMatch(/내 사업은 운영형일까 확장형일까/);
     expect(startup).toMatch(/상황 씨앗: (투자 유치 자료|출시 일정|월간 지표|팀원 채용|고객 인터뷰|서비스 로드맵|사무실 계약|지원사업 신청서|데모 시연|주간 팀 미팅)/);
     expect(career("카페 사장")).toMatch(/내 가게는 운영형일까 확장형일까/);

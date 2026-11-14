@@ -17,6 +17,9 @@ import { ACCOUNT_POLICY_VERSIONS } from "../../../src/lib/account/policy";
 import { createCheckoutConsentAssertion } from "../../../src/lib/payment/checkoutConsent";
 import { generateReportSnapshot } from "../../../src/lib/payment/paidReportReliability";
 import { confirmedAdultDevTossCheckoutLegalConfirmations } from "../../../src/components/payment/DevTossCheckoutLauncher";
+import { TICKET_PRODUCT_CODE, TICKET_PRODUCTS } from "../../../src/lib/ops/config";
+// 실제 SQL(PGlite) + 6종 V4 생성: 혼자 돌려도 준비가 20초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 60_000 });
 const A="11111111-1111-4111-8111-111111111111", B="22222222-2222-4222-8222-222222222222";
 const now = new Date(), clock = { evaluatedAt: now.toISOString(), policyDate: now.toISOString() };
 const fixtures = RUNTIME_FIXTURES.map(f => ({ ...f, payload: f.id === "annual" ? { ...f.payload, productOptions: { ...("productOptions" in f.payload ? f.payload.productOptions : {}), selectedYear: String(now.getFullYear()) } } : f.payload }));
@@ -31,7 +34,7 @@ beforeAll(async()=>{
   await db.query("insert into auth.users values($1),($2)",[A,B]); store=sqlTicketStore(db);
   for(const f of fixtures) { const r=await generateV4ShadowReport(f.payload,clock); expect(r.ok,f.id).toBe(true);generated.set(f.id,r); }
   if(process.env.TICKET_REVIEW_EXPORT){mkdirSync(process.env.TICKET_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.TICKET_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(fixtures));writeFileSync(`${process.env.TICKET_REVIEW_EXPORT}/consent.json`,JSON.stringify(createCheckoutConsentAssertion(confirmedAdultDevTossCheckoutLegalConfirmations)));}
-},30000);
+},180_000);
 beforeEach(async()=>{await db.exec("reset role; truncate report_ticket_grants cascade; set role service_role;");});
 afterAll(async()=>{await db?.close();});
 describe("ticket ledger: actual SQL, no provider",()=>{
@@ -112,6 +115,13 @@ describe("ticket ledger: actual SQL, no provider",()=>{
   });
   it.each(fixtures)("$id one ticket → same generator/validator → snapshot → 9C owner/library",async f=>{
     await grant();const g=generated.get(f.id)!;const key=randomUUID();
+    if(!(TICKET_PRODUCTS as readonly string[]).includes(f.payload.productKey)){
+      // AM 3부: 이용권은 출시 4종에만 쓴다. 대운·세운은 판매를 열어도 결제로만 — 이용권은 쓰이지 않고 책도 생기지 않는다.
+      vi.stubEnv("FORTUNE_SALES_OPEN","1");vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST","2000-01-01T00:00:00+09:00");vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW","4900");vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW","4900");
+      try{expect(await redeemReportTicket(store,A,key,f.payload,{now,generate:async()=>g}),f.id).toEqual({ok:false,code:TICKET_PRODUCT_CODE});}finally{vi.unstubAllEnvs();}
+      expect(await summary()).toMatchObject({quantity:1});expect((await store.call("library",A)).items).toEqual([]);
+      return;
+    }
     const result=await redeemReportTicket(store,A,key,f.payload,{now,generate:async()=>g});expect(result,f.id).toMatchObject({ok:true,state:"COMPLETED"});
     const read=await store.call("read",A,{reportId:result.reportId});expect(read.status).toBe("COMPLETED");
     const snapshot=read.snapshot as {draft:unknown;evidencePacket:V4RuntimeEvidence};expect(g.ok && snapshot.draft).toEqual(g.ok && g.draft);expect(g.ok && snapshot.evidencePacket).toEqual(g.ok && g.evidencePacket);
@@ -119,8 +129,6 @@ describe("ticket ledger: actual SQL, no provider",()=>{
     expect((await store.call("library",A)).items).toHaveLength(1);expect((await store.call("library",B)).items).toEqual([]);expect((await store.call("read",B,{reportId:result.reportId})).ok).toBe(false);
     expect(await summary()).toMatchObject({quantity:0});expect(await redeemReportTicket(store,A,key,f.payload,{now})).toMatchObject({state:"COMPLETED",reportId:result.reportId});
     expect((await db.query("select * from payment_orders")).rows).toHaveLength(0);
-    if(f.id==="major")expect((snapshot.draft as {major:{years:unknown[]}}).major.years).toHaveLength(14);
-    if(f.id==="annual")expect((snapshot.draft as {annual:{months:unknown[]}}).annual.months).toHaveLength(12);
   });
   it.each(["parentChild","managerReport"])("compatibility %s role remains canonical",async category=>{
     await grant();const f=COMPATIBILITY_NARRATIVE_FIXTURES.find(f=>f.payload.relationshipType===category)!;

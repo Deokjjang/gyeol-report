@@ -28,6 +28,7 @@ export function josa(word: string, pair: "은는" | "이가" | "을를" | "과�
   return word + (batchim ? pair[0] : pair[1]);
 }
 /** 글자 하나 + 한글 읽기: "亥(해)". 조사는 josa로 읽기 기준. */
+export const branchKo = (ch: string) => BRANCH_KO[ch as EarthlyBranch] ?? ch;
 export const glyphLabel = (ch: string) => `${ch}(${STEM_KO[ch as HeavenlyStem] ?? BRANCH_KO[ch as EarthlyBranch] ?? ch})`;
 export const ganjiOf = (p: Pillar) => ({ hanja: p.stem + p.branch, hangul: STEM_KO[p.stem] + BRANCH_KO[p.branch] });
 export const ganjiLabel = (p: Pillar) => `${p.stem}${p.branch}(${STEM_KO[p.stem]}${BRANCH_KO[p.branch]})`;
@@ -131,3 +132,18 @@ export const koCount = (n: number, unit: string) => (Number.isInteger(n) && n >=
 /** 다섯 힘의 쉬운 이름(P6e 14): 첫 등장에 "내 방식의 힘(비겁)", 그 뒤로는 쉬운 이름만. */
 export const GROUP_EASY: Readonly<Record<"PEER" | "OUTPUT" | "WEALTH" | "OFFICER" | "RESOURCE", string>> = { PEER: "내 방식의 힘", OUTPUT: "만드는 힘", WEALTH: "값을 받는 힘", OFFICER: "규칙의 힘", RESOURCE: "배우는 힘" };
 export const GROUP_EASY_BY_NAME: Readonly<Record<string, string>> = { 비겁: "내 방식의 힘", 식상: "만드는 힘", 재성: "값을 받는 힘", 관성: "규칙의 힘", 인성: "배우는 힘" };
+/**
+ * AM2-3 5부·1-2(덕짱님과 정한 시안): 흐름은 점 5개 + 단어. 화면·카드·검사가 이 표 하나에서 읽는다(숫자 X/5는 고객에게 보이지 않는다).
+ * FLOW_WORD = 화면 단어(잔잔·느림·보통·활발·거셈), FLOW_DESC = 작가 카드의 서술형 값(명사 값 「잔잔함」을 그대로 붙인 비문 「잔잔함인」을 막는다).
+ */
+export const FLOW_WORD: Readonly<Record<number, string>> = { 1: "잔잔", 2: "느림", 3: "보통", 4: "활발", 5: "거셈" };
+export const FLOW_DESC: Readonly<Record<number, string>> = { 1: "흐름이 잔잔한 편", 2: "흐름이 느린 편", 3: "흐름이 보통인 편", 4: "흐름이 활발한 편", 5: "흐름이 거센 편" };
+/** 본문에서 흐름 세기를 말하는 꼴(단어별). key별 값 대조 검사가 쓴다. */
+export const FLOW_TALK: Readonly<Record<number, RegExp>> = { 1: /잔잔/, 2: /느[린리려릴립]|느림/, 3: /보통/, 4: /활발/, 5: /거[세센셈셉]/ };
+export const flowWord = (score: number) => FLOW_WORD[Math.max(1, Math.min(5, Math.round(score)))] ?? "보통";
+/** AM2-3 5부 흐름표 아래 십성 한 줄 사전(쉬운 뜻, 화면 전용 짧은 이름표 — 본문 근거는 지식 DB 뜻 줄). */
+export const TEN_GOD_EASY: Readonly<Record<string, string>> = {
+  비견: "나와 같은 기운 — 내 편과 경쟁", 겁재: "나와 닮은 다른 기운 — 승부욕과 나눔", 식신: "만들어 내는 기운 — 손과 입의 즐거움", 상관: "틀을 깨는 표현 — 말과 아이디어",
+  편재: "크고 움직이는 돈 — 사람과 거래", 정재: "정해지고 꾸준한 돈 — 관리와 살림", 편관: "다그치는 힘 — 마감과 도전", 정관: "바르게 다스리는 힘 — 규칙과 평가",
+  편인: "옆길로 이끄는 배움 — 남다른 공부와 생각", 정인: "돌봐 주는 기운 — 도움과 배움",
+};

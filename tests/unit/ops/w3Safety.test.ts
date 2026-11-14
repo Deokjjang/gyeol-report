@@ -29,7 +29,7 @@ import { GET as salesStatus } from "../../../src/app/api/sales/route";
 import { closedProductOrder, confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliabilityStore";
 import { enqueueTicketPublication } from "../../../src/lib/tickets/publication";
-import { SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../src/lib/ops/config";
+import { FORTUNE_REOPEN_LINE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../src/lib/ops/config";
 import { AUTO_PAUSE, autoPauseCheck, connectionRun, creditAlerter, rateAlert, type RunLite } from "../../../src/lib/ops/generation/alerts";
 import { watchFetch, type QuotaSeen } from "../../../src/lib/ops/generation/sinks";
 import { handleAdminAction, type AdminActionDeps } from "../../../src/lib/ops/admin/actions";
@@ -113,7 +113,7 @@ describe("판매 중지가 막는 곳", () => {
     const shelf = renderToStaticMarkup(createElement(BookShelf, { inputPath: "/report/new", year: 2026, closed: ["major_fortune", "annual_fortune"] }));
     expect(shelf).toContain("data-sales-paused");
     expect(shelf.match(/잠시 쉬는 중/g)?.length).toBeGreaterThanOrEqual(4);
-    expect(shelf).toContain("12월 1일 · 2027 신년판 공개");
+    expect(shelf).toContain(FORTUNE_REOPEN_LINE);
     pause.on = false;
     expect(renderToStaticMarkup(createElement(BookInput, { internal: false, now: "2026-11-14T01:00:00.000Z" }))).not.toContain("data-sales-paused");
     expect(renderToStaticMarkup(createElement(BookShelf, { inputPath: "/report/new", year: 2026, closed: [] }))).not.toContain("잠시 쉬는 중");

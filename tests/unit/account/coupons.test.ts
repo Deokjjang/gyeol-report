@@ -20,6 +20,8 @@ import type { AccountPort } from "../../../src/lib/account/handler";
 import { libraryItem, type LibraryRow } from "../../../src/lib/library/model";
 import { handleTickets } from "../../../src/lib/tickets/handler";
 import type { TossConfirmRequest,TossConfirmClientResult } from "../../../src/lib/payment/tossConfirmTypes";
+// 실제 SQL(PGlite) + 실제 V4 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 180_000 });
 const A="11111111-1111-4111-8111-111111111111",B="22222222-2222-4222-8222-222222222222";
 const member=(user=A):CouponIdentity=>({user,actor:`user:${user}`}),guest=(char="a"):CouponIdentity=>({user:null,actor:`guest:${char.repeat(64)}`});
 const now=new Date(),consent=createCheckoutConsentAssertion(confirmedAdultDevTossCheckoutLegalConfirmations);
@@ -36,7 +38,7 @@ const mock=vi.fn(async(payment:TossConfirmRequest):Promise<TossConfirmClientResu
 const complete=(orderId:string,identity=member())=>confirmCouponOrder(store,identity,orderId,`mock-${orderId}`,mock);
 beforeAll(async()=>{db=await createCouponTestDatabase();await db.query("insert into auth.users values($1),($2)",[A,B]);store=sqlCouponStore(db);
   if(process.env.COUPON_REVIEW_EXPORT){mkdirSync(process.env.COUPON_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.COUPON_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(fixtures));writeFileSync(`${process.env.COUPON_REVIEW_EXPORT}/consent.json`,JSON.stringify(consent));}
-},30000);
+},180_000);
 beforeEach(async()=>{await db.exec("reset role;truncate coupon_definitions,payment_orders cascade;");await seedCouponFixtures(db);await db.exec("set role service_role");mock.mockClear();});
 afterAll(async()=>{await db?.close();});
 describe("coupon pricing / SQL authority",()=>{

@@ -1,6 +1,6 @@
 import { randomUUID, randomBytes } from "node:crypto";
 import assert from "node:assert/strict";
-import { beforeAll, afterAll, describe, it, expect } from "vitest";
+import { beforeAll, afterAll, describe, it, expect, vi } from "vitest";
 import type { PGlite } from "@electric-sql/pglite";
 import { localMeasurementDatabase, sqlMeasurementStore } from "../../../src/lib/analytics/localReview";
 import { measurementFacts, claimPurchase, type MeasurementPort } from "../../../src/lib/analytics/server";
@@ -20,6 +20,12 @@ import { sqlCouponStore, sqlCouponReliability } from "../../../src/lib/coupons/l
 import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
+import { TICKET_PRODUCTS } from "../../../src/lib/ops/config";
+import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
+// 실제 SQL(PGlite) + 실제 작업자: 혼자 돌려도 한 시험이 5초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 180_000 });
+/** 검수 캠페인 쿠폰(seedCampaignFixtures)은 300원 정액 할인 — 결제 사실 금액 = 카탈로그 가격 − 300. */
+const COUPON_PAID_KRW = getReportProduct(RUNTIME_FIXTURES[0].payload.productKey)!.amount - 300;
 let db: PGlite, port: MeasurementPort, campaigns: CampaignStore, legacyReport: string;
 async function user() {
   const id = randomUUID(); await db.query("insert into auth.users(id) values($1)", [id]);
@@ -38,7 +44,7 @@ beforeAll(async () => {
   assert.ok(typeof result.reportId === "string");
   legacyReport=result.reportId!;
   db = (await localMeasurementDatabase())!; await seedCampaignFixtures(db); port = sqlMeasurementStore(db); campaigns = sqlCampaignStore(db);
-}, 30000);
+}, 180_000);
 afterAll(async () => { await db?.close(); });
 describe("12B server campaign and measurement authority", () => {
   it("migration suppresses historical V3 replay without removing the paid fact", async () => {
@@ -80,10 +86,13 @@ describe("12B server campaign and measurement authority", () => {
     const landing = {event:"campaign_landing_opened" as const,eventId:`${randomUUID()}:campaign_landing_opened`};
     expect(funnelCounts([{...landing,campaign:"book-ticket"},{...landing,campaign:"book-coupon"},{...landing,campaign:"book-coupon"}]).campaign_landing_opened).toBe(2);
   });
-  it("ticket publication in all six products is real/complete, never Purchase; stable facts", async () => {
+  // AM 3부: 이용권은 출시 4종에만 쓴다(대운·세운은 결제로만 — tickets 시험이 거절을 본다).
+  it("ticket publication in all four ticket products is real/complete, never Purchase; stable facts", async () => {
     const id = await acquired("book-other");
-    await sqlTicketStore(db).call("grant",id,{quantity:6,sourceType:"manual",sourceRef:randomUUID(),key:randomUUID(),reason:"LOCAL_TEST"});
-    for (const fixture of RUNTIME_FIXTURES.slice(0,6)) {
+    const ticketFixtures = RUNTIME_FIXTURES.slice(0,6).filter(f => (TICKET_PRODUCTS as readonly string[]).includes(f.payload.productKey));
+    expect(ticketFixtures).toHaveLength(TICKET_PRODUCTS.length);
+    await sqlTicketStore(db).call("grant",id,{quantity:ticketFixtures.length,sourceType:"manual",sourceRef:randomUUID(),key:randomUUID(),reason:"LOCAL_TEST"});
+    for (const fixture of ticketFixtures) {
       const original = structuredClone(fixture.payload);
       const payload = original.productKey === "annual_fortune" ? { ...original, productOptions: { selectedYear: String(new Date().getFullYear()) } } : original;
       const result = await redeemReportTicket(sqlTicketStore(db),id,randomUUID(),payload);
@@ -91,11 +100,12 @@ describe("12B server campaign and measurement authority", () => {
     }
     await reconcileCampaigns(campaigns,id);
     const facts = await measurementFacts(port,id), count = funnelCounts(facts);
-    expect(count.report_published).toBe(6); expect(count.ticket_redeemed).toBe(6); expect(count.payment_succeeded).toBe(0); expect(count.publishing_started).toBe(6);
+    const n = ticketFixtures.length;
+    expect(count.report_published).toBe(n); expect(count.ticket_redeemed).toBe(n); expect(count.payment_succeeded).toBe(0); expect(count.publishing_started).toBe(n);
     expect(count.campaign_benefit_granted).toBe(1); expect(facts).toEqual(await measurementFacts(port,id));
     expect(JSON.stringify(facts)).not.toMatch(/snapshot|birthDate|mbtiType|personA|displayName|context_hash/);
-  },30000);
-  it("coupon Purchase actual 1190, before generation; concurrent callbacks/refresh/tabs once", async () => {
+  });
+  it("coupon Purchase actual (catalog price − coupon), before generation; concurrent callbacks/refresh/tabs once", async () => {
     const id = await acquired("book-coupon");
     const grant = (await db.query<{coupon_grant_id:string}>("select coupon_grant_id from campaign_attributions where user_id=$1",[id])).rows[0].coupon_grant_id;
     const identity = {user:id,actor:`user:${id}`}, store = sqlCouponStore(db);
@@ -103,16 +113,16 @@ describe("12B server campaign and measurement authority", () => {
     expect(reserve.ok).toBe(true);
     const paid = await confirmCouponOrder(store,identity,reserve.orderId!,`mock-${reserve.orderId}`,async p=>({ok:true,confirm:{provider:"toss",paymentKeyReceived:true,orderId:p.orderId,amount:p.amount,status:"DONE",approvedAt:new Date().toISOString()}}));
     expect(paid.ok).toBe(true);
-    const facts = await measurementFacts(port,id); expect(facts.find(f=>f.event==="payment_succeeded")?.value).toBe(1190);
+    const facts = await measurementFacts(port,id); expect(facts.find(f=>f.event==="payment_succeeded")?.value).toBe(COUPON_PAID_KRW);
     expect(facts.some(f=>f.event==="report_published")).toBe(false);
     const claims = await Promise.all(Array.from({length:12},()=>claimPurchase(port,paid.reportId!)));
-    const only = claims.flatMap(c=>c.purchase?[c.purchase]:[]); expect(only).toHaveLength(1); expect(only[0].value).toBe(1190);
-    expect(metaPurchase(only[0])?.params.value).toBe(1190); expect(only[0].eventId).toBe(facts.find(f=>f.event==="payment_succeeded")?.eventId);
+    const only = claims.flatMap(c=>c.purchase?[c.purchase]:[]); expect(only).toHaveLength(1); expect(only[0].value).toBe(COUPON_PAID_KRW);
+    expect(metaPurchase(only[0])?.params.value).toBe(COUPON_PAID_KRW); expect(only[0].eventId).toBe(facts.find(f=>f.event==="payment_succeeded")?.eventId);
     await runLocalBookJob(sqlCouponReliability(db));
     expect((await claimPurchase(port,paid.reportId!)).duplicate).toBe(true);
     const complete = await measurementFacts(port,id); expect(funnelCounts(complete).report_published).toBe(1);
     expect(funnelCounts([...complete,...complete]).payment_succeeded).toBe(1);
-  },30000);
+  });
   it("RLS / grants deny anon and authenticated; public gates remain off", async () => {
     for (const role of ["anon","authenticated"]) await expect(db.transaction(async tx => {await tx.exec(`set local role ${role}`);await tx.query("select claim_meta_purchase('report_fake')");})).rejects.toThrow(/permission denied/);
     for (const role of ["anon","authenticated"]) await expect(db.transaction(async tx => {await tx.exec(`set local role ${role}`);await tx.query("select * from meta_purchase_dispatches");})).rejects.toThrow(/permission denied/);

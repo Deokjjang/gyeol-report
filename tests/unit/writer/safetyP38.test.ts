@@ -57,11 +57,11 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
     expect(xMajor.chapters.at(-1)!.materials.some(m => m.kind === "trait" && m.angle === "first")).toBe(false);
   });
 
-  it("1: 전환 장은 전환 해가 건드린 trait만(앞에서 소개된 것) 참조, 원국 특성 재소개 없음", () => {
-    const tr = xMajor.chapters.find(c => c.id === "transition")!;
+  // AM 3부: 대운 전환 장은 「turn」(교운기·마음가짐 근거). 원국 특성은 다시 소개하지 않고 앞 장 특성만 참조한다.
+  it("1: 전환 장은 원국 특성 재소개 없이 교운기 근거와 앞 장 참조만", () => {
+    const tr = xMajor.chapters.find(c => c.id === "turn")!;
     expect(tr.materials.some(m => m.kind === "trait")).toBe(false);
-    const keys = xMajor.timeline!.keyEntries;
-    for (const m of tr.materials) if (m.kind === "ref" && /^traits\./.test(m.ref)) expect(m.note).toMatch(new RegExp(keys.join("|")));
+    expect(tr.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["turnWhen", "turnMind"]);
   });
 
   it("1: 이미지 계열은 그림 대상(저장·식물…)으로 묶어 대표 하나, 연·월 열쇠말은 일간 기준 십성", () => {

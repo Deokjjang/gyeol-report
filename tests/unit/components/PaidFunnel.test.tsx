@@ -300,7 +300,7 @@ describe("paid funnel contracts and progressive review", () => {
     expect(tree.filter((el) => el.type === "a").map((el) => el.props.href)).toEqual(["/refund", "/terms", "/privacy", "/refund", "/business"]);
     expect(tree.some((el) => el.type === "fieldset")).toBe(true);
     const text = JSON.stringify(tree.map((el) => typeof el.props.children === "string" ? el.props.children : ""));
-    for (const term of ["최대 24시간", "90일", "만 14세", "만 19세", "사람 상담 아님"]) expect(text).toContain(term);
+    for (const term of ["30분 안에 못 만들면", "90일", "만 14세", "만 19세", "사람 상담 아님"]) expect(text).toContain(term);
     const css = readFileSync("src/components/payment/paidFunnel.module.css", "utf8");
     expect(css).toContain("prefers-reduced-motion: reduce");
     expect(css).toContain(":focus-visible");

@@ -42,7 +42,7 @@ function request(payload: unknown = RUNTIME_FIXTURES[0].payload, requestOrigin: 
 beforeEach(() => {
   state.book = state.account = false; state.orders = []; state.auth = auth(); state.library = library(); state.cookie = ""; state.owned = false;
   vi.useFakeTimers(); vi.setSystemTime(new Date(SHADOW_CLOCK.evaluatedAt));
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_client_not_real"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_secret_not_real");
 });
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
@@ -127,7 +127,7 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
       delete evidence.contentDigest; evidence.contentDigest = v4Digest(evidence);
       expect(validateV4Publication("annual_fortune", result.draft, evidence).errors).toContain("V4_EDITORIAL_BLOCKED");
     }
-  }, 30000);
+  }, 180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it.each([false, true])("legacy purchase remains V3 with Book gate %s", async book => {
     state.book = book;
     const payload = RUNTIME_FIXTURES[0].payload;
@@ -165,7 +165,7 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
     if (f.id === "annual") expect(book.data.pages.find(p => p.kind === "months")?.months).toHaveLength(12);
     expect((await readPublishedReport(store, reportId, validateBookPublication)).snapshot).toEqual(snapshot);
     expect(fetch).not.toHaveBeenCalled();
-  }, 30000);
+  }, 180_000);
   it("purchase identity mismatch fails closed before generation", async () => {
     state.book = true;
     const store: ReliabilityStore = { call: vi.fn(async action => action === "claim_job" ? { ok: true, job: { order_id: "one", report_id: reportId, product_type: "saju_mbti_full" } } : { ok: true, order: { payment_order_id: "different", status: "paid" } }) };

@@ -7,10 +7,16 @@ import { createDurablePaymentOrderAdapter, type ReliabilityResult, type Reliabil
 import { confirmPaidReport, runPaidReportJob } from "../../../src/lib/payment/paidReportReliability";
 import { recoverPendingPayment } from "../../../src/lib/payment/paymentConfirmRecovery";
 import { generateProductReport } from "../../../src/lib/report-generation/generateProductReport";
+import { FORTUNE_SALES_OPEN_AT } from "../../../src/lib/ops/config";
+import { reportPriceKrw } from "../../../src/lib/payment/reportProductCatalog";
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 
 const mocks = vi.hoisted(() => ({ runtime: vi.fn() }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: mocks.runtime }));
+// P 추가 A: 결제는 같은 출처(Origin) + 로그인한 회원만. 계정·서재·운영 저장소는 로컬 대역(customerDayunGeneration 시험과 같은 방식). 주문·동의 근거 SQL은 진짜(PGlite).
+vi.mock("../../../src/lib/account/supabase", async () => (await import("../../helpers/opsStoreStub")).memberAccountModule);
+vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: async () => true }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
 
 const acceptedAt = new Date("2026-09-22T00:00:00.000Z");
@@ -30,7 +36,7 @@ function requestBody() {
   return { provider: "toss", productType: "career_money_study", inputSnapshot: { birthDate: person.birthDate, reportInputPayload: reportInput() }, consent: adultCheckoutConsent() };
 }
 async function prepare(body: unknown) {
-  const response = await POST(new Request("https://example.test/api/payment-checkout/prepare", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(body) }));
+  const response = await POST(new Request("https://gyeolreport.com/api/payment-checkout/prepare", { method: "POST", headers: { "content-type": "application/json", origin: "https://gyeolreport.com" }, body: JSON.stringify(body) }));
   return { status: response.status, body: await response.json() };
 }
 let db: PGlite;
@@ -48,6 +54,8 @@ beforeAll(async () => {
   for (const file of ["supabase/migrations/20260920163924_production_reliability_reconcile.sql", "scripts/paid_report_quarantine_recovery_patch.sql", "scripts/paid_payment_confirm_recovery_queue_patch.sql", "scripts/paid_report_publish_expiry_patch.sql", "scripts/paid_report_external_call_guard_patch.sql"]) await db.exec(readFileSync(file, "utf8"));
   await db.exec(patch);
   await db.exec(readFileSync("supabase/migrations/20261010095005_v4_ticket_bundle_commerce.sql", "utf8").split("create table public.ticket_bundle_orders")[0] + "commit;");
+  // 운영과 같은 상태: 복구 대기열은 가격 숫자를 비교하지 않는다(v5 최종 2-4). 카탈로그 가격이 바뀌어도 복구가 RECOVERY_ORDER_MISMATCH로 멈추지 않는다.
+  await db.exec(readFileSync("supabase/migrations/20261105090000_v5_final_payment_recovery_price_free.sql", "utf8"));
   store = { async call(action, data = {}) {
     const result = await db.query<{ value: ReliabilityResult }>("select public.paid_report_reliability($1,$2::jsonb) as value", [action, JSON.stringify(data)]);
     return result.rows[0].value;
@@ -107,16 +115,20 @@ describe("public prepare consent boundary with real durable SQL and mock provide
   });
 
   it.each(products)("%s accepts existing assertions without changing price or URLs", async (key, slug) => {
+    // 대운·세운은 판매 시작 시각(운영 모드는 시험용 시각 바꾸기를 읽지 않는다) 뒤, 판매 스위치·가격 설정값이 있을 때만 결제를 연다.
+    const fortune = key === "major_fortune" || key === "annual_fortune";
+    const at = fortune ? new Date(FORTUNE_SALES_OPEN_AT) : acceptedAt;
+    if (fortune) { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", String(reportPriceKrw("major_fortune"))); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", String(reportPriceKrw("annual_fortune"))); vi.setSystemTime(at); }
     const body = { ...requestBody(), productType: key, inputSnapshot: { reportInputPayload: reportInput(key, slug) } };
     const result = await prepare(body);
     expect(result.status, JSON.stringify(result.body)).toBe(200);
-    expect(result.body.paymentOrder).toMatchObject({ productType: key, amount: 1490, currency: "KRW", status: "ready" });
+    expect(result.body.paymentOrder).toMatchObject({ productType: key, amount: reportPriceKrw(key), currency: "KRW", status: "ready" });
     expect(JSON.stringify(result.body.tossCheckoutRequest)).toContain("/payments/toss/success");
     expect(JSON.stringify(result.body.tossCheckoutRequest)).toContain("/payments/toss/fail");
     expect(JSON.stringify(result.body)).not.toMatch(/consentEvidence|policyVersions|assertions/);
     const stored = (await orders())[0].input_snapshot;
     expect(Object.keys(stored)).toEqual(["consentEvidence"]);
-    expect(stored.consentEvidence).toMatchObject({ acceptedAt: acceptedAt.toISOString(), ageBand: "adult", policyVersions: CHECKOUT_POLICY_VERSIONS });
+    expect(stored.consentEvidence).toMatchObject({ acceptedAt: at.toISOString(), ageBand: "adult", policyVersions: CHECKOUT_POLICY_VERSIONS });
   });
 
   it.each(["termsAccepted", "privacyAccepted", "refundAccepted", "inputAccuracy", "digitalReportStart", "refundRestriction", "age14OrOlder"] as const)("%s missing/false/truthy strings cannot create an order", async key => {
@@ -183,8 +195,8 @@ describe("public prepare consent boundary with real durable SQL and mock provide
   it("callback/recovery/retry/admin retry preserve original evidence and never expose it in reports", async () => {
     const { body } = await prepare(requestBody());
     const original = (await orders())[0].input_snapshot;
-    const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-payment", amount: 1490 };
-    const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: 1490, status: "DONE" } }));
+    const payment = { orderId: body.paymentOrder.providerOrderId as string, paymentKey: "mock-payment", amount: body.paymentOrder.amount as number };
+    const provider = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: payment.orderId, amount: payment.amount, status: "DONE" } }));
     await store.call("confirm_claim", payment);
     await db.exec("update payment_orders set confirm_lease_until=now()-interval '1 second'");
     expect(await recoverPendingPayment(store, provider)).toMatchObject({ ok: true });

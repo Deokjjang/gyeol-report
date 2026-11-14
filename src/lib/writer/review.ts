@@ -9,6 +9,8 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { shinsalAliases } from "@/lib/factsheet/aliases";
+import { fixedTimeOf, hasYearName } from "@/lib/factsheet/check";
+import { yinYangLean } from "./safety/lint";
 import type { FinalChapter } from "./safety";
 import { splitSentences } from "./safety/patterns";
 
@@ -45,12 +47,12 @@ export const REVIEW_SCHEMA = {
 export const REVIEW_SYSTEM = `너는 결리포트(사주×MBTI 리포트) 원고의 검수자다. 번호 붙은 책을 읽고 아래 7범주의 문제만 찾아 JSON으로 답한다. 문체 취향·더 좋은 표현 제안은 하지 않는다.
 
 범주(이 밖은 쓰지 않는다):
-- F 사실·뜻 불일치: 정답지(fs:…)나 DB 뜻풀이(db:…)와 어긋나는 명리·MBTI 주장. 신살·귀인의 자리·주인, 강약, 오행 개수와 세기, 관계(합·충·형), 간지·연도, 오행 뜻을 이 사람 일간 기준과 다른 십성으로 푼 것, 다른 MBTI 유형의 특성을 이 유형 것처럼 쓴 것, 정답지·DB 어디에도 근거가 없는 명리 단정. ref에 근거 항목 id(아래 목록의 fs:… 또는 db:…) 필수.
+- F 사실·뜻 불일치: 정답지(fs:…)나 DB 뜻풀이(db:…)와 어긋나는 명리·MBTI 주장. 신살·귀인의 자리·주인, 강약, 오행 개수와 세기, 관계(합·충·형), 간지·연도, 오행 뜻을 이 사람 일간 기준과 다른 십성으로 푼 것, 다른 MBTI 유형의 특성을 이 유형 것처럼 쓴 것, 정답지·DB 어디에도 근거가 없는 명리 단정. 십성이 「몇 자리·몇 개」인지는 tenGodSurfaceCount(겉 글자: 천간 + 지지 정기)로만 센다 — 지지 속(지장간)은 자리 수에 넣지 않는다. 달·해 이름은 책의 「### (…)」 이름표 줄을 따른다. ref에 근거 항목 id(아래 목록의 fs:… 또는 db:…) 필수.
 - C 같은 사람 모순: 같은 사람에 대해 둘 다 참일 수 없는 두 문장(이 책 안, 또는 이전 책 요약 줄 p번호). s = 이 책의 뒤쪽 문장, s2 = 다른 문장 번호 필수.
 - I 입력 밖 상황 단정: 입력에 없는 직업 상황·사람(직원·투자자·팀원)·돈 사정·연애 사정·가족 구성원·과거 사건을 사실처럼 단정. 가정형("~라면")·질문형은 제외. field에 넘어선 입력 칸(input.job·input.relationship·input.children·input.relationType·input.money·input.family) 필수.
 - R 다른 장의 같은 뜻 반복: 다른 장에서 같은 장면·같은 처방·같은 비유·같은 성향 설명을 되풀이. s = 뒤쪽 문장, s2 = 앞쪽 문장 필수. 같은 소제목 안 흐름은 반복이 아니다.
 - L 내부 라벨·면책·생성 규칙 노출: 분류 라벨(「·십이신살」), "시기는 말하지 않아요" 같은 면책, "가정 아래에서만"·"~가 계시다면" 같은 작성 규칙이 독자에게 보임.
-- T 시점 표현 위반: 종합 책 본문의 연·월 숫자 고정(행동 제안은 "앞으로 한 달", 운 설명은 "올해(간지)"), 기준일과 맞지 않는 시점 말.
+- T 시점 표현 위반: 종합 책 본문의 달·연도 숫자만 고정(행동 제안은 "앞으로 한 달"). 운 설명의 해 이름 "2026년 병오년"·"2027년 정미년"(연도 + 간지)은 맞는 꼴이라 T가 아니다. 기준일과 맞지 않는 시점 말.
 - A 명백한 비문·조사·단어 오용(예: 뜻을 잘못 쓴 낱말, 받침과 안 맞는 조사). fix에 고친 문장 전체 필수(원문에 없던 명리 용어·숫자를 넣지 않는다).
 
 규칙:
@@ -78,6 +80,24 @@ export function numberBook(chapters: readonly FinalChapter[], cover: string): Nu
   return out;
 }
 
+/** 칸마다 십성: 천간은 「겉 X」, 지지는 「겉(정기) X · 속 Y·Z」. */
+export function tenGodCells(p: PersonFacts): Record<string, string> {
+  const out: Record<string, string> = {};
+  for (const [slot, list] of Object.entries(p.tenGods) as [string, readonly string[]][]) {
+    if (slot.endsWith("Stem")) { out[slot] = `겉 ${list[0]}`; continue; }
+    const hid = p.pillars[slot.replace(/Branch$/, "") as keyof PersonFacts["pillars"]]?.hidden ?? []; if (!hid.length) continue;
+    const main = hid.reduce((a, b) => (b.weight > a.weight ? b : a));
+    const inner = hid.filter(h => h !== main).map(h => h.tenGod);
+    out[slot] = `겉(정기) ${main.tenGod}${inner.length ? ` · 속 ${inner.join("·")}` : ""}`;
+  }
+  return out;
+}
+/** 겉 글자(천간 + 지지 정기) 기준 십성 개수 — 일간 자리는 빼고 센다. */
+export function tenGodSurface(p: PersonFacts): Record<string, number> {
+  const n: Record<string, number> = {};
+  for (const v of Object.values(tenGodCells(p))) { const t = v.match(/^겉(?:\(정기\))? (\S+?)(?: ·|$)/)?.[1]; if (t) n[t] = (n[t] ?? 0) + 1; }
+  return n;
+}
 const firstSentences = (t: string, n = 2, max = 220) => splitSentences(t).slice(0, n).join(" ").slice(0, max);
 /** 정답지에서 이 책에 나온 용어만 추린 것 + 늘 필요한 닻(기둥·강약·묶음·오행·올해·대운). */
 function sheetSubset(sheet: FactSheet, text: string, k: Pick<Knowledge, "features">): Record<string, unknown> {
@@ -86,15 +106,18 @@ function sheetSubset(sheet: FactSheet, text: string, k: Pick<Knowledge, "feature
   const year = Number(sheet.baseDate.slice(0, 4));
   const person = (p: PersonFacts) => ({
     name: p.name, pillars: Object.fromEntries(Object.entries(p.pillars).map(([pos, v]) => [pos, v ? `${v.stem}${v.branch}(${v.ganjiKo})` : "시간 미상"])),
-    dayMaster: `${p.dayMaster.stem}(${p.dayMaster.ko})`, tenGods: p.tenGods, strength: p.strength.labelKo,
+    // AM 재생성 2 판독(annual-1): 지지 칸의 지장간 목록을 그대로 주니 검수가 지장간까지 세어 「편재가 다섯 자리」로 고치게 했다 → 칸마다 겉 글자(지지는 정기)와 속을 나누고, 겉 글자 기준 개수를 준다.
+    dayMaster: `${p.dayMaster.stem}(${p.dayMaster.ko})`, tenGods: tenGodCells(p), tenGodSurfaceCount: tenGodSurface(p), strength: p.strength.labelKo,
     groups: Object.fromEntries(Object.values(p.groups).map(g => [g.name, `${g.level}(${g.element})`])),
     elements: Object.fromEntries(Object.keys(p.elements.count).map(e => [e, `겉 글자 ${p.elements.count[e as never]}개·세기 ${p.elements.status[e as never]}${p.elements.strongest === e ? "(가장 셈)" : ""}`])),
-    yinYang: `${p.yinYang.yin}:${p.yinYang.yang}`,
+    // AM 판독(대운): 「2:4」를 거꾸로 읽고, 대운수(시작 나이 수)를 대운 개수로 읽고, 공망을 늘 戌·亥로 짚었다 → 이름을 붙여 준다.
+    yinYang: `음 ${p.yinYang.yin} · 양 ${p.yinYang.yang}`,
+    gongmang: p.gongmang.map(g => `${g.basis} 기준 ${g.branches.join("·")}`), gongmangYears: p.annual.filter(a => a.gongmang).map(a => `${a.year} ${a.ganjiKo}`),
     shinsal: p.shinsal.filter(s => used.has(s.name)).map(s => `${s.name}: ${s.slots.join("·")} (${s.glyphs.join("·")})`),
     twelveStages: p.twelveStages.map(t => `${t.position} ${t.branch} ${t.ko}`),
     relations: p.relations.map(r => `${r.key} ${r.kind}${r.completeness !== "full" ? `(${r.completeness})` : ""} ${r.members.map(m => m.where).join("-")}`),
     thisYear: p.annual.filter(a => a.year === year).map(a => `${a.year} ${a.ganjiKo}: 천간 ${a.stemTenGod}·지지 ${a.branchTenGod}, 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0],
-    dayun: p.dayun.cycles.filter(c => c.endYear >= year - 10 && c.startYear <= year + 20).map(c => `${c.ganjiKo} ${c.startYear}~${c.endYear}(만 ${c.manStartAge}세~, ${c.stemTenGod})`), dayunNumber: p.dayun.number,
+    dayun: p.dayun.cycles.filter(c => c.endYear >= year - 10 && c.startYear <= year + 20).map(c => `${c.ganjiKo} ${c.startYear}~${c.endYear}(만 ${c.manStartAge}세~, ${c.stemTenGod})`), dayunStartNumber: p.dayun.number === null ? null : `대운수 ${p.dayun.number}(첫 대운이 시작하는 나이 수 — 개수가 아니다)`, dayunCount: `평생 대운 ${p.dayun.cycles.length}개`,
     mbti: p.mbti, input: p.input,
   });
   return { "fs:standards": sheet.standards, "fs:people": sheet.people.map(person), ...(sheet.pair ? { "fs:pair.common": sheet.pair.common, "fs:pair.relations": sheet.pair.relations.map(r => `${r.key} ${r.kind} ${r.members.map(m => m.where).join("-")}`), "fs:pair.score": sheet.pair.score } : {}) };
@@ -127,11 +150,16 @@ export function reviewPrompt(a: { brief: Brief; sheet: FactSheet; k: Knowledge; 
   const prior = (a.prior?.lines ?? []).slice(0, 40).map((l, i) => `[p${9001 + i}] ${l}`);
   const profiles = a.brief.compatibility?.profiles?.map(p => p.line) ?? [];
   const input = { product: a.brief.product, people: a.sheet.people.map(p => ({ name: p.name, gender: p.gender, age: a.brief.person.age, birthTimeKnown: p.timeKnown, mbti: p.mbti?.type ?? null, ...p.input })), relationType: a.brief.compatibility?.relationshipType ?? null, baseDate: a.brief.baseDate };
-  let chapterTitle = 0;
+  let chapterTitle = 0, keyAt = "";
+  // AM 재생성 2 판독(annual-1): 달·해 소제목은 key(「2026-M12」)라 번호에서 빠지고 검수는 어느 달인지 몰라 12월로 읽었다 → 번호 없는 이름표 줄을 준다(「2027년 1월 · 신축월 …」).
+  const keyLabel = new Map((a.brief.timeline?.entries ?? []).map(e => [e.key, e.label]));
   const book = numbered.map(x => {
     const head = x.chapter !== chapterTitle && x.chapter > 0 ? `\n## ${x.chapter}장 ${a.chapters.find(c => c.n === x.chapter)?.title ?? ""}\n` : "";
     chapterTitle = x.chapter;
-    return `${head}${x.paragraph < 0 ? (x.n === 0 ? "[0] (표지) " : `[${x.n}] ### `) : `[${x.n}] `}${x.n === 0 ? x.text : x.paragraph < 0 ? x.text : x.text}`;
+    const key = x.paragraph >= 0 ? a.chapters.find(c => c.n === x.chapter)?.sections[x.section]?.heading ?? "" : "";
+    const at = `${x.chapter}.${x.section}`, label = /^\d{4}(-M\d{2})?$/.test(key) && keyAt !== at ? `### (${keyLabel.get(key) ?? key})\n` : "";
+    if (label) keyAt = at;
+    return `${head}${label}${x.paragraph < 0 ? (x.n === 0 ? "[0] (표지) " : `[${x.n}] ### `) : `[${x.n}] `}${x.n === 0 ? x.text : x.paragraph < 0 ? x.text : x.text}`;
   }).join("\n");
   const user = [
     `검수 판: ${REVIEW_VERSION}`,
@@ -158,7 +186,31 @@ const norm = (s: string) => s.replace(/\s+/g, " ").trim();
 const INPUT_FIELDS = /^input\.(job|relationship|children|relationType|money|family|mbti|gender|age|birthTime)$/;
 
 /** 검수 응답(JSON 글) → 남길 지적·바로 바꿀 A·버린 지적과 이유. */
-export function guardReview(text: string, numbered: readonly Numbered[], ids: ReadonlySet<string>, priorCount = 0, product = ""): GuardedReview | null {
+const KO_NUM: Readonly<Record<string, number>> = { 한: 1, 하나: 1, 두: 2, 둘: 2, 세: 3, 셋: 3, 네: 4, 넷: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8, 아홉: 9, 열: 10, 열한: 11, 열하나: 11, 열두: 12, 열둘: 12, 열세: 13, 열셋: 13 };
+const countOf = (s: string) => { const m = s.match(/대운(?:이|은|는)?[^.?!]{0,12}?(\d{1,2}|열두|열둘|열한|열하나|열세|열셋|열|아홉|여덟|일곱|여섯|다섯|넷|네|셋|세|둘|두|하나|한) ?개/); return m ? (/^\d+$/.test(m[1]) ? Number(m[1]) : KO_NUM[m[1]]) : null; };
+const BR_HAN = "子丑寅卯辰巳午未申酉戌亥", BR_KO = "자축인묘진사오미신유술해";
+const toHan = (b: string) => (BR_KO.includes(b) ? BR_HAN[BR_KO.indexOf(b)] : b);
+/**
+ * AM 판독(대운 11건): 검수(Haiku)가 엔진 값과 반대로 지적 → 수리가 맞는 문장을 틀리게 고쳤다(공망을 늘 戌·亥로, 대운수 8을 대운 개수로, 음양 2:4를 거꾸로).
+ * 문장이 그 값에서 엔진과 맞는데 지적이 그 값을 문제 삼으면(또는 공망 글자를 엔진과 다르게만 대면) 그 지적을 버린다(호출 0). 한 사람 책만.
+ */
+export function contradictsEngine(issue: { readonly why: string; readonly fix: string }, sentence: string, sheet: FactSheet): string | null {
+  if (sheet.people.length !== 1) return null;
+  const p = sheet.people[0], said = `${issue.why} ${issue.fix}`;
+  if (/공망/.test(said)) {
+    const real = new Set(p.gongmang.flatMap(g => g.branches.map(toHan)));
+    const near = [...said.matchAll(/공망[^.?!]{0,14}/g)].map(m => m[0]).join(" ");
+    const named = [...[...near.matchAll(/[子丑寅卯辰巳午未申酉戌亥]/g)].map(m => m[0]), ...[...near.matchAll(/(?<![가-힣])([자축인묘진사오미신유술해])·([자축인묘진사오미신유술해])/g)].flatMap(m => [toHan(m[1]), toHan(m[2])])];
+    if (real.size && named.length && !named.some(b => real.has(b))) return "F_gongmang_engine";
+  }
+  const total = p.dayun.cycles.length;
+  if (total && countOf(sentence) === total && /대운수|개수|(\d{1,2}|열두|열|아홉|여덟|일곱|여섯|다섯) ?개/.test(said)) return "F_dayun_count_engine";
+  const lean = yinYangLean(sentence), { yin, yang } = p.yinYang;
+  if (lean && /음양|음 ?\d|양 ?\d|음의|양의|음이|양이|음 기운|양 기운/.test(said) && ((lean === "yang" && yang > yin) || (lean === "yin" && yin > yang))) return "F_yinyang_engine";
+  return null;
+}
+
+export function guardReview(text: string, numbered: readonly Numbered[], ids: ReadonlySet<string>, priorCount = 0, product = "", sheet?: FactSheet): GuardedReview | null {
   let parsed: unknown;
   try { const m = text.match(/\{[\s\S]*\}/); parsed = m ? JSON.parse(m[0]) : null; } catch { return null; }
   const list = parsed && typeof parsed === "object" && Array.isArray((parsed as { issues?: unknown }).issues) ? (parsed as { issues: unknown[] }).issues : null;
@@ -191,6 +243,9 @@ export function guardReview(text: string, numbered: readonly Numbered[], ids: Re
     if (x.cat === "A" && !fix) { drop("A_without_fix"); continue; }
     // T(연·월 고정)는 종합 책 규칙이다. 커리어·연애의 3년 로드맵 날짜는 유지한다(최종판3 2e).
     if (x.cat === "T" && product !== "saju_mbti_full") { drop("T_not_comprehensive"); continue; }
+    // AM 판독(종합 8장): 허용된 해 이름 꼴(「2027년 정미년」)을 T로 지적 → 수리가 「올해 병오년」으로 바꿔 2027 관계가 2026 문장에 붙었다. 해 이름만 있고 달·연도 고정·「올해」가 없는 문장의 T는 버린다.
+    if (x.cat === "T" && hasYearName(byN.get(s)!.text) && !fixedTimeOf(byN.get(s)!.text) && !/올해|이번 달|이달/.test(byN.get(s)!.text)) { drop("T_year_name_allowed"); continue; }
+    if (sheet) { const why = contradictsEngine({ why: String(x.why ?? ""), fix }, byN.get(s)!.text, sheet); if (why) { drop(why); continue; } }
     if (seen.has(s)) { drop("duplicate_sentence"); continue; }
     seen.add(s);
     const issue: ReviewIssue = { cat: x.cat as ReviewCat, s, quote, why: String(x.why ?? "").slice(0, 300), ref, s2, field, fix };

@@ -112,7 +112,7 @@ describe("actual input → existing checkout builder → local publish/read → 
     expect(html).toContain("data-book-report");
     expect(fetch).not.toHaveBeenCalled();
     if (process.env.BOOK_FLOW_EXPORT) { mkdirSync(process.env.BOOK_FLOW_EXPORT, { recursive: true }); writeFileSync(`${process.env.BOOK_FLOW_EXPORT}/${book.id}.json`, JSON.stringify({ book, state, payload, view })); }
-  }, 30000);
+  }, 180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it.each(BOOK_FIXTURES.filter(f => !["full", "career", "love", "compatibility", "major", "annual"].includes(f.id)))("$id unknown/approx/roles pass through same adapters", async fixture => {
     const payload = bookInputPayload(bookForProduct(fixture.payload.productKey)!, form(fixture.payload as ReportInputPayload));
     const prepared = prepareLocalBook(request(payload), now); expect(prepared, fixture.id).toMatchObject({ ok: true }); if (!prepared.ok) return;
@@ -122,7 +122,7 @@ describe("actual input → existing checkout builder → local publish/read → 
     if (payload.productKey === "saju_mbti_compatibility") { const spread = view.data.pages.find(p => p.kind === "pair"); expect(spread).toBeDefined(); // Actual versioned points belong only on the dedicated index page.
       expect(JSON.stringify(view.data.pages.filter(p => p.kind !== "score"))).not.toMatch(/\d+점|궁합 점수|궁합 등급/); }
     else if (payload.person.birthTimeUnknown) expect(view.data.people[0].table.manse.stemRow.hour).toBeNull();
-  }, 30000);
+  }, 180_000);
 });
 describe("presentation contracts", () => {
   it("restores only input fields, never versions/prices/consents/gate; exact/approx/unknown", () => {

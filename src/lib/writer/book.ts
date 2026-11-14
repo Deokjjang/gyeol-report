@@ -22,6 +22,8 @@ import { DAYUN_AGE_NOTE, halfHapLine, REL_PLAIN, relationPlain } from "@/lib/bri
 import { baseRowOf } from "@/lib/compat/display";
 import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
+import { inputsOf, needMet } from "@/lib/brief/premise";
+import { decadeTableOf, flowTableOf, lifetimeOf, periodCardOf , yearDayunTg } from "./bookAm";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -32,7 +34,7 @@ export const BOOK_EDITION = { number: 6, label: "제6판", revisedAt: "2026-11-0
 export type BookEdition = { readonly number: number; readonly label: string; readonly revisedAt: string };
 
 /** 카드(p6b-fields.md 5): 브리프 항목에서 작가 재료를 뺀 것 + 살필 점(원국 판정)·만 나이(연 카드). */
-export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number };
+export type V5TimelineCard = Omit<TimelineEntry, "material" | "caution"> & { readonly caution?: string | null; readonly age?: number; /** AM2-7 3부 4 */ readonly seatSide?: "close" | "life" };
 /** label(최종판3 8): 공통 대운 표기 "무진 대운: 2027년 5월 무렵부터 (대운수 7)"(labels.dayunLabel). 최종판3 이전 Book에는 없다.
  * ages(운영 Q 8-1): [X, X+9] — X = 대운수(첫 대운이 시작될 때의 만 나이) + 10 × (순서 − 1)(브리프 cycles[].ages 그대로). 이 변경 전 Book은 [시작 해 − 출생 해, 끝 해 − 출생 해]. */
 export type V5Cycle = { readonly ganji: string; readonly years: string; readonly ages: readonly [number, number]; readonly tenGod: string; readonly current: boolean; readonly label?: string };
@@ -43,7 +45,11 @@ export type V5BookDraft = {
   /** P6b 이전 Book에는 없다. */
   readonly edition?: BookEdition;
   readonly chapters: readonly V5Chapter[];
-  readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number; readonly cycles?: readonly V5Cycle[] };
+  readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number; readonly cycles?: readonly V5Cycle[];
+    /** AM 3부 평생 대운 지도(대운 전부). AM 이전 Book에는 없다. */
+    readonly lifetime?: NonNullable<NonNullable<Brief["timeline"]>["lifetime"]> };
+  /** AM 2부 세운 신년판: 연도·키워드 카드(작가 [키워드] 줄, 걸리면 엔진 열쇠말)·한 해 판정·나를 돕는 색·방향·숫자·삼재(해당 띠만). AM 이전 Book에는 없다. */
+  readonly annual?: { readonly year: number; readonly keywords: readonly string[]; readonly keywordSource: "writer" | "engine"; readonly verdict?: string; readonly lucky?: NonNullable<Brief["display"]>["lucky"]; readonly samjae?: NonNullable<Brief["display"]>["samjae"] };
   /** 핵심 이미지(P6b B-4, p6b-fields.md 3). 궁합은 pairImage. P6b 이전 Book에는 없다. */
   readonly coreImage?: { readonly line: string; readonly ruleId: string };
   readonly pairImage?: { readonly line: string; readonly a: string; readonly b: string; readonly ruleId: string };
@@ -140,7 +146,9 @@ export function payloadToBriefInput(payload: ReportInputPayload, baseDate: strin
   });
   if (payload.productKey === "saju_mbti_compatibility") return { product: payload.productKey, person: person(payload.personA), partner: person(payload.personB), relationshipType: payload.relationshipType, baseDate, ...at };
   const year = "selectedYear" in payload.productOptions ? Number(payload.productOptions.selectedYear) : NaN;
-  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}) };
+  // AM 2부: 세운 소망(선택, 200자). 브리프가 정리·위험 표현·지시 꼴을 거른다(design/annual.readWish).
+  const wish = (payload.productOptions as { wish?: unknown }).wish;
+  return { product: payload.productKey, person: person(payload.person, payload.userContext), baseDate, ...at, ...(Number.isFinite(year) ? { selectedYear: year } : {}), ...(typeof wish === "string" && wish.trim() ? { wish } : {}) };
 }
 
 const firstSentence = (sections: readonly BookSection[]) => splitSentences(sections.flatMap(s => s.paragraphs)[0] ?? "")[0] ?? "";
@@ -177,7 +185,8 @@ function timelineCard(card: TimelineEntry, notes: NonNullable<Brief["timeline"]>
   void notes;
   const caution = fromWriter("caution") ?? card.caution ?? null;
   const past = card.period === "past";
-  return { ...(c as Omit<TimelineEntry, "material" | "caution">), imageLine: fromWriter("image") ?? card.imageLine,
+  const good = fromWriter("good") ?? card.good;
+  return { ...(c as Omit<TimelineEntry, "material" | "caution">), imageLine: fromWriter("image") ?? card.imageLine, ...(good ? { good } : {}),
     ...(past ? { review: fromWriter("review") ?? card.review } : { todo: fromWriter("todo") ?? card.todo }),
     caution, ...(card.kind === "year" ? { age: manAge(Number(card.key), birthYear) } : {}) };
 }
@@ -201,10 +210,14 @@ export function assembleV5Book(a: {
   /** 같은 고객의 앞 책 원장(P6d F·G): 근거 항목 새 몫을 잰다. */
   priorLedger?: BookLedger;
   review?: Readonly<Record<string, unknown>>; test?: boolean;
+  /** AM 2부: 작가 [키워드] 줄(검사 통과분). 없으면 엔진 열쇠말. */
+  keywords?: readonly string[] | null;
 }): { draft: V5BookDraft; evidence: V5Evidence } {
   const { brief } = a;
   const book = BOOKS.find(b => b.productKey === brief.product)!;
-  const title = readerTitle(book, String(brief.timeline && brief.product === "annual_fortune" ? brief.chart.thisYear.year : ""));
+  // AM 2부: 세운 제목 「나의 2027」은 상품 설정 연도(발행일의 해가 아니다 — 12월에 사도 2027).
+  const annualYear = brief.product === "annual_fortune" ? (brief.display?.year ?? brief.chart.thisYear.year) : undefined;
+  const title = readerTitle(book, String(annualYear ?? ""));
   // 1장 첫 소제목은 핵심 이미지 그대로(P6c D2, 종합). 소제목마다 핵심 문장 위치(keySpan)를 남기고 기호는 지운다(H). 카드 줄은 카드로 옮긴다(F1).
   const cardOf = new Map<string, { card: SectionCard; bad: Set<string> }>();
   a.finals.forEach(f => f.keys && f.sections.forEach((s, si) => { if (s.card) cardOf.set(s.heading, { card: s.card, bad: new Set([...(a.badCards ?? [])].filter(x => x.startsWith(`${f.n}.${si}.`)).map(x => x.split(".")[2])) }); }));
@@ -218,8 +231,12 @@ export function assembleV5Book(a: {
     version: V5_DRAFT_VERSION, productVersion: "v5", productType: brief.product, title, edition: BOOK_EDITION, baseDate: brief.baseDate,
     headline: firstSentence(chapters[0]?.sections ?? []) || brief.productTitle, finalLine: lastSentence(chapters.at(-1)?.sections ?? []),
     chapters,
-    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad)), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
-      cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number), x = c.ages?.match(/^만 (\d+)~(\d+)세$/); return { ganji: c.ganji, years: c.years, ages: x ? [Number(x[1]), Number(x[2])] as const : [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current, ...(c.label ? { label: c.label } : {}) }; }) } } : {}),
+    // AM2-7 3부 4: 태어난 날 자리의 쪽(책 하나에 하나 — 고리 재료 daySide와 같은 값)을 카드에 적어 화면 핵심 줄이 같은 말을 쓴다.
+    ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => ({ ...timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad), seatSide: brief.person.facts.relationship === "unknown" ? "life" as const : "close" as const })), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
+      cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number), x = c.ages?.match(/^만 (\d+)~(\d+)세$/); return { ganji: c.ganji, years: c.years, ages: x ? [Number(x[1]), Number(x[2])] as const : [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current, ...(c.label ? { label: c.label } : {}) }; }),
+      ...(brief.timeline.lifetime ? { lifetime: brief.timeline.lifetime } : {}) } } : {}),
+    ...(annualYear !== undefined ? { annual: { year: annualYear, keywords: a.keywords?.length === 3 ? a.keywords : (brief.display?.keywords ?? []), keywordSource: a.keywords?.length === 3 ? "writer" as const : "engine" as const,
+      ...(brief.display?.verdict ? { verdict: brief.display.verdict } : {}), ...(brief.display?.lucky ? { lucky: brief.display.lucky } : {}), ...(brief.display?.samjae ? { samjae: brief.display.samjae } : {}) } } : {}),
     // 최종판2 1-1: 궁합 첫 쪽 관계 그림도 작가 표지 줄(엔진 기본 줄은 작가 표지가 없을 때만).
     ...(brief.compatibility ? { pairImage: a.cover ? { ...brief.compatibility.pairImage, line: a.cover, ruleId: `${brief.compatibility.pairImage.ruleId}:writer` } : brief.compatibility.pairImage } : { coreImage: a.image ? { line: a.image, ruleId: `${brief.chart.coreImage.ruleId}:writer` } : brief.chart.coreImage }),
     ...(brief.appendix ? { appendix: brief.appendix } : {}),
@@ -238,7 +255,7 @@ export function assembleV5Book(a: {
   const p = brief.person.facts;
   const context = c ? [{ label: "관계", value: c.lens.focus }] : [
     { label: "현재 직업", value: p.job.detail || "-" }, { label: "현재 관계", value: { single: "솔로", dating: "연애", married: "기혼", unknown: "미선택" }[p.relationship] },
-    ...(brief.product === "annual_fortune" ? [{ label: "선택 연도", value: String(brief.chart.thisYear.year) }] : []),
+    ...(brief.product === "annual_fortune" ? [{ label: "선택 연도", value: String(annualYear) }] : []),
   ];
   const evidence: V5Evidence = {
     version: V5_EVIDENCE_VERSION, productType: brief.product, generatedAt: a.generatedAt, input: a.payload, people: a.people,
@@ -348,6 +365,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   const book = BOOKS.find(b => b.productKey === d.productType)!;
   // 표지 아래 한 줄: coverLine(P6c-ui2) → 핵심 이미지 한 줄(P6c) → 예전 첫 문장(P6b 이전, 궁합).
   const pages: BookPage[] = [{ kind: "cover", title: d.title, names: e.names, headline: (typeof d.coverLine === "string" && d.coverLine.trim()) || (d.coreImage?.line ?? d.headline) }];
+  // AM 2부: 세운 신년판 첫 장 키워드 카드(0). 이미지 저장·공유는 화면이 붙인다.
+  if (d.annual?.keywords.length) pages.push({ kind: "keywords", title: `나의 ${d.annual.year} 키워드`, year: d.annual.year, keywords: [...d.annual.keywords], line: (typeof d.coverLine === "string" && d.coverLine.trim()) || (d.coreImage?.line ?? ""), ...(d.annual.verdict ? { verdict: d.annual.verdict } : {}) });
   if (!e.pair && e.people.length) pages.push({ kind: "input", title: "이 책의 주인공" });
   // 최종판3 7: 관계 요약이 있는 Book은 첫 쪽에 묶음 요약 + 영향 큰 3줄, 전체 목록은 부록. 없는 Book(이전)은 첫 쪽에 전체 목록 그대로.
   const relSum = e.pair?.relationsSummary, relAll = e.pair?.relationsPlain ?? [];
@@ -365,10 +384,46 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   }
   e.people.forEach((p, i) => pages.push({ kind: "manse", title: `${p.name}의 만세력`, person: i }, { kind: "mbti", title: `${p.name}의 MBTI`, person: i }));
   const chapterPage = new Map<number, number>(), keyPage = new Map<string, number>();
-  const monthCards = d.timeline?.cards.filter(c => c.kind === "month") ?? [], season = seasonMonths(monthCards);
-  const monthLabel = new Map(monthCards.map((c, i) => [c.key, seasonLabel(season[i], c.ganji.hangul)]));
+  const monthCards = d.timeline?.cards.filter(c => c.kind === "month") ?? [];
+  // AM 2부 신년판 카드(span 있음): 절기 구간은 엔진 절입 시각, 이름은 라벨 앞부분 「2월 · 임인월」(표와 본문이 한 체계). 이전 v5 카드는 예전 방식.
+  const spanned = monthCards.some(c => (c as V5TimelineCard & { span?: unknown }).span);
+  // AM2-3 5부(덕짱님과 정한 시안): AM 세운(span 카드)·대운(평생 지도) 책은 흐름표·달·해 카드·10년표·평생 지도 띠로. 그 밖의 책은 예전 표 그대로.
+  const amAnnual = d.productType === "annual_fortune" && spanned, amMajor = d.productType === "major_fortune" && Array.isArray(d.timeline?.lifetime); // AM 대운(평생 지도 필드 있음 — 시간 미상으로 대운이 없으면 빈 배열, 10년표·해 카드는 그대로)
+  const dayAm = today ?? kstDay(e.generatedAt), thisYearAm = d.timeline?.thisYear ?? Number(dayAm.slice(0, 4));
+  // AM2-6 6부: 핵심 줄 자리 뜻(대운 해 — 신호가 없어 배우자 별 쪽 셈에 성별이 든다).
+  const genderAm = ((e as unknown as { input?: { person?: { gender?: string } } }).input?.person?.gender) || undefined;
+  // AM2-8 화면 입력 거름: 카드 핵심 줄의 달 자리 뜻(「일터」)은 돈 버는 일이 있는 입력만 — 그 밖은 「사회생활」(주문 입력의 일 상태, 저장본은 그대로).
+  const jobAm = (e as unknown as { input?: { userContext?: { jobStatus?: string } } }).input?.userContext?.jobStatus ?? "";
+  const workAm = needMet("job:work", inputsOf({ relationship: "", children: "", job: { status: jobAm } }));
+  // AM 3부: 평생 대운 지도(0) — 대운 전부, 시작 만 나이·연도·간지·십성·한 줄 주제.
+  if (amMajor) { if (d.timeline?.lifetime?.length) pages.push(lifetimeOf(d, thisYearAm)); }
+  else if (d.timeline?.lifetime?.length) pages.push({ kind: "lifetime", title: "평생 대운 지도", cycles: d.timeline.lifetime.map(c => ({ label: c.label, ages: c.ages, tenGod: c.tenGod, theme: c.theme, current: c.current })) });
+  const natalEls = ((e.people[0] as { table?: { elements?: readonly { label: string; visible: number }[] } } | undefined)?.table?.elements) ?? [];
+  const flowTable = amAnnual ? flowTableOf(d, monthCards as never, dayAm, natalEls) : null;
+  if (flowTable) pages.push(flowTable);
+  let decadeTable: Extract<BookPage, { kind: "decadeTable" }> | null = null;
+  const season = spanned ? monthCards.map((c, i) => { const sp = (c as V5TimelineCard & { span: { start: string; end: string } }).span, md = (iso: string) => `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
+    return { order: i, start: sp.start.slice(0, 10), end: sp.end.slice(0, 10), range: `${md(sp.start)}~${md(sp.end)}` }; }) : seasonMonths(monthCards);
+  const monthLabel = new Map(monthCards.map((c, i) => [c.key, spanned ? { title: c.label, sub: c.label.split(" (")[0] } : seasonLabel(season[i], c.ganji.hangul)]));
   for (const ch of d.chapters) {
-    if (!ch.keys) { chapterPage.set(ch.n, pages.length); pages.push({ kind: "narrative", id: ch.n === 1 ? "core" : `chapter-${ch.id}`, title: ch.title, paragraphs: toParagraphs(ch.sections), notes: [] }); continue; }
+    if (!ch.keys) { chapterPage.set(ch.n, pages.length); pages.push({ kind: "narrative", id: ch.n === 1 ? "core" : `chapter-${ch.id}`, title: ch.title, paragraphs: toParagraphs(ch.sections), notes: [] });
+      // AM 2부: 운을 쓰는 법 장 뒤에 나를 돕는 색·방향·숫자(+ 삼재 해당 띠만), 이어지는 큰 흐름 장 뒤에 대운으로 이어 보기.
+      if (ch.id === "use" && d.annual?.lucky) pages.push({ kind: "lucky", title: "나를 돕는 색·방향·숫자", name: d.annual.lucky.name, colors: [...d.annual.lucky.colors], direction: d.annual.lucky.direction, numbers: [...d.annual.lucky.numbers], why: d.annual.lucky.why, ...(d.annual.samjae ? { samjae: d.annual.samjae } : {}) });
+      // AM2-4 7부: 대운을 정할 수 없는 생일(시각 미상)은 대운을 살 수 없다 — 「대운으로 이어 보기」를 띄우지 않는다.
+      if (ch.id === "next" && d.annual && (d.timeline?.cycles ?? []).length) pages.push({ kind: "continue", title: "앞으로 10년의 흐름, 대운으로 이어 보기", text: `${d.annual.year}년은 지금 10년 흐름의 한 해예요. 대운 「앞으로의 나」는 평생 대운 지도와 앞으로 10년을 한 권에 담아요. 같은 입력으로 바로 이어 볼 수 있어요.`, href: "/report/new?product=major-fortune&from=annual" });
+      continue; }
+    if (amAnnual || amMajor) {
+      const cards = (d.timeline?.cards ?? []).filter(c => c.kind === (amAnnual ? "month" : "year"));
+      const flowMax = Math.max(...cards.filter(c => !(c as { bridge?: boolean }).bridge).map(c => c.flow.score));
+      const stateOf = (c: V5TimelineCard) => { const sp = (c as { span?: { start: string; end: string } }).span;
+        if (amAnnual) { const dt = d.annual ? yearDayunTg(d, d.annual.year) : undefined; return { now: Boolean(sp && dayAm >= sp.start.slice(0, 10) && dayAm < sp.end.slice(0, 10)), past: Boolean(sp && dayAm >= sp.end.slice(0, 10)), star: !(c as { bridge?: boolean }).bridge && c.flow.score === flowMax, ...(dt ? { dayunTg: dt } : {}) }; }
+        return { now: Number(c.key) === thisYearAm, past: Number(c.key) < thisYearAm, star: Boolean((c as { keyYear?: unknown }).keyYear) }; };
+      if (amMajor) { decadeTable = decadeTableOf(d, cards as never, thisYearAm); pages.push({ ...decadeTable, title: ch.title === "앞으로 10년" ? "앞으로 10년표" : ch.title }); decadeTable = pages.at(-1) as typeof decadeTable;
+        // 지난 3년 · 기준 해(본문 key가 없는 해)도 같은 문법의 해 카드로(돌아보기형).
+        for (const c of cards.filter(x => !ch.sections.some(s => s.heading === x.key))) { keyPage.set(c.key, pages.length); pages.push(periodCardOf(c as never, undefined, { eyebrow: ch.title, ...stateOf(c), ...(genderAm ? { gender: genderAm } : {}), ...(workAm ? {} : { work: false }) })); } }
+      for (const s of ch.sections) { const card = cards.find(c => c.key === s.heading); if (!card) continue; keyPage.set(s.heading, pages.length); pages.push(periodCardOf(card as never, s, { eyebrow: ch.title, ...stateOf(card), ...(genderAm ? { gender: genderAm } : {}), ...(workAm ? {} : { work: false }) })); }
+      continue;
+    }
     pages.push(d.productType === "major_fortune" ? { kind: "timeline", title: ch.title, years: [], transitions: [] } : { kind: "months", title: ch.title, months: [] });
     for (const s of ch.sections) {
       const card = d.timeline?.cards.find(c => c.key === s.heading);
@@ -383,14 +438,21 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
     // P6b(p6b-fields.md 5): 그림 줄·할 일/돌아보기·살필 점·만 나이·기간 상태는 카드 필드에서. 없으면(P6b 이전 Book) 예전 방식.
     // P6b-ui: 표 한 줄 값(십성·흐름 세기·핵심어·관계 배지), 할 일/돌아보기 이름, 지금·돌아보기·앞으로는 기준일(today) 대비.
     // 최종판3 8: 대운 전환 표시는 공통 대운 표기(카드 dayun.start, cycles[].label = labels.dayunLabel). 표기가 없는 이전 Book은 예전 말 그대로.
-    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, ...(c.age !== undefined ? { ageLabel: `만 ${c.age}세` } : {}), cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
+    if (tl) tl.years = cards.filter(c => c.kind === "year").map(c => ({ year: Number(c.key), age: c.age ?? t.age + Number(c.key) - t.thisYear, ...(c.age !== undefined ? { ageLabel: `만 ${c.age}세` } : {}), ...((c as V5TimelineCard & { keyYear?: { rank: number; reasons: string[] } }).keyYear ? { keyYear: (c as V5TimelineCard & { keyYear: { rank: number; reasons: string[] } }).keyYear } : {}), cycle: c.dayun?.ganji ?? "", annual: c.ganji.hanja, theme: c.keywords.join(" · "), good: c.todo ?? c.review ?? c.action.text,
       caution: c.caution !== undefined ? c.caution : t.tenGodNotes[c.tenGod.stem]?.caution ?? null, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, time: TIME(Number(c.key), Number(day.slice(0, 4))), page: keyPage.get(c.key) ?? 0, transition: c.dayun?.transition ? (c.dayun.start ?? "큰 흐름이 바뀌는 해") : null, importance: importance(c.flow.score), ...rowExtras(c) }));
     if (tl) tl.transitions = dayunTransitions(t.cycles ?? [], tl.years.map(y => y.year), keyPage);
     const ms = pages.find((p): p is Extract<BookPage, { kind: "months" }> => p.kind === "months");
     // 달은 절기월 순번·날짜 구간으로 보여 주고(달력 달 이름 없음), 지금은 기준일이 든 절기월(P6b-ui: 달력 달 번호를 붙여 엉뚱한 달로 보였다).
-    if (ms) ms.months = monthCards.map((c, i) => ({ month: season[i].order, order: season[i].order, range: season[i].range, sub: monthLabel.get(c.key)!.sub, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, theme: c.keywords.join(" · "), time: seasonTime(season[i], day), ganji: c.ganji.hanja,
-      gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score), ...rowExtras(c) }));
+    if (ms) ms.months = monthCards.map((c, i) => { const x = c as V5TimelineCard & { good?: string; signals?: Record<string, string>; bridge?: boolean };
+      const base = { month: season[i].order, order: season[i].order, range: season[i].range, sub: monthLabel.get(c.key)!.sub, title: c.imageLine ?? headSentence(text(c.key)) ?? c.label, theme: c.keywords.join(" · "), time: seasonTime(season[i], day), ganji: c.ganji.hanja,
+        gods: `${c.tenGod.stem} · ${c.tenGod.branch}`, markers: c.badges.map(b => b.label), page: keyPage.get(c.key) ?? 0, good: c.todo ?? c.review ?? c.action.text, ...(c.caution ? { caution: c.caution } : {}), importance: importance(c.flow.score), ...rowExtras(c) };
+      if (!spanned) return base;
+      // AM 2부: 한 줄(그림) · 좋은 것 · 주의할 것(살필 점) · 이달의 한 가지(해 볼 것), 영역 신호.
+      return { ...base, name: c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, ""), ...(x.bridge ? { bridge: true } : {}), ...(x.signals ? { signals: (["love", "money", "work", "people", "mind"] as const).map(k => `${({ love: "연애", money: "돈", work: "일", people: "사람", mind: "마음" })[k]} ${x.signals![k]}`).join(" · ") } : {}),
+        good: x.good ?? base.good, goodLabel: "좋은 것", ...(c.todo ? { todo: c.todo } : {}) }; });
   }
+  // AM2-3: 표의 줄을 누르면 그 달·해 카드로.
+  for (const t of [flowTable, decadeTable]) if (t) t.rows = t.rows.map(r => ({ ...r, page: keyPage.get(r.key) ?? 0 }));
   if (e.pair) { const pair = pages.find((p): p is Extract<BookPage, { kind: "pair" }> => p.kind === "pair")!; pair.directions = e.pair.directions.map(x => ({ title: x.title, effect: x.effect, term: x.term, page: chapterPage.get(x.chapterN) ?? 0 })); }
   // 부록(P6c): 사람마다 한 쪽, 번호는 이어서. 머리말은 "내 사주에 있는 기운과 그 뜻".
   const total = d.appendix?.reduce((n, p) => n + p.items.length, 0) ?? 0;
@@ -405,5 +467,5 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   if (relSum && relAll.length) pages.push({ kind: "appendix", title: "두 사람 사이의 모든 기운", lead: "두 사람 글자 사이에서 찾은 관계 전부예요. 영향이 큰 것부터 적었어요.", from: 1, total: relAll.length,
     items: relAll.map((line, i) => { const name = relSum.names[i] ?? ""; return { name: name || "관계", meaning: line, manifestation: "", person: e.names, group: HAP_NAMES.has(name) ? "합" : "형·충·파·해" }; }) });
   pages.push({ kind: "back", title: "이 책 공유하기", finalLine: d.finalLine, aiNotice: AI_WRITTEN_NOTICE_KO }); // 최종3: 책 끝 AI 작성 고지(저장본은 그대로, 읽을 때만)
-  return { bookId: book.id, title: d.title, names: e.names, people: [...e.people], context: [...e.context], pages: composeBookNavigation(pages), readingDate: e.generatedAt.slice(0, 10), ...(d.glossary?.length ? { glossary: d.glossary.map(t => ({ name: t.name, meaning: t.meaning })) } : {}), share: { title: `${e.names} · ${d.title}`, description: headSentence((typeof d.coverLine === "string" && d.coverLine.trim()) || d.headline) } };
+  return { bookId: book.id, title: d.title, names: e.names, people: [...e.people], context: [...e.context], pages: composeBookNavigation(pages), ...(amAnnual || amMajor ? { scheme: "auto" as const } : {}), readingDate: e.generatedAt.slice(0, 10), ...(d.glossary?.length ? { glossary: d.glossary.map(t => ({ name: t.name, meaning: t.meaning })) } : {}), share: { title: `${e.names} · ${d.title}`, description: headSentence((typeof d.coverLine === "string" && d.coverLine.trim()) || d.headline) } };
 }

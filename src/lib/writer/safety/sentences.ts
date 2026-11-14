@@ -24,7 +24,7 @@ export type SafetyFacts = {
   /** 이 책 내부 별칭(그림 별명) 중 띄어쓰기가 있는 것: 본문에 나오면 지운다(P6b B-2). */
   readonly nicknames?: readonly string[];
 };
-export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention" | "rural_prop" | "nickname" | "family_member" | "internal_label" | "orphan_ref" | "intensity_mismatch";
+export type SentenceRule = "date_event" | "fact_partner" | "fact_spouse" | "fact_children" | "fact_job" | "hour_pillar" | "mbti_absent" | "internal_term" | "old_negative" | "example_copy" | "duplicate_sentence" | "self_deflating" | "breakup_advice" | "band_mismatch" | "score_mismatch" | "experience_assert" | "love_timing" | "compat_judgement" | "source_mention" | "rural_prop" | "nickname" | "family_member" | "internal_label" | "orphan_ref" | "intensity_mismatch" | "health_claim" | "stage_glyph";
 export type Deletion = { readonly chapter: number; readonly rule: SentenceRule; readonly sentence: string };
 /** 경험 단정을 경향형·질문형으로 바꾼 기록(P3.6 A6). */
 export type Replacement = { readonly chapter: number; readonly rule: "experience_assert"; readonly from: string; readonly to: string };
@@ -41,14 +41,16 @@ const CHILD_TERM = /자녀 ?(자리|별|궁|성)|어린아이|아이처럼|아�
 /** 부모 역할 장(자녀 미입력·없음)에서도 잡는 꼴: 아이가 이미 있다고 단정하는 말(P6e — 그 장의 가정·명식 설명 문장은 통과). */
 const CHILD_EXIST = /(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은|도)? ?(있어|있고|있는|있습니다|있으니|있다|있지만|생겼|태어났)|(?<![가-힣])(아이|자녀|아들|딸|애들)(가|이|는|은)? [^.?!]{0,12}(다니(는|고|며|니)|자라고 있)|우리 아이|(아이|자녀)를 (키우고 있|키우는 지금|두고 있|둔 지금)|아이 (둘|하나|셋)을? 키우/;
 /** 최종판 5: 자녀 미입력인데 "없다"고 단정(장덕민 연애 8장 "지금은 자녀가 없으니"). 입력이 없음(none)이면 쓸 수 있다. */
-const CHILD_ABSENT = /(?<![가-힣])(아이|자녀|아들|딸)(가|는|도)? ?(없으니|없어서|없지만|없는 지금|없습니다|없어요|없다)/;
+const CHILD_ABSENT = /(?<![가-힣])(아이|자녀|아들|딸)(가|는|도)? ?(없으니|없어서|없지만|없는 지금|없습니다|없어요|없다)|(아이|자녀)를 키우는 (상황|때|중|형편)(이|은|도)? 아니(니|라서|므로|어서|에요|지만)/;
 const JOB_EMPLOYED = /(당신의 회사|다니는 회사|직장 상사|팀장님|부장님|사무실에서|회사 동료)/;
 const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표)/;
+export const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣]))/;
 
+const HEALTH_CLAIM = /(소화|잠|수면|두통|위장|장 건강|피부|혈압|허리|어깨|목덜미|면역|생리)[^.?!]{0,14}(흔들립니다|흔들려요|탈이 납니다|탈이 나요|나빠집니다|나빠져요|상합니다|망가집니다|망가져요|아픕니다|아파요|약해집니다|약해져요)[.!]?$/;
+const STAGE_GLYPH = /(땅 글자|일지|지지)(는|은|가|이) [가-힣]{1,2}(이라는|라는) (단계|운성)/;
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
 /** 이별·단절 권유(P3.5 A6·P4): 낮은 점수에도 쓰지 않는다. */
@@ -64,12 +66,15 @@ const JUDGE = /(부모|자녀|상사|팀장|팀원|부하|동료|배우자|친�
 const DIM_NAMES = ontology.dimensions.map(d => d.name).filter(n => n.length >= 2);
 const POLE_LABELS = ontology.dimensions.flatMap(d => [d.poles.plus.label, d.poles.minus.label]);
 const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-const INTERNAL_LABEL = new RegExp([
+export const INTERNAL_LABEL = new RegExp([
   "배지", "제시되지 않(습니다|아요|는다)", "축 이름",
   // 지침을 그대로 말하는 문장(P6b r1: "이 그림은 뒤에서 필요할 때만 한 번씩 꺼낼게요").
   "필요할 때만 (짧게 |한 번씩 )?(되짚|꺼내|꺼낼|부르)", "(이|그) 그림은 (뒤에서|앞으로|이 책에서)", "뒤에서 (다시 )?(되짚|꺼내|꺼낼)겠?",
   // 최종판 5: 조건형 규칙을 독자 안내로 옮김(장덕민 연애 8장 "아이를 키우게 된다면이라는 조건으로 읽어 주세요").
   "(조건|가정)(형)?으로 (읽어|봐|들어) 주세요",
+  // AM 1부 판독(45·47·49): 설계기 라벨이 본문에 — 「정재형·편재형·회전형」, 「부업·창업 적합 체크」, 판정 「'잘 맞음'」, 「"함께 살게 된다면"이라는 조건으로 이야기하는 건」.
+  "(?<![가-힣])(정재|편재|비겁|식상|재성|관성|인성)형(이에요|입니다|이라|이고|이|은|의|으로|에|인)?(?![가-힣])", "회전형|장기 분산형|적합 체크", "['‘\"“](잘 맞음|보통에서 잘 맞음 사이|덜 맞음|맞음|보통)['’\"”]",
+  "(이라는|라는) (조건|가정)으로 (이야기|말|풀어|살펴)",
   `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
 ].join("|"));
 /** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
@@ -118,6 +123,10 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (!f.birthTimeKnown && HOUR.test(s)) return "hour_pillar";
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
   if (INTERNAL.test(s)) return "internal_term";
+  // AM 1부 판독(48 6장 「날이 선 날에는 소화와 잠부터 먼저 흔들립니다」): 몸 증상을 확정형으로 단정(건강 진단 금지). 「~하기 쉬워요」 경향은 통과.
+  if (HEALTH_CLAIM.test(s)) return "health_claim";
+  // AM 1부 판독(47 1·2·4·7장): 땅 글자 자체를 십이운성 단계로 씀(「태어난 날 땅 글자는 묘라는 단계예요」).
+  if (STAGE_GLYPH.test(s)) return "stage_glyph";
   if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";
   if (RURAL_PROP.test(s)) return "rural_prop";
   if (f.nicknames?.some(n => s.includes(n))) return "nickname";

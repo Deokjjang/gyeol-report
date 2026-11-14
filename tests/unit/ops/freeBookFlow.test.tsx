@@ -93,7 +93,7 @@ describe("신규 가입 → 이용권 1장 → 책 생성 → 책 끝 줄", () =
     expect(html.indexOf(BOOK_END_SIGNUP_LINE)).toBeGreaterThanOrEqual(0);
     expect(html.indexOf(BOOK_END_SIGNUP_LINE)).toBeLessThan(html.indexOf(BOOK_END_EVENT_LINE));
     expect(html).toContain(`>${BOOK_END_CTA}</a>`);
-  }, 60_000);
+  }, 180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it("결제 책은 증정 줄만, 1+1 기간이 아니면 결제 책엔 아무것도 없다(가입 이용권 책은 가입 줄만)", () => {
     const paid = renderToStaticMarkup(<BookEndNotice view={{ event: true, signup: false, eventUntil: "11월 30일" }} />);
     expect(paid).toContain(BOOK_END_EVENT_LINE); expect(paid).not.toContain(BOOK_END_SIGNUP_LINE);

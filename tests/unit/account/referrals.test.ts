@@ -1,12 +1,11 @@
 import { randomBytes, randomUUID } from "node:crypto";
 import { mkdirSync, writeFileSync, readFileSync } from "node:fs";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import type { PGlite } from "@electric-sql/pglite";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { createLocalShareFixture, sqlBookShareLibrary, sqlBookSharePort } from "../../../src/lib/book/shareLocalReview";
 import { localReferralDatabase, sqlReferralStore } from "../../../src/lib/referrals/localReview";
-import { claimHash } from "../../../src/lib/library/server";
 import { localTicketUserId, sqlTicketStore } from "../../../src/lib/tickets/localDatabase";
 import { issuePublishedReportShare } from "../../../src/lib/sharing/reportShareStore";
 import { validateBookPublication, storedBook } from "../../../src/lib/book/storedReport";
@@ -22,12 +21,23 @@ import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliabilit
 import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { withReferralPublication } from "../../../src/lib/referrals/service";
 import * as accountGate from "../../../src/lib/account/gate";
-const origin="http://127.0.0.1:3189", A=localTicketUserId("inviter"), anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
+import { createLocalAccountPort } from "../../../src/lib/account/localReview";
+// P 추가 A: 비회원 결제가 없다 — 공유 책 준비물(createLocalShareFixture)은 로컬 회원 세션으로 산다(결제 때 회원에게 바로 묶임, 구매 연결 쿠키 없음).
+// 로컬 회원 id는 local-<provider>(account/localReview), SQL 사용자 id는 localTicketUserId(그 id).
+// 실제 SQL(PGlite) + 실제 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 180_000 });
+const origin="http://127.0.0.1:3189", A=localTicketUserId("local-kakao"), anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
 let db:PGlite, store:ReferralStore, reportId:string, model:BookShareModel, snapshot:unknown;
 const request=(body:unknown,cookie="",source=origin)=>new NextRequest(`${origin}/dev/book-flow/referral`,{method:"POST",headers:{host:"127.0.0.1:3189",origin:source,cookie},body:JSON.stringify(body)});
 const identity=(id:string):AccountIdentity=>({id,provider:"kakao",displayName:"회원"});
 const auth=(id:string):AccountPort=>({...anonymous,currentUser:async()=>identity(id),read:async()=>({profile:identity(id),consents:Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type,document_version])=>({consent_type:consent_type as "terms"|"privacy",document_version,is_agreed:true,required:true,recorded_at:new Date().toISOString()}))})});
 async function consent(id:string) { return db.query("select record_account_consent($1,$2,'회원','kakao','first_login',$3::jsonb)",[id,randomUUID(),JSON.stringify(Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type,document_version])=>({consent_type,document_version,is_agreed:true,required:true})))]); }
+async function memberCookie(provider:"kakao"|"google") {
+  const port=createLocalAccountPort(new NextRequest(`${origin}/dev/account`,{headers:{host:"127.0.0.1:3189"}}))!;
+  const login=await port.start(provider,`${origin}/dev/account/api/callback`);expect(await port.exchange(new URL(login!).searchParams.get("code")!)).toBe(true);
+  const member=(await port.currentUser())!;expect(await port.consent(member,randomUUID(),"first_login")).toBe(true);
+  const cookie=port.finish(new NextResponse()).cookies.get("gyeol-local-account")!;return `${cookie.name}=${cookie.value}`;
+}
 async function invite(owner=A) {return attachReferral(model,reportId,snapshot,auth(owner),store);}
 async function context(link:BookShareModel) {
   const r=await captureReferral(request({shareToken:link.shareToken,ref:link.referral?.token}),anonymous,store,true);
@@ -40,19 +50,19 @@ async function user(secret:string,existing=false) {
 const attribute=(b:{id:string;contextHash:string})=>attributeReferral(store,b.id,b.contextHash);
 const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).quantity;
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async()=>{
   db=(await localReferralDatabase())!; store=sqlReferralStore(db);
-  const f=RUNTIME_FIXTURES[0], made=await createLocalShareFixture(request({}),f.payload);
+  const f=RUNTIME_FIXTURES[0], made=await createLocalShareFixture(request({},await memberCookie("kakao")),f.payload);
   expect(made.status).toBe(200);reportId=(await made.json()).reportId;
-  const secret=made.cookies.getAll()[0].value;
-  expect(await sqlBookShareLibrary(db).claim(reportId,"inviter",claimHash(secret),true)).toBe("owned");await consent(A);
+  expect(await sqlBookShareLibrary(db).claim(reportId,"local-kakao",null,false)).toBe("owned");await consent(A);
   const issued=await issuePublishedReportShare(reportId,validateBookPublication,sqlBookSharePort(db));expect(issued.ok).toBe(true);
   if(!issued.ok)return;
   const shared=(await loadBookShare(new URL(issued.data.url).pathname.slice(3),sqlBookSharePort(db)))!;model=shared.model;snapshot=shared.snapshot;
   if(process.env.REFERRAL_REVIEW_EXPORT){mkdirSync(process.env.REFERRAL_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.REFERRAL_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
-},30000);
+},180_000);
 afterAll(async()=>{await db?.close();});
 afterEach(() => vi.restoreAllMocks());
 describe("11B actual SQL + existing ticket ledger",()=>{
@@ -107,14 +117,14 @@ describe("11B actual SQL + existing ticket ledger",()=>{
     const b=await user(await context(await invite()));expect((await attribute(b)).ok).toBe(true);const before=Number(await balance(A));
     const tickets=withReferralTickets(sqlTicketStore(db),store),payload=f.payload.productKey==="annual_fortune" ? {...structuredClone(f.payload),productOptions:{selectedYear:String(new Date().getFullYear())}} : structuredClone(f.payload);
     const requestId=randomUUID();const published=await redeemReportTicket(tickets,b.id,requestId,payload);
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 추천 보상 이용권으로도 만들지 않는다 — 이용권은 남고 추천 보상도 없다.
+    if(f.id==="major"||f.id==="annual"){expect(published).toMatchObject({ok:false,code:"TICKET_PRODUCT_EXCLUDED"});expect(await balance(b.id)).toBe(1);expect(await balance(A)).toBe(before);return;}
     expect(published.state).toBe("COMPLETED");expect(await balance(b.id)).toBe(0);expect(await balance(A)).toBe(before+1);
     const read=await tickets.call("read",b.id,{reportId:published.reportId}), book=storedBook(read.snapshot)!;expect(book).toBeTruthy();
-    if(f.id==="major"){const p=book.data.pages.find(p=>p.kind==="timeline");expect(p?.kind==="timeline"&&p.years).toHaveLength(14);}
-    if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}
     if(f.id==="compatibility"){const p=book.data.pages.find(p=>p.kind==="pair");expect(p?.kind==="pair"&&p.directions).toHaveLength(2);}
     await Promise.all(Array.from({length:8},()=>reconcileReferrals(store)));expect(await balance(A)).toBe(before+1);
     expect((await redeemReportTicket(tickets,b.id,requestId,payload)).reportId).toBe(published.reportId);expect(await balance(A)).toBe(before+1);
-  },30000);
+  });
   it("failed/incomplete generation reverses B ticket and never qualifies",async()=>{
     const b=await user(await context(await invite()));await attribute(b);const before=await balance(A);
     const result=await redeemReportTicket(withReferralTickets(sqlTicketStore(db),store),b.id,randomUUID(),RUNTIME_FIXTURES[0].payload,{generate:async()=>{throw new Error("TEST_ONLY");}});
@@ -153,9 +163,9 @@ describe("11B actual SQL + existing ticket ledger",()=>{
     await reconcileReferrals(store);expect(await balance(A)).toBe(Number(before)+1);
   });
   it("two actual inviters competing for one new identity: one B grant and one attribution",async()=>{
-    const made=await createLocalShareFixture(request({}),RUNTIME_FIXTURES[1].payload),id=(await made.json()).reportId;
-    const owner=localTicketUserId("other-inviter");
-    expect(await sqlBookShareLibrary(db).claim(id,"other-inviter",claimHash(made.cookies.getAll()[0].value),true)).toBe("owned");await consent(owner);
+    const made=await createLocalShareFixture(request({},await memberCookie("google")),RUNTIME_FIXTURES[1].payload),id=(await made.json()).reportId;
+    const owner=localTicketUserId("local-google");
+    expect(await sqlBookShareLibrary(db).claim(id,"local-google",null,false)).toBe("owned");await consent(owner);
     const issued=await issuePublishedReportShare(id,validateBookPublication,sqlBookSharePort(db));expect(issued.ok).toBe(true);if(!issued.ok)return;
     const shared=(await loadBookShare(new URL(issued.data.url).pathname.slice(3),sqlBookSharePort(db)))!;
     const other=await attachReferral(shared.model,id,shared.snapshot,auth(owner),store);

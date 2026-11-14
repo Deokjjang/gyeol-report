@@ -21,7 +21,9 @@ export type FactCtx = {
 
 const NEG = /없(어|어요|습니다|는|고|다|지만|으니|으면)|아니|않(아|고|는|습니다|지만)|빠져 있|비어 있/;
 const HYPO = /라면|다면|이라면|일 때는|경우에는|흔히|보통은|일반적으로|이란|이라는 것은|뜻해요|뜻합니다|을 뜻|를 뜻/;
-const TEMPORAL = /올해|내년|그해|이해|대운|세운|월운|\d{4}년|이달|이번 달|달에는|해에는|들어오|들어와|찾아오|만나는 해/;
+/** AM 7부: 세운 달 카드 문단(「3월 계묘월은…」). */
+const GANJI_MONTH = /[갑을병정무기경신임계][자축인묘진사오미신유술해]월/;
+const TEMPORAL = /올해|내년|그해|이해|이 해|그 해|이 달|그 달|대운|세운|월운|\d{4}년|이달|이번 달|달에는|해에는|들어오|들어와|찾아오|만나는 해/;
 const SLOT_KO: Readonly<Record<Slot, string>> = { yearStem: "연간", yearBranch: "연지", monthStem: "월간", monthBranch: "월지", dayStem: "일간", dayBranch: "일지", hourStem: "시간", hourBranch: "시지" };
 const slotsKo = (s: readonly Slot[]) => s.map(x => SLOT_KO[x]).join("·");
 
@@ -59,10 +61,13 @@ function termPosition(sen: string, ctx: FactCtx, owners: readonly PersonFacts[])
 }
 
 /** 정답지에 없는 신살·귀인·십이운성을 그 사람 것으로 말함(부정·가정·유입 문맥 제외). */
-function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
-  if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  // AM 7부(annual-2·3 판독): 세운 달 카드의 「원진이 함께 걸려」「이 달은 공망에 들어서」는 그 달 기둥과 원국 사이 일이다 — 해·달 카드, 때 낱말이 든 문단은 유입 문맥으로 본다.
+  if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen) || inKey || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
   for (const a of ctx.aliases) {
     if (!a.re.test(sen)) continue;
+    // 세운 책: 원진·공망은 그 해·달이 원국과 만나 생기는 쪽으로 쓴다(엔진 해·달 카드 배지) — 원국에 없어도 지우지 않는다.
+    if (ctx.product === "annual_fortune" && /원진|공망/.test(a.name)) continue;
     if (owners.some(o => o.shinsal.some(s => s.name === a.name))) continue;
     // 궁합: 이름이 없는 문장은 두 사람 중 누구에게든 있으면 통과(ownersOf가 모두를 준다).
     return { rule: "fact_term", detail: `${a.name}은 ${owners.map(o => o.name).join("·")}의 원국에 없다` };
@@ -90,13 +95,31 @@ function relPool(ctx: FactCtx, owners: readonly PersonFacts[], temporal: boolean
   if (temporal) for (const o of owners) pool.push(...o.annual.flatMap(a => [...a.relations, ...a.stemClashes]), ...o.dayun.cycles.flatMap(c => [...c.relations, ...c.stemClashes]), ...o.monthly.flatMap(m => m.relations));
   return pool;
 }
+/** 원국 관계 + 한 유입 기둥(세운·대운·월운 하나)의 관계를 합쳐 세 글자가 다 모이는가(그 유입 기둥이 한 글자 이상 보탬). */
+function coversThree(chars: readonly string[], kinds: readonly string[], owners: readonly PersonFacts[]): boolean {
+  const fits = (r: RelationFact) => kinds.includes(r.kind) && r.members.every(m => chars.includes(m.char));
+  for (const o of owners) {
+    const natal = [...o.relations, ...o.stemClashes].filter(fits);
+    const sources = [...o.annual.map(a => [...a.relations, ...a.stemClashes]), ...o.dayun.cycles.map(c => [...c.relations, ...c.stemClashes]), ...o.monthly.map(m => [...m.relations])];
+    for (const src of sources) {
+      const add = src.filter(fits); if (!add.length) continue;
+      const u = new Set([...natal, ...add].flatMap(r => r.members.map(m => m.char)));
+      if (chars.every(c => u.has(c))) return true;
+    }
+  }
+  return false;
+}
 const sameSet = (a: readonly string[], b: readonly string[]) => { const x = new Set(a), y = new Set(b); return x.size === y.size && [...x].every(c => y.has(c)); };
 
 /** 관계: 글자 묶음이 정답지에 없음(축술미형인데 戌 없음) · 글자 수(두 글자인데 세 땅) · 완성도(반합인데 완성). */
-function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
   if (HYPO.test(sen) && !/있어|있고|있습니다|있으니/.test(sen)) return null;
-  const temporal = TEMPORAL.test(sen);
-  const pool = relPool(ctx, owners, temporal);
+  // AM 7부(annual-2·3 판독): 세운 달 카드의 「묘유충이 걸려 있어…」는 그 달 기둥(계묘월)의 관계인데, 문장에 때 낱말이 없어 원국만 보고 지웠다.
+  // 해·달 카드(inKey), 때 낱말(간지월 이름 포함)이 든 문단, 세운 책(책 전체가 그 해 이야기)이면 관계가 있는지는 세운·대운·월운까지 본다.
+  // 반합 완성도·글자 수 판정(아래 one·generic)은 예전처럼 문장 기준 풀만 쓴다 — 풀이 넓어지면 대상이 여럿이 되어 검사가 약해진다.
+  const sentTemporal = TEMPORAL.test(sen) || inKey;
+  const temporal = sentTemporal || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph) || ctx.product === "annual_fortune";
+  const pool = relPool(ctx, owners, temporal), strictPool = temporal === sentTemporal ? pool : relPool(ctx, owners, sentTemporal);
   const mentioned: { chars: string[]; kinds: readonly string[]; text: string; stem: boolean }[] = [];
   for (const m of sen.matchAll(BRANCH_REL)) mentioned.push({ chars: branchChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], stem: false });
   for (const m of sen.matchAll(STEM_REL)) mentioned.push({ chars: stemChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], stem: true });
@@ -105,6 +128,10 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     if (!x.stem && x.chars.some(c => !/[子丑寅卯辰巳午未申酉戌亥]/.test(c))) continue;
     const found = pool.filter(r => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars));
     if (found.length) continue;
+    // AM 7부(annual-3 판독): 「사유축 반합」은 무리 이름 + 반합(세 글자 중 두 글자만)이다 — 그 무리의 반합(두 글자)이 있으면 맞는 말.
+    if (/반합$/.test(x.text) && x.chars.length === 3 && pool.some(r => r.kind === "SAMHAP" && r.completeness !== "full" && r.members.every(m => x.chars.includes(m.char)))) continue;
+    // AM 7부(annual-2 판독): 세 글자 형·합(축술미형·인사신형)이 원국 두 글자 + 그 해·달·대운 한 글자로 다 모이면 엔진 카드와 같이 본다.
+    if (temporal && x.chars.length === 3 && coversThree(x.chars, x.kinds, owners)) continue;
     // 세 글자 이름(축술미 삼형)인데 두 글자만 있으면 partial 형으로 있을 수 있다 — 세 글자가 다 있어야 「축술미 삼형」.
     const partial = x.chars.length === 3 ? pool.filter(r => x.kinds.includes(r.kind) && r.members.every(m => x.chars.includes(m.char))) : [];
     const have = new Set(owners.flatMap(o => Object.values(o.pillars).flatMap(p => (p ? [p.stem, p.branch] : []))));
@@ -113,11 +140,12 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     return { rule: "fact_relation", detail: partial.length ? `「${x.text}」: 세 글자가 다 있지 않다(${partial.map(r => `${[...new Set(r.members.map(m => m.char))].join("")} 두 글자 형`).join("·")}만 있다)` : missing.length ? `「${x.text}」: ${missing.join("·")} 글자가 원국에 없다` : `「${x.text}」 관계는 정답지에 없다` };
   }
   // 글자 수·완성도: 관계 말이 하나일 때.
-  const one = mentioned.length === 1 ? pool.filter(r => mentioned[0].kinds.includes(r.kind) && r.members.every(m => mentioned[0].chars.includes(m.char))) : [];
-  const generic = /반합|삼합/.test(sen) ? pool.filter(r => r.kind === "SAMHAP") : [];
+  const one = mentioned.length === 1 ? strictPool.filter(r => mentioned[0].kinds.includes(r.kind) && r.members.every(m => mentioned[0].chars.includes(m.char))) : [];
+  const generic = /반합|삼합/.test(sen) ? strictPool.filter(r => r.kind === "SAMHAP") : [];
   const target = one.length === 1 ? one[0] : generic.length === 1 && !mentioned.length ? generic[0] : null;
   if (target) {
-    const cnt = sen.match(/(두|세|네|2|3|4) ?(땅|글자|자리|기둥|개의 땅|개의 글자)/);
+    // AM: 표준 반합 풀이(HALF_HAP_PLAIN 「세 글자 중 두 글자만」)의 「세 글자」는 글자 수 주장이 아니다 — 「두 글자」로 읽는다.
+    const cnt = sen.replace(/세 ?(글자|땅) ?중 ?(두|2) ?(글자|땅)(만)?/g, "두 글자").match(/(두|세|네|2|3|4) ?(땅|글자|자리|기둥|개의 땅|개의 글자)/);
     const n = cnt ? ({ 두: 2, 세: 3, 네: 4, 2: 2, 3: 3, 4: 4 } as Record<string, number>)[cnt[1]] : 0;
     if (n && n !== target.glyphCount) return { rule: "fact_relation", detail: `${target.key}는 ${target.glyphCount}글자다(${cnt![0]} 아님)` };
     if (target.completeness !== "full" && /완성|다 모(여|인|였|이)|온전히 묶|완전히 (묶|하나)|세 글자가 (모두|다)/.test(sen)) return { rule: "fact_relation", detail: `${target.key}는 ${target.kind === "SAMHAP" ? "반합(두 글자만 모여 반쯤 묶임)" : "두 글자 형(세 글자 다 모이지 않음)"}이다(완성 아님)` };
@@ -159,10 +187,13 @@ function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: s
 
 /** 간지·연도·대운수. */
 const GANJI = "([갑을병정무기경신임계][자축인묘진사오미신유술해])";
+/** AM2-7 1부 6: 문장을 절로 나눈다(「…였고, 」 「…이며, 」 「…지만, 」 「…는데, 」). */
+export const splitClauses = (sen: string) => sen.split(/(?<=(?:고|며|지만|는데|면서|었고|였고|이고)),\s+/);
+const clauseAt = (sen: string, at: number) => { let pos = 0; for (const c of splitClauses(sen)) { const i = sen.indexOf(c, pos); if (i <= at && at < i + c.length) return c; pos = i + c.length; } return sen; };
 /** 육십갑자 짝(천간·지지 음양이 같다): 「정인」(丁寅)·「정관」 같은 십성 이름을 간지로 읽지 않는다. */
 const STEMS_KO = "갑을병정무기경신임계", BRANCHES_KO = "자축인묘진사오미신유술해";
 export const isGanjiKo = (g: string) => g.length === 2 && STEMS_KO.indexOf(g[0]) >= 0 && BRANCHES_KO.indexOf(g[1]) >= 0 && STEMS_KO.indexOf(g[0]) % 2 === BRANCHES_KO.indexOf(g[1]) % 2;
-function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+export function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
   if (owners.length !== 1) return null;
   const o = owners[0];
   for (const m of sen.matchAll(new RegExp(`(20\\d\\d|19\\d\\d)년(의)? ?${GANJI}(?![가-힣]{0,1}대운)`, "g"))) {
@@ -173,9 +204,13 @@ function ganjiClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null
   for (const m of sen.matchAll(new RegExp(`${GANJI} ?대운`, "g"))) {
     if (!isGanjiKo(m[1])) continue;
     if (!o.dayun.cycles.some(c => c.ganjiKo === m[1])) return { rule: "fact_ganji", detail: `${m[1]} 대운은 없다(대운: ${o.dayun.cycles.slice(0, 6).map(c => `${c.ganjiKo} ${c.startYear}`).join("·")})` };
-    const y = sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,14}$/);
+    // AM 판독(major-1 3장): 「2020년 5월 무렵부터 2030년 5월 무렵까지 이어지는 을축 대운」 — 바로 앞 해가 「…까지」의 끝 해면 「…부터」 앞 해를 시작 해로 본다.
+    const y0 = sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,14}$/);
+    const y = y0 && /까지/.test(y0[0]) ? sen.slice(0, m.index).match(/(20\d\d)년[^.]{0,10}부터/) : y0;
     const c = o.dayun.cycles.find(x => x.ganjiKo === m[1])!;
-    if (y && /(부터|시작|들어서|바뀌)/.test(sen) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(sen))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
+    // AM2-7 1부 6(P6 major-p5 2.0 ¶2 「2023년은 정묘 대운의 마지막 해였고, 2024년부터 무진 대운이 시작되었어요」 — 뒤 절의 「부터 · 시작」을 앞 절 대운에 대어 지웠다): 한 문장에 대운이 둘이면 절마다 따로 맞댄다.
+    const cl = clauseAt(sen, m.index!);
+    if (y && /(부터|시작|들어서|바뀌)/.test(cl) && cl.includes(y[0].slice(0, 5)) && Number(y[1]) !== c.startYear && !(Number(y[1]) >= c.startYear && Number(y[1]) <= c.endYear && !/시작/.test(cl))) return { rule: "fact_ganji", detail: `${m[1]} 대운은 ${c.startYear}년 ${c.startSolarKst ? Number(c.startSolarKst.slice(5, 7)) + "월 무렵" : ""}부터다` };
   }
   // 운영 Q 8-1: 대운수는 한 사람에 한 숫자(정답지 dayun.number = 첫 대운이 시작될 때의 만 나이, 모든 대운 줄과 같은 값). 수리 힌트 이름도 그 뜻대로.
   for (const n of sen.matchAll(/대운수 ?(는 |가 )?(\d+)/g)) {
@@ -254,12 +289,21 @@ function renderCheck(sen: string): FactHit | null {
   return null;
 }
 
-/** 종합 본문: 연·월 숫자 고정 금지(운 설명은 「올해(병오)」, 행동은 「앞으로 한 달」). 대운 표기 꼴(「무진 대운: 2027년 5월 무렵부터」)은 허용. */
+/** 종합 본문: 연·월 숫자 고정 금지(운 설명은 「2026년 병오년」 해 이름, 행동은 「앞으로 한 달」). 대운 표기 꼴(「무진 대운: 2027년 5월 무렵부터」)은 허용. */
+// AM 1-1 ①: 해 이름(연도 + 간지, 「2026년 병오년」·「2026년 병오(丙午)년」·「2026년(병오)」)은 세운 관계를 쓰는 표기라 허용한다. 달 고정·「이번 달」은 그대로 막는다.
+const YEAR_NAME = /20\d\d년 ?\(?[갑을병정무기경신임계][자축인묘진사오미신유술해](\([一-鿿]{2}\))?\)?(년|해)?(?![가-힣]*월)/;
+/** 문장에 허용된 해 이름 꼴이 있나(검수 T 지적 거르기와 같은 기준). */
+export const hasYearName = (sen: string) => YEAR_NAME.test(sen);
+/** 종합 본문 연·월 고정 꼴(해 이름·대운 표기는 빼고 본다). 없으면 null. */
+export function fixedTimeOf(sen: string): string | null {
+  const s = sen.replace(/[가-힣]{2} 대운: 20\d\d년 \d{1,2}월 무렵부터( \(대운수 \d+\))?/g, "").replace(/(20\d\d)년[^.]{0,6}무렵부터[^.]{0,4}대운/g, "")
+    .replace(new RegExp(YEAR_NAME.source, "g"), "");
+  return s.match(/20\d\d년 ?\d{1,2}월|(?<![\d.])\d{1,2}월 (한 달|동안|안에|중)|이번 달|이달(에|은|의)?|20\d\d년/)?.[0] ?? null;
+}
 function timeFixed(sen: string, ctx: FactCtx): FactHit | null {
   if (!ctx.comprehensive || /대운/.test(sen)) return null;
-  const s = sen.replace(/[가-힣]{2} 대운: 20\d\d년 \d{1,2}월 무렵부터( \(대운수 \d+\))?/g, "").replace(/(20\d\d)년[^.]{0,6}무렵부터[^.]{0,4}대운/g, "");
-  const m = s.match(/20\d\d년 ?\d{1,2}월|(?<![\d.])\d{1,2}월 (한 달|동안|안에|중)|이번 달|이달(에|은|의)?|20\d\d년/);
-  return m ? { rule: "time_fixed", detail: `종합 본문 시점 「${m[0]}」 — 운 설명은 「올해(병오)」 한 번, 행동은 「앞으로 한 달」로` } : null;
+  const m = fixedTimeOf(sen);
+  return m ? { rule: "time_fixed", detail: `종합 본문 시점 「${m}」 — 운 설명은 「2026년 병오년」처럼 해 이름으로, 행동은 「앞으로 한 달」로` } : null;
 }
 
 /** 입력에 없는 직업 상황(종합·커리어·연애): 투자자·투자 유치·직원·팀원·평가 시즌 등. 가정형(~게 되면·~한다면)은 통과. */
@@ -274,13 +318,23 @@ const HYPO_OK = /게 되면|한다면|하게 되면|생기면|생긴다면|할 �
 const OUTSIDE_NO_ORG = /팀장|상사(가|를|에게|의|와)|회의(에서|가|를| 중| 뒤| 때|록)/;
 /** 최종판3 12: 재취업 준비 입력에 과거 근속·무사고를 단정한 꼴(판독: 「오래 맡아도 사고 없던 안정성」). 입력에는 경력 햇수·근속이 없다. */
 const OUTSIDE_TENURE = /오래 (맡아|맡은|다닌|다녀|일해|일한|근무)[^.]{0,20}(온|왔|던|없이)|사고 없(이|던)|근속/;
+/**
+ * AM 재생성 2 판독(major-1·annual-1 연차 결함 4건): 입력에는 연차·근속이 없는데 「사회 초년 직장인」「막내에서 한 사람 몫」「사회 초년의 등불」로 연차를 정했다.
+ * 일하는 입력(직장·프리랜서·자영업·사업)에서 입력 글에 없는 연차 말을 잡는다. 표지 검사(`coverIssue`)도 같은 꼴을 쓴다.
+ */
+export const SENIORITY = /사회 ?초년(?:생)?|신입(?: ?사원| 시절| 때|으로|이라|이니|인 )|막내(?:에서|로서|로 |티| 업무| 역할| 자리)|입사 \d+ ?년|\d+ ?년 ?차/;
+const WORKING = /^(employee|freelancer|self_employed|business_owner)$/;
+export const seniorityHit = (sen: string, jobText: string): string | null => {
+  const m = sen.match(SENIORITY); if (!m) return null;
+  return /신입|초년|막내|년 ?차|년차|입사|경력/.test(jobText) ? null : m[0];
+};
 function inputOutside(sen: string, ctx: FactCtx): FactHit | null {
   const personal = ctx.product === "saju_mbti_full" || ctx.product === "love_marriage_child";
   const status = ctx.sheet.people[0]?.input?.job.status ?? "";
   const m = sen.match(OUTSIDE_ALL) ?? (personal ? sen.match(OUTSIDE_PERSONAL) : null)
     ?? (ctx.people.length < 2 && /^(self_employed|freelancer|homemaker)$/.test(status) ? sen.match(OUTSIDE_NO_ORG) : null)
     ?? (ctx.people.length < 2 && status === "job_seeker" ? sen.match(OUTSIDE_TENURE) : null);
-  if (!m) return null;
+  if (!m) { const w = ctx.people.length < 2 && WORKING.test(status) && !HYPO_OK.test(sen) ? seniorityHit(sen, ctx.jobText) : null; return w ? { rule: "input_outside", detail: `입력에 없는 연차 「${w}」(입력: ${ctx.jobText.trim() || "직업 미입력"}) → 연차를 정하지 않는 말로` } : null; }
   if (HYPO_OK.test(sen)) return null;
   const word = m[0].replace(/(을|이|들|에게|과|의|이랑| 면접)$/, "");
   if (ctx.jobText.includes(word)) return null;
@@ -322,6 +376,12 @@ function yinYangSide(sen: string, owners: readonly PersonFacts[]): FactHit | nul
  * 「올해까지」 또는 「YYYY년(M월)까지」가 그 끝 해와 다르면 잡는다(엔진 endYear로 끊은 「2028년까지」 꼴). */
 function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
   if (!/대운|10년 흐름|이 10년/.test(sen)) return null;
+  // AM2-7 1부 6: 대운 이름이 둘 이상이면 절마다 따로 맞댄다(앞 절 대운의 「…까지」를 뒤 절 대운에 대지 않게).
+  const cls = splitClauses(sen); if (cls.length > 1 && (sen.match(/대운/g) ?? []).length > 1) { for (const cl of cls) { const h = dayunSpan1(cl, ctx, owners); if (h) return h; } return null; }
+  return dayunSpan1(sen, ctx, owners);
+}
+function dayunSpan1(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+  if (!/대운|10년 흐름|이 10년/.test(sen)) return null;
   const thisYearEnd = /올해까지|올해로 (끝|마무리)|올해 (끝나|마무리)/.test(sen), until = sen.match(/((?:19|20)\d{2})년(?: \d{1,2}(?:~\d{1,2})?월)?(?: 무렵)?까지/);
   if (!thisYearEnd && !until) return null;
   for (const p of owners) {
@@ -334,11 +394,11 @@ function dayunSpan(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): F
   }
   return null;
 }
-/** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지). */
-export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number): FactHit | null {
+/** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지), inKey = 대운 연도·세운 달 카드 소제목 안(유입 문맥, AM 7부). */
+export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners) ?? annualNoTouch(sen, ctx, owners, paragraph)
-    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners) ?? inputOutside(sen, ctx);
+  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 
 /** 괄호 약어·한자 뒤 조사를 앞 한글 받침에 맞춘다(「눈(Ni)는」→「눈(Ni)은」). 결정론 정리(호출 0). */

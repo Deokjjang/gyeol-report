@@ -1,5 +1,5 @@
 import "server-only";
-import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../ops/config";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, TICKET_PRODUCT_CODE, TICKET_PRODUCT_MESSAGE } from "../ops/config";
 import { PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE } from "../account/profile";
 import { NextRequest, NextResponse } from "next/server";
 import { accountSession } from "../account/policy";
@@ -12,10 +12,12 @@ import type { TicketResult } from "./service";
 import { createHash } from "node:crypto";
 
 const messages: Record<string, string> = {
-  QUEUED: "책을 제본하고 있습니다. 나갔다 와도 내 서재에서 이어서 볼 수 있어요.", RUNNING: "책을 제본하고 있습니다.", COMPLETED: "책이 완성되었습니다.",
-  REVERSED: "책을 완성하지 못했습니다. 사용한 이용권은 복구되었습니다.",
+  // W3 P2: 접수되면 화면은 바로 책 만드는 화면(/reports/<id>)으로 간다. 아래 문구는 넘어가기 전 잠깐만 보인다.
+  QUEUED: "책을 쓰기 시작했어요. 책 만드는 화면으로 이어져요.", RUNNING: "책을 쓰고 있어요. 책 만드는 화면으로 이어져요.", COMPLETED: "책이 완성되었습니다.",
+  REVERSED: "책을 끝까지 만들지 못했어요. 쓰신 이용권은 돌려드렸어요.",
   NO_USABLE_TICKET: "사용 가능한 이용권이 없습니다. 보유 내역을 다시 확인해 주세요.", REFUND_HOLD: "이용권 확인이 필요합니다.",
   [SALES_CLOSED_CODE]: SALES_CLOSED_MESSAGE, [SALES_PAUSED_CODE]: SALES_PAUSED_MESSAGE,
+  [TICKET_PRODUCT_CODE]: TICKET_PRODUCT_MESSAGE,
 };
 // Only mounted after BOTH server gates. The injectable ports are tests, not an
 // HTTP/env/cookie bypass. No provider, promotion or generation runs in this API.
@@ -55,12 +57,14 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     }
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
     if (!result.ok) {
-      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE, SALES_PAUSED_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
+      const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE, SALES_PAUSED_CODE, TICKET_PRODUCT_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
       return json({ ok: false, code, message: messages[code] ?? "발행 상태를 확인 중입니다." }, code === "STORAGE_UNAVAILABLE" ? 503 : code === "NOT_FOUND" ? 404 : 409);
     }
     const state = result.state;
     if (!state || !messages[state] || !validTicketRequestId(result.redemptionId)) return json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);
-    const completed = state === "COMPLETED" && typeof result.reportId === "string" && /^report_[a-f0-9]{32}$/.test(result.reportId);
-    return json({ ok: true, state, redemptionId: result.redemptionId, message: messages[state], ...(completed ? { reportUrl: `/reports/${result.reportId}` } : {}) }, ["QUEUED", "RUNNING"].includes(state) ? 202 : 200);
+    // W3 P2: 만드는 중(QUEUED·RUNNING)에도 책 주소를 준다 — 화면이 바로 같은 대기 화면(/reports/<id>, 주인만)으로 간다. 로그인한 본인 접수만 답한다.
+    // 진행률·지연 안내는 그 대기 화면이 서버 상태(/api/reports/<id>/progress)로 보인다(예전 결제 화면 안 진행률은 없앴다).
+    const addressable = ["COMPLETED", "QUEUED", "RUNNING"].includes(state) && typeof result.reportId === "string" && /^report_[a-f0-9]{32}$/.test(result.reportId);
+    return json({ ok: true, state, redemptionId: result.redemptionId, message: messages[state], ...(addressable ? { reportUrl: `/reports/${result.reportId}` } : {}) }, ["QUEUED", "RUNNING"].includes(state) ? 202 : 200);
   } catch { return json({ ok: false, code: "STORAGE_UNAVAILABLE", message: "발행 상태를 확인 중입니다." }, 503); }
 }

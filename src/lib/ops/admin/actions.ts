@@ -252,8 +252,10 @@ async function refund(ctx: Ctx): Promise<NextResponse> {
     if (hasRefundWarnings(warnings) && ctx.body.ackWarnings !== true) return no(409, "REFUND_WARNINGS", "이 주문으로 받은 이벤트 이용권이 이미 쓰였거나 친구 보너스가 나갔어요. 내용을 확인한 뒤 다시 진행해 주세요.", { warnings });
   }
   // 하루 상한(한국 날짜, 관리자 환불만, 상태 무관). 이미 환불 기록이 있는 주문(재시도)은 새 환불이 아니라 세지 않는다.
+  // W3 P2(D8): 「우리 잘못」 환불(책을 못 드린 주문 — 책이 완성되지 않았거나, 화면에서 우리 잘못으로 표시)은 상한에 막지 않는다(밤중 사고에 손 환불이 막히지 않게).
   const caps = adminRefundCaps(ctx.deps.env), day = kstDayRange(ctx.deps.now());
-  if (!l.detail.refund) {
+  const ourFault = ctx.body.ourFault === true || String((l.detail.book as { status?: unknown } | null)?.status ?? "") !== "COMPLETED";
+  if (!l.detail.refund && !ourFault) {
     const today = await adminRefundsBetween(ctx.stores.db, day.start, day.end);
     if (!today) return no(503, "REFUND_CAP_CHECK_FAILED", "오늘 환불 한도를 확인하지 못했어요. 잠시 뒤 다시 시도해 주세요.");
     if (today.count + 1 > caps.count || today.amount + order.amount > caps.amount) {
@@ -262,12 +264,12 @@ async function refund(ctx: Ctx): Promise<NextResponse> {
     }
   }
   // DB가 같은 상한을 잠금 안에서 다시 센다(동시 요청 방지).
-  const req = await ctx.stores.order.call("refund_request", { paymentOrderId: order.paymentOrderId, source: "admin", reason, actorUserId: ctx.adminId, capCount: caps.count, capAmount: caps.amount, dayStart: day.start, dayEnd: day.end });
+  const req = await ctx.stores.order.call("refund_request", { paymentOrderId: order.paymentOrderId, source: "admin", reason, actorUserId: ctx.adminId, ...(ourFault ? {} : { capCount: caps.count, capAmount: caps.amount, dayStart: day.start, dayEnd: day.end }) });
   if (req.code === "REFUND_DAILY_CAP") {
     await audit(ctx, "refund_blocked_cap", order.orderCode, { amount: order.amount, todayCount: Number(req.todayCount ?? 0), todayAmount: Number(req.todayAmount ?? 0), maxCount: caps.count, maxAmount: caps.amount, by: "db" });
     return no(429, "REFUND_DAILY_CAP", `오늘 관리자 환불 한도(${caps.count}건 · ${won(caps.amount)})를 넘어요.`);
   }
-  await audit(ctx, "refund_request", order.orderCode, { paymentOrderId: order.paymentOrderId, amount: order.amount, reason, ok: req.ok === true, ...(req.ok === true ? { state: str(req.state), fresh: req.fresh === true } : { code: str(req.code) || "FAILED" }) });
+  await audit(ctx, "refund_request", order.orderCode, { paymentOrderId: order.paymentOrderId, amount: order.amount, reason, ourFault, ok: req.ok === true, ...(req.ok === true ? { state: str(req.state), fresh: req.fresh === true } : { code: str(req.code) || "FAILED" }) });
   if (req.ok !== true) return no(409, str(req.code) || "REFUND_REQUEST_FAILED", "환불 요청을 저장하지 못했어요.");
   const provider = ctx.deps.refundProvider();
   if (!provider) return no(503, "TOSS_SECRET_MISSING", "환불 요청은 저장했지만 결제 비밀키가 설정되지 않아 지금 처리하지 못했어요. 자동 재시도가 처리해요.", { state: "requested" });

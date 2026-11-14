@@ -97,7 +97,7 @@ describe("과거 Book 열람: 격리 0, 저장본·화면 그대로 (v1·1.0·v2
     const snapshot = combo("saju_mbti_full-v4"), store = { call: vi.fn(async (action: string) => action === "read_report" ? { ok: true, status: "COMPLETED", snapshot } : { ok: true }) };
     errors.mockClear();
     const read = await readPublishedReport(store as ReliabilityStore, snapshot.reportId, () => { throw new Error("validator crashed"); });
-    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true });
     expect(store.call.mock.calls.map(([a]) => a)).toEqual(["read_report"]);
     expect(errors).toHaveBeenCalledTimes(1);
   });

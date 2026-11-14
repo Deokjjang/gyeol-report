@@ -1,6 +1,4 @@
-import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { INTERIM_TARGET } from "../../../src/lib/ops/generation/policy";
 
 import {
   policyText,
@@ -70,19 +68,17 @@ describe("privacy policy (v5 최종3)", () => {
     expect(copy).toContain("로그인하지 않고 예전에 산 리포트 포함");
   });
 
-  it("외부 서비스는 실제 쓰는 것만(OpenAI는 임시본 레인 — 배포 명령 0-1), 국외 이전은 업체별 6칸", () => {
+  // W3 P2(30분 결론, 덕짱님 결정 2026-11-14): 대체 작가(OpenAI 임시본)가 없어져 위탁·국외 이전에서 뺐다. 30분 안에 못 만들면 자동 전액 환불·이용권 반환.
+  it("외부 서비스는 실제 쓰는 것만(대체 작가 OpenAI 없음), 국외 이전은 업체별 6칸", () => {
     // 운영 Q(2026-11-07 개정): 운영자 주문 알림 봇 Telegram이 위탁·국외 이전 끝에 한 줄씩.
-    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "OpenAI", "Vercel Inc.", "Telegram Messenger Inc."]);
+    expect(privacyPolicyProcessorRows.map(([name]) => name)).toEqual(["토스페이먼츠(주)", "Supabase", "Anthropic", "Vercel Inc.", "Telegram Messenger Inc."]);
     expect(privacyPolicyOverseasHead).toEqual(["이전받는 자 · 국가 · 연락처", "이전 항목", "이전 시기와 방법", "이용 목적", "보유·이용 기간", "거부 방법과 효과"]);
-    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "OpenAI, LLC", "Supabase Pte. Ltd.", "Vercel Inc.", "Telegram Messenger Inc."]);
+    expect(privacyPolicyOverseasRows.map(r => r[0].split(" · ")[0])).toEqual(["Anthropic, PBC", "Supabase Pte. Ltd.", "Vercel Inc.", "Telegram Messenger Inc."]);
     for (const row of privacyPolicyOverseasRows) { expect(row).toHaveLength(6); for (const cell of row) expect(cell.length).toBeGreaterThan(5); }
-    expect(privacyPolicyOverseasRows[2][0]).toContain("대한민국 서울");
-    // OpenAI 행: 임시본 레인(코드가 실제로 OpenAI를 부르는 유일한 경로)·미국·입력 정보와 해석 근거·30일(남용 감시 기록, store: false).
-    const openai = privacyPolicyOverseasRows[1];
-    expect(INTERIM_TARGET.provider).toBe("openai");
-    expect(readFileSync("src/lib/llm/providers.ts", "utf8")).toMatch(/endpoint: "https:\/\/api\.openai\.com\/v1\/responses"[\s\S]{0,400}store: false/);
-    expect(openai[0]).toContain("미국"); expect(openai[1]).toContain("리포트 입력정보"); expect(openai[1]).toContain("계산된 명리 해석 근거");
-    expect(openai[2]).toContain("Anthropic 장애"); expect(openai[4]).toContain("최대 30일");
+    expect(privacyPolicyOverseasRows[1][0]).toContain("대한민국 서울");
+    // 지난 판 변경 이력(기록으로 남긴 줄)을 빼면 OpenAI·임시 리포트는 본문 어디에도 없다.
+    expect([...privacyPolicyProcessorRows.flat(), ...privacyPolicyOverseasRows.flat()].join("\n")).not.toMatch(/OpenAI|임시/);
+    expect(copy.split("\n").filter(line => !line.includes("문서 버전 2026-11-05.1")).join("\n")).not.toMatch(/OpenAI|임시 리포트|임시본/);
     // Meta 문구·버전은 승인 항목이라 그대로 싣는다.
     expect(copy).toContain(metaTrackingNotice);
     expect(copy).toContain(metaTransferNotice);

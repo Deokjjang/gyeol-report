@@ -1,4 +1,4 @@
-import { isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { isAnnualOrderYearSelectable } from "../report-generation/annualOrderYear";
 
 // Stored beside reportInputPayload, never read from the browser's report payload.
 export type AnnualCommerceAcceptance = {
@@ -20,7 +20,7 @@ export function getAnnualPurchasePolicyDate(context: unknown, payload: unknown):
     !Number.isInteger(context.selectedYear) || Number(payload.productOptions.selectedYear) !== context.selectedYear) return null;
   const acceptedAt = new Date(context.acceptedAt);
   if (!Number.isFinite(acceptedAt.getTime()) || acceptedAt.toISOString() !== context.acceptedAt ||
-    !isAnnualFortuneCommerceYearSelectable(context.selectedYear as number, acceptedAt)) return null;
+    !isAnnualOrderYearSelectable(context.selectedYear as number, acceptedAt)) return null;
   return acceptedAt;
 }
 

@@ -1951,24 +1951,67 @@
     {
       "productKey": "major_fortune",
       "title": "앞으로의 나",
-      "funType": "장기 변화의 연속 서사",
-      "narrativeMode": "14개 연도를 독립된 운세로 쓰지 않고, 계산된 시간 근거를 따라 이전 흐름과 다음 흐름의 차이를 연결한다. 근거가 허용하는 범위에서 삶의 흐름을 하나의 이야기처럼 읽게 하되, 구체적 미래 사건은 확정하지 않는다.",
+      "funType": "평생 지도와 10년 설계",
+      "narrativeMode": "평생 대운 지도를 먼저 펼치고, 지난 3년 → 내가 서 있는 대운 → 바뀌는 때 → 앞으로 10년(핵심 해 셋은 깊게) → 영역별 10년 지도 → MBTI 성장 곡선 → 10년 실천 지도 순으로 잇는다. 사건은 확정하지 않고 흐름과 마음가짐으로 쓴다.",
+      "forbidden": [
+        "특정 연도에 사건(결혼·이직·사고·질병·합격)이 일어난다고 말하기",
+        "대운 경계가 불확실한 입력(시간 미상)에서 경계 연도를 단정하기",
+        "지난 일을 겪었다고 단정하기(질문형·조건형만)",
+        "연도마다 같은 조언 순서 반복",
+        "MBTI가 없을 때 MBTI 근거 언급",
+        "건강 진단·투자 권유"
+      ],
+      "noRepeatRules": [
+        "연도 장은 앞 연도와 다른 영역·관계를 중심으로 쓴다(같은 십성 해는 적용 영역을 바꾼다).",
+        "핵심 해 셋은 근거 배지마다 깊게, 나머지 해는 짧게 한 가지씩만.",
+        "영역별 지도는 연도 장 문장을 되풀이하지 않는다.",
+        "마무리 편지는 앞 장의 결론을 새 말로 한 번만 묶는다."
+      ],
       "chapters": [
         {
-          "id": "overview",
-          "title": "지난 3년 돌아보기",
-          "question": "지난 3년은 어떤 흐름이었고 나는 그 흐름을 어떻게 탔을까?",
+          "id": "read",
+          "title": "대운 읽는 법",
+          "question": "대운은 무엇이고 내 평생 지도는 어떻게 생겼을까?",
           "role": "HOOK",
+          "domains": [
+            "alone"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 3
+          },
+          "sections": [
+            {
+              "q": "대운은 무엇이고 어떻게 읽을까?",
+              "domain": "alone",
+              "use": [
+                "ev:dayunHow"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "평생 지도에서 내 흐름의 큰 줄기는?",
+              "domain": "alone",
+              "use": [
+                "ev:lifetime",
+                "ref:chart.dayMaster"
+              ],
+              "trait": "core"
+            }
+          ]
+        },
+        {
+          "id": "past",
+          "title": "지난 3년",
+          "question": "지난 3년은 어떤 흐름이었을까?",
+          "role": "WHY",
           "domains": [
             "work",
             "relationships"
           ],
-          "requires": [
-            "genderKnown"
-          ],
           "paragraphs": {
-            "min": 5,
-            "max": 8
+            "min": 3,
+            "max": 4
           },
           "sections": [
             {
@@ -1978,399 +2021,624 @@
                 "ev:pastSummary"
               ],
               "trait": "none",
-              "note": "세 해를 하나의 흐름으로 요약한다. 해마다 따로 풀지 않는다(연도 장에서 그 해만의 장면으로)"
+              "note": "질문형·조건형, 겪었다고 단정하지 않는다"
             },
             {
-              "q": "타고난 바탕은 그 흐름을 어떻게 탔을까?",
+              "q": "그 시기를 지나며 무엇이 남았을까?",
               "domain": "relationships",
               "use": [
-                "ref:chart.dayMaster"
-              ],
-              "trait": "core",
-              "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
-            }
-          ]
-        },
-        {
-          "id": "current-cycle",
-          "title": "지금 대운",
-          "question": "지금 10년 흐름은 나에게 무엇을 쉽게 하고 무엇을 어렵게 할까?",
-          "role": "WHY",
-          "domains": [
-            "work",
-            "money",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "지금 10년 흐름이 주는 조건은?",
-              "domain": "work",
-              "use": [
-                "ref:chart.currentDayun"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "많은 기운과 모자란 기운은 어떻게 움직일까?",
-              "domain": "money",
-              "use": [
-                "ref:chart.elements"
-              ],
-              "trait": "intro"
-            },
-            {
-              "q": "흐름 속에서 조심할 버릇은?",
-              "domain": "relationships",
-              "use": [
-                "shadow"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "decade",
-          "title": "앞으로 10년의 설계",
-          "question": "앞으로 10년을 일·돈·관계·생활로 나누면 어떻게 설계할까?",
-          "role": "PAYOFF",
-          "domains": [
-            "work",
-            "money",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "일과 돈은 어떻게 설계할까?",
-              "domain": "work",
-              "use": [
-                "ev:decade"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "관계와 생활은 어떻게 설계할까?",
-              "domain": "relationships",
-              "use": [
-                "ref:timeline.cycles"
-              ],
-              "trait": "none"
-            }
-          ]
-        },
-        {
-          "id": "year",
-          "title": "연도별 지침",
-          "question": "이 해는 지난해와 무엇이 달라질까?",
-          "role": "SCENE",
-          "domains": [
-            "work",
-            "money",
-            "love",
-            "relationships",
-            "study"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "evidenceFamilies": [
-            "tenGod",
-            "relation",
-            "twelveStage",
-            "shinsal"
-          ],
-          "repeat": 14,
-          "paragraphs": {
-            "min": 2,
-            "max": 3
-          }
-        },
-        {
-          "id": "transition",
-          "title": "전환 대비",
-          "question": "흐름이 바뀌는 해를 어떻게 맞을까?",
-          "role": "PAYOFF",
-          "domains": [
-            "work",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "흐름이 바뀌는 해에는 무엇이 바뀔까?",
-              "domain": "work",
-              "use": [
-                "ref:timeline.keyEntries"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "바뀌는 해가 건드리는 타고난 자리는?",
-              "domain": "work",
-              "use": [
-                "touched"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "전환을 맞을 때 지킬 것은?",
-              "domain": "relationships",
-              "use": [
-                "ref:unused"
-              ],
-              "trait": "none"
-            }
-          ]
-        }
-      ],
-      "forbidden": [
-        "특정 연도에 사건(결혼·이직·사고·질병·합격)이 일어난다고 말하기",
-        "대운 경계가 불확실한 입력(시간 미상·경계 근처)에서 경계 연도를 단정하기",
-        "연도마다 같은 조언 순서 반복",
-        "MBTI가 없을 때 MBTI 근거 언급"
-      ],
-      "noRepeatRules": [
-        "연도 장은 앞 연도와 다른 차원 또는 다른 feature 상호작용을 중심으로 쓴다(같은 십성 2년 연속이면 적용 영역을 바꾼다).",
-        "transition은 연도 장에 이미 쓴 문장을 다시 쓰지 않는다.",
-        "조언은 closing과 transition에만 둔다.",
-        "현재 연도(세운)는 current-cycle에서 한 번만 자세히 다룬다."
-      ]
-    },
-    {
-      "productKey": "annual_fortune",
-      "title": "나의 한 해",
-      "funType": "매월 펼쳐 보는 연재형",
-      "narrativeMode": "월별 특징과 중요도를 구별하고 앞달과 뒷달의 흐름을 연결한다. 매달 같은 순서로 조언을 반복하지 않고, 달마다 새로 이해할 핵심 관점을 하나씩 만든다. 1월부터 12월까지 서로 다른 읽을거리가 있어야 한다.",
-      "chapters": [
-        {
-          "id": "overview",
-          "title": "올해 전체 설계도",
-          "question": "올해는 어떤 결의 한 해가 될까?",
-          "role": "HOOK",
-          "domains": [
-            "work",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "올해를 한 줄로 말하면?",
-              "domain": "work",
-              "use": [
-                "ref:chart.thisYear"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "타고난 바탕은 올해를 어떻게 탈까?",
-              "domain": "relationships",
-              "use": [
-                "ref:chart.dayMaster"
-              ],
-              "trait": "core",
-              "note": "핵심 이미지(chart.coreImage)를 여기서 한 번 소개한다"
-            },
-            {
-              "q": "올해 사람 사이에서는 무엇이 달라질까?",
-              "domain": "relationships",
-              "use": [
-                "scene"
-              ],
-              "trait": "any"
-            }
-          ]
-        },
-        {
-          "id": "current-dayun",
-          "title": "영역별 설계",
-          "question": "올해 일·돈·관계·컨디션은 어떻게 설계할까?",
-          "role": "WHY",
-          "domains": [
-            "work",
-            "money",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "올해 일과 돈, 관계와 컨디션은?",
-              "domain": "work",
-              "use": [
-                "ev:yearPlan"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "올해는 지금 10년 흐름의 어디에 놓일까?",
-              "domain": "money",
-              "use": [
-                "ref:chart.currentDayun"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "올해 조심할 버릇은?",
-              "domain": "relationships",
-              "use": [
-                "shadow"
-              ]
-            }
-          ]
-        },
-        {
-          "id": "month",
-          "title": "월별 흐름",
-          "question": "이번 달은 지난달과 무엇이 다를까?",
-          "role": "SCENE",
-          "domains": [
-            "work",
-            "money",
-            "love",
-            "relationships",
-            "study"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "evidenceFamilies": [
-            "tenGod",
-            "relation",
-            "shinsal"
-          ],
-          "repeat": 12,
-          "paragraphs": {
-            "min": 2,
-            "max": 3
-          }
-        },
-        {
-          "id": "key-months",
-          "title": "눈여겨볼 달",
-          "question": "올해 흐름이 크게 움직이는 세 달은 어떻게 이어질까?",
-          "role": "WHY",
-          "domains": [
-            "work",
-            "money",
-            "relationships"
-          ],
-          "requires": [
-            "genderKnown"
-          ],
-          "paragraphs": {
-            "min": 5,
-            "max": 8
-          },
-          "sections": [
-            {
-              "q": "세 달은 어떻게 이어질까?",
-              "domain": "work",
-              "use": [
-                "ev:keyMonthsLink"
-              ],
-              "trait": "none",
-              "note": "월별 장의 설명을 되풀이하지 않는다. 앞 달이 무엇을 열고 뒤 달이 무엇을 받는지만"
-            },
-            {
-              "q": "그 달들이 건드리는 타고난 자리는?",
-              "domain": "work",
-              "use": [
-                "touched"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "세 달을 잇는 준비는?",
-              "domain": "relationships",
-              "use": [
-                "scene"
+                "ev:pastDayun"
               ],
               "trait": "apply"
             }
           ]
         },
         {
-          "id": "closing",
-          "title": "올해 지침",
-          "question": "올해를 내 방식으로 잘 보내려면 어디에 힘을 둘까?",
+          "id": "now",
+          "title": "내가 서 있는 대운",
+          "question": "내가 서 있는 10년의 주제와 숙제는?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "money",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "이 대운 10년의 주제는 무엇일까?",
+              "domain": "work",
+              "use": [
+                "ref:chart.currentDayun",
+                "ev:nowTheme"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "원국과 이 대운은 어떻게 만날까?",
+              "domain": "relationships",
+              "use": [
+                "ev:nowRelation"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "이 10년의 좋은 패와 숙제는?",
+              "domain": "money",
+              "use": [
+                "ev:nowCards",
+                "shadow"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "turn",
+          "title": "대운이 바뀌는 때",
+          "question": "다음 대운은 언제 무엇으로 바뀔까?",
+          "role": "TWIST",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "다음 대운은 언제, 무엇으로 바뀔까?",
+              "domain": "work",
+              "use": [
+                "ev:turnWhen"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "교운기 앞뒤 1~2년의 마음가짐은?",
+              "domain": "alone",
+              "use": [
+                "ev:turnMind",
+                "touched"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "decade",
+          "title": "앞으로 10년",
+          "question": "앞으로 10년은 해마다 어떻게 흐를까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "money",
+            "love",
+            "relationships",
+            "study"
+          ],
+          "paragraphs": {
+            "min": 2,
+            "max": 3
+          },
+          "repeat": 10
+        },
+        {
+          "id": "map",
+          "title": "영역별 10년 지도",
+          "question": "일·돈·사랑·사람·마음·이동은 10년 동안 어떻게 움직일까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "money",
+            "love"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "일·커리어와 돈의 10년은?",
+              "domain": "work",
+              "use": [
+                "ev:mapWorkMoney"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "사랑·결혼·가족과 사람의 10년은?",
+              "domain": "love",
+              "use": [
+                "ev:mapLovePeople"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "마음·컨디션과 이동·거주의 10년은?",
+              "domain": "alone",
+              "use": [
+                "ev:mapMindMove"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "growth",
+          "title": "MBTI 성장 곡선 × 대운",
+          "question": "내 성격은 나이와 대운에 따라 어떻게 자랄까?",
+          "role": "TWIST",
+          "domains": [
+            "alone",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "내 성격은 나이에 따라 어떻게 자랄까?",
+              "domain": "alone",
+              "use": [
+                "ev:growthCurve"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "대운과 성장 곡선이 만나는 곳은?",
+              "domain": "relationships",
+              "use": [
+                "ev:growthDayun"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "plan",
+          "title": "10년 실천 지도",
+          "question": "가까운 1년부터 10년 뒤까지 무엇을 할까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "money"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "가까운 1년과 2~3년 뒤에 할 일은?",
+              "domain": "work",
+              "use": [
+                "ev:planNear"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "5년 뒤와 10년 뒤에 할 일은?",
+              "domain": "money",
+              "use": [
+                "ev:planFar"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "letter",
+          "title": "마무리 편지",
+          "question": "앞으로의 나에게 건네는 말은?",
+          "role": "PAYOFF",
+          "domains": [
+            "alone",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "앞으로의 나에게 건네는 말은?",
+              "domain": "alone",
+              "use": [
+                "recap:now"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "흐름이 바뀌어도 지킬 것은?",
+              "domain": "relationships",
+              "use": [
+                "recap:turn"
+              ],
+              "trait": "none"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "productKey": "annual_fortune",
+      "title": "나의 한 해",
+      "funType": "한 해 설계와 달력",
+      "narrativeMode": "그 해 간지가 내 원국·그 해가 속한 대운과 만나는 방식으로 한 해의 성격을 먼저 판정하고, 연애·돈·일·사람·마음을 차례로 짚은 뒤, 1월 다리와 12 절기월을 달력처럼 펼친다. 끝에는 운을 쓰는 법과 다음 큰 흐름(대운)으로 잇는다.",
+      "forbidden": [
+        "특정 달에 사건(결혼·이별·합격·승진·이직·사고·질병)이 일어난다고 말하기",
+        "결과 약속(합격해요·이뤄져요)",
+        "투자 종목·시점·수익률",
+        "건강 진단·병명",
+        "입력하지 않은 상황(연인·직장·사업) 단정",
+        "MBTI가 없을 때 MBTI 근거 언급",
+        "절입 경계를 넘어 한 달의 특징을 다른 달에 쓰기",
+        "「지금·이번 달·올해」로 시점 묶기"
+      ],
+      "noRepeatRules": [
+        "영역 장(사랑·돈·일·사람·마음)은 서로 다른 근거와 장면을 쓴다.",
+        "달 장은 이웃 달과 같은 조언·표현을 쓰지 않는다(같은 십성이면 영역을 바꾼다).",
+        "운을 쓰는 법 장은 앞 장의 문장을 되풀이하지 않고 할 것·피할 것을 서로 다른 영역에서 고른다.",
+        "소망은 큰 그림에서 한 번 짚고, 소망 장에서만 깊게 쓴다."
+      ],
+      "chapters": [
+        {
+          "id": "big",
+          "title": "2027 큰 그림",
+          "question": "2027년은 나에게 어떤 해일까?",
+          "role": "HOOK",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "2027년은 밀고 갈 해일까, 다질 해일까?",
+              "domain": "work",
+              "use": [
+                "ev:yearCard"
+              ],
+              "trait": "none",
+              "note": "판정 한 줄을 먼저, 관계마다 양면으로"
+            },
+            {
+              "q": "정미년의 기운은 내 바탕과 어떻게 만날까?",
+              "domain": "alone",
+              "use": [
+                "ref:chart.dayMaster",
+                "ev:yearEnergy"
+              ],
+              "trait": "core"
+            },
+            {
+              "q": "명리와 MBTI로 보면 이 해를 어떻게 겪을까?",
+              "domain": "relationships",
+              "use": [
+                "ev:yearMbti"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "적어 준 바람은 이 해와 어떻게 만날까?",
+              "domain": "alone",
+              "use": [
+                "ev:wishLink"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "love",
+          "title": "사랑",
+          "question": "2027년의 연애·관계는 어떻게 흐를까?",
+          "role": "SCENE",
+          "domains": [
+            "love",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "{status:love1}",
+              "domain": "love",
+              "use": [
+                "ev:loveYear"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "연애 쪽 기운이 오르는 달은 언제일까?",
+              "domain": "love",
+              "use": [
+                "ev:loveMonths"
+              ],
+              "trait": "none",
+              "note": "「~하기 쉬운 달」까지만"
+            },
+            {
+              "q": "이 해의 사랑에서 지킬 한 가지는?",
+              "domain": "love",
+              "use": [
+                "mbti"
+              ],
+              "trait": "any"
+            }
+          ]
+        },
+        {
+          "id": "money",
+          "title": "돈의 흐름",
+          "question": "2027년 돈은 어디로 들어오고 어디로 샐까?",
+          "role": "SCENE",
+          "domains": [
+            "money"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "2027년 돈은 어디서 들어올까?",
+              "domain": "money",
+              "use": [
+                "ev:moneyIn"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "돈이 새기 쉬운 구멍은 어디일까?",
+              "domain": "money",
+              "use": [
+                "ev:moneyHole"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "work",
+          "title": "일·취업·공부",
+          "question": "2027년 일과 공부는 어떤 기준으로 고를까?",
+          "role": "WHY",
+          "domains": [
+            "work",
+            "study"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "{status:work1}",
+              "domain": "work",
+              "use": [
+                "ev:workYear"
+              ],
+              "trait": "apply"
+            },
+            {
+              "q": "판단이 필요할 때의 기준은?",
+              "domain": "work",
+              "use": [
+                "ev:workCriteria"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "공부·시험·자격은 어떻게 준비할까?",
+              "domain": "study",
+              "use": [
+                "ev:studyYear"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "people",
+          "title": "사람",
+          "question": "2027년 나를 돕는 사람과 조심할 관계는?",
+          "role": "SCENE",
+          "domains": [
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "이 해 사람 쪽은 언제, 어떻게 열릴까?",
+              "domain": "relationships",
+              "use": [
+                "ev:helpers"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "조심할 관계와 알맞은 거리는?",
+              "domain": "relationships",
+              "use": [
+                "ev:carePeople"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "mind",
+          "title": "마음·컨디션",
+          "question": "2027년 무리하기 쉬운 때와 쉬어야 할 때는?",
+          "role": "SCENE",
+          "domains": [
+            "alone"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "무리하기 쉬운 때는 언제일까?",
+              "domain": "alone",
+              "use": [
+                "ev:mindPush"
+              ],
+              "trait": "any"
+            },
+            {
+              "q": "쉬어 가야 할 달과 쉬는 법은?",
+              "domain": "alone",
+              "use": [
+                "ev:mindRest"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "month",
+          "title": "1월 다리와 달마다 펼쳐 보기",
+          "question": "1월 다리와 열두 절기월은 어떻게 이어질까?",
+          "role": "SCENE",
+          "domains": [
+            "work",
+            "money",
+            "love",
+            "relationships",
+            "study"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 3
+          },
+          "repeat": 13
+        },
+        {
+          "id": "use",
+          "title": "2027년 운을 쓰는 법",
+          "question": "2027년에 할 것과 피할 것은?",
           "role": "PAYOFF",
           "domains": [
             "work",
             "relationships"
           ],
           "paragraphs": {
-            "min": 5,
-            "max": 8
+            "min": 3,
+            "max": 4
           },
           "sections": [
             {
-              "q": "아직 덜 쓴 기운은 올해 무엇을 도울까?",
+              "q": "2027년에 할 것 세 가지는?",
               "domain": "work",
               "use": [
-                "ref:unused"
+                "ev:useDo"
               ],
               "trait": "none"
             },
             {
-              "q": "올해 지킬 나의 속도는?",
-              "domain": "work",
-              "use": [
-                "recap:current-dayun"
-              ],
-              "trait": "none"
-            },
-            {
-              "q": "크게 움직이는 달에 붙잡을 한 가지는?",
+              "q": "2027년에 피할 것 세 가지는?",
               "domain": "relationships",
               "use": [
-                "recap:key-months"
+                "ev:useAvoid"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "나를 돕는 색·방향·숫자는?",
+              "domain": "alone",
+              "use": [
+                "ev:lucky",
+                "ev:samjae"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "wish",
+          "title": "당신이 적은 소망에 대해",
+          "question": "적어 준 바람을 2027년에 어떻게 준비할까?",
+          "role": "PAYOFF",
+          "domains": [
+            "alone"
+          ],
+          "requires": [
+            "wish"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "적어 준 바람을 어떻게 준비할까?",
+              "domain": "alone",
+              "use": [
+                "ev:wish"
+              ],
+              "trait": "none",
+              "note": "결과 약속 없이 준비하는 법으로"
+            },
+            {
+              "q": "흐름이 도울 때와 기다릴 때는?",
+              "domain": "alone",
+              "use": [
+                "ev:wishTiming"
+              ],
+              "trait": "none"
+            }
+          ]
+        },
+        {
+          "id": "next",
+          "title": "이어지는 큰 흐름",
+          "question": "2027년은 대운 10년 흐름의 어디쯤일까?",
+          "role": "PAYOFF",
+          "domains": [
+            "work",
+            "relationships"
+          ],
+          "paragraphs": {
+            "min": 3,
+            "max": 4
+          },
+          "sections": [
+            {
+              "q": "대운 10년 흐름 속 2027년의 자리는?",
+              "domain": "work",
+              "use": [
+                "ref:chart.currentDayun",
+                "ev:dayunBridge"
+              ],
+              "trait": "none"
+            },
+            {
+              "q": "2027년을 지나며 붙잡을 한 가지는?",
+              "domain": "alone",
+              "use": [
+                "recap:big"
               ],
               "trait": "none"
             }
           ]
         }
-      ],
-      "forbidden": [
-        "특정 달에 사건(결혼·이별·사고·질병·합격·승진)이 일어난다고 말하기",
-        "매달 같은 조언 문장 반복",
-        "중요도가 낮은 달을 억지로 부풀리기",
-        "MBTI가 없을 때 MBTI 근거 언급",
-        "절입(달이 바뀌는 날) 경계를 넘어 한 달의 특징을 다른 달에 쓰기"
-      ],
-      "noRepeatRules": [
-        "월 장은 앞달과 다른 핵심 관점(차원 또는 feature 상호작용) 하나를 세운다.",
-        "key-months는 월 장의 문장을 다시 쓰지 않고 왜 중요한지만 쓴다.",
-        "조언은 closing에만 두고 월 장에는 관찰과 장면만 둔다.",
-        "같은 십성이 두 달 연속이면 적용 영역을 바꾼다."
       ]
     }
   ]

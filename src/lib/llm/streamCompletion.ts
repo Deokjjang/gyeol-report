@@ -53,6 +53,9 @@ async function httpError(response: Response, apiKey: string): Promise<LlmError> 
  * 스트리밍 호출 한 번. 재시도는 하지 않는다(정책은 작가 단계).
  * 실패해도 중간까지 받은 텍스트는 result.text에 남는다. 예외는 던지지 않는다(설정 오류 제외).
  */
+/** W3 P2: 첫 스트림 이벤트를 기다리는 기본 시간(연구 3-3 「첫 이벤트 60~90초 제한」). */
+export const FIRST_EVENT_TIMEOUT_MS = 90_000;
+
 export async function streamCompletion(input: StreamCompletionInput): Promise<StreamCompletionResult> {
   const driver = DRIVERS[input.provider];
   const apiKey = input.apiKey ?? process.env[driver.apiKeyEnv] ?? "";
@@ -70,8 +73,12 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
   if (!apiKey) return finish("error", { code: "missing_api_key", message: `${driver.apiKeyEnv}가 없습니다.` });
 
   const controller = new AbortController();
-  let timedOut = false, aborted = false;
+  let timedOut = false, aborted = false, firstEventLate = false;
   const timer = setTimeout(() => { timedOut = true; controller.abort(); }, input.timeoutMs);
+  // W3 P2: 첫 이벤트가 이 시간 안에 오지 않으면(멈춤) 끊는다 — 결론 시간 안에 2차를 부를 수 있게.
+  const firstEventMs = input.firstEventTimeoutMs ?? FIRST_EVENT_TIMEOUT_MS;
+  let firstEventTimer: ReturnType<typeof setTimeout> | undefined = firstEventMs > 0 && firstEventMs < input.timeoutMs ? setTimeout(() => { firstEventLate = true; controller.abort(); }, firstEventMs) : undefined;
+  const gotEvent = () => { if (firstEventTimer) { clearTimeout(firstEventTimer); firstEventTimer = undefined; } };
   const onAbort = () => { aborted = true; controller.abort(); };
   if (input.signal?.aborted) onAbort(); else input.signal?.addEventListener("abort", onAbort, { once: true });
   const fetchImpl = input.fetchImpl ?? fetch;
@@ -82,19 +89,21 @@ export async function streamCompletion(input: StreamCompletionInput): Promise<St
     if (!response.body) return finish("error", { code: "empty_body", message: "응답 본문이 없습니다." });
     const onText = (d: string) => { if (firstTextMs === null) firstTextMs = Date.now() - t0; input.onText?.(d); };
     for await (const message of parseSse(response.body)) {
+      gotEvent();
       driver.handle(message, state, onText);
       if (state.finish) break;
     }
     if (!state.finish) return finish("error", { code: "stream_ended", message: "종료 신호 없이 스트림이 끝났습니다." });
     return finish(state.finish);
   } catch (caught) {
+    if (firstEventLate) return finish("error", { code: "first_event_timeout", message: `${firstEventMs}ms 안에 첫 이벤트가 오지 않았습니다.` });
     if (timedOut) return finish("timeout", { code: "timeout", message: `${input.timeoutMs}ms 안에 끝나지 않았습니다.` });
     if (aborted) return finish("error", { code: "aborted", message: "호출한 쪽이 스트림을 끊었습니다." });
     if (caught instanceof InvalidEventError) return finish("error", { code: "invalid_event", message: scrub(caught.message, apiKey) });
     const message = scrub(caught instanceof Error ? caught.message : String(caught), apiKey);
     return finish("error", { code: state.text || state.requestId ? "stream_interrupted" : "network", message });
   } finally {
-    clearTimeout(timer);
+    clearTimeout(timer); gotEvent();
     input.signal?.removeEventListener("abort", onAbort);
   }
 }

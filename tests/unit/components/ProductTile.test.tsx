@@ -28,7 +28,7 @@ describe("ProductTile", () => {
     expect(html).toContain(priceKo(GYEOL_PRODUCTS[0]));
     expect(html).toContain(`${priceKo(GYEOL_PRODUCTS[0])} 결제하고 리포트 생성하기`);
     expect(html).toContain("생성일로부터 90일 열람");
-    expect(html).toContain("결제 완료 후 즉시 생성, 최대 24시간 이내 제공");
+    expect(html).toContain("결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불");
     expect(html).toContain('href="/report/new?product=saju-mbti-full"');
     expect(html).not.toContain("990원");
     expect(html).not.toContain("런칭가");

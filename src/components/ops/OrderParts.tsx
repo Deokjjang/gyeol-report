@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { REQUEST_COPY, REQUEST_WINDOW_LINE, SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
 import { orderStatusLabel, productLabel, seoulDateTime, won, type OrderSummary } from "../../lib/ops/orders/summary";
 import s from "./ops.module.css";
@@ -15,8 +15,23 @@ export function OrderSummaryCard({ order, bookHref, children }: { order: OrderSu
       <dt>상태</dt><dd>{orderStatusLabel(order)}{order.openRequests ? " · 문의 접수됨" : ""}</dd>
       <dt>영수증</dt><dd>{order.receiptUrl ? <a className={s.link} href={order.receiptUrl} target="_blank" rel="noopener noreferrer">영수증 보기 ↗</a> : "토스 결제 내역에서 확인할 수 있어요"}</dd>
     </dl>
-    <div className={s.actions}>{bookHref ? <a className={`${s.button} ${s.dark}`} href={bookHref}>{order.bookStatus === "COMPLETED" ? "책 펼치기 →" : "제본 상태 보기 →"}</a> : null}{children}</div>
+    <div className={s.actions}>{bookHref ? <a className={`${s.button} ${s.dark}`} href={bookHref}>{order.bookStatus === "COMPLETED" ? "책 펼치기 →" : "책 만드는 화면 보기 →"}</a> : null}{children}</div>
   </div>;
+}
+
+/**
+ * 결제 완료 화면(W3 P2): 약 3초 뒤 책 화면으로 넘어간다 — 그 화면이 실제 상태를 이어서 보인다. 화면을 누르거나 키를 누르면(문의 등) 넘어가지 않는다.
+ * 방문 기록은 바꿔 끼운다(replace) — 뒤로 가기가 결제 완료 화면으로 돌아와 다시 넘어가는 일이 없게.
+ */
+export const AUTO_OPEN_MS = 3_000;
+export function AutoOpen({ href, delayMs = AUTO_OPEN_MS }: { href: string; delayMs?: number }) {
+  useEffect(() => {
+    const timer = setTimeout(() => window.location.replace(href), delayMs);
+    const stay = () => clearTimeout(timer);
+    document.addEventListener("pointerdown", stay, { once: true }); document.addEventListener("keydown", stay, { once: true });
+    return () => { clearTimeout(timer); document.removeEventListener("pointerdown", stay); document.removeEventListener("keydown", stay); };
+  }, [href, delayMs]);
+  return null;
 }
 
 /**
@@ -61,7 +76,7 @@ export function OrderRequestForm({ orderCode, reportId, guest, endpoint = "/auth
         {options.map(([k, label]) => <label key={k} className={s.check}><input type="radio" name={`reason-${orderCode ?? reportId ?? "order"}`} value={k} checked={reason === k}
           onChange={() => { setReason(k); setMessage(""); setChannel(false); }} />{label}</label>)}
       </fieldset>
-      {reason === "not_open" ? (making ? <p className={s.message} role="status" data-request-making>{REQUEST_COPY.making}</p>
+      {reason === "not_open" ? (making ? <p className={s.message} role="status" data-request-making>{ticketBook ? REQUEST_COPY.makingTicket : REQUEST_COPY.making}</p>
         : <><p className={s.hint}>{REQUEST_COPY.notOpenHint}</p><div className={s.actions}>{submitButton}</div></>) : null}
       {reason === "double_paid" ? <div className={s.actions}>{submitButton}</div> : null}
       {reason === "calc" ? <><p className={s.hint}>{REQUEST_COPY.calcGuide}</p><p className={s.hint}>{REQUEST_COPY.calcSend}</p><div className={s.actions}>{chat(REQUEST_COPY.calcButton, true)}</div></> : null}

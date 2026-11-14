@@ -93,7 +93,7 @@ describe("P3.7 원고 보강", () => {
     const current = ev(career, "nowFit")!.facts.join(" ");
     expect(current).toMatch(/판정: (잘 맞음|보통|덜 맞음) — /); // P6b D 커리어 1 → P6d G 지금 자리 진단
     const inv = ["investStyle", "investMistakes", "investPrinciples"].map(x => ev(career, x)!.facts.join(" ")).join(" ");
-    expect(inv).toMatch(/예적금: /); expect(inv).toMatch(/주식이라면 (회전형|장기 분산형)/); expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사|매수|매도/);
+    expect(inv).toMatch(/예적금: /); expect(inv).toMatch(/주식이라면 (회전형|장기 분산형)/); /* W3 P1: 커리어 문구는 4종 운영 그대로(AM 문구는 P3) */ expect(inv).not.toMatch(/\d+ ?(%|원|주)|종목명|코인|주식 [가-힣]+ 사|매수|매도/);
     expect(career.chapters.find(c => c.id === "paths")!.sections![1].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroups"]); // P6b D 커리어 3 → P6d 맞는 일과 길 둘째 절 → P6e 13 직군(셋째 절 = 길게 보면 열려 있는 직군)
     expect(career.chapters.find(c => c.id === "paths")!.sections![2].materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["jobGroupsFar"]);
     expect(career.chapters.find(c => c.id === "invest")!.materials.some(m => m.kind === "evidence" && m.key === "investStyle")).toBe(true);

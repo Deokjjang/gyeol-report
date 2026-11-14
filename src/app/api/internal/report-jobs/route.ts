@@ -20,6 +20,8 @@ export async function GET(request: Request) {
   const store = createPaidReportReliabilityStore();
   const expired = await store.call("expire");
   if (!expired.ok) return NextResponse.json({ ok: false }, { status: 503 });
+  // W3 P2 마감 청소: 시작 + 28분이 지난 미발행 주문(워커 죽음·큐 멈춤)도 30분 안에 결론(자동 환불·이용권 반환). 실패해도 결제 작업은 그대로 돈다.
+  try { const { runLiveDeadlineSweep } = await import("../../../../lib/ops/generation/deadline"); await runLiveDeadlineSweep(); } catch { /* 다음 분에 다시 본다 */ }
   // Start generation independently: one slow/failed payment must not hold its queue.
   const recovery = process.env.TOSS_CONFIRM_API_ENABLED === "1"
     ? recoverPendingPayment(store, (payment, signal) => confirmTossPayment({ ...payment, signal, secretKey: process.env.TOSS_PAYMENTS_SECRET_KEY ?? "" }))

@@ -15,7 +15,7 @@ beforeAll(async () => {
   const result = await generateReviewBook(payload, keys.privateKey, source);
   expect(result.ok).toBe(true); if (!result.ok) throw Error(result.errors.join('|'));
   signed = result.signed; artifact = JSON.parse(signed.payload);
-});
+}, 120_000); // 실제 V4 책 생성 + 서명: 혼자 몇 초, 전체 실행(병렬 부하)에서는 기본 10초를 넘는다.
 afterEach(() => vi.unstubAllEnvs());
 it('accepts only an authentic real Publisher/Book roundtrip', () => {
   expect(verifyBook(JSON.parse(JSON.stringify(signed)),keys.publicKey,source)).toEqual({ok:true,artifact});

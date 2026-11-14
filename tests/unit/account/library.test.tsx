@@ -121,7 +121,7 @@ describe("real six-product local generation + ownership fixtures", () => {
     }
     expect(ids).toHaveLength(6); expect(await p.list(A.id)).toHaveLength(3); expect(await p.list(B.id)).toHaveLength(1);
     expect(JSON.stringify(await p.list(A.id))).not.toMatch(/evidencePacket|draft|claimHash|paymentKey/);
-  }, 30000);
+  }, 240_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 });
 describe("library metadata and book shelf", () => {
   const row: LibraryRow = { reportId: id, productType: "annual_fortune", displayName: "긴 이름도 빠짐없이 보이는 책", selectedYear: "2027", publishedAt: "2026-10-01T00:00:00Z", expiresAt: "2026-12-30T00:00:00Z", reportVersion: "v3", status: "available" };

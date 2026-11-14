@@ -51,9 +51,12 @@ export async function readBook(h: Queue, reportId: string) {
   return { status: row?.status, snapshot, opens: Boolean(book), book, meta };
 }
 
+/** W3 P2: 30분 결론 시계는 접수 시각(policy_at)부터 잰다. 시험 접수는 내용 고정을 위해 과거 policy_at이라, 시계 시작만 지금으로 준다(이용권 작업 주입). */
+export const nowOrigin = () => ({ originAt: new Date().toISOString() });
+
 export const llmDeps = (behaviors: MockBehavior[], budgetMs?: number) => {
   const m = mockOpenAi(behaviors);
-  return { m, deps: { provider: "openai" as const, model: "gpt-4o-mini", apiKey: "sk-test-mock", fetchImpl: m.fetch, sleep: async () => undefined, people: async () => [], ...(budgetMs ? { budgetMs } : {}) } };
+  return { m, deps: { provider: "openai" as const, model: "gpt-4o-mini", apiKey: "sk-test-mock", fetchImpl: m.fetch, sleep: async () => undefined, people: async () => [], ...nowOrigin(), ...(budgetMs ? { budgetMs } : {}) } };
 };
 
 /** 결정론 원고 기반 목업 책 텍스트(이 입력의 브리프로 만든다). */
@@ -99,6 +102,7 @@ export const SCENARIOS: { name: string; behaviors: Parameters<typeof scenario>[2
   { name: "중간 끊김 → 이어쓰기", behaviors: text => [{ text, cutAt: text.indexOf("## 7. ") + 40 }, { text: text.slice(text.indexOf("## 6. ")) }] },
   { name: "length 종료 → 이어쓰기", behaviors: text => [{ text: text.slice(0, text.indexOf("## 9. ") + 40), finish: "incomplete" }, { text: text.slice(text.indexOf("## 8. ")) }] },
   { name: "타임아웃 → 보류(결정론 원고는 내보내지 않음)", behaviors: text => [{ text, cutAt: text.indexOf("## 5. ") + 40, hang: true }], opts: { budgetMs: 6_000 } },
-  { name: "인증 실패(401, 재시도 안 함) → 보류", behaviors: () => [{ status: 401 }] },
+  // W3 P2: 목업 공급자(OpenAI 꼴)의 401은 Anthropic 잔액·인증이 아니라 2차로 미룬다. Anthropic 잔액·인증 → 바로 결론은 w3Conclusion 시험이 본다.
+  { name: "인증 실패(401, 목업 공급자) → 2차로 미룸(보류)", behaviors: () => [{ status: 401 }] },
   { name: "워커 강제 종료 → 큐로 되돌림 → 빠진 장만 이어쓰기", behaviors: text => [{ text, cutAt: text.indexOf("## 4. ") + 40, hang: true }], opts: { budgetMs: 8_000, kill: true } },
 ];

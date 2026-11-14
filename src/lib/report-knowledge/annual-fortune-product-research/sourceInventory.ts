@@ -270,7 +270,7 @@ export const ANNUAL_RESEARCH_SOURCES: readonly Source[] = [
     "limitation": "실제 annual_fortune / annual-fortune / annualFortune와 selectedYear 정규화.",
     "verification": "repository_contract_checked",
     "sourceVersion": "efe32658f8c0b0defa07601e64b49d6329665634",
-    "fileSha256": "1b05251cd0a7bf1b0fb6a386bf3e3b6a40a02ca49a4fb9299fd71a641496b497"
+    "fileSha256": "369004e585d0e2f94d0d1646cdcc2b887f278f0a43f1ee8267de08a5eebed5f2"
   },
   {
     "id": "afpr:source:book",

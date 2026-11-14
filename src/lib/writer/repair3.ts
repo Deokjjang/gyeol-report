@@ -8,8 +8,8 @@ import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
 import type { FinalChapter } from "./safety";
-import { splitSentences } from "./safety/patterns";
-import type { LintFlag } from "./safety/p6c";
+import { RURAL_PROP, splitSentences } from "./safety/patterns";
+import { HARD_RULES, type LintFlag } from "./safety/p6c";
 import type { Numbered, ReviewIssue } from "./review";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
@@ -46,17 +46,30 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
     const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it);
   };
   if (a.cover) add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: a.cover.line }, `표지: ${a.cover.problem}`, "cover");
-  for (const f of a.flags) {
+  // AM 재생성 판독(major-1·annual-1): 수리 40칸이 모두 lint(대부분 문체 깃발)로 차서 검수가 맞게 짚은 사실·면책 지적이 고쳐지지 않았고, 8칸은 조립이 어차피 떼는 머리 문장 베낌에 쓰였다.
+  // → 칸 순서: 사실·금지 깃발(안 고치면 지워진다) → 검수 지적 → 문체 깃발. 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)에는 칸을 주지 않는다.
+  const HEAD_COPY = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)/;
+  // AM 재생성 2 판독(major-1 2030): 머리 둘째 문장(「이 해 5월 무렵부터 병인 대운이 시작되고」)의 사본이 칸을 받아 조립이 못 떼는 꼴로 바뀌었다 → 달·해 key 소제목 첫 문단의 대운 시작 되풀이도 칸을 주지 않는다. 검수 지적에도 같은 거르기.
+  const DAYUN_HEAD = /무렵(?:부터|에)[^.?!]{0,24}대운(?:이|은)? (?:시작|열리)/;
+  const headCopy = (chapter: number, section: number, paragraph: number, sentence: string | undefined) => {
+    if (!sentence) return false; if (HEAD_COPY.test(sentence)) return true;
+    const h = a.chapters.find(c => c.n === chapter)?.sections[section]?.heading ?? "";
+    return paragraph === 0 && /^\d{4}(-M\d{2})?$/.test(h) && DAYUN_HEAD.test(sentence);
+  };
+  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !headCopy(f.chapter, f.section, f.paragraph, f.sentence));
+  const addFlags = (list: readonly LintFlag[]) => { for (const f of list) {
     const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) continue;
     const problem = `${f.hint}${f.detail ? ` [${f.detail}]` : ""}`;
     if (f.paragraph < 0) { add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint"); continue; }
     if (!f.sentence) { add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint"); continue; }
     const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) continue;
     add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint");
-  }
+  } };
+  addFlags(flagsOf(true));
   const byN = a.byN ?? new Map(a.numbered.map(x => [x.n, x]));
   for (const i of a.issues) {
     const x = byN.get(i.s); if (!x) continue;
+    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) continue;
     const other = i.s2 ? byN.get(i.s2)?.text : undefined;
     const problem = `${CAT_KO[i.cat] ?? i.cat}: ${i.why}${i.ref ? ` (근거 ${i.ref})` : ""}${i.field ? ` (입력 칸 ${i.field})` : ""}${other ? ` — 비교 문장: "${other.slice(0, 120)}"` : ""}`;
     if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); continue; }
@@ -64,16 +77,20 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
     const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text) ?? x.text;
     add(`s:${x.chapter}.${x.section}.${x.paragraph}:${s}`, { kind: "sentence", chapter: x.chapter, section: x.section, paragraph: x.paragraph, original: s }, problem, "review");
   }
+  addFlags(flagsOf(false));
   return out;
 }
 
 /** 정답지 요약(수리용 닻): 사람마다 기둥·강약·묶음·오행·신살·관계·올해·대운. */
 export function factsBrief(sheet: FactSheet, brief: Brief): Record<string, unknown> {
-  const y = Number(sheet.baseDate.slice(0, 4));
+  // AM 7부(세운 판독): 세운 책의 「그 해」는 신년판 해(2027)다. 기준일의 해(2026)를 닻으로 주니 수리가 맞는 2027 관계 문장을 2026 오(午)로 고쳐 썼다
+  // (「자와 미가 … 해(害)」→「자와 올해 오가 … 부딪치는」). 세운은 책의 해, 나머지는 기준일의 해 — 연도를 숫자로 함께 준다.
+  const base = Number(sheet.baseDate.slice(0, 4)), bookYear = brief.product === "annual_fortune" ? Number(brief.timeline?.entries.find(e => e.kind === "year")?.key) : NaN;
+  const y = Number.isInteger(bookYear) && bookYear > 2000 ? bookYear : base;
   const person = (p: PersonFacts) => ({ name: p.name, pillars: Object.fromEntries(Object.entries(p.pillars).map(([k, v]) => [k, v ? `${v.ganjiKo}(${v.stem}${v.branch})` : "시간 미상"])), strength: p.strength.labelKo,
     groups: Object.values(p.groups).map(g => `${g.name} ${g.level}`).join(" · "), elements: Object.keys(p.elements.count).map(e => `${e} 겉 ${p.elements.count[e as never]}개·세기 ${p.elements.status[e as never]}`).join(" · "),
     shinsal: p.shinsal.map(s => `${s.name}(${s.slots.join("·")})`).join(", "), relations: p.relations.map(r => `${r.key} ${r.kind}${r.completeness !== "full" ? `(${r.completeness})` : ""}`).join(", "),
-    thisYear: p.annual.filter(a => a.year === y).map(a => `${a.ganjiKo}: 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0], mbti: p.mbti?.type ?? null, input: p.input });
+    thisYear: p.annual.filter(a => a.year === y).map(a => `${a.year}년 ${a.ganjiKo}: 원국과 ${a.relations.map(r => `${r.key} ${r.kind}`).join("·") || "관계 없음"}`)[0], mbti: p.mbti?.type ?? null, input: p.input });
   return { people: sheet.people.map(person), ...(sheet.pair ? { pairCommon: sheet.pair.common } : {}), forbiddenFacts: brief.person.forbiddenFacts, ...(brief.compatibility?.profiles?.length ? { profiles: brief.compatibility.profiles.map(p => p.line) } : {}), product: brief.product };
 }
 
@@ -140,7 +157,7 @@ export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactS
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
 /** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|이 |그 )/;
+const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|이 |그 )/;
 /**
  * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
  * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
@@ -163,6 +180,47 @@ export function revertWorse(chapters: readonly FinalChapter[], applied: readonly
   }
   return { chapters: out, reverted };
 }
+/** 두 문장이 거의 같은 말인가(한글·숫자 두 글자 묶음 겹침 0.6 이상). */
+export function nearSame(a: string, b: string): boolean {
+  const bi = (s: string) => { const t = s.replace(/[^가-힣0-9]/g, ""); const out = new Set<string>(); for (let i = 0; i + 1 < t.length; i++) out.add(t.slice(i, i + 2)); return out; };
+  const x = bi(a), y = bi(b); if (x.size < 6 || y.size < 6) return false;
+  let inter = 0; for (const g of x) if (y.has(g)) inter++;
+  return inter / (x.size + y.size - inter) >= 0.6;
+}
+/**
+ * AM 판독(4종 14건이 삭제·수리 단계에서 생김): 수리 문장이 같은 문단의 다른 문장과 거의 같은 말이면 그 수리 문장을 뺀다(이웃 문장이 이미 말함),
+ * 원문에 없던 시골 소품(「곳간」 등, 문체 규칙이라 revertWorse가 안 봄)을 넣었으면 원문으로 되돌린다(호출 0).
+ */
+const MONTH_GZ = /([갑을병정무기경신임계][자축인묘진사오미신유술해])(?:\([一-鿿]{2}\))?월/g;
+const monthsOf = (s: string) => [...new Set([...s.matchAll(MONTH_GZ)].map(m => m[1]))];
+/** 달 이름 2개 이상을 늘어놓은 문장이 브리프의 한 줄에 다 있는가. */
+const monthsBacked = (ms: readonly string[], lines: readonly string[]) => lines.some(l => ms.every(m => l.includes(`${m}월`)));
+const SUBJECT = /^(?:반대로 |그리고 |또 )?([가-힣]{1,6}(?: [가-힣]{1,6})?)(?:은|는) /;
+export function revertRepairSideEffects(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], briefLines: readonly string[] = []): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(s => norm(s).includes(key));
+    if (i < 0) continue;
+    const subj = a.before.match(SUBJECT)?.[1], mb = monthsOf(a.before), ma = monthsOf(a.after);
+    if (RURAL_PROP.test(a.after) && !RURAL_PROP.test(a.before)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_rural_prop" }); }
+    // AM 재생성 2 판독(annual-1 5.1.1): 브리프 줄과 같은 달 목록(을사·무신·기유)을 검수 오지적을 따라 브리프에 없는 목록(을사·병오)으로 바꿨다 → 되돌린다.
+    else if (briefLines.length && mb.length >= 2 && ma.length >= 2 && mb.join() !== ma.join() && monthsBacked(mb, briefLines) && !monthsBacked(ma, briefLines)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_month_unbacked" }); }
+    // AM 재생성 2 판독(major-1 3장): 소제목의 말(「좋은 패」)을 주어로 세운 정의 문장에서 수리가 그 주어를 잃어 비문이 됐다 → 되돌린다.
+    else if (subj && subj.length >= 2 && sec.heading.includes(subj) && !a.after.includes(subj)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_subject_lost" }); }
+    else if (ss.length > 1 && ss.some((s, j) => j !== i && nearSame(s, ss[i]))) { reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_duplicate" }); ss.splice(i, 1); }
+    // AM2-3 6-2(AM-01 커리어 6장 「이 조합은 정해진 틀 안에서…」 — 수리가 앞 문장의 두 힘을 지워 지시어가 기댈 곳을 잃음): 수리한 문장 바로 뒤가 지시어로 열면 수리를 되돌린다
+    // (되돌린 원문은 깃발이 남아 deleteFlagged가 기대는 뒤 문장과 함께 지운다 — 고아가 남지 않는다).
+    else if (i + 1 < ss.length && /^(이|그) (조합|두 (가지|힘|기운))|^그다음은|^이처럼|^이렇게/.test(ss[i + 1].replace(/[⟪⟫]/g, "")) && norm(a.before) !== norm(a.after)) { ss[i] = a.before; reverted.push({ at: a.at, after: a.after, before: a.before, rule: "repair_orphan_next" }); }
+    else continue;
+    (sec.paragraphs as string[])[pn] = ss.join(" ");
+  }
+  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), reverted };
+}
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {
@@ -175,8 +233,16 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const ss = splitSentences(p), i = ss.findIndex(x => x.replace(/[⟪⟫]/g, "").includes(f.sentence) || f.sentence.includes(x.replace(/[⟪⟫]/g, "")));
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
-    if (i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
-    const { sentences: rest, stripped } = removeSentenceAt(ss, i);
+    // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
+    const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
+    if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
+    const { sentences: rest1, stripped } = removeSentenceAt(ss, i);
+    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:leans` });
+    const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
+    // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
+    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && /셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const rest = orphan ? rest0.filter((_, j) => j !== i) : rest0;
+    if (orphan) deleted.push({ at, sentence: rest0[i], rule: `${f.rule}:orphan_summary` });
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
     deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });

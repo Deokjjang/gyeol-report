@@ -9,6 +9,9 @@ import { WRITER_DISABLED_RUNTIME } from "../../../src/lib/report-generation/writ
 
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: vi.fn(() => { throw new Error("DB_FORBIDDEN"); }) }));
 vi.mock("../../../src/lib/reports/supabasePaidReportResultClient", () => ({ createSupabasePaidReportResultClient: vi.fn(() => { throw new Error("DB_FORBIDDEN"); }) }));
+// 결과 화면은 먼저 로그인 주인의 이용권 책을 찾는다(next/headers 요청 범위가 필요). 로컬 QA 책은 이용권 책이 아니고 구매자 확인은 따로 시험한다(bookPublicFlow와 같은 대역).
+vi.mock("../../../src/lib/book/ownerAccess", () => ({ loadOwnedTicketBook: async () => ({ kind: "absent" }), canReadPurchasedBook: async () => true }));
+vi.mock("../../../src/lib/sharing/reportShareStore", () => ({ existingReportShareUrl: async () => null }));
 const person = { name: "김도윤", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
 const payload = (key: string) => ({ productKey: key, productSlug: key === "saju_mbti_full" ? "saju-mbti-full" : key === "saju_mbti_compatibility" ? "compatibility" : key.replaceAll("_", "-"),
   ...(key === "saju_mbti_compatibility" ? { personA: person, personB: { ...person, name: "나래", mbtiType: "ISFJ" }, relationshipType: "love" } : { person }),

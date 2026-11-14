@@ -89,7 +89,12 @@ describe("A-9 문장 삭제 뒤 접속어 정리·짧은 소제목 기록", () =
     const r = deleteFlagged(ch(["틀린 문장이에요. 하지만 이 사람은 끝까지 해냅니다. 마지막 문장이에요."]), [flag("틀린 문장이에요.")] as never, new Set(["fact_term"]));
     expect(r.chapters[0].sections[0].paragraphs[0]).toBe("이 사람은 끝까지 해냅니다. 마지막 문장이에요.");
     expect(r.deleted[0]).toMatchObject({ connectiveStripped: true });
-    const kept = deleteFlagged(ch(["틀린 문장이에요. 이처럼 끝까지 해냅니다. 마지막 문장이에요."]), [flag("틀린 문장이에요.")] as never, new Set(["fact_term"]));
+    // AM2-3 6-2(AM-01 4종 판독 L-4 「수리·삭제 뒤 고아」): 지시어로 기대는 다음 문장은 홀로 남기지 않고 함께 지운다.
+    const both = deleteFlagged(ch(["틀린 문장이에요. 이처럼 끝까지 해냅니다. 마지막 문장이에요."]), [flag("틀린 문장이에요.")] as never, new Set(["fact_term"]));
+    expect(both.chapters[0].sections[0].paragraphs[0]).toBe("마지막 문장이에요.");
+    expect(both.deleted.map(d => d.rule).sort()).toEqual(["fact_term", "fact_term:leans"]);
+    // 둘을 지우면 소제목이 비는 경우만 그대로 둔다(기록 kept: leans).
+    const kept = deleteFlagged(ch(["틀린 문장이에요. 이처럼 끝까지 해냅니다."]), [flag("틀린 문장이에요.")] as never, new Set(["fact_term"]));
     expect(kept.deleted[0]).toMatchObject({ kept: "leans" });
     expect(thinSections(r.chapters as never)).toEqual([{ at: "2.0", heading: "h", sentences: 2 }]);
   });

@@ -174,7 +174,7 @@ describe("P6 만세력 표 = 엔진 결과(20 기준 사례)", () => {
       const key = h.id.startsWith("shinsal:TWELVE_") ? "twelveSinsal" : "sinsalAndGwiin";
       expect(POS.filter((p) => row(table, key).cells[p].includes(labelOf(h.id))), `${c.id} 브리프 ${h.id}`).toEqual(h.positions);
     }
-  }, 60_000);
+  }, 180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 
   it("20 사례가 관계 종류·세부와 신살·귀인 41종을 모두 한 번 이상 지난다", () => {
     const seen = new Set<string>();
@@ -202,7 +202,7 @@ describe("P6 만세력 표 = 엔진 결과(20 기준 사례)", () => {
     expect(inter.day).toEqual(expect.arrayContaining(["甲己 천간합 · 연간", "卯申 원진 · 연지"]));
     const marks = row(table, "sinsalAndGwiin").cells;
     expect(POS.filter((p) => marks[p].includes("현침살"))).toEqual(["year", "month", "day"]);
-  }, 60_000);
+  }, 180_000);
 
   it("c02 2000-05-11 17:05 여: 申辰 반합(연지·시지), 巳申 육합·파·형은 월지·일지 둘 다와", async () => {
     const { table } = await buildCase(CASES[1]);
@@ -212,7 +212,7 @@ describe("P6 만세력 표 = 엔진 결과(20 기준 사례)", () => {
     for (const p of ["month", "day"] as const) expect(inter[p]).toEqual(["巳申 육합 · 시지", "巳申 파 · 시지", "巳申 형 · 시지"]);
     // 음간 己 일간은 양인을 내지 않는다(엔진 기준) — 예전 표의 파생 '양인살'이 남지 않는다.
     expect(Object.values(row(table, "sinsalAndGwiin").cells).flat()).not.toContain("양인살");
-  }, 60_000);
+  }, 180_000);
 
   it("궁합 표: personA·personB가 각자의 원국 엔진 결과로 채워진다", async () => {
     const [a, b] = [CASES[0], CASES[3]];

@@ -46,7 +46,7 @@ describe("full report QA dump source", () => {
   it("keeps public report UI paid-first without report fulfillment", () => {
     expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
-    expect(pageSource).toContain("1,290원 결제하고 리포트 생성하기");
+    expect(pageSource).toContain("`${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`");
     expect(pageSource).toContain("TossPaymentWidgetLauncher");
     expect(pageSource).not.toContain("/api/payments");
     expect(pageSource).not.toContain("/api/reports/unlock");

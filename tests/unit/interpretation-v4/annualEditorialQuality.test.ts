@@ -127,7 +127,8 @@ it("present and explicit offline future titles; actual 2027 purchase policy stil
   const future = await generate(0, 2027, MAJOR_SAFETY_CLOCK, "2027-10-12T12:00:00+09:00");
   expect(future.r.narrative.sections.at(-1)!.title).toBe("2027년을 준비하는 기준");
   expectLock(v4Digest(future.r.evidence), locks.annual["A-2027-simulation"].evidence);
-  const blocked = await generateV4ShadowReport(payload(0, 2027), MAJOR_SAFETY_CLOCK);
+  // AM 2부: 주문 관문은 신년판 연도(기본 2027)를 받는다. 그 다음 해(2028)는 여전히 운영에서 거절한다.
+  const blocked = await generateV4ShadowReport(payload(0, 2028), MAJOR_SAFETY_CLOCK);
   expect(blocked.ok).toBe(false);
   expect(JSON.stringify(blocked)).toContain("SELECTED_YEAR_INVALID");
 }, 120000);

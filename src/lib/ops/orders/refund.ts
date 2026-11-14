@@ -1,5 +1,5 @@
 /**
- * 결제 주문 환불(P6d-ops 5): 관리자 2단계 확인 또는 24시간 실패 자동 환불. 토스 취소 API는 기존 클라이언트(tossRefundClient)를 쓴다.
+ * 결제 주문 환불(P6d-ops 5): 관리자 2단계 확인 또는 생성 실패 자동 환불(W3 P2: 결제 + 30분 안). 토스 취소 API는 기존 클라이언트(tossRefundClient)를 쓴다.
  * 순서: 조회(이미 취소됐으면 완료) → 취소(같은 Idempotency-Key) → 결과 저장 → 감사 로그. 결과를 모르면 failed로 두고 5분 뒤 같은 키로 다시 확인한다.
  */
 import type { RefundProvider } from "../../payment/tossRefundClient";

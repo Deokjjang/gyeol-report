@@ -77,16 +77,21 @@ export const anthropicDriver: ProviderDriver = {
   requestIdHeader: "request-id",
   headers: (apiKey) => ({ "content-type": "application/json", "x-api-key": apiKey, "anthropic-version": "2023-06-01" }),
   sent: sentOf,
-  body: (input) => ({
-    model: input.model,
-    max_tokens: input.maxOutputTokens,
-    stream: true,
-    system: [{ type: "text", text: input.system, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) }],
-    messages: [{ role: "user", content: input.user }],
-    ...MODEL_OPTIONS[input.model],
-    // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
-    ...(input.jsonSchema ? { output_config: { ...((MODEL_OPTIONS[input.model]?.output_config as Record<string, unknown> | undefined) ?? {}), format: { type: "json_schema", schema: input.jsonSchema } } } : {}),
-  }),
+  body: (input) => {
+    // AM 7부: 1회 재호출만 짧은 생각(adaptive + effort low). 나머지는 모델 기본 설정(작가 Sonnet 5.5는 between_tools).
+    const base = MODEL_OPTIONS[input.model] ?? {};
+    const opts: Record<string, unknown> = input.thinking === "adaptive-low" ? { ...base, thinking: { type: "adaptive" }, output_config: { ...((base.output_config as Record<string, unknown> | undefined) ?? {}), effort: "low" } } : base;
+    return {
+      model: input.model,
+      max_tokens: input.maxOutputTokens,
+      stream: true,
+      system: (input.systemParts?.length ? input.systemParts.slice(0, 4) : [input.system]).map(text => ({ type: "text", text, ...(input.cacheSystem === false ? {} : { cache_control: { type: "ephemeral" } }) })),
+      messages: [{ role: "user", content: input.user }],
+      ...opts,
+      // output_config는 모델 설정(effort)과 JSON 스키마를 합친다.
+      ...(input.jsonSchema ? { output_config: { ...((opts.output_config as Record<string, unknown> | undefined) ?? {}), format: { type: "json_schema", schema: input.jsonSchema } } } : {}),
+    };
+  },
   handle(message, state, onText) {
     const type = message.event ?? "";
     if (type === "ping" || type === "content_block_stop" || type === "message_stop") return;
