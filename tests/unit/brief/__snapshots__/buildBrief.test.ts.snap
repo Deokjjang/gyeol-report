@@ -100,7 +100,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 11201,
+  "tokens": 10261,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,why,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,fortune]",
@@ -193,9 +193,9 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "love-engine: ev:loveEngine ev:dayStage mbti/love t2/love/first t5/love/first traits.t5.fusion",
     "charm: t8/love/first ev:charm ev:profile ev:firstMeet",
     "match: ev:matchTypes ev:combos ev:meetState",
-    "contact: t7/love/first ev:crush ev:talkRhythm t1/love/first mbti/love",
-    "in-love: ev:express t2/love/new-domain ev:jealousy t4/love/first mbti/love",
-    "conflict: t1/love/new-domain shadows.s1 ev:dayRelations t2/relationships/new-domain mbti/relationships ev:dangerSigns",
+    "contact: t7/love/first ev:crush ev:talkRhythm t1/love/first traits.t1.fusion",
+    "in-love: ev:express t2/love/new-domain ev:jealousy t4/love/first traits.t4.fusion",
+    "conflict: t1/love/new-domain shadows.s1 ev:dayRelations t2/relationships/new-domain traits.t2.fusion ev:dangerSigns",
     "marriage: ev:marriageView ev:homeState t1/marriage/new-domain mbti/marriage",
     "parenting: ev:childStar ev:parentState t9/marriage/first traits.t9.fusion",
     "flow: ev:loveTiming ev:loveRoadmap chapters.in-love mbti/relationships",
@@ -214,7 +214,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8619,
+  "tokens": 8028,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [contact,conflict,marriage]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-engine,in-love,conflict]",
@@ -257,7 +257,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8560,
+  "tokens": 8561,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [engine,now,people]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - []",
@@ -306,7 +306,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt6",
   ],
   "timeline": undefined,
-  "tokens": 13938,
+  "tokens": 14375,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,attraction,direction-ab]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [attraction,direction-ab,friction]",

@@ -123,6 +123,35 @@ export const MaterialSchema = z.discriminatedUnion("kind", [
 ]);
 export type Material = z.infer<typeof MaterialSchema>;
 
+/**
+ * W3 P3 연결 시스템(src/lib/brief/cards): 특징 카드·연결·절 설계 카드. 4종만 만든다(세운·대운 AM은 없음).
+ * 작가는 절을 {q, card}로 받는다(materials 대신). 안전망·검수·지표는 chapters[].sections[].card와 Brief.design을 읽는다.
+ */
+export const ConnectionSchema = z.object({ kind: z.enum(["공통", "차이", "보완", "긴장"]), a: z.string(), b: z.string(), tag: z.string(), tagName: z.string(), why: z.string(), source: z.string(), dir: z.string().optional() });
+export const FeatureCardSchema = z.object({
+  id: z.string(), system: z.enum(["myeongri", "mbti", "ziwei"]), key: z.string(), name: z.string(), where: z.array(z.string()), strength: z.enum(["strong", "medium", "weak"]),
+  tags: z.record(z.string(), z.number()), domains: z.array(z.enum(["성격", "일", "돈", "연애", "관계", "가족"])), polarity: z.enum(["plus", "minus", "mixed"]),
+  owner: z.enum(["a", "b"]).optional(), mbti: z.string().optional(), traitId: z.string().optional(),
+});
+export const SectionCardSchema = z.object({
+  q: z.string(),
+  /** 근거 0~3: name·where(자리 이름)·meaning(첫 등장만 뜻, 둘째부터 새 쓰임)·facts(상품 근거 사실 줄)·ref(원국 참조 칸)·rule(쓰는 법)·traitId. */
+  evidence: z.array(z.object({ name: z.string(), where: z.string(), meaning: z.string().optional(), facts: z.array(z.string()).optional(), ref: z.string().optional(), rule: z.string().optional(), traitId: z.string().optional() })).max(3),
+  link: ConnectionSchema.nullable(),
+  scene: z.object({ text: z.string(), from: z.enum(["seed", "knowledge", "relation"]), who: z.string().optional(), props: z.array(z.string()).optional() }).nullable(),
+  punch: z.object({ text: z.string(), basis: z.string(), warm: z.string() }).nullable(),
+  rx: z.string().nullable(),
+});
+export type SectionCardBrief = z.infer<typeof SectionCardSchema>;
+export const BookDesignSchema = z.object({
+  version: z.literal("cards-v1"),
+  cards: z.array(FeatureCardSchema),
+  /** 책에 쓴 연결(장 순서). */
+  links: z.array(ConnectionSchema),
+  /** 카드 단계 사실 대조(정답지와 다른 근거는 카드에서 뺐다). */
+  card_fact_drop: z.array(z.object({ chapter: z.string(), section: z.number().int(), name: z.string(), where: z.string(), reason: z.string() })),
+});
+
 export const ChapterBriefSchema = z.object({
   id: z.string(), index: z.number().int(), title: z.string(), question: z.string(), role: z.string(),
   targetChars: z.tuple([z.number().int(), z.number().int()]),
@@ -132,7 +161,7 @@ export const ChapterBriefSchema = z.object({
   /** 장 재료 전체(절 재료를 모은 것). 반복 장은 타임라인 항목 + 짧은 참조. */
   materials: z.array(MaterialSchema).min(1).max(12),
   /** 절 계획(P3.8 1): 절마다 질문과 그 절 전용 재료. 작가는 절 하나를 소제목 하나로 쓴다. */
-  sections: z.array(z.object({ q: z.string(), domain: z.enum(DOMAINS), materials: z.array(MaterialSchema).min(1).max(4) })).min(1).max(5).optional(),
+  sections: z.array(z.object({ q: z.string(), domain: z.enum(DOMAINS), materials: z.array(MaterialSchema).min(1).max(4), card: SectionCardSchema.optional() })).min(1).max(5).optional(),
   note: z.string().optional(),
   /** 장면 변주 힌트(P3.5 A1): 이 고객의 생활 소품 2개. 재료 장면을 이 소품으로 다시 짠다(문장 복사 방지). */
   sceneHint: z.array(z.string()).min(1).max(3).optional(),
@@ -252,6 +281,8 @@ export const BriefSchema = z.object({
     axes: z.record(z.string(), z.number().int()),
     warnings: z.array(z.string()),
   }).optional(),
+  /** W3 P3 연결 시스템: 특징 카드·책에 쓴 연결·카드 단계 사실 대조(작가 입력에서 뺀다 — 작가는 절 card만 받는다). 4종만. */
+  design: BookDesignSchema.optional(),
   /** 책 단위 소품 사용 기록(P3.6 A1): 소품 → 힌트로 준 장 수(최대 2). */
   usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
   /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주에 있는 기운(지식 DB 이름)과 뜻 한 줄. 작가 입력에서 뺀다. core: 본문 trait로 쓴 기운. */

@@ -83,12 +83,52 @@ export function allocateTodos(entries: TimelineEntry[], k: Pick<Knowledge, "acti
   return { used, changed };
 }
 
-/** 장 처방 배분: key 카드가 쓴 종류를 빼고, 장마다 선호 순서에서 하나. 쓰는 종류와 금지 종류(책의 다른 곳이 쓴 모든 종류). */
-export function allocateChapters(chapterIds: readonly { readonly n: number; readonly id: string; readonly keyed: boolean }[], keyUsed: ReadonlyMap<RxKind, string>): Map<number, { use: RxKind | null; forbid: RxKind[] }> {
-  const taken = new Map<RxKind, string>([...keyUsed].map(([kd, key]) => [kd, `key ${key}`] as const));
+/**
+ * W3 P3 처방(설계 2): 4종 장 선호표. 장 id가 세운·대운 장 id와 겹쳐서(love·money·work·people) 상품별 표로 둔다(CHAPTER_RX는 AM 그대로).
+ * 「한 줄 적기」「앞으로 한 달」 같은 틀 낱말은 종류 이름에도 예시에도 두지 않는다.
+ */
+export const PRODUCT_CHAPTER_RX: Readonly<Record<string, Readonly<Record<string, readonly RxKind[]>>>> = {
+  saju_mbti_full: {
+    core: ["혼자 시간", "적기·목록"], portrait: ["말 다듬기·한 박자", "혼자 시간", "한마디 건네기"], why: ["끝낼 일 하나", "쉬기·잠", "적기·목록"], strengths: ["끝낼 일 하나", "한마디 건네기", "값 매기기"],
+    tension: ["하루 묵히기", "말 다듬기·한 박자", "끝까지 듣기"], "fact-bomb": ["말 다듬기·한 박자", "끝까지 듣기", "하루 묵히기"], fortune: ["사람 고르기", "연락·안부", "끝낼 일 하나"],
+    work: ["끝낼 일 하나", "보내기 전 다시 읽기", "값 매기기"], money: ["월급날·먼저 떼어 두기", "하루 묵히기", "값 매기기"], love: ["말 다듬기·한 박자", "연락·안부", "끝까지 듣기"],
+    family: ["한마디 건네기", "연락·안부", "끝까지 듣기"], relationships: ["사람 고르기", "끝까지 듣기", "연락·안부"], direction: ["끝낼 일 하나", "적기·목록", "몸 움직이기"],
+  },
+  career_money_study: {
+    engine: ["끝낼 일 하나", "적기·목록"], now: ["끝낼 일 하나", "보내기 전 다시 읽기"], paths: ["적기·목록", "끝낼 일 하나"], show: ["보내기 전 다시 읽기", "값 매기기", "한마디 건네기"],
+    people: ["사람 고르기", "연락·안부", "끝까지 듣기"], docs: ["보내기 전 다시 읽기", "적기·목록"], money: ["월급날·먼저 떼어 두기", "하루 묵히기", "값 매기기"], invest: ["하루 묵히기", "적기·목록"],
+    roadmap: ["끝낼 일 하나", "쉬기·잠", "적기·목록"],
+  },
+  love_marriage_child: {
+    "love-engine": ["혼자 시간", "말 다듬기·한 박자"], charm: ["한마디 건네기", "연락·안부"], match: ["사람 고르기", "끝까지 듣기"], contact: ["연락·안부", "말 다듬기·한 박자"],
+    "in-love": ["한마디 건네기", "끝까지 듣기"], conflict: ["하루 묵히기", "말 다듬기·한 박자", "끝까지 듣기"], marriage: ["끝까지 듣기", "월급날·먼저 떼어 두기", "한마디 건네기"],
+    parenting: ["끝까지 듣기", "쉬기·잠"], flow: ["혼자 시간", "적기·목록"],
+  },
+  saju_mbti_compatibility: {
+    "pair-core": ["끝까지 듣기", "한마디 건네기"], bases: ["말 다듬기·한 박자", "끝까지 듣기"], attraction: ["한마디 건네기", "연락·안부"], "direction-ab": ["끝까지 듣기", "말 다듬기·한 박자"],
+    "direction-ba": ["한마디 건네기", "끝까지 듣기"], friction: ["하루 묵히기", "말 다듬기·한 박자"], "domain-scene": ["사람 고르기", "몸 움직이기"], "felt-differently": ["끝까지 듣기", "혼자 시간"],
+    "one-thing": ["한마디 건네기", "끝낼 일 하나"],
+  },
+};
+
+/** 배분 옵션(W3 P3 4종): table = 장 선호표, cap = 같은 종류 책 상한, spread = 시작 자리(고객 해시), avoid = 이전 책 종류, fits = 입력에 맞는 종류, fallback = 선호표가 다 차면 고를 종류. 없으면 AM 동작 그대로. */
+export type AllocateOpts = { readonly table?: Readonly<Record<string, readonly RxKind[]>>; readonly cap?: number; readonly spread?: number; readonly avoid?: ReadonlySet<RxKind>; readonly fits?: (kind: RxKind) => boolean; readonly fallback?: readonly RxKind[] };
+/** 장 처방 배분: key 카드가 쓴 종류를 빼고, 장마다 선호 순서에서 하나. 쓰는 종류와 금지 종류(책의 다른 곳이 쓴 모든 종류 — cap이 있으면 상한에 닿은 종류). */
+export function allocateChapters(chapterIds: readonly { readonly n: number; readonly id: string; readonly keyed: boolean }[], keyUsed: ReadonlyMap<RxKind, string>, opts: AllocateOpts = {}): Map<number, { use: RxKind | null; forbid: RxKind[] }> {
+  const cap = opts.cap ?? 1, table = opts.table ?? CHAPTER_RX;
+  const count = new Map<RxKind, number>([...keyUsed.keys()].map(kd => [kd, cap] as const));
   const mine = new Map<number, RxKind | null>();
-  for (const c of chapterIds) { if (c.keyed) continue; const pref = CHAPTER_RX[c.id.replace(/:.*$/, "")] ?? []; const pick = pref.find(p => !taken.has(p)) ?? null; if (pick) taken.set(pick, `${c.n}장`); mine.set(c.n, pick); }
+  let prev: RxKind | null = null;
+  chapterIds.forEach((c, i) => {
+    if (c.keyed) return;
+    const pref0 = table[c.id.replace(/:.*$/, "")] ?? [], off = opts.spread !== undefined && pref0.length ? (opts.spread + i) % pref0.length : 0;
+    const pref = [...pref0.slice(off), ...pref0.slice(0, off)];
+    const ok = (p: RxKind) => (count.get(p) ?? 0) < cap && !opts.avoid?.has(p) && (opts.fits?.(p) ?? true) && p !== prev;
+    const pick = pref.find(ok) ?? opts.fallback?.find(ok) ?? null;
+    if (pick) count.set(pick, (count.get(pick) ?? 0) + 1);
+    mine.set(c.n, pick); prev = pick;
+  });
   const out = new Map<number, { use: RxKind | null; forbid: RxKind[] }>();
-  for (const c of chapterIds) { const use = mine.get(c.n) ?? null; out.set(c.n, { use: c.keyed ? null : use, forbid: [...taken.keys()].filter(kd => kd !== use) }); }
+  for (const c of chapterIds) { const use = mine.get(c.n) ?? null; out.set(c.n, { use: c.keyed ? null : use, forbid: [...count].filter(([kd, n]) => n >= cap && kd !== use).map(([kd]) => kd) }); }
   return out;
 }
