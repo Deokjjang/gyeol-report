@@ -21,6 +21,9 @@ const GROUPS = ["PEER", "OUTPUT", "WEALTH", "OFFICER", "RESOURCE"] as const;
 export const STATUSES = ["employee", "business", "freelancer", "student", "job_seeker", "homemaker", "other", "unknown"] as const;
 export const LOVE_STATUSES = ["single", "some", "dating", "married", "unknown"] as const;
 export const MBTI_DOMAINS = ["work", "money", "love", "relationships", "alone"] as const;
+const MBTI_TYPES = ["INTJ", "INTP", "ENTJ", "ENTP", "INFJ", "INFP", "ENFJ", "ENFP", "ISTJ", "ISFJ", "ESTJ", "ESFJ", "ISTP", "ISFP", "ESTP", "ESFP"] as const;
+const SEATS = ["seat:year", "seat:month", "seat:day", "seat:hour"] as const;
+const GROUP_FACETS = Object.fromEntries(GROUPS.map(g => [g, 2])) as Record<string, number>;
 
 /** 키가 엔진 어휘에 있는가. */
 export function validKey(key: string): boolean {
@@ -30,7 +33,10 @@ export function validKey(key: string): boolean {
   if (fam === "group") return (GROUPS as readonly string[]).includes(v);
   if (fam === "status") return (STATUSES as readonly string[]).includes(v);
   if (fam === "love") return (LOVE_STATUSES as readonly string[]).includes(v);
-  if (["shinsal", "gwiin", "twelveStage", "relation"].includes(fam)) return FEATURE_IDS.has(key);
+  if (["shinsal", "gwiin", "twelveStage", "relation"].includes(fam)) return FEATURE_IDS.has(key) || (fam === "relation" && v === "WONJIN");
+  // AM 2·3부: MBTI 유형(세운 반응·성장 곡선), 간지(해의 기운), 상황(쉬는 중).
+  if (fam === "mbti") return (MBTI_TYPES as readonly string[]).includes(v);
+  if (fam === "ganji") return /^[甲乙丙丁戊己庚辛壬癸][子丑寅卯辰巳午未申酉戌亥]$/.test(v);
   return false;
 }
 
@@ -94,6 +100,16 @@ export const TOPICS: Record<string, { keys: readonly string[]; when: readonly st
   invest: { keys: GROUPS.map(g => `group:${g}`), when: ["strong", "weak"], facets: { savings: 1, realEstate: 1, stocks: 1, business: 1, self: 1, mistake: 2, principle: 2 }, invest: true },
   "love-attract": { keys: [...TEN_GODS.map(t => `tenGod:${t}`), "shinsal:DOHWASAL", "shinsal:HONGYEOMSAL", "shinsal:TWELVE_JANGSEONGSAL"], when: ["any"], facets: { charm: 2, contact: 2, confess: 2, attachment: 2, date: 2, conflict: 2 } },
   "red-flags": { keys: [...ELEMENTS.map(e => `element:${e}`), ...GROUPS.map(g => `group:${g}`)], when: ["strong", "weak"], facets: { flag: 2, why: 1, check: 1 } },
+  // AM 2부 세운: 영역 × 십성 장면 은행, 관계 × 자리, 상황(일 4종·연애 3종) × 묶음, MBTI × 묶음 반응(경향), 해의 기운.
+  "annual-domain": { keys: TEN_GODS.map(t => `tenGod:${t}`), when: ["any"], facets: { love: 3, money: 3, work: 3, study: 3, people: 3, mind: 3 } },
+  "annual-relation": { keys: ["CHUNG", "YUKHAP", "STEM_HAP", "SAMHAP", "HYEONG", "PA", "HAE", "WONJIN"].map(r => `relation:${r}`), when: ["any"], facets: Object.fromEntries(SEATS.map(x => [x, 2])) },
+  "annual-situation": { keys: ["status:employee", "status:job_seeker", "status:student", "status:business", "status:freelancer", "status:other", "love:single", "love:dating", "love:married"], when: ["any"], facets: GROUP_FACETS },
+  "annual-mbti": { keys: MBTI_TYPES.map(t => `mbti:${t}`), when: ["any"], facets: GROUP_FACETS },
+  "year-energy": { keys: ["ganji:丙午", "ganji:丁未", "ganji:戊申"], when: ["any"], facets: { image: 3, easy: 3, love: 2, money: 2, work: 2, people: 2, mind: 2 } },
+  // AM 3부 대운: 대운 마음가짐·교운기(묶음 → 다음 묶음), 영역별 10년 장면, MBTI 성장 곡선(기능 위계·나이 경향).
+  "major-mind": { keys: GROUPS.map(g => `group:${g}`), when: ["any"], facets: { enter: 2, inside: 2, leave: 2, ...Object.fromEntries(GROUPS.map(g => [`to:${g}`, 1])) } },
+  "major-domain": { keys: GROUPS.map(g => `group:${g}`), when: ["any"], facets: { work: 3, money: 3, love: 3, people: 3, mind: 3, move: 3 } },
+  "mbti-growth": { keys: MBTI_TYPES.map(t => `mbti:${t}`), when: ["any"], facets: { order: 1, twenties: 2, thirties: 2, forties: 2, fifties: 2 } },
   "status-scenes": { keys: [...STATUSES.filter(s => s !== "unknown").map(s => `status:${s}`), ...LOVE_STATUSES.filter(s => s !== "unknown").map(s => `love:${s}`)], when: ["any"], facets: {}, seed: ["c2", "c3", "c4", "c6", "c7", "l3", "l4", "l7", "l8", "l9"] },
 };
 

@@ -94,7 +94,7 @@ describe("unknown calculation version: kept, hidden and logged (actual SQL)", ()
     const { reportId, stored } = await published(replaced(name, from, to));
     const read = await readPublishedReport(store, reportId, validateBookPublication);
     const unknown = to.replace(/^"calcVersion":"|"$/gu, "");
-    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null });
+    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null, readRejected: true });
     expect(log).toHaveBeenCalledWith(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: [unknown] }));
     expect(await row(reportId)).toEqual({ status: "COMPLETED", snapshot_json: stored });
   });
@@ -103,7 +103,7 @@ describe("unknown calculation version: kept, hidden and logged (actual SQL)", ()
   it("a known version that fails the read gate is hidden and logged, never quarantined", async () => {
     const snapshot = load("v3-love-unknown");
     const { reportId, stored } = await published({ ...snapshot, draft: { ...(snapshot.draft as object), productType: "career_money_study" } });
-    expect(await readPublishedReport(store, reportId, validateBookPublication)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await readPublishedReport(store, reportId, validateBookPublication)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true });
     expect(await row(reportId)).toEqual({ status: "COMPLETED", snapshot_json: stored });
     expect(log).toHaveBeenCalledTimes(1);
     expect(JSON.parse(String(log.mock.calls[0][0]))).toMatchObject({ event: "REPORT_READ_VALIDATION_FAILED", reportId, productVersion: "v3" });

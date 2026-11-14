@@ -1509,7 +1509,7 @@ export const CAREER_SOURCE_REGISTRY: readonly SourceRef[] = [
     "sourceKind": "input_contract",
     "auditRef": "source-catalog.json#079248d9db39848db6cd",
     "recordSha256": "e970d881b8d73ad8d0fe3bd3bb307743921a67f872eb00f1e9429cfaed7892f2",
-    "sourceFileSha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "sourceFileSha256": "cd706a5a4771b449acb870d77e5deeff8e8991f609eb1db9b07ba78af980eded",
     "originalState": {
       "isCalculatedEvidence": false
     }

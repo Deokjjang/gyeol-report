@@ -72,6 +72,16 @@ export const DOMAIN_BY_TEN_GOD: Readonly<Record<TenGod, readonly [string, string
   正印: ["배우고 준비하는 일이 결과로 이어지기 좋음", "큰 결정보다 계획과 기록을 먼저", "도와주는 사람이 곁에 생김", "쉬는 만큼 회복이 잘 됨"],
 };
 export const periodDomains = (tg: TenGod) => { const [w, m, r, l] = DOMAIN_BY_TEN_GOD[tg]; return [`일: ${w}`, `돈: ${m}`, `관계: ${r}`, `컨디션: ${l}`]; };
+/**
+ * 주의 쪽 뜻 줄(AM2-8 R-S3): 영역 줄 원천(4종 공유)은 그대로 두고, 세운 화면 [좋은 것] 칸에 넣을 줄만 방향으로 거른다.
+ * 「…기 쉬움 · …이 필요함」은 이 표에서 늘 주의 쪽이다(「지출이 늘기 쉬움」 「대비가 필요함」 「한꺼번에 몰리기 쉬움」 「경쟁자처럼 느껴지기 쉬움」 「회복 시간이 필요함」 · 「비교도 따라옴」).
+ */
+export const CAUTION_LINE = /조심|살피|흔들|새기|무리|부딪|어긋|막히|지치|버거|서운|뜸해|기 쉬움|기 쉬워|대비가 필요|경쟁자처럼|비교도 따라|압박|회복 시간|필요함/;
+/** 세운 달 [좋은 것] 한 줄: 오르는 영역(idx)의 그달 십성 영역 줄이 좋은 쪽이면 그것, 아니면 다른 영역의 좋은 쪽 줄, 없으면 비운다. fits: 입력에 맞출 수 있는 줄인가. */
+export function goodLineOf(tg: TenGod, idx: number, fits: (line: string) => boolean = () => true): string | undefined {
+  const lines = periodDomains(tg).map(l => l.replace(/^[^:]+: /, ""));
+  return [idx, ...[0, 1, 2, 3].filter(i => i !== idx)].map(i => lines[i]).find(t => !CAUTION_LINE.test(t) && fits(t));
+}
 
 /** 대운·세운 영역 설계: 십성 묶음별 일·돈·관계·생활 한 줄(명리 통용 해석). */
 const DOMAIN_BY_GROUP: Readonly<Record<Group, readonly [string, string, string, string]>> = {

@@ -13,7 +13,7 @@ import { runTicketPublicationJob } from "@/lib/tickets/publicationWorker";
 import type { RefundProvider } from "@/lib/payment/tossRefundClient";
 import { seedPaid } from "../../helpers/paidWorkerSql";
 import { opsSql } from "../../helpers/opsSql";
-import { RAW_FULL, enqueue, mockTextFor } from "../../helpers/v5Scenarios";
+import { RAW_FULL, enqueue, mockTextFor, nowOrigin } from "../../helpers/v5Scenarios";
 import { TICKET_A as A, TICKET_B as B } from "../../helpers/ticketPublicationSql";
 import { mockAnthropic } from "../../helpers/opsMocks";
 
@@ -53,12 +53,13 @@ describe("주문 기록", () => {
 });
 
 describe("결제 경로 생성 감독", () => {
-  it("출력 전 실패 → 보류(RETRYING, 1분 뒤), 다음 시도 성공 → 정식본 발행·기록", async () => {
+  // W3 P2: 연결 오류(529)는 2분 뒤 2차(같은 설정). 잔액·인증(401)은 2차 없이 바로 결론 — w3Conclusion 시험.
+  it("출력 전 연결 실패 → 2차로 미룸(RETRYING, 2분 뒤), 다음 시도 성공 → 정식본 발행·기록", async () => {
     const reportId = await seedPaid(h.paid, "po_paid_1", payload);
-    const fail = envFor([{ status: 401 }]);
+    const fail = envFor([{ status: 529 }]);
     expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, paidBuilder(fail.env))).toMatchObject({ ok: true, status: "RETRYING" });
     const job = await one<{ status: string; attempt_count: number; run_number: number; wait: number }>("select status,attempt_count,run_number,extract(epoch from next_retry_at-now())::float8 wait from report_generation_jobs where report_id=$1", [reportId]);
-    expect(job).toMatchObject({ status: "RETRYING", attempt_count: 0, run_number: 2 }); expect(job.wait).toBeGreaterThan(50); expect(job.wait).toBeLessThanOrEqual(61);
+    expect(job).toMatchObject({ status: "RETRYING", attempt_count: 0, run_number: 2 }); expect(job.wait).toBeGreaterThan(110); expect(job.wait).toBeLessThanOrEqual(121);
     expect((await one<{ status: string }>("select status from paid_report_snapshots where report_id=$1", [reportId])).status).toBe("RETRYING");
     await exec("update report_generation_jobs set next_retry_at=now() where report_id=$1", [reportId]);
     const ok = envFor([{ text }]);
@@ -79,7 +80,7 @@ describe("결제 경로 생성 감독", () => {
     expect((await one<{ n: number; e: string }>("select count(*)::int n, max(edition) e from book_snapshot_versions where report_id=$1", [reportId]))).toEqual({ n: 1, e: "previous" });
   }, 180_000);
 
-  it("24시간 포기 → 확인 필요 + 자동 환불 요청 → 토스 취소(목업) → 환불 완료, Book은 열리지 않는다", async () => {
+  it("시도를 다 쓴 주문(W3 P2: 2차까지) → 새 시도 없이 포기 → 확인 필요 + 자동 환불 요청 → 토스 취소(목업) → 환불 완료, Book은 열리지 않는다", async () => {
     const reportId = await seedPaid(h.paid, "po_paid_2", payload);
     await h.rpc("ops_generation", "begin", { reportId, origin: "paid", originRef: "po_paid_2" });
     await exec("update book_generation_state set first_failure_at=now()-interval '24 hours',failures=9 where report_id=$1", [reportId]);
@@ -103,14 +104,14 @@ describe("결제 경로 생성 감독", () => {
 });
 
 describe("이용권 경로 생성 감독", () => {
-  it("보류는 큐로 되돌리고 not_before 전에는 다시 집지 않는다 → 성공하면 정식본", async () => {
+  it("연결 실패는 큐로 미루고 not_before 전에는 다시 집지 않는다 → 성공하면 정식본", async () => {
     const job = await enqueue(h);
-    const fail = envFor([{ status: 401 }]);
-    expect(await runTicketPublicationJob(h.queue, undefined, { ...fail.env.deps, ops: ops.generation, openAiKey: null })).toMatchObject({ state: "QUEUED", code: "DEFERRED" });
+    const fail = envFor([{ status: 529 }]);
+    expect(await runTicketPublicationJob(h.queue, undefined, { ...fail.env.deps, ...nowOrigin(), ops: ops.generation, openAiKey: null })).toMatchObject({ state: "QUEUED", code: "DEFERRED" });
     expect((await h.queue.call("claim", null, { v5Products: ["saju_mbti_full"] })).empty).toBe(true);
     await exec("update report_ticket_redemptions set not_before=now() where id=$1", [job.redemptionId]);
     const ok = envFor([{ text }]);
-    expect(await runTicketPublicationJob(h.queue, undefined, { ...ok.env.deps, ops: ops.generation, openAiKey: null })).toMatchObject({ state: "COMPLETED", edition: "official" });
+    expect(await runTicketPublicationJob(h.queue, undefined, { ...ok.env.deps, ...nowOrigin(), ops: ops.generation, openAiKey: null })).toMatchObject({ state: "COMPLETED", edition: "official" });
   }, 180_000);
 
   it("워커가 죽으면(작가 lease 만료) 회수는 결정론 완성 없이 큐로 되돌리고, 이전 토큰은 막힌다", async () => {

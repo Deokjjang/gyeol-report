@@ -66,6 +66,18 @@ export const metaCookieName = (local: boolean) => local ? "gyeol-local-meta-cons
 // 시행일 전 카드는 정할 때(동의·거부)까지 방문마다 — 닫으면 그 방문(브라우저 세션) 동안만 숨긴다(결정 보류, 거부로 저장 안 함).
 export const META_SETTINGS_EVENT = "gyeol:meta-settings";
 export const META_AVAILABLE_EVENT = "gyeol:meta-available";
+/**
+ * W3 P2: 생성 대기 화면에서는 광고 측정 카드를 숨긴다(본 것으로 치지 않고, 대기 화면을 떠나면 보인다). 대기 화면이 떠 있는 동안 html에 표시를 남긴다.
+ * holdMetaCard()는 표시를 걸고 푸는 함수를 돌려준다(useEffect 정리 함수로 쓴다).
+ */
+export const META_CARD_HOLD_EVENT = "gyeol:meta-card-hold";
+export const metaCardHeld = () => typeof document !== "undefined" && document.documentElement?.dataset?.metaCardHold === "1";
+export function holdMetaCard(): () => void {
+  if (typeof document === "undefined" || !document.documentElement?.dataset) return () => undefined;
+  const root = document.documentElement, notify = () => { try { window.dispatchEvent(new Event(META_CARD_HOLD_EVENT)); } catch { /* 이벤트를 못 보내면 다음 확인 때 반영 */ } };
+  root.dataset.metaCardHold = "1"; notify();
+  return () => { delete root.dataset.metaCardHold; notify(); };
+}
 export const META_NOTICE_VERSION = "notice-20261109-optout";
 export const META_CARD_SEEN_KEY = `gyeol-meta-card-seen:${META_NOTICE_VERSION}`;
 export const META_CARD_LATER_KEY = "gyeol-meta-card-later";

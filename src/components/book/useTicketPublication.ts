@@ -15,6 +15,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
   const key = ticketPendingKey(product);
   const [pending, setPending] = useState<Pending | null>(null), [loaded, setLoaded] = useState(false), [message, setMessage] = useState("");
   const [retryable, setRetryable] = useState(false), [revision, setRevision] = useState(0), [submitting, setSubmitting] = useState(false);
+  /** 넘어갈 책 주소(완성된 책, 또는 W3 P2부터 만드는 중인 책의 대기 화면). 정해지면 이 주문서는 잠긴다. */
   const [completedUrl, setCompletedUrl] = useState<string | null>(null);
   const current = useRef<Pending | null>(null), sending = useRef(false), mounted = useRef(false);
   const forget = useCallback(() => {
@@ -25,14 +26,15 @@ export function useTicketPublication(product: string, enabled: boolean) {
     if (body.ok === true && typeof body.state === "string") {
       if (typeof body.message === "string") setMessage(body.message);
       setRetryable(false);
-      if (body.state === "COMPLETED" && typeof body.reportUrl === "string" && /^\/reports\/report_[a-f0-9]{32}$/.test(body.reportUrl)) {
-        // Terminal server acknowledgement ends recovery. Keep this mounted
-        // receipt locked until navigation; a later NEW purchase must not bounce
+      // W3 P2: 접수(QUEUED·RUNNING)되면 바로 그 책의 대기 화면으로 간다(결제 책과 같은 화면, 실패·반환 안내도 서버 상태에서 — 다른 탭·기기에서도 같다).
+      if (["COMPLETED", "QUEUED", "RUNNING"].includes(body.state) && typeof body.reportUrl === "string" && /^\/reports\/report_[a-f0-9]{32}$/.test(body.reportUrl)) {
+        // Server-owned state ends local recovery. Keep this mounted receipt
+        // locked until navigation; a later NEW purchase must not bounce
         // forever to the previous report. No reservation is made on reload.
         try { sessionStorage.removeItem(key); sessionStorage.removeItem(checkoutReturnKey(product)); }
-        catch { /* storage becoming unavailable must not hide a completed book */ }
+        catch { /* storage becoming unavailable must not hide the book */ }
         setCompletedUrl(body.reportUrl);
-        funnel("book_published"); // F 퍼널: 이용권 책 발행 완료(세션당 1번)
+        if (body.state === "COMPLETED") funnel("book_published"); // F 퍼널: 이용권 책 발행 완료(세션당 1번). 대기 화면에서 완성되면 책 화면이 센다.
         window.location.assign(body.reportUrl);
       } else if (body.state === "REVERSED") { forget(); setRevision(n => n + 1); }
       return;
@@ -64,10 +66,14 @@ export function useTicketPublication(product: string, enabled: boolean) {
       } catch { if (!stopped) setMessage("발행 상태를 확인 중입니다. 잠시 후 다시 확인합니다."); }
       finally { clearTimeout(deadline); busy = false; }
     };
-    void poll(); const timer = setInterval(() => void poll(), 5000);
-    const focus = () => void poll();
+    // AM 4부: 조회 주기 3초에서 점점 길게(최대 20초), 창으로 돌아오면 처음부터.
+    let n = 0, timer: ReturnType<typeof setTimeout> | undefined;
+    const steps = [3_000, 3_000, 4_000, 5_000, 7_000, 10_000, 15_000, 20_000];
+    const schedule = () => { timer = setTimeout(() => { void poll(); n++; schedule(); }, steps[Math.min(n, steps.length - 1)]); };
+    void poll(); schedule();
+    const focus = () => { n = 0; clearTimeout(timer); void poll(); schedule(); };
     window.addEventListener("focus", focus); document.addEventListener("visibilitychange", focus);
-    return () => { stopped = true; clearInterval(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
+    return () => { stopped = true; clearTimeout(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
   }, [enabled, pending, completedUrl, accept]);
   const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations, scope?: string, ui?: CheckoutConsentUiClaim) => {
     if (!enabled || !loaded || sending.current || completedUrl) return;

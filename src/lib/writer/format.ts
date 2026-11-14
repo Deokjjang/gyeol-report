@@ -4,7 +4,8 @@
  * P6c: 반복 장 key 아래 카드 줄("[그림] …", "[해 볼 것] …"/"[돌아보기] …", "[살필 점] …")은 문단이 아니라 card로 뺀다(F1).
  *      핵심 문장 기호 ⟪ ⟫는 안전망을 지날 때까지 문단에 두고, 조립 때 위치(keySpan)로 바꾸고 지운다(H).
  */
-export type SectionCard = { readonly image?: string; readonly todo?: string; readonly review?: string; readonly caution?: string | null };
+/** good(AM 2부 세운 달): 「좋은 것」 한 줄. 세운 신년판 달 카드만 쓴다(한 줄 = image, 주의할 것 = caution, 이달의 한 가지 = todo). */
+export type SectionCard = { readonly image?: string; readonly todo?: string; readonly review?: string; readonly caution?: string | null; readonly good?: string };
 /**
  * keySpans: 문단마다 핵심 구절 [시작, 끝)(원문 글자 위치, 없으면 null). 화면은 있으면 굵게 + 옅은 밑줄(P6c-ui2 g).
  * P6c-content H: 작가가 소제목마다 핵심 문장 하나를 ⟪ ⟫로 감싸고, 조립(withKeySpan)이 위치로 바꿔 넣는다 — 소제목당 최대 1개.
@@ -17,9 +18,17 @@ export type ChapterSource = "writer" | "continuation" | "deterministic";
 const CHAPTER = /^##\s+(\d+)\.\s*(.+?)\s*$/;
 const SECTION = /^###\s+(.+?)\s*$/;
 
-const CARD_LINE = /^\s*[-*]?\s*\[(그림|해 볼 것|돌아보기|살필 점)\]\s*(.*?)\s*$/;
-const CARD_FIELD = { 그림: "image", "해 볼 것": "todo", 돌아보기: "review", "살필 점": "caution" } as const;
+const CARD_LINE = /^\s*[-*]?\s*\[(그림|해 볼 것|돌아보기|살필 점|좋은 것|이달의 한 가지)\]\s*(.*?)\s*$/;
+const CARD_FIELD = { 그림: "image", "해 볼 것": "todo", 돌아보기: "review", "살필 점": "caution", "좋은 것": "good", "이달의 한 가지": "todo" } as const;
 const COVER_LINE = /^\s*\[표지\]/;
+/** AM 2부 세운 키워드 카드 줄("[키워드] 단단함 · 기회 · 쉼"). 본문이 아니다. */
+const KEYWORD_LINE = /^\s*\[키워드\]/;
+/** 작가 출력의 키워드 줄 → 낱말 셋(2~8자 한글). 없거나 꼴이 틀리면 null(엔진 열쇠말로 대신한다). */
+export function keywordsOf(text: string): string[] | null {
+  const m = text.match(/^\s*\[키워드\]\s*(.+)$/m); if (!m) return null;
+  const ws = m[1].replace(/[*"'“”]/g, "").split(/\s*[·,|/]\s*/).map(w => w.trim()).filter(Boolean);
+  return ws.length === 3 && ws.every(w => /^[가-힣 ]{2,8}$/.test(w)) && new Set(ws).size === 3 ? ws : null;
+}
 
 export function parseChapters(text: string): BookChapter[] {
   const out: { n: number; title: string; sections: { heading: string; lines: string[]; card: Record<string, string | null> }[] }[] = [];
@@ -35,7 +44,7 @@ export function parseChapters(text: string): BookChapter[] {
     const last = cur.sections[cur.sections.length - 1];
     const card = line.match(CARD_LINE);
     if (card) { const v = card[2].trim(); last.card[CARD_FIELD[card[1] as keyof typeof CARD_FIELD]] = card[1] === "살필 점" && /^(없음|없습니다|없어요)\.?$/.test(v) ? null : v; continue; }
-    if (COVER_LINE.test(line)) continue;
+    if (COVER_LINE.test(line) || KEYWORD_LINE.test(line)) continue;
     last.lines.push(line);
   }
   return out.map(c => ({ n: c.n, title: c.title, sections: c.sections.map(s => ({ heading: s.heading, paragraphs: paragraphsOf(s.lines), ...(Object.keys(s.card).length ? { card: s.card as SectionCard } : {}) })).filter(s => s.heading || s.paragraphs.length) }));
@@ -60,6 +69,6 @@ export function chapterChars(c: BookChapter): number {
 }
 
 export function renderChapter(c: BookChapter): string {
-  const cardLines = (k?: SectionCard) => k ? [k.image ? `[그림] ${k.image}` : "", k.review ? `[돌아보기] ${k.review}` : k.todo ? `[해 볼 것] ${k.todo}` : "", k.caution !== undefined ? `[살필 점] ${k.caution ?? "없음"}` : ""].filter(Boolean) : [];
+  const cardLines = (k?: SectionCard) => k ? [k.image ? `[그림] ${k.image}` : "", k.good ? `[좋은 것] ${k.good}` : "", k.review ? `[돌아보기] ${k.review}` : k.todo ? `[해 볼 것] ${k.todo}` : "", k.caution !== undefined ? `[살필 점] ${k.caution ?? "없음"}` : ""].filter(Boolean) : [];
   return [`## ${c.n}. ${c.title}`, ...c.sections.flatMap(s => [...(s.heading ? [`### ${s.heading}`] : []), ...s.paragraphs.flatMap(p => [p, ""]), ...(s.card ? [...cardLines(s.card), ""] : [])])].join("\n").trim();
 }

@@ -76,8 +76,8 @@ const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
  * 작가 원고 정리(P6d B): 문장을 지우지 않는다. 뜻을 바꾸지 않는 정리(tidyText·소제목 다듬기)와 경험 단정의 경향형 바꿈(기록)만 하고,
  * 규칙에 걸린 문장은 lintBook이 문단째 수리로 보낸다(수리 뒤에도 사실·금지 규칙이면 문단째 뺀다). 문장 삭제는 조각 문장을 남겼다("하는 물음이 자주 올라와요").
  */
-function tidySections(sections: readonly BookSection[], n: number, replacements: Replacement[]): BookSection[] {
-  return sections.map(s => ({ heading: tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => softenParagraph(tidyText(p), n, replacements)).filter(Boolean), ...(s.card ? { card: s.card } : {}) })).filter(s => s.paragraphs.length);
+function tidySections(sections: readonly BookSection[], n: number, replacements: Replacement[], surface = false): BookSection[] {
+  return sections.map(s => ({ heading: tidyHeading(s.heading), paragraphs: s.paragraphs.map(p => surface ? tidyText(p) : softenParagraph(tidyText(p), n, replacements)).filter(Boolean), ...(s.card ? { card: s.card } : {}) })).filter(s => s.paragraphs.length);
 }
 function softenParagraph(p: string, n: number, replacements: Replacement[]): string {
   let out = p;
@@ -108,7 +108,8 @@ function keyedSections(sections: readonly BookSection[], keys: readonly string[]
 }
 
 /** priorSentences: 같은 고객의 이전 Book 문장(P6b E-1). 같은 문장(20자 이상)이 이번 책에 나오면 지운다. */
-export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], drafts: ReadonlyMap<number, DraftChapter>, opts: { priorSentences?: readonly string[] } = {}): { chapters: FinalChapter[]; report: SafetyReport } {
+/** surfaceOnly(AM2 세운·대운 장 묶음): 경험 단정 바꿈·「앞에서 본」 소개 문장 넣기를 하지 않는다(뜻을 바꾸는 정리 — 걸리면 묶음을 다시 쓴다). */
+export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], drafts: ReadonlyMap<number, DraftChapter>, opts: { priorSentences?: readonly string[]; surfaceOnly?: boolean } = {}): { chapters: FinalChapter[]; report: SafetyReport } {
   const f = safetyFacts(brief);
   const allowed = allowedWindows(JSON.stringify(brief));
   const seen = new Set<string>(); // 책 전체 같은 문장(장 순서대로 먼저 나온 것만 남긴다)
@@ -120,14 +121,14 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
   // 앞 장들의 문장 전부(짧은 문장 포함): 결정론 장이 같은 말·거의 같은 말을 되풀이하지 않게 넘긴다(P6c I).
   const bookSentences: string[] = [];
   const remember = (sections: readonly BookSection[]) => { for (const s of sections) for (const p of s.paragraphs) bookSentences.push(...splitSentences(p)); };
-  const tidy = (sections: readonly BookSection[]) => { const r = fixBackrefs(sections, brief, prior); backrefFixed += r.fixed; return r.sections; };
+  const tidy = (sections: readonly BookSection[]) => { if (opts.surfaceOnly) return [...sections]; const r = fixBackrefs(sections, brief, prior); backrefFixed += r.fixed; return r.sections; };
   const chapters = plan.map((ch): FinalChapter => {
     const draft = drafts.get(ch.n);
     const cond = CONDITIONAL_TITLE.test(ch.title.trim());
     const ok = (s: string) => !sentenceViolation(s, f, ANY_WINDOW, cond) && !isPastAssertion(s);
     const det = (reason: string, keys?: readonly string[]): BookSection[] => filterSections(writeDeterministicChapter(brief, ch, { ...(keys ? { keys } : {}), avoid: seen, prior: bookSentences, ok }).sections, f, ch.n, deletions, Boolean(ch.keys), ANY_WINDOW, seen, ch.title, undefined, replacements);
     if (ch.keys) {
-      const have = draft ? keyedSections(tidySections(draft.chapter.sections, ch.n, replacements), ch.keys) : new Map<string, BookSection>();
+      const have = draft ? keyedSections(tidySections(draft.chapter.sections, ch.n, replacements, opts.surfaceOnly), ch.keys) : new Map<string, BookSection>();
       const missing = ch.keys.filter(k => !have.get(k)?.paragraphs.length);
       if (missing.length) for (const s of det("keys", missing)) have.set(s.heading, s);
       // 세기 주장 대조(E-11)는 lintBook(intensity_claim)이 수리로 보낸다(P6d B: 지우지 않는다).
@@ -138,7 +139,7 @@ export function applySafetyNet(brief: Brief, plan: readonly WriterChapter[], dra
       remember(sections);
       return { n: ch.n, id: ch.id, title: ch.title, sections, source, ...(reason ? { reason } : {}), chars: sections.reduce((a, s) => a + s.paragraphs.join("").length, 0), keys: ch.keys };
     }
-    let sections = draft ? tidySections(draft.chapter.sections, ch.n, replacements) : [];
+    let sections = draft ? tidySections(draft.chapter.sections, ch.n, replacements, opts.surfaceOnly) : [];
     void allowed; void mergeShrunk;
     let source: ChapterSource = draft?.source ?? "deterministic";
     let reason: string | undefined = draft ? undefined : "missing";

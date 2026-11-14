@@ -9,6 +9,7 @@ import { validateProductPublication } from "../../../src/lib/report-generation/p
 import { POST as validateInput } from "../../../src/app/api/reports/validate-input/route";
 import { POST as prepareCheckout } from "../../../src/app/api/payment-checkout/prepare/route";
 import { TEST_BUYER } from "../../helpers/opsStoreStub";
+import { FORTUNE_SALES_OPEN_AT } from "../../../src/lib/ops/config";
 
 const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })), bind: vi.fn(async () => true) }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
@@ -31,12 +32,14 @@ function input(productKey = "major_fortune", changes: object = {}, selectedYear 
   return r.value;
 }
 const fetchSpy = vi.fn(() => { throw new Error("external calls forbidden"); });
-beforeEach(() => { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
+beforeEach(() => { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.useFakeTimers(); vi.setSystemTime(clock()); vi.stubGlobal("fetch", fetchSpy); fetchSpy.mockClear(); storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
 afterEach(() => { expect(fetchSpy).not.toHaveBeenCalled(); vi.useRealTimers(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 describe("customer Dayun production boundaries", () => {
   it.each(["major_fortune", "annual_fortune"])("rejects %s bypass before order writes and allows stable input", async product => {
     vi.stubEnv("NODE_ENV", "production");
+    // AM: 운영 모드는 시험용 시각 바꾸기를 읽지 않는다 → 판매 시작 시각(12/1 09:00 KST)에 결제 준비를 부른다.
+    const openAt = new Date(FORTUNE_SALES_OPEN_AT); vi.setSystemTime(openAt);
     vi.stubEnv("PAID_REPORT_RELIABILITY_ENABLED", "1");
     for (const key of ["SUPABASE_SERVICE_ROLE_KEY", "CRON_SECRET", "REPORT_ADMIN_SECRET"]) vi.stubEnv(key, "mock-only");
     vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
@@ -56,7 +59,7 @@ describe("customer Dayun production boundaries", () => {
       expect((await r.json()).ok).toBe(valid);
       expect(storage.create).toHaveBeenCalledTimes(valid ? 1 : 0);
       expect(storage.bind).toHaveBeenCalledTimes(valid ? 1 : 0);
-      if (valid) expect(storage.create.mock.calls[0][0]).toMatchObject({ inputSnapshot: { bookGeneration: { version: "v4", evaluatedAt: clock().toISOString() } } });
+      if (valid) expect(storage.create.mock.calls[0][0]).toMatchObject({ inputSnapshot: { bookGeneration: { version: "v4", evaluatedAt: openAt.toISOString() } } });
     }
   });
   it.each([undefined, "https://example.test", "https://gyeolreport.com.example.test"])("rejects missing/foreign Origin %s before writes", async origin => {

@@ -25,6 +25,8 @@ export type StreamCompletionInput = {
   readonly system: string;
   readonly user: string;
   readonly maxOutputTokens: number;
+  /** W3 P2: 첫 스트림 이벤트(어떤 이벤트든 — 생각 블록 시작 포함)를 기다리는 시간. 넘으면 first_event_timeout(연결 실패로 분류). 기본 90초, 0이면 끔. */
+  readonly firstEventTimeoutMs?: number;
   readonly timeoutMs: number;
   /** 텍스트 조각이 도착할 때마다 호출된다. */
   readonly onText?: (delta: string) => void;
@@ -34,8 +36,18 @@ export type StreamCompletionInput = {
   readonly fetchImpl?: typeof fetch;
   /** Anthropic 시스템 프롬프트에 cache_control을 붙인다. 기본 true. */
   readonly cacheSystem?: boolean;
+  /**
+   * AM2: 시스템 프롬프트를 여러 덩어리로 나눠 덩어리마다 cache_control을 붙인다(Anthropic, 최대 4). system은 이 덩어리를 "\n\n"으로 이은 글과 같아야 한다.
+   * 세운·대운 장 묶음 호출: [작가 규칙(모든 책 공통)] + [인물·근거 카드(이 책의 묶음 공통)].
+   */
+  readonly systemParts?: readonly string[];
   /** 최종판3 4: 응답을 이 JSON 스키마로 묶는다(Anthropic output_config.format). 검수 호출만 쓴다. */
   readonly jsonSchema?: Readonly<Record<string, unknown>>;
+  /**
+   * AM 7부(덕짱님 결정 2026-11-11): "adaptive-low"면 모델 기본 생각 설정 대신 짧은 생각(thinking adaptive, effort low)으로 부른다(Anthropic만).
+   * 작가가 between_tools인데도 생각 블록 하나로 출력 상한을 다 쓰고 본문 0자로 끝났을 때의 1회 재호출에만 쓴다.
+   */
+  readonly thinking?: "adaptive-low";
   /** 호출하는 쪽이 스트림을 끊을 때(예: 작업 lease를 잃음). 끊기면 finishReason "error", code "aborted". */
   readonly signal?: AbortSignal;
 };

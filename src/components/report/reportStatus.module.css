@@ -30,3 +30,6 @@
 .writing i:nth-child(6) { animation-delay: 3.5s; width: 88%; }
 .writing i:nth-child(7) { animation-delay: 4.2s; width: 54%; }
 @keyframes ink { 0% { transform: scaleX(0); } 12%, 100% { transform: scaleX(1); } }
+.numbers { color: #111; font-size: 15px; line-height: 1.9; margin: 14px 0 0; font-variant-numeric: tabular-nums; word-break: keep-all; }
+/* W3 P2: 동작 줄이기 설정이면 줄이 다 그려진 종이로 멈춘다(빈 종이 없음). 진행은 숫자 줄(n/전체 장·경과 시간)이 보인다. */
+@media (prefers-reduced-motion: reduce) { .writing i { animation: none !important; transform: scaleX(1); } }

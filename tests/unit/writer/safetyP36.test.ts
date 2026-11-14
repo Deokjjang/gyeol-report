@@ -96,10 +96,11 @@ describe("P3.6 원고 남은 문제", () => {
     expect(palace).toBeDefined(); expect(JSON.stringify(palace)).not.toContain("천간합");
     const annual = buildBrief({ product: "annual_fortune", person: PEOPLE.c2, baseDate: base, selectedYear: 2026 }, k);
     const months = annual.timeline!.entries.filter(e => e.kind === "month");
-    expect(months.map(e => e.when)).toEqual([...Array(8).fill("past"), "now", "future", "future", "future"]);
+    // AM 2부: 세운은 신년판(기본 2027) 1월 다리 + 12 절기월 — 2026-10-29 기준 모두 앞으로(입력의 옛 선택 연도는 쓰지 않는다).
+    expect(months.map(e => e.when)).toEqual(Array(13).fill("future"));
     expect(months[1].change?.line).toMatch(/^지난달보다 흐름 세기/);
-    // P6b D: 세운 2장은 영역별 설계(대운이 없으면 그 절만 빠진다).
-    expect(annual.chapters.find(c => c.id === "current-dayun")?.title).toBe("영역별 설계");
+    // AM 2부: 세운 장 구성은 큰 그림 → 사랑 → 돈 → 일 → 사람 → 마음 → 달(반복) → 운을 쓰는 법 → 이어지는 큰 흐름(소망은 적은 때만).
+    expect([...new Set(annual.chapters.map(c => c.id.split(":")[0]))]).toEqual(["big", "love", "money", "work", "people", "mind", "month", "use", "next"]);
     expect(JSON.stringify(annual.timeline!.entries.flatMap(e => e.badges))).not.toMatch(/반쯤\)[^"]*완성/);
     for (const b of [career, love, annual]) {
       const firsts = new Map<string, number>();

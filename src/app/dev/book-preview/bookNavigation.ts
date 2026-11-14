@@ -35,6 +35,7 @@ export function composeBookNavigation(input: BookPage[], separateUnits: readonly
   for (const page of pages) {
     if (page.kind === "timeline") { page.years = page.years.map(y => ({ ...y, page: relocate(y.page) })); page.transitions = page.transitions.map(t => ({ ...t, page: relocate(t.page) })); }
     if (page.kind === "months") page.months = page.months.map(m => ({ ...m, page: relocate(m.page) }));
+    if (page.kind === "flowTable" || page.kind === "decadeTable") page.rows = page.rows.map(r => ({ ...r, page: relocate(r.page) }));
     if (page.kind === "pair") page.directions = page.directions.map(d => ({ ...d, page: relocate(d.page) }));
   }
   const entries = original.flatMap(p => ["cover", "contents", "back"].includes(p.kind) ? [] : [{ title: p.title.replaceAll("\n", " · "), targetId: p.id!, page: index.get(p.id!)! }]);

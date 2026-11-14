@@ -1133,7 +1133,7 @@ export const LOVE_SOURCE_REGISTRY: readonly SourceRef[] = [
     "sourceKind": "input_contract",
     "auditRef": "source-catalog.json#d4e7f0e0e2cbaab22aa7",
     "recordSha256": "a45e6402c2ba9e094d00d4deae56a74c5032f374b9d8f2da0d1ce991eb5cfe55",
-    "sourceFileSha256": "0052f84a359e3390ebad37107d777f04faa0809b05a20b2276c4ad99b466a20d",
+    "sourceFileSha256": "cd706a5a4771b449acb870d77e5deeff8e8991f609eb1db9b07ba78af980eded",
     "originalState": {
       "isCalculatedEvidence": false
     }

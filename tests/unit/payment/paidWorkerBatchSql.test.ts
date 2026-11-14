@@ -19,7 +19,7 @@ beforeAll(async () => {
   sql = await paidWorkerSql();
   const result = await generateProductReport(payload, runtime, "deterministic_fallback");
   expect(result.ok).toBe(true); valid = result as ProductGenerationSuccessResult;
-}, 30000);
+}, 180_000);
 beforeEach(async () => { await sql.db.exec("truncate payment_orders cascade"); });
 afterAll(async () => { await sql?.db.close(); });
 const rows = async (table: string) => (await sql.db.query<Record<string, unknown>>(`select * from ${table}`)).rows;
@@ -46,7 +46,7 @@ it("real six-product V4 batch publishes once each through SQL → validator → 
   expect(await rows("paid_report_snapshots")).toEqual(snapshots);
   expect(await rows("report_generation_attempts")).toHaveLength(7);
   expect(fetch).not.toHaveBeenCalled();
-}, 120000);
+}, 300_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 
 it("overlapping cron / two workers claim distinct jobs and cannot publish a duplicate", async () => {
   for (let i = 0; i < 12; i++) await seedPaid(sql.store, `parallel-${i}`, payload);

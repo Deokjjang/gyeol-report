@@ -145,9 +145,10 @@ export async function readPublishedReport(store: ReliabilityStore, reportId: str
   const result = await store.call("read_report", { reportId });
   if (!result.ok || result.status !== "COMPLETED") return { ...result, snapshot: null };
   const snapshot = result.snapshot;
+  // readRejected(W3 P2): 발행은 끝났는데 이번 열람이 검사에 걸림 — 화면은 「확인이 필요해요」 안내만(생성 대기·자동 환불 흐름이 아니다).
   if (!isRecord(snapshot) || snapshot.reportId !== reportId) {
     console.error(JSON.stringify({ event: "REPORT_READ_SNAPSHOT_MISMATCH", reportId }));
-    return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null };
+    return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true };
   }
   let errors: string[] = [];
   try {
@@ -159,8 +160,8 @@ export async function readPublishedReport(store: ReliabilityStore, reportId: str
   const unknownVersions = unknownCalculationVersions(snapshot);
   if (unknownVersions.length) {
     console.error(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: unknownVersions }));
-    return { ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null };
+    return { ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null, readRejected: true };
   }
   console.error(JSON.stringify({ event: "REPORT_READ_VALIDATION_FAILED", reportId, productType: String(snapshot.productType), productVersion: String(snapshot.productVersion), errors: errors.slice(0, 20) }));
-  return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null };
+  return { ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true };
 }

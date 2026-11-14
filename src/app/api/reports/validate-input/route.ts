@@ -1,5 +1,6 @@
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { DAYUN_UNCERTAIN_MESSAGE } from "../../../../lib/saju/customerDayun";
+import { dayunReadiness } from "../../../../lib/saju/dayunReadiness";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -18,6 +19,11 @@ export async function POST(request: Request): Promise<Response> {
       return Response.json({ ok: false, message: "입력 정보를 확인해 주세요." }, { status: 400, headers });
     }
     const result = normalizeReportInputPayload(payload);
+    // AM2-4 7부: 대운을 정할 수 없는 생일 — 대략 시간대로 정해지면 시간대를 묻고, 그래도 안 되면 대운 결제 전에 막고 세운을 권한다.
+    if (!result.ok && result.error === "DAYUN_UNCERTAIN" && payload.productKey === "major_fortune" && "person" in payload && payload.person && typeof payload.person === "object") {
+      const r = dayunReadiness(payload.person as never);
+      if (!r.ok) return Response.json({ ok: false, code: r.code, message: r.message, ...(r.code === "DAYUN_NEED_SLOT" ? { slots: r.slots } : { recommend: r.recommend }) }, { status: 400, headers });
+    }
     if (!result.ok) {
       const message = result.error === "DAYUN_GENDER_REQUIRED" ? "성별을 선택해 주세요."
         : payload.productKey === "saju_mbti_compatibility" && result.error === "BIRTH_TIME_UNCERTAIN" ? COMPATIBILITY_BIRTH_TIME_UNCERTAIN_MESSAGE

@@ -21,7 +21,7 @@ const payload = { ...singleRuntimeInput("annual_fortune", "annual-fortune", {
 afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
 
 it("uncertain Annual fails before order, local redeem or production queue; exact correction can retry", async () => {
-  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
+  vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "4900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "4900"); vi.useFakeTimers(); const now = new Date("2026-10-11T03:00:00Z"); vi.setSystemTime(now);
   const check = (p: unknown) => preflight(new Request("http://localhost/api/reports/validate-input", { method: "POST", body: JSON.stringify(p) }));
   const failed = await check(payload);
   expect(failed.status).toBe(400);
@@ -33,8 +33,9 @@ it("uncertain Annual fails before order, local redeem or production queue; exact
   expect(order.status).toBe(400); expect(storage.create).not.toHaveBeenCalled();
   expect(await order.json()).not.toHaveProperty("checkoutSession");
   const store = { call: vi.fn() }, consent = createCheckoutConsentEvidence(adultCheckoutConsent(), payload.person.birthDate, now)!;
+  // AM 3부: 세운은 이용권으로 만들지 않는다. 큐 예약은 입력 검사가 먼저, 바로 쓰기는 이용권 상품 관문이 먼저 거절한다(어느 쪽도 저장소 호출 0).
   expect(await enqueueTicketPublication(store, "local-user", randomUUID(), payload, consent, now)).toMatchObject({ ok: false, code: "INVALID_INPUT" });
-  expect(await redeemReportTicket(store, "local-user", randomUUID(), payload, { now })).toMatchObject({ ok: false, code: "INVALID_INPUT" });
+  expect(await redeemReportTicket(store, "local-user", randomUUID(), payload, { now })).toMatchObject({ ok: false, code: "TICKET_PRODUCT_EXCLUDED" });
   expect(store.call).not.toHaveBeenCalled(); expect(fetch).not.toHaveBeenCalled();
   const corrected = { ...payload, person: { ...payload.person, birthTime: "18:20", birthTimeUnknown: false, birthTimePrecision: "exact" } };
   expect(await (await check(corrected)).json()).toEqual({ ok: true });

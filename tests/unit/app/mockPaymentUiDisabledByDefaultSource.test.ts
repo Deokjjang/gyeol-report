@@ -30,7 +30,7 @@ describe("mock payment UI production safety", () => {
     const requiredMarkers = [
       "TossPaymentWidgetLauncher",
       "inputSnapshot={checkoutInputSnapshot}",
-      "1,290원 결제하고 리포트 생성하기",
+      "`${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`",
     ];
 
     for (const marker of requiredMarkers) {

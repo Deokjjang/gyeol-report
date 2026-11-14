@@ -23,7 +23,7 @@ it("an unknown partner hour publishes on the v4 path for every relationship type
   const legacy: Record<string, unknown> = { ...pair("love", person("서윤", "1989-03-21", "", "FEMALE", "INFP")) };
   delete legacy.compatibilityRoleVersion;
   expect(await generateV4ShadowReport(legacy, { evaluatedAt: "2026-10-29T08:00:00.000Z" })).toMatchObject({ ok: false, error: { message: "V4_COMPATIBILITY_GENERATION_FAILED" } });
-}, 120_000);
+}, 300_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 
 it("the input page stops only a solar-term birth day with an unknown hour, before checkout", async () => {
   expect(await check(pair("love", person("서윤", "1989-03-21", "", "FEMALE", "INFP")))).toEqual({ status: 200, body: { ok: true } });

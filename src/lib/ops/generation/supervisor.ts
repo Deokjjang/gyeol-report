@@ -1,12 +1,11 @@
 /**
- * 생성 감독(P6d-ops 7). 책 생성 진입 함수(buildV5Snapshot)는 호출만 하고, deps로 모델·대체·fetch만 정한다.
- * - 정식본: Sonnet만(대체 모델 없음). 결정론 장이 하나라도 있으면 내보내지 않고 시간표대로 다시 시도한다.
- * - 임시본: Sonnet이 첫 실패부터 2시간 넘게 실패하고 OpenAI를 쓸 수 있을 때만 terra로, "임시본" 표시. 이후 교체 레인이 Sonnet 정식본으로 바꾼다.
- * - OpenAI 잔액 부족을 보면 OpenAI 경로를 끈다(llm_provider_switch).
+ * 생성 감독(P6d-ops 7 → W3 P2). 책 생성 진입 함수(buildV5Snapshot)는 호출만 하고, deps로 모델·fetch만 정한다.
+ * - 발행: Sonnet만(대체 작가·임시본 없음). 결정론 장이 하나라도 있으면 내보내지 않는다.
+ * - W3 P2 30분 결론: 1차 → 실패 분류(policy failClassOf) → 2차 1번(nextAfterFailure) → 그래도 실패하거나 시작 + 25분이면 포기(결제 자동 환불·이용권 반환).
  * - 모든 시도·비용·사유는 book_generation_runs에, 상태는 book_generation_state에.
- * 최종판 0-1: 작가 원고가 나오면 그 책은 완성본이 된다(짧은 장도 버리지 않음). 다시 시도하는 것은 출력 전 실패·중간 끊김뿐이고, 다음 시도는 저장된 장 다음부터 빠진 장만 이어 쓴다.
- * 최종판 0-6: 주문당 비용 상한(orderCostCap, 기본 $0.60) — 지난 시도들의 비용 합이 상한에 이르면 부르지 않고 보류(hold): 관리자 "지연" 목록에 사유(cost_cap)와 함께 남는다(자동 환불 없음).
- * 최종판 0-2: 교체 레인은 저장된 Book의 원문(meta.raw)을 저장소로 넘긴다(같은 입력이면 다시 부르지 않는다).
+ * 최종판 0-1: 작가 원고가 나오면 그 책은 완성본이 된다(짧은 장도 버리지 않음). 다음 시도는 저장된 장 다음부터 빠진 장만 이어 쓴다.
+ * 주문당 비용 상한(orderCostCap): 1차 + 2차 + 검수·수리 몫. 상한에 이르면 부르지 않고 포기한다.
+ * 최종판 0-2: 교체 레인(관리자 재생성)은 저장된 Book의 원문(meta.raw)을 저장소로 넘긴다(같은 입력이면 다시 부르지 않는다).
  */
 import type { ReportInputPayload } from "../../report-generation/reportInputTypes";
 import type { WriterMeta } from "../../writer/book";
@@ -14,10 +13,10 @@ import type { PriorBooks } from "../../writer/prior";
 import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import type { RawEntry, WriterCache } from "../../writer/runner";
-import { COST_HOLD_MS, deferUntil, INTERIM_TARGET, interimDue, judgeBuild, ladderOf, nextRetryAt, OFFICIAL_TARGET, orderCostCap, retryWindowMs, runSummary, spentOf, type BuildVerdict } from "./policy";
+import { attemptBudgetMs, failClassOf, INTERIM_TARGET, judgeBuild, ladderOf, MAX_ATTEMPTS, nextAfterFailure, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict, type FailClass } from "./policy";
 import { failureLine, type GenerationAlerts } from "./alerts";
 import type { LadderStage } from "../../writer/runner";
-import { chainCache, memorySink, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
+import { chainCache, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
 import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
 import { devBudget } from "./devBudget";
 
@@ -41,11 +40,15 @@ export type State = { phase: string; first_attempt_at: string; first_failure_at:
 export type Decision =
   | { readonly kind: "publish"; readonly edition: "official" | "interim"; readonly snapshot: Record<string, unknown>; readonly meta: WriterMeta }
   | { readonly kind: "defer"; readonly until: string; readonly reason: string }
-  | { readonly kind: "give_up"; readonly reason: string }
-  /** 최종판 0-6: 주문당 비용 상한 — 부르지 않고 보류(관리자 지연 목록, 자동 환불 없음). */
-  | { readonly kind: "hold"; readonly until: string; readonly reason: string }
+  /** W3 P2: 결론 — 결제는 자동 환불, 이용권은 반환. cls·spentUsd는 알림 한 줄에 쓴다. */
+  | { readonly kind: "give_up"; readonly reason: string; readonly cls?: FailClass | "deadline"; readonly spentUsd?: number }
   | { readonly kind: "stale"; readonly reason: string };
-export type QueueJob = { readonly reportId: string; readonly origin: "paid" | "ticket"; readonly originRef: string; readonly payload: ReportInputPayload; readonly policyAt: string; readonly sink: ChapterSink; readonly prior?: PriorBooks; readonly budgetMs?: number ; readonly raw?: WriterCache | null };
+/**
+ * originAt(W3 P2): 30분 결론의 시작 시각 — 결제는 결제 확정(작업이 만들어진 때), 이용권은 접수(policy_at). 없으면 감독 상태의 첫 시작.
+ * priorClaims: 이번 claim 전에 정산 없이 끝난 claim 수(결제: attempt_count − 1, 함수가 죽은 시도). 시도 번호에 더한다(죽은 시도도 한 번으로 센다).
+ */
+export type QueueJob = { readonly reportId: string; readonly origin: "paid" | "ticket"; readonly originRef: string; readonly payload: ReportInputPayload; readonly policyAt: string; readonly sink: ChapterSink; readonly prior?: PriorBooks; readonly budgetMs?: number ; readonly raw?: WriterCache | null;
+  readonly originAt?: string | null; readonly priorClaims?: number };
 type Built = Awaited<ReturnType<typeof buildV5Snapshot>>;
 
 const ms = (iso: string | null | undefined) => (iso ? Date.parse(iso) : NaN);
@@ -77,19 +80,20 @@ const productOf = (p: unknown) => { const k = (p as { productKey?: unknown } | n
 /** HOTFIX-W1: 작가 사다리 입력(지난 기록에서). end면 부르지 않는다. */
 type Ladder = { startStage: LadderStage; exhaustedMaxTokens: number; end: boolean };
 
-/** 한 번 만들어 판정한다(정식본=Sonnet, 임시본=terra). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
-async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder }, lane: "official" | "interim") {
+/** 한 번 만들어 판정한다(Sonnet). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
+async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder; fresh?: boolean }, lane: "official" | "interim") {
   const seen: QuotaSeen = {};
   // 운영 경로는 모델을 넘기지 않는다 → 정식본은 항상 Sonnet. 시험·측정 도구가 모델을 명시하면 그 모델로(대체 모델은 어느 쪽이든 없음).
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
   const target = lane === "interim" ? INTERIM_TARGET : injected ?? OFFICIAL_TARGET;
   const base = env.deps?.fetchImpl ?? ((...a: Parameters<typeof fetch>) => fetch(...a));
-  // OPS_FORCE_ANTHROPIC_DOWN: 정식본(Anthropic) 시도만 출력 전 529로 실패시킨다(개발 전용). 임시본은 실제 호출.
+  // OPS_FORCE_ANTHROPIC_DOWN: Anthropic 시도를 출력 전 529로 실패시킨다(개발 전용).
   const mock = devMockMode() ?? (lane === "official" && devForceAnthropicDown() ? "fail" as const : null);
   // 개발 서버의 실제 호출은 예산 관문(tools/llm/budget.ts)을 지난다(최종판 0-5). 목업·시험 주입 stream이 있으면 그대로.
   const gate = mock || env.deps?.stream ? null : await devBudget(`${lane} ${job.reportId}`);
   // 최종판3 6: 저장된 Book 원문 → 이 주문의 운영 원문(받는 즉시 저장) → 개발 관문 순. 같은 입력이면 다시 부르지 않는다.
-  const cache = rawCache(job.stored, chainCache(lane === "official" ? job.raw : null, gate?.cache ?? env.deps?.cache ?? null));
+  // W3 P2: 검사 탈락 뒤 2차(fresh)는 저장 원문을 쓰지 않고 새로 부른다(같은 원문이면 같은 탈락이 나온다).
+  const cache = job.fresh ? null : rawCache(job.stored, chainCache(lane === "official" ? job.raw : null, gate?.cache ?? env.deps?.cache ?? null));
   const deps: V5BuildDeps = { ...env.deps, provider: target.provider, model: target.model, fallback: null, fetchImpl: watchFetch(base, seen),
     ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(mock ? { stream: devMockStream(mock, job.payload, job.policyAt) } : gate ? { stream: gate.stream } : {}),
     ...(cache ? { cache } : {}), ...(job.costCapUsd !== undefined ? { costCapUsd: job.costCapUsd } : {}),
@@ -111,7 +115,11 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
 }
 
 /**
- * 큐 작업 한 건(결제·이용권 공통). settle이 큐 쪽 동작(발행·보류·포기)을 하고 성공 여부를 돌려준다.
+ * 큐 작업 한 건(결제·이용권 공통, W3 P2 30분 결론). settle이 큐 쪽 동작(발행·다음 시도 예약·결론)을 하고 성공 여부를 돌려준다.
+ * - 시도는 1차 + 2차 1번(MAX_ATTEMPTS). 시도 번호 = 기록된 실패 수 + 정산 없이 끝난 claim 수(함수가 죽은 시도).
+ * - 시작(결제 확정·이용권 접수) + 25분이 지났거나 남은 시간이 한 시도에 모자라면 부르지 않고 결론(자동 환불·이용권 반환).
+ * - 실패 분류별 2차: 연결 → 2분 뒤 같은 설정, 생각 소진 → 즉시 더 큰 한도(빠진 장만), 검사 탈락·기타 → 즉시(검사 탈락은 새로 부름), 잔액·인증 → 2차 없이 결론.
+ * - 보류·임시본(OpenAI)은 없다. 정식본(Sonnet)만 발행한다.
  * 기록은 settle 뒤에 남긴다(발행이 실제로 됐는지 보고 published/stale을 적는다).
  */
 export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settle: (d: Decision) => Promise<{ ok: boolean; code?: string }>): Promise<{ decision: Decision; settled: { ok: boolean; code?: string } }> {
@@ -119,74 +127,61 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const begun = await env.store.call("begin", { reportId: job.reportId, origin: job.origin, originRef: job.originRef });
   if (!begun.ok) return { decision: { kind: "stale", reason: "state_unavailable" }, settled: { ok: false, code: "STATE_UNAVAILABLE" } };
   const state = begun.state as State;
-  const openAi = await openAiAvailable(env);
   const firstFailure = ms(state.first_failure_at);
-  // 임시본 차례: 2시간이 지났고 직전 시도가 임시본 시도가 아닐 때(실패했으면 다음은 다시 Sonnet).
-  const interim = interimDue({ phase: state.phase, firstFailureAt: Number.isFinite(firstFailure) ? firstFailure : null, now: now(), interimPossible: openAi }) && !String(state.last_reason ?? "").startsWith("interim:");
-  // 최종판 0-1: 저장된 장은 버리지 않는다(빠진 장만 이어 쓴다). 0-6: 지난 시도 비용 합이 상한에 이르면 부르지 않고 보류.
-  const sink = interim ? memorySink() : job.sink;
   const product = productOf(job.payload);
   const runs = await priorRuns(env, job.reportId);
-  // HOTFIX-W1 2부 6: 주문당 상한은 작가를 포함한 모든 시도 비용 합(정상 1권 × 2.5, 상품별). 진행 중인 주문도 지난 시도 비용을 센다.
+  const originAt = [ms(job.originAt), ms(state.first_attempt_at)].find(Number.isFinite) ?? now();
+  const attemptIndex = (Number(state.failures) || 0) + Math.max(0, job.priorClaims ?? 0);
+  // 주문당 상한은 작가를 포함한 모든 시도 비용 합(W3 P2: 1차 + 2차 + 검수·수리 몫). 생각 소진 뒤는 사다리 2단(시간·비용 안 최대 한도).
   const cap = orderCostCap(product), spentBefore = spentOf(runs as never);
-  const lane = interim ? "interim" : "official";
-  // HOTFIX-W1 2부 5: 지난 시도에서 생각 소진한 단계 다음부터(같은 단계·같은 한도 반복 금지). 2단까지 소진이면 부르지 않고 보류.
-  const ladder = ladderOf(runs as never, interim ? INTERIM_TARGET.model : env.deps?.model ?? OFFICIAL_TARGET.model);
-  const skip = ladder.end && lane === "official";
-  const a = skip ? null : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore), ladder }, lane);
-  const spentNow = spentBefore + (a?.summary.costUsd ?? 0);
-  let decision: Decision;
-  if (!a) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: `${lane}:thinking_exhausted_end 2단까지 생각 소진(누적 $${spentNow.toFixed(4)}) — 보류` };
-  else if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
-  else if (a.verdict.kind === "incomplete" && a.verdict.capped) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: a.reason.includes("cost_cap 주문당") ? a.reason : `${lane}:cost_cap 주문당 비용 상한 $${cap} 도달(누적 $${spentNow.toFixed(4)}) — 보류` };
-  else if (a.verdict.kind === "incomplete" && a.verdict.ladderEnd) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: `${lane}:thinking_exhausted_end 생각 소진 — 더 큰 한도 없음(누적 $${spentNow.toFixed(4)}) — 보류` };
-  else if (a.verdict.kind === "complete") decision = { kind: "publish", edition: interim ? "interim" : "official", snapshot: a.built!.snapshot as unknown as Record<string, unknown>, meta: a.built!.meta };
+  const ladder = ladderOf(runs as never, env.deps?.model ?? OFFICIAL_TARGET.model);
+  // 한 시도 시간: 작업이 정한 값(결제 lease 몫) → 시험 주입 → 작가 기본(700초), 그리고 25분 마감까지 남은 시간 중 작은 쪽.
+  const budget = attemptBudgetMs({ originAt, now: now(), defaultBudgetMs: job.budgetMs ?? env.deps?.budgetMs ?? 700_000 });
+  const lastCheck = /^official:.*generation_hold/.test(String(state.last_reason ?? ""));
+  const usd = (n: number) => `$${n.toFixed(4)}`;
+  const giveUp = (reason: string, cls: FailClass | "deadline", spent: number): Decision => ({ kind: "give_up", reason, cls, spentUsd: spent });
+  let a: Awaited<ReturnType<typeof attempt>> | null = null, decision: Decision;
+  if (attemptIndex >= MAX_ATTEMPTS) decision = giveUp(`official:attempts_done:${attemptIndex}`, "deadline", spentBefore);
+  else if (budget === null) decision = giveUp("official:deadline 시작 + 25분 — 새 시도 없음", "deadline", spentBefore);
+  else if (ladder.end) decision = giveUp(`official:thinking_exhausted_end 2단까지 생각 소진(누적 ${usd(spentBefore)})`, "thinking_exhausted", spentBefore);
+  else if (spentBefore >= cap) decision = giveUp(`official:cost_cap 주문당 비용 상한 ${usd(cap)} 도달(누적 ${usd(spentBefore)})`, "check", spentBefore);
   else {
-    const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
-    const until = deferUntil({ firstFailureAt: first, failures: state.failures + 1, now: t, interimPossible: openAi && !a.seen.openaiQuota && state.phase === "pending" });
-    decision = until === null ? { kind: "give_up", reason: a.reason } : { kind: "defer", until: iso(until), reason: a.reason };
-  }
-  // HOTFIX-W1 3부 4·5: 보류도 고객 대기에 상한 — 첫 실패 + 자동 환불 시간까지만(그 사이 덕짱님이 환불·다시 만들기를 고른다).
-  // 기한이 지난 뒤 다시 잡히면(또 보류할 상황이면) 포기 → 자동 환불·이용권 환급. 고객 화면의 「N시간 안에 못 드리면 자동으로 환불돼요」가 늘 맞게.
-  if (decision.kind === "hold") {
-    const t0 = now(), first0 = Number.isFinite(firstFailure) ? firstFailure : t0, end = nextRetryAt(first0, 1, t0) === null ? null : first0 + retryWindowMs();
-    decision = end === null ? { kind: "give_up", reason: decision.reason } : { ...decision, until: iso(end) };
+    a = await attempt(env, { ...job, budgetMs: budget, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(attemptIndex > 0 && lastCheck ? { fresh: true } : {}) }, "official");
+    const spent = spentBefore + a.summary.costUsd;
+    if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
+    else if (a.verdict.kind === "complete") decision = { kind: "publish", edition: "official", snapshot: a.built!.snapshot as unknown as Record<string, unknown>, meta: a.built!.meta };
+    else {
+      const cls = failClassOf(a.verdict, a.seen);
+      const next = nextAfterFailure({ cls, attemptIndex, originAt, now: now(), capped: a.verdict.capped });
+      decision = next.kind === "defer" ? { kind: "defer", until: iso(next.until), reason: `${a.reason}:${cls}` } : giveUp(`${a.reason}:${cls}:${next.why}`, cls, spent);
+    }
   }
   const settled = decision.kind === "stale" ? { ok: false, code: "STALE_LEASE" } : await settle(decision);
   const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
-  const failed = decision.kind === "defer" || decision.kind === "give_up" || decision.kind === "hold";
+  const failed = decision.kind === "defer" || decision.kind === "give_up";
   const patch: Record<string, unknown> = !settled.ok ? {}
-    : decision.kind === "publish" && decision.edition === "official" ? { phase: "official", officialAt: iso(t), rejected: [], nextAt: null }
-    : decision.kind === "publish" ? { phase: "interim", interimAt: iso(t), rejected: [], nextAt: (() => { const n = nextRetryAt(first, Math.max(1, state.failures), t); return n === null ? null : iso(n); })() }
+    : decision.kind === "publish" ? { phase: "official", officialAt: iso(t), rejected: [], nextAt: null }
     : decision.kind === "defer" ? { firstFailureAt: iso(first), failuresInc: 1, nextAt: decision.until, rejected: [] }
-    : decision.kind === "hold" ? { firstFailureAt: iso(first), failuresInc: 1, nextAt: decision.until, rejected: [] }
     : { phase: "gave_up", gaveUpAt: iso(t), firstFailureAt: iso(first), failuresInc: 1, nextAt: null };
   if (!failed || settled.ok) {
-    const outcome = !settled.ok ? "stale" : decision.kind === "publish" ? "published" : decision.kind === "defer" || decision.kind === "hold" ? "deferred" : decision.kind === "give_up" ? "gave_up" : "stale";
-    const reason = a ? a.reason : decision.kind === "hold" ? decision.reason : "official:skipped";
+    const outcome = !settled.ok ? "stale" : decision.kind === "publish" ? "published" : decision.kind === "defer" ? "deferred" : decision.kind === "give_up" ? "gave_up" : "stale";
+    const reason = (decision.kind === "publish" ? a?.reason ?? "official:complete" : decision.kind === "stale" ? a?.reason ?? decision.reason : decision.reason).slice(0, 200);
     try {
-      await env.store.call("record", { reportId: job.reportId, run: { lane: interim ? "interim" : "queue", provider: a?.summary.provider ?? OFFICIAL_TARGET.provider, model: a?.summary.model ?? OFFICIAL_TARGET.model,
-        edition: decision.kind === "publish" ? decision.edition : null, outcome, reason: settled.ok ? reason : `${reason}:${settled.code ?? "settle_failed"}`,
+      await env.store.call("record", { reportId: job.reportId, run: { lane: "queue", provider: a?.summary.provider ?? OFFICIAL_TARGET.provider, model: a?.summary.model ?? OFFICIAL_TARGET.model,
+        edition: decision.kind === "publish" ? decision.edition : null, outcome, reason: settled.ok ? reason : `${reason}:${settled.code ?? "settle_failed"}`.slice(0, 200),
         costUsd: a?.summary.costUsd ?? 0, calls: a?.summary.calls ?? [], chapters: a?.summary.chapters ?? [], durationMs: a?.summary.durationMs ?? 0 }, state: patch });
     } catch { /* 기록 실패는 발행을 되돌리지 않는다 */ }
-    // HOTFIX-W1 3부 3·6: 보류는 바로 알린다(환불 또는 대기 결정). 실패 기록 뒤 실패율 경보를 본다. 알림 실패는 생성과 무관.
-    if (settled.ok && failed && env.alerts) {
-      const v = a?.verdict.kind === "incomplete" ? a.verdict : null;
-      const line = failureLine({ cls: decision.kind === "hold" && v?.capped ? "cost_cap" : v?.cls ?? (a ? "other" : "thinking_exhausted"), stage: v?.stage ?? (a ? null : 2), nextAt: decision.kind === "defer" ? decision.until : null, spentUsd: spentNow, capUsd: cap });
-      if (decision.kind === "hold") {
-        try { await env.alerts.hold({ reportId: job.reportId, origin: job.origin, originRef: job.originRef, product, line, why: v?.capped ? "주문 비용 상한 — 환불 판단 필요" : "생각 소진이 사다리 끝까지 — 환불 또는 대기 결정" }); } catch { /* 무시 */ }
-      }
-      try { await env.alerts.failed({ reportId: job.reportId, product }); } catch { /* 무시 */ }
-    }
+    // 실패 기록 뒤 실패율 경보(주문 단위)·자동 멈춤을 본다. 알림 실패는 생성과 무관.
+    if (settled.ok && failed && env.alerts) { try { await env.alerts.failed({ reportId: job.reportId, product }); } catch { /* 무시 */ } }
   }
-  if (settled.ok && decision.kind === "publish" && decision.edition === "official" && job.origin === "paid") { try { await env.store.call("chapters_clear", { reportId: job.reportId }); } catch { /* 열람 기한 정리(purge)가 지운다 */ } }
+  if (settled.ok && decision.kind === "publish" && job.origin === "paid") { try { await env.store.call("chapters_clear", { reportId: job.reportId }); } catch { /* 열람 기한 정리(purge)가 지운다 */ } }
   return { decision, settled };
 }
 
 type LaneJob = { reportId: string; origin: "paid" | "ticket"; token: string; phase: string; regenerate: boolean; firstFailureAt: string | null; failures: number; rejected: number[]; snapshot: Record<string, unknown> | null; regenRequestedAt?: string | null; regenFailures?: number };
 
 /**
- * 교체 레인 한 건: 임시본 → Sonnet 정식본, 또는 관리자 재생성. 공개된 Book을 바꿀 때는 이전 Book을 보관한 뒤 바꾼다(lane_replace).
+ * 교체 레인 한 건: 관리자 재생성(W3 P2 — 임시본 교체는 없다). 공개된 Book을 바꿀 때는 이전 Book을 보관한 뒤 바꾼다(lane_replace).
  * 입력은 저장된 Book 근거(evidencePacket.input·generatedAt)에서 다시 읽는다(v5 Book만).
  */
 export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; empty?: boolean; reportId?: string; outcome?: string }> {
@@ -234,7 +229,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
   const first = ms(job.firstFailureAt) || t;
   const next = nextRetryAt(first, job.failures + 1, t);
   await release({ nextAt: next === null ? null : iso(next) });
-  // 24시간이 지나면 정식본 교체를 멈춘다(임시본은 그대로 열린다).
+  // 재생성 시간표가 끝나면 멈춘다(공개된 Book은 그대로 열린다).
   await env.store.call("record", { reportId: job.reportId, run: { ...runBase, outcome: next === null ? "gave_up" : "deferred", reason: a.reason },
     state: { failuresInc: 1, rejected, nextAt: next === null ? null : iso(next), ...(next === null ? { gaveUpAt: iso(t) } : {}) } });
   return { ok: true, reportId: job.reportId, outcome: next === null ? "gave_up" : "deferred" };

@@ -2,7 +2,8 @@ import type { DevTossCheckoutInputSnapshot } from "../../components/payment/DevT
 import { FOCUS_AREAS, COMPATIBILITY_ROLE_VERSION, type ReportPersonInputPayload, type ReportInputPayload, type SinglePersonReportInputPayload, type CompatibilityReportInputPayload, type CompatibilityRelationshipType, type RelationshipStatus, type JobStatus, type FocusArea } from "./reportInputTypes";
 
 export type PersonInputState = { name: string; birthDate: string; paidBirthTimeMode: "exact" | "approximate" | "unknown"; birthTime: string; timeBranch: ReportPersonInputPayload["approximateBirthTimeSlot"]; birthTimeUnknown: boolean; gender: string; mbtiType: string };
-export type SingleInputState = PersonInputState & { relationshipStatus: string; jobStatus: string; detailedJob: string; focusAreas: readonly string[]; selectedYear: string };
+/** wish(AM 2부 세운 신년판, 선택): 「이루고 싶은 것이나 요즘 고민」 200자 이내. 다른 입력값과 같은 저장·보관·삭제 규칙. */
+export type SingleInputState = PersonInputState & { relationshipStatus: string; jobStatus: string; detailedJob: string; focusAreas: readonly string[]; selectedYear: string; wish?: string };
 const isFocusArea = (value: string): value is FocusArea => (FOCUS_AREAS as readonly string[]).includes(value);
 const ANNUAL_FORTUNE_PRODUCT_KEY = "annual_fortune", MAJOR_FORTUNE_PRODUCT_KEY = "major_fortune", SAJU_MBTI_FULL_PRODUCT_KEY = "saju_mbti_full", CAREER_MONEY_STUDY_PRODUCT_KEY = "career_money_study", LOVE_MARRIAGE_CHILD_PRODUCT_KEY = "love_marriage_child", COMPATIBILITY_PRODUCT_KEY = "saju_mbti_compatibility", COMPATIBILITY_PRODUCT_SLUG = "compatibility";
 
@@ -23,14 +24,18 @@ export function createReportPersonInputPayload(
   };
 }
 
+/** AM 2부 세운 소망 칸 최대 글자 수. */
+export const ANNUAL_WISH_MAX = 200;
 export function createSingleProductOptions(
   productKey: string,
-  input: Pick<SingleInputState, "selectedYear">,
+  input: Pick<SingleInputState, "selectedYear" | "wish">,
 ): SinglePersonReportInputPayload["productOptions"] {
   if (productKey === ANNUAL_FORTUNE_PRODUCT_KEY) {
+    const wish = (input.wish ?? "").trim().slice(0, ANNUAL_WISH_MAX);
     return {
       selectedYear: input.selectedYear.trim(),
       contentVersion: "v3",
+      ...(wish ? { wish } : {}),
     };
   }
 

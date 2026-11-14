@@ -9,14 +9,24 @@ export type ReportProductCurrency = "KRW";
 // New-order pricing SSOT. Persisted orders remain authoritative for past payments.
 // 가격은 이 상품별 표 한 곳에서만 정한다(새 주문부터 적용). 화면·주문 생성·결제 금액 검증·이벤트·영수증이 모두 이 표를 읽는다.
 // 바꾸기 전에 만든 주문은 서버에 저장된 금액(payment_orders.amount) == 토스 금액이면 그대로 승인된다(아래 isDirectReportPaymentAmount 설명).
+/**
+ * AM 6부(덕짱님 결정 대기): 대운·세운 가격은 코드 상수가 아니라 설정값이다(비워 두면 판매하지 않는다 — ops/config closedSaleProducts).
+ * 서버 FORTUNE_PRICE_MAJOR_KRW·FORTUNE_PRICE_ANNUAL_KRW, 화면 표시는 NEXT_PUBLIC_ 같은 이름(빌드 때 새겨짐). 비어 있으면 표의 자리표시 값(판매 안 됨)이 타입만 채운다.
+ */
+const fortunePrice = (server: string | undefined, client: string | undefined) => { const v = Number(server ?? client); return Number.isSafeInteger(v) && v >= 100 ? v : null; };
+export const FORTUNE_PRICE_KRW = {
+  major_fortune: fortunePrice(process.env.FORTUNE_PRICE_MAJOR_KRW, process.env.NEXT_PUBLIC_FORTUNE_PRICE_MAJOR_KRW),
+  annual_fortune: fortunePrice(process.env.FORTUNE_PRICE_ANNUAL_KRW, process.env.NEXT_PUBLIC_FORTUNE_PRICE_ANNUAL_KRW),
+} as const;
+const FORTUNE_PLACEHOLDER_KRW = 4900;
 export const REPORT_PRICE_TABLE_KRW = {
   saju_mbti_full: 3900,
   career_money_study: 3900,
   love_marriage_child: 3900,
   saju_mbti_compatibility: 3900,
-  // 대운·세운은 판매 중지(FORTUNE_SALES_OPEN) 동안 값만 넣어 둔다.
-  major_fortune: 4900,
-  annual_fortune: 4900,
+  // 대운·세운: 설정값(FORTUNE_PRICE_*_KRW). 비어 있으면 자리표시(판매 안 됨).
+  major_fortune: FORTUNE_PRICE_KRW.major_fortune ?? FORTUNE_PLACEHOLDER_KRW,
+  annual_fortune: FORTUNE_PRICE_KRW.annual_fortune ?? FORTUNE_PLACEHOLDER_KRW,
 } as const satisfies Record<ReportProductType, number>;
 export const formatKrw = (amount: number) => `${amount.toLocaleString("ko-KR")}원`;
 /** 상품 하나의 새 주문 가격(원). */

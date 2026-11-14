@@ -74,23 +74,25 @@ function TicketLine({ wallet, eventDuring, eventEndsAt, onGift }: { wallet: Tick
 function ShelfCard({ book, onChanged }: { book: ShelfBook; onChanged: () => void }) {
   const [ask, setAsk] = useState(false), [sent, setSent] = useState(false);
   const cover = <div className={s.cover} style={{ background: book.coverColor, color: book.ink }}><small>결리포트</small><strong>{book.title}</strong><span>{book.displayName}</span><small>PERSONAL EDITION</small></div>;
-  const when = book.state === "making" ? "만드는 중" : book.state === "attention" ? "확인이 필요해요" : book.state === "refunded" ? "환불된 주문"
+  const when = book.state === "making" ? "만드는 중" : book.state === "attention" ? "결과를 확인하고 있어요" : book.state === "refunding" ? "결제 취소 중"
+    : book.state === "refunded" ? "환불된 주문" : book.state === "returned" ? "이용권을 돌려드렸어요"
     : `${kst(book.publishedAt)} 발행 · ${book.openEnded ? "언제든 다시 읽을 수 있어요" : `${kst(book.expiresAt)}까지 열람`}`;
   const label = `${book.title.replace("\n", " ")}${book.displayName ? ` ${book.displayName}` : ""} ${book.state === "ready" ? "열기" : when}`;
   const body = <>{cover}<span className={s.meta}><b>{book.title.replace("\n", " ")}</b>{book.displayName ? <span>{book.displayName}</span> : null}<span data-state={book.state}>{when}</span></span></>;
   // 운영 Q 2부: 처리 결과 한 줄(7일). 열린 요청이 있으면 버튼이 「접수됨」. 환불된 주문은 문의 버튼 없이 결과만(7일 뒤 서재에서 사라진다).
-  const result = cardResult(book), open = book.request?.status === "open";
-  return <li data-state={book.state} {...(ask && !open && book.state !== "refunded" ? { "data-asking": "" } : {})}>
+  // W3 P2: 결제 취소 중·이용권 반환 카드도 이미 결론이 난 책이라 문의 버튼이 없다.
+  const result = cardResult(book), open = book.request?.status === "open", concluded = book.state === "refunded" || book.state === "refunding" || book.state === "returned";
+  return <li data-state={book.state} {...(ask && !open && !concluded ? { "data-asking": "" } : {})}>
     {book.href ? <Link href={book.href} className={s.card} aria-label={label}>{body}</Link> : <div className={s.card} aria-label={label}>{body}</div>}
     <div className={s.small}>
       {book.orderCode ? <span>주문코드 {book.orderCode}</span> : book.viaTicket ? <span>이용권으로 만든 책</span> : null}
-      {book.state === "refunded" ? null : open ? <button type="button" className={s.textLink} disabled aria-disabled="true" data-request-submitted>접수됨</button>
+      {concluded ? null : open ? <button type="button" className={s.textLink} disabled aria-disabled="true" data-request-submitted>접수됨</button>
         : !ask ? <button type="button" className={s.textLink} onClick={() => setAsk(true)}>문의·환불 요청</button> : null}
     </div>
     {/* 접수 직후: 서재를 다시 읽어 문의 창이 닫혀도 접수 안내 한 줄은 이 카드에 남긴다(새로 고치기 전까지). */}
     {sent && open ? <p className={s.result} role="status" data-request-accepted>{REQUEST_COPY.accepted}</p> : null}
     {result ? <p className={s.result} data-card-result={result.kind}>{result.text}{result.channel ? <a href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer">{SUPPORT_CHAT_LABEL} ↗</a> : null}</p> : null}
-    {ask && !open && book.state !== "refunded" ? <OrderRequestForm orderCode={book.orderCode ?? undefined} reportId={book.orderCode ? undefined : book.reportId} ticketBook={!book.orderCode}
+    {ask && !open && !concluded ? <OrderRequestForm orderCode={book.orderCode ?? undefined} reportId={book.orderCode ? undefined : book.reportId} ticketBook={!book.orderCode}
       making={stillMaking(book)} startOpen onClose={() => setAsk(false)} onSubmitted={() => { setSent(true); onChanged(); }} /> : null}
   </li>;
 }

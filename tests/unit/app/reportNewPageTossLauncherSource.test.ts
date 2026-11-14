@@ -27,13 +27,13 @@ describe("report new page Toss launcher source", () => {
     expect(pageSource).toContain("입력값 최종 확인");
     expect(pageSource).toContain("전체 리포트");
     expect(pageSource).toContain("판매가");
-    expect(pageSource).toContain("결제금액 1,290원");
+    expect(pageSource).toContain("`결제금액 ${REPORT_PRICE_LABEL_KO}`");
     expect(pageSource).toContain("90일");
     expect(pageSource).toContain("onEditInput");
     expect(pageSource).toContain("inputSnapshot={checkoutInputSnapshot}");
     expect(pageSource).toContain("productType={selectedProduct.productKey}");
     expect(pageSource).toContain("productLabelKo={selectedProduct.nameKo}");
-    expect(pageSource).toContain("1,290원 결제하고 리포트 생성하기");
+    expect(pageSource).toContain("`${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`");
     expect(pageSource).not.toContain("무료 미리보기 생성");
     expect(pageSource).not.toContain("런칭가");
     expect(pageSource).not.toContain("990원");

@@ -22,7 +22,7 @@ function port(snapshot: Partial<AccountSnapshot> = {}, extra: Partial<AccountPor
     exchange: async () => true, logout: async () => true, consent: async () => true, finish: r => r, ...extra };
 }
 const json = (b: unknown, status = 200) => new Response(JSON.stringify(b), { status });
-afterEach(() => { delete process.env.FORTUNE_SALES_OPEN; });
+afterEach(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 
 describe("가입 정보 검사", () => {
   it("이름·이메일 두 번·휴대폰(선택), 공급자 이메일은 서버 확정값과 같을 때만", () => {
@@ -137,7 +137,9 @@ describe("결제·이용권 게이트", () => {
   it("대운·세운은 기본 판매 중지, 설정값 하나로 다시 연다", () => {
     expect(closedSaleProducts()).toEqual(["major_fortune", "annual_fortune"]);
     expect(productOnSale("annual_fortune")).toBe(false); expect(productOnSale("saju_mbti_full")).toBe(true);
-    process.env.FORTUNE_SALES_OPEN = "1"; expect(productOnSale("annual_fortune")).toBe(true);
+    // AM 6부: 가격 설정값이 비어 있으면 열어도 닫혀 있다(가격은 덕짱님 결정).
+    process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; expect(productOnSale("annual_fortune")).toBe(false);
+    process.env.FORTUNE_PRICE_ANNUAL_KRW = "3900"; expect(productOnSale("annual_fortune")).toBe(true);
   });
   it("이용권 발행 접수도 판매 중지 상품을 거절(저장소 호출 없음)", async () => {
     const store = { call: vi.fn() };

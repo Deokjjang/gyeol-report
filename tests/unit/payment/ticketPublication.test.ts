@@ -35,9 +35,10 @@ const exportDir = process.env.TICKET_PUBLICATION_EXPORT;
 const exports: unknown[] = [];
 const sharePort = () => ({ ...sqlBookSharePort(local.db), async owned(reportId: string, user: string) { return (await local.db.query<{ r: { ok: boolean } }>("select book_share_publication($1,$2) r", [reportId, user])).rows[0].r.ok; } });
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
-beforeAll(async () => { local = await ticketPublicationSql(); }, 30000);
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
+beforeAll(async () => { local = await ticketPublicationSql(); }, 180_000);
 beforeEach(async () => { await local.db.exec("reset role; truncate ticket_bundle_orders,report_ticket_grants,payment_orders cascade; set role service_role;"); });
 afterAll(async () => {
   if (exportDir) { mkdirSync(exportDir, { recursive: true }); writeFileSync(`${exportDir}/six-products.json`, JSON.stringify(exports)); }
@@ -95,7 +96,7 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     const result = await runTicketPublicationJob(queue, failure === "generation" ? async () => { throw Error("GENERATION"); } : undefined);
     expect(result).toMatchObject({ state: failure === "ack" ? "COMPLETED" : "REVERSED" });
     expect((await local.tickets.call("summary", A)).quantity).toBe(failure === "ack" ? 0 : 1);
-  }, 60000);
+  }, 240_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it("wrong lease/cross-user publish rejected, no caller may reverse a queued reservation", async () => {
     await grant(); const r = await reserve();
     expect(await local.queue.call("reverse", A, { redemptionId: r.redemptionId, token: randomUUID() })).toMatchObject({ code: "STALE_LEASE" });
@@ -119,6 +120,8 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
   });
   it.each(fixtures)("$id real queue → V4 → owner/Book/library/share, stable clock and no side effects", async f => {
     await grant(); const requestId = randomUUID(), queued = await reserve(f.payload, requestId);
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 이용권 큐에 들어가지 않는다(예약 전 거절, 부작용 없음).
+    if (f.id === "major" || f.id === "annual") { expect(queued).toMatchObject({ ok: false, code: "TICKET_PRODUCT_EXCLUDED" }); return; }
     expect(queued).toMatchObject({ state: "QUEUED" });
     expect(await runTicketPublicationJob(local.queue)).toMatchObject({ state: "COMPLETED" });
     const reportId = String(queued.reportId);
@@ -160,11 +163,11 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     expect(await readOwnedTicketReport(reportId, ticketAuth(), local.tickets)).toEqual({ kind: "expired" });
     expect(await loadSharedBookData(model.shareToken, sqlBookSharePort(local.db))).toBeNull();
     expect((await local.tickets.call("summary", A)).quantity).toBe(0);
-  }, 60000);
+  }, 240_000);
   it.each(BOOK_FIXTURES.filter(f => /unknown|approx/.test(f.id)))("$id input uncertainty contracts survive queued publication", async f => {
     await grant(); expect(await reserve(f.payload)).toMatchObject({ state: "QUEUED" });
     expect(await runTicketPublicationJob(local.queue)).toMatchObject({ state: "COMPLETED" });
-  }, 60000);
+  }, 240_000);
   it("bounded worker stops admission, never races already-started publication", async () => {
     const runJob = vi.fn(async () => ({ ok: true, state: "COMPLETED" }));
     expect(await runTicketPublicationBatch(local.queue, { runJob, now: () => 0, rss: () => 0 })).toMatchObject({ processed: 2, stop: "job_limit" });
@@ -182,12 +185,20 @@ describe("public API security and safe response", () => {
     expect((await handleTicketPublication(request("redeem", { ...body, padding: "가".repeat(17000) }), "redeem", ticketAuth(), store)).status).toBe(413);
     expect(store.call).not.toHaveBeenCalled();
   });
-  it("owner-only status includes no token/input/snapshot and exposes only safe completed URL", async () => {
+  // W3 P2: 만드는 중(QUEUED)에도 그 책의 대기 화면 주소를 준다(로그인한 주인에게만). 그 화면도 주인만 본다(ticketPending).
+  it("owner-only status includes no token/input/snapshot and exposes only the safe report URL (also while making)", async () => {
     await grant(); const key = randomUUID(), r = await reserve(fixtures[0].payload, key);
     const response = await handleTicketPublication(request(`status?requestId=${key}`), "status", ticketAuth(), local.queue);
     expect(response.status).toBe(202); expect(response.headers.get("cache-control")).toContain("no-store");
-    const data = await response.json(); expect(data).toMatchObject({ state: "QUEUED", redemptionId: r.redemptionId }); expect(JSON.stringify(data)).not.toMatch(/token|input|snapshot|reportId|birthDate/);
+    const data = await response.json(); expect(data).toMatchObject({ state: "QUEUED", redemptionId: r.redemptionId, reportUrl: `/reports/${r.reportId}` }); expect(JSON.stringify(data)).not.toMatch(/token|input|snapshot|reportId|birthDate/);
     expect((await handleTicketPublication(request(`status?redemptionId=${r.redemptionId}`), "status", ticketAuth(B), local.queue)).status).toBe(404);
     expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), { call: async () => ({ ok: false, code: "STORAGE_UNAVAILABLE" }) })).toEqual({ kind: "storageError" });
+    // 발행 전인 내 이용권 책 → 대기 화면(주인 확인은 같은 회원의 접수 행). 남의 책·확인 실패·확인 없음은 지금처럼 없음.
+    const pending = async (user: string, reportId: string) => (await local.db.query("select 1 from report_ticket_redemptions where user_id=$1 and report_id=$2 and state in ('QUEUED','RUNNING','REVERSED')", [user, reportId])).rows.length > 0;
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets, pending)).toEqual({ kind: "ticketPending", userId: A });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(B), local.tickets, pending)).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets, async () => { throw new Error("down"); })).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets)).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(A, false), local.tickets, pending)).toEqual({ kind: "absent" }); // 필수 동의 없는 회원
   });
 });

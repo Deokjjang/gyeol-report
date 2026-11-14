@@ -71,6 +71,8 @@ export type DevTossCheckoutLauncherRuntime = {
 
 type DevTossCheckoutRunOptions = {
   readonly productType?: ReportProductType;
+  /** AM 3부: 세운 → 대운 연결 할인의 세운 책 id. 금액은 서버가 정한다(화면은 금액을 보내지 않는다). */
+  readonly discountFrom?: string;
   /** 2026-11-10: 고객이 고른 간편결제(카카오페이·토스페이). 결제창은 이 수단으로 바로 열린다(DIRECT). 없거나 다른 값이면 결제 준비도 하지 않는다. */
   readonly easyPay: SupportedEasyPay;
   /** P6d-ops: 비회원 구매자 정보(회원은 서버가 가입 정보를 쓴다). */
@@ -226,6 +228,7 @@ export async function runDevTossCheckout(
         inputSnapshot,
         consent: createCheckoutConsentAssertion(legalConfirmations, undefined, options.consentUi),
         ...(options.buyer ? { buyer: options.buyer } : {}),
+        ...(options.discountFrom ? { discountFrom: options.discountFrom } : {}),
       }),
     });
   } catch {
@@ -391,7 +394,7 @@ const result = await runDevTossCheckout(
           <h3>서비스 제공 방식</h3>
           <ul>
             <li>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님</li>
-            <li>결제 완료 후 즉시 생성, 최대 24시간 이내 제공</li>
+            <li>결제 후 보통 몇 분 안에 제공 · 30분 안에 못 만들면 자동 전액 환불</li>
             <li>생성일로부터 90일 · 결제 후 온라인 열람</li>
           </ul>
           {productType === "saju_mbti_compatibility" ? <p>상담이나 예언이 아닌 관계 분석용 디지털 리포트입니다.</p> : null}

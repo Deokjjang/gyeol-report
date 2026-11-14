@@ -8,7 +8,8 @@
 import { groupClaims, type GroupLevels } from "./lint";
 
 /** B1 앞 구절이 빠진 문장: 조사·연결형·인용 꼬리로 시작한다("하는 물음이 자주 올라와요"). */
-const FRAGMENT_START = /^(하는|하던|하고|하며|하면서|하자는|라는|라고|이라는|이라고|이란|싶은|싶다는|다는|냐는|자는|는|은|을|를|에|의|와|과|로|으로|에서|에게|까지|부터|처럼|보다|만큼|한테|이랑|랑)\s/;
+// AM 재생성 판독(sodam 3.2.2): 「하고 싶은 일의 목록 대신 …」은 온전한 문장이다(「하고 싶」은 조각 시작이 아님).
+const FRAGMENT_START = /^(하는|하던|하고(?! 싶)|하며|하면서|하자는|라는|라고|이라는|이라고|이란|싶은|싶다는|다는|냐는|자는|는|은|을|를|에|의|와|과|로|으로|에서|에게|까지|부터|처럼|보다|만큼|한테|이랑|랑)\s/;
 /** 끝맺음이 없는 문장(문단 끝이 문장 중간에서 끊김). */
 const TERMINATED = /([.!?…]|[다요죠까네])["'”’)⟫]*$/;
 export function fragmentSentence(sentence: string, last = false): boolean {
@@ -28,7 +29,8 @@ export function emptyPreview(sentence: string, next: string | undefined): boolea
 
 /** B3 개수가 맞지 않는 지시("이 세 가지"): 같은 소제목 앞쪽에 그 개수가 나오지 않았다. */
 const NUM: Readonly<Record<string, number>> = { 한: 1, 두: 2, 세: 3, 네: 4, 다섯: 5, 여섯: 6 };
-const REF_COUNT = /(?<![가-힣])(이|그|위|앞의|이런|이들) (한|두|세|네|다섯|여섯) (가지|줄|단계|개|마디|약속|습관|행동)/g;
+// AM 재생성 3(major-1 1.1.2): 「이 두 줄기를 따라」의 「이 두 줄」을 잡아 맞는 문장을 지웠다 → 다른 낱말(줄기·개월·단계별·개념·개성)이 이어지면 개수 말이 아니다.
+const REF_COUNT = /(?<![가-힣])(이|그|위|앞의|이런|이들) (한|두|세|네|다섯|여섯) (가지|줄|단계|개|마디|약속|습관|행동)(?!기|월|별|째|짜리|념|성)/g;
 const ANNOUNCED = /(?<![가-힣])(한|두|세|네|다섯|여섯) (가지|줄|단계|개|마디|약속|습관|행동)/g;
 const ORDINALS = ["첫째", "둘째", "셋째", "넷째", "다섯째"];
 /** 앞 글에서 셀 수 있는 개수 후보: 밝힌 개수, 서수(첫째…), "하나는 … 다른 하나는", 바로 앞 문장의 쉼표 나열. */
@@ -100,22 +102,54 @@ export const selfCorrection = (s: string) => SELF_CORRECTION.test(s) && /[一-�
 
 /** C 장 번호 참조("7장에서 본 것처럼"). */
 // 최종판3 12: 「앞 장에서 본 어긋남의 뿌리를…」(궁합)처럼 번호 없이 앞·다음 장을 가리키는 꼴도 장 참조다.
-export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)|(?<![가-힣])(앞|다음|이전|지난) 장(에서|의|에|처럼)/;
+export const CHAPTER_REF = /(?<![0-9가-힣])(제 ?)?\d{1,2} ?장(에서|의|에|과|부터|까지|을|를|처럼|에서처럼|에서 본|에서 말한)|(?<![가-힣])(?<!(맨|첫|뒷|한|빈) )(앞|다음|이전|지난) 장(에서|의|에|처럼)/;
 /** 뜻을 바꾸지 않고 지울 수 있는 장 번호 참조 꼴(정리 단계). */
 export const dropChapterRef = (s: string) => s.replace(/(?<![0-9가-힣])\d{1,2} ?장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![0-9가-힣])\d{1,2} ?장에서처럼,? ?/g, "")
-  .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은) (?=[가-힣])/g, "");
+  .replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은|이야기한|다룬) (것처럼|대로),? ?/g, "").replace(/(?<![가-힣])(앞|이전|지난) 장에서 (본|말한|살핀|짚은|이야기한|다룬) (?=[가-힣])/g, "");
 
 /** E 시점 지시: 대운·세운(달력이 있는 책)은 "지금" 전부, 그 밖은 시점을 못 박는 말만. */
-const TIME_STRICT = /지금|이번 달|이번 한 달|올해 남은|요즘 들어/;
+// AM 7부(세운 판독: 맨 「올해」 27곳이 검사에 안 걸림): 달력 책은 맨 「올해」도 시점 말이다(남은 것은 tidy가 연도로 바꾼 뒤 — 따옴표 안 대사·「올해 남은」).
+const TIME_STRICT = /지금|이번 달|이번 한 달|올해|요즘 들어/;
 const TIME_LOOSE = /지금 우리가 있는|지금 (이|그) (시기|때|달|해)(?![가-힣])|이번 달|이번 한 달|올해 남은 (두|세|한|몇) ?(달|개월)|올해 남은/;
 /** MBTI 기능 쉬운 이름("지금 이 순간 감각(Se)")은 시점 말이 아니다(r1 커리어: 기능 이름이 걸렸다). */
 const FUNCTION_NAME_NOW = /지금 이 순간(의)? 감각/g;
-export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(s.replace(FUNCTION_NAME_NOW, ""));
+/** AM 재생성 2 판독(annual-1 1.3.0·9.0.0): 따옴표 안(고객이 적은 소망 인용·대사)의 「지금」은 시점 단정이 아니다 — 수리가 고객 문장을 고쳤다. */
+export const unquote = (s: string) => s.replace(/"[^"]*"|“[^”]*”|「[^」]*」|«[^»]*»/g, "\"\"");
+export const timeDeictic = (s: string, strict: boolean) => (strict ? TIME_STRICT : TIME_LOOSE).test(unquote(s).replace(FUNCTION_NAME_NOW, ""));
 
 /** E 세운 본문의 달력월 이름("1월에 본 결", "2월과 같은 결"). "11월 4일"처럼 날짜는 허용. */
-/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. */
+/** 최종판3 8: 대운 표기 「2027년 5월 무렵부터」는 교운 시각 표기라 허용. AM 7부: 연도가 붙은 「2022년 4월 무렵에 시작해 2032년 4월 무렵까지」(교운 연·월 기간, 최종 A-4)도 같은 표기 — calendarMonth가 뗀다(연도 없는 「5월 무렵」은 그대로 걸린다). */
 export const CALENDAR_MONTH = /(?<![0-9])(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))/;
-export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s);
+/** AM 2부(덕짱님 지시 2026-11-11): 세운 달 이름은 표와 본문이 한 체계 「2월 · 임인월」 — 달력 숫자가 그 달 간지월 이름과 짝이면 허용한다. */
+const MONTH_NAME_PAIR = /(20\d\d년 )?(1[0-2]|[1-9]) ?월 ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월\)?/g;
+/**
+ * AM 7부: 달력 책의 맨 「올해」 → 그 책이 말하는 해(세운 = 신년판 해 2027, 대운 = 기준일의 해). 조사도 맞춘다(는→은, 가→이, 를→을, 와→과, 로→으로).
+ * 따옴표 안 대사와 「올해 남은」(12월 기준 책에서 뜻이 갈림)은 그대로 둔다(검사가 본다).
+ */
+const YEAR_PARTICLE: Readonly<Record<string, string>> = { 는: "은", 가: "이", 를: "을", 와: "과", 로: "으로" };
+export function namedYear(s: string, year: number): { text: string; count: number } {
+  let count = 0;
+  const text = s.replace(/올해(?! ?남은)(는|가|를|와|로)?/g, (m: string, p: string | undefined, at: number) => {
+    const before = s.slice(0, at);
+    const quoted = (before.match(/"/g)?.length ?? 0) % 2 === 1 || before.lastIndexOf("“") > before.lastIndexOf("”") || before.lastIndexOf("「") > before.lastIndexOf("」") || before.lastIndexOf("‘") > before.lastIndexOf("’");
+    if (quoted) return m;
+    count++; return `${year}년${p ? YEAR_PARTICLE[p] : ""}`;
+  });
+  return { text, count };
+}
+const DAYUN_PERIOD = /(19|20)\d\d년 (1[0-2]|[1-9]) ?월 무렵/g;
+export const calendarMonth = (s: string) => CALENDAR_MONTH.test(s.replace(MONTH_NAME_PAIR, "").replace(DAYUN_PERIOD, ""));
+/**
+ * AM 7부(2026-11-11): 세운 본문의 맨 달 이름 「5월」은 그 책 달 표의 짝으로 바꾼다 → 「5월(을사월)」(호출 0, 표와 한 체계).
+ * names: "5" → "을사월", "2028년 1" → "계축월"(달 표 라벨에서). 날짜(「5월 3일」)·「무렵부터」·이미 짝인 것·표에 없는 달은 그대로(검사가 본다).
+ */
+const BARE_MONTH = /(?<![0-9])(20\d\d년 )?(1[0-2]|[1-9]) ?월(?! ?\d{1,2} ?일)(?! 무렵부터)(?![0-9가-힣]*(일 기준|일부터))(?! ?(·|\(|,)? ?[갑을병정무기경신임계][자축인묘진사오미신유술해]월)/g;
+export function pairMonthNames(s: string, names: Readonly<Record<string, string>>): { text: string; count: number } {
+  let count = 0;
+  // AM 판독(annual-1 재생성 4.1.2): 「4월에는 갑진월에…」처럼 바로 뒤에 그 달 이름이 오면 짝을 붙이지 않는다(「4월(갑진월)에는 갑진월에」 겹침).
+  const text = s.replace(BARE_MONTH, (m: string, y: string | undefined, n: string, ...rest: unknown[]) => { const g = names[`${y ?? ""}${n}`]; if (!g) return m; const at = rest.find(x => typeof x === "number") as number; if (s.slice(at + m.length, at + m.length + 8).replace(/^(에는|에|은|는|의|부터)?,? ?/, "").startsWith(g)) return m; count++; return `${m}(${g})`; });
+  return { text, count };
+}
 
 /** E 마무리 문형(소제목 마지막 문장의 끝 두 어절). 12달 가운데 같은 문형은 3번까지. */
 export const closingFrame = (lastSentence: string) => lastSentence.replace(/[⟪⟫"'“”‘’]/g, "").trim().split(/\s+/).slice(-2).join(" ").replace(/[.!?…]+$/, "");
