@@ -15,6 +15,7 @@ import type { FinalChapter } from "@/lib/writer/safety";
 import type { LintFlag } from "@/lib/writer/safety/p6c";
 import { deleteFlagged, lostFactTokens, revertRepairRegressions, type AppliedRepair } from "@/lib/writer/repair3";
 import { buildV5Snapshot, coverNumberIssue } from "@/lib/writer/publish";
+import { designCardIds, guardReview, REVIEW_DEFAULT_VERSION, REVIEW_SYSTEM, REVIEW_SYSTEM_CARD, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewPrompt } from "@/lib/writer/review";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { memorySink } from "@/lib/ops/generation/sinks";
 import { RAW_FULL, llmDeps, mockTextFor } from "../../helpers/v5Scenarios";
@@ -183,4 +184,35 @@ describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
     expect(body).not.toContain("세기는 신강");
     expect(body).toContain("다듬어진 결입니다");
   }, 180_000);
+});
+
+describe("W3 P3 0.6·6절 설계 카드 검수 변형(선택, 기본은 review-v4)", () => {
+  const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
+  const input = { product: "saju_mbti_full" as const, baseDate: "2026-11-04", person: { name: "장소담", gender: "FEMALE" as const, birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, mbtiType: "INTP" as const } };
+  const brief = buildBrief(input, k), sheet = buildFactSheet(input, brief, k);
+  const chapters = [ch(1, [["첫 문장은 근거로 엽니다. 둘째 문장은 장면이에요."]])];
+  const summary = "card:1.0 | 근거: 편인(일지) | 연결: 공통 introspection | 장면: 없음 | 팩폭: 없음 | 처방: 하루 두기";
+  it("기본(v4)은 지침·입력이 그대로다(설계 요약을 넣어도 v4에는 안 들어간다)", () => {
+    const a = reviewPrompt({ brief, sheet, k, chapters, cover: "표지" }), b = reviewPrompt({ brief, sheet, k, chapters, cover: "표지", reviewDesignSummary: summary });
+    expect(REVIEW_DEFAULT_VERSION).toBe(REVIEW_VERSION);
+    expect(a.system).toBe(REVIEW_SYSTEM); expect(a.version).toBe("review-v4");
+    expect(b.user).toBe(a.user); expect(a.user).not.toContain("설계 카드");
+  });
+  it("review-v6-card: 카드 지침 + 「설계 카드(design)」 칸(DB 뜻풀이 다음·책 앞), card id만 F 근거로 받는다", () => {
+    const p = reviewPrompt({ brief, sheet, k, chapters, cover: "표지", version: REVIEW_VERSION_CARD, reviewDesignSummary: summary });
+    expect(p.system).toBe(REVIEW_SYSTEM_CARD); expect(p.version).toBe("review-v6-card");
+    expect(p.user).toContain("검수 판: review-v6-card");
+    const at = p.user.indexOf("설계 카드(design):\n" + summary);
+    expect(at).toBeGreaterThan(p.user.indexOf("DB 뜻풀이:")); expect(at).toBeLessThan(p.user.indexOf("책:\n"));
+    expect(p.ids.has("card:1.0")).toBe(true);
+    const n = p.numbered.find(x => x.text.startsWith("둘째"))!.n;
+    const issues = (ref: string, cat = "F", field = "") => JSON.stringify({ issues: [{ cat, s: n, quote: "둘째 문장은 장면이에요", why: "카드에 장면이 없는데 생활 장면을 단정", ref, s2: 0, field, fix: "" }] });
+    expect(guardReview(issues("card:1.0"), p.numbered, p.ids)?.kept).toHaveLength(1);
+    expect(guardReview(issues("card:9.9"), p.numbered, p.ids)?.dropped[0]?.reason).toBe("F_without_ref");
+    expect(guardReview(issues("", "I", "card.scene"), p.numbered, p.ids)?.kept).toHaveLength(1);
+    const v4 = reviewPrompt({ brief, sheet, k, chapters, cover: "표지" });
+    expect(guardReview(issues("card:1.0"), v4.numbered, v4.ids)?.dropped[0]?.reason).toBe("F_without_ref");
+    expect(guardReview(issues("", "I", "card.scene"), v4.numbered, v4.ids)?.dropped[0]?.reason).toBe("I_without_field");
+    expect(designCardIds(`${summary}\ncard:2.1 | 근거: 정관(월간)`)).toEqual(["card:1.0", "card:2.1"]);
+  });
 });

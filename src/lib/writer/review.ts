@@ -17,6 +17,16 @@ import { splitSentences } from "./safety/patterns";
 /** review-v2: Haiku 생각 끔(v1은 생각이 출력 상한을 다 써 글자 0). 판 번호는 입력 머리에 들어가 원문 키가 바뀐다. */
 /** review-v4 지침(측정 채택본, Haiku 5.5). v5(모순 유형 예시 추가)는 Haiku 재현율이 낮아(77.1%) 되돌렸다. */
 export const REVIEW_VERSION = "review-v4" as const;
+/**
+ * W3 P3 0.6·6절: 설계 카드 검수(선택, 리드 재측정 전까지 기본값 아님). 범주 글자·JSON 스키마는 v4와 같고, 범주의 뜻을
+ * 「설계 카드대로 썼나(근거·연결·장면 출처) + 금지 위반」으로 바꾼다. 설계 요약(reviewDesignSummary)이 사용자 메시지 「설계 카드(design)」 칸으로 간다.
+ * 설계 요약 형식(카드 쪽 렌더러가 지킨다): 한 줄 = 한 절, 줄 머리에 `card:<장>.<절 0부터>` id, 그 뒤 「 | 근거: … | 연결: … | 장면: … | 팩폭: … | 처방: …」.
+ * 검수는 F의 ref에 그 card id를 쓸 수 있다(guardReview가 요약에 있는 id만 받는다). I의 field는 입력 칸 또는 `card.scene`.
+ */
+export const REVIEW_VERSION_CARD = "review-v6-card" as const;
+export type ReviewVersion = typeof REVIEW_VERSION | typeof REVIEW_VERSION_CARD;
+/** 발행 기본 검수 판(재측정 전까지 v4 채택본). */
+export const REVIEW_DEFAULT_VERSION: ReviewVersion = REVIEW_VERSION;
 export const REVIEW_CATS = ["F", "C", "I", "R", "L", "T", "A"] as const;
 export type ReviewCat = (typeof REVIEW_CATS)[number];
 /** 검수 모델 출력 상한(토큰, 고정). 지적 40개 × 약 90토큰 + 생각 몫. */
@@ -64,6 +74,29 @@ export const REVIEW_SYSTEM = `너는 결리포트(사주×MBTI 리포트) 원고
 - 정답지와 맞는 문장은 문제 삼지 않는다. 장점·재미를 위한 과장 없는 해석은 문제가 아니다.
 - 쓰지 않는 칸은 빈 문자열(ref·field·fix), s2는 0.
 - 출력: {"issues":[{"cat","s","quote","why","ref","s2","field","fix"}]}만.`;
+
+/** 설계 카드 검수 지침(review-v6-card). 범주 글자·출력 꼴은 v4와 같다. */
+export const REVIEW_SYSTEM_CARD = `너는 결리포트(사주×MBTI 리포트) 원고의 검수자다. 번호 붙은 책을 설계 카드(design: 절마다 근거·연결·장면·팩폭·처방)와 맞대어 읽고, 아래 7범주의 문제만 JSON으로 답한다. 문체 취향·더 좋은 표현 제안은 하지 않는다.
+
+범주(이 밖은 쓰지 않는다):
+- F 근거 불일치: 그 절 카드의 근거(이름·자리)와 다른 명리·MBTI 주장, 카드·정답지(fs:…)·DB 뜻풀이(db:…) 어디에도 없는 근거를 지어낸 단정, 자리 이름(일지·월간 등)을 틀리게 붙인 것. 십성 자리 수는 tenGodSurfaceCount(겉 글자)로만 센다. ref에 근거 id(card:장.절 · fs:… · db:…) 필수.
+- C 연결 모순: 카드의 연결(공통·차이·보완·긴장)을 반대로 잇거나, 같은 사람에 대해 둘 다 참일 수 없는 두 문장(이 책 안 또는 이전 책 요약 줄 p번호). s = 뒤쪽 문장, s2 = 다른 문장 번호 필수.
+- I 근거 없는 장면·입력 밖 단정: 카드에 장면이 없는 절의 생활 장면 단정(때·장소·물건 + "당신은 ~했죠" 꼴), 카드 장면과 다른 장면을 지어냄, 입력에 없는 직업 상황·사람·돈 사정·연애 사정·가족·과거 사건을 사실처럼 단정. 가정형("~라면")·질문형은 제외. field에 입력 칸(input.job·input.relationship·input.children·input.relationType·input.money·input.family) 또는 card.scene 필수.
+- R 반복: 다른 장에서 같은 연결·같은 장면·같은 처방 종류·같은 성향 설명을 되풀이. s = 뒤쪽 문장, s2 = 앞쪽 문장 필수. 같은 소제목 안 흐름은 반복이 아니다.
+- L 금지 위반 노출: 판정 등급어(신약·신강·중화·「(오행) 과다」·「세기는 보통」·「힘은 약입니다」), 생성 규칙·입력 상태(「시간 미상이 아니라」「입력된 게 없으니」「가정으로만」「…를 기준으로 썼어요」「기준일」), 면책("시기는 말하지 않아요"), 분류 라벨(「·십이신살」)이 독자에게 보임.
+- T 시점 표현 위반: 종합 책 본문의 달·연도 숫자만 고정(행동 제안은 "앞으로 한 달"). 해 이름 "2026년 병오년"(연도 + 간지)은 T가 아니다.
+- A 명백한 비문·조사·단어 오용. fix에 고친 문장 전체 필수(원문에 없던 명리 용어·숫자를 넣지 않는다).
+
+규칙:
+- quote는 그 번호 문장에서 글자 그대로 옮긴 짧은 부분(10~40자). 바꾸거나 요약하지 않는다.
+- 기계 검사가 이미 잡은 문장 번호(machineFlagged)는 보고하지 않는다.
+- 카드에 팩폭·처방이 없는 절의 팩폭·처방은 R이 아니라 문제 삼지 않는다(카드 밖이어도 근거가 있으면 통과). 카드는 설계일 뿐, 카드와 다른 말이 정답지와 맞으면 문제가 아니다.
+- 확실한 것만. 애매하면 보고하지 않는다. 같은 문장은 한 번만. 최대 ${REVIEW_MAX_ISSUES}개.
+- 정답지와 맞는 문장, 문제가 아닌 문장은 절대 출력하지 않는다. why에 "맞다·문제 아님·보류·해당 없음"을 쓸 문장이면 그 항목을 빼라.
+- 쓰지 않는 칸은 빈 문자열(ref·field·fix), s2는 0.
+- 출력: {"issues":[{"cat","s","quote","why","ref","s2","field","fix"}]}만.`;
+/** 설계 요약에서 카드 id(`card:<장>.<절>`)를 모은다(F ref 검증용). */
+export const designCardIds = (summary: string | undefined): string[] => [...new Set([...(summary ?? "").matchAll(/(?:^|\n)\s*(card:\d+\.\d+)/g)].map(m => m[1]))];
 
 /** 책을 문장 단위로 번호 매긴다(표지 0, 소제목·문단 문장 1부터). */
 export function numberBook(chapters: readonly FinalChapter[], cover: string): Numbered[] {
@@ -142,7 +175,13 @@ function dbSubset(text: string, k: Knowledge, mbtiTypes: readonly string[]): Rec
 }
 
 export type PriorSummary = { readonly lines: readonly string[] };
-export function reviewPrompt(a: { brief: Brief; sheet: FactSheet; k: Knowledge; chapters: readonly FinalChapter[]; cover: string; prior?: PriorSummary | null; machineFlagged?: readonly number[] }): { system: string; user: string; numbered: Numbered[]; ids: Set<string>; chars: number } {
+/**
+ * version: 검수 판(기본 v4). review-v6-card이면 설계 카드 지침을 쓰고, reviewDesignSummary(카드 쪽 렌더러가 만든 절마다 한 줄 요약)를
+ * 사용자 메시지의 「설계 카드(design)」 칸(정답지·DB 뜻풀이 다음, 이전 책 요약 앞)에 넣는다. v4에서는 요약을 넣지 않는다(입력 바이트 그대로).
+ */
+export function reviewPrompt(a: { brief: Brief; sheet: FactSheet; k: Knowledge; chapters: readonly FinalChapter[]; cover: string; prior?: PriorSummary | null; machineFlagged?: readonly number[]; version?: ReviewVersion; reviewDesignSummary?: string }): { system: string; user: string; numbered: Numbered[]; ids: Set<string>; chars: number; version: ReviewVersion } {
+  const version: ReviewVersion = a.version ?? REVIEW_DEFAULT_VERSION, card = version === REVIEW_VERSION_CARD;
+  const design = card && a.reviewDesignSummary?.trim() ? a.reviewDesignSummary.trim() : "";
   const numbered = numberBook(a.chapters, a.cover);
   const text = numbered.map(x => x.text).join(" ");
   const fs = sheetSubset(a.sheet, text, a.k);
@@ -162,17 +201,18 @@ export function reviewPrompt(a: { brief: Brief; sheet: FactSheet; k: Knowledge; 
     return `${head}${label}${x.paragraph < 0 ? (x.n === 0 ? "[0] (표지) " : `[${x.n}] ### `) : `[${x.n}] `}${x.n === 0 ? x.text : x.paragraph < 0 ? x.text : x.text}`;
   }).join("\n");
   const user = [
-    `검수 판: ${REVIEW_VERSION}`,
+    `검수 판: ${version}`,
     `입력(input):\n${JSON.stringify(input)}`,
     profiles.length ? `성격표(profile):\n${profiles.join("\n")}` : "",
     `정답지(쓰인 용어만):\n${JSON.stringify(fs)}`,
     `DB 뜻풀이:\n${JSON.stringify(db)}`,
+    design ? `설계 카드(design):\n${design}` : "",
     prior.length ? `같은 사람 이전 책 요약:\n${prior.join("\n")}` : "",
     `machineFlagged: ${JSON.stringify(a.machineFlagged ?? [])}`,
     `책:\n${book}`,
   ].filter(Boolean).join("\n\n");
-  const ids = new Set([...Object.keys(fs), ...Object.keys(db), "fs:people", "fs:standards"]);
-  return { system: REVIEW_SYSTEM, user, numbered, ids, chars: user.length };
+  const ids = new Set([...Object.keys(fs), ...Object.keys(db), "fs:people", "fs:standards", ...(design ? designCardIds(design) : [])]);
+  return { system: card ? REVIEW_SYSTEM_CARD : REVIEW_SYSTEM, user, numbered, ids, chars: user.length, version };
 }
 
 const TERM = /비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|비겁|식상|재성|관성|인성|[가-힣]{1,4}살|귀인|일간|일지|월지|월간|연지|시지|대운|세운|[갑을병정무기경신임계][자축인묘진사오미신유술해] ?(일주|대운|년)|[一-鿿]/g;
@@ -233,11 +273,13 @@ export function guardReview(text: string, numbered: readonly Numbered[], ids: Re
       if ((x.cat === "R" || x.cat === "C") && byN.has(s2) && quote && norm(byN.get(s2)!.text).includes(norm(quote))) [s, s2] = [s2, s];
       else { drop("quote_not_verbatim"); continue; }
     }
-    if (x.cat === "F" && !(ref && [...ids].some(id => ref === id || ref.startsWith(`${id}`) || ref.startsWith("fs:people") || ref.startsWith("db:")) && (ref.startsWith("fs:") || ref.startsWith("db:")))) { drop("F_without_ref"); continue; }
+    // W3 P3: 설계 카드 검수의 근거 id(card:장.절)는 요약에 있는 id만 받는다(ids에 들어 있을 때만 — v4는 들어가지 않는다).
+    const cardRef = ref.startsWith("card:") && ids.has(ref.replace(/[^\w:.].*$/, ""));
+    if (x.cat === "F" && !cardRef && !(ref && [...ids].some(id => ref === id || ref.startsWith(`${id}`) || ref.startsWith("fs:people") || ref.startsWith("db:")) && (ref.startsWith("fs:") || ref.startsWith("db:")))) { drop("F_without_ref"); continue; }
     if ((x.cat === "C" || x.cat === "R") && !(s2 >= 1 && s2 !== s && (byN.has(s2) || (x.cat === "C" && isPrior(s2))))) { drop(`${x.cat}_without_pair`); continue; }
     // 이유가 스스로 "문제 아님"이라고 말하면 버린다(검수 모델이 보고하지 않을 것을 칸에 넣었다).
     if (/해당 없|위반 아님|문제 ?아님|보류|철회|제외 대상|보고 제외|— 제외|확실치 않|확실하지 않|소지 있으나|약간 부정확|문제(가|는)? 없|보고하지 않|허용 범위|명확하지 않|아닙니다\.?$|맞다\.|맞다$|맞음|[과와로] 일치(?!하지)/.test(String(x.why ?? ""))) { drop("why_says_no_issue"); continue; }
-    if (x.cat === "I" && !INPUT_FIELDS.test(field)) { drop("I_without_field"); continue; }
+    if (x.cat === "I" && !INPUT_FIELDS.test(field) && !(field === "card.scene" && [...ids].some(id => id.startsWith("card:")))) { drop("I_without_field"); continue; }
     // R: 뒤쪽 문장만 고친다.
     if (x.cat === "R" && byN.has(s2) && s2 > s) [s, s2] = [s2, s];
     if (x.cat === "A" && !fix) { drop("A_without_fix"); continue; }

@@ -120,6 +120,8 @@ export function worstUsd(model: string, inputChars: number, maxOut: number): num
 export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens" | "cache" | "costCapUsd" | "cacheSystem" | "startStage" | "exhaustedMaxTokens">> & {
   /** 최종판3 5: 검수 모델(없으면 reviewModelOf). testRun: 시험 생성 책(고객 원장에서 뺀다). */
   readonly reviewModel?: string; readonly testRun?: boolean;
+  /** W3 P3 6절: 검수 판(기본 review-v4). review-v6-card이면 설계 카드 지침 + reviewDesignSummary(카드 렌더러가 만든 절마다 한 줄 요약)를 쓴다. 리드 재측정 전까지 운영은 넣지 않는다. */
+  readonly reviewVersion?: import("./review").ReviewVersion; readonly reviewDesignSummary?: string;
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
   readonly replay?: boolean;
   /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
@@ -500,13 +502,14 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const flags = lintBook(chapters, lctx);
   const canCall = Boolean(run?.writer && !run.stale && (live || deps.replay));
   const capLeft = () => deps.costCapUsd === undefined ? Infinity : deps.costCapUsd - (run?.costUsd ?? 0);
-  const review: Record<string, unknown> = { version: REVIEW_VERSION, model: null, calls: 0, kept: [], direct: [], dropped: [], skipped: null };
+  const reviewVariant = { ...(deps.reviewVersion ? { version: deps.reviewVersion } : {}), ...(deps.reviewDesignSummary ? { reviewDesignSummary: deps.reviewDesignSummary } : {}) };
+  const review: Record<string, unknown> = { version: deps.reviewVersion ?? REVIEW_VERSION, model: null, calls: 0, kept: [], direct: [], dropped: [], skipped: null };
   // 검수 1회(정해진 7범주 JSON, 안전장치). 실패·형식 오류·예산 초과면 검수만 건너뛴다(발행은 막지 않는다).
   let issues: ReviewIssue[] = [];
   const priorLines = priorSummaryOf(a.prior?.sentences ?? [], (a.prior?.covers ?? []).map(c => `(이전 책 표지) ${c}`));
-  const rpBase = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines });
+  const rpBase = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, ...reviewVariant });
   const flagged = flags.map(f => f.sentence).filter(Boolean);
-  const rp = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, machineFlagged: rpBase.numbered.filter(x => flagged.some(s => s.includes(x.text) || x.text.includes(s))).map(x => x.n) });
+  const rp = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, ...reviewVariant, machineFlagged: rpBase.numbered.filter(x => flagged.some(s => s.includes(x.text) || x.text.includes(s))).map(x => x.n) });
   const reviewModel = deps.reviewModel ?? reviewModelOf();
   const repairReserve = run?.writer ? worstUsd(run.writer.model, 12_000, repair3MaxTokens(6_000, REPAIR3_MAX_ITEMS, run.writer.model)) : 0;
   if (!canCall) review.skipped = "no_writer";
