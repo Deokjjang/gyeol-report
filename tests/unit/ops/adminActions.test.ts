@@ -144,7 +144,9 @@ describe("관리자 PIN(환불·이용권·내보내기)", () => {
   it("PIN 설정이 없으면 세 작업 모두 꺼짐(503), 아무 것도 하지 않는다", async () => {
     vi.stubEnv("ADMIN_ACTION_PIN", "");
     for (const action of ["refund", "grant", "export"]) expect((await call(action, refundBody({ quantity: 1 }))).body.code).toBe("ADMIN_PIN_UNSET");
-    expect([...h.order, ...h.rpc, ...h.audit]).toEqual([]);
+    expect([...h.order, ...h.rpc]).toEqual([]);
+    // W3 P0: 관리자 세션이 확인된 뒤의 거절은 감사에 남긴다(admin_rejected) — 그 밖의 작업은 하지 않는다.
+    expect(h.audit.map(e => [(e as { action: string }).action, ((e as { detail: { code: string } }).detail.code)])).toEqual([["admin_rejected", "ADMIN_PIN_UNSET"], ["admin_rejected", "ADMIN_PIN_UNSET"], ["admin_rejected", "ADMIN_PIN_UNSET"]]);
   });
   it("틀린 PIN은 403 + 감사 로그(admin_pin_failed), 작업은 하지 않는다", async () => {
     const r = await call("refund", refundBody({ pin: "0000" }));

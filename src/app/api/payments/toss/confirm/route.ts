@@ -1,6 +1,6 @@
 import { isDirectReportPaymentAmount } from "../../../../../lib/payment/reportProductCatalog";
 import { closedProductOrder, confirmPaidReport } from "../../../../../lib/payment/paidReportReliability";
-import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../../../../../lib/ops/config";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../../../lib/ops/config";
 import { createPaidReportReliabilityStore } from "../../../../../lib/payment/paidReportReliabilityStore";
 import { NextResponse } from "next/server";
 
@@ -204,6 +204,8 @@ export async function POST(
     (payment) => confirmTossPayment({ ...payment, secretKey }), orderId => closedProductOrder(store, orderId));
   // v5 최종3: 판매 중지 상품(대운·세운)의 승인 전 주문은 토스 승인을 부르지 않는다(결제되지 않음).
   if (!result.ok && result.code === SALES_CLOSED_CODE) return NextResponse.json({ ok: false, error: { code: SALES_CLOSED_CODE, message: SALES_CLOSED_MESSAGE } }, { status: 409, headers: jsonResponseHeaders });
+  // W3 P0: 4종 판매 중지 중인 승인 전 주문 — 토스 승인을 부르지 않는다(결제되지 않음).
+  if (!result.ok && result.code === SALES_PAUSED_CODE) return NextResponse.json({ ok: false, error: { code: SALES_PAUSED_CODE, message: `${SALES_PAUSED_MESSAGE} 이 주문은 결제되지 않았어요.` } }, { status: 409, headers: jsonResponseHeaders });
   if (!result.ok) return createErrorResponse("PAYMENT_FULFILLMENT_FAILED", "결제 상태를 확인 중입니다. 잠시 후 다시 확인해 주세요.", 503);
   return NextResponse.json({ ok: true, reportId: result.reportId ?? null, status: result.pending ? "PAYMENT_PENDING" : "QUEUED",
     paymentOrder: { status: "paid", reportId: result.reportId ?? null },

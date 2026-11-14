@@ -50,9 +50,13 @@ export function chainCache(...caches: readonly (WriterCache | null | undefined)[
   };
 }
 
-const QUOTA = /insufficient_quota|exceeded your current quota|billing_hard_limit_reached|billing_not_active/i;
-const CREDIT = /credit balance is too low/i;
-export type QuotaSeen = { openaiQuota?: boolean; anthropicCredit?: boolean };
+/** OpenAI 잔액·한도(재시도로 안 풀림). credit_balance_exhausted·*_spend_limit_exceeded·organization_usage_limit_exceeded는 11-13 문서 확인(research-w2 3-4). */
+const QUOTA = /insufficient_quota|exceeded your current quota|billing_hard_limit_reached|billing_not_active|credit_balance_exhausted|_spend_limit_exceeded|organization_usage_limit_exceeded/i;
+/** Anthropic 잔액·결제(문서 11-14: 402 billing_error, 400 = 지출 한도 도달, 「credit balance is too low」). */
+const CREDIT = /credit balance is too low|billing_error|spend limit/i;
+/** Anthropic 인증·권한(문서 11-14: 401 authentication_error, 403 permission_error). */
+const AUTH = /authentication_error|permission_error/;
+export type QuotaSeen = { openaiQuota?: boolean; anthropicCredit?: boolean; anthropicAuth?: boolean };
 /** 공급자 응답 본문에서 잔액 부족을 알아본다(작가 내부는 오류 코드만 남기므로 바깥 fetch에서 본다). 응답은 그대로 넘긴다. */
 export function watchFetch(base: typeof fetch, seen: QuotaSeen): typeof fetch {
   return (async (input: string | URL | Request, init?: RequestInit) => {
@@ -65,6 +69,8 @@ export function watchFetch(base: typeof fetch, seen: QuotaSeen): typeof fetch {
         if (/openai\.com/.test(url) && QUOTA.test(body)) { seen.openaiQuota = true; return new Response(body, { status: 402, headers: res.headers }); }
         // F: 잔액 부족(credit balance)·결제 필요(402)는 처리 봇 경보(감독이 1시간 1번).
         if (/anthropic\.com/.test(url) && (res.status === 402 || CREDIT.test(body))) seen.anthropicCredit = true;
+        // W3 P0: 키가 틀리거나 권한이 없으면 모든 생성이 실패한다 — 잔액과 같은 경보(판매 자동 멈춤).
+        else if (/anthropic\.com/.test(url) && (res.status === 401 || res.status === 403 || AUTH.test(body))) seen.anthropicAuth = true;
       } catch { /* 본문을 못 읽어도 응답은 그대로 */ }
     }
     return res;

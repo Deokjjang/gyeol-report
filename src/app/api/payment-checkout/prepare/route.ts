@@ -8,7 +8,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { accountPublicEnabled } from "../../../../lib/account/gate";
 import { isPublicSameOrigin } from "../../../../lib/account/origin";
 import { bookExperiencePublicEnabled } from "../../../../lib/book/publicGate";
-import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../../../../lib/ops/config";
+import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../../lib/ops/config";
+import { salesPaused } from "../../../../lib/ops/salesPause";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
@@ -34,6 +35,7 @@ type CheckoutPrepareRouteErrorCode =
   | "PAYMENT_CHECKOUT_INVALID_REQUEST"
   | "PAYMENT_CHECKOUT_UNAVAILABLE"
   | typeof SALES_CLOSED_CODE
+  | typeof SALES_PAUSED_CODE
   | "PROFILE_REQUIRED"
   | "LOGIN_REQUIRED";
 
@@ -364,6 +366,10 @@ export async function POST(request: Request): Promise<NextResponse> {
   // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 결제를 시작하지 않는다(FORTUNE_SALES_OPEN=1이면 다시 연다).
   if (!productOnSale(json.productType ?? defaultProductType)) {
     return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
+  }
+  // W3 P0: 4종 판매 중지(DB 스위치) — 결제를 시작하지 않는다. 못 읽으면 판매를 계속한다.
+  if (await salesPaused()) {
+    return createErrorResponse(SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, 409);
   }
 
   if (!isJsonObject(json.inputSnapshot)) {

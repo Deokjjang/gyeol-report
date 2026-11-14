@@ -8,27 +8,34 @@ import { deliveryIssueCodes } from "../report-generation/deliveryAudit";
 import { unknownCalculationVersions } from "../saju/calendarVersion";
 import type { ReliabilityResult, ReliabilityStore } from "./paidReportReliabilityStore";
 import type { TossConfirmClientResult, TossConfirmRequest } from "./tossConfirmTypes";
-import { productOnSale, SALES_CLOSED_CODE } from "../ops/config";
+import { productOnSale, SALES_CLOSED_CODE, SALES_PAUSED_CODE } from "../ops/config";
 
 /**
  * v5 최종3: 판매를 닫은 상품(대운·세운, FORTUNE_SALES_OPEN)의 승인 전 주문인가. 결제 준비·주문 생성은 이미 막혀 있고(prepare·create-ready),
  * 이것은 닫기 전에 만든 주문(배포 직전 결제창을 연 주문 등)이 승인 단계로 오는 경우만 막는다. 이미 승인된 주문(status≠ready)은 막지 않는다
  * (돈이 움직인 주문은 기존대로 이어서 처리). 주문을 못 읽으면 막지 않는다(기존 승인 흐름 그대로).
+ * W3 P0: 4종 판매 중지(DB 스위치)도 같은 자리에서 막는다 — 결제창을 연 뒤 멈춘 주문은 승인하지 않는다(결제되지 않음). 스위치를 못 읽으면 막지 않는다.
+ * 돌려주는 값: 막는 이유 코드(SALES_CLOSED_CODE · SALES_PAUSED_CODE) 또는 null.
  */
-export async function closedProductOrder(store: ReliabilityStore, orderId: string): Promise<boolean> {
+export async function closedProductOrder(store: ReliabilityStore, orderId: string, paused: () => Promise<boolean> = defaultPaused): Promise<string | null> {
   try {
     const found = await store.call("find_order", { orderId });
     const order = found.ok && isRecord(found.order) ? found.order : null;
-    return !!order && order.provider_order_id === orderId && order.status === "ready" && !productOnSale(order.product_type);
-  } catch { return false; }
+    if (!order || order.provider_order_id !== orderId || order.status !== "ready") return null;
+    if (!productOnSale(order.product_type)) return SALES_CLOSED_CODE;
+    return (await paused()) ? SALES_PAUSED_CODE : null;
+  } catch { return null; }
 }
+async function defaultPaused(): Promise<boolean> { return (await import("../ops/salesPause")).salesPaused(); }
 
 // A crash after provider approval leaves the claimed payment key durable. The worker
 // reconciles it with the same provider idempotency key before claiming generation.
 // salesGate(선택): 승인 전에 판매 중지 상품 주문을 거른다(HTTP 승인 진입점만 넘긴다). 걸리면 토스 승인·주문 선점 없이 끝낸다.
+// 값: 막는 이유 코드(문자열) · true(= 판매 닫힘) · false/null(통과).
 export async function confirmPaidReport(input: TossConfirmRequest, store: ReliabilityStore,
-  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>, salesGate?: (orderId: string) => Promise<boolean>) {
-  if (salesGate && await salesGate(input.orderId)) return { ok: false, code: SALES_CLOSED_CODE };
+  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>, salesGate?: (orderId: string) => Promise<string | boolean | null>) {
+  const gated = salesGate ? await salesGate(input.orderId) : null;
+  if (gated) return { ok: false, code: typeof gated === "string" ? gated : SALES_CLOSED_CODE };
   const claim = await store.call("confirm_claim", { ...input });
   if (!claim.ok || claim.reportId || claim.pending) return claim;
   let paidAt: string | undefined, receiptUrl: string | undefined;
