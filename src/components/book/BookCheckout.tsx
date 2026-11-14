@@ -1,5 +1,4 @@
 "use client";
-import { etaLabel } from "../report/generationProgress";
 import { useEffect, useRef, useState } from "react";
 import { getReportProduct } from "../../lib/payment/reportProductCatalog";
 import { CHECKOUT_CONSENT_UI_VERSION, createCheckoutConsentAssertion, getCheckoutAgeGateStatus, MEMBER_SIGNUP_CONSENT_TEXT, type CheckoutConsentUiClaim, type CheckoutLegalConfirmations } from "../../lib/payment/checkoutConsent";
@@ -240,7 +239,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     {discount ? <p className={s.receiptNote} data-major-discount>대운 · 세운 연결 할인 · {discount.original.toLocaleString("ko-KR")}원 → {discount.amount.toLocaleString("ko-KR")}원 · 세운 1건당 1회, 세운 결제 뒤 7일 안({discount.until.slice(0, 10)}까지), 같은 사람 입력만</p> : null}
     {method==="payment"&&coupon.selection&&coupon.quote?<dl aria-label="쿠폰 적용 금액"><div><dt>상품 금액</dt><dd>₩{coupon.quote.originalAmount.toLocaleString("ko-KR")}</dd></div><div><dt>쿠폰 할인</dt><dd>−₩{coupon.quote.discountAmount.toLocaleString("ko-KR")}</dd></div><div><dt>결제 금액</dt><dd>₩{coupon.quote.finalAmount.toLocaleString("ko-KR")}</dd></div></dl>:null}
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION, p.birthDate) ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
-    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 즉시 생성" : "결제 완료 후 즉시 생성, 최대 24시간 이내 제공"}<br />{v5Book ? "탈퇴 전까지 계속 열람" : "생성일로부터 90일"} · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
+    <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 보통 몇 분 안에 · 30분 안에 못 만들면 이용권 자동 반환" : "결제 후 보통 몇 분 안에 · 30분 안에 못 만들면 자동 전액 환불"}<br />{v5Book ? "탈퇴 전까지 계속 열람" : "생성일로부터 90일"} · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
     {/* P 추가 E: 이용권이 0장이면 이용권 칸 자체를 숨기고 결제만 보인다(묶음 판매가 켜졌을 때만 구매 버튼 때문에 남긴다). */}
     {session.status === "member" && (accountChanged || checkingBalance || ticketPending || (tickets ?? 0) > 0 || ticketShopEnabled) ? <fieldset className={s.consents} data-ticket-method><legend>발행 방법</legend>
       {accountChanged ? <p role="alert">계정이 바뀌었어요. <a href={`${internal ? "/dev/book-flow/input" : "/report/new"}?product=${payload.productKey}`}>입력부터 다시 확인해 주세요.</a></p> : null}
@@ -254,9 +253,8 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     </fieldset> : null}
     {profileRequired ? <p role="alert">{PROFILE_REQUIRED_MESSAGE} <a href="/account">가입 정보 입력하기 →</a></p> : null}
     {!internal && publication.message ? <p role="status">{publication.message}</p> : null}
-    {!internal && publication.progress ? <TicketProgress progress={publication.progress} /> : null}
     {ticketPending && publication.retryable ? <button disabled={!ready || publication.submitting || accountChanged} onClick={() => void publication.submit(payload, effective, accountScope.current || undefined, consentUi)}>같은 발행 요청 다시 확인</button> : null}
-    {!internal && publication.completedUrl ? <a href={publication.completedUrl}>완성된 책 펼쳐보기</a> : null}
+    {!internal && publication.completedUrl ? <a href={publication.completedUrl}>책 보러 가기</a> : null}
     {internal?<CouponChooser productType={payload.productKey} disabled={busy||method==="ticket"||couponOrder!==null} ticketSelected={method==="ticket"} member={session.status==="member"} onChange={setCoupon} />:null}
     {loginFirst ? <p className={s.receiptNote} data-login-first>결제는 로그인한 뒤에 할 수 있어요. 결제하기를 누르면 카카오·Google 로그인으로 이어지고, 입력한 내용은 그대로 남아요.</p> : <fieldset className={s.consents}><legend className={s.srOnly}>구매 동의</legend><label className={s.allConsent}><input ref={allRef} type="checkbox" checked={all} disabled={!allowed || busy} onChange={e => check(items, e.target.checked)} />전체 동의</label>
       {items.map(c => <div className={s.consentRow} key={c.id}><label><input type="checkbox" checked={isChecked(c)} disabled={!allowed || busy} onChange={e => check([c], e.target.checked)} />[필수] {label(c.id)}</label><button type="button" onClick={() => setDetail(c.id)} aria-label={`${label(c.id)} 상세 보기`}>보기 ›</button></div>)}
@@ -282,16 +280,4 @@ function BookChapterList({ payload }: { payload: ReportInputPayload }) {
   if (!chapters) return null;
   return <details className={`${s.receiptNote} ${s.receiptChapters}`} data-book-chapters><summary>이 책의 차례 · {chapters.length}장</summary><ol>{chapters.map(title => <li key={title}>{title}</li>)}</ol>
     {payload.productKey === "saju_mbti_compatibility" ? <p>A: {payload.personA.name} · B: {payload.personB.name}</p> : null}</details>;
-}
-
-/** AM 4부 이용권 책 대기: 진짜 진행률(「13장 중 5장 완성」)·남은 시간(실측 중앙값, 없으면 숨김)·「1장 먼저 읽기」(결정론 검사 뒤)·서재 안내. */
-function TicketProgress({ progress }: { progress: { done: number; total: number | null; etaMs: number | null; first?: { title: string; sections: { heading: string; paragraphs: string[] }[] } } }) {
-  const [open, setOpen] = useState(false);
-  const eta = etaLabel(progress.etaMs);
-  return <section className={s.receiptNote} data-ticket-progress>
-    {progress.total ? <p data-chapter-progress>{progress.total}장 중 {Math.min(progress.done, progress.total)}장 완성{eta ? ` · ${eta}` : ""}</p> : eta ? <p>{eta}</p> : null}
-    {progress.first ? open ? <div data-first-chapter-preview><h2>1. {progress.first.title}</h2>{progress.first.sections.map((x, i) => <div key={i}>{x.heading ? <h3>{x.heading}</h3> : null}{x.paragraphs.map((p, j) => <p key={j}>{p}</p>)}</div>)}<p>남은 장은 제본 중이에요. 완성되면 책으로 바로 이어져요.</p></div>
-      : <button type="button" onClick={() => setOpen(true)} data-first-chapter>1장 먼저 읽기</button> : null}
-    <p>창을 닫아도 서재에 저장돼요. 완성되면 서재에서 바로 열 수 있어요.</p>
-  </section>;
 }

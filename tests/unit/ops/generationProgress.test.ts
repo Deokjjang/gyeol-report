@@ -1,110 +1,96 @@
-// v5 최종 2-1 #7: 생성 대기 화면은 ⑦ 생성 감독이 남긴 실제 상태(book_generation_state)로만 단계·지연을 정한다.
-// 실제 SQL(PGlite) + 실제 감독(superviseQueueJob, 결제 경로) + 목업 LLM. 외부 호출 0.
+// W3 P2 30분 결론: 생성 대기 화면의 진행 상태는 실제 표(Book·결제 주문·환불·이용권 접수·감독)에서만 정한다.
+// 실제 SQL(PGlite, 같은 migration)로 표·칸 이름까지 확인한다. 외부 호출 0, 쓰기는 시험 준비(seed)만.
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
-import { runPaidReportJob, type PaidV5Builder } from "@/lib/payment/paidReportReliability";
-import { WRITER_DISABLED_RUNTIME as runtime } from "@/lib/report-generation/writerDisabled";
-import { runPaidV5Job, type PaidJobOps } from "@/lib/ops/generation/paidJob";
-import { DELAY_NOTICE_AFTER_MS, delayNotice, delayedMessage, describeGeneration } from "@/components/report/generationProgress";
-import { readGenerationProgress } from "@/components/report/generationProgressServer";
+import { readBookFacts, readGenerationProgress, readRefundedBeforePublish, type RowReader } from "@/components/report/generationProgressServer";
 import { GET } from "@/app/api/reports/[reportId]/progress/route";
 import { seedPaid } from "../../helpers/paidWorkerSql";
 import { opsSql } from "../../helpers/opsSql";
-import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";
-import { mockAnthropic } from "../../helpers/opsMocks";
+import { enqueue, RAW_FULL } from "../../helpers/v5Scenarios";
+import { TICKET_A as A, TICKET_B as B } from "../../helpers/ticketPublicationSql";
 
-describe("진행 상태 판정(순수)", () => {
-  it("Book 상태 × 감독 상태 → 화면 상태·단계", () => {
-    expect(describeGeneration("QUEUED", null)).toEqual({ state: "preparing", stage: 0, nextAt: null });
-    expect(describeGeneration("GENERATING", { phase: "pending", failures: 0, next_at: null })).toEqual({ state: "preparing", stage: 2, nextAt: null, since: null, origin: null });
-    expect(describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: "2026-11-05T06:20:00Z" })).toEqual({ state: "delayed", stage: 2, nextAt: "2026-11-05T06:20:00.000Z", since: null, origin: null });
-    // 앞선 시도가 실패한 뒤 다시 쓰는 중이면 "평소보다 조금 더".
-    expect(describeGeneration("GENERATING", { phase: "pending", failures: 2, next_at: null }).state).toBe("delayed");
-    expect(describeGeneration("FAILED_REQUIRES_ATTENTION", { phase: "gave_up", failures: 9 }).state).toBe("attention");
-    expect(describeGeneration("GENERATING", { phase: "gave_up", failures: 9 }).state).toBe("attention");
-    expect(describeGeneration("COMPLETED", null).state).toBe("ready");
-    expect(describeGeneration("EXPIRED", null).state).toBe("expired");
-    expect(describeGeneration(undefined, null).state).toBe("unknown");
-  });
-  // HOTFIX-W1 3부 5: 감독 시작 15분 뒤에도 책이 없으면 정직한 지연 안내(자동 환불 시간 = 설정값).
-  it("지연 안내: 감독 시작 15분 전에는 없고, 15분부터 결제·이용권 문구, 완성·확인 필요에는 없다", () => {
-    const since = "2026-11-13T08:00:00Z", t = Date.parse(since);
-    const p = describeGeneration("GENERATING", { phase: "pending", failures: 0, next_at: null, first_attempt_at: since, origin: "paid" }, { refundHours: 6 });
-    expect(p).toMatchObject({ since: "2026-11-13T08:00:00.000Z", refundHours: 6, origin: "paid" });
-    expect(delayNotice(p, t + DELAY_NOTICE_AFTER_MS - 1)).toBeUndefined();
-    expect(delayNotice(p, t + DELAY_NOTICE_AFTER_MS)).toBe("책을 다듬는 데 시간이 더 걸리고 있어요. 준비되면 서재에 바로 보여요. 6시간 안에 못 드리면 자동으로 환불돼요.");
-    const ticket = describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: null, first_attempt_at: since, origin: "ticket" }, { refundHours: 3 });
-    expect(delayNotice(ticket, t + DELAY_NOTICE_AFTER_MS)).toContain("3시간 안에 못 드리면 쓰신 이용권을 자동으로 돌려드려요");
-    expect(delayNotice(describeGeneration("COMPLETED", null), t + 3_600_000)).toBeUndefined();
-    expect(delayNotice(describeGeneration("FAILED_REQUIRES_ATTENTION", { phase: "gave_up", first_attempt_at: since }), t + 3_600_000)).toBeUndefined();
-    // 옛 응답(자동 환불 시간 없음)은 기본 6시간.
-    expect(delayNotice({ state: "delayed", stage: 2, nextAt: null, since }, t + DELAY_NOTICE_AFTER_MS)).toContain("6시간");
-  });
-  it("다음 시도 시각은 한국 시각으로, 지난 시각이면 붙이지 않는다", () => {
-    const at = "2026-11-05T06:20:00Z", now = Date.parse("2026-11-05T06:00:00Z");
-    expect(delayedMessage(at, now)).toContain("오후 3:20쯤 이어서 다시 씁니다");
-    expect(delayedMessage(at, now)).not.toMatch(/실패|재시도|오류/u);
-    expect(delayedMessage(at, Date.parse(at) + 1)).toBeUndefined();
-    expect(delayedMessage(null, now)).toBeUndefined();
-  });
-});
-
-describe("실제 감독 상태 읽기(PGlite)", () => {
+describe("실제 표 읽기(PGlite)", () => {
   type H = Awaited<ReturnType<typeof opsSql>>;
-  let h: H, ops: PaidJobOps;
+  let h: H;
   const policyAt = "2026-10-27T03:00:00.000Z";
   const payload = (() => { const n = normalizeReportInputPayload(RAW_FULL, { now: () => new Date(policyAt) }); if (!n.ok) throw new Error("payload"); return n.value; })();
-  const { text } = mockTextFor(payload, policyAt);
-  const envFor = (behaviors: Parameters<typeof mockAnthropic>[0]) => ({ openAiKey: null, deps: { fetchImpl: mockAnthropic(behaviors).fetch, sleep: async () => undefined, people: async () => [], apiKey: "test-key" } });
-  const builder = (env: ReturnType<typeof envFor>): PaidV5Builder => async (job, finish) => ({ settled: await runPaidV5Job({ ...job, policyAt }, finish, { ops, env }) });
   const exec = async (sql: string, params: unknown[] = []) => { await h.db.exec("reset role"); await h.db.query(sql, params); await h.db.exec("set role service_role"); };
-  const read = (reportId: string) => readGenerationProgress(reportId, undefined, { reliability: h.paid, generation: ops.generation });
+  /** 운영 PostgREST 한 행 읽기와 같은 모양(표·칸 이름이 틀리면 여기서 실패한다). */
+  const rows: RowReader = async (table, columns, [column, value]) => {
+    await h.db.exec("reset role");
+    try { return (await h.db.query<Record<string, unknown>>(`select ${columns} from public.${table} where ${column}=$1 limit 1`, [value])).rows[0] ?? null; }
+    finally { await h.db.exec("set role service_role"); }
+  };
+  const progressCalls: Record<string, unknown>[] = [];
+  const progress = { call: async (_a: string, data: Record<string, unknown>) => { progressCalls.push(data); return { ok: true, done: 3, total: 13, first: { title: "1장" } }; } };
+  const NOW = Date.parse("2026-11-14T03:00:00Z");
+  const deps = { rows, progress, now: () => NOW };
 
-  beforeAll(async () => {
-    h = await opsSql();
-    const call = (fn: string) => ({ call: (a: string, d: Record<string, unknown> = {}) => h.rpc(fn, a, d) });
-    ops = { generation: call("ops_generation"), order: call("ops_order"), async audit() { return true; } };
-    process.env.WRITER_V5_PRODUCTS = "saju_mbti_full";
+  beforeAll(async () => { h = await opsSql(); }, 120_000);
+  afterAll(async () => { await h?.db.close(); });
+
+  it("결제 책: 결제 확인 시각부터 · 1차 → 2차 → 포기(확인 중) → 자동 환불 요청(취소 중) → 환불 끝(취소 끝)", async () => {
+    const reportId = await seedPaid(h.paid, "po_conclusion_1", payload);
+    const facts = await readBookFacts(reportId, rows, NOW);
+    expect(facts).toMatchObject({ origin: "paid", paymentStatus: "paid", refundState: null, failures: 0, redemptionId: null });
+    const paidAt = (await h.db.query<{ paid_at: Date }>("select paid_at from payment_orders where payment_order_id='po_conclusion_1'")).rows[0].paid_at;
+    expect(facts?.startedAt).toBe(new Date(paidAt).toISOString());
+    const first = await readGenerationProgress(reportId, { deps });
+    expect(first).toEqual({ state: "making", stage: "writing", origin: "paid", attempt: 1, chapters: { done: 3, total: 13, firstReady: true }, serverNow: new Date(NOW).toISOString(), startedAt: facts?.startedAt });
+    expect(progressCalls.at(-1)).toEqual({ reportId }); // 결제 책은 주소로 장 진행률을 읽는다
+    expect(JSON.stringify(first)).not.toMatch(/po_conclusion|1290|amount|paymentKey|title/);
+
+    await h.rpc("ops_generation", "begin", { reportId, origin: "paid", originRef: "po_conclusion_1" });
+    await exec("update book_generation_state set failures=1 where report_id=$1", [reportId]);
+    expect((await readGenerationProgress(reportId, { deps })).attempt).toBe(2);
+    await exec("update book_generation_state set phase='gave_up' where report_id=$1", [reportId]);
+    expect((await readGenerationProgress(reportId, { deps })).state).toBe("concluding");
+
+    await exec("insert into order_refunds(payment_order_id,state,source,reason,amount,idempotency_key) values('po_conclusion_1','requested','auto','30분 안에 책을 완성하지 못해 자동 환불',1290,'order-refund-'||gen_random_uuid())");
+    expect((await readGenerationProgress(reportId, { deps })).state).toBe("refunding");
+    await exec("update order_refunds set state='processing' where payment_order_id='po_conclusion_1'");
+    expect((await readGenerationProgress(reportId, { deps })).state).toBe("refunding");
+    expect(await readRefundedBeforePublish(reportId, deps)).toBeNull();
+    await exec("update order_refunds set state='done',completed_at=now() where payment_order_id='po_conclusion_1'");
+    await exec("update payment_orders set status='refunded',refunded_at=now() where payment_order_id='po_conclusion_1'");
+    expect((await readGenerationProgress(reportId, { deps })).state).toBe("refunded");
+    // 결제가 취소되면 기존 읽기(read_report)는 이 책을 '없음'으로 본다 → 페이지가 따로 읽어 같은 대기 화면의 「결제를 취소했어요」를 그린다.
+    expect((await h.paid.call("read_report", { reportId })).ok).toBe(false);
+    expect(await readRefundedBeforePublish(reportId, deps)).toMatchObject({ state: "refunded", origin: "paid" });
   }, 120_000);
-  afterAll(async () => { delete process.env.WRITER_V5_PRODUCTS; await h?.db.close(); });
 
-  it("접수 → (감독 시작·출력 전 연결 실패) 2차로 미룸 → 다시 써서 완성: 화면 상태가 감독 기록을 그대로 따른다", async () => {
-    const reportId = await seedPaid(h.paid, "po_progress_1", payload);
-    expect(await read(reportId)).toEqual({ state: "preparing", stage: 0, nextAt: null });
-    expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ status: 529 }])))).toMatchObject({ ok: true, status: "RETRYING" });
-    const deferred = await read(reportId);
-    const state = (await h.rpc("ops_generation", "state", { reportId })).state as { next_at: string; failures: number };
-    expect(state.failures).toBe(1);
-    expect(deferred).toMatchObject({ state: "delayed", stage: 2, nextAt: new Date(state.next_at).toISOString(), origin: "paid", refundHours: 6 });
-    expect(Date.parse(deferred.nextAt!) - Date.now()).toBeGreaterThan(110_000); // W3 P2: 연결 오류 2차는 2분 뒤
-    await exec("update report_generation_jobs set next_retry_at=now() where report_id=$1", [reportId]);
-    expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ text }])))).toMatchObject({ ok: true, status: "COMPLETED" });
-    expect((await read(reportId)).state).toBe("ready");
-  }, 180_000);
+  it("이용권 책: 접수 시각부터 · 주인에게만 · 반환되면 「이용권을 돌려드렸어요」", async () => {
+    const { reportId, redemptionId } = await enqueue(h, RAW_FULL, policyAt);
+    const mine = await readGenerationProgress(reportId, { ticketOwner: A, deps });
+    expect(mine).toMatchObject({ state: "making", origin: "ticket", attempt: 1, startedAt: policyAt, stage: "writing" });
+    expect(progressCalls.at(-1)).toEqual({ redemptionId }); // 이용권 책은 접수 id로 장 진행률을 읽는다
+    // 주인이 아니거나 로그인 확인을 하지 않으면 아무것도 알려 주지 않는다.
+    for (const ticketOwner of [B, undefined, async () => null, async () => { throw new Error("auth down"); }]) {
+      expect(await readGenerationProgress(reportId, { ticketOwner, deps })).toMatchObject({ state: "unknown", origin: null, startedAt: null, chapters: null });
+    }
+    expect((await readGenerationProgress(reportId, { ticketOwner: async () => A, deps })).state).toBe("making");
+    await exec("update report_ticket_redemptions set state='REVERSED' where id=$1", [redemptionId]);
+    expect(await readGenerationProgress(reportId, { ticketOwner: A, deps })).toMatchObject({ state: "returned", origin: "ticket" });
+    expect(await readRefundedBeforePublish(reportId, deps)).toBeNull();
+  }, 120_000);
 
-  it("시도를 다 쓴 주문 포기(gave_up) → 확인 필요", async () => {
-    const reportId = await seedPaid(h.paid, "po_progress_2", payload);
-    await h.rpc("ops_generation", "begin", { reportId, origin: "paid", originRef: "po_progress_2" });
-    await exec("update book_generation_state set first_failure_at=now()-interval '24 hours',failures=9 where report_id=$1", [reportId]);
-    expect(await runPaidReportJob(h.paid, runtime, undefined, undefined, builder(envFor([{ status: 401 }])))).toMatchObject({ ok: true, status: "FAILED_REQUIRES_ATTENTION" });
-    expect((await read(reportId)).state).toBe("attention");
-  }, 180_000);
+  it("주소 형식이 아니면 저장소를 읽지 않고, 읽기 실패는 페이지가 읽은 상태로(없으면 unknown)", async () => {
+    const rowsSpy = vi.fn(rows), progressSpy = { call: vi.fn() };
+    expect((await readGenerationProgress("../etc", { deps: { rows: rowsSpy, progress: progressSpy } })).state).toBe("unknown");
+    expect((await readGenerationProgress("../etc", { knownStatus: "RETRYING", deps: { rows: rowsSpy, progress: progressSpy } })).state).toBe("making");
+    expect(rowsSpy).not.toHaveBeenCalled(); expect(progressSpy.call).not.toHaveBeenCalled();
+    const down: RowReader = async () => { throw new Error("down"); };
+    expect((await readGenerationProgress("report_0123456789abcdef", { deps: { rows: down } })).state).toBe("unknown");
+    expect((await readGenerationProgress("report_0123456789abcdef", { knownStatus: "FAILED_REQUIRES_ATTENTION", deps: { rows: down } })).state).toBe("concluding");
+    // 장 진행률만 못 읽으면 단계는 명식 계산(장 0)으로, 상태는 그대로.
+    const reportId = await seedPaid(h.paid, "po_conclusion_2", payload);
+    expect(await readGenerationProgress(reportId, { deps: { rows, progress: { call: async () => { throw new Error("rpc down"); } } } })).toMatchObject({ state: "making", stage: "compute", chapters: null });
+  }, 120_000);
 
-  it("주소 형식이 아니면 저장소를 읽지 않고 unknown, 읽기 실패도 unknown", async () => {
-    const reliability = { call: vi.fn() }, generation = { call: vi.fn() };
-    expect(await readGenerationProgress("../etc", undefined, { reliability, generation })).toEqual({ state: "unknown", stage: 0, nextAt: null });
-    expect(reliability.call).not.toHaveBeenCalled(); expect(generation.call).not.toHaveBeenCalled();
-    reliability.call.mockResolvedValue({ ok: false, code: "DURABLE_STORAGE_FAILED" });
-    expect((await readGenerationProgress("report_0123456789abcdef", undefined, { reliability, generation })).state).toBe("unknown");
-    // 감독 상태만 못 읽으면 Book 상태로만(시작 전 단계) 판정한다.
-    reliability.call.mockResolvedValue({ ok: true, status: "GENERATING" }); generation.call.mockRejectedValue(new Error("down"));
-    expect(await readGenerationProgress("report_0123456789abcdef", undefined, { reliability, generation })).toEqual({ state: "preparing", stage: 0, nextAt: null });
-  });
-
-  it("공개 읽기 주소는 상태·단계·시각만, 캐시 없이 돌려준다", async () => {
-    const res = await GET(new Request("http://localhost/api/reports/x/progress"), { params: Promise.resolve({ reportId: "not-a-report" }) });
+  it("공개 진행 주소는 상태·단계·시각만, 캐시 없이 돌려준다", async () => {
+    const res = await GET(new Request("http://localhost/api/reports/x/progress") as never, { params: Promise.resolve({ reportId: "not-a-report" }) });
     expect(res.headers.get("cache-control")).toBe("no-store");
-    expect(await res.json()).toEqual({ state: "unknown", stage: 0, nextAt: null });
+    expect(Object.keys(await res.json()).sort()).toEqual(["attempt", "chapters", "origin", "serverNow", "stage", "startedAt", "state"]);
   });
 });

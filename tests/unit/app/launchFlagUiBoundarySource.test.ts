@@ -35,7 +35,7 @@ describe("launch flag UI boundary source", () => {
       "생성일로부터 90일 온라인 열람",
       "자동 생성 디지털 리포트",
       "내 리포트 만들기",
-      "최대 24시간 이내 제공",
+      "30분 안에 못 만들면 자동 전액 환불",
     ];
     const activePurchaseMarkers = [
       "결제" + "하기",

@@ -4,7 +4,8 @@ import { usePathname } from "next/navigation";
 import { pageView, syncLocalFacts, setMetaChoice, setMetaFrame, syncMetaFacts } from "../../lib/analytics/client";
 import { markTesterBrowser } from "../../lib/analytics/funnel";
 import { META_NOTICE_VERSION, metaOrigin, metaPiiNotice, metaTrackingNotice, metaTransferNotice, metaLocalReview, META_AVAILABLE_EVENT, META_CARD_SEEN_KEY, META_SETTINGS_EVENT,
-  META_CARD_LATER_KEY, META_DEFAULT_FROM_SHORT_KO, metaChangeCardNotice, metaChangeRows, metaMaySend, metaOptInMeasurementLabel, metaOptInNotice, metaOptInTransferNotice } from "../../lib/analytics/metaConsent";
+  META_CARD_LATER_KEY, META_DEFAULT_FROM_SHORT_KO, metaChangeCardNotice, metaChangeRows, metaMaySend, metaOptInMeasurementLabel, metaOptInNotice, metaOptInTransferNotice,
+  META_CARD_HOLD_EVENT, metaCardHeld } from "../../lib/analytics/metaConsent";
 import styles from "./metaConsent.module.css";
 
 // The notice card is shown once per notice version. Seen-state lives in localStorage AND a plain 1-year cookie so that either one surviving is enough.
@@ -29,6 +30,9 @@ export default function MetaPixel() {
   const bundleCallback = pathname?.startsWith("/account/tickets/checkout/") || pathname?.startsWith("/dev/account/tickets/");
   const [choice, setChoice] = useState<boolean | null | undefined>(undefined), [open, setOpen] = useState(false), [card, setCard] = useState(false), [available, setAvailable] = useState(false);
   const [optout, setOptout] = useState(false);
+  // W3 P2: 생성 대기 화면이 떠 있는 동안 카드를 숨긴다(본 것으로 치지 않는다 — 대기 화면을 떠나면 보인다).
+  const [held, setHeld] = useState(false);
+  useEffect(() => { const sync = () => setHeld(metaCardHeld()); sync(); window.addEventListener(META_CARD_HOLD_EVENT, sync); return () => window.removeEventListener(META_CARD_HOLD_EVENT, sync); }, []);
   const allowed = metaMaySend(choice, optout);
   const [failed, setFailed] = useState(false), [busy, setBusy] = useState(false);
   const [ready, setReady] = useState(false);
@@ -57,7 +61,7 @@ export default function MetaPixel() {
         setCard(known === null && result.ready === true && !cardLater());
       } else {
         const firstVisit = known === null && result.ready === true && !cardSeen();
-        if (firstVisit || known !== null) markCardSeen();
+        if ((firstVisit && !metaCardHeld()) || known !== null) markCardSeen();
         setCard(firstVisit);
       }
       // 푸터 "광고 설정"은 Meta 픽셀이 실제로 켜져 있을 때(서버 ready)만 보인다. 꺼져 있으면 숨긴다(P6e-ops 9).
@@ -90,16 +94,19 @@ export default function MetaPixel() {
     return () => channel.close();
   }, []);
   const cardNode = useRef<HTMLDivElement>(null);
+  const showCard = card && !held;
   // The first-visit card sits in the page flow above everything; fixed-height screens subtract --meta-card-h so nothing is pushed under it.
   useEffect(() => {
     const node = cardNode.current, root = document.documentElement;
-    if (!card || !node) { root.style.removeProperty("--meta-card-h"); return; }
+    if (!showCard || !node) { root.style.removeProperty("--meta-card-h"); return; }
     const measure = () => root.style.setProperty("--meta-card-h", `${Math.ceil(node.getBoundingClientRect().height)}px`);
     measure();
     const observer = typeof ResizeObserver === "undefined" ? null : new ResizeObserver(measure);
     observer?.observe(node); window.addEventListener("resize", measure);
     return () => { observer?.disconnect(); window.removeEventListener("resize", measure); root.style.removeProperty("--meta-card-h"); };
-  }, [card]);
+  }, [showCard]);
+  // 대기 화면을 떠나 카드가 처음 보일 때 본 것으로 친다(시행일 뒤 안내 카드).
+  useEffect(() => { if (showCard && optout) markCardSeen(); }, [showCard, optout]);
   // 닫기·확인은 선택이 아니다. 시행일 뒤에는 안내를 봤다는 것만 기억하고, 시행일 전에는 결정 보류(이 방문 동안만 숨김).
   const dismiss = () => { if (optout) markCardSeen(); else markCardLater(); setCard(false); setOpen(false); };
   const openPanel = (consent: boolean) => { toConsent.current = consent; setCard(false); setOpen(true); };
@@ -137,10 +144,10 @@ export default function MetaPixel() {
       <a href="/privacy">개인정보처리방침</a>
       <div className={styles.actions}><button disabled={busy} onClick={() => void choose(false)}>거부</button><button disabled={busy || !Object.values(consents).every(Boolean)} onClick={() => void choose(true)}>선택 동의</button><button disabled={busy} onClick={dismiss}>닫기</button></div>
       {failed ? <p role="alert">설정을 저장하지 못했습니다. 다시 시도해 주세요.</p> : null}</div>
-    : card && !optout ? <div className={styles.card} ref={cardNode} data-meta-card="change"><strong>광고 성과 측정 변경 안내</strong><p>{metaChangeCardNotice}</p>
+    : showCard && !optout ? <div className={styles.card} ref={cardNode} data-meta-card="change"><strong>광고 성과 측정 변경 안내</strong><p>{metaChangeCardNotice}</p>
         <div><button disabled={busy} onClick={() => openPanel(true)}>동의</button><button disabled={busy} onClick={() => void choose(false)}>거부</button><button disabled={busy} onClick={() => openPanel(false)}>자세히</button><button disabled={busy} className={styles.later} aria-label="닫기(나중에 정하기)" onClick={dismiss}>×</button></div>
         {failed ? <p role="alert">설정을 저장하지 못했습니다. 다시 시도해 주세요.</p> : null}</div>
-    : card ? <div className={styles.card} ref={cardNode} data-meta-card="notice"><strong>광고 성과 측정 안내</strong><p>광고 성과를 재려고 방문·상품 조회·결제 여부 같은 행동 정보를 Meta에 보냅니다. 이름·이메일·전화번호는 보내지 않습니다. 원하지 않으면 거부를 누르세요. 거부해도 이용에 영향이 없고, 페이지 맨 아래 ‘광고 설정’에서 언제든 바꿀 수 있습니다.</p>
+    : showCard ? <div className={styles.card} ref={cardNode} data-meta-card="notice"><strong>광고 성과 측정 안내</strong><p>광고 성과를 재려고 방문·상품 조회·결제 여부 같은 행동 정보를 Meta에 보냅니다. 이름·이메일·전화번호는 보내지 않습니다. 원하지 않으면 거부를 누르세요. 거부해도 이용에 영향이 없고, 페이지 맨 아래 ‘광고 설정’에서 언제든 바꿀 수 있습니다.</p>
         <div><button disabled={busy} onClick={() => void choose(false)}>거부</button><button disabled={busy} onClick={() => openPanel(false)}>자세히</button><button disabled={busy} onClick={dismiss}>확인</button></div>
         {failed ? <p role="alert">설정을 저장하지 못했습니다. 다시 시도해 주세요.</p> : null}</div> : null}
   </aside>;

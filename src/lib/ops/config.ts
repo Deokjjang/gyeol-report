@@ -54,18 +54,19 @@ export const SALES_PAUSED_CODE = "PRODUCT_SALES_PAUSED";
 export const SALES_PAUSED_MESSAGE = "지금은 책 만들기를 잠시 멈췄어요. 곧 다시 열게요. 이미 결제한 책은 그대로 만들어져요.";
 
 /**
- * HOTFIX-W1 3부 4: 자동 환불 시간 AUTO_REFUND_HOURS(1~72시간, 없거나 잘못되면 기본 6시간 — 이전 24시간 고정).
- * 결제 = 첫 실패 + 이 시간 안에 못 만들면 포기 + 자동 환불, 이용권 = 환급. 생성 정책(ops/generation/policy.ts)과 고객 진행 화면이 같은 값을 읽는다
- * (여기 두는 까닭: 열람 경로가 생성 모듈을 끌어오지 않게 — readPathProtection).
- */
-/**
- * W3 P2 30분 결론(덕짱님 결정): 결제 확정(이용권은 접수) 시각부터 이 시간 안에 책 또는 자동 전액 환불(이용권은 자동 반환). 마감은 이 상수 한 곳.
- * 생성 정책(ops/generation/policy.ts — 25분이 지나면 새 시도 없이 포기)·마감 청소(deadline.ts)·고객 대기 화면 문구가 모두 이 값에서 나온다.
+ * W3 P2 30분 결론(덕짱님 결정 2026-11-14): 모든 책은 시작(결제 확인 payment_orders.paid_at · 이용권 접수 policy_at) 뒤 30분 안에 결론이 난다 —
+ * 책이 나오거나, 결제가 자동 전액 환불되거나, 이용권이 자동으로 돌아간다. 서버 생성 흐름과 고객 화면이 이 값 하나를 쓴다(브라우저에서도 읽는 모듈).
  */
 export const CONCLUSION_DEADLINE_MS = 30 * 60_000;
-/** 대기 화면 문구 바뀌는 때(5분 「평소보다 조금 더」, 15분 「기다리게 해서 죄송해요」). */
+/** 대기 화면: 시작 뒤 이만큼 지나면 「평소보다 조금 더 걸리고 있어요」. */
 export const DELAY_NOTICE_MS = 5 * 60_000;
+/** 대기 화면: 시작 뒤 이만큼 지나면 「기다리게 해서 죄송해요」 + 카카오톡 문의. */
 export const APOLOGY_NOTICE_MS = 15 * 60_000;
+
+/**
+ * HOTFIX-W1 3부 4: AUTO_REFUND_HOURS(1~72시간, 기본 6시간). W3 P2부터 고객 주문의 결론은 위 30분(CONCLUSION_DEADLINE_MS)이고,
+ * 이 값은 관리자 재생성(교체 레인)의 재시도 시간표 끝에만 쓴다.
+ */
 export const AUTO_REFUND_HOURS_DEFAULT = 6;
 export function autoRefundHours(env: Env = process.env): number {
   const v = Number(env.AUTO_REFUND_HOURS);

@@ -43,7 +43,11 @@ describe("Meta consent card (mobile visible, once, footer settings)", () => {
     expect(META_CARD_SEEN_KEY).toBe(`gyeol-meta-card-seen:${META_NOTICE_VERSION}`);
     expect(source).toContain("${SEEN_COOKIE}=${META_NOTICE_VERSION}");
     expect(source).toContain("const firstVisit = known === null && result.ready === true && !cardSeen();");
-    expect(source).toContain("if (firstVisit || known !== null) markCardSeen();");
+    // W3 P2: 생성 대기 화면이 카드를 숨기는 동안(holdMetaCard)에는 본 것으로 치지 않고, 대기 화면을 떠나 처음 보일 때 센다.
+    expect(source).toContain("if ((firstVisit && !metaCardHeld()) || known !== null) markCardSeen();");
+    expect(source).toContain("const showCard = card && !held;");
+    expect(source).toContain("useEffect(() => { if (showCard && optout) markCardSeen(); }, [showCard, optout]);");
+    expect(source).toMatch(/: showCard && !optout \? <div className=\{styles\.card\}/); expect(source).toMatch(/: showCard \? <div className=\{styles\.card\}/);
     const card = source.slice(source.indexOf('data-meta-card="notice"'));
     expect(card).toContain("onClick={dismiss}>확인</button>");
     expect(card).toContain("onClick={() => void choose(false)}>거부</button>");

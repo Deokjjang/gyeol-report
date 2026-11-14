@@ -86,21 +86,21 @@ describe("post-payment canonical route, mock transport only", () => {
     }
   });
 
-  it("distinguishes automatic recovery from manual attention honestly", async () => {
+  // W3 P2 30분 결론: 다시 쓰는 중도 같은 대기 화면(실패·재시도 말 없음), 생성이 멈춘 책은 「결과를 확인하고 있어요」 + 자동 취소 안내 + 카카오톡 문의.
+  it("distinguishes automatic recovery from the concluding state honestly", async () => {
     const waiting = await renderState("RETRYING");
-    expect(waiting).toContain("평소보다 조금 더 걸리고 있습니다");
-    expect(waiting).toContain("창을 닫아도 서재에 저장돼요"); // AM 4부 안내 문구
-    expect(visibleText(waiting)).not.toMatch(/실패|재시도|오류/u);
-    const attention = await renderState("FAILED_REQUIRES_ATTENTION");
-    expect(attention).not.toContain("결제가 정상적으로 완료되었습니다");
-    expect(attention).toContain("확인이 필요합니다");
-    expect(attention).not.toContain("준비는 계속됩니다");
+    expect(waiting).toContain("책을 쓰고 있어요");
+    expect(waiting).toContain("창을 닫아도 계속 만들고, 다 되면 내 서재에 들어가요.");
+    expect(visibleText(waiting)).not.toMatch(/실패|재시도|오류|24시간|임시본/u);
+    const concluding = await renderState("FAILED_REQUIRES_ATTENTION");
+    expect(concluding).not.toContain("결제가 정상적으로 완료되었습니다");
+    expect(concluding).toContain("결과를 확인하고 있어요");
+    expect(concluding).toContain("책을 드리지 못하면 결제는 자동으로 취소돼요.");
     // 운영 Q: 상담 창구는 카카오톡 채널 링크 하나(전화·메일 링크 없음).
-    expect(attention).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
-    expect(attention).toContain("카카오톡 채널로 문의하기");
-    expect(attention).not.toMatch(/href="(?:tel:|mailto:)|고객센터/);
-    expect(attention).toContain("추가 결제는 필요 없어요");
-    expect(attention).toContain("문의할 때 이 페이지 주소를 함께 알려 주세요.");
+    expect(concluding).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    expect(concluding).toContain("카카오톡 채널로 문의하기");
+    expect(concluding).not.toMatch(/href="(?:tel:|mailto:)|고객센터/);
+    expect(concluding).toContain("문의할 때 이 페이지 주소를 함께 알려 주세요.");
   });
 
   it("explains expiry in one line without requiring another purchase (P 추가 B)", async () => {
@@ -112,10 +112,10 @@ describe("post-payment canonical route, mock transport only", () => {
   });
 
   it("refresh reaches the existing completed report at the same canonical address", async () => {
-    expect(await renderState("GENERATING")).toContain("책을 제본하고 있습니다");
+    expect(await renderState("GENERATING")).toContain("책을 쓰고 있어요");
     const completed = await renderState("COMPLETED");
     expect(completed).toContain("리포트 공유하기");
-    expect(completed).not.toContain("책을 제본하고 있습니다");
+    expect(completed).not.toContain("책을 쓰고 있어요");
     expect(mocks.redirect).not.toHaveBeenCalled();
   });
 
@@ -184,11 +184,11 @@ describe("post-payment canonical route, mock transport only", () => {
 });
 
 describe("status refresh lifecycle", () => {
-  it.each([false, true])("polls every 10s only while visible, delayed=%s", (delayed) => {
+  it.each(["making", "concluding"] as const)("polls every 10s only while visible without a report address (%s)", (state) => {
     vi.useFakeTimers();
     const document = { visibilityState: "visible" };
     vi.stubGlobal("document", document);
-    renderToStaticMarkup(<ReportGenerationStatus delayed={delayed} />);
+    renderToStaticMarkup(<ReportGenerationStatus progress={{ state, stage: "compute", origin: "paid", attempt: 1, chapters: null, serverNow: "2026-11-14T03:00:00Z", startedAt: null }} />);
     const cleanup = mocks.effects[0]();
     vi.advanceTimersByTime(9999); expect(mocks.refresh).not.toHaveBeenCalled();
     vi.advanceTimersByTime(1); expect(mocks.refresh).toHaveBeenCalledTimes(1);
@@ -202,11 +202,15 @@ describe("status refresh lifecycle", () => {
     expect(mocks.confirm).not.toHaveBeenCalled();
   });
 
-  it("stops scheduling at attention, expiry and completion/unmount", () => {
+  // W3 P2: 결제 취소 끝·이용권 반환이면 더 묻지 않는다(확인 중·환불 중은 계속 묻는다 — generationStatusPolling).
+  it("stops scheduling at refund-done, ticket return, expiry and completion/unmount", () => {
     vi.useFakeTimers();
-    renderToStaticMarkup(<ReportGenerationStatus attention />);
-    mocks.effects[0]();
-    expect(vi.getTimerCount()).toBe(0);
+    for (const state of ["refunded", "returned"] as const) {
+      mocks.effects = [];
+      renderToStaticMarkup(<ReportGenerationStatus reportId="report_0123456789abcdef0123456789abcdef" progress={{ state, stage: "compute", origin: "paid", attempt: 1, chapters: null, serverNow: "2026-11-14T03:00:00Z", startedAt: null }} />);
+      mocks.effects[0](); mocks.effects[2]();
+      expect(vi.getTimerCount()).toBe(0);
+    }
     mocks.effects = [];
     renderToStaticMarkup(<ReportStatusView state="expired" />);
     expect(mocks.effects).toHaveLength(0);
@@ -227,10 +231,11 @@ describe("status refresh lifecycle", () => {
     cleanup?.(); expect(vi.getTimerCount()).toBe(0);
   });
 
-  it("shows the five publication stages without percentages, and a storage outage keeps retrying", () => {
-    const html = renderToStaticMarkup(<ReportStatusView state="preparing" stage={2} />);
-    for (const label of ["원국 분석", "성향 연결", "책 집필", "검수", "제본"]) expect(html).toContain(label);
-    expect(html).toContain('aria-current="step"');
+  it("shows the four real stages (그림과 1:1) without percentages, and a storage outage keeps retrying", () => {
+    const html = renderToStaticMarkup(<ReportStatusView state="waiting" waiting={{ tone: "start", stage: "writing", numbers: "5/13장 · 1분 0초 지남" }} />);
+    for (const label of ["명식 계산", "책 쓰기", "검수", "제본"]) expect(html).toContain(label);
+    expect(html).toMatch(/aria-current="step"[^>]*>책 쓰기</);
+    expect(html).toContain("5/13장 · 1분 0초 지남");
     expect(html).not.toMatch(/\d+%/u);
     mocks.effects = [];
     const retry = renderToStaticMarkup(<ReportGenerationStatus retry />);
@@ -239,12 +244,13 @@ describe("status refresh lifecycle", () => {
     expect(retry).not.toMatch(/href="tel:|고객센터/);
   });
 
-  it("keeps the book-making motion moving (also under reduced motion), visible focus and existing paper press without fake progress", () => {
+  // W3 P2: 동작 줄이기 설정이면 그림은 멈추고(줄이 다 그려진 종이 — 빈 종이 없음) 바뀌는 숫자(n/전체 장·경과)로 진행을 보인다.
+  it("stops the book-making motion under reduced motion with the line fully drawn, visible focus and existing paper press without fake progress", () => {
     const css = readFileSync("src/components/report/reportStatus.module.css", "utf8");
-    expect(css).not.toContain("prefers-reduced-motion");
-    expect(readFileSync("src/components/report/BookPublishingVisual.tsx", "utf8")).not.toContain("matchMedia");
+    expect(css).toMatch(/@media \(prefers-reduced-motion: reduce\) \{ \.writing i \{ animation: none !important; transform: scaleX\(1\); \} \}/);
+    expect(readFileSync("src/components/report/BookPublishingVisual.tsx", "utf8")).toContain("matchMedia(REDUCED_MOTION_QUERY)");
     expect(css).toContain(":focus-visible");
-    const html = renderToStaticMarkup(<ReportStatusView state="preparing" />);
+    const html = renderToStaticMarkup(<ReportStatusView state="waiting" />);
     expect(html).toContain('aria-hidden="true"');
     expect(html).not.toContain("progressbar");
     expect(html).not.toMatch(/\d+%/u);

@@ -42,7 +42,7 @@ const ACTIVE_REPORT_PAYMENT_PRICE_LABEL_KO = `결제금액 ${REPORT_PRICE_LABEL_
 const ACTIVE_REPORT_FORMAT_LABEL_KO = "자동 생성 디지털 리포트";
 const CHECKOUT_CTA_LABEL_KO = `${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`;
 const PRODUCT_SERVICE_POLICY_NOTICE_KO =
-  "무형재화/디지털 콘텐츠입니다. 결제 완료 후 즉시 생성되며, 시스템 상황에 따라 최대 24시간 이내 제공됩니다. 생성일로부터 90일간 온라인 열람 가능합니다.";
+  "무형재화/디지털 콘텐츠입니다. 결제 후 보통 몇 분 안에 제공되며, 30분 안에 만들지 못하면 요청하지 않아도 자동으로 전액 환불됩니다. 생성일로부터 90일간 온라인 열람 가능합니다.";
 const PRODUCT_REFUND_POLICY_NOTICE_KO =
   "리포트 생성 전에는 결제일로부터 7일 이내 환불 가능하며, 생성 시작 또는 결과 제공 이후에는 디지털 콘텐츠 특성상 환불이 제한될 수 있습니다. 미제공·중복결제·시스템 오류는 환불 또는 재제공합니다.";
 const REQUIRED_CHECKOUT_INPUT_MESSAGE_KO =
@@ -2716,7 +2716,7 @@ export default function NewReportPage({
                       <div className="rounded-lg border border-neutral-200 bg-neutral-50 p-3">
                         <dt className="text-neutral-500">제공기간</dt>
                         <dd className="mt-1 font-bold text-neutral-950">
-                          최대 24시간 이내 제공
+                          보통 몇 분 안에 · 30분 안에 못 만들면 자동 전액 환불
                         </dd>
                       </div>
                     </dl>

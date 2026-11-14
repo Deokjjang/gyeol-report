@@ -6,7 +6,7 @@ import { cardDir, dirFlip } from "@/lib/writer/chunked/accept";
 import { HOLD_RETRY_NOTE } from "@/lib/writer/chunked/publish";
 import { superviseQueueJob } from "@/lib/ops/generation/supervisor";
 import { judgeBuild } from "@/lib/ops/generation/policy";
-import { describeGeneration, HOLD_MESSAGE } from "@/components/report/generationProgress";
+import { describeProgress, elapsedMs, waitingCopy } from "@/components/report/generationProgress";
 import { fakeClock, memoryOpsStore } from "../../helpers/opsMocks";
 import { payloadFor } from "../../../tools/annual-major/am2-6-books";
 
@@ -60,12 +60,15 @@ describe("AM2-8 5부 감독(W3 P2): 같은 탈락을 되풀이하지 않는다 �
     const other = await seenCache("official:partial:missing:3:connection");
     expect(other).toHaveLength(1); expect(other[0]).toBeDefined();
   });
-  it("보류 사유면 고객 화면은 「다듬는 중 · 최대 24시간 · 안 되면 자동 환불」을 바로 보인다(사유 글은 내보내지 않는다)", () => {
-    const g = describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: "2026-12-02T04:00:00.000Z", last_reason: "official:partial:generation_hold:7" });
-    expect(g.state).toBe("delayed"); expect(g.hold).toBe(true);
-    expect(HOLD_MESSAGE).toMatch(/다듬/); expect(HOLD_MESSAGE).toMatch(/24시간/); expect(HOLD_MESSAGE).toMatch(/환불/);
-    expect(JSON.stringify(g)).not.toMatch(/generation_hold/);
-    expect(describeGeneration("RETRYING", { phase: "pending", failures: 1, next_at: null, last_reason: "official:partial:missing:3" }).hold).toBeUndefined();
+  // W3 P2 30분 결론: 보류 상태·「최대 24시간」 안내는 없다. 앞 시도가 실패했으면(보류 사유 무엇이든) 2차 문구, 사유 글은 화면으로 나가지 않는다.
+  it("보류 사유가 있어도 고객 화면은 사유 글 없이 2차 대기 문구(늦어도 30분 안에 결과)를 보인다", () => {
+    const facts = { origin: "paid" as const, bookStatus: "RETRYING", expired: false, startedAt: AT, paymentStatus: "paid", refundState: null, ticketState: null, failures: 1, phase: "pending" };
+    const g = describeProgress({ facts, now: Date.parse(AT) + 6 * 60_000 });
+    expect(g).toMatchObject({ state: "making", attempt: 2 });
+    expect(JSON.stringify(g)).not.toMatch(/generation_hold|reason/);
+    const copy = waitingCopy(g, elapsedMs(g));
+    expect(copy.body).toContain("처음부터 한 번 더 쓰고 있어요"); expect(copy.body).toContain("30분 안에");
+    expect(copy.body).not.toMatch(/다듬|24시간/);
   });
 });
 
