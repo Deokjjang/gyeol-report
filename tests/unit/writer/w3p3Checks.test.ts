@@ -9,13 +9,15 @@ import type { BriefPersonInput } from "@/lib/brief/buildBrief";
 import { buildFactSheet } from "@/lib/factsheet/build";
 import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { exposureHits, exposureOf, plainStrength } from "@/lib/writer/safety/exposure";
-import { infoMetrics, lifeScene, sameSentence } from "@/lib/writer/safety/info";
-import { HARD_RULES, HINT } from "@/lib/writer/safety/p6c";
+import { concreteScene, evidenceUsed, infoMetrics, lifeScene, nameTokens, plainName, sameSentence, unbackedScene, type InfoCard } from "@/lib/writer/safety/info";
+import { HARD_RULES, HINT, lintBook, type LintCtx } from "@/lib/writer/safety/p6c";
+import { productEvidence, plainTraitName, writerCard } from "@/lib/brief/cards/design";
+import { buildWriterPrompt } from "@/lib/writer/prompt";
 import { styleFlags } from "@/lib/writer/safety/style";
 import type { FinalChapter } from "@/lib/writer/safety";
 import type { LintFlag } from "@/lib/writer/safety/p6c";
-import { deleteFlagged, lostFactTokens, revertRepairRegressions, type AppliedRepair } from "@/lib/writer/repair3";
-import { buildV5Snapshot, coverNumberIssue } from "@/lib/writer/publish";
+import { deleteFlagged, lostFactTokens, repairItems, revertRepairRegressions, type AppliedRepair } from "@/lib/writer/repair3";
+import { buildV5Snapshot, coverNumberIssue, lintContext } from "@/lib/writer/publish";
 import { designCardIds, guardReview, REVIEW_DEFAULT_VERSION, REVIEW_SYSTEM, REVIEW_SYSTEM_CARD, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewPrompt } from "@/lib/writer/review";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { memorySink } from "@/lib/ops/generation/sinks";
@@ -186,7 +188,7 @@ describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
     expect(body).toContain("다듬어진 결입니다");
     // 7절: 정보량 지표는 Book 메타에 기록만(본문은 지표 계산 전후 같다).
     const info = (built.meta.safety as { metrics?: { info?: { version: string; sentences: number } } }).metrics?.info;
-    expect(info?.version).toBe("info-v1"); expect(info!.sentences).toBeGreaterThan(50);
+    expect(info?.version).toBe("info-v2"); expect(info!.sentences).toBeGreaterThan(50);
   }, 180_000);
 });
 
@@ -233,7 +235,7 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
   const dict = { traits: ["편인", "정관"], names: ["INTP"], scenes: ["저녁 산책길에 카페에 들러 노트북을 여는 날이 많다"] };
   const m = infoMetrics(chapters, { dict });
   it("같은 문장·장 사이 같은 구절·처방 계열·재진술·교훈문·노출을 센다", () => {
-    expect(m.version).toBe("info-v1"); expect(m.cards).toBe(false);
+    expect(m.version).toBe("info-v2"); expect(m.cards).toBe(false);
     expect(m.totals.sameSentence).toBe(1);
     expect(m.totals.phraseRepeat).toBeGreaterThanOrEqual(1); // 「시동이 걸리면 남들」
     expect(m.rxFamilies["적기·목록"]).toBe(4); expect(m.totals.rxRepeat).toBe(2); expect(m.totals.rxFamilies3).toBe(1);
@@ -245,11 +247,14 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
   it("근거 없는 생활 장면: 씨앗과 겹치면 근거 있음, 소품만 있는 장면은 근거 없음(첫 문장·MBTI 따로)", () => {
     expect(m.totals.scenes).toBe(2);
     expect(m.totals.sceneUnbacked).toBe(1); // 택배 알림(씨앗 없음) · 카페 노트북은 씨앗과 겹침
-    expect(lifeScene("택배 도착 알림이 오면 상자부터 열어 보는 편이죠.")).toEqual(["택배", "알림"]);
+    expect(lifeScene("택배 도착 알림이 오면 상자부터 열어 보는 편이죠.")).toEqual(["택배", "상자", "알림"]);
     expect(lifeScene("택배가 오면 상자부터 열어 보세요.")).toBeNull(); // 권유
     expect(lifeScene("주말에 쉬게 된다면 카페에 가 보는 편이에요.")).toBeNull(); // 가정
-    const first = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰지 않나요? 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
-    expect([first.totals.sceneUnbacked, first.totals.sceneFirst, first.totals.sceneMbti]).toEqual([1, 1, 1]);
+    const first = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰곤 해요. 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
+    expect([first.totals.sceneUnbacked, first.totals.sceneFirst, first.totals.sceneMbti, first.totals.sceneAsk]).toEqual([1, 1, 1, 0]);
+    // 보강: 같은 꼴의 물음은 단정이 아니라 장면 물음(sceneAsk)으로만 센다.
+    const ask = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰지 않나요? 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
+    expect([ask.totals.sceneUnbacked, ask.totals.sceneAsk]).toEqual([0, 1]);
   });
   it("근거 사용: 카드 없으면 trait·자리 이름 사전, 카드 있으면 card.evidence·card.scene만", () => {
     const s11 = m.bySection.find(x => x.at === "1.1")!; expect(s11.evidenceUsed).toBe(2); // 일지 · 편인
@@ -265,5 +270,117 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
     expect(d.hits!.filter(h => h.kinds.includes("sameSentence"))).toHaveLength(2);
     expect(sameSentence(dup, dup.replace("짧게", "짧게라도"))).toBe(true);
     expect(sameSentence("짧은 문장이에요.", "짧은 문장이에요.")).toBe(false); // 14자 미만
+  });
+});
+
+describe("W3 P3 보강 1 — 카드에 없는 구체 장면(concreteScene · scene_unbacked)", () => {
+  it("버릇·조건 꼴의 구체 장면 단정을 잡는다(장소·기기·앱·물건·사건)", () => {
+    for (const x of [
+      "새 동네로 이사 가면 단골 가게 사장님과 어느새 인사하는 사이가 되어 있어요.",
+      "단톡방에 누가 고민을 올리면 이미 통화 버튼을 누르고 있어요.",
+      "이어폰을 끼고 아무 일정 없는 두 시간이 있어야 다음 날 다시 사람을 만날 수 있어요.",
+      "가까운 사람의 일이 터지면 당신은 말보다 전화부터 겁니다.",
+      "쉬는 날에도 냉장고 정리로 오후를 보내는 편이에요.",
+    ]) expect(concreteScene(x), x).toMatchObject({ ask: false });
+    expect(concreteScene("단톡방에 누가 고민을 올리면 이미 통화 버튼을 누르고 있어요.")!.nouns).toEqual(["단톡방", "통화 버튼"]);
+  });
+  it("권유·물음·드러낸 가정·비유·관용구·구체 낱말 없는 성향 문장·꼴 없는 일반 문장은 단정으로 잡지 않는다", () => {
+    for (const x of [
+      "퇴근길에는 이어폰을 빼고 십 분만 걸어 보세요.", // 권유
+      "한 주에 한 번은 약속 없는 저녁을 달력에 비워 두면 덜 지쳐요.", // 권유의 결과
+      "연인이 생긴다면 주말마다 카페 데이트 코스를 짜는 편이에요.", // 드러낸 가정
+      "예를 들어 맛집에서 음식 사진을 찍는 장면을 볼게요.", // 예로 세운 장면
+      "당신은 빗속에서도 꺼지지 않는 캠핑 랜턴 같은 사람입니다.", // 비유
+      "시동이 걸리면 남들 한 달 치 일을 일주일에 해냅니다.", // 관용구
+      "새로운 사람을 만나면 먼저 말을 거는 편이에요.", // 구체 낱말 없음
+      "책상 위에서만 오래 도는 일은 기운이 빨리 빠집니다.", // 꼴 없는 일반 문장
+      "데이트를 주도하는 쪽이 됩니다.", // 흔한 배경 낱말 + 성향 꼴
+    ]) expect(lifeScene(x), x).toBeNull();
+    expect(concreteScene("택배 알림이 오면 상자부터 여는 편이죠?")).toMatchObject({ ask: true }); // 물음은 ask(지표만)
+  });
+  const card = (section: number, scene: string | null, text: string[] = []): InfoCard => ({ chapter: 1, section, evidence: [{ name: "편재", where: ["연간"] }], scene: scene ? { text: scene } : null, text });
+  it("그 절 카드 장면을 고쳐 쓴 문장·카드 글(사실·뜻)·입력 직업 장면에 낱말이 있는 문장은 근거 있음", () => {
+    const s = "새 동네로 이사 가면 단골 가게 사장님과 어느새 인사하는 사이가 되어 있어요.";
+    expect(unbackedScene(s, card(0, null))).toEqual(["동네", "이사", "단골", "가게"]);
+    expect(unbackedScene(s, card(0, "새 동네로 이사 오면 단골 미용실·세탁소 주인과 금세 친해진다."))).toBeNull(); // 낱말 절반 이상이 카드 장면에
+    expect(unbackedScene("쉬는 날에도 냉장고 정리로 오후를 보내는 편이에요.", card(0, null, ["주말에 냉장고 정리하기"]))).toBeNull();
+    expect(unbackedScene("회의실에 먼저 들어가 자리를 정리하는 편이에요.", card(0, null), ["회의실 세팅"])).toBeNull();
+    expect(unbackedScene("택배 알림이 오면 상자부터 여는 편이죠?", card(0, null))).toBeNull(); // 물음은 lint가 잡지 않는다
+  });
+  const ctx: LintCtx = {
+    facts: { birthTimeKnown: true, mbti: "ISTP", relationship: "single", children: "unknown", job: "employee" }, jobDetail: "", schoolStage: "none", coreImage: "봄 숲의 새 철길",
+    nicknames: [], corpus: new Set(), prior: [], jobProps: [], noJobChapters: new Set(), parentingChapters: new Set(), monthChapters: new Set(), compat: false, mbtiPlain: {},
+    sceneCards: [card(0, null, ["사람이 모이는 자리를 먼저 알아본다"]), card(1, "단톡방 대화는 읽기만 하다가 누가 차 시동이 안 걸린다고 올리면 바로 전화를 겁니다.")], sceneProps: [],
+  };
+  const scenes = [ch(1, [["연간의 편재는 사람이 모이는 자리를 먼저 알아봐요. 새 동네로 이사 가면 단골 가게 사장님과 어느새 인사하는 사이가 되어 있어요. 사람이 많은 곳에서 먼저 말을 거는 편이죠?"], ["단톡방에 누가 차 시동이 안 걸린다고 올리면 당신은 이미 전화를 걸고 있어요."]])];
+  it("4종 카드 책: 카드에 없는 구체 장면 단정만 SOFT scene_unbacked(물음·카드 장면 문장은 아님), 수리 힌트는 지우지 말고 근거에 묶인 성향 물음으로", () => {
+    const f = lintBook(scenes, ctx).filter(x => x.rule === "scene_unbacked");
+    expect(f.map(x => `${x.chapter}.${x.section}.${x.paragraph}:${x.detail}`)).toEqual(["1.0.0:동네·이사·단골·가게"]);
+    expect(HARD_RULES.has("scene_unbacked")).toBe(false);
+    expect(HINT.scene_unbacked).toMatch(/지우지 말고/); expect(HINT.scene_unbacked).toMatch(/성향 물음/);
+    expect(lintBook(scenes, { ...ctx, sceneCards: undefined }).some(x => x.rule === "scene_unbacked")).toBe(false); // 카드 없는 책(세운·대운·옛 책)은 걸지 않는다
+  });
+  it("수리 항목: 문체 깃발 가운데 scene_unbacked를 먼저 넣는다(40칸 상한 앞자리), 장면 숫자를 빼는 수리는 되돌리지 않는다", () => {
+    const scene = lintBook(scenes, ctx).find(x => x.rule === "scene_unbacked")!;
+    const style: LintFlag = { chapter: 1, section: 1, paragraph: 0, rule: "start_repeat", sentence: "단톡방에 누가 차 시동이 안 걸린다고 올리면 당신은 이미 전화를 걸고 있어요.", hint: "같은 시작" };
+    const items = repairItems({ chapters: scenes, flags: [style, scene], issues: [], numbered: [] });
+    expect(items[0].problems[0]).toContain(HINT.scene_unbacked.slice(0, 20));
+    const before = "택배 3개가 한꺼번에 오면 상자부터 다 뜯어 보는 편이에요.", after = "새 물건이 오면 바로 열어 보고 싶은 편이죠?";
+    const cs = [ch(1, [[`앞 문장이에요. ${after}`]])], a: AppliedRepair = { id: 1, kind: "sentence", at: "1.0.0", before, after, source: ["lint"] };
+    const flag: LintFlag = { chapter: 1, section: 0, paragraph: 0, rule: "scene_unbacked", sentence: before, hint: "" };
+    expect(revertRepairRegressions(cs, [a], { flags: [flag], names: [] }).reverted).toEqual([]);
+    expect(revertRepairRegressions(cs, [a], { flags: [], names: [] }).reverted.map(x => x.rule)).toEqual(["repair_fact_lost:num:3개"]);
+  });
+  it("발행 검사 문맥: 4종 카드 책만 절 카드를 싣는다(세운은 없음)", () => {
+    const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
+    const P: BriefPersonInput = { name: "가람", gender: "MALE", birthDate: "1993-03-16", birthTime: "10:30", birthTimeUnknown: false, mbtiType: "ENFJ", context: { relationshipStatus: "single", jobStatus: "employee", detailJob: "회계 담당" } };
+    const full = buildBrief({ product: "saju_mbti_full", baseDate: "2026-10-27", person: P }, k), annual = buildBrief({ product: "annual_fortune", baseDate: "2026-10-27", selectedYear: 2027, person: P }, k);
+    const c1 = lintContext(full, k, buildWriterPrompt(full, { knowledge: k }).chapters, []), c2 = lintContext(annual, k, buildWriterPrompt(annual, { knowledge: k }).chapters, []);
+    expect(c1.sceneCards?.length).toBeGreaterThan(30); expect(c1.sceneProps).toContain("회계 담당");
+    expect(c2.sceneCards).toBeUndefined();
+  });
+});
+
+describe("W3 P3 보강 2·3 — 카드 근거 이름 정리·지표 대조", () => {
+  it("상품 근거 이름: 한자·괄호 라벨·깨진 조사 없이, 자리표 머리는 사실 줄의 이름으로, 이름이 없으면 맥락 근거", () => {
+    expect(productEvidence("charm", ["장성살(將星殺): 자신감 있는 태도", "편재(偏財): 넓은 인맥"], undefined)).toMatchObject({ name: "장성살" });
+    expect(productEvidence("dayRelations", ["태어난 날 땅 글자의 卯申원진(태어난 해과): WONJIN"], undefined)).toMatchObject({ name: "묘신 원진", where: "일지" });
+    expect(productEvidence("talkRhythm", ["관계 상태: 솔로", "편재(偏財): 바쁠 땐 뜸하다가 한 번에 몰아 연락"], undefined)).toMatchObject({ name: "편재" });
+    expect(productEvidence("meetState", ["관계 상태: 솔로", "상황 씨앗: 와인 클래스 옆자리"], undefined)).toMatchObject({ name: "관계 상태", kind: "context" });
+    expect(productEvidence("docs", ["2030년 편관(偏官)(관성의 해: 평가·문서가 앞에 오는 경향)"], undefined)).toMatchObject({ name: "2030년 편관", where: "" });
+    expect(productEvidence("loveTiming", ["2028년 무신 편재(偏財): 배우자 별 쪽 기운이 들어오는 해"], undefined)).toMatchObject({ name: "2028년 무신 편재" });
+    expect(productEvidence("loveEngine", ["배우자 자리(태어난 날의 땅 글자)에는 쇠 기운의 글자가 앉아 있습니다. 그 속 기운은 편관이고, 결단하는 힘을 뜻합니다."], undefined)).toMatchObject({ name: "편관", where: "일지" });
+    expect(productEvidence("childStar", ["자녀 별로 보는 기운(편관·정관)이 태어난 달·태어난 날 자리에 두 번 보입니다."], undefined)).toMatchObject({ name: "편관·정관" });
+    expect(productEvidence("money", ["값을 받는 힘(재성) 강: 고정 수입과 기회 수입을 함께 굴리는 쪽"], undefined).name).not.toMatch(/ 강$/); // 판정 등급어는 뜻 말로
+    expect(plainTraitName("원진살(怨嗔殺) 묘신 원진")).toBe("묘신 원진"); expect(plainTraitName("해(害) 신해해")).toBe("신해해"); expect(plainTraitName("삼합 인오술 화국")).toBe("삼합 인오술 화국");
+  });
+  it("작가 카드: 맥락 근거는 이름을 보내지 않는다(사실 줄·쓰는 법만)", () => {
+    const w = writerCard({ q: "q", evidence: [{ name: "관계 상태", where: "", facts: ["관계 상태: 솔로"], kind: "context" }, { name: "편재", where: "", facts: ["편재: 넓은 인맥"] }], link: null, scene: null, punch: null, rx: null }, new Map());
+    expect(w.evidence).toEqual([{ facts: ["관계 상태: 솔로"] }, { name: "편재", facts: ["편재: 넓은 인맥"] }]);
+  });
+  it("가상 인물 4종 브리프: 카드 근거 이름에 한자·괄호·영문 코드·「해과」가 없고, 일지 관계 사실 줄도 한글 간지·맞는 조사", () => {
+    const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
+    const P: BriefPersonInput = { name: "가람", gender: "MALE", birthDate: "1993-03-16", birthTime: "10:30", birthTimeUnknown: false, mbtiType: "ENFJ", context: { relationshipStatus: "single", jobStatus: "employee", detailJob: "" } };
+    for (const product of ["saju_mbti_full", "career_money_study", "love_marriage_child"] as const) {
+      const b = buildBrief({ product, baseDate: "2026-10-27", person: P }, k);
+      for (const e of b.chapters.flatMap(c => (c.sections ?? []).flatMap(s => s.card?.evidence ?? []))) expect(e.name, `${product} ${e.name}`).not.toMatch(/[一-鿿()]|[A-Z]{5,}|해과/);
+      if (product === "love_marriage_child") {
+        const rel = b.chapters.flatMap(c => (c.sections ?? []).flatMap(s => s.materials)).flatMap(m => (m.kind === "evidence" && m.key === "dayRelations" ? m.facts : []));
+        expect(rel.join(" ")).toMatch(/묘신 원진\(태어난 달과\)/); expect(rel.join(" ")).not.toMatch(/WONJIN|[卯申]|해과/);
+      }
+    }
+  });
+  it("지표 근거 대조: 한자·괄호 라벨을 뗀 이름, 핵심 낱말(원진·묘신, 장성), 사실 낱말 — 맥락 근거는 이름표가 아니라 사실 낱말, 넓은 자리(두 사람)는 세지 않는다", () => {
+    expect(plainName("태어난 날 땅 글자의 卯申원진(태어난 해과)")).toBe("태어난 날 땅 글자의 묘신 원진");
+    expect(nameTokens("원진살 묘신 원진")).toEqual(expect.arrayContaining(["원진살", "원진", "묘신"]));
+    expect(nameTokens("최지우님의 신해해")).toEqual(["신해해"]);
+    expect(nameTokens("토 많음")).toEqual(expect.arrayContaining(["흙 기운", "토 기운"]));
+    expect(evidenceUsed("연지와 일지 사이의 원진이 엇박자를 만들어요.", { name: "원진살 묘신 원진" })).toBe(true);
+    expect(evidenceUsed("당당한 장성의 기운이 첫인상을 만들어요.", { name: "장성살(將星殺)" })).toBe(true);
+    expect(evidenceUsed("흙의 기운이 가장 셉니다.", { name: "토 많음", where: ["원국 전체"] })).toBe(true);
+    expect(evidenceUsed("넓은 인맥을 가진 편재의 쪽이에요.", { name: "호감 표현", facts: ["호감 표현: 편재 쪽은 마음이 가면 통 크게 표현"] })).toBe(true);
+    expect(evidenceUsed("지금은 솔로라서 새 만남이 열려 있어요.", { name: "관계 상태", facts: ["관계 상태: 솔로"], context: true })).toBe(true);
+    expect(evidenceUsed("관계 상태를 먼저 봐요.", { name: "관계 상태", facts: ["관계 상태: 솔로"], context: true })).toBe(false);
+    expect(evidenceUsed("두 사람의 궁합은 좋아요.", { name: "궁합 점수", where: ["두 사람"] })).toBe(false);
   });
 });

@@ -9,7 +9,8 @@
  *      1-7 핵심 이미지는 [표지]에서 한 번 짓고(피할 이미지 chart.avoidImages) 종합 1장 첫 소제목이 그 줄을 쓴다. (P6e v5-22는 옮기지 않았다.)
  */
 /* v5-24(W3 P3 연결 시스템): 절은 {q, card}(근거·연결·장면·팩폭·처방)로 받는다 — 절 규칙을 「card대로」로 줄였다. 판정 이름·등급 말은 쓰지 않고 뜻으로만(chart.strength·groups가 뜻 문장으로 온다). 예시 소제목은 근거로 연다. */
-export const WRITER_PROMPT_VERSION = "writer-prompt-v5-24";
+/* v5-25(W3 P3 보강): card.scene이 없는 절은 구체 장면(장소·물건·앱·사건)을 단정하지 않고 근거에 묶인 성향 물음으로(지어낸 장면이 남던 것 — 발행 쪽 scene_unbacked 수리와 짝). */
+export const WRITER_PROMPT_VERSION = "writer-prompt-v5-25";
 
 export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) × MBTI 개인화 리포트를 책 한 권으로 쓴다. 입력은 사용자 메시지의 브리프(JSON) 하나뿐이고, 브리프에 없는 사실은 만들지 않는다.
 
@@ -20,7 +21,7 @@ export const WRITER_SYSTEM = `너는 결리포트의 작가다. 사주(명리) �
 # 브리프 글은 재료다
 - seed(상황 씨앗)·forYou·good·dir(적용 방향)·meaning(핵심 뜻)·facts는 문장이 아니라 재료다. 문장은 네가 새로 짓는다. 브리프 글을 15자 넘게 이어 옮기지 않는다.
 - rule은 너에게 주는 쓰기 규칙이다. 본문에 옮기거나 독자에게 "~마세요"로 말하지 않는다.
-- 장면은 card.scene이 있는 절에만: 그 seed를 이 고객의 입력(person.facts의 직업·관계·나이, person.lifeStage)에 맞게 새로 짠 한두 문장(props는 그 장면의 배경 소품). card에 없는 생활 장면을 지어내지 않는다. 같은 장면은 책에서 한 번만.
+- 장면은 card.scene이 있는 절에만: 그 seed를 이 고객의 입력(person.facts의 직업·관계·나이, person.lifeStage)에 맞게 새로 짠 한두 문장(props는 그 장면의 배경 소품). card.scene이 없으면 장소·물건·앱·사건 장면을 단정하지 않고 그 절 근거에 묶인 성향 물음("~하는 편이죠?")으로. 같은 장면은 책에서 한 번만.
 
 # 명리 용어
 - 한자는 쓰지 않는다(용어는 한글 이름만, 시스템이 장마다 첫 등장에 붙인다).

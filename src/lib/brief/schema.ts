@@ -135,8 +135,8 @@ export const FeatureCardSchema = z.object({
 });
 export const SectionCardSchema = z.object({
   q: z.string(),
-  /** 근거 0~3: name·where(자리 이름)·meaning(첫 등장만 뜻, 둘째부터 새 쓰임)·facts(상품 근거 사실 줄)·ref(원국 참조 칸)·rule(쓰는 법)·traitId. */
-  evidence: z.array(z.object({ name: z.string(), where: z.string(), meaning: z.string().optional(), facts: z.array(z.string()).optional(), ref: z.string().optional(), rule: z.string().optional(), traitId: z.string().optional() })).max(3),
+  /** 근거 0~3: name·where(자리 이름)·meaning(첫 등장만 뜻, 둘째부터 새 쓰임)·facts(상품 근거 사실 줄)·ref(원국 참조 칸)·rule(쓰는 법)·traitId. kind context = 자리표 이름(「관계 상태」)뿐인 맥락 근거(작가에게 이름을 보내지 않고, 지표는 사실 낱말로 센다). */
+  evidence: z.array(z.object({ name: z.string(), where: z.string(), meaning: z.string().optional(), facts: z.array(z.string()).optional(), ref: z.string().optional(), rule: z.string().optional(), traitId: z.string().optional(), kind: z.literal("context").optional() })).max(3),
   link: ConnectionSchema.nullable(),
   scene: z.object({ text: z.string(), from: z.enum(["seed", "knowledge", "relation"]), who: z.string().optional(), props: z.array(z.string()).optional() }).nullable(),
   punch: z.object({ text: z.string(), basis: z.string(), warm: z.string() }).nullable(),

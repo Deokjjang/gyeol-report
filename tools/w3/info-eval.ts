@@ -5,13 +5,17 @@
  *   pnpm exec tsx tools/w3/info-eval.ts --known      # KNOWN3 71개(tools/final3/known.ts)가 final2 원고 4권에서 어느 지표에 걸리는지
  *   pnpm exec tsx tools/w3/info-eval.ts --quotes     # research-w2 결함 인용(노출·장면 꼴)을 지표가 잡는지
  * 카드 없는 옛 책은 사전(용어표·스냅샷 glossary·meta.chapters evidence·지식 DB 이름)과 meta.scenes(씨앗·DB 장면)로 센다. md 원고는 장면 근거가 없어 「근거 없는 장면」이 후보 수다.
+ * 카드로 쓴 책(meta.safety.metrics.info.cards — 실호출 도구가 저장한 감독 스냅샷 `<폴더>/snapshot.json`도)은 스냅샷 입력으로 브리프를 다시 만들어 절 카드로 센다(이전 책 원장 없이 — 카드 열에 표시). --no-cards면 카드 없이 사전으로.
+ * 폴더는 하위 폴더까지 읽고, 한 폴더에 snapshot.json이 있으면 같은 책의 book.md·meta.json·log.json은 읽지 않는다.
  */
 import { readdirSync, readFileSync, statSync, writeFileSync } from "node:fs";
 import { basename, join } from "node:path";
-import { loadKnowledge } from "../../src/lib/brief";
+import { buildBrief, loadKnowledge } from "../../src/lib/brief";
 import terms from "../../src/lib/brief/data/terms.json";
+import { payloadToBriefInput } from "../../src/lib/writer/book";
+import { infoCardsOf } from "../../src/lib/writer/design";
 import { exposureHits } from "../../src/lib/writer/safety/exposure";
-import { infoMetrics, lifeScene, type InfoChapter, type InfoDict, type InfoKind, type InfoMetric } from "../../src/lib/writer/safety/info";
+import { concreteScene, infoDictOf, infoMetrics, type InfoCard, type InfoChapter, type InfoDict, type InfoKind, type InfoMetric } from "../../src/lib/writer/safety/info";
 import { splitSentences } from "../../src/lib/writer/safety/patterns";
 import { KNOWN3, type Cat } from "../final3/known";
 
@@ -20,8 +24,17 @@ const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
 const noHan = (s: string) => s.replace(/\s*\([^)]*\)/g, "").replace(/[一-鿿]+/g, "").trim();
 const TERM_NAMES = (terms as { terms: { term: string }[] }).terms.map(t => t.term).filter(t => t.length >= 2);
 
-type Book = { id: string; product: string; chapters: InfoChapter[]; dict: InfoDict; backing: boolean };
-type Snap = { reportId?: string; productKey?: string; draft: { productType?: string; glossary?: { name: string }[]; chapters: { n: number; sections: { heading: string; paragraphs: string[] }[]; keys?: string[] }[] }; evidencePacket?: { input?: Record<string, { name?: string; mbtiType?: string } | undefined>; meta?: { scenes?: string[]; explained?: string[]; chapters?: { evidence?: string[] }[]; ledger?: { evidence?: string[] } } } };
+type Book = { id: string; product: string; chapters: InfoChapter[]; dict: InfoDict; backing: boolean; cards?: InfoCard[] };
+type Snap = { reportId?: string; productKey?: string; createdAtIso?: string; draft: { productType?: string; glossary?: { name: string }[]; chapters: { n: number; sections: { heading: string; paragraphs: string[] }[]; keys?: string[] }[] };
+  evidencePacket?: { input?: Record<string, { name?: string; mbtiType?: string; detailJob?: string } | undefined>; meta?: { scenes?: string[]; explained?: string[]; chapters?: { evidence?: string[] }[]; ledger?: { evidence?: string[] }; safety?: { metrics?: { info?: { cards?: boolean } } } } } };
+const NO_CARDS = argv.includes("--no-cards");
+const kstDate = (iso: string) => new Date(Date.parse(iso) + 9 * 3_600_000).toISOString().slice(0, 10);
+/** 카드로 쓴 책: 스냅샷 입력(정규화된 주문 입력)으로 브리프를 다시 만들어 절 카드·직업 장면을 얻는다(이전 책 원장은 없다). 실패하면 null(사전으로 센다). */
+function cardsOf(snap: Snap): { cards: InfoCard[]; props: readonly string[] } | null {
+  const input = snap.evidencePacket?.input, at = snap.createdAtIso;
+  if (NO_CARDS || !snap.evidencePacket?.meta?.safety?.metrics?.info?.cards || !input || !at) return null;
+  try { const brief = buildBrief(payloadToBriefInput(input as never, kstDate(at), at) as never, k); const cards = infoCardsOf(brief); return cards.length ? { cards, props: infoDictOf(brief).props ?? [] } : null; } catch { return null; }
+}
 
 function featureNames(ids: readonly string[]): string[] {
   const out: string[] = [];
@@ -34,9 +47,11 @@ function fromSnapshot(file: string, raw: unknown): Book {
   const traits = [...(snap.draft.glossary ?? []).map(g => noHan(g.name)), ...(meta.chapters ?? []).flatMap(c => (c.evidence ?? []).filter(e => !/^MBTI/.test(e)).map(e => noHan(e.replace(/×MBTI$/, "")))),
     ...featureNames([...(meta.explained ?? []), ...(meta.ledger?.evidence ?? [])]), ...TERM_NAMES];
   const id = snap.reportId ? snap.reportId.slice(-4) : basename(file).replace(/\.(snapshot\.)?json$/, "");
-  return { id, product: snap.draft.productType ?? snap.productKey ?? "?", backing: Boolean(meta.scenes?.length),
-    chapters: snap.draft.chapters.map(c => ({ n: c.n, sections: c.sections, ...(c.keys ? { keys: c.keys } : {}) })),
-    dict: { traits: [...new Set(traits.filter(t => t.length >= 2))], names: people.flatMap(p => [p.name, p.name?.slice(1), p.mbtiType]).filter((x): x is string => Boolean(x && x.length >= 2)), scenes: (meta.scenes ?? []).filter(x => x.length >= 15) } };
+  const cc = cardsOf(snap), job = input.userContext?.detailJob;
+  return { id, product: snap.draft.productType ?? snap.productKey ?? "?", backing: Boolean(meta.scenes?.length || cc),
+    chapters: snap.draft.chapters.map(c => ({ n: c.n, sections: c.sections, ...(c.keys ? { keys: c.keys } : {}) })), ...(cc ? { cards: cc.cards } : {}),
+    dict: { traits: [...new Set(traits.filter(t => t.length >= 2))], names: people.flatMap(p => [p.name, p.name?.slice(1), p.mbtiType]).filter((x): x is string => Boolean(x && x.length >= 2)), scenes: (meta.scenes ?? []).filter(x => x.length >= 15),
+      props: cc ? cc.props : job && job.length >= 2 ? [job] : [] } };
 }
 /** md 원고(「## 1. 제목」·「### 소제목」·빈 줄 문단). 머리 「# 상품 · 이름(…)」의 이름은 비교에서 지울 이름으로만 쓴다. */
 function fromMarkdown(file: string, text: string): Book {
@@ -54,20 +69,24 @@ function fromMarkdown(file: string, text: string): Book {
 }
 function load(path: string): Book[] {
   if (statSync(path).isDirectory()) {
-    // 같은 책의 스냅샷과 렌더 원고(X.snapshot.json · X.final.md)가 함께 있으면 스냅샷만(메타 장면이 있다).
-    const files = readdirSync(path), snaps = new Set(files.filter(f => f.endsWith(".snapshot.json")).map(f => f.replace(/\.snapshot\.json$/, "")));
-    return files.filter(f => /(\.snapshot\.json|^report_.*\.json|\.md)$/.test(f) && !/metrics\.json$/.test(f) && !(f.endsWith(".final.md") && snaps.has(f.replace(/\.final\.md$/, "")))).sort().flatMap(f => load(join(path, f)));
+    // 같은 책의 스냅샷과 렌더 원고(X.snapshot.json · X.final.md)가 함께 있으면 스냅샷만(메타 장면이 있다). 감독 스냅샷(snapshot.json)이 있는 폴더는 그것만(book.md 빼고).
+    const files = readdirSync(path), snaps = new Set(files.filter(f => f.endsWith(".snapshot.json")).map(f => f.replace(/\.snapshot\.json$/, ""))), sup = files.includes("snapshot.json");
+    const mine = files.filter(f => (sup ? f === "snapshot.json" : /(\.snapshot\.json|^report_.*\.json|\.md)$/.test(f) && !/metrics\.json$/.test(f) && !(f.endsWith(".final.md") && snaps.has(f.replace(/\.final\.md$/, "")))));
+    const dirs = files.filter(f => !f.startsWith(".") && f !== "node_modules" && statSync(join(path, f)).isDirectory());
+    return [...mine.sort().flatMap(f => load(join(path, f))), ...dirs.sort().flatMap(d => load(join(path, d)))];
   }
   const text = readFileSync(path, "utf8");
   if (path.endsWith(".md")) return /^## \d+\./m.test(text) ? [fromMarkdown(path, text)] : [];
-  try { const raw = JSON.parse(text); const s = (raw.snapshot ?? raw) as Snap; return s?.draft?.chapters ? [fromSnapshot(path, raw)] : []; } catch { return []; }
+  try { const raw = JSON.parse(text); const s = (raw.snapshot ?? raw) as Snap; const b = s?.draft?.chapters ? fromSnapshot(path, raw) : null;
+    // 감독 스냅샷(…/<이름>/snapshot.json)은 책 id = report id 끝 4자(없으면 폴더 이름).
+    return b ? [basename(path) === "snapshot.json" && !s.reportId ? { ...b, id: basename(join(path, "..")) } : b] : []; } catch { return []; }
 }
 
 const COLS: [string, (m: InfoMetric, b: Book) => string | number][] = [
   ["책", (_m, b) => b.id], ["상품", (_m, b) => b.product.replace(/^saju_mbti_/, "").replace(/_.*$/, "")], ["문장", m => m.sentences], ["절", m => m.sections],
   ["근거/절", m => (m.totals.evidenceUsed / Math.max(1, m.sections)).toFixed(1)], ["근거0절", m => m.totals.evidenceZero], ["재진술", m => m.totals.restatements], ["교훈문", m => m.totals.lessons],
   ["같은문장", m => m.totals.sameSentence], ["재탕", m => m.totals.rehash], ["같은구절", m => m.totals.phraseRepeat], ["처방3+", m => m.totals.rxRepeat], ["3장+계열", m => m.totals.rxFamilies3], ["한줄", m => m.rxFamilies["한 줄 말하기"] ?? 0],
-  ["장면", m => m.totals.scenes], ["근거없는장면", (m, b) => `${m.totals.sceneUnbacked}${b.backing ? "" : "*"}`], ["첫문장", m => m.totals.sceneFirst], ["MBTI장면", m => m.totals.sceneMbti],
+  ["장면", m => m.totals.scenes], ["근거없는장면", (m, b) => `${m.totals.sceneUnbacked}${b.backing ? "" : "*"}`], ["첫문장", m => m.totals.sceneFirst], ["MBTI장면", m => m.totals.sceneMbti], ["장면물음", m => m.totals.sceneAsk ?? 0], ["카드", (_m, b) => (b.cards?.length ? "Y" : "-")],
   ["노출 등급/규칙", m => `${m.totals.exposureGrade}/${m.totals.exposureRule}`], ["과용꼬리", m => m.totals.overusedTails],
 ];
 const table = (rows: (string | number)[][]) => [`| ${COLS.map(c => c[0]).join(" | ")} |`, `|${COLS.map(() => "---").join("|")}|`, ...rows.map(r => `| ${r.join(" | ")} |`)].join("\n");
@@ -75,10 +94,10 @@ const table = (rows: (string | number)[][]) => [`| ${COLS.map(c => c[0]).join(" 
 function evalBooks(paths: readonly string[]) {
   const books = paths.flatMap(load), out: { id: string; product: string; metric: InfoMetric }[] = [];
   const rows: (string | number)[][] = [];
-  for (const b of books) { const m = infoMetrics(b.chapters, { dict: b.dict }); out.push({ id: b.id, product: b.product, metric: { ...m, at: { sameSentence: [], rehash: [], sceneUnbacked: [], exposure: [] } } }); rows.push(COLS.map(c => c[1](m, b))); }
+  for (const b of books) { const m = infoMetrics(b.chapters, { dict: b.dict, ...(b.cards?.length ? { cards: b.cards } : {}) }); out.push({ id: b.id, product: b.product, metric: { ...m, at: { sameSentence: [], rehash: [], sceneUnbacked: [], exposure: [] } } }); rows.push(COLS.map(c => c[1](m, b))); }
   console.log(table(rows));
   const T = (f: (m: InfoMetric) => number) => out.reduce((a, x) => a + f(x.metric), 0);
-  console.log(`\n합계 ${out.length}권: 같은문장 ${T(m => m.totals.sameSentence)}(책 ${out.filter(x => x.metric.totals.sameSentence).length}) · 재탕 ${T(m => m.totals.rehash)} · 같은 구절 ${T(m => m.totals.phraseRepeat)} · 3장+ 처방 계열이 있는 책 ${out.filter(x => x.metric.totals.rxFamilies3).length}/${out.length}(계열 ${T(m => m.totals.rxFamilies3)}) · 처방 3번째+ ${T(m => m.totals.rxRepeat)} · 장 끝 교훈문 ${T(m => m.totals.lessons)}(책 ${out.filter(x => x.metric.totals.lessons).length}) · 재진술 ${T(m => m.totals.restatements)} · 과용 꼬리 틀 ${T(m => m.totals.overusedTails)} · 생활 장면 ${T(m => m.totals.scenes)} 중 근거 없음 ${T(m => m.totals.sceneUnbacked)}(첫 문장 ${T(m => m.totals.sceneFirst)} · MBTI ${T(m => m.totals.sceneMbti)}) · 노출 등급 ${T(m => m.totals.exposureGrade)} · 규칙 ${T(m => m.totals.exposureRule)}(책 ${out.filter(x => x.metric.totals.exposure).length})`);
+  console.log(`\n합계 ${out.length}권: 같은문장 ${T(m => m.totals.sameSentence)}(책 ${out.filter(x => x.metric.totals.sameSentence).length}) · 재탕 ${T(m => m.totals.rehash)} · 같은 구절 ${T(m => m.totals.phraseRepeat)} · 3장+ 처방 계열이 있는 책 ${out.filter(x => x.metric.totals.rxFamilies3).length}/${out.length}(계열 ${T(m => m.totals.rxFamilies3)}) · 처방 3번째+ ${T(m => m.totals.rxRepeat)} · 장 끝 교훈문 ${T(m => m.totals.lessons)}(책 ${out.filter(x => x.metric.totals.lessons).length}) · 재진술 ${T(m => m.totals.restatements)} · 과용 꼬리 틀 ${T(m => m.totals.overusedTails)} · 생활 장면 ${T(m => m.totals.scenes)} 중 근거 없음 ${T(m => m.totals.sceneUnbacked)}(첫 문장 ${T(m => m.totals.sceneFirst)} · MBTI ${T(m => m.totals.sceneMbti)}) · 근거 없는 장면 물음 ${T(m => m.totals.sceneAsk ?? 0)} · 카드 책 ${books.filter(b => b.cards?.length).length} · 노출 등급 ${T(m => m.totals.exposureGrade)} · 규칙 ${T(m => m.totals.exposureRule)}(책 ${out.filter(x => x.metric.totals.exposure).length})`);
   if (books.some(b => !b.backing)) console.log("* 장면 근거(meta.scenes)가 없는 원고 — 근거 없는 장면은 후보 수(근거 대조 안 함).");
   const json = arg("--json"); if (json) writeFileSync(json, JSON.stringify(out, null, 1));
 }
@@ -115,7 +134,8 @@ const RW2_QUOTES: readonly [string, string, "exposure" | "scene"][] = [
 ];
 function evalQuotes() {
   console.log("| rw2 ID | 꼴 | 잡음 |\n|---|---|---|");
-  for (const [id, q, kind] of RW2_QUOTES) console.log(`| ${id} | ${kind} | ${kind === "exposure" ? exposureHits(q).map(h => `${h.kind}:${h.id}`).join(",") || "못 잡음" : lifeScene(q) ? `장면(${lifeScene(q)!.join("·")})` : "못 잡음"} |`);
+  const scene = (q: string) => { const h = concreteScene(q); return h ? `${h.ask ? "장면 물음" : "장면 단정"}(${h.nouns.join("·")})` : "못 잡음"; };
+  for (const [id, q, kind] of RW2_QUOTES) console.log(`| ${id} | ${kind} | ${kind === "exposure" ? exposureHits(q).map(h => `${h.kind}:${h.id}`).join(",") || "못 잡음" : scene(q)} |`);
 }
 
 if (argv.includes("--known")) evalKnown();

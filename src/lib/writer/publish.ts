@@ -166,6 +166,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...p6eContext(brief, k),
     ...final2Context(brief),
     ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...new Set([...(job?.props ?? []), ...stages, ...jobWordsOf(brief.person.facts.job.detail)])] }) } : {}),
+    // W3 P3 보강: 4종 카드 책은 카드에 없는 구체 장면 단정을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면.
+    ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [] } : {}),
   };
 }
 

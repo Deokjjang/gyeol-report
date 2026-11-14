@@ -81,7 +81,9 @@ export function repairItems(a: { chapters: readonly FinalChapter[]; flags: reado
     const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text) ?? x.text;
     add(`s:${x.chapter}.${x.section}.${x.paragraph}:${s}`, { kind: "sentence", chapter: x.chapter, section: x.section, paragraph: x.paragraph, original: s }, problem, "review");
   }
-  addFlags(flagsOf(false));
+  // W3 P3 보강: 문체 깃발 가운데 카드에 없는 구체 장면(scene_unbacked)을 먼저(상품 규칙 — 40칸이 다른 문체 깃발로 차기 전에).
+  const soft = flagsOf(false);
+  addFlags([...soft.filter(f => f.rule === "scene_unbacked"), ...soft.filter(f => f.rule !== "scene_unbacked")]);
   return out;
 }
 
@@ -240,6 +242,8 @@ const REPAIR_FACT_EXEMPT: Readonly<Record<string, readonly FactKind[] | "all">> 
   fact_relation: ["rel"], fact_term: ["rel", "tg"], fact_ganji: ["ganji", "dayun", "num", "month"], fact_dayun: ["dayun", "num", "ganji"], dayun_claim: ["dayun", "num", "ganji"], dayun_year: ["dayun", "num", "ganji"],
   fact_meaning: ["tg"], fact_count: ["num", "rel"], fact_mix: ["num"], count_mismatch: ["num"], ten_god_direction: ["tg"], feature_owner: ["rel"], common_split: ["rel"], group_claim: ["tg"], element_count: ["num"],
   time_fixed: ["num", "month", "ganji"], time_deictic: ["num", "month"], calendar_month: ["month"], intensity_claim: ["num"], negative_claim: ["rel"], mbti_misattr: [], fn_role: [],
+  // W3 P3 보강: 구체 장면을 성향 물음으로 바꾸면 장면 속 숫자(「두세 시간」「택배 3개」)는 빠져도 된다. 간지·십성·관계 이름은 지킨다.
+  scene_unbacked: ["num"],
 };
 /** 원문이 잃은 근거 낱말(봐줄 종류 빼고). names: 관계 이름·신살 이름·기둥 간지(한글)처럼 2글자 이상 낱말. */
 export function lostFactTokens(before: string, after: string, names: readonly string[], exempt: ReadonlySet<FactKind> | "all" = new Set()): string[] {

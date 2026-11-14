@@ -17,7 +17,8 @@ import type { Knowledge } from "../knowledge";
 import { allocateChapters, PRODUCT_CHAPTER_RX, RX, rxKindsOf, type RxKind } from "../prescriptions";
 import type { Brief, ChapterBrief, Material, Trait } from "../schema";
 import { splitSentences } from "@/lib/writer/safety/patterns";
-import { AREA6_OF, connectAll, connectionKey, mbtiCards, myeongriCard, type Connection, type FeatureCard } from "./features";
+import { plainName } from "@/lib/writer/safety/info";
+import { AREA6_OF, connectAll, connectionKey, mbtiCards, myeongriCard, plainGrade, type Connection, type FeatureCard } from "./features";
 
 export const CARDS_VERSION = "cards-v1" as const;
 /** 같은 차원 연결은 책에서 이 횟수까지. */
@@ -25,7 +26,7 @@ export const MAX_DIM_LINKS = 2;
 /** 같은 처방 종류는 책에서 이 횟수까지. */
 export const MAX_RX_KIND = 2;
 
-export type CardEvidence = { name: string; where: string; meaning?: string; facts?: string[]; ref?: string; rule?: string; traitId?: string };
+export type CardEvidence = { name: string; where: string; meaning?: string; facts?: string[]; ref?: string; rule?: string; traitId?: string; kind?: "context" };
 export type SectionCard = { q: string; evidence: CardEvidence[]; link: Connection | null; scene: { text: string; from: "seed" | "knowledge" | "relation"; who?: string; props?: string[] } | null; punch: { text: string; basis: string; warm: string } | null; rx: RxKind | null };
 export type CardFactDrop = { chapter: string; section: number; name: string; where: string; reason: string };
 export type BookDesign = { version: typeof CARDS_VERSION; cards: FeatureCard[]; links: Connection[]; card_fact_drop: CardFactDrop[] };
@@ -107,8 +108,70 @@ const REF_LABEL: Readonly<Record<string, readonly [string, string]>> = {
 const whereText = (c: FeatureCard) => c.where.join(c.where.some(w => w.includes("·")) ? " / " : "·");
 /** 앞 마디가 이름이 아닌 상품 근거(사실 줄이 문장으로 시작)의 이름. */
 const EV_NAME: Readonly<Record<string, string>> = { loveEngine: "배우자 자리", matchTypes: "맞는 사람", childStar: "자녀 별", jobGroups: "넓혀 갈 직군", jobGroupsFar: "길게 볼 직군", investMistakes: "투자에서 되풀이하기 쉬운 실수", investPrinciples: "투자 원칙", spouseStar: "배우자 별", childPalace: "자녀 자리" };
-/** 상품 근거 사실 줄의 이름(「이름: 뜻」 앞 마디), 없으면 이름 표, 그래도 없으면 첫 마디. 내부 key는 이름으로 쓰지 않는다. */
-const evName = (key: string, facts: readonly string[]) => facts[0]?.match(/^([^:—]{2,24})(?::| —) /)?.[1]?.trim() ?? EV_NAME[key] ?? (facts[0]?.split(/[.,:·(—→]/)[0]?.trim().slice(0, 20) || "근거");
+/**
+ * W3 P3 보강 — 이름으로 쓰지 않는 상품 근거 자리표 말(사실의 이름이 아니라 칸 이름). 이런 머리면 사실 줄이 든 십성·신살·관계·간지 이름을 찾아 이름으로 쓰고,
+ * 그것도 없으면 맥락 근거(kind context — 작가에게 이름을 보내지 않고 지표는 사실 낱말로 센다).
+ */
+const GENERIC_EV = new Set(["관계 상태", "상태", "맞는 사람", "통념상 잘 맞는 조합", "호감 표현", "호감 표현 장면", "관계가 위험할 때의 신호", "피해야 할 신호", "점검", "상황 씨앗", "배우자 자리", "자녀 자리", "배우자 별", "자녀 별", "관계 신살",
+  "연애 기능", "의사결정", "보이는 힘", "넓혀 갈 직군", "길게 볼 직군", "투자에서 되풀이하기 쉬운 실수", "투자 원칙", "분기 이름", "지칠 때 돈이 새는 신호", "판정", "근거 없음", "뿌리 자리", "지금 대운", "조건형", "자녀", "앞 장 종합", "새 인연을 만나기 좋은 곳", "십이운성", "태어난 달 기둥", "태어난 날 기둥", "태어난 해 기둥", "태어난 시각 기둥"]);
+const TG_NAMES = "비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|비겁|식상|재성|관성|인성", GZ = "[갑을병정무기경신임계][자축인묘진사오미신유술해]";
+const STAGE_NAMES = "장생|목욕|관대|건록|제왕|쇠|병|사|묘|절|태|양";
+const POS_KO: Readonly<Record<string, string>> = { 해: "연", 달: "월", 날: "일", 시각: "시" };
+const REL_KO: Readonly<Record<string, string>> = { CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진", YUKHAP: "합", SAMHAP: "합", BANGHAP: "합", STEM_HAP: "합" };
+/** 사실 줄 정리(이름 찾기용): 한자만 든 괄호를 떼고 간지 한자는 한글로, 한글 괄호는 괄호만 푼다(「기운(편관·정관)이」의 십성을 남긴다). */
+const factLine = (s: string) => plainName(s.replace(/\(([^()]*[가-힣][^()]*)\)/g, " $1 ")).replace(/\s{2,}/g, " ");
+/** 십성·관계 이름 뒤 조사(「정관은」「편관이고」「인성이 강해」). */
+const AFTER = "(?=$|[^가-힣]|(?:은|는|이|가|을|를|의|과|와|도|로|에|이고|이라|이며|으로|입니다|이에요)(?![가-힣]))";
+/** 사실 줄이 든 이름 하나(해 간지·십성 → 대운 간지 → 간지 짝 관계 → 신살·귀인 → 십성(「편관·정관」 이어 쓴 것은 함께) → MBTI 유형(줄마다 모아) → 십이운성 → 기둥 간지). */
+function factName(facts: readonly string[]): { name: string; line: string; kind: "year" | "dayun" | "rel" | "shinsal" | "tg" | "mbti" | "stage" | "pillar" } | null {
+  const lines = facts.map(factLine);
+  for (const l of lines) { const m = l.match(new RegExp(`(20\\d\\d)년 (?:(${GZ}) )?(${TG_NAMES})?${AFTER}`)); if (m && (m[2] || m[3])) return { name: [`${m[1]}년`, m[2], m[3]].filter(Boolean).join(" "), line: l, kind: "year" }; }
+  for (const l of lines) { const m = l.match(new RegExp(`대운: (${GZ})`)) ?? l.match(new RegExp(`(${GZ}) 대운`)); if (m) return { name: `${m[1]} 대운`, line: l, kind: "dayun" }; }
+  for (const l of lines) { const m = l.match(new RegExp(`(?<![가-힣])([자축인묘진사오미신유술해]{2,3}) ?(충|합|형|파|해|원진)${AFTER}`)); if (m) return { name: `${m[1]} ${m[2]}`, line: l, kind: "rel" }; }
+  for (const l of lines) { const m = l.match(/(?<![가-힣])(?!신살(?![가-힣]))([가-힣]{1,4}(?:살|귀인))(?=[\s:·,)]|$|(?:은|는|이|가|을|를|의|과|와|도|로|에)(?![가-힣]))/); if (m) return { name: m[1], line: l, kind: "shinsal" }; }
+  for (const l of lines) { const m = l.match(new RegExp(`(?<![가-힣])((?:${TG_NAMES})(?:·(?:${TG_NAMES}))*)${AFTER}`)); if (m) return { name: m[1], line: l, kind: "tg" }; }
+  const types = [...new Set(lines.flatMap(l => l.match(/\b[EI][NS][TF][JP]\b/g) ?? []))]; if (types.length) return { name: types.join("·"), line: lines.find(l => l.includes(types[0]))!, kind: "mbti" };
+  for (const l of lines) { const m = l.match(new RegExp(`십이운성: (${STAGE_NAMES})(?![가-힣])`)); if (m) return { name: `십이운성 ${m[1]}`, line: l, kind: "stage" }; }
+  for (const l of lines) { const m = l.match(new RegExp(`기둥: (${GZ})(?![가-힣])`)); if (m) return { name: m[1], line: l, kind: "pillar" }; }
+  return null;
+}
+/** 사실 줄이 드러낸 자리(「태어난 날(의) 땅 글자」→ 일지, 「태어난 달 기둥」→ 월주, 「배우자 자리」→ 일지, 「자녀 자리」→ 시지, 「뿌리 자리(태어난 해)」→ 연주). 시간 미상이면 시 자리는 뺀다. */
+function factWhere(line: string, timeKnown: boolean): string[] {
+  const out: string[] = [];
+  for (const m of line.matchAll(/태어난 (해|달|날|시각)의? (하늘|땅) 글자/g)) out.push(`${POS_KO[m[1]]}${m[2] === "하늘" ? "간" : "지"}`);
+  for (const m of line.matchAll(/태어난 (해|달|날|시각) 기둥/g)) out.push(`${POS_KO[m[1]]}주`);
+  if (/배우자 자리/.test(line)) out.push("일지");
+  if (/자녀 자리/.test(line)) out.push("시지");
+  if (/뿌리 자리/.test(line)) out.push("연주");
+  return [...new Set(out)].filter(w => timeKnown || !w.startsWith("시"));
+}
+/**
+ * 상품 근거 → 카드 근거(W3 P3 보강). 이름은 깨끗한 한글(한자·괄호 라벨·「해과」 같은 깨진 조사 없음): 「이름: 뜻」 머리를 정리한 것,
+ * 머리가 자리표 말이면 사실 줄이 든 이름(십성·신살·관계·간지). where는 사실이 자리를 가질 때만(사실 줄의 자리 말, 신살·관계는 정답지 칸).
+ * 이름을 찾지 못한 자리표 근거는 맥락 근거(kind context).
+ */
+export function productEvidence(key: string, facts: readonly string[], person: CardPerson | undefined, note?: string): CardEvidence {
+  const raw = facts[0]?.match(/^([^:—]{2,40})(?::| —) /)?.[1]?.trim();
+  const head = plainName(plainGrade(raw ?? EV_NAME[key] ?? facts[0]?.split(/[.,:·(—→]/)[0]?.trim().slice(0, 20) ?? "")).replace(/^태어난 (?:해|달|날|시각)의? (?:하늘|땅) 글자의 /, "").trim();
+  const generic = !head || GENERIC_EV.has(head) || head.length > 16;
+  // 머리가 자리표 말이면 사실 줄 전체에서, 아니면 머리에서(해·대운 간지 꼴로 맞추고 신살·관계 자리를 찾는 데만) 이름을 찾는다.
+  const found = factName(generic ? facts : [raw ?? head]);
+  const timeKnown = person?.facts.timeKnown ?? true;
+  const rule = note ? { rule: note } : {};
+  if (generic && !found) return { name: head || "맥락", where: factWhere(factLine(facts[0] ?? ""), timeKnown).join("·"), facts: [...facts], ...rule, kind: "context" };
+  const name = generic || found?.kind === "year" || found?.kind === "dayun" ? found!.name : head, line = generic ? found!.line : factLine(facts[0] ?? "");
+  let where = found?.kind === "year" || found?.kind === "dayun" ? [] : factWhere(line, timeKnown);
+  const f = person?.facts;
+  if (f && found?.kind === "shinsal") { const s = f.shinsal.find(x => x.name === found.name); if (s) where = [...new Set(s.slots.map(x => `${P1[x.replace(/(Stem|Branch)$/, "")]}${/Stem$/.test(x) ? "간" : "지"}`))]; }
+  if (f && found?.kind === "rel") { const [k2, kind] = found.name.split(" "); const r = [...f.relations, ...f.stemClashes].find(x => x.keyKo === k2 && REL_KO[x.kind] === kind); if (r) where = [...new Set(r.members.map(m => `${m.where}${/^STEM_/.test(r.kind) ? "간" : "지"}`))]; }
+  return { name, where: where.filter(w => timeKnown || !w.startsWith("시")).join("·"), facts: [...facts], ...rule };
+}
+/** 특성 카드 이름 정리: 변형 이름이 요소 이름을 되풀이하면(「원진살 묘신 원진」「해 신해해」) 변형 이름만, 한자·괄호 라벨은 뗀다. */
+export function plainTraitName(name: string): string {
+  const t = plainName(name), w = t.split(" ");
+  if (w.length >= 2) { const core = w[0].replace(/살$/, ""); const last = w[w.length - 1]; if (core && (last === core || (w.length === 2 && last.length > core.length && last.endsWith(core)))) return w.slice(1).join(" "); }
+  return t;
+}
 
 export function designCards(input: DesignInput): BookDesign {
   const { k, brief, people } = input;
@@ -121,7 +184,7 @@ export function designCards(input: DesignInput): BookDesign {
     for (const t of p.traits) {
       const f: MyeongriFeature | undefined = k.features.get(t.featureId); if (!f) continue;
       const w = cardWhere(t, p.hits.get(t.featureId), p.facts);
-      const c0 = myeongriCard(t, f, w.where, k, p.owner), card = { ...c0, name: name(p, c0.name) };
+      const c0 = myeongriCard(t, f, w.where, k, p.owner), card = { ...c0, name: name(p, plainTraitName(c0.name)) };
       // 자리 글: 같은 특성의 자리는 「·」, 합충형해 짝이 여럿이면 짝 사이를 「 / 」로.
       cards.push(card); byTrait.set(t.id, { card, ...(w.drop ? { drop: w.drop } : {}), person: p, trait: t });
     }
@@ -163,7 +226,7 @@ export function designCards(input: DesignInput): BookDesign {
           scene({ text: m.scene, from: m.seedId ? "seed" : "knowledge", ...(m.who ? { who: m.who } : {}) });
         } else if (m.kind === "rel") scene({ text: m.scene, from: "relation", ...(m.who?.length ? { who: m.who.join(" / ") } : {}) });
         // 상품 근거는 사실 줄을 줄마다 그대로(facts) — 줄 단위 재료 바꾸기·복사 검사가 그대로 돈다.
-        else if (m.kind === "evidence") ev.push({ name: evName(m.key, m.facts), where: "", facts: [...m.facts], ...(m.note ? { rule: m.note } : {}) });
+        else if (m.kind === "evidence") ev.push(productEvidence(m.key, m.facts, people.length === 1 ? people[0] : undefined, m.note));
         else if (m.kind === "ref") {
           const sh = m.ref.match(/^shadows\.(s\d+)$/)?.[1], fu = m.ref.match(/^traits\.([ab]?t\d+)\.fusion$/)?.[1];
           if (sh) {
@@ -172,7 +235,7 @@ export function designCards(input: DesignInput): BookDesign {
             else { const x = byTrait.get(s.traitId); ev.push({ name: `${josa(x?.card.name ?? s.traitId, "이가")} 지나칠 때`, where: (x ? whereText(x.card) : ""), meaning: `${s.text} 근거: ${s.basis}` }); }
           } else if (fu) fusionTraits.add(fu);
           else if (m.ref === "mbti.shadows") { if (brief.mbti?.shadows[0]) ev.push({ name: `${brief.mbti.type}의 그늘`, where: "MBTI", meaning: brief.mbti.shadows[0] }); }
-          else if (m.ref.startsWith("chapters.")) { const title = input.chapters.find(c => c.id === m.ref.slice(9))?.title ?? ""; ev.push({ name: "앞 장 종합", where: "", meaning: `「${title}」 장의 근거로`, ...(m.note ? { rule: m.note } : {}) }); }
+          else if (m.ref.startsWith("chapters.")) { const title = input.chapters.find(c => c.id === m.ref.slice(9))?.title ?? ""; ev.push({ name: "앞 장 종합", where: "", meaning: `「${title}」 장의 근거로`, ...(m.note ? { rule: m.note } : {}), kind: "context" }); }
           else { const [n, w] = label(m.ref); ev.push({ name: n, where: w, ref: m.ref, ...(m.note ? { rule: m.note } : {}) }); }
         }
       }
@@ -244,7 +307,7 @@ export function writerCard(c: SectionCard | import("../schema").SectionCardBrief
   const nm = (id: string) => cards.get(id)?.name ?? id;
   const props = c.scene?.props?.filter(propOk);
   return {
-    ...(c.evidence.length ? { evidence: c.evidence.map(e => ({ ...(e.traitId ? { id: e.traitId } : {}), name: e.name, ...(e.where ? { where: e.where } : {}), ...(e.meaning ? { meaning: e.meaning } : {}), ...(e.facts ? { facts: e.facts } : {}), ...(e.ref ? { ref: e.ref } : {}), ...(e.rule ? { rule: e.rule } : {}) })) } : {}),
+    ...(c.evidence.length ? { evidence: c.evidence.map(e => ({ ...(e.traitId ? { id: e.traitId } : {}), ...(e.kind === "context" ? {} : { name: e.name }), ...(e.where ? { where: e.where } : {}), ...(e.meaning ? { meaning: e.meaning } : {}), ...(e.facts ? { facts: e.facts } : {}), ...(e.ref ? { ref: e.ref } : {}), ...(e.rule ? { rule: e.rule } : {}) })) } : {}),
     ...(c.link ? { link: { kind: c.link.kind, a: nm(c.link.a), b: nm(c.link.b), tag: c.link.tagName, why: c.link.why, ...(c.link.dir ? { dir: c.link.dir } : {}) } } : {}),
     ...(c.scene ? { scene: { text: c.scene.text, ...(c.scene.who ? { who: c.scene.who } : {}), ...(props?.length ? { props } : {}) } } : {}),
     ...(c.punch ? { punch: c.punch } : {}),

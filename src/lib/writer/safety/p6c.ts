@@ -18,6 +18,7 @@ import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
 import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style";
 import { exposureOf } from "./exposure";
+import { unbackedScene, type InfoCard } from "./info";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -33,8 +34,8 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   | FactRule | "phrase_repeat"
   // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
   | StyleRule | "fn_role"
-  // W3 P3 4절: 판정 등급어·생성 규칙 문구 노출(exposure.ts)
-  | "grade_leak" | "rule_leak";
+  // W3 P3 4절: 판정 등급어·생성 규칙 문구 노출(exposure.ts) · 보강: 카드에 없는 구체 장면 단정(info.ts concreteScene, 문체 규칙 — 수리로만)
+  | "grade_leak" | "rule_leak" | "scene_unbacked";
 export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -112,6 +113,8 @@ export type LintCtx = {
   readonly termNames?: RegExp;
   /** 최종판3 3: 정답지 대조 문맥(엔진 사실·별칭·사람 이름). 없으면 대조하지 않는다. */
   readonly fact?: FactCtx;
+  /** W3 P3 보강: 4종 카드 책의 절 카드(장면 근거) · 입력의 직업 장면. 있으면 카드에 없는 구체 장면 단정을 scene_unbacked(문체, 수리로만)로 건다. */
+  readonly sceneCards?: readonly InfoCard[]; readonly sceneProps?: readonly string[];
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 /** 대운·세운(달력 책): 고친 문장에 「지금·지금의·지금은」을 다시 쓰면 또 걸린다. */
@@ -124,6 +127,7 @@ export const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
   fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
   grade_leak: "엔진 판정 등급 말(신약·신강·중화·오행 과다·'세기는 보통'·'힘은 약입니다')을 그대로 썼다 → 등급 이름 없이 뜻으로만 쓴다(예: '혼자 버티는 힘이 여린 편이라 도움을 빌리면 수월해요', '흙 기운이 많은 편', '값을 받는 힘이 고르게 있는 편')",
+  scene_unbacked: "card에 없는 구체 장면(장소·물건·앱·사건: detail)을 이 사람의 버릇·겪음으로 단정했다 → 지우지 말고, 그 소제목 근거(이름·자리)에 묶인 성향 물음('~하는 편이죠?', '~할 때가 있지 않나요?')으로 바꾸거나 구체 소품을 빼고 성향만 쓴다",
   rule_leak: "책을 만든 규칙·입력 상태·날짜 기준을 독자에게 말했다('시간 미상', '입력된 게 없으니', '가정으로만', '…를 기준으로 썼어요') → 그 말을 빼고 이 사람 이야기만 쓴다(가정이 필요하면 '~하게 된다면' 한 마디로)",
   fact_count: "합·충·형·해·관계의 개수를 정답지와 다르게 말했다 → detail의 개수로 고치거나 개수 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
@@ -518,6 +522,10 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         for (let i = 0; i + PHRASE_WINDOW <= norm.length; i++) { const w = norm.slice(i, i + PHRASE_WINDOW); if (!seen.has(w)) seen.set(w, c.n); }
       } }));
     } }
+  // W3 P3 보강: 카드에 없는 구체 장면 단정(문체 규칙 — 수리로만, 지우지 않는다). 다른 깃발이 있는 문장에도 건다(수리 항목에서 문제로 합쳐진다).
+  if (ctx.sceneCards) for (const c of chapters) { if (c.source === "deterministic" || c.keys?.length) continue;
+    c.sections.forEach((s, si) => { const card = ctx.sceneCards!.find(x => x.chapter === c.n && x.section === si);
+      s.paragraphs.forEach((p, pi) => { for (const raw of splitSentences(p)) { const sen = stripMarks(raw), nouns = unbackedScene(sen, card, ctx.sceneProps); if (nouns) out.push({ chapter: c.n, section: si, paragraph: pi, rule: "scene_unbacked", sentence: sen, hint: HINT.scene_unbacked, detail: nouns.join("·") }); } }); }); }
   // AM 1-1 ②·1-4: 문체 검사(수리로만 보낸다). 이미 깃발이 있는 문장은 다시 걸지 않는다.
   { const flagged = new Set(out.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`));
     for (const f of styleFlags(chapters)) if (!flagged.has(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`)) { flagged.add(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`); out.push({ ...f, hint: STYLE_HINT[f.rule] }); } }
