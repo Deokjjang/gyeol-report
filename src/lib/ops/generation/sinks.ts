@@ -1,5 +1,6 @@
 import type { BookChapter } from "../../writer/format";
 import { chapterForStore, chapterFromStore, type ChapterSink, type RawEntry, type SavedChapter, type WriterCache } from "../../writer/runner";
+import { ANTHROPIC_AUTH as AUTH, ANTHROPIC_CREDIT as CREDIT } from "../aiHealth";
 
 export type OpsStore = { call(action: string, data: Record<string, unknown>): Promise<Record<string, unknown>> };
 
@@ -52,10 +53,7 @@ export function chainCache(...caches: readonly (WriterCache | null | undefined)[
 
 /** OpenAI 잔액·한도(재시도로 안 풀림). credit_balance_exhausted·*_spend_limit_exceeded·organization_usage_limit_exceeded는 11-13 문서 확인(research-w2 3-4). */
 const QUOTA = /insufficient_quota|exceeded your current quota|billing_hard_limit_reached|billing_not_active|credit_balance_exhausted|_spend_limit_exceeded|organization_usage_limit_exceeded/i;
-/** Anthropic 잔액·결제(문서 11-14: 402 billing_error, 400 = 지출 한도 도달, 「credit balance is too low」). */
-const CREDIT = /credit balance is too low|billing_error|spend limit/i;
-/** Anthropic 인증·권한(문서 11-14: 401 authentication_error, 403 permission_error). */
-const AUTH = /authentication_error|permission_error/;
+// Anthropic 잔액·결제 / 인증·권한 본문 표지는 W4 AI 상태 확인과 같이 쓴다(ops/aiHealth.ts).
 export type QuotaSeen = { openaiQuota?: boolean; anthropicCredit?: boolean; anthropicAuth?: boolean };
 /** 공급자 응답 본문에서 잔액 부족을 알아본다(작가 내부는 오류 코드만 남기므로 바깥 fetch에서 본다). 응답은 그대로 넘긴다. */
 export function watchFetch(base: typeof fetch, seen: QuotaSeen): typeof fetch {

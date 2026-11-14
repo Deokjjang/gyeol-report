@@ -2,10 +2,13 @@
 // 자동 멈춤 판정(순수), Anthropic 잔액/인증 감지, 경보 받는 곳, 관리자 화면 거절 감사, Vercel 빌드 건너뛰기 스크립트.
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
-const pause = vi.hoisted(() => ({ on: false, reads: 0 }));
+const pause = vi.hoisted(() => ({ on: false, reads: 0, reason: null as string | null }));
 vi.mock("../../../src/lib/ops/salesPause", async () => {
   const actual = await vi.importActual<typeof import("../../../src/lib/ops/salesPause")>("../../../src/lib/ops/salesPause");
-  return { ...actual, salesPaused: async () => { pause.reads++; return pause.on; }, readSalesPause: async () => ({ on: pause.on, at: null, by: null, reason: null }) };
+  const { salesPausedMessage } = await vi.importActual<typeof import("../../../src/lib/ops/config")>("../../../src/lib/ops/config");
+  return { ...actual, salesPaused: async () => { pause.reads++; return pause.on; }, readSalesPause: async () => ({ on: pause.on, at: null, by: null, reason: pause.reason }),
+    // W4 Q0: 막는 곳이 이유대로 문구를 고른다.
+    salesPauseNotice: async () => { pause.reads++; return pause.on ? salesPausedMessage(pause.reason) : null; } };
 });
 const storage = vi.hoisted(() => ({ create: vi.fn(async (record: unknown) => ({ ok: true, value: record })), bind: vi.fn(async () => true) }));
 vi.mock("../../../src/lib/payment/paymentOrderRuntime", () => ({ createPaymentOrderPersistenceRuntime: () => storage }));
@@ -13,7 +16,10 @@ vi.mock("../../../src/lib/account/supabase", async () => (await import("../../he
 vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: storage.bind }) }));
 vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 vi.mock("next/navigation", () => ({ usePathname: () => "/", useSearchParams: () => new URLSearchParams("product=saju-mbti-full"), useRouter: () => ({ push: () => {}, replace: () => {} }) }));
-vi.mock("../../../src/components/book/useSalesPaused", () => ({ useSalesPaused: () => pause.on }));
+vi.mock("../../../src/components/book/useSalesPaused", async () => {
+  const { salesPausedMessage } = await vi.importActual<typeof import("../../../src/lib/ops/config")>("../../../src/lib/ops/config");
+  return { useSalesPaused: () => pause.on ? salesPausedMessage(pause.reason) : null };
+});
 const confirmPort = vi.hoisted(() => ({ find: vi.fn(), call: vi.fn() }));
 vi.mock("../../../src/lib/payment/paidReportReliabilityStore", () => ({ createPaidReportReliabilityStore: () => ({ call: (a: string, d?: unknown) => a === "find_order" ? confirmPort.find(a, d) : confirmPort.call(a, d) }) }));
 vi.mock("../../../src/lib/payment/tossConfirmClient", () => ({ TOSS_CONFIRM_REQUIRED_AMOUNT: 3900, confirmTossPayment: vi.fn(async () => ({ ok: true })) }));
@@ -29,7 +35,7 @@ import { GET as salesStatus } from "../../../src/app/api/sales/route";
 import { closedProductOrder, confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import type { ReliabilityStore } from "../../../src/lib/payment/paidReportReliabilityStore";
 import { enqueueTicketPublication } from "../../../src/lib/tickets/publication";
-import { FORTUNE_REOPEN_LINE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../src/lib/ops/config";
+import { FORTUNE_REOPEN_LINE, SALES_PAUSED_AI_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../src/lib/ops/config";
 import { AUTO_PAUSE, autoPauseCheck, connectionRun, creditAlerter, rateAlert, type RunLite } from "../../../src/lib/ops/generation/alerts";
 import { watchFetch, type QuotaSeen } from "../../../src/lib/ops/generation/sinks";
 import { handleAdminAction, type AdminActionDeps } from "../../../src/lib/ops/admin/actions";
@@ -42,7 +48,7 @@ import { BookShelf } from "../../../src/components/book/BookShelf";
 import { POST as tossConfirm } from "../../../src/app/api/payments/toss/confirm/route";
 import { confirmTossPayment } from "../../../src/lib/payment/tossConfirmClient";
 
-beforeEach(() => { pause.on = false; pause.reads = 0; storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
+beforeEach(() => { pause.on = false; pause.reads = 0; pause.reason = null; storage.create.mockClear(); storage.bind.mockReset().mockResolvedValue(true); });
 afterEach(() => { vi.unstubAllEnvs(); });
 
 const person = { name: "지민", birthDate: "2001-06-22", birthTime: "13:30", birthTimeUnknown: false, approximateBirthTimeSlot: "", gender: "MALE", mbtiType: "ENTJ" };
@@ -117,6 +123,25 @@ describe("판매 중지가 막는 곳", () => {
     pause.on = false;
     expect(renderToStaticMarkup(createElement(BookInput, { internal: false, now: "2026-11-14T01:00:00.000Z" }))).not.toContain("data-sales-paused");
     expect(renderToStaticMarkup(createElement(BookShelf, { inputPath: "/report/new", year: 2026, closed: [] }))).not.toContain("잠시 쉬는 중");
+  });
+  it("W4 Q0 이유별 문구: AI 장애·연결 오류(outage·connection) = 「AI 서버 점검」, 손으로 멈춤·잔액·인증 = 기존 문구 — 결제 준비·승인·화면·/api/sales 모두", async () => {
+    vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key"); vi.stubEnv("TOSS_CONFIRM_API_ENABLED", "1");
+    expect(SALES_PAUSED_AI_MESSAGE).toBe("AI 서버 점검으로 잠시 멈췄어요. 곧 다시 열게요. 이미 결제한 책은 그대로 만들어져요.");
+    confirmPort.find.mockResolvedValue({ ok: true, order: { provider_order_id: "po-1", status: "ready", product_type: "saju_mbti_full" } }); confirmPort.call.mockReset();
+    pause.on = true;
+    for (const [reason, want] of [["outage", SALES_PAUSED_AI_MESSAGE], ["connection", SALES_PAUSED_AI_MESSAGE], ["billing", SALES_PAUSED_MESSAGE], ["auth", SALES_PAUSED_MESSAGE], ["manual", SALES_PAUSED_MESSAGE], [null, SALES_PAUSED_MESSAGE]] as const) {
+      pause.reason = reason;
+      expect((await (await prepareCheckout(prepareReq())).json()).error.message).toBe(want);
+      expect((await (await tossConfirm(new Request("http://localhost/api/payments/toss/confirm", { method: "POST", body: JSON.stringify({ paymentKey: "k", orderId: "po-1", amount: 3900 }) }))).json()).error.message).toBe(`${want} 이 주문은 결제되지 않았어요.`);
+      expect(await (await salesStatus()).json()).toEqual({ paused: true, message: want });
+      expect(renderToStaticMarkup(createElement(BookInput, { internal: false, now: "2026-11-14T01:00:00.000Z" }))).toContain(want);
+      expect(renderToStaticMarkup(createElement(BookShelf, { inputPath: "/report/new", year: 2026, closed: [] }))).toContain(want);
+    }
+    // 내부 이유 이름은 고객 응답에 나가지 않는다.
+    pause.reason = "billing";
+    expect(JSON.stringify(await (await salesStatus()).json())).not.toMatch(/billing|auth|outage|connection/);
+    expect(storage.create).not.toHaveBeenCalled();
+    expect(confirmTossPayment).not.toHaveBeenCalled();
   });
   it("⑤ 화면 상태 /api/sales: 멈춤이면 paused + 문구, 아니면 paused=false", async () => {
     pause.on = true;

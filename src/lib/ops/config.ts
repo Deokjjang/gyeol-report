@@ -52,6 +52,12 @@ export const SALES_CLOSED_MESSAGE = "대운·세운은 2027 신년판으로 새�
  */
 export const SALES_PAUSED_CODE = "PRODUCT_SALES_PAUSED";
 export const SALES_PAUSED_MESSAGE = "지금은 책 만들기를 잠시 멈췄어요. 곧 다시 열게요. 이미 결제한 책은 그대로 만들어져요.";
+/** W4 Q0: AI 서버 장애·연결 오류로 자동 멈춘 동안의 고객 문구(이유 outage·connection). 그 밖(손으로 멈춤·잔액·인증)은 위 문구 그대로. */
+export const SALES_PAUSED_AI_MESSAGE = "AI 서버 점검으로 잠시 멈췄어요. 곧 다시 열게요. 이미 결제한 책은 그대로 만들어져요.";
+/** 멈춤 이유 → 고객 문구. 내부 이유 이름(billing 등)은 고객에게 보내지 않는다. */
+export function salesPausedMessage(reason: string | null | undefined): string {
+  return reason === "outage" || reason === "connection" ? SALES_PAUSED_AI_MESSAGE : SALES_PAUSED_MESSAGE;
+}
 
 /**
  * W3 P2 30분 결론(덕짱님 결정 2026-11-14): 모든 책은 시작(결제 확인 payment_orders.paid_at · 이용권 접수 policy_at) 뒤 30분 안에 결론이 난다 —

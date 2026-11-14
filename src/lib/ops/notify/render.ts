@@ -230,7 +230,8 @@ export function salesButtons(on: boolean): Button[][] {
   return [[on ? { text: "다시 열기", callback_data: SALES_RESUME_DATA } : { text: "4종 멈춤", callback_data: SALES_PAUSE_DATA }]];
 }
 const SALES_BY: Readonly<Record<string, string>> = { telegram: "처리 봇", auto: "자동", admin: "관리자 화면", cli: "CLI" };
-const SALES_REASON: Readonly<Record<string, string>> = { connection: "연결 오류 연속", anthropic_credit: "Anthropic 잔액·결제", anthropic_auth: "Anthropic 인증·권한", manual: "" };
+const SALES_REASON: Readonly<Record<string, string>> = { connection: "연결 오류 연속", outage: "AI 상태 확인 장애", billing: "Anthropic 잔액·결제", auth: "Anthropic 인증·권한", recovered: "AI 상태 확인 회복",
+  anthropic_credit: "Anthropic 잔액·결제", anthropic_auth: "Anthropic 인증·권한", manual: "" };
 export type SalesState = { on: boolean; at: string | null; by: string | null; reason: string | null };
 /** /sales·버튼 뒤: 「⏸ 4종 판매 멈춤 · 시각 · 누가 · 왜」 / 「▶️ 4종 판매 중」. */
 export function salesStatusText(s: SalesState): string {
@@ -242,7 +243,18 @@ export function salesStatusText(s: SalesState): string {
 /** 자동 멈춤(연결 오류로 실패한 주문 N건 / 10분). */
 export function salesAutoPauseText(a: { count: number; windowMin: number; products: readonly string[] }): string {
   return [`🚨 <b>4종 판매 자동 멈춤</b> · 연결 오류로 실패한 주문 ${a.count}건(최근 ${a.windowMin}분)`, a.products.length ? esc(a.products.join(" · ")) : "",
-    "새 결제·이용권 사용을 받지 않아요. 이미 결제한 책은 그대로 만들어요.", "원인이 풀리면 [다시 열기]를 눌러 주세요."].filter(Boolean).join("\n");
+    "새 결제·이용권 사용을 받지 않아요. 이미 결제한 책은 그대로 만들어요.", "AI 상태 확인이 5분 연속 정상이면 자동으로 다시 열어요. 먼저 열려면 [다시 열기]."].filter(Boolean).join("\n");
+}
+/**
+ * W4 Q0 AI 상태 확인 알림(바뀔 때만 한 줄): 멈춤(잔액·인증 = 버튼으로만 다시 열기 · 장애 3분 = 회복 5분이면 자동 재개) · 자동 재개 · 이유 올림.
+ */
+export function aiHealthText(c: { changed: "paused" | "resumed" | "escalated"; reason: string; from: string | null; status: number | null }): string {
+  const code = c.status ? ` · HTTP ${c.status}` : "";
+  if (c.changed === "resumed") return `▶️ <b>4종 판매 자동 재개</b> · AI 상태 확인 5분 연속 정상(멈춤 이유: ${esc(SALES_REASON[c.from ?? ""] || c.from || "-")})`;
+  const hard = c.reason === "billing" || c.reason === "auth";
+  const what = c.reason === "auth" ? "Anthropic 인증·권한 오류" : c.reason === "billing" ? "Anthropic 잔액·결제 오류" : "AI 서버 장애 3분 연속";
+  if (c.changed === "escalated") return `🚨 <b>4종 판매 멈춤 이유 바뀜</b> · ${what}${code} · 자동 재개 안 함 — 풀리면 [다시 열기]`;
+  return `🚨 <b>4종 판매 자동 멈춤</b> · ${what}${code} · ${hard ? "자동 재개 안 함 — 풀리면 [다시 열기]" : "5분 연속 정상이면 자동 재개"}`;
 }
 /** Anthropic 잔액/인증 경보(1시간 1번, OpenAI 경보와 따로). 경보가 나면 판매도 자동으로 멈춘다. */
 export function anthropicAlarmText(a: { code: string; paused: boolean }): string {

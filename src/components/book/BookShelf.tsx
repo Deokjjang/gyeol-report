@@ -10,7 +10,7 @@ import { AccountEntry } from "../account/AccountSession";
 import { interaction } from "../../lib/analytics/client";
 import { GiftEventCountdown } from "../growth/GiftEventCountdown";
 import { EventPopupHost } from "../event/EventPopup";
-import { FORTUNE_REOPEN_LINE, SALES_PAUSED_MESSAGE } from "../../lib/ops/config";
+import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
 import { useSalesPaused } from "./useSalesPaused";
 
 export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }: { inputPath: string; year: number; authEnabled?: boolean; closed?: readonly string[] }) {
@@ -41,7 +41,7 @@ export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }:
   const paused = useSalesPaused();
   const notice = (key: string) => closed.includes(key) ? FORTUNE_REOPEN_LINE : paused ? "잠시 쉬는 중" : null;
   return <main className={s.root} data-book-home><header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link>{authEnabled ? <AccountEntry local={inputPath === "/dev/book-flow/input"} /> : <span className={s.login} aria-label="로그인 준비 중">로그인</span>}</header>
-    {paused ? <p className={s.salesPausedLine} role="status" data-sales-paused>{SALES_PAUSED_MESSAGE}</p> : null}
+    {paused ? <p className={s.salesPausedLine} role="status" data-sales-paused>{paused}</p> : null}
     <GiftEventCountdown signupStrip={authEnabled && inputPath !== "/dev/book-flow/input"} />
     {inputPath === "/dev/book-flow/input" ? null : <EventPopupHost />}
     <section className={s.home} aria-label="여섯 권의 책 고르기" tabIndex={0}
