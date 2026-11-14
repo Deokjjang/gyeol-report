@@ -1,5 +1,6 @@
 import { randomUUID } from "node:crypto";
-import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE } from "../../../../lib/ops/config";
+import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../../lib/ops/config";
+import { salesPaused } from "../../../../lib/ops/salesPause";
 
 import { NextResponse } from "next/server";
 
@@ -10,7 +11,8 @@ type ReadyPaymentOrderRouteErrorCode =
   | "PAYMENT_READY_ORDER_API_DISABLED"
   | "PAYMENT_READY_ORDER_INVALID_REQUEST"
   | "PAYMENT_READY_ORDER_CREATE_FAILED"
-  | typeof SALES_CLOSED_CODE;
+  | typeof SALES_CLOSED_CODE
+  | typeof SALES_PAUSED_CODE;
 
 const readyOrderApiEnabledEnv = "PAYMENT_READY_ORDER_API_ENABLED";
 const defaultProductType = "saju_mbti_full";
@@ -91,6 +93,10 @@ export async function POST(request: Request): Promise<NextResponse> {
   // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 주문을 만들지 않는다.
   if (!productOnSale(json.productType ?? defaultProductType)) {
     return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
+  }
+  // W3 P0: 4종 판매 중지(DB 스위치) — 주문을 만들지 않는다. 못 읽으면 판매를 계속한다.
+  if (await salesPaused()) {
+    return createErrorResponse(SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, 409);
   }
 
   if (!isJsonObject(json.inputSnapshot)) {

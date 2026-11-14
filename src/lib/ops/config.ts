@@ -19,6 +19,12 @@ export function closedSaleProducts(env: Env = process.env): string[] { return fo
 export function productOnSale(product: unknown, env: Env = process.env): boolean { return typeof product === "string" && !closedSaleProducts(env).includes(product); }
 export const SALES_CLOSED_CODE = "PRODUCT_SALES_CLOSED";
 export const SALES_CLOSED_MESSAGE = "대운·세운은 2027 신년판으로 새로 단장하고 있어요. 12월 1일에 다시 만나요.";
+/**
+ * W3 P0: 4종 판매 중지(DB ops_settings 'sales_pause', 처리 봇 [4종 멈춤]·[다시 열기]·연결 오류 자동 멈춤). 읽기는 ops/salesPause.ts(서버).
+ * 막는 곳: 결제 준비 · 주문 생성 · 승인 직전 ready 주문 · 이용권 사용 · 화면. 이미 결제한 주문·접수한 이용권 책은 그대로 만든다. 못 읽으면 판매를 계속한다.
+ */
+export const SALES_PAUSED_CODE = "PRODUCT_SALES_PAUSED";
+export const SALES_PAUSED_MESSAGE = "지금은 책 만들기를 잠시 멈췄어요. 곧 다시 열게요. 이미 결제한 책은 그대로 만들어져요.";
 
 /**
  * HOTFIX-W1 3부 4: 자동 환불 시간 AUTO_REFUND_HOURS(1~72시간, 없거나 잘못되면 기본 6시간 — 이전 24시간 고정).

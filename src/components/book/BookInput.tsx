@@ -16,7 +16,8 @@ import { interaction } from "../../lib/analytics/client";
 import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
-import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
+import { FORTUNE_REOPEN_LINE, SALES_PAUSED_MESSAGE } from "../../lib/ops/config";
+import { useSalesPaused } from "./useSalesPaused";
 import { EventPopupHost } from "../event/EventPopup";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
@@ -37,12 +38,14 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
 
 /** v5Products(서버 WRITER_V5_PRODUCTS): 이 상품이 v5(AI 작가)로 발행되는지 — 결제 직전 열람 기간(탈퇴 전까지 / 90일)과 AI 작성 고지를 고른다(최종3). */
 export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [], v5Products = [], giftEventProducts = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[]; v5Products?: readonly string[]; giftEventProducts?: readonly string[] }) {
-  const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0];
+  const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0], paused = useSalesPaused();
   // P6d-ops 1: 판매를 잠시 닫은 책(대운·세운)은 입력·결제 대신 공개 안내. 서버(결제·이용권 API)도 같은 설정으로 거절한다.
   // 최종 A 14: 상품 화면 팝업(내부 검수 화면 제외).
   const popup = internal ? null : <EventPopupHost />;
   const withPopup = (page: ReactElement) => (popup ? <>{page}{popup}</> : page);
   if (closed.includes(book.productKey)) return withPopup(<SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />);
+  // W3 P0: 4종 판매 중지(DB 스위치) — 입력·결제 대신 잠시 멈춤 안내. 결제 준비·주문·승인·이용권 API도 같은 스위치로 거절한다.
+  if (paused) return withPopup(<SalesPausedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />);
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
   return withPopup(<BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} giftEventProducts={giftEventProducts} />);
@@ -57,6 +60,17 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
       <p>대운(앞으로의 나)과 세운(나의 한 해)은 2027년 흐름을 담아 12월 1일에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
       <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
       <p><a href={home}>다른 책 고르기 →</a></p><p><a href="/account">내 서재 →</a></p>
+    </div></section>
+  </main>;
+}
+function SalesPausedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
+  return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-paused style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
+    <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
+    <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="잠시 멈춤 안내">
+      <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>지금은 책 만들기를 잠시 멈췄어요</h1>
+      <p>{SALES_PAUSED_MESSAGE}</p>
+      <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
+      <p><a href="/account">내 서재 →</a></p>
     </div></section>
   </main>;
 }

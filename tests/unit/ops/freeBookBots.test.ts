@@ -92,7 +92,7 @@ describe("/campaign · /funnel · API 잔액 경보", () => {
     expect(m.text).toContain("무료로 만든 책 0권(발행 0)");
     expect(m.text).toContain("권당 실측 평균 $0.25");
     expect(m.markup).toEqual({ inline_keyboard: [[{ text: "지급 멈춤", callback_data: "sg:pause" }]] });
-    expect(BOT_COMMANDS.ops.map(c => c.command)).toEqual(["pending", "campaign"]);
+    expect(BOT_COMMANDS.ops.map(c => c.command)).toEqual(["pending", "campaign", "sales"]); // W3 P0: /sales(4종 판매 멈춤·다시 열기)
   });
   it("/funnel: 오늘·7일 단계별 숫자와 전환율, 유입별 「랜딩 → 가입 → 무료 책 → 결제」 한 줄(메타·X), 서버 기록(명령 응답 — 알림 아님)", async () => {
     for (const [step, source, n] of [["land", "meta", 10], ["free_view", "meta", 10], ["login_new", "meta", 4], ["signup_grant", "meta", 4], ["free_book", "meta", 2], ["paid", "meta", 1],

@@ -1,5 +1,13 @@
 {
   "regions": ["icn1"],
+  "git": {
+    "deploymentEnabled": {
+      "**": false,
+      "master": true,
+      "v5/main": true
+    }
+  },
+  "ignoreCommand": "bash scripts/ops/vercel-ignore-build.sh",
   "crons": [
     { "path": "/api/internal/report-jobs", "schedule": "* * * * *" },
     { "path": "/api/internal/report-ticket-jobs", "schedule": "* * * * *" },

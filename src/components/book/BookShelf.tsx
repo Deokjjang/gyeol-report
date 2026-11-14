@@ -10,7 +10,8 @@ import { AccountEntry } from "../account/AccountSession";
 import { interaction } from "../../lib/analytics/client";
 import { GiftEventCountdown } from "../growth/GiftEventCountdown";
 import { EventPopupHost } from "../event/EventPopup";
-import { FORTUNE_REOPEN_LINE } from "../../lib/ops/config";
+import { FORTUNE_REOPEN_LINE, SALES_PAUSED_MESSAGE } from "../../lib/ops/config";
+import { useSalesPaused } from "./useSalesPaused";
 
 export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }: { inputPath: string; year: number; authEnabled?: boolean; closed?: readonly string[] }) {
   const [current, setCurrent] = useState(0);
@@ -36,7 +37,11 @@ export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }:
     return () => { auto.current?.dispose(); document.removeEventListener("visibilitychange", update); hover.removeEventListener("change", update); events.forEach(name => window.removeEventListener(name, release)); window.removeEventListener("pageshow", update); auto.current = null; };
   }, []);
   const select = (n: number) => { auto.current?.interact(); setCurrent(wrapBook(n)); interaction("book_selected", BOOKS[wrapBook(n)].productKey); };
+  // W3 P0: 4종 판매 중지면 맨 위 한 줄 + 판매 중인 책 표지에 「잠시 쉬는 중」(닫힌 대운·세운은 원래 안내).
+  const paused = useSalesPaused();
+  const notice = (key: string) => closed.includes(key) ? FORTUNE_REOPEN_LINE : paused ? "잠시 쉬는 중" : null;
   return <main className={s.root} data-book-home><header className={s.header}><Link href="/" className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></Link>{authEnabled ? <AccountEntry local={inputPath === "/dev/book-flow/input"} /> : <span className={s.login} aria-label="로그인 준비 중">로그인</span>}</header>
+    {paused ? <p className={s.salesPausedLine} role="status" data-sales-paused>{SALES_PAUSED_MESSAGE}</p> : null}
     <GiftEventCountdown signupStrip={authEnabled && inputPath !== "/dev/book-flow/input"} />
     {inputPath === "/dev/book-flow/input" ? null : <EventPopupHost />}
     <section className={s.home} aria-label="여섯 권의 책 고르기" tabIndex={0}
@@ -60,7 +65,7 @@ export function BookShelf({ inputPath, year, authEnabled = false, closed = [] }:
         refresh.current();
       }} onClickCapture={e => { if (e.detail && dragged.current) { e.preventDefault(); e.stopPropagation(); } }}>
       <h1 className={s.srOnly}>나에 관한 한 권을 고르세요</h1><div className={s.coverflow} role="group" aria-label="책 표지" aria-roledescription="회전 책장">
-        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} data-closed={closed.includes(book.productKey) ? "true" : undefined} aria-current={current === i ? "true" : undefined} aria-label={`${title}${closed.includes(book.productKey) ? ` · ${FORTUNE_REOPEN_LINE}` : ""} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} />{closed.includes(book.productKey) ? <span className={s.coverNotice} aria-hidden="true">{FORTUNE_REOPEN_LINE}</span> : null}</button>; })}
+        {BOOKS.map((book, i) => { const offset = coverOffset(i, current), title = readerTitle(book, String(year)); return <button key={book.id} className={s.bookSlot} style={{ "--offset": offset, "--distance": Math.abs(offset), zIndex: 10 - Math.abs(offset) } as CSSProperties} data-center={current === i} data-closed={notice(book.productKey) ? "true" : undefined} aria-current={current === i ? "true" : undefined} aria-label={`${title}${notice(book.productKey) ? ` · ${notice(book.productKey)}` : ""} ${current === i ? "펼치기" : "선택"}`} tabIndex={Math.abs(offset) < 3 ? 0 : -1} onClick={() => { if (dragged.current) return; if (i !== current) select(i); else { auto.current?.interact(); window.location.assign(`${inputPath}?product=${book.slug}`); } }}><Cover book={book} title={book.id === "annual" ? `나의\n${year}` : undefined} />{notice(book.productKey) ? <span className={s.coverNotice} aria-hidden="true">{notice(book.productKey)}</span> : null}</button>; })}
       </div><div className={s.carouselControls}><button aria-label="이전 책" onClick={() => select(current - 1)}>←</button><span className={s.micro} aria-live="polite">{BOOKS[current].issue} / 06</span><button aria-label="다음 책" onClick={() => select(current + 1)}>→</button></div>
     </section></main>;
 }

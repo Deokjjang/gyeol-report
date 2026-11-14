@@ -121,11 +121,12 @@ describe("shop real component callbacks, not browser visual QA",()=>{
     if(mode==="network-error")vi.mocked(fetch).mockRejectedValue(Error("OFFLINE"));
     else vi.mocked(fetch).mockResolvedValue(response({scope:other,quantity:3}));
     const form=()=>{hooks.index=0;hooks.effects=[];const element=BookInput({internal:true,now:"2026-10-10T00:00:00Z",ticketShopEnabled:true});return (element.type as (p:typeof element.props)=>ReactNode)(element.props);};
-    form();cleanup=hooks.effects[1]();await vi.advanceTimersByTimeAsync(0);await flush();
-    const view=form();hooks.effects[2]();expect(values.get(key)).toBe(original);
+    // W3 P0: BookInput 맨 위에 판매 중지 상태 훅(useSalesPaused)이 하나 생겨 효과 번호가 하나씩 밀렸다.
+    form();cleanup=hooks.effects[2]();await vi.advanceTimersByTimeAsync(0);await flush();
+    const view=form();hooks.effects[3]();expect(values.get(key)).toBe(original);
     expect(text(view)).not.toContain("original-account-only");
     const fields=nodes(view).find(n=>n.type===Fields)!;
     (fields.props.change as (p:unknown)=>void)({...fields.props.person as object,name:"새 입력"});
-    form();hooks.effects[2]();expect(values.has(bundleReturnKey)).toBe(false);expect(values.get(key)).toContain("새 입력");
+    form();hooks.effects[3]();expect(values.has(bundleReturnKey)).toBe(false);expect(values.get(key)).toContain("새 입력");
   });
 });

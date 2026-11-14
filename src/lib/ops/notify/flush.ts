@@ -26,6 +26,8 @@ export type NotifyDeps = {
   /** F: 가입 이용권(ops_signup — 급증 경보 확인·/campaign·[지급 멈춤]) · 퍼널(ops_funnel — /funnel). 없으면 그 기능만 쉰다. */
   signup?: OpsStore;
   funnel?: OpsStore;
+  /** W3 P0: 4종 판매 중지 스위치(ops_sales — /sales·[4종 멈춤]·[다시 열기]). 없으면 그 기능만 쉰다. */
+  sales?: OpsStore;
 };
 /** F 가입 급증 경보 기준: 최근 60분 신규 가입(시험 계정 제외) 20건 이상. */
 export const SIGNUP_SURGE_THRESHOLD = 20;
@@ -195,7 +197,7 @@ export async function reconcileOpen(deps: NotifyDeps, max = 30): Promise<Record<
 export const BOT_COMMANDS: Record<BotName, { command: string; description: string }[]> = {
   sales: [{ command: "today", description: "오늘 매출" }, { command: "yesterday", description: "어제 매출" }, { command: "month", description: "이번 달 누적·지난달 비교" }, { command: "event", description: "1+1 증정 이용권 현황" },
     { command: "funnel", description: "퍼널(오늘·7일·유입별)" }],
-  ops: [{ command: "pending", description: "버튼이 남은 처리 건" }, { command: "campaign", description: "가입 이용권 현황·지급 멈춤" }],
+  ops: [{ command: "pending", description: "버튼이 남은 처리 건" }, { command: "campaign", description: "가입 이용권 현황·지급 멈춤" }, { command: "sales", description: "4종 판매 멈춤·다시 열기" }],
 };
 /**
  * 두 봇의 웹훅이 우리 주소로 맞는지 보고, 없거나 다르거나 배포가 바뀌었으면 다시 설정한다(setWebhook + setMyCommands). 깨우기 주소도 DB에 적는다.

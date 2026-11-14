@@ -82,9 +82,20 @@ export async function handleAdminAction(request: NextRequest, action: string, de
   if (!stores.db) return session.finish(no(503, "STORAGE_UNAVAILABLE", "저장소에 연결하지 못했어요."));
   const ctx: Ctx = { action, body, adminId: session.userId, stores, deps };
   try {
-    if (PIN_ACTIONS.includes(action)) { const blocked = await checkPin(ctx); if (blocked) return session.finish(blocked); }
-    return session.finish(await RUNNERS[action](ctx));
+    const res = (PIN_ACTIONS.includes(action) ? await checkPin(ctx) : null) ?? await RUNNERS[action](ctx);
+    if (res.status >= 400) await auditRejected(ctx, res);
+    return session.finish(res);
   } catch { return session.finish(no(500, "ACTION_FAILED", "처리하지 못했어요. 잠시 뒤 다시 시도해 주세요.")); }
+}
+/** W3 P0: 관리자 세션이 확인된 뒤의 거절(409 NOT_REGENERATABLE·상한·PIN 잠금 등)도 감사에 남긴다. PIN 틀림은 admin_pin_failed로 이미 남는다. 감사 실패는 응답을 바꾸지 않는다. */
+async function auditRejected(ctx: Ctx, res: NextResponse): Promise<void> {
+  try {
+    const b = await res.clone().json().catch(() => ({})) as Json;
+    const code = typeof b.code === "string" ? b.code.slice(0, 40) : null;
+    if (code === "ADMIN_PIN_INVALID") return;
+    const order = str(ctx.body.orderCode).toUpperCase(), report = str(ctx.body.reportId);
+    await audit(ctx, "admin_rejected", ORDER_CODE_RE.test(order) ? order : /^report_[a-f0-9]{32}$/.test(report) ? report : `admin:${ctx.action}`, { action: ctx.action, status: res.status, code });
+  } catch { /* 감사 실패는 무시 */ }
 }
 
 const RUNNERS: Record<AdminActionName, (ctx: Ctx) => Promise<NextResponse>> = { regenerate, "ticket-regenerate": ticketRegenerate, grant, refund, "request-done": requestDone,
