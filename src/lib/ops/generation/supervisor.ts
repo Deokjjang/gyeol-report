@@ -36,6 +36,8 @@ export type GenerationEnv = {
   readonly alerts?: GenerationAlerts;
   /** HOTFIX-W1 6: 교체 레인 작가 시간 예산(크론 앞 단계가 쓴 시간을 뺀 값). 없으면 작가 기본 700초. */
   readonly laneBudgetMs?: () => number;
+  /** AM2-3 6-1: 정식본·임시본 모두 실패(또는 임시본을 쓸 수 없음)해 발행을 보류할 때 처리 봇 경보(ops_notifications 'generation_hold', 주문당 1번). */
+  readonly holdAlert?: (data: { reportId: string; origin: "paid" | "ticket"; reason: string; lane: "official" | "interim" }) => Promise<unknown>;
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
@@ -110,6 +112,13 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
   return { built, verdict, summary: { ...summary, provider: summary.provider ?? target.provider, model: summary.model ?? target.model }, reason, seen };
 }
 
+/** 앞 시도가 정식본 generation_hold로 끝났는가(보류 사유 문자열). */
+export const isHoldRepeat = (lastReason: unknown) => /^official:(?:partial:|pre_output:)?generation_hold/.test(String(lastReason ?? ""));
+/** 같은 빌드를 되풀이하지 않는 시도 결과(호출 0 · 비용 0). 사유는 앞 보류 그대로에 「:repeat」를 붙인다. */
+function holdRepeatAttempt(last: string): Awaited<ReturnType<typeof attempt>> {
+  const reason = last.endsWith(":repeat") ? last : `${last}:repeat`;
+  return { built: null, verdict: { kind: "incomplete", reason: reason.replace(/^official:/, ""), rejected: [], missing: [], preOutput: true }, summary: { provider: null as unknown as string, model: null as unknown as string, costUsd: 0, durationMs: 0, calls: [], chapters: [] }, reason, seen: { openaiQuota: false, anthropicCredit: false } as Awaited<ReturnType<typeof attempt>>["seen"] };
+}
 /**
  * 큐 작업 한 건(결제·이용권 공통). settle이 큐 쪽 동작(발행·보류·포기)을 하고 성공 여부를 돌려준다.
  * 기록은 settle 뒤에 남긴다(발행이 실제로 됐는지 보고 published/stale을 적는다).
@@ -121,7 +130,7 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const state = begun.state as State;
   const openAi = await openAiAvailable(env);
   const firstFailure = ms(state.first_failure_at);
-  // 임시본 차례: 2시간이 지났고 직전 시도가 임시본 시도가 아닐 때(실패했으면 다음은 다시 Sonnet).
+  // 임시본 차례: 첫 실패 뒤(AM2-3: 바로) 직전 시도가 임시본 시도가 아닐 때(실패했으면 다음은 다시 Sonnet).
   const interim = interimDue({ phase: state.phase, firstFailureAt: Number.isFinite(firstFailure) ? firstFailure : null, now: now(), interimPossible: openAi }) && !String(state.last_reason ?? "").startsWith("interim:");
   // 최종판 0-1: 저장된 장은 버리지 않는다(빠진 장만 이어 쓴다). 0-6: 지난 시도 비용 합이 상한에 이르면 부르지 않고 보류.
   const sink = interim ? memorySink() : job.sink;
@@ -133,7 +142,9 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   // HOTFIX-W1 2부 5: 지난 시도에서 생각 소진한 단계 다음부터(같은 단계·같은 한도 반복 금지). 2단까지 소진이면 부르지 않고 보류.
   const ladder = ladderOf(runs as never, interim ? INTERIM_TARGET.model : env.deps?.model ?? OFFICIAL_TARGET.model);
   const skip = ladder.end && lane === "official";
-  const a = skip ? null : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore), ladder }, lane);
+  // AM2-8 5부(덕짱님 결정 5): 같은 입력이면 같은 보류 — 정식본이 generation_hold로 끝났고(묶음 다시 부름 1회까지 한 뒤) 이번에도 정식본 차례면 같은 빌드를 되풀이하지 않는다(세운·대운 장 묶음 보류에만 걸린다).
+  const repeatHold = !interim && isHoldRepeat(state.last_reason);
+  const a = skip ? null : repeatHold ? holdRepeatAttempt(String(state.last_reason)) : await attempt(env, { ...job, sink, costCapUsd: Math.max(0, cap - spentBefore), ladder }, lane);
   const spentNow = spentBefore + (a?.summary.costUsd ?? 0);
   let decision: Decision;
   if (!a) decision = { kind: "hold", until: iso(now() + COST_HOLD_MS), reason: `${lane}:thinking_exhausted_end 2단까지 생각 소진(누적 $${spentNow.toFixed(4)}) — 보류` };
@@ -152,6 +163,8 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
     const t0 = now(), first0 = Number.isFinite(firstFailure) ? firstFailure : t0, end = nextRetryAt(first0, 1, t0) === null ? null : first0 + retryWindowMs();
     decision = end === null ? { kind: "give_up", reason: decision.reason } : { ...decision, until: iso(end) };
   }
+  // AM2-3 6-1: 결정론 대체본은 내보내지 않는다 — 임시본까지 실패했거나 임시본을 쓸 수 없으면 보류 경보(고객 화면은 RETRYING = 지연 안내, 24시간 뒤 자동 환불은 그대로).
+  if ((decision.kind === "defer" || decision.kind === "give_up") && (lane === "interim" || !openAi) && env.holdAlert) { try { await env.holdAlert({ reportId: job.reportId, origin: job.origin, reason: (a?.reason ?? decision.kind).slice(0, 200), lane }); } catch { /* 경보 실패는 생성과 무관 */ } }
   const settled = decision.kind === "stale" ? { ok: false, code: "STALE_LEASE" } : await settle(decision);
   const t = now(), first = Number.isFinite(firstFailure) ? firstFailure : t;
   const failed = decision.kind === "defer" || decision.kind === "give_up" || decision.kind === "hold";

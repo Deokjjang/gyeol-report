@@ -7,11 +7,11 @@
  * 반복 장(대운 연도·세운 월)은 타임라인 항목 1개 + 그해·그달 글자가 건드리고 앞에서 소개된 trait 0~1개(P3.7 1-1, 적용 1회로 센다).
  */
 import type { CompatTopic, Domain, MbtiProfile, MyeongriFeature, SceneItem, SectionPlan } from "@/data/knowledge-v5/schema";
-import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, type FactProfile } from "./facts";
+import { sceneFits, sceneTagsFit, sceneTagsOf, sceneTextFits, seedClashesJob, type FactProfile } from "./facts";
 import { FAMILY_MEMBER } from "@/lib/writer/safety/patterns";
 import type { CustomerProps } from "./props";
 import type { ProductNarrative } from "./knowledge";
-import type { Rng } from "./seed";
+import { fnv1a, type Rng } from "./seed";
 import { meaningGroup } from "./groups";
 import type { Brief, ChapterBrief, Material, Trait } from "./schema";
 import type { ProductKey } from "./traits";
@@ -25,9 +25,18 @@ export const PRODUCT_CHARS: Record<ProductKey, { total: [number, number]; sectio
   career_money_study: { total: [11000, 14000], section: [410, 520] },
   love_marriage_child: { total: [11000, 14000], section: [410, 520] },
   saju_mbti_compatibility: { total: [11000, 14000], section: [410, 520] },
-  major_fortune: { total: [14000, 18000], section: [450, 560], repeat: [680, 890] },
-  annual_fortune: { total: [12000, 15000], section: [450, 560], repeat: [630, 800] },
+  // AM 3부: 대운 16~20천(부드러운 목표) — 절 17개 + 앞으로 10년(핵심 해 셋은 깊게, 나머지는 짧게: key 근거 depth가 정한다).
+  major_fortune: { total: [16000, 20000], section: [450, 560], repeat: [500, 700] },
+  // AM 2부: 세운 신년판 약 13천부터 — 절 20개 + 1월 다리·12달(13 key). 작가 한 번 호출 시간(결제 예산 8분) 안에 들게 절·key를 줄였다.
+  annual_fortune: { total: [13000, 17000], section: [380, 480], repeat: [450, 600] },
 };
+
+/**
+ * W3 P1(AM 병합): AM 갈래의 브리프 개선 가운데 4종에도 닿는 것 — 장면 분산(고객 해시)·종합 직군 충돌 씨앗 거름·해 × 원국 관계 근거(4종 흐름 장)·행동 조언 문구 —
+ * 은 이 상품들에만 켠다. 4종은 운영(HOTFIX-W1) 그대로 둔다(작가 요청 본문이 master와 같음, 비용 0 덤프로 확인). P3 연결 시스템에서 하나씩 판단해 켠다.
+ */
+export const AM_BRIEF_PRODUCTS: ReadonlySet<string> = new Set(["annual_fortune", "major_fortune"]);
+export const amBrief = (product: string | undefined | null): boolean => Boolean(product && AM_BRIEF_PRODUCTS.has(product));
 
 /** trait 적용(소개 뒤 다시 부르기)은 책 전체에서 이 횟수까지. */
 export const MAX_TRAIT_APPLIES = 2;
@@ -67,6 +76,10 @@ export type PlanCtx = {
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
   readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
+  /** AM 2·3부: 반복 장 key마다 붙는 근거(세운 달 영역 신호·1월 다리, 대운 핵심 해 깊이). */
+  readonly keyMaterials?: ReadonlyMap<string, readonly Material[]>;
+  /** AM 1-1 ③: 장면 분산 값(고객 해시 + 상품 id). 소품 힌트 시작 자리와 씨앗 고르기에 섞는다. */
+  readonly spread?: number;
 };
 const SEED_DOMAIN: Readonly<Record<string, string>> = { work: "work", study: "work", money: "money", love: "love", marriage: "love", relationships: "relationships", alone: "alone" };
 
@@ -91,9 +104,12 @@ const PROP_POOL: Record<Domain, readonly ("job" | "relationship" | "stage")[]> =
 /** 같은 소품은 책 전체에서 이 횟수까지만 힌트로 준다(P3.6 A1). */
 export const MAX_PROP_USES = 1; // P6d F 소품 원장: 같은 소품 명사는 책당 1회
 /** 장마다 소품 2개를 줄별 커서로 돌려 준다. 책 단위 사용 기록(usedProps)으로 한 소품은 2회까지. */
-export function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[]): { hints: (string[] | undefined)[]; usedProps: Record<string, number> } {
+/** spread(AM 1-1 ③): 고객 해시 + 상품 id. 소품 줄마다 시작 자리를 이 값으로 돌린다(예전에는 모든 고객이 0부터 — 같은 생활 단계 고객이 같은 장에서 「쉬는 날 없는 주말」을 받았다). */
+export function sceneHints(props: CustomerProps, plans: readonly { repeatKey?: string; domains: readonly Domain[] }[], spread?: number): { hints: (string[] | undefined)[]; usedProps: Record<string, number> } {
   const pools = { job: props.job.props, relationship: props.relationship, stage: props.stage.props };
-  const cursor = { job: 0, relationship: 0, stage: 0 };
+  // spread가 없으면(4종, W3 P1) 예전처럼 0부터.
+  const start = (line: string, n: number) => (spread !== undefined && n ? fnv1a(`${spread}:${line}`) % n : 0);
+  const cursor = { job: start("job", pools.job.length), relationship: start("relationship", pools.relationship.length), stage: start("stage", pools.stage.length) };
   const usedProps: Record<string, number> = {};
   const hints = plans.map(p => {
     if (p.repeatKey) return undefined;
@@ -290,8 +306,9 @@ export function planChapters(input: PlanCtx): PlanResult {
     const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
       && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
       // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
-      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗).
-      && (ctx.product === "saju_mbti_full" || (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
+      // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗). AM 결정(2026-11-11 밤): 단, 입력 직군과 정면으로 부딪치는 씨앗만 뺀다(sodam 카페 사장에게 「질문 메일」「업무 지시」「구직 공고」「프리랜서 의뢰서」).
+      // W3 P1: 그 거름은 amBrief 상품에서만(4종 종합은 운영 그대로 거름 없음).
+      && (ctx.product === "saju_mbti_full" ? !(amBrief(ctx.product) && seedClashesJob(s, f)) : (sceneTagsFit(s.ctx ?? sceneTagsOf(s.text), f) && sceneTextFits(s.text, f))));
     if (!ok.length) return null;
     const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
     return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
@@ -313,7 +330,9 @@ export function planChapters(input: PlanCtx): PlanResult {
       return null;
     }
     for (const d of domains) {
-      const scene = freshScene(owner.profile.signals[d], ctx, `${p.id}:${label}:${d}`, p.c.id);
+      // AM 결정(밤): 종합의 유형 공용 신호 장면도 입력 직군과 정면으로 부딪치면 쓰지 않는다(카페 사장에게 「업무 지시를 받으면…」).
+      const signals = ctx.product === "saju_mbti_full" && amBrief(ctx.product) ? (owner.profile.signals[d] ?? []).filter(x => !seedClashesJob({ text: x.text }, ctx.facts)) : owner.profile.signals[d];
+      const scene = freshScene(signals, ctx, `${p.id}:${label}:${d}`, p.c.id);
       if (scene) { mbtiTurn++; return { kind: "mbti", domain: d, scene, ...(owner.who ? { who: owner.who } : {}) }; }
     }
     return null;
@@ -455,10 +474,10 @@ export function planChapters(input: PlanCtx): PlanResult {
   for (const t of ctx.traits) t.trait.chapters.sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
 
   const total = plans.length;
-  const hints = ctx.props ? sceneHints(ctx.props, plans).hints : [];
+  const hints = ctx.props ? sceneHints(ctx.props, plans, ctx.spread).hints : [];
   const chapters = plans.map((p): ChapterBrief => {
     const repeat = Boolean(p.repeatKey);
-    const flat = repeat ? [{ kind: "timeline" as const, entryKey: p.repeatKey! }, ...p.aux] : p.sections.flatMap(s => s.materials).slice(0, 12);
+    const flat = repeat ? [{ kind: "timeline" as const, entryKey: p.repeatKey! }, ...(ctx.keyMaterials?.get(p.repeatKey!) ?? []), ...p.aux].slice(0, 12) : p.sections.flatMap(s => s.materials).slice(0, 12);
     return {
       id: p.id, index: p.index + 1, title: p.c.title, question: p.c.question, role: p.c.role,
       // 절이 4개보다 적으면(재료가 적은 고객) 목표 분량도 절 수만큼만: 같은 말로 채우지 않게(길이는 정보량의 결과).

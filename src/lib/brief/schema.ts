@@ -171,6 +171,14 @@ export const TimelineEntrySchema = z.object({
   repeatOf: z.string().optional(),
   /** 그해·그달 글자가 실제로 건드리는 원국 trait와 어떻게 건드리는지(P3.7 1-1). 장에 배정된 것만 남긴다. 없으면 원국 특성을 쓰지 않는다. */
   touched: z.array(z.object({ traitId: z.string(), how: z.string() })).optional(),
+  /** AM 2부 세운: 영역 신호(연애·돈·일·사람·마음, 결정론 규칙·참고), 절기 구간(KST 시각, 절입 엔진 값), 1월 다리(지난 해 마지막 절기월). */
+  signals: z.object({ love: z.enum(["↑", "→", "↓"]), money: z.enum(["↑", "→", "↓"]), work: z.enum(["↑", "→", "↓"]), people: z.enum(["↑", "→", "↓"]), mind: z.enum(["↑", "→", "↓"]) }).optional(),
+  span: z.object({ start: z.string(), end: z.string() }).optional(),
+  /** AM 2부 세운 달 카드 「좋은 것」 결정론 값(작가 줄이 없거나 걸리면): 오르는 영역의 그달 십성 영역 줄. */
+  good: z.string().optional(),
+  bridge: z.boolean().optional(),
+  /** AM 3부 대운: 앞으로 10년 핵심 해(결정론 규칙)와 근거 배지. */
+  keyYear: z.object({ rank: z.number().int().min(1).max(3), reasons: z.array(z.string()).min(1) }).optional(),
 });
 export type TimelineEntry = z.infer<typeof TimelineEntrySchema>;
 
@@ -230,7 +238,9 @@ export const BriefSchema = z.object({
   unused: z.array(UnusedSchema),
   chapters: z.array(ChapterBriefSchema).min(5),
   /** cycles[].label·ages(최종판3 8): 공통 대운 표기 줄과 만 나이(labels.dayunLabel). */
-  timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), period: z.string().optional(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })) }).optional(),
+  timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), period: z.string().optional(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })),
+    /** AM 3부 평생 대운 지도(대운 전부): 시작 만 나이·연도·간지·십성·한 줄 주제. 작가에게는 근거(lifetime)로만 간다. */
+    lifetime: z.array(z.object({ ganji: z.string(), hanja: z.string(), startYear: z.number().int(), endYear: z.number().int(), ages: z.string(), tenGod: z.string(), theme: z.string(), current: z.boolean(), label: z.string() })).optional() }).optional(),
   partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
   compatibility: CompatibilityBriefSchema.optional(),
   /**
@@ -246,6 +256,12 @@ export const BriefSchema = z.object({
   usedProps: z.record(z.string(), z.number().int().min(1).max(2)).optional(),
   /** 부록 "내 모든 기운"(P6c): 사람마다 내 사주에 있는 기운(지식 DB 이름)과 뜻 한 줄. 작가 입력에서 뺀다. core: 본문 trait로 쓴 기운. */
   appendix: z.array(z.object({ name: z.string(), items: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string(), core: z.boolean() })) })).optional(),
+  /** AM 2·3부 화면용 결정론 값(작가 입력에서 뺀다): 세운 신년판 연도·키워드(엔진)·나를 돕는 색·방향·숫자·삼재. */
+  display: z.object({
+    year: z.number().int().optional(), keywords: z.array(z.string()).optional(), verdict: z.string().optional(),
+    lucky: z.object({ name: z.string(), colors: z.array(z.string()), direction: z.string(), numbers: z.array(z.number()), why: z.string() }).optional(),
+    samjae: z.object({ zodiac: z.string(), phase: z.string(), line: z.string() }).optional(),
+  }).optional(),
   /** 용어 뜻(P6c-ui2 g): 십성·신살·귀인·십이운성 이름(한글)과 지식 DB 뜻 한 줄. 작가 입력에서 빼고, Book에는 본문에 나온 것만 남긴다. */
   glossary: z.array(z.object({ group: z.string(), name: z.string(), meaning: z.string() })).optional(),
   style: z.object({

@@ -160,16 +160,18 @@ describe("P6b 지침 누출(r1)", () => {
 
 import { createV5Snapshot, projectV5Book } from "@/lib/writer/book";
 describe("P6b 세운 달 번호", () => {
-  it("라벨은 'N번째 달 · 간지월 (절입일~)'(P6c E5: 달력 달 이름·이번 달 없음), 화면 표는 절기월 순번·날짜 구간(P6b-ui)", () => {
+  // AM 2부: 신년판(기본 2027)은 1월 다리 + 12 절기월, 라벨은 「2월 · 임인월 (2/4~3/6)」 한 체계(예전 「N번째 달 · 간지월 (절입일~)」 대신). 「무렵·이번 달」은 그대로 없음.
+  it("라벨은 '2월 · 임인월 (절기 구간)', 1월 다리 포함 13칸, 화면 표 순번 0~12와 절기 구간", () => {
     const b = book("annual_fortune", PEOPLE.c1);
     const cards = b.draft.timeline!.cards.filter(c => c.kind === "month");
-    expect(cards[1].label).toBe("2번째 달 · 신묘월 (03/05~)");
-    expect(cards[11].label).toMatch(/^12번째 달 · [가-힣]{2}월 \(01\/\d{2}~\)$/);
-    expect(cards.some(c => /무렵|이번 달/.test(c.label))).toBe(false);
+    expect(cards[0].label).toBe("1월 · 신축월 (1/5~2/4) · 2026년 병오년 마지막 달");
+    expect(cards[1].label).toBe("2월 · 임인월 (2/4~3/6)");
+    expect(cards[12].label).toMatch(/^2028년 1월 · 계축월 \(1\/\d{1,2}~2\/\d{1,2}\)$/);
+    expect(cards.some(c => /무렵|이번 달|번째 달/.test(c.label))).toBe(false);
     const data = projectV5Book(createV5Snapshot({ reportId: "report_p6bmonthtest0000", createdAtIso: `${BASE}T00:00:00.000Z`, draft: b.draft, evidence: b.evidence }))!;
-    const page = data.pages.find(p => p.kind === "months") as { months: { month: number }[] };
-    const months = (page as { months: { order?: number; range?: string }[] }).months;
-    expect(months.map(m => m.order)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]);
-    expect([months[0].range, months[11].range]).toEqual(["2/4~3/5", "1/5~2/4"]); // 끝 = 다음 절입일(P6c-ui2 결정)
+    // AM2-3 5부: 달 표는 앞머리 흐름표(13행, 1월 다리 포함)로 바뀌었다 — 행 순서 = 카드 순서, 절기 구간은 행 아래 줄.
+    const rows = (data.pages.find(p => p.kind === "flowTable") as { rows: { key: string; sub: string }[] }).rows;
+    expect(rows.map(r => r.key)).toEqual(cards.map(c => c.key));
+    expect([rows[1].sub, rows[12].sub]).toEqual(["2/4~3/6", "1/6~2/4"]); // 끝 = 다음 절입일(엔진 절입 시각)
   });
 });

@@ -89,7 +89,7 @@ describe("post-payment canonical route, mock transport only", () => {
   it("distinguishes automatic recovery from manual attention honestly", async () => {
     const waiting = await renderState("RETRYING");
     expect(waiting).toContain("평소보다 조금 더 걸리고 있습니다");
-    expect(waiting).toContain("페이지를 닫아도 준비는 계속됩니다");
+    expect(waiting).toContain("창을 닫아도 서재에 저장돼요"); // AM 4부 안내 문구
     expect(visibleText(waiting)).not.toMatch(/실패|재시도|오류/u);
     const attention = await renderState("FAILED_REQUIRES_ATTENTION");
     expect(attention).not.toContain("결제가 정상적으로 완료되었습니다");

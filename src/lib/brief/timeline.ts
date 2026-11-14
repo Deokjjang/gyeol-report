@@ -2,6 +2,7 @@
  * TimelineEntry 결정론 생성(SPEC §5): 키, 간지(한자·한글)와 오행 색, 십성, 합충형파해 배지, 부족 오행 채움, 흐름 세기(1~5, 근거), 키워드, 추천 행동, 해석 재료.
  * 행동 템플릿은 (십성, 영역, 세기 구간)으로 고르고 영역을 돌려 같은 템플릿이 두 번 나오지 않게 한다.
  */
+import { itemFits, type Inputs } from "./premise";
 import { TIMELINE_ACTION_DOMAINS } from "@/data/knowledge-v5/schema";
 import { scoreFlow, type FlowInput } from "@/data/knowledge-v5/flow-score";
 import { BRANCH_MAIN_ELEMENT, HEAVENLY_STEMS, HIDDEN_STEMS } from "@/lib/saju/constants";
@@ -12,7 +13,7 @@ import type { Pillar, SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { inflowEffect, type ElementState } from "./chart";
 import { sceneFits, type FactProfile } from "./facts";
 import type { Badge, Knowledge } from "./knowledge";
-import { colorsOf, currentDayunAt, dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, halfHapLine, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
+import { branchKo, colorsOf, currentDayunAt, dayunLabel, ELEMENT_KO, ganjiLabel, ganjiOf, halfHapLine, josa, koCount, POSITION_KO, TEN_GOD_GROUP, TEN_GOD_KO, tenGodLabel, HALF_HAP_PLAIN, REL_PLAIN } from "./labels";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import { periodDomains } from "./productEvidence";
 import type { Rng } from "./seed";
@@ -37,7 +38,7 @@ function flowShort(key: string, clashes: readonly ChartPosition[]): string | und
 }
 
 export type TimelineCtx = {
-  readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile;
+  readonly saju: SajuCalcResult; readonly k: Knowledge; readonly st: ElementState; readonly facts: FactProfile; readonly inputs?: Inputs;
   readonly rng: Rng; readonly usedScenes: Set<string>; readonly usedTemplates: Set<string>;
   /** 이미 나온 십성(→ 첫 항목 key·횟수)과 십이운성 단계(P3.8 r1: 같은 십성 해에 같은 열쇠말·단계 문구가 되풀이). */
   readonly seenTenGod?: Map<string, { key: string; n: number }>; readonly seenStage?: Set<string>;
@@ -94,6 +95,8 @@ function badgeFor(hit: RelationHit, k: Knowledge): Badge | undefined {
   return k.badges.find(b => b.kind === hit.kind && b.pair !== undefined && pairs.includes(b.pair)) ?? k.badges.find(b => b.kind === hit.kind && b.pair === undefined);
 }
 
+/** 화면 카드 문형에서 피할 시점 말(읽는 때에 기대는 말). */
+const CARD_TIME = /(?<![가-힣])(지금|올해|요즘|최근|당장)|이번 ?(달|주|해|한 해)/;
 function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number): { templateId: string; text: string } {
   const band = flow >= 4 ? "high" : "low";
   // 학생이 아니면 시험 공부 행동, 기혼이면 연애 행동을 주지 않는다(P3.7 r1: 37세 기혼 간호사에게 연애형 행동을 억지로 각색).
@@ -103,25 +106,34 @@ function pickAction(ctx: TimelineCtx, tenGod: TenGod, flow: number, slot: number
     const domain = domains[(slot + i) % n];
     const b = i < n ? band : band === "high" ? "low" : "high";
     const t = ctx.k.actions.find(a => a.id === `act:${tenGod}:${domain}:${b}`);
-    if (t && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(t.text) }; }
+    // AM2 P2 판독(annual-1 2027-M12 [해 볼 것] 「…요즘 소식을 담아…」): 시점 말이 든 문형은 고르지 않는다(책은 「이 책을 쓴 날」 기준).
+    // AM2-3 4부(P2 판독 major-1 2031 [해 볼 것] 「평가받는 자리가 많아지니」): 정도말(많아지·한층·훨씬)이 든 문형은 고르지 않는다.
+    const opts = t ? t.text.filter(x => !CARD_TIME.test(x) && !/많아지|한층|훨씬|가장 /.test(x)) : [];
+    if (t && opts.length && !ctx.usedTemplates.has(t.id)) { ctx.usedTemplates.add(t.id); return { templateId: t.id, text: ctx.rng.fork(t.id).pick(opts) }; }
   }
   const fallback = ctx.k.actions.find(a => a.id === `tg:${tenGod}`)!;
   return { templateId: fallback.id, text: ctx.rng.fork(`fb:${slot}`).pick(fallback.text) };
 }
 
 function pickScene(ctx: TimelineCtx, list: readonly { text: string; requires: Parameters<typeof sceneFits>[0] }[], label: string): string | undefined {
-  const ok = list.filter(s => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text));
+  // AM2-7 2부: 십성 시기 장면도 꼬리표 표(필요한 입력)가 맞는 것만(표에 없으면 쓰지 않는다).
+  const ok = list.filter(s => sceneFits(s.requires, ctx.facts, s.text) && !ctx.usedScenes.has(s.text) && (!ctx.inputs || itemFits("tgp", s.text, ctx.inputs)));
   if (!ok.length) return undefined;
   const s = ctx.rng.fork(label).pick(ok); ctx.usedScenes.add(s.text); return s.text;
 }
 
-/** 지난 기간 카드의 돌아보기 질문(P6b E-5). 열쇠말 두 개와 문형 셋을 돌려 쓴다(질문형이라 지난 경험 단정이 아니다). */
+/** 지난 기간 카드의 돌아보기 질문(P6b E-5). 열쇠말 두 개와 문형 셋을 돌려 쓴다(질문형이라 지난 경험 단정이 아니다).
+ *  AM2(덕짱님 결정 2026-11-11): 시점 말 「지금」을 쓰지 않는다(책은 「이 책을 쓴 날」 기준, 읽는 때에 기대지 않음). */
 export function reviewLine(keywords: readonly string[], slot: number): string {
   const [a, b = a] = keywords;
+  // AM2-6 6부(세 판째 그대로이던 R-S1): 열쇠말은 꼬리표라 문장 성분으로 넣으면 뜻이 꼬인다(「내 몫 지키기와 같은 편이 두드러진 때」 「준비의 해가 앞에 섰던 때」) —
+  // 따옴표로 열쇠말임을 밝히고, 열쇠말을 주어로 쓰지 않는다. 열쇠말 끝 글자에 맞춘 조사만 붙인다.
+  const q = (w: string, pair: "과와" | "이가" | "은는") => `「${w}」${josa(w, pair).slice(w.length)}`;
+  const was = (w: string) => `「${w}」${/[가-힣]$/.test(w) && (w.charCodeAt(w.length - 1) - 0xac00) % 28 !== 0 ? "이었어요" : "였어요"}`;
   return [
-    `${a}·${josa(b, "이가")} 두드러진 때였어요. 그때 붙잡은 일 가운데 지금까지 이어진 것은 무엇인가요?`,
-    `${a} 쪽으로 힘이 실린 때였어요. 그때 정한 것 중 지금 다시 꺼내 볼 하나는 무엇인가요?`,
-    `${josa(b, "이가")} 앞에 섰던 때였어요. 그때 미뤄 둔 일 하나를 지금 다시 살펴볼까요?`,
+    `이 해의 열쇠말은 ${q(a, "과와")} ${was(b)}. 그때 붙잡은 일 가운데 그 뒤로도 이어진 것이 있나요?`,
+    `「${a}」${/[가-힣]$/.test(a) && (a.charCodeAt(a.length - 1) - 0xac00) % 28 !== 0 ? "이라는" : "라는"} 열쇠말이 붙은 해였어요. 그때 정한 것 가운데 다시 꺼내 볼 만한 하나는 무엇인가요?`,
+    `이 해의 열쇠말 가운데 하나는 ${was(b)}. 그때 미뤄 둔 일 가운데 다시 살펴볼 하나가 있나요?`,
   ][Math.abs(slot) % 3];
 }
 
@@ -147,9 +159,20 @@ export function buildEntry(ctx: TimelineCtx, kind: "year" | "month", key: string
     if (same) { const w = [...new Set([...(same.with?.split("·") ?? []), ...natal])]; if (w.length) same.with = w.join("·"); continue; }
     // 세 글자 중 두 글자만 만난 합은 "완성"이 아니다(P3.6 B: 반합을 "팀이 완성"으로 썼다). 최종판3 7: 궁합 관계 목록과 같은 반합 문구(halfHapLine).
     const half = r.kind === "SAMHAP" && r.completeness !== "full";
+    // AM 7부(annual-2 판독): 삼형 세 글자 중 두 글자만 만난 형(丑未)이 무리 이름 「축술미형」·세 글자 풀이(「세 땅이 서로 눌러」)로 나가
+    // 작가가 「축술미형이 걸려」로 쓰고 사실 검사가 지웠다 → 두 글자 이름(「축미형」)과 일반 형 풀이로(반합의 「(반쯤)」과 같은 원리).
+    if (r.kind === "HYEONG" && r.completeness === "partial" && [...r.key].length === 3) {
+      const two = [...r.key].filter(ch => r.members.some(m => m.char === ch)), plain = k.badges.find(x => x.kind === "HYEONG" && x.pair === undefined);
+      const pair = two.join(""), dup = badges.find(x => x.kind === "HYEONG" && x.pair === pair);
+      if (dup) { const w = [...new Set([...(dup.with?.split("·") ?? []), ...natal])]; if (w.length) dup.with = w.join("·"); continue; }
+      badges.push({ kind: "HYEONG", pair, label: `${two.map(branchKo).join("")}형`, line: plain?.line ?? b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
+      continue;
+    }
     badges.push({ kind: b.kind, ...(b.pair ? { pair: b.pair } : {}), label: half ? `${b.label}(반쯤)` : b.label, line: half ? `${HALF_HAP_PLAIN}: ${halfHapLine(b.line)}` : b.line, tone: b.tone, ...(natal.length ? { with: natal.join("·") } : {}) });
   }
   if (inc.gongmang) { const b = k.badges.find(x => x.kind === "GONGMANG" && !x.pair); if (b) badges.push({ kind: b.kind, label: b.label, line: b.line, tone: b.tone }); }
+  // AM2-5 1부(P4 판독 세운 덧붙임): 달 카드 배지 뜻 끝 「…해」는 「…달」(「까끌해지는 해」 「공망에 든 해」). 달 항목은 세운에만 있다(4종 무관).
+  if (kind === "month") for (const bd of badges) bd.line = bd.line.replace(/(?<=[가-힣])(?<!태어난) 해(?=$|[.,]|,)/g, " 달");
   const eff = inflowEffect(pillar, st);
   const g = k.ganji.get(pillar.stem + pillar.branch)!;
   const period = k.tenGodPeriod.get(inc.stemTenGod)!;
@@ -206,7 +229,7 @@ export function buildYearEntries(ctx: TimelineCtx, thisYear: number, cycles: rea
     // 대운 안 몇 번째 해(P6d C): 엔진 연차 그대로. 위치 말(앞쪽·중간·끝 무렵·마지막 해)은 이 값으로만.
     const yi = cyc ? year - cyc.startYear + 1 : 0, total = cyc ? cyc.endYear - cyc.startYear + 1 : 0;
     const dyTg = cyc ? tenGodLabel(getTenGod(ctx.saju.dayMaster, cyc.stem)) : "";
-    const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (올해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
+    const e = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(pillar)}${year === thisYear ? " (이 책을 쓴 해)" : ""}${transition ? " · 새 대운 시작" : ""}`, pillar, "annual", start + i,
       { ...(cyc ? { dayun: { ganji: `${cyc.ganji} 대운`, transition, yearIndex: yi, total, position: dayunPositionLine(cyc.startYear, cyc.endYear, yi, total), tenGod: dyTg, ...(transition ? { start: dayunLabel(cyc).start } : {}) } } : {}), when: year < thisYear ? "past" : year === thisYear ? "now" : "future" });
     e.head = headLine(e, cyc ? { ganji: `${ganjiOf(cyc).hangul}(${ganjiOf(cyc).hanja})`, tenGod: dyTg, month: dayunLabel(cyc).month } : undefined);
     out.push({ ...e, ...changeOf(out.at(-1), "해", e.tenGod.stem, e.flow.score) });
@@ -258,4 +281,35 @@ export function cycleSummary(dayun: { readonly cycles: readonly CustomerDayunCyc
   const cycles = dayun.cycles, now = atMs === undefined ? undefined : currentDayunAt(cycles, atMs);
   return cycles.filter(c => c.endYear >= from && c.startYear <= to).map(c => { const l = dayunLabel(c, dayun.daeunsu, cycles.find(x => x.index === c.index + 1));
     return { ganji: ganjiLabel(c), years: l.years, period: l.period, tenGod: tenGodLabel(getTenGodFn(c.stem)), current: now ? now.index === c.index : c.startYear <= thisYear && thisYear <= c.endYear, label: l.line, ages: l.ages }; });
+}
+
+/**
+ * AM 2부 세운 신년판(「나의 2027」): 해 카드 + 1월 다리(지난 해 12번째 절기월 = 소한~입춘) + 그해 12 절기월(입춘~다음 해 입춘).
+ * 달 이름(덕짱님 지시 2026-11-11): 표와 본문이 한 체계 — 「2월 · 임인월 (2/4~3/6)」(절입 날짜는 엔진 값, 끝은 다음 달 절입일), 마지막 축월은 「2028년 1월 · 계축월」.
+ * 영역 신호(signals)는 design/annual.domainSignals(결정론, 참고).
+ */
+export function buildAnnualEntries(ctx: TimelineCtx, year: number, baseDate: string, gender: "MALE" | "FEMALE" | null,
+  signalsOf: (pillar: Pillar, position: "annual" | "monthly", eff: { fillsLack: boolean; feedsExcess: boolean }) => NonNullable<TimelineEntry["signals"]>): { yearEntry: TimelineEntry; bridge: TimelineEntry; months: TimelineEntry[] } {
+  void gender;
+  const yp = getAnnualPillar(year);
+  const yearEntry0 = buildEntry(ctx, "year", String(year), `${year}년 ${ganjiLabel(yp)}`, yp, "annual", 0);
+  const yearEntry: TimelineEntry = { ...yearEntry0, signals: signalsOf(yp, "annual", { fillsLack: yearEntry0.fillsLack.fills, feedsExcess: yearEntry0.fillsLack.feedsExcess.length > 0 }) };
+  const prev = getMonthlyPillars(year - 1), cur = getMonthlyPillars(year), next = getMonthlyPillars(year + 1);
+  const md = (iso: string) => `${Number(iso.slice(5, 7))}/${Number(iso.slice(8, 10))}`;
+  const start = ctx.rng.fork("slot").int(6);
+  const make = (m: (typeof cur)[number], endIso: string, key: string, bridge: boolean, slot: number): TimelineEntry => {
+    const calY = Number(m.startKst.slice(0, 4)), calM = Number(m.startKst.slice(5, 7));
+    const name = `${calY > year && !bridge ? `${calY}년 ` : ""}${calM}월 · ${ganjiOf(m.pillar).hangul}월`;
+    const label = `${name} (${md(m.startKst)}~${md(endIso)})${bridge ? ` · ${year - 1}년 ${ganjiOf(getAnnualPillar(year - 1)).hangul}년 마지막 달` : ""}`;
+    const s = m.startKst.slice(0, 10), e = endIso.slice(0, 10);
+    const when = e <= baseDate ? "past" : s <= baseDate ? "now" : "future";
+    const e0 = buildEntry(ctx, "month", key, label, m.pillar, "monthly", slot, { when });
+    const out: TimelineEntry = { ...e0, head: headLine(e0), span: { start: m.startKst, end: endIso }, ...(bridge ? { bridge: true } : {}),
+      signals: signalsOf(m.pillar, "monthly", { fillsLack: e0.fillsLack.fills, feedsExcess: e0.fillsLack.feedsExcess.length > 0 }) };
+    return out;
+  };
+  const bridge = make(prev[11], cur[0].startKst, `${year - 1}-M12`, true, start);
+  const months: TimelineEntry[] = [];
+  cur.forEach((m, i) => { const e = make(m, cur[i + 1]?.startKst ?? next[0].startKst, `${year}-M${String(m.index).padStart(2, "0")}`, false, start + m.index); months.push({ ...e, ...changeOf(months.at(-1) ?? bridge, "달", e.tenGod.stem, e.flow.score) }); });
+  return { yearEntry, bridge, months };
 }

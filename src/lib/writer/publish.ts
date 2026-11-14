@@ -35,8 +35,9 @@ import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta 
 import { buildWriterPrompt, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
 import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
+import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
@@ -45,15 +46,18 @@ import { WRITER_SYSTEM } from "./prompt/system";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
+import { imageClash } from "./safety/imageClash";
 import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/brief/imageLedger";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
 import { allowedWindows, writeKeyFill, type FinalChapter } from "./safety";
-import type { BookSection } from "./format";
+import { keywordsOf, type BookSection } from "./format";
 import { buildFactSheet, type FactSheet } from "@/lib/factsheet/build";
-import { factCtxOf } from "@/lib/factsheet/check";
+import { factCtxOf, seniorityHit } from "@/lib/factsheet/check";
 import { matchJob, PROPS } from "@/lib/brief/props";
 import type { PriorBooks } from "./prior";
+import { buildChunkedSnapshot } from "./chunked/publish";
+import { writerModeOf } from "./mode";
 
 let knowledgeCache: { k: Knowledge; version: string } | null = null;
 /** 지식 DB와 그 내용 해시(Book 메타데이터의 지식 버전). */
@@ -142,7 +146,7 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
   return {
     facts: f, jobDetail: brief.person.facts.job.detail, compat,
     schoolStage: brief.person.facts.job.class !== "student" ? "none" : brief.person.age < 19 ? "student" : "college",
-    ...(compat ? {} : { yinYang: { yin: c.yinYang.yin, yang: c.yinYang.yang }, ...(c.elements.presence ? { presence: c.elements.presence as ElementPresence } : {}),
+    ...(compat ? {} : { yinYang: { yin: c.yinYang.yin, yang: c.yinYang.yang }, ...(c.elements.presence ? { presence: c.elements.presence as ElementPresence } : {}), strongestElement: c.elements.strongest.element,
       ...(cd ? { dayunPhase: dayunPhase(cd.phase ? cd.phase.yearIndex - 1 : c.thisYear.year - Number(cd.years.slice(0, 4))) } : {}),
       ...(c.stars ? { stars: { spouse: c.stars.spouse.where, child: c.stars.child.where } } : {}) }),
     coreImage: brief.compatibility?.pairImage.line ?? image ?? c.coreImage.line,
@@ -240,6 +244,20 @@ function p6eContext(brief: Brief, k: Knowledge): Partial<LintCtx> {
 
 const CONDITIONAL_TITLE = /(된다면|되면|한다면)$/;
 /** P6d 검사 문맥: 묶음 세기·궁합 두 사람 값·대운 안 몇 번째 해·시점·관계 수·소품·투자 장·세기 점수·카드 십성. */
+/** AM 7부: 세운 달 표 라벨(「5월 · 을사월 (5/6~6/6)」「2028년 1월 · 계축월 …」) → 본문 달 이름 짝. 신년판 해의 「2027년 5월」도 같은 짝. */
+export function monthNamesOf(entries: readonly { readonly kind: string; readonly key: string; readonly label: string }[]): Record<string, string> {
+  const year = entries.find(e => e.kind === "year")?.key ?? "";
+  const out: Record<string, string> = {};
+  for (const e of entries) {
+    if (e.kind !== "month") continue;
+    const m = e.label.match(/^(?:(20\d\d)년 )?(1[0-2]|[1-9])월 · ([가-힣]{2}월)/);
+    if (!m) continue;
+    if (m[1]) out[`${m[1]}년 ${m[2]}`] = m[3];
+    else { out[m[2]] ??= m[3]; if (year) out[`${year}년 ${m[2]}`] ??= m[3]; }
+  }
+  return out;
+}
+
 function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintCtx> {
   const ids = (re: RegExp) => new Set(plan.filter(ch => re.test(ch.id)).map(ch => ch.n));
   const entries = brief.timeline?.entries ?? [];
@@ -256,7 +274,7 @@ function p6dContext(brief: Brief, plan: readonly WriterChapter[]): Partial<LintC
       pairRelations: c.dayRelations.length,
     } : {}),
     yearIndex: Object.fromEntries(entries.filter(e => e.kind === "year" && e.dayun?.yearIndex).map(e => [e.key, { index: e.dayun!.yearIndex!, total: e.dayun!.total ?? 10 }])),
-    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)) } : {}),
+    strictTime: timelineBook, ...(brief.product === "annual_fortune" ? { calendarChapters: new Set(plan.map(ch => ch.n)), goodCards: true, monthNames: monthNamesOf(entries), ...(Number(entries.find(e => e.kind === "year")?.key) ? { bookYear: Number(entries.find(e => e.kind === "year")!.key) } : {}) } : {}),
     relationCount: Object.fromEntries(entries.map(e => [e.key, e.badges.filter(b => b.kind !== "GONGMANG").length])),
     props: Object.keys(brief.usedProps ?? {}), investChapters: ids(/^invest/),
     allowed: allowedWindows(JSON.stringify(brief)), conditionalChapters: new Set(plan.filter(ch => CONDITIONAL_TITLE.test(ch.title.trim())).map(ch => ch.n)),
@@ -273,8 +291,38 @@ const WRITER_HEAD = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-�
  * 조립 직전 결정론 넣기(P6d D, 최종판 1-12·1-13): key마다 머리 문장, 마지막 장 끝에 책 한 줄 안내(면책·단서는 책에 한 번, P6e insertFixedLines).
  * 기준일은 본문에 넣지 않는다(표지·마지막 쪽 판 표기에만). 검사·수리 뒤에 넣어 작가가 바꾸지 못한다.
  */
+/**
+ * AM 판독(대운 40곳·세운 달): 작가가 머리 문장 바로 뒤에 같은 해·달 이름과 같은 십성을 다시 알린다
+ * (「2028년 무신년은 편재(偏財)가 들어와 판이 넓어지는 해입니다」·「4월 갑진월에는 비견(比肩)이 들어옵니다」).
+ * 첫 문장이 그 이름으로 시작하면: 머리 문장의 십성이 「들어와」로 이어지면 그 마디를 떼고 「그래서 …」로, 십성만 다시 알리는 문장·새 대운이 열린다는 말만 되풀이하는 문장은 빼고,
+ * 그 밖은 이름 주어만 「이 해는·이 달은」으로 바꾼다(호출 0).
+ */
+export function trimRestatedHead(first: string, e: { readonly kind: string; readonly ganji: { readonly hangul: string }; readonly tenGod: { readonly stem: string; readonly branch: string } }, head: string, again = true): string {
+  const s1 = first.match(/^.*?[.!?](?=\s|$)/)?.[0]; if (!s1) return first;
+  const rest = first.slice(s1.length).trim();
+  const name = e.ganji.hangul, unit = e.kind === "month" ? "달" : "해", be = "(?:예요|이에요|입니다)";
+  // AM 재생성 2 판독(annual-1 7.12.0): 「2028년 1월(계축월)에 해당하는 이 달은 …」 — 머리 문장이 이미 달 이름을 알렸다 → 「이 달은 …」.
+  const ref = s1.match(new RegExp(`^\\d{4}년 \\d{1,2}월(?:\\(${name}월(?:\\([一-鿿]{2}月\\))?\\))?(?:에 해당하는|인) 이 ${unit}(은|는|에는) `));
+  if (ref) { const out = `이 ${unit}${ref[1]} ${s1.slice(ref[0].length)}`; return rest ? `${out} ${rest}` : out; }
+  const subj = s1.match(new RegExp(`^(?:\\d{4}년 )?(?:\\d{1,2}월 ?(?:· )?)?${name}(?:\\([一-鿿]{2}\\))?(?:년|월)?(?:\\([一-鿿]{2}月?\\))?(은|는|에는|에|의) `));
+  const after = subj ? s1.slice(subj[0].length) : s1;
+  const tgs = [...new Set([e.tenGod.stem, e.tenGod.branch].map(t => t.replace(/\(.*$/, "")).filter(Boolean))];
+  const TG = `(?:${tgs.join("|")})(?:\\([一-鿿]{2}\\))?`, TGS = `${TG}(?:(?:과|와) ${TG})?`;
+  // 십성만 다시 알리는 문장(「정인(正印)의 해예요.」·「비견과 상관이 들어오는 해예요.」·「책임과 압박의 편관이 들어오는 달입니다.」) → 뺀다.
+  // 뺀 뒤 다음 문장이 또 되풀이하면(대운 문장 뒤 「편관이 들어와 …」) 한 번 더 본다.
+  const dropped = () => (again && rest ? trimRestatedHead(rest, e, head, false) : rest);
+  if (new RegExp(`^(?:[^.?!]{0,24}의 )?${TGS}(?:의 기운)?(?:이|가)? (?:함께 )?들어(?:옵니다|와요|오는 ${unit}${be})[.!]$|^${TGS}의 ${unit}${be}[.!]$|^${TG}(?:이|가) 하늘(?:과 땅)?에,? (?:모두 |함께 |겹쳐 )?(?:${TG}(?:이|가) 땅에 )?(?:들어와요|들어오는 ${unit}${be})[.!]$`).test(after)) return dropped();
+  // 대운 전환 해: 머리 문장이 이미 새 대운을 말했다 → 「새 대운이 시작되는 해예요」만 되풀이하는 문장은 뺀다.
+  if (/대운/.test(head) && (subj ? /대운이? (열리|시작)/.test(after) : /^새 대운이? (?:시작되|열리)는 해/.test(after) || (after.length < 90 && /^(?:이 해 )?(?:\d{1,2}(?:~\d{1,2})?월 무렵(?:부터|에) )?[가-힣]{2}(?:\([一-鿿]{2}\))? 대운(?:이|은)? (?:시작|열리)/.test(after)))) return dropped();
+  const into = after.match(new RegExp(`^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어와(?:서)? |^${TGS}(?:의 기운)?(?:이|가) (?:함께 )?들어오는 ${unit}(?:라서|이라서|이니) |^${TGS}의 ${unit}(?:이라|라서|이니|로),? `));
+  if (!subj && !into) return first;
+  const out = into ? `그래서 ${after.slice(into[0].length)}` : subj![1] === "의" ? after : `이 ${unit}${subj![1] === "에는" || subj![1] === "에" ? "에는" : unit === "해" ? "는" : "은"} ${after}`;
+  return rest ? `${out} ${rest}` : out;
+}
+
 export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief): FinalChapter[] {
   const heads = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e.head]));
+  const entries = new Map((brief.timeline?.entries ?? []).map(e => [e.key, e]));
   const prepend = (s: BookSection, line: string): BookSection => ({ ...s, paragraphs: s.paragraphs.length ? [`${line} ${s.paragraphs[0]}`, ...s.paragraphs.slice(1)] : [line] });
   const notice = E.bookNotice(brief.product);
   return chapters.map((c, ci) => {
@@ -282,7 +330,9 @@ export function insertFixedLines(chapters: readonly FinalChapter[], brief: Brief
       const head = c.keys?.includes(s.heading) ? heads.get(s.heading) : undefined;
       if (!head) return s;
       const first = s.paragraphs[0] ?? "";
-      const stripped = first.replace(WRITER_HEAD, "").trim();
+      const e = entries.get(s.heading);
+      const stripped0 = first.replace(WRITER_HEAD, "").trim();
+      const stripped = e ? trimRestatedHead(stripped0, e, head) : stripped0;
       return prepend({ ...s, paragraphs: [stripped, ...s.paragraphs.slice(1)].filter(Boolean) }, head);
     });
     if (ci === chapters.length - 1 && sections.length && !sections.some(s => s.paragraphs.includes(notice))) {
@@ -305,7 +355,8 @@ export function renderTerms(chapters: readonly FinalChapter[], brief: Brief, k: 
   for (const e of brief.timeline?.entries ?? []) ganji.add(e.ganji.hangul);
   for (const c of brief.timeline?.cycles ?? []) { const h = c.ganji.match(/[가-힣]{2}/)?.[0]; if (h) ganji.add(h); }
   let count = 0;
-  const out = chapters.map(c => { const r = annotateChapter(c.sections, { dict, ganji }); count += r.count; return { ...c, sections: r.sections, chars: r.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) }; });
+  const relNames = new Set((brief.timeline?.entries ?? []).flatMap(e => e.badges.map(b => b.label.replace(/\(.*\)$/, "").trim())));
+  const out = chapters.map(c => { const r = annotateChapter(c.sections, { dict, ganji, relNames }); count += r.count; return { ...c, sections: r.sections, chars: r.sections.reduce((a, s) => a + s.paragraphs.join("").length, 0) }; });
   return { chapters: out, count };
 }
 
@@ -321,11 +372,15 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return { reason: "설명문", level: "hard" };
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
   if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
+  { const j = brief.person.facts.job, w = !brief.compatibility && /^(employee|freelancer|self_employed|business_owner)$/.test(j.status) ? seniorityHit(v, `${j.detail ?? ""} ${j.status}`) : null; if (w) return { reason: `연차(${w}) — 입력에 없는 연차·나이 말 없이`, level: "hard" }; }
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
+  // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
+  { const clash = imageClash(v); if (clash) return { reason: `그림 안 시간·계절 모순(${clash}) — 한 시간·한 계절의 그림으로`, level: "hard" }; }
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
     const words = jobWordsOf(brief.person.facts.job.detail);
-    const w = words.find(x => v.includes(x)) ?? v.match(/대표|사장|창업|직장인|개발자|회사원|사업가|스물|서른|마흔|쉰|\d+ ?(살|세)|\d0대/)?.[0];
+    // AM2-3 6-2: 종합 표지에 일터 장소(가게·매장·카페 운영 …)도 직업 말로 본다(AM-01 4종 판독 종합 표지).
+    const w = words.find(x => v.includes(x)) ?? v.match(/대표|사장|창업|직장인|개발자|회사원|사업가|가게|매장|점포|손님|스물|서른|마흔|쉰|\d+ ?(살|세)|\d0대/)?.[0];
     if (w) return { reason: `종합 표지에 직업·나이(${w})`, level: "hard" };
   }
   // 최종판3 12: 「현장 공정표 위에서도…」(인테리어 시공 대표 연애 표지)를 못 잡았다 — 장소 낱말에 현장, 입력 직업의 소품·낱말도 본다.
@@ -333,7 +388,10 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   { const motifs = coverMotifs(v).filter(m => brief.ledgerNotes?.avoidCoverMotifs?.includes(m)); if (motifs.length) return { reason: `이전 책 표지와 같은 모티프(${motifs.map(m => `${m}: ${COVER_MOTIFS[m].source.replace(/\(\?<?[!=][^)]*\)/g, "").split("|").slice(0, 10).join("·")} 계열 낱말 금지`).join(" / ")}) — 다른 계열의 그림으로`, level: "avoid" }; }
   const hit = avoidOverlaps(v, avoid);
   if (hit.length) return { reason: `피할 이미지(${hit.slice(0, 2).join(" / ")})`, level: "avoid" };
-  if (n < 16 || n > 26) return { reason: `길이 ${n}자(공백 뺌, 16~26자)`, level: "length" };
+  // AM2-5 1부(덕짱님 지시): 세운·대운 표지는 하한 12자, 채움말(「…의 그림」 「…의 해」 「…의 10년」)은 받지 않는다. 4종은 그대로 16~26자.
+  const am = brief.product === "annual_fortune" || brief.product === "major_fortune";
+  if (am && /(?<![가-힣])(그림|이야기|모습)$|[가-힣]의 (그림|해|한 해|10년|시간|이야기|시기|모습)$/.test(v)) return { reason: "채움말(「…의 그림」 「…의 해」) — 그 사람의 그림 자체로", level: "length" };
+  if (n < (am ? 12 : 16) || n > 26) return { reason: `길이 ${n}자(공백 뺌, ${am ? 12 : 16}~26자)`, level: "length" };
   return null;
 }
 /**
@@ -368,17 +426,25 @@ export function coverPrompt(brief: Brief, line: string, problem: string, avoid: 
   return { system: COVER_SYSTEM, user: `핵심 뜻(chart.coreImage): ${brief.compatibility ? brief.compatibility.pairImage.meaning ?? brief.compatibility.pairImage.line : brief.chart.coreImage.meaning ?? brief.chart.coreImage.line}\n고객 입력: 직업 ${f.job.detail || "미입력"} · 관계 ${f.relationship} · 상품 ${brief.productTitle}\n피할 낱말: ${avoid.join(", ") || "없음"}\n지금 표지: ${line || "(없음)"}\n문제: ${problem}\n\n"[표지] 새 줄"로 돌려주세요.` };
 }
 
+/** 발행 브리프(운영·도구 공통): 같은 고객의 이전 책 원장으로 장면·각도·씨앗·근거·이미지·행동·표지를 거른다. */
+export function briefFor(payload: ReportInputPayload, policyAt: string, prior: PriorBooks | undefined, ledgerView: V5BuildDeps["ledgerView"], k: Knowledge): Brief {
+  const pl = prior?.ledger;
+  return buildBrief({ ...payloadToBriefInput(payload, kstDate(policyAt), policyAt), ...(prior?.scenes.length ? { excludeScenes: prior.scenes } : {}), ...(prior?.explained?.length ? { knownTraits: prior.explained } : {}),
+    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
+    ...(prior?.images?.length ? { priorImages: prior.images } : {}), ...(ledgerView ? { ledgerView } : {}),
+    ...(prior?.actions?.length ? { priorActions: prior.actions } : {}), ...(prior?.covers?.length ? { priorCovers: prior.covers } : {}) } as never, k);
+}
+
 export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; recover?: boolean; deps?: V5BuildDeps; prior?: PriorBooks }): Promise<{ snapshot: ProductPreviewSnapshot; meta: WriterMeta; run: WriterRun | null }> {
   const deps = a.deps ?? {};
   const now = deps.now ?? (() => Date.now()), started = now();
   const { k, version: knowledgeVersion } = writerKnowledge();
   // 같은 고객의 이전 책이 쓴 장면은 고르지 않고, 이미 뜻을 푼 특성은 이 책에서 뜻을 다시 풀지 않는다(P6b E-1, P6c A3).
   // 고객 원장(P6d F): 앞 책이 쓴 각도(Fusion·팩폭)와 MBTI 씨앗은 빼고, 앞 책 근거 항목은 쓰지 않은 것을 먼저 고른다.
+  // AM2: 세운·대운은 장 묶음 작가(상품별 설정 writerMode). 4종은 아래 그대로(책 1권 = 작가 1회).
+  if (writerModeOf(a.payload.productKey) === "chunked") return buildChunkedSnapshot(a);
   const pl = a.prior?.ledger;
-  const brief = buildBrief({ ...payloadToBriefInput(a.payload, kstDate(a.policyAt), a.policyAt), ...(a.prior?.scenes.length ? { excludeScenes: a.prior.scenes } : {}), ...(a.prior?.explained?.length ? { knownTraits: a.prior.explained } : {}),
-    ...(pl?.angles.length ? { excludeAngles: pl.angles } : {}), ...(pl?.seeds.length ? { excludeSeeds: pl.seeds } : {}), ...(pl?.evidence.length ? { priorEvidence: pl.evidence } : {}),
-    ...(a.prior?.images?.length ? { priorImages: a.prior.images } : {}), ...(deps.ledgerView ? { ledgerView: deps.ledgerView } : {}),
-    ...(a.prior?.actions?.length ? { priorActions: a.prior.actions } : {}), ...(a.prior?.covers?.length ? { priorCovers: a.prior.covers } : {}) } as never, k);
+  const brief = briefFor(a.payload, a.policyAt, a.prior, deps.ledgerView, k);
   const plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
   const llm = resolveLlmConfig();
   const provider = deps.provider ?? llm.provider, model = deps.model ?? llm.model;
@@ -392,7 +458,11 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // HOTFIX-W1 2부 6: 작가 한도는 검수·수리 최악 비용을 먼저 남기고 깎는다(작가가 상한을 다 써서 검수·수리를 건너뛰면 지금보다 낮은 품질이 된다).
   const reviewModel0 = deps.reviewModel ?? reviewModelOf();
   const postReserveUsd = worstUsd(reviewModel0, REVIEW_MAX_INPUT_CHARS, reviewMaxTokens(reviewModel0)) + (model ? worstUsd(model, 12_000, repair3MaxTokens(6_000, REPAIR3_MAX_ITEMS, model)) : 0);
-  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink: a.sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...(Number.isFinite(postReserveUsd) ? { postReserveUsd } : {}), ...deps, budgetMs: budget - (now() - started), fallback: fb });
+  // AM 4부 먼저 읽기: 장이 저장될 때 결정론 정리·검사(호출 0)로 사실·금지 규칙 문장을 가린 미리보기를 함께 넘긴다. 미리보기가 실패해도 저장은 그대로.
+  const previewSheet = factSheetFor(a.payload, a.policyAt, brief, k);
+  const previewCtx = lintContext(brief, k, plan, a.prior?.sentences ?? [], undefined, previewSheet);
+  const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, previewCtx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save({ ...c, total: plan.length, ...(preview ? { preview } : {}) }); }, load: () => a.sink.load() };
+  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...(Number.isFinite(postReserveUsd) ? { postReserveUsd } : {}), ...deps, budgetMs: budget - (now() - started), fallback: fb });
   if (!a.recover && model) {
     try { run = await runWriter(opts()); drafts = run.drafts; }
     catch { drafts = new Map(); }
@@ -433,7 +503,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
       const writer = run!.writer, before = run!.calls.length;
       const r = await completeText({ ...opts(), provider: "anthropic", model: reviewModel, fallback: null }, run!, rp.system, rp.user, reviewMaxTokens(reviewModel), "review", REVIEW_SCHEMA as unknown as Record<string, unknown>, repairReserve);
       run = { ...r.run, writer }; review.model = reviewModel; review.calls = run.calls.length - before;
-      const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product) : null;
+      const g = r.text ? guardReview(r.text, rp.numbered, rp.ids, priorLines.lines.length, brief.product, sheet) : null;
       // 출력 상한에 닿아 끝났으면(생각이 상한을 다 쓴 경우 포함) 따로 적는다. length는 다시 부르지 않는다(같은 입력 재호출 금지).
       const ended = run.calls.slice(before).at(-1)?.finish;
       if (!g) review.skipped = ended === "length" ? "length" : r.text ? "format_error" : "call_failed";
@@ -460,7 +530,10 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   let fixed = tidyBook(chapters, lctx).chapters;
   let remaining = lintBook(fixed, lctx);
   // 최종판3 12: 수리가 정답지 검사에 새로 걸리게 만든 문장은 원문으로 되돌린다(검수 오탐 → 맞는 문장을 틀리게 고친 경우, 호출 0).
-  const rv = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
+  const rv0 = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
+  // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
+  const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
+  const rv = { chapters: side.chapters, reverted: [...rv0.reverted, ...side.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;
@@ -482,12 +555,23 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     rewriteTargets: 0, rewritten: 0, rewriteCalls: 0, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
     noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: 0, ...(firstProblem ? { firstProblem } : {}) } } } };
   const people = await (deps.people ?? v4People)(a.payload, a.policyAt);
+  // AM 2부: 세운 키워드 카드 줄(작가 첫 원문의 [키워드]). 사실·금지 규칙에 걸리면 엔진 열쇠말.
+  const kwRaw = keywordsOf(run?.raw?.find(e => e.kind === "first")?.text ?? "");
+  const keywords = kwRaw && kwRaw.every(w => !sentenceViolation(w, safetyFacts(brief)) && !/(합격|결혼|이별|승진|이직|대박|부자|성공)/.test(w)) ? kwRaw : null;
   const { draft, evidence } = assembleV5Book({
-    brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: image, ...(brief.compatibility ? {} : { image }), raw: run?.raw ?? [], ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),
+    brief, plan, finals: chapters, report, payload: a.payload, generatedAt: a.policyAt, people, cover: image, ...(brief.product === "annual_fortune" ? { keywords } : {}), ...(brief.compatibility ? {} : { image }), raw: run?.raw ?? [], ...(pl ? { priorLedger: pl } : {}), badCards: new Set(remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}`)),
     review: reviewMeta, ...(deps.testRun || process.env.LLM_TEST_RUN === "1" ? { test: true } : {}),
     writer: run?.writer ?? null, fallback: run?.fallback ?? null, calls: run?.calls ?? [],
     tokens: { input: run?.usage.inputTokens ?? 0, cachedInput: run?.usage.cachedInputTokens ?? 0, output: run?.usage.outputTokens ?? 0 },
     costUsd: run?.costUsd ?? 0, durationMs: now() - started, briefHash: briefHash(brief), knowledgeVersion, promptVersion: WRITER_PROMPT_VERSION, recovered: Boolean(a.recover), priorBooks: a.prior?.books ?? 0,
   });
   return { snapshot: createV5Snapshot({ reportId: a.reportId, createdAtIso: a.policyAt, draft, evidence }), meta: evidence.meta, run };
+}
+
+/** 브리프의 글 잎(문자열) 모두 — 수리 되돌림이 달 목록 근거를 찾는 데 쓴다. */
+export function briefStrings(x: unknown, out: string[] = []): string[] {
+  if (typeof x === "string") out.push(x);
+  else if (Array.isArray(x)) for (const v of x) briefStrings(v, out);
+  else if (x && typeof x === "object") for (const v of Object.values(x)) briefStrings(v, out);
+  return out;
 }

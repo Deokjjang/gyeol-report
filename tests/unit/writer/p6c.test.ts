@@ -164,13 +164,15 @@ describe("P6c E 상품 구조", () => {
     const parenting = JSON.stringify(love.chapters.find(c => c.id === "parenting")!.sections!.slice(1));
     expect(parenting).not.toMatch(/결혼|시댁|처가|양가|상견례|신혼/);
   });
-  it("E4 대운 지난 3년은 패턴 한 줄, E5 눈여겨볼 달은 세 달의 연결", () => {
+  // AM 3부: 대운 「지난 시간」은 지난 세 해를 한 흐름 + 그 시기 대운으로(예전 「패턴:」 한 줄 대신). AM 2부: 세운은 「눈여겨볼 세 달」 대신 영역마다 달(연애 달·돈 흐름) 근거.
+  it("E4 대운 지난 세 해는 한 흐름 + 그 시기 대운, E5 세운 영역별 달 근거", () => {
     const major = brief("major_fortune", PEOPLE.x);
     const past = major.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "pastSummary") as { facts: string[] };
-    expect(past.facts[1]).toMatch(/^패턴: /);
+    expect(past.facts[0]).toMatch(/^지난 세 해: \d{4}년 [가-힣]{2} .+ → \d{4}년 /);
     const annual = brief("annual_fortune", PEOPLE.c2);
-    const link = annual.chapters.flatMap(c => c.materials).find(m => m.kind === "evidence" && m.key === "keyMonthsLink") as { facts: string[] };
-    expect(link.facts[0]).toMatch(/^세 달: [가-힣]{2}월\(.+\) → /);
+    const keys = annual.chapters.flatMap(c => c.materials).flatMap(m => m.kind === "evidence" ? [(m as { key: string }).key] : []);
+    expect(keys).toEqual(expect.arrayContaining(["yearCard", "loveMonths", "moneyIn", "moneyHole", "mindRest"]));
+    expect(keys).not.toContain("keyMonthsLink");
   });
 });
 

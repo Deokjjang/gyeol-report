@@ -3,6 +3,8 @@
  * 시간은 모두 KST, 금액은 쉼표 표기, HTML 모드라 값은 escape한다. 이름·이메일·생년월일·사주 입력값은 넣지 않는다.
  */
 import { bookForProduct, readerTitle } from "../../book/product";
+import { annualProductYear } from "../config";
+import { reportPriceKrw } from "../../payment/reportProductCatalog";
 
 export type BookFacts = { status: string | null; publishedAt: string | null } | null;
 export type OrderFacts = {
@@ -41,7 +43,10 @@ export const hm = (iso: string | null | undefined) => { const d = valid(iso); re
 /** 11/06 */
 export const md = (iso: string | null | undefined) => { const d = valid(iso); if (!d) return "-"; const [dd, mm] = KST_MD.format(d).split("/"); return `${mm}/${dd}`; };
 export const mdhm = (iso: string | null | undefined) => `${md(iso)} ${hm(iso)}`;
-export const productTitle = (key: string) => { const b = bookForProduct(key); return b ? readerTitle(b, "") : "결리포트"; };
+/** AM 2·3부: 세운은 신년판 연도를 붙인다(「나의 2027」), 대운은 「앞으로의 나」. */
+export const productTitle = (key: string) => { const b = bookForProduct(key); return b ? readerTitle(b, key === "annual_fortune" ? String(annualProductYear()) : "") : "결리포트"; };
+/** AM 3부 매출 봇: 대운 결제가 카탈로그 가격보다 낮으면 세운 → 대운 연결 할인(공개 할인은 이것 하나). */
+export const discountLabel = (o: Pick<OrderFacts, "productType" | "amount">) => (o.productType === "major_fortune" && o.amount < reportPriceKrw("major_fortune") ? "대운 · 세운 연결 할인" : null);
 
 /** 결제수단: 간편결제면 제공사(카카오페이·토스페이…), 아니면 토스 method(카드 등). */
 export function methodLabel(p: { method?: unknown; easyPay?: unknown } | null): string | null {
@@ -97,7 +102,8 @@ export const TEST_TAG = "🧪 시험(집계 제외)";
 const tagged = (test: boolean | undefined, line: string) => (test ? `${TEST_TAG} · ${line}` : line);
 export function salesPaymentText(o: OrderFacts, method: string | null, today: Stats): string {
   const src = sourceWord(o.source);
-  return [tagged(o.test, `💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}`),
+  const dl = discountLabel(o);
+  return [tagged(o.test, `💳 <b>${won(o.amount)}</b> · ${esc(productTitle(o.productType))}${dl ? ` · ${esc(dl)}` : ""}`),
     [method ?? "결제수단 확인 못 함", o.firstPaid ? "신규" : "재구매", hm(o.paidAt), ...(src ? [src] : [])].map(esc).join(" · "),
     `오늘 ${today.payCount}건 · ${won(today.paySum)}`].join("\n");
 }
@@ -201,7 +207,7 @@ function opsMessageBody(f: ItemFacts, method: string | null, now: number): Messa
   return { text: [`${title} · ${esc(codeOf(f))}`, line2, line3, accountLine(f)].filter(Boolean).join("\n"), buttons };
 }
 const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보",
-  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보" };
+  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보", generation_hold: "처리 발행 보류 경보" };
 
 // ── F 가입 이용권 캠페인(처리 봇) ─────────────────────────────────────
 /** 버튼 값(돈이 오가지 않아 비밀번호 없음, 덕짱님 id만 — 웹훅 첫 관문). */
@@ -245,6 +251,13 @@ export function anthropicAlarmText(a: { code: string; paused: boolean }): string
     a.paused ? "4종 판매를 자동으로 멈췄어요. 이미 결제한 책은 다시 시도해요." : "4종 판매는 이미 멈춰 있어요.", "풀리면 [다시 열기]를 눌러 주세요. (이 경보는 1시간에 1번)"].join("\n");
 }
 /** 「🚨 생성 실패: API 잔액 확인 필요」(1시간 1번). */
+/** AM2-3 6-1: 정식본(Sonnet)·임시본(OpenAI) 모두 못 만들어 발행을 보류(결정론 대체본은 내보내지 않는다). 고객 화면은 지연 안내, 24시간 안에 못 만들면 자동 환불. */
+export function generationHoldText(p: Record<string, unknown>): string {
+  const id = String(p.reportId ?? "").replace(/[^A-Za-z0-9_-]/g, "").slice(0, 60);
+  const who = p.origin === "ticket" ? "이용권 책" : "결제 주문";
+  const why = String(p.reason ?? "").replace(/[<>&]/g, "").slice(0, 120);
+  return [`⏸ <b>발행 보류: 책을 만들지 못했어요</b>`, `${who} · ${id}`, `사유 ${why || "작가 실패"} · ${p.lane === "interim" ? "임시본(OpenAI)도 실패" : "임시본을 쓸 수 없음"}`, "고객 화면은 지연 안내 · 감독이 계속 다시 시도 · 24시간 안에 못 만들면 자동 환불"].join("\n");
+}
 export function apiCreditText(p: Record<string, unknown>): string {
   const code = p.code === "openai_quota" ? "OpenAI(임시본) 할당량" : "Anthropic(작가) 잔액·결제";
   return [`🚨 <b>생성 실패: API 잔액 확인 필요</b>`, `${code} 문제로 작가 호출이 실패했어요 · 무료 책이 늘면 잔액이 빨리 줄어요`].join("\n");

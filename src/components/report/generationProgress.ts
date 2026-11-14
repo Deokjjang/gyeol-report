@@ -19,14 +19,35 @@ export type GenerationProgress = {
   readonly refundHours?: number;
   /** 결제 책인지 이용권 책인지(안내 문구: 환불 / 이용권 돌려주기). */
   readonly origin?: "paid" | "ticket" | null;
+  /** AM 4부: 진짜 진행률(저장된 장 수 / 전체 장 수). 전체를 모르면 total null. 가짜 퍼센트 막대는 쓰지 않는다. */
+  readonly chapters?: { readonly done: number; readonly total: number | null; readonly firstReady?: boolean };
+  /** AM 4부: 남은 시간(밀리초) = 같은 상품 최근 실측 중앙값 × 남은 장 몫. 실측이 없으면 null(화면이 숨긴다). */
+  readonly etaMs?: number | null;
+  /** AM2-8 5부: 발행 보류(generation_hold) — 문장을 다듬는 중. 화면은 「다듬는 중 · 최대 24시간 · 안 되면 자동 환불」을 바로 보인다(사유 글은 내보내지 않는다). */
+  readonly hold?: boolean;
 };
+/** 남은 시간 문구(분 단위 올림, 1분 미만은 「곧」). */
+export function etaLabel(ms: number | null | undefined): string | null {
+  if (ms === null || ms === undefined || !Number.isFinite(ms) || ms < 0) return null;
+  return ms < 60_000 ? "곧 완성돼요" : `남은 시간 약 ${Math.ceil(ms / 60_000)}분`;
+}
+/** 실측 중앙값과 진행 장 수로 남은 시간(밀리초). */
+export function etaOf(medianMs: number | null | undefined, done: number, total: number | null): number | null {
+  if (!medianMs || medianMs <= 0) return null;
+  return total && total > 0 ? Math.round(medianMs * Math.max(0, 1 - done / total)) : medianMs;
+}
+/** AM 4부 조회 주기: 3초에서 시작해 점점 길게(최대 20초). 탭이 다시 보이면 처음부터. */
+export const POLL_STEPS_MS = [3_000, 3_000, 4_000, 5_000, 7_000, 10_000, 15_000, 20_000] as const;
+export const pollDelay = (n: number) => POLL_STEPS_MS[Math.min(n, POLL_STEPS_MS.length - 1)];
 
 export const GENERATION_STAGE_QUEUED = 0;
 export const GENERATION_STAGE_WRITING = 2;
 export const UNKNOWN_PROGRESS: GenerationProgress = { state: "unknown", stage: GENERATION_STAGE_QUEUED, nextAt: null };
 
 /** ops_generation('state')가 돌려주는 행 중 화면에 쓰는 칸(원고·사유·비용은 읽지 않는다). */
-export type SupervisorStateRow = { readonly phase?: unknown; readonly failures?: unknown; readonly next_at?: unknown; readonly first_attempt_at?: unknown; readonly origin?: unknown } | null | undefined;
+export type SupervisorStateRow = { readonly phase?: unknown; readonly failures?: unknown; readonly next_at?: unknown; readonly first_attempt_at?: unknown; readonly origin?: unknown; readonly last_reason?: unknown } | null | undefined;
+/** 보류 사유인지만 본다(사유 글 자체는 화면에 쓰지 않는다). */
+export const isHoldReason = (reason: unknown) => typeof reason === "string" && /generation_hold/.test(reason);
 
 const isoOrNull = (value: unknown) => typeof value === "string" && Number.isFinite(Date.parse(value)) ? new Date(value).toISOString() : null;
 
@@ -42,7 +63,7 @@ export function describeGeneration(status: unknown, supervisor: SupervisorStateR
   // 자동 환불 시간 안에 못 만들어 감독이 포기(gave_up)했거나 작업이 확인 필요로 멈춘 경우.
   if (status === "FAILED_REQUIRES_ATTENTION" || (begun && supervisor.phase === "gave_up")) return { state: "attention", stage, nextAt: null };
   // 감독이 시간표대로 미뤄 둔 상태(RETRYING) 또는 앞선 시도가 실패한 뒤 다시 쓰는 중.
-  if (status === "RETRYING" || ((status === "QUEUED" || status === "GENERATING") && failures > 0)) return { state: "delayed", stage, nextAt, ...extra };
+  if (status === "RETRYING" || ((status === "QUEUED" || status === "GENERATING") && failures > 0)) return { state: "delayed", stage, nextAt, ...extra, ...(begun && isHoldReason(supervisor.last_reason) ? { hold: true } : {}) };
   if (status === "QUEUED" || status === "GENERATING") return { state: "preparing", stage, nextAt: null, ...extra };
   return UNKNOWN_PROGRESS;
 }
@@ -63,6 +84,8 @@ export function delayNotice(p: GenerationProgress | null | undefined, now: numbe
 }
 
 const KST_TIME = new Intl.DateTimeFormat("ko-KR", { timeZone: "Asia/Seoul", hour: "numeric", minute: "2-digit" });
+/** AM2-8 5부: 발행 보류 안내(다듬는 중 · 최대 24시간 · 안 되면 자동 환불). */
+export const HOLD_MESSAGE = "문장을 한 번 더 다듬고 있어요. 최대 24시간 안에 완성해 드리고, 그 안에 완성하지 못하면 자동으로 환불돼요.";
 /** "평소보다 오래" 안내 문장. 다음 시도 시각이 앞으로 남아 있을 때만 시각을 붙인다(한국 시각, 예: 오후 3:20). */
 export function delayedMessage(nextAt: string | null, now = Date.now()): string | undefined {
   const at = nextAt ? Date.parse(nextAt) : NaN;

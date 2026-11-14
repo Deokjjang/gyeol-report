@@ -12,18 +12,20 @@ afterEach(() => { vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 
 describe("WRITER_V5_PRODUCTS (운영 값 = 출시 4종)", () => {
   it("정확한 값 문자열: 쉼표 구분 상품 키 4개", () => {
-    expect(LAUNCH_V5_PRODUCTS_VALUE).toBe("saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility");
-    expect(writerV5Products({ WRITER_V5_PRODUCTS: LAUNCH_V5_PRODUCTS_VALUE })).toEqual(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"]);
+    // AM: 12/1부터 대운·세운도 v5(판매는 별도 설정값).
+    expect(LAUNCH_V5_PRODUCTS_VALUE).toBe("saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility,major_fortune,annual_fortune");
+    expect(writerV5Products({ WRITER_V5_PRODUCTS: LAUNCH_V5_PRODUCTS_VALUE })).toEqual(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"]);
     expect(writerV5ProductsWarning({ WRITER_V5_PRODUCTS: LAUNCH_V5_PRODUCTS_VALUE })).toBeNull();
     // 순서·공백은 상관없다(코드가 trim·중복 제거).
-    expect(writerV5ProductsWarning({ WRITER_V5_PRODUCTS: " saju_mbti_compatibility, love_marriage_child,career_money_study ,saju_mbti_full,saju_mbti_full" })).toBeNull();
+    expect(writerV5ProductsWarning({ WRITER_V5_PRODUCTS: " annual_fortune,major_fortune,saju_mbti_compatibility, love_marriage_child,career_money_study ,saju_mbti_full,saju_mbti_full" })).toBeNull();
   });
   it.each([
-    ["비어 있음", undefined, { parsed: [], missing: 4, extra: [], ignored: [] }, "6상품 모두 V4"],
-    ["빈 문자열", "", { parsed: [], missing: 4, extra: [], ignored: [] }, "6상품 모두 V4"],
-    ["상품 이름 대신 주소 조각(slug)", "saju-mbti-full,career-money-study", { parsed: [], missing: 4, extra: [], ignored: ["saju-mbti-full", "career-money-study"] }, "6상품 모두 V4"],
-    ["6종 전부(로컬 개발 값)", "saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility,major_fortune,annual_fortune", { missing: 0, extra: ["major_fortune", "annual_fortune"], ignored: [] }, "출시 4종과 다릅니다"],
-    ["3종만", "saju_mbti_full,career_money_study,love_marriage_child", { missing: 1, extra: [], ignored: [] }, "빠진 상품은 V4"],
+    // AM: 운영 값이 6상품(대운·세운 v5)이 됐다 — 출시 4종만 넣은 지금 운영 값은 경고(배포 때 바꾼다, 9부 계획).
+    ["비어 있음", undefined, { parsed: [], missing: 6, extra: [], ignored: [] }, "6상품 모두 V4"],
+    ["빈 문자열", "", { parsed: [], missing: 6, extra: [], ignored: [] }, "6상품 모두 V4"],
+    ["상품 이름 대신 주소 조각(slug)", "saju-mbti-full,career-money-study", { parsed: [], missing: 6, extra: [], ignored: ["saju-mbti-full", "career-money-study"] }, "6상품 모두 V4"],
+    ["출시 4종만(지금 운영 값)", "saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility", { missing: 2, extra: [], ignored: [] }, "운영 값(6상품)과 다릅니다"],
+    ["3종만", "saju_mbti_full,career_money_study,love_marriage_child", { missing: 3, extra: [], ignored: [] }, "빠진 상품은 V4"],
   ])("%s → 경고 한 줄", (_label, value, shape, words) => {
     const line = writerV5ProductsWarning(value === undefined ? {} : { WRITER_V5_PRODUCTS: value });
     expect(line).not.toBeNull();
@@ -60,7 +62,7 @@ describe("대운·세운 판매 중지: 승인 전 주문은 토스 승인을 �
     ["major_fortune", "ready", undefined, true], ["annual_fortune", "ready", undefined, true],
     ["saju_mbti_full", "ready", undefined, false], ["major_fortune", "paid", undefined, false], ["annual_fortune", "ready", "1", false],
   ] as const)("%s(%s, FORTUNE_SALES_OPEN=%s) → 막음 %s", async (product, status, open, blocked) => {
-    if (open) vi.stubEnv("FORTUNE_SALES_OPEN", open);
+    if (open) { vi.stubEnv("FORTUNE_SALES_OPEN", open); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2000-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "5900"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "3900"); }
     const store = storeWith(order(product, status)), confirm = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: "o-1", amount: 1490, status: "DONE" } }));
     expect(await closedProductOrder(store, "o-1", async () => false)).toBe(blocked ? "PRODUCT_SALES_CLOSED" : null);
     store.call.mockClear();

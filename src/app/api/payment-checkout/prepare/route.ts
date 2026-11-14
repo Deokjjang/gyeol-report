@@ -260,6 +260,7 @@ function createSuccessBody(
 function createOptionalTossCheckoutRequest(
   session: PaymentCheckoutSessionDraft,
   requestUrl: string,
+  verifiedOrderAmount?: number,
 ):
   | {
       readonly ok: true;
@@ -303,7 +304,7 @@ function createOptionalTossCheckoutRequest(
     failUrl,
     allowLocalhostRedirects:
       isLocalhostRedirect || process.env[tossAllowLocalhostRedirectsEnv] === "1",
-  });
+  }, verifiedOrderAmount);
 
   if (!tossResult.ok) {
     return {
@@ -446,9 +447,23 @@ export async function POST(request: Request): Promise<NextResponse> {
     return createErrorResponse("PAYMENT_CHECKOUT_INVALID_REQUEST", "필수 항목을 확인해 주세요.", 400);
   }
 
+  // AM 3부 세운 → 대운 연결 할인(결제 준비 쪽만): 판정(세운 1건당 1회·7일·환불이면 막음·같은 사람) → 서버가 정한 금액이 주문 저장 금액 → 예약(유일).
+  // 승인 경로는 그대로 「저장 금액 = 요청 금액 = 토스 금액」만 본다. 할인 표시는 입력 스냅숏에 두지 않는다(화면이 보낼 수 없는 서버 값).
+  let discountAmount: number | undefined;
+  let orderRecord = readyOrderRecordResult.record;
+  if ((json.productType ?? defaultProductType) === "major_fortune" && typeof json.discountFrom === "string" && json.discountFrom) {
+    const { discountMessage, quoteMajorDiscount, reserveMajorDiscount } = await import("../../../../lib/payment/majorDiscount");
+    const person = (inputSnapshot.reportInputPayload as { person?: Record<string, unknown> } | undefined)?.person;
+    const q = await quoteMajorDiscount(ops.discount, { annualReportId: json.discountFrom, userId: buyer.userId, price: orderRecord.amount, ...(person ? { majorPerson: person } : {}) });
+    if (!q.ok) return createErrorResponse("MAJOR_DISCOUNT_UNAVAILABLE" as CheckoutPrepareRouteErrorCode, q.message, 409);
+    orderRecord = { ...orderRecord, amount: q.amount };
+    if (!(await reserveMajorDiscount(ops.discount, q, orderRecord.paymentOrderId, buyer.userId!))) return createErrorResponse("MAJOR_DISCOUNT_UNAVAILABLE" as CheckoutPrepareRouteErrorCode, discountMessage("USED"), 409);
+    discountAmount = q.amount;
+  }
+
   const orderRuntime = createPaymentOrderPersistenceRuntime();
   const createOrderResult = await orderRuntime.create(
-    readyOrderRecordResult.record,
+    orderRecord,
   );
 
   if (!createOrderResult.ok) {
@@ -460,7 +475,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   }
 
   const readyOrder = mapRecordToReadyOrderView(createOrderResult.value);
-  const checkoutResult = preparePaymentCheckoutSession(readyOrder);
+  const checkoutResult = preparePaymentCheckoutSession(readyOrder, discountAmount);
 
   if (!checkoutResult.ok) {
     return createErrorResponse(
@@ -473,6 +488,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   const tossCheckoutRequestResult = createOptionalTossCheckoutRequest(
     checkoutResult.session,
     request.url,
+    discountAmount,
   );
 
   if (!tossCheckoutRequestResult.ok) {

@@ -16,6 +16,8 @@ export function useTicketPublication(product: string, enabled: boolean) {
   const [pending, setPending] = useState<Pending | null>(null), [loaded, setLoaded] = useState(false), [message, setMessage] = useState("");
   const [retryable, setRetryable] = useState(false), [revision, setRevision] = useState(0), [submitting, setSubmitting] = useState(false);
   const [completedUrl, setCompletedUrl] = useState<string | null>(null);
+  /** AM 4부: 진짜 진행률(저장된 장 / 전체)·남은 시간·1장 미리보기(결정론 검사 뒤). */
+  const [progress, setProgress] = useState<{ done: number; total: number | null; etaMs: number | null; first?: { title: string; sections: { heading: string; paragraphs: string[] }[] } } | null>(null);
   const current = useRef<Pending | null>(null), sending = useRef(false), mounted = useRef(false);
   const forget = useCallback(() => {
     try { sessionStorage.removeItem(key); } catch { /* terminal state is confirmed by the server */ }
@@ -25,6 +27,7 @@ export function useTicketPublication(product: string, enabled: boolean) {
     if (body.ok === true && typeof body.state === "string") {
       if (typeof body.message === "string") setMessage(body.message);
       setRetryable(false);
+      if (body.progress && typeof body.progress === "object") setProgress(body.progress as never);
       if (body.state === "COMPLETED" && typeof body.reportUrl === "string" && /^\/reports\/report_[a-f0-9]{32}$/.test(body.reportUrl)) {
         // Terminal server acknowledgement ends recovery. Keep this mounted
         // receipt locked until navigation; a later NEW purchase must not bounce
@@ -64,10 +67,14 @@ export function useTicketPublication(product: string, enabled: boolean) {
       } catch { if (!stopped) setMessage("발행 상태를 확인 중입니다. 잠시 후 다시 확인합니다."); }
       finally { clearTimeout(deadline); busy = false; }
     };
-    void poll(); const timer = setInterval(() => void poll(), 5000);
-    const focus = () => void poll();
+    // AM 4부: 조회 주기 3초에서 점점 길게(최대 20초), 창으로 돌아오면 처음부터.
+    let n = 0, timer: ReturnType<typeof setTimeout> | undefined;
+    const steps = [3_000, 3_000, 4_000, 5_000, 7_000, 10_000, 15_000, 20_000];
+    const schedule = () => { timer = setTimeout(() => { void poll(); n++; schedule(); }, steps[Math.min(n, steps.length - 1)]); };
+    void poll(); schedule();
+    const focus = () => { n = 0; clearTimeout(timer); void poll(); schedule(); };
     window.addEventListener("focus", focus); document.addEventListener("visibilitychange", focus);
-    return () => { stopped = true; clearInterval(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
+    return () => { stopped = true; clearTimeout(timer); clearTimeout(deadline); controller?.abort(); window.removeEventListener("focus", focus); document.removeEventListener("visibilitychange", focus); };
   }, [enabled, pending, completedUrl, accept]);
   const submit = async (payload: ReportInputPayload, consents: CheckoutLegalConfirmations, scope?: string, ui?: CheckoutConsentUiClaim) => {
     if (!enabled || !loaded || sending.current || completedUrl) return;
@@ -93,5 +100,5 @@ export function useTicketPublication(product: string, enabled: boolean) {
     } catch { if (mounted.current) setMessage("발행 상태를 확인 중입니다. 같은 요청으로 다시 확인합니다."); }
     finally { clearTimeout(deadline); sending.current = false; if (mounted.current) setSubmitting(false); }
   };
-  return { pending: pending !== null, loaded, message, retryable, revision, submitting, completedUrl, submit };
+  return { pending: pending !== null, loaded, message, retryable, revision, submitting, completedUrl, submit, progress };
 }

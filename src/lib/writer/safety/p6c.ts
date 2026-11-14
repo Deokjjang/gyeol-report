@@ -16,6 +16,7 @@ import * as E from "./p6e";
 import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
+import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -28,8 +29,10 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // 최종판2: 궁합 성격표 · 명식 글자 나열 · 같은 일주 구절 · 다른 책 이미지
   | "pair_profile" | "glyph_list" | "ilju_phrase" | "avoid_image"
   // 최종판3 3: 정답지 대조(사실·뜻·관계·강약·간지·개수와 세기·공통 특징) · 렌더(중복 치환·내부 라벨) · 종합 시점 · 입력 밖 직업 상황
-  | FactRule | "phrase_repeat";
-export type CardField = "image" | "todo" | "review" | "caution";
+  | FactRule | "phrase_repeat"
+  // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
+  | StyleRule | "fn_role";
+export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
 /**
@@ -39,12 +42,14 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
-  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside"]);
+  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
   readonly facts: SafetyFacts; readonly jobDetail: string; readonly schoolStage: L.SchoolStage | "student";
   readonly yinYang?: { readonly yin: number; readonly yang: number }; readonly presence?: L.ElementPresence; readonly dayunPhase?: L.DayunPhase;
+  /** AM 재생성 2: 엔진의 가장 센 오행(「가장 센」 말은 개수가 아니라 이것과 견준다). */
+  readonly strongestElement?: string;
   readonly stars?: { readonly spouse?: L.StarWhere; readonly child?: L.StarWhere };
   readonly coreImage: string; readonly nicknames: readonly string[]; readonly corpus: ReadonlySet<string>; readonly prior: readonly string[];
   readonly jobProps: readonly string[]; readonly noJobChapters: ReadonlySet<number>; readonly parentingChapters: ReadonlySet<number>; readonly monthChapters: ReadonlySet<number>;
@@ -59,6 +64,14 @@ export type LintCtx = {
   readonly yearIndex?: Readonly<Record<string, { readonly index: number; readonly total: number }>>;
   /** P6d E: 달력이 있는 책(대운·세운)은 "지금" 전부 금지. calendarChapters: 달력월 이름 금지 장(세운 전체). */
   readonly strictTime?: boolean; readonly calendarChapters?: ReadonlySet<number>;
+  /** AM 7부: 세운 달 표의 이름 짝("5" → "을사월", "2028년 1" → "계축월"). 본문의 맨 달 이름을 표와 같은 꼴로 바꾸는 데 쓴다(tidyBook). */
+  readonly monthNames?: Readonly<Record<string, string>>;
+  /** AM 7부: 세운 책의 해(신년판 해). 맨 「올해」를 이 해로 바꾼다(대운은 기준일의 해). */
+  readonly bookYear?: number;
+  /** AM 2부: 세운 신년판 달 카드에 「좋은 것」 칸이 있다. */
+  readonly goodCards?: boolean;
+  /** AM2-5 2부: 카드 줄을 작가가 쓰지 않는 책(세운·대운 장 묶음 — 카드는 화면 결정론). card_missing 등 카드 검사를 끈다. */
+  readonly noCards?: boolean;
   /** P6d F: key → 엔진 관계 표시 수(0이면 "건드리지 않는다" 허용). 궁합은 두 사람 날 관계 수. */
   readonly relationCount?: Readonly<Record<string, number>>; readonly pairRelations?: number;
   /** P6d F: 책당 1회만 쓰는 소품 명사. G: 투자 장. 안전망 규칙 문맥(예시 창·조건형 장). */
@@ -97,9 +110,15 @@ export type LintCtx = {
   readonly fact?: FactCtx;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
+/** 대운·세운(달력 책): 고친 문장에 「지금·지금의·지금은」을 다시 쓰면 또 걸린다. */
+const TIME_DEICTIC_STRICT_HINT = "읽는 때를 못 박는 말('지금')이다 → 고친 문장에 '지금'이라는 낱말을 어떤 꼴로도 쓰지 않는다: '지금'을 떼거나 '이 대운·이 10년·이 해·이 시기'로 바꾼다(예: '지금이 10년의 한가운데' → '이 10년의 한가운데', '지금 솔로라면' → '솔로라면')";
 const LOW = /가장 (조용한|약한|잔잔한|느린|차분한|한가한)( [가-힣]+)? ?(달|해|때|시기)/;
+const CALM_FLOW = /흐름(?:이|은|도)? (?:한결 |조금 |좀 |훨씬 )?(?:가벼워|잔잔해|느려|편안해|순해|누그러)/;
+const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|세차|몰아치)/;
 
-const HINT: Readonly<Record<P6cRule, string>> = {
+export const HINT: Readonly<Record<P6cRule, string>> = {
+  ...STYLE_HINT,
+  fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
   fact_term: "정답지와 다른 신살·귀인·운성(이름·자리·주인) → detail의 맞는 사실로 고치거나 그 주장을 뺀다",
   fact_relation: "정답지와 다른 관계(없는 글자·글자 수·완성도·건드리지 않는 해) → detail의 맞는 관계로 고친다",
@@ -111,7 +130,7 @@ const HINT: Readonly<Record<P6cRule, string>> = {
   common_split: "두 사람 모두 가진 특징을 한 사람만의 것·차이의 근거로 썼다 → '두 사람 모두'로 쓰거나 다른 근거로",
   render_dup: "같은 말을 두 번 이었다(「X, 곧 X」) → 한 번만",
   label_leak: "내부 분류 라벨·생성 규칙·면책 문구가 본문에 나왔다 → 그 말을 빼고 내용만",
-  time_fixed: "종합 본문에 연·월 숫자를 고정했다 → 운 설명은 '올해(병오)', 행동 제안은 '앞으로 한 달'로",
+  time_fixed: "종합 본문에 달·「20XX년」만 고정했다 → 운 설명은 '2026년 병오년'처럼 해 이름(연도 + 간지)으로, 행동 제안은 '앞으로 한 달'로",
   input_outside: "입력에 없는 직업 상황을 사실처럼 썼다 → 입력에 있는 사실만, 아니면 직업과 무관한 보편 장면으로",
   db_copy: "브리프 글을 20자 넘게 그대로 옮겼다 → 같은 뜻을 이 고객의 말로 새로 쓴다",
   prior_overlap: "이 고객의 다른 책과 같은 문장이다 → 다른 장면·다른 말로 쓴다",
@@ -202,7 +221,7 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.yinYang && L.yinYangClaim(s, ctx.yinYang.yin, ctx.yinYang.yang)) return "yinyang_claim";
   if (ctx.presence && L.elementAbsenceClaims(s, ctx.presence).length) return "element_claim";
   // 최종판 1-5: 오행 개수(없다·가장 많다·가장 적다). 궁합은 한 사람 이름만 나온 문장을 그 사람 값과 견준다.
-  if (ctx.presence && L.elementCountClaims(s, ctx.presence)) return "element_count";
+  if (ctx.presence && L.elementCountClaims(s, ctx.presence, ctx.strongestElement)) return "element_count";
   if (ctx.presenceBy && L.elementOwnedClaims(s, ctx.presenceBy)) return "element_count";
   if (ctx.presenceBy) for (const p of ctx.presenceBy) if (s.includes(p.name) && !ctx.presenceBy.some(o => o !== p && s.includes(o.name)) && (L.elementAbsenceClaims(s, p.presence).length || L.elementCountClaims(s, p.presence))) return "element_count";
   if (ctx.dayunPhase && L.dayunPhaseClaim(s, ctx.dayunPhase)) return "dayun_claim";
@@ -267,7 +286,9 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 최종판 1-14: 기능 둘을 하이픈으로 이은 꼴("가치 기준(Fi)-지금 이 순간 감각(Se)")은 "~와 ~"로, 바로 앞에 쉬운 이름의 말이 이미 있으면("지난 경험을 기준점으로 삼는 Si") 이름을 되풀이하지 않고 "성향(Si)"으로,
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact">>): { chapters: FinalChapter[]; count: TidyCount } {
+/** AM2: surfaceOnly면 표면 정리(한자·괄호 조사·약어 꼴·겹친 낱말·같은 문장 연속·장 번호/명리학 머리)만 한다. 뜻을 바꾸는 치환(시점 말·해 이름·달 이름·면책 마디 떼기)은 하지 않는다(세운·대운 장 묶음 — 걸리면 묶음을 다시 쓴다). */
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear">> & { readonly surfaceOnly?: boolean }): { chapters: FinalChapter[]; count: TidyCount } {
+  const surface = Boolean(ctx.surfaceOnly);
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
   const introduced = new Set<string>();
@@ -311,7 +332,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
       if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
       q = fixEcho(fixCodes(fixJoins(q)));
-      const h = E.stripHanja(q); hanja += h.count; q = h.text;
+      const h = E.stripHanja(q, surface); hanja += h.count; q = h.text;
       const nn = E.nativeNumbers(q); numbers += nn.count; q = nn.text;
       const pw = E.plainWords(q); words += pw.count; q = pw.text;
       // 최종판3 3: 괄호 약어 뒤 조사(「눈(Ni)는」→「눈(Ni)은」), 종합 「2026년 11월 한 달」→「앞으로 한 달」.
@@ -320,14 +341,32 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       if (ctx.careerGroups) { const g = E.careerGroupNames(q, definedGroups); groupNames += g.count; q = g.text; }
       // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
+      // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
+      // AM2-3 6-2: 글자까지 같지 않아도 거의 같은 문장(수리가 말만 조금 바꿔 다시 쓴 것)은 뒤 문장을 뺀다(E.nearDuplicate — 세운·대운과 같은 함수).
+      { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || !E.nearDuplicate(ss[i - 1], x)); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
+      // AM 7부 판독(대운 11·4종): 면책이 앞 마디로 붙은 문장은 면책 마디만 뗀다(뒤 내용은 남김).
+      if (!surface) { const ss = splitSentences(q), next = ss.map(E.stripNoticeLead); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
       // P6e 12: 본문 기준일 줄은 쓰지 않는다(판 표기에만). 작가가 옛 꼴을 따라 쓰면 그 문장만 뗀다(홀로 선 안내 문장).
       q = q.replace(/(^|\s)이 책은 \d{4}년 \d{1,2}월 \d{1,2}일 기준으로 썼어요\.\s?/g, "$1").trim();
       // 최종판2 1-6: 11·12월 기준 책의 「이번 가을 남은 두 달」은 계절이 틀린다 → 「2026년 남은 두 달」(「올해 남은」은 시점 말 규칙 time_deictic이라 연도로).
-      if (ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
+      if (!surface && ctx.baseDate && Number(ctx.baseDate.slice(5, 7)) >= 11) { const r = q.replace(/이번 (가을|겨울)(에)? 남은 (두|한) ?달/g, `${ctx.baseDate.slice(0, 4)}년 남은 $3 달`); if (r !== q) { words++; q = r; } }
       // 최종판2 4: 대운·세운이 아닌 책의 「이번 달·이번 한 달」(시점 말 time_deictic)은 읽는 때 기준 「앞으로 한 달」로(따옴표 안 대사는 그대로).
       // 장덕민 종합 13장 재작성본 「앞에서 본 관계의 결을 이번 달 행동 하나로 옮겨 볼게요」가 남아 그 소제목이 빠졌다.
-      if (ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
-      if (ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
+      if (!surface && ctx.monthChapters !== undefined && !ctx.strictTime && !ctx.monthChapters.size) { const r = nowMonth(q); if (r !== q) { words++; q = r; } }
+      if (!surface && ctx.monthChapters.has(c.n) && /이번 달|이번 한 달|지금 이 달/.test(q)) { monthNow++; q = q.replace(/이번 한 달/g, "이 한 달").replace(/이번 달|지금 이 달/g, "이 달"); }
+      // AM 7부: 대운·세운(시점 말 전부 금지)의 「지금 대운·지금 10년」은 뜻이 같은 「이 대운·이 10년」으로(major-1 판독: 장 이름을 따라 쓴 문장이 수리 뒤에도 남음).
+      // annual-4 r3: 「지금 계유 대운의 끝 무렵」 — 간지 이름이 붙은 대운은 「지금」만 뗀다.
+      if (ctx.strictTime && !surface) { const r = q.replace(/지금의? (?=[갑을병정무기경신임계][자축인묘진사오미신유술해] ?대운)/g, "").replace(/지금의? 대운/g, "이 대운").replace(/지금의? 10년/g, "이 10년").replace(/지금 (?=(바로 )?할 수 있는)/g, "")
+        // AM 재생성 판독(major-1·annual-1): 시점을 못 박지 않는 「지금」까지 문장째 지워져 구멍이 났다 → 뜻이 같은 말로(호출 0). 「지금은 ○○ 대운의 마지막」 같은 진짜 시점 말은 그대로 검사.
+        .replace(/지금까지(는|가|의|도| )/g, (_m: string, j: string) => `그동안${({ 는: "은", 가: "이" } as Record<string, string>)[j] ?? j}`).replace(/지금부터 /g, "미리 ").replace(/지금 방식/g, "기존 방식").replace(/지금 맡(?=은|고 있)/g, "맡")
+        .replace(/지금 (?=(곁에|배우는|하는 일|쌓는|가진|다니는|쓰는|만나는|일하는|서 있는) )/g, "").replace(/이번 해(?=[ 의에는가])/g, "올해")
+      // AM 재생성 2 판독(major-1 8장): 달 장 밖 「이번 달」→「그달」은 가리킬 달이 없었다 → 종합과 같은 「앞으로 한 달」(nowMonth, 따옴표 안은 그대로).
+      ; const r2 = ctx.monthChapters.has(c.n) ? r : nowMonth(r); if (r2 !== q) { words++; q = r2; } }
+      // AM 7부(세운 판독): 맨 「올해」 → 그 책의 해(세운 2027 · 대운 기준일의 해). annual-6에 25곳.
+      // AM 재생성 2 판독(major-1 2027): 대운 연도 key 안의 「올해」는 그 key의 해다(기준일의 해 2026으로 바꾸니 「2026년 흐름 중」).
+      { const y = (/^\d{4}$/.test(s.heading) ? Number(s.heading) : 0) || (ctx.bookYear ?? (ctx.strictTime && ctx.baseDate ? Number(ctx.baseDate.slice(0, 4)) : 0)); if (ctx.strictTime && y && !surface) { const r = D.namedYear(q, y); if (r.count) { words += r.count; q = r.text; } } }
+      // AM 7부: 세운 본문의 맨 달 이름 → 달 표와 같은 짝(「5월(을사월)」). annual-2·5에서 수리 뒤에도 남았다.
+      if (!surface && ctx.monthNames && ctx.calendarChapters?.has(c.n)) { const r = D.pairMonthNames(q, ctx.monthNames); if (r.count) { words += r.count; q = r.text; } }
       return q;
     });
     const marks = ps.join("").match(L.KEY_MARK)?.length ?? 0;
@@ -364,7 +403,8 @@ export function nowMonth(text: string): string {
 /** 수리 패스로 보낼 목록(책 순서). */
 export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
-  const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: HINT[f.rule] });
+  // AM 재생성 3(major-1 두 회차): 대운·세운 수리가 「지금」을 다른 자리로 옮겨 다시 썼다(「솔로인 지금의 시기에는」「지금 그 한가운데를」) → 달력 책은 「지금」 낱말 자체를 쓰지 않게 고칠 말을 준다.
+  const flag = (f: Omit<LintFlag, "hint">) => out.push({ ...f, hint: f.rule === "time_deictic" && ctx.strictTime ? TIME_DEICTIC_STRICT_HINT : HINT[f.rule] });
   let formulas = 0, backrefs = 0;
   const propSeen = new Set<string>();
   const explained = new Set<string>();
@@ -377,6 +417,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
       if (s.heading && !/^\d{4}(-M\d{2})?$/.test(s.heading)) { const fx = ctx.fact ? factCheck(s.heading, ctx.fact, s.heading, c.n) : null; const r = fx ? null : sentenceRules(s.heading, c.n, ctx, true); if (fx) flag({ chapter: c.n, section: si, paragraph: -1, rule: fx.rule, sentence: s.heading, detail: fx.detail }); else if (r) flag({ chapter: c.n, section: si, paragraph: -1, rule: r, sentence: s.heading }); }
       const key = s.heading, keyed = Boolean(c.keys?.includes(key));
       const yi = keyed ? ctx.yearIndex?.[key] : undefined, rel = keyed ? ctx.relationCount?.[key] : ctx.pairRelations, fl = keyed ? ctx.flow?.[key] : undefined;
+      // AM 재생성 판독(major-1 2029): 대운 연도 key 안의 위치 말(「대운의 마지막 해」)은 기준 해가 아니라 그 해의 위치와 견준다(맞는 문단이 통째로 빠졌다).
+      const sctx: LintCtx = yi ? { ...ctx, dayunPhase: L.dayunPhase(yi.index - 1) } : ctx;
       // B3 개수 지시: 소제목 글 전체에서 찾고 그 구절이 든 문단에 단다.
       const secText = s.paragraphs.map(stripMarks).join(" ");
       for (const ref of D.countMismatch(secText)) { const pi = s.paragraphs.findIndex(p => stripMarks(p).includes(ref)); if (pi >= 0) flag({ chapter: c.n, section: si, paragraph: pi, rule: "count_mismatch", sentence: ref }); }
@@ -388,10 +430,12 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
-          { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
-          const r = sentenceRules(sen, c.n, ctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
+          { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n, /^\d{4}(-M\d{2})?$/.test(s.heading)) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
+          const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
+          // AM 1부 판독: 주기능·부기능 오기(「ISFJ는 마음 살피기가 주기능이라」).
+          { const fr = ctx.compat ? null : fnRoleMismatch(sen, ctx.facts.mbti, ctx.mbtiPlain); if (fr) { flag({ ...at, rule: "fn_role", detail: fr }); continue; } }
           // P6e 2: 앞 문단이 없는 자리(소제목 첫 문단의 첫 문장)가 앞말에 기대어 연다.
           if (pi === 0 && i === 0 && !keyed && E.orphanStart(sen)) { flag({ ...at, rule: "orphan_start", detail: E.orphanStart(sen)! }); continue; }
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
@@ -402,6 +446,10 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }
           if (rel !== undefined && rel > 0 && D.NEGATIVE_RELATION.test(sen)) { flag({ ...at, rule: "negative_claim" }); continue; }
           if (fl && ((PEAK.test(sen) && fl.score < fl.max) || (LOW.test(sen) && fl.score > fl.min))) { flag({ ...at, rule: "intensity_claim" }); continue; }
+          // AM 재생성 2 판독(major-1 2031): 흐름 5(거셈)인 해에 「흐름이 한결 가벼워져요」 — 흐름 세기 말과 카드 점수가 반대.
+          if (fl && ((CALM_FLOW.test(sen) && fl.score >= 4) || (ROUGH_FLOW.test(sen) && fl.score <= 2))) { flag({ ...at, rule: "intensity_claim", detail: `흐름 ${fl.score}` }); continue; }
+          // AM 재생성 2 판독(major-1 2030): 대운이 바뀌는 해의 「앞의 4개월과 뒤의 7개월」 — 한 해는 12개월이다.
+          { const m = sen.match(/앞의? (\d{1,2})개월[^.?!]{0,16}뒤의? (\d{1,2})개월/); if (m && Number(m[1]) + Number(m[2]) !== 12) { flag({ ...at, rule: "count_mismatch", detail: `앞 ${m[1]}개월 + 뒤 ${m[2]}개월 ≠ 12개월` }); continue; } }
           // P6e 6·15: 안내·면책은 책에 한 번(시스템이 넣는 줄). 작가가 쓴 안내 문장은 빼게 한다.
           if (writer && E.isNoticeSentence(sen)) { flag({ ...at, rule: "notice_repeat" }); continue; }
           if (writer && ctx.guide && E.guideCopy(sen, ctx.guide)) { flag({ ...at, rule: "guide_echo", detail: E.guideCopy(sen, ctx.guide)! }); continue; }
@@ -461,6 +509,9 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         for (let i = 0; i + PHRASE_WINDOW <= norm.length; i++) { const w = norm.slice(i, i + PHRASE_WINDOW); if (!seen.has(w)) seen.set(w, c.n); }
       } }));
     } }
+  // AM 1-1 ②·1-4: 문체 검사(수리로만 보낸다). 이미 깃발이 있는 문장은 다시 걸지 않는다.
+  { const flagged = new Set(out.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`));
+    for (const f of styleFlags(chapters)) if (!flagged.has(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`)) { flagged.add(`${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`); out.push({ ...f, hint: STYLE_HINT[f.rule] }); } }
   out.push(...lintCards(chapters, ctx));
   return out;
 }
@@ -471,17 +522,19 @@ export const PHRASE_WINDOW = 14;
 export const SAME_TEN_GOD_JACCARD = 0.3;
 export function lintCards(chapters: readonly FinalChapter[], ctx: LintCtx): LintFlag[] {
   const out: LintFlag[] = [];
-  const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [] };
+  if (ctx.noCards) return out;
+  const seen: Record<CardField, { v: string; tg?: string }[]> = { image: [], todo: [], review: [], caution: [], good: [] };
   for (const c of chapters) if (c.keys) c.sections.forEach((s, si) => {
     const period = ctx.periods?.[s.heading] ?? "current";
     const card: SectionCard = s.card ?? {};
     const tg = ctx.cardTenGod?.[s.heading];
     // 살필 점도 작가가 그 시기의 실제 십성·관계 조합으로 쓴다(P6d D): "없음"은 받지 않는다.
-    const want: CardField[] = ["image", period === "past" ? "review" : "todo", "caution"];
+    // AM 2부 세운 신년판 달 카드: 「좋은 것」도 필수(한 줄·좋은 것·주의할 것·이달의 한 가지).
+    const want: CardField[] = ["image", ...(ctx.goodCards ? ["good" as const] : []), period === "past" ? "review" : "todo", "caution"];
     const f = (field: CardField, rule: P6cRule, sentence: string) => out.push({ chapter: c.n, section: si, paragraph: -1, card: field, rule, sentence, hint: HINT[rule] });
     for (const field of want) if (!card[field]) f(field, "card_missing", "");
     if (period === "past" && card.todo && !card.review) f("review", "card_form", card.todo);
-    for (const field of ["image", "todo", "review", "caution"] as CardField[]) {
+    for (const field of ["image", "good", "todo", "review", "caution"] as CardField[]) {
       const v = card[field]; if (!v) continue;
       if (field === "todo" && period === "past") continue;
       const len = v.length;

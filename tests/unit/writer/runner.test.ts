@@ -101,3 +101,36 @@ describe("작가 실행기 — 실패 주입(목업, 비용 0)", () => {
     expect(sink.saved).toHaveLength(2);
   });
 });
+
+// AM 7부(덕짱님 결정 2026-11-11): 생각 블록만으로 출력 상한을 다 쓴 빈 원고 → 작가 호출만 1회, 짧은 생각(adaptive, effort low)으로 다시.
+describe("작가 실행기 — 생각만으로 상한 소진(본문 0자)", () => {
+  const empty = { text: "", finishReason: "length" as const, usage: { inputTokens: 100, cachedInputTokens: 0, outputTokens: 36_000 }, costUsd: 0.43, requestId: "r-empty", hidden: { blocks: { thinking: 1 }, chars: 0 } };
+  const ok = (text: string) => ({ text, finishReason: "complete" as const, usage: { inputTokens: 100, cachedInputTokens: 0, outputTokens: 20_000 }, costUsd: 0.3, requestId: "r-ok" });
+  it("1회 다시 부르고(두 번째 호출만 thinking adaptive-low), 원고가 오면 작가 원고로 · 호출 기록 first → retry", async () => {
+    const seen: (string | undefined)[] = [];
+    const stream: typeof import("@/lib/llm").streamCompletion = async i => { seen.push(i.thinking); if (seen.length === 1) return empty; i.onText?.(full); return ok(full); };
+    const r = await runWriter({ brief, provider: "anthropic", model: "claude-sonnet-5-5", apiKey: "k", sink: memorySink(), stream, sleep: async () => undefined });
+    expect(seen).toEqual([undefined, "adaptive-low"]);
+    expect(r.calls.map(c => `${c.kind}:${c.finish}:${c.chars > 0}`)).toEqual(["first:length:false", "retry:complete:true"]);
+    expect(r.calls[0].hidden).toEqual({ blocks: { thinking: 1 }, chars: 0 });
+    expect(applySafetyNet(brief, plan, r.drafts).chapters.every(c => c.source === "writer")).toBe(true);
+  });
+  it("두 번째도 빈 원고면 더 부르지 않는다(결정론 대체, 호출 2회)", async () => {
+    let n = 0;
+    const stream: typeof import("@/lib/llm").streamCompletion = async () => { n++; return empty; };
+    const r = await runWriter({ brief, provider: "anthropic", model: "claude-sonnet-5-5", apiKey: "k", sink: memorySink(), stream, sleep: async () => undefined });
+    expect(n).toBe(2);
+    expect(applySafetyNet(brief, plan, r.drafts).chapters.every(c => c.source === "deterministic")).toBe(true);
+  });
+  it("글자가 조금이라도 왔거나(잘린 원고) OpenAI면 이 재호출을 하지 않는다", async () => {
+    let n = 0;
+    const cut = full.slice(0, half);
+    const stream: typeof import("@/lib/llm").streamCompletion = async i => { n++; if (n === 1) { i.onText?.(cut); return { ...empty, text: cut }; } i.onText?.(full.slice(half)); return ok(full.slice(half)); };
+    await runWriter({ brief, provider: "anthropic", model: "claude-sonnet-5-5", apiKey: "k", sink: memorySink(), stream, sleep: async () => undefined });
+    expect(n).toBe(2); // 두 번째는 빠진 장 이어 쓰기(continuation), 이 재호출이 아니다
+    let m = 0;
+    const s2: typeof import("@/lib/llm").streamCompletion = async () => { m++; return empty; };
+    await runWriter({ brief, provider: "openai", model: "gpt-6.1-terra", apiKey: "k", sink: memorySink(), stream: s2, sleep: async () => undefined });
+    expect(m).toBe(1);
+  });
+});

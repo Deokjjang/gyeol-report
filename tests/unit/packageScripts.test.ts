@@ -12,9 +12,11 @@ const packageJson = JSON.parse(
 
 describe("package scripts", () => {
   it("has release check script", () => {
+    // AM2-5 4부: 빌드 형식 검사는 앱 코드만(tsconfig) — 전체 형식 검사(tests·tools 포함)는 typecheck:all로 출시 묶음에 넣는다.
     expect(packageJson.scripts?.["release:check"]).toBe(
-      "pnpm test && pnpm lint && pnpm build",
+      "pnpm test && pnpm lint && pnpm typecheck:all && pnpm build",
     );
+    expect(packageJson.scripts?.["typecheck:all"]).toBe("tsc --noEmit -p tsconfig.all.json");
   });
 
   it("preserves required base scripts", () => {

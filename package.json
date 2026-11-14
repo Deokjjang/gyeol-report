@@ -11,7 +11,9 @@
     "lint": "eslint",
     "test": "vitest run",
     "test:watch": "vitest",
-    "release:check": "pnpm test && pnpm lint && pnpm build",
+    "release:check": "pnpm test && pnpm lint && pnpm typecheck:all && pnpm build",
+    "typecheck": "tsc --noEmit",
+    "typecheck:all": "tsc --noEmit -p tsconfig.all.json",
     "book:brief": "NODE_PATH=tools/llm/shim tsx tools/final/brief.ts",
     "book:replay": "NODE_PATH=tools/llm/shim tsx tools/final/replay.ts",
     "book:budget": "NODE_PATH=tools/llm/shim tsx tools/llm/budget.ts"

@@ -166,11 +166,13 @@ describe("brief builder — 성질", () => {
     }
   });
 
-  it("세운 12개월 행동 템플릿 반복 0", () => {
+  // AM 2부: 1월 다리(지난 해 마지막 절기월) + 12 절기월 = 13개 달, 행동 템플릿은 13개 모두 다르다.
+  it("세운 1월 다리 + 12개월 행동 템플릿 반복 0", () => {
     for (const { brief } of samples) if (brief.product === "annual_fortune") {
       const months = brief.timeline!.entries.filter(e => e.kind === "month");
-      expect(months).toHaveLength(12);
-      expect(new Set(months.map(e => e.action.templateId)).size).toBe(12);
+      expect(months).toHaveLength(13);
+      expect(months.filter(e => e.bridge)).toHaveLength(1);
+      expect(new Set(months.map(e => e.action.templateId)).size).toBe(13);
     }
   });
 
@@ -181,7 +183,8 @@ describe("brief builder — 성질", () => {
   // P3.6: 소품 사전 확대(직업군 13개)와 합충 자리 문장(where)으로 상한을 1% 올렸다.
   // P3.8: 추정을 작가가 실제로 받는 입력으로 바꿨다(배정 기록·안 쓰는 trait·style.rules 제외). 절 질문 52개가 늘어 10.8k.
   // P6c: 절마다 근거 2개(J)·사실 필드(오행 유무·대운 위치·배우자/자녀 별·생활 단계)로 늘어 11.6k(원문 기준, 작가는 재료로 바꾼 더 짧은 글을 받는다).
-  it("종합 브리프 토큰 추정 11.6k 이내", () => {
-    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(11_600);
+  // AM 1-1 ①·④: 세운 × 원국 관계 근거(발행 해 + 11월~입춘 전이면 다음 해)와 문단 규칙(주어·청자 하나, 장면 → 이유 → 행동)으로 약 130 토큰 늘어 11.8k.
+  it("종합 브리프 토큰 추정 11.8k 이내", () => {
+    for (const { brief } of samples) if (brief.product === "saju_mbti_full") expect(brief.budget.estimatedTokens).toBeLessThanOrEqual(11_800);
   });
 });

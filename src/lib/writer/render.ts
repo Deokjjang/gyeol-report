@@ -16,8 +16,8 @@ export const HANJA_READING: Readonly<Record<string, string>> = {
 };
 /** 용어 사전에 넣는 지식 DB 특성 갈래(그 사람 원고에 나오는 명리 용어). 오행 과다·조후·구조 같은 설명 이름은 넣지 않는다. */
 const DICT_FAMILIES = new Set(["tenGod", "twelveStage", "shinsal", "gwiin", "relation", "dayPillar", "stem", "dayMaster", "branch"]);
-/** 사전 밖에서 더하는 용어(지식 DB 이름에 없는 표기). */
-const EXTRA: Readonly<Record<string, string>> = { 비겁: "比劫", 식상: "食傷", 재성: "財星", 관성: "官星", 인성: "印星", 관살: "官殺", 칠살: "七殺", 반합: "半合", 원진: "怨嗔", 화개살: "華蓋殺", 양인: "羊刃", 대운: "大運", 세운: "歲運", 일주: "日柱", 일간: "日干", 지장간: "支藏干" };
+/** 사전 밖에서 더하는 용어(지식 DB 이름에 없는 표기). AM 1부: 「세운」은 뺐다 — 동사 「세운(세우다)」에 歲運이 붙었다(「처음 세운(歲運) 기준」, 운영 판독). */
+const EXTRA: Readonly<Record<string, string>> = { 비겁: "比劫", 식상: "食傷", 재성: "財星", 관성: "官星", 인성: "印星", 관살: "官殺", 칠살: "七殺", 반합: "半合", 원진: "怨嗔", 화개살: "華蓋殺", 양인: "羊刃", 대운: "大運", 일주: "日柱", 일간: "日干", 지장간: "支藏干" };
 
 /** 한글 이름 → 한자(사전). 지식 DB 특성 이름 "식신(食神)" 꼴에서 만든다. "망신살(亡身殺)·십이신살"처럼 꼬리가 붙은 이름은 앞만. */
 export function termDictionary(k: Pick<Knowledge, "features">): Map<string, string> {
@@ -43,6 +43,8 @@ export type AnnotateCtx = {
   readonly dict: ReadonlyMap<string, string>;
   /** 이 책 사람들의 엔진 간지(원국 네 기둥·대운·세운 연도·궁합 상대). 간지 이름은 이 안의 것만 붙인다. */
   readonly ganji: ReadonlySet<string>;
+  /** AM2-7 5부 2: 이 책 배지의 관계 이름(「신해해」 「자오충」). 관계 이름 속 두 글자에는 간지 주석을 달지 않는다(P6 major-p6b 「신해(辛亥)해」 — 申亥 해). */
+  readonly relNames?: ReadonlySet<string>;
   /** MBTI 기능 쉬운 이름 → 약어. 최종판에서는 넘기지 않는다(작가가 약어를 쓴다). */
   readonly mbtiNames?: ReadonlyMap<string, string>;
 };
@@ -51,7 +53,9 @@ function patternsOf(ctx: AnnotateCtx): { ko: string; tag: string; re: RegExp }[]
   const pats: { ko: string; tag: string; re: RegExp }[] = [];
   for (const [ko, han] of ctx.dict) {
     if (ko.length < 2) continue;
-    if (isGanji(ko, han)) { if (!ctx.ganji.has(ko)) continue; pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${ko}${GANJI_CONTEXT}`) }); continue; }
+    if (isGanji(ko, han)) { if (!ctx.ganji.has(ko)) continue;
+      const rel = [...(ctx.relNames ?? [])].filter(n => n.length === 3 && n.startsWith(ko)).map(n => n[2]);
+      pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${ko}${rel.length ? `(?!${rel.join("|")})` : ""}${GANJI_CONTEXT}`) }); continue; }
     // "~하는 편인 사람"의 편인(P3.6 오탐)·"정관념"은 용어가 아니다.
     const before = ko === "편인" ? "(?<![은는던한인운른큰진된간난] )" : "";
     pats.push({ ko, tag: han, re: new RegExp(`(?<![가-힣])${before}${ko}${AFTER}`) });
@@ -70,13 +74,19 @@ export function annotateChapter(sections: readonly BookSection[], ctx: AnnotateC
     const taken: [number, number][] = [];
     for (const { ko, tag, re } of pats) {
       if (seen.has(ko)) continue;
-      const m = re.exec(text); if (!m) continue;
+      // AM2-4: 「거센 편인 달」(편이다)처럼 용어가 아닌 자리는 건너뛰고 다음 자리를 본다.
+      // 앞말이 꾸밈꼴(「거센·느린·잔잔한·보통인」)이고 뒤가 「달·해·쪽…」일 때만(「2027년 편인은」의 편인은 십성 — 4종 회귀 taeo 9장).
+      const adnominal = (i: number) => ko === "편인" && /(?:[가-힣](?:한|운|은|는|던|센|린|른|쁜|픈|큰|진|된|간|난)|보통인) $/.test(text.slice(Math.max(0, i - 6), i)) && /^편인 (달|해|10년|시기|쪽|사람|때|흐름)/.test(text.slice(i));
+      let m = re.exec(text); while (m && adnominal(m.index)) { const rest = text.slice(m.index + ko.length), m2 = re.exec(rest); m = m2 ? Object.assign(m2, { index: m.index + ko.length + m2.index }) : null; }
+      if (!m) continue;
       const at = m.index, end = at + ko.length;
       if (taken.some(([a, b]) => at < b && end > a)) continue;
       // 괄호 안(쉬운 이름 뒤 묶음 이름 "내 방식의 힘(비겁)", "나무 땔감(갑목)")에는 붙이지 않는다(겹친 괄호 방지).
       if (text.lastIndexOf("(", at) > text.lastIndexOf(")", at)) continue;
       seen.add(ko);
       if (text[end] === "(") continue;
+      // AM 7부(세운 판독 56곳): 달 머리 줄 「신축월(辛丑月)은」의 「신축」에 또 붙여 「신축(辛丑)월(辛丑月)」이 됐다 — 바로 뒤가 「월(…月)」이면 이미 한자가 있다.
+      if (/^월\([^)]*月\)/.test(text.slice(end))) continue;
       text = `${text.slice(0, end)}(${tag})${text.slice(end)}`; count++;
       const shift = tag.length + 2;
       for (const t of taken) if (t[0] >= end) { t[0] += shift; t[1] += shift; }

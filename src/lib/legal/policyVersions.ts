@@ -45,6 +45,12 @@ export const FREE_BOOK_POLICY_DATE: string | null = "2026-11-10";
  * 이용자에게 유리한 변경이라 동의 버전은 올리지 않는다(FREE_BOOK_POLICY_DATE와 같은 원칙). 보상·가입 이용권 기한은 그대로.
  */
 export const EVENT_TICKET_DAYS_POLICY_DATE: string | null = "2026-11-11";
+/**
+ * AM(대운·세운 v5) 문서 개정일 = 배포일(KST, 배포 때 정한다 — 그 전에는 「배포일(확정 전)」). 세운 소망 입력칸(선택), 세운 → 대운 연결 할인 조건, 대운·세운 판매 재개 문구.
+ * 새 선택 입력과 새 혜택이라 불리한 변경이 아니고 동의 버전은 올리지 않는다(docs/v5/final4/legal-review.md 「AM」 절).
+ */
+export const AM_POLICY_DATE: string | null = "2026-12-01"; // 판매 시작 예정일(배포일이 다르면 배포 때 그날로 바꾼다 — 9부 계획)
+
 const koreanDate = (iso: string | null) => { if (!iso) return "배포일(확정 전)"; const [y, m, d] = iso.split("-").map(Number); return `${y}년 ${m}월 ${d}일`; };
 /** 이용약관 시행일(한국어). */
 export const POLICY_EFFECTIVE_DATE_KO = koreanDate(POLICY_EFFECTIVE_DATE);
@@ -54,6 +60,7 @@ export const META_OPTOUT_POLICY_EFFECTIVE_DATE_KO = koreanDate(META_OPTOUT_POLIC
 /** F 문서 개정일(한국어). */
 export const FREE_BOOK_POLICY_DATE_KO = koreanDate(FREE_BOOK_POLICY_DATE);
 export const EVENT_TICKET_DAYS_POLICY_DATE_KO = koreanDate(EVENT_TICKET_DAYS_POLICY_DATE);
+export const AM_POLICY_DATE_KO = koreanDate(AM_POLICY_DATE);
 export const POLICY_EFFECTIVE_DATES_KO = {
   terms: POLICY_EFFECTIVE_DATE_KO,
   privacy: koreanDate(OPS_Q_POLICY_EFFECTIVE_DATE),
@@ -63,6 +70,7 @@ export const POLICY_EFFECTIVE_DATES_KO = {
 /** 변경 이력(문서 끝에 그대로 보인다). 최신이 먼저. */
 export const POLICY_HISTORY = {
   terms: [
+    `${AM_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 새 상품·새 혜택이라 다시 동의하지 않아도 됩니다): 판매 상품에 대운 리포트(앞으로의 나)·세운 리포트(나의 한 해 신년판)를 다시 적음(판매를 연다고 알린 날부터), 세운 → 대운 연결 할인 조건(세운 결제 뒤 7일 안, 같은 사람, 세운 결제 1건당 한 번, 금액은 결제 화면, 세운 환불 시 쓰지 않은 할인은 없어짐)을 더함. 이용권으로 만들 수 있는 리포트(4종)는 그대로`,
     `${EVENT_TICKET_DAYS_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다): 결제 1건마다 증정하는 이용권의 기한을 「2026년 11월 30일 23:59:59까지」에서 「받은 날부터 30일」로 늘림(이미 받은 이용권도 받은 날부터 30일로 늘림), 보상 이용권(2026년 11월 30일 23:59:59까지)과 가입 이용권(받은 날부터 7일)의 기한은 그대로`,
     `${FREE_BOOK_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로, 이용자에게 유리한 변경이라 다시 동의하지 않아도 됩니다): 이용권 조항에 「가입 이용권」을 더함(무상 증정, 캠페인 기간에 새로 가입한 회원 1인 1회, 받은 날부터 7일, 4종, 선물·양도 불가, 운영상 지급을 멈출 수 있음, 부정한 방법으로 받으면 회수), 결제 1건마다 이용권 1장 증정 이벤트 기간을 적고 2026년 11월 30일까지로 늘림`,
     `${POLICY_EFFECTIVE_DATE_KO} 시행(현재, 문서 버전 2026-11-06.1): 결제는 로그인한 회원만, 이용권은 결제에 따른 무상 증정(현금 교환·환불 불가), 이용권 기한은 이용권에 표시된 날짜까지(이번 이벤트 이용권은 2026년 11월 30일 23:59:59까지), 이용권으로 만들 수 있는 리포트(4종, 대운·세운 제외), 결제가 환불되면 그 결제로 받은 미사용 이용권(받지 않은 선물 포함) 회수, 이용권으로 만든 책에 오류가 있으면 다시 만들거나 이용권을 다시 드림`,
@@ -70,6 +78,7 @@ export const POLICY_HISTORY = {
     "이전 약관(2026년 9월 24일 시행, 문서 버전 2026-06-14.1)",
   ],
   privacy: [
+    `${AM_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로): 리포트 입력 항목에 세운 리포트의 「이루고 싶은 것이나 요즘 고민」(선택, 200자 이내)을 더함 — 리포트를 쓰는 자료로만 쓰고 다른 입력값과 같은 기간 보관·삭제, 민감한 내용은 적지 않아도 된다는 안내`,
     `${FREE_BOOK_POLICY_DATE_KO} 개정(문서 개정 — 동의 버전 2026-11-06.1 그대로): 가입 이용권 중복 지급을 막는 기록(로그인 제공자와 회원번호를 되돌릴 수 없게 바꾼 값, 이용권·선물 기록과 같은 기간 보관), 개인을 알아볼 수 없는 방문 통계(날짜·방문 단계·처음 들어온 광고 주소의 유입 표시별 횟수만, 회원 식별자·IP 주소·쿠키 식별자 저장 없음)와 유입 표시 쿠키(30일)·브라우저 저장소 항목을 적음`,
     `${META_OPTOUT_POLICY_EFFECTIVE_DATE_KO} 시행(${META_NOTICE_FROM_KO}부터 공지, 문서 개정 — 동의 버전 2026-11-06.1 그대로라 다시 동의하지 않아도 됩니다): 광고 성과 측정을 「동의한 경우에만」에서 「기본으로 보내고 「광고 설정」에서 거부할 수 있음」으로 바꿈(이름·이메일·전화번호 없는 행태정보 — 방문·상품 조회·결제 시작·유료 결제 여부와 시각, 무작위 전환 식별자, 상품·금액, IP 주소·브라우저 정보), 이메일·휴대폰 번호 해시값과 가입 완료 여부는 로그인한 채 따로 동의한 회원만, 13번에 보내는 항목·목적·거부 방법을 표로 정리`,
     `${POLICY_EFFECTIVE_DATES_KO.privacy} 시행(문서 개정 — 동의 버전 2026-11-06.1 그대로): 처리 위탁과 국외 이전에 Telegram Messenger Inc.를 더함(운영자 주문 알림·문의 처리 — 주문코드, 상품, 금액, 결제 시각, 결제수단, 기기 정보를 알림이 생길 때 텔레그램 봇 API(HTTPS)로 보내고, 처리 후 메시지를 정리), 문의·요청 항목을 요청 종류와 접수 기기·브라우저 종류로 고침(직접 쓰는 칸 없앰)`,

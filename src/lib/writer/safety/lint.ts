@@ -99,7 +99,8 @@ export function schoolHit(sentence: string, stage: SchoolStage | "student", jobD
 
 /** C2 관계 전제: 솔로·미입력에게 상대가 있다고 전제하는 말. 조건형("좋아하는 사람이 생기면")은 허용. */
 const PARTNER_PRESUME = /좋아하는 (사람|상대|그 사람)(에게|한테|과|와|의|이랑| ?앞에서| ?앞|을|를|이|은|도)|마음에 둔 (사람|상대)(에게|한테|과|와|의| ?앞)|부부 ?사이|(?<![가-힣])(남편|아내|와이프)(가|와|과|는|를|의|에게|한테|이랑)|배우자(가|와|과|는|를|의|에게|한테)(?! ?(자리|별|궁|성))|연인(과|이|은|에게|한테|의|이랑)|(?<![가-힣])애인|남자친구|여자친구|남친|여친|썸(을|이|타)/;
-const PARTNER_COND = /(생기면|생긴다면|생겼을 때|생길 때|생기는 날|생긴 뒤|만나면|만난다면|만날 때|만나게 되면|된다면|되면|이라면|라면|있다면|언젠가|만약|혹시|함께 살게|결혼한다면|결혼하면)/;
+// AM 7부 annual-1 재생성: 고객이 적은 소망 인용 「좋아하는 사람도 생겼으면 좋겠다」는 바람(가정)이다.
+const PARTNER_COND = /(생겼으면|생기길|생기기를|만났으면|만나길|생기면|생긴다면|생겼을 때|생길 때|생기는 날|생긴 뒤|만나면|만난다면|만날 때|만나게 되면|된다면|되면|이라면|라면|있다면|언젠가|만약|혹시|함께 살게|결혼한다면|결혼하면)/;
 /** 기혼이 아닌데 결혼 생활을, 솔로·미입력인데 연인을 전제하는가(규칙 이름, 없으면 null). */
 export function presumedPartner(sentence: string, relationship: "single" | "dating" | "married" | "unknown"): string | null {
   if (relationship === "married") return null;
@@ -157,14 +158,17 @@ export function elementAbsenceClaims(sentence: string, presence: ElementPresence
  * 최종판 1-5 오행 개수: "없다·하나도 없다"(앞에 오는 꼴 "없는 쇠" 포함)·"가장 많다·가장 적다"를 원국 겉 글자 수(presence.surface)와 대조한다.
  * 없다: 겉 1개 이상이면 위반(겉 0·땅속만 있음은 elementAbsenceClaims가 본다). 가장 많다/적다: 겉 수가 최댓값/최솟값이 아니면 위반(같은 수는 허용).
  */
-export function elementCountClaims(sentence: string, presence: ElementPresence): string | null {
+export function elementCountClaims(sentence: string, presence: ElementPresence, strongest?: string): string | null {
   if (QUALIFIED.test(sentence)) return null;
   const counts = Object.values(presence).map(p => p.surface), max = Math.max(...counts), min = Math.min(...counts);
   for (const [e, w] of Object.entries(ELEMENT_WORDS) as [keyof typeof ELEMENT_WORDS, { native: string; reading: string }][]) {
     const p = presence[e]; if (!p) continue;
     const name = `(?:${w.native}(?:\\(${w.reading}\\))?(?: ?기운| ?글자)?|${w.reading} ?(?:기운|글자)|${HANJA_EL[e]})(?=[이가은는을를의도과와로만에]|\\s|[,.]|$)`;
     if (p.surface > 0 && new RegExp(`(?<![가-힣])없는 (?:${name}|${w.native})|(?<![가-힣])${name}(?:이|가|은|는)? (?:하나도|전혀|아예) 없`).test(sentence)) return `${e}:없음≠${p.surface}`;
-    if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
+    // AM 재생성 2 판독(sodam 2장, 세 판째): 「물은 가장 센 기운」은 세기 말이라 개수(겉 2)가 아니라 엔진의 가장 센 오행과 견준다 — 개수로 걸어 수리가 「두 개로 … 세기는 가장 많은 편」 비문을 만들었다.
+    const strengthWord = new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:센|강하|강한)|가장 (?:센|강한) (?:${name}|${w.native})`).test(sentence);
+    if (strengthWord && strongest) { if (strongest !== e) return `${e}:가장 셈≠${strongest}`; }
+    else if (p.surface < max && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:많|센|강하|두텁)|가장 많은 (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 많음≠${p.surface}/${max}`;
     if (p.surface > min && new RegExp(`(?<![가-힣])${name}(?:이|가|은|는)? 가장 (?:적|모자라|부족|약하)|가장 (?:적은|모자란|부족한|약한) (?:${name}|${w.native})`).test(sentence)) return `${e}:가장 적음≠${p.surface}/${min}`;
   }
   return null;
@@ -186,9 +190,14 @@ const BALANCED_WORD = /균형|반반|고르게|비슷하게|똑같|같은 비율
 const SKEW_WORD = /치우|쏠려|쏠린|기울|한쪽으로|많은 편|더 많|훨씬 많/;
 /** 음양 균형의 설명 문장(지식 DB yinYang:BALANCED). 치우친 사람에게 붙으면 비율과 다른 설명이다(P6b 하람 6:2). */
 const BALANCED_DESC = /밀(어야|고) 할 때와 기다려야 할 때|상황에 맞게 (골라|고르)|양쪽 (입장|사정)을 (다 )?이해/;
-export function yinYangClaim(sentence: string, yin: number, yang: number): "false_balance" | "false_skew" | null {
+/** 문장이 음·양 가운데 어느 쪽이 많다고 말하나(「양의 기운이 앞서」·「음의 기운이 더 많아」). */
+export const yinYangLean = (s: string): "yin" | "yang" | null => /(?<![가-힣])음(?:의)? ?기운(?:이|은)? (?:더 |훨씬 )?(?:많|앞서|우세|강하|세)/.test(s) ? "yin" : /(?<![가-힣])양(?:의)? ?기운(?:이|은)? (?:더 |훨씬 )?(?:많|앞서|우세|강하|세)/.test(s) ? "yang" : null;
+export function yinYangClaim(sentence: string, yin: number, yang: number): "false_balance" | "false_skew" | "false_direction" | null {
   const balanced = yin === yang;
   if (!balanced && BALANCED_DESC.test(sentence)) return "false_balance";
+  // AM 판독(major-4): 양 4·음 2인데 수리가 「음의 기운이 더 많아」로 바꿨다 — 쪽(방향)을 거꾸로 말한 것도 비율과 다른 말이다.
+  const lean = yinYangLean(sentence);
+  if (lean && ((lean === "yin" && yin < yang) || (lean === "yang" && yang < yin))) return "false_direction";
   if (!YINYANG.test(sentence)) return null;
   if (!balanced && BALANCED_WORD.test(sentence) && !/(않|아니|못)/.test(sentence)) return "false_balance";
   if (balanced && SKEW_WORD.test(sentence)) return "false_skew";
@@ -199,14 +208,19 @@ export function yinYangClaim(sentence: string, yin: number, yang: number): "fals
 export type DayunPhase = "early" | "middle" | "late";
 export const dayunPhase = (yearIndex: number): DayunPhase => (yearIndex <= 2 ? "early" : yearIndex <= 6 ? "middle" : "late");
 export const DAYUN_PHASE_KO: Readonly<Record<DayunPhase, string>> = { early: "앞쪽", middle: "중간", late: "끝 무렵" };
+/** AM2-7 5부 3: 위치 말 표 하나 — 엔진 위치(대운 안 몇 번째 해, 1~10) → 고객 말. 카드(위치 값) · 화면 · 검사(dayun_claim · dayun_position)가 함께 쓴다. */
+export const dayunPositionKo = (yearIndex1: number): string => (yearIndex1 === 1 ? "첫해" : yearIndex1 === 10 ? "마지막 해" : DAYUN_PHASE_KO[dayunPhase(yearIndex1 - 1)]);
 const PHASE_CLAIM: readonly [DayunPhase, RegExp][] = [
   ["early", /초입|막 시작|들어선 지 얼마|시작한 지 얼마|앞쪽|첫머리|문을 연/],
   ["middle", /한가운데|중반|중간쯤|중간 지점|허리/],
-  ["late", /끝자락|마무리|막바지|끝나 가|끝 무렵|저물|마지막 (몇 )?해|끝을 향/],
+  // P7 major-p5 3.0 · 3.2: 「하나만큼은 끝까지 마무리하는 원칙」 「이번 대운 안에 끝까지 마무리해 보세요」는 위치 말이 아니다 — 「마무리」는 때를 가리킬 때만.
+  ["late", /끝자락|(대운|10년)의 마무리|마무리 (단계|시기|무렵|구간|해)|마무리(하는|되는|짓는) (때|시기|해|구간|10년)|마무리(에|로) (들어|접어)|막바지|끝나 가|끝 무렵|저물|마지막 (몇 )?해|끝을 향/],
 ];
 /** 대운 이야기에서 위치를 잘못 짚은 말(실제 위치와 다른 단계 이름). */
 export function dayunPhaseClaim(sentence: string, actual: DayunPhase): DayunPhase | null {
   if (!/대운|10년 흐름|십 년 흐름|10년의|이번 10년|지금 10년/.test(sentence)) return null;
+  // AM2-7 1부 6(P6 major-p5 2.0 「2023년은 정묘 대운의 마지막 해였고, …」): 해 이름이 붙은 위치 말은 그 해의 대운 위치다(지금 대운 위치가 아니다 — 세운·대운은 dayun_position이 해 기준으로 본다).
+  if (/(19|20)\d\d년/.test(sentence)) return null;
   for (const [p, re] of PHASE_CLAIM) if (p !== actual && re.test(sentence)) return p;
   return null;
 }
@@ -268,6 +282,8 @@ export function groupClaims(sentence: string): { group: keyof GroupLevels; level
 }
 /** 엔진 단계와 다른 세기 말(없으면 null). */
 export function groupClaimMismatch(sentence: string, levels: GroupLevels): string | null {
+  // AM2-7 1부 6(P6 major-p6b 1.1 「재성이 가장 많은 결」 — 판독: 묶음끼리 견준 상대 최상급, 카드 값 그대로): 「가장 많은 · 가장 적은」은 단계 말이 아니다.
+  if (/가장 (많|적|센|약한|강한)/.test(sentence) && !/(강|약)(해요|합니다|한 편)/.test(sentence)) return null;
   for (const c of groupClaims(sentence)) if (levels[c.group] !== c.level) return `${c.group}:${c.level}≠${levels[c.group]}`;
   return null;
 }

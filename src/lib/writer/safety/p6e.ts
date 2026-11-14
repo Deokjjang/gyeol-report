@@ -36,24 +36,72 @@ const NOTICE = [
   /(시기|여부)(를|나 여부를)? 정하는 (이야기|말)(가|는|은)? 아(니|닙|닌)/,
   // 최종판2 1-6: 「자녀의 성별이나 수를 말하는 것이 아니라」·「결혼 여부를 정해 주는 것은 아닙니다」·「구체적인 일을 말하는 건 아닙니다」.
   /(성별|수|일|시기|결과|사건|여부)(이나 [가-힣]+|나 [가-힣]+)?(을|를) (말하|정하|정해 주|알려 주)는 (건|것은|것이|게|이야기|말)(가|는|은)? ?아(니|닙|닌)/,
+  // AM 1부 판독(45·49 9장): 「경향만 읽는 이야기이니 어느 해든 결과를 단정하진 마세요」·「흐름은 약속이 아니라 날씨예요」(책 끝 시스템 안내와 2중).
+  /(결과|어느 해든|어떤 해든|시기|앞날)[^.?!]{0,20}단정하(진|지는|지|지도) 마세요/,
+  /경향만 (읽는|보는|말하는|담은) (이야기|글|책)/,
+  /약속이 아니라 (날씨|경향|흐름|방향)/,
+  // AM 7부 판독(대운 11건 — 브리프 note 「사건은 단정하지 않는다」「경향으로」를 옮긴 꼴, 세운 2.1.0·a5).
+  /못 박(지는|지|진|을 수는|을 수도) (않|없)/,
+  /(사건|결과|시기|여부|일)(을|를)? (말할|확정할|단정할|정할) 수(는|도)? 없/,
+  /단정할 수(는|도)? 없/,
+  /(사건|일)을 정해 두고 (읽|볼)/,
+  /(일어난다고|온다고|생긴다고) (정해 두는|못 박는|단정하는) (것은|건|게) 아/,
+  /반드시 (그렇게|이렇게) 된다는 (뜻|말|이야기)/,
+  /경향으로만 (볼게요|봅니다|읽어요|읽을게요|보세요|볼까요)/,
+  /(진단|예언|확정)이 아니라 (경향|가능성|흐름)/,
+  /다고만 읽어 주세요/,
+  /까지만 말할 수 있/,
+  // AM 재생성 2 판독: sodam 8장 「단정할 일이 아니라 살피며 지나갈 흐름이에요」, major-1 7장 「이 순서는 경향이라서 모두가 같은 나이에 같은 곳에 서 있지는 않아요」(growthCurve note),
+  // major-1 2장 「흐릿했다면 그 시기가 다른 이야기였을 수도 있어요」·「맞았는지보다」(지난 대운 맞힘 단서).
+  /단정할 (일|것|건)(이|은)? 아(니|닙|닌)/,
+  /경향이라서[^.?!]{0,30}(않아요|않습니다|아니에요|아닙니다)/,
+  /다른 이야기였을 수도 있|맞았는지(보다|는 중요하지)/,
 ];
-export const isNoticeSentence = (s: string) => NOTICE.some(re => re.test(s));
+export const isNoticeSentence = (s: string) => NOTICE.some(re => re.test(s)) || noticeMeaning(s);
+/**
+ * AM2-3 4부·6-2 면책을 뜻으로(꼴 목록을 늘리지 않는다): 「단정·약속·확정·보장·예언·장담하다」「뜻하지 않」「꼭·반드시 그렇다는」「정해져 있다는」 류 말과 부정(않·아니·없·못·마세요)이 한 문장에 함께 있으면 면책이다.
+ * 명사 「약속(시간·이 틀어지다)」 「단정한 옷차림」은 면책이 아니다(동사 꼴만 본다).
+ */
+const NOTICE_HEAD = /(단정|약속|확정|보장|예언|장담)(하지|하진|할 수|할 순|해서|해 드리|해 주는 (건|것|게)|하는 (건|것|게|말|뜻)|한다는|짓지|은 아니|이 아니)|뜻하지(는|도)? 않|뜻하는 (건|것은|게) 아|(꼭|반드시|무조건) 그렇(다는|게 된다는|지는)|정해져 있다는|(일어난다|온다|생긴다|된다)고 (정해|못 박)|단정(은|할 일은)/;
+const NOTICE_NEG = /않|아니|아닙|없|못|마세요|말아/;
+/** 시스템이 책마다 한 번 넣는 끝 안내(bookNotice)는 면책 검사 대상이 아니다. */
+const SYSTEM_NOTICE = new Set(["career_money_study", "saju_mbti_compatibility", "love_marriage_child", "annual_fortune", "major_fortune", "saju_mbti_full"].map(p => bookNotice(p).replace(/[^가-힣]/g, "")));
+export function noticeMeaning(s: string): boolean {
+  if (SYSTEM_NOTICE.has(s.replace(/[^가-힣]/g, ""))) return false;
+  const m = NOTICE_HEAD.exec(s); if (!m) return false;
+  return NOTICE_NEG.test(s.slice(m.index));
+}
+/** 면책이 앞 마디로 붙은 문장(「사건을 확정할 수는 없지만, 흐름은 …」·「사건이 일어난다고 정해 두는 것은 아니고, …」) → 면책 마디만 뗀다. 뒤가 짧으면 그대로(문장째 면책은 notice_repeat가 처리). */
+// AM 재생성 판독(annual-1 8.2.1 「효과를 약속하는 건 아니지만」, sodam 8장 「좋고 나쁨을 단정하기보다」, 「~할 수는 없어도,」).
+const NOTICE_LEAD = /^[^,.?!]{2,40}?(?:할 수는 없지만|할 수 없지만|할 수는 없어도|할 수 없어도|하지는 않지만|(?:하는|두는|된다는) (?:건|것은|게|뜻은) 아니(?:고|지만)|(?:진단|예언|확정|단정)이 아니라 (?:경향|가능성|흐름)이니|단정하기보다(?:는)?),?\s+/;
+export function stripNoticeLead(s: string): string {
+  const m = s.match(NOTICE_LEAD); if (!m) return s;
+  if (!/(사건|결과|시기|여부|확정|단정|약속|진단|예언|정해 두|못 박)/.test(m[0])) return s;
+  const rest = s.slice(m[0].length);
+  return rest.replace(/[^가-힣]/g, "").length >= 8 ? rest : s;
+}
 /** 책 한 줄 안내(상품별, 마지막 장 끝에 시스템이 넣는다). */
 export function bookNotice(product: string): string {
   if (product === "career_money_study") return "이 책은 타고난 성향을 풀이한 것이라 일과 돈의 결과를 단정하지 않고, 돈과 투자 이야기도 권유가 아니라 성향 이야기예요.";
   if (product === "saju_mbti_compatibility") return "이 책은 두 사람의 타고난 결을 풀이한 것이라 관계의 결과를 단정하지 않아요.";
   if (product === "love_marriage_child") return "이 책은 타고난 성향을 풀이한 것이라 만남·결혼·자녀의 시기와 결과를 단정하지 않아요.";
+  // AM2(덕짱님 결정 2026-11-11 「둘 다 고침」): 세운·대운은 타고난 성향이 아니라 시기의 흐름을 푼 책이다.
+  if (product === "annual_fortune") return "이 책은 한 해의 흐름을 풀이한 것이라 달마다 일어날 일을 단정하지 않아요.";
+  if (product === "major_fortune") return "이 책은 10년의 흐름을 풀이한 것이라 해마다 일어날 일을 단정하지 않아요.";
   return "이 책은 타고난 성향을 풀이한 것이라 앞으로의 일을 단정하지 않아요.";
 }
 
 // ---------- 2 고아 문장 ----------
 /** "도"로 끝나는 첫 어절 가운데 명사 자체가 "도"로 끝나는 낱말(정도·속도…)은 연결이 아니다. */
 const NOUN_DO = /^(정도|속도|태도|온도|각도|강도|빈도|의도|제도|용도|한도|농도|밀도|진도|지도|시도|태도|포도|보도|인도|기도|노도|난도|척도|고도|순도|적도|채도|명도|경도|위도|궤도|열도|반도|섬도)$/;
-const ORPHAN_ADVERB = /^(또한|여기에|여기에다|이처럼|이렇게|그래서|그러니|반대로|그런데|하지만|그리고|게다가|더구나|마찬가지로|이와 함께|그 위에|그러면서)(\s|,)/;
+const ORPHAN_ADVERB = /^(또한|여기에|여기에다|이처럼|이렇게|그래서|그러니|반대로|그런데|하지만|그리고|게다가|더구나|마찬가지로|이와 함께|그 위에|그러면서|그다음은|그다음엔|그 뒤로는)(\s|,)/;
+/** AM2-3 6-2(AM-01 4종 판독 커리어 6장 「이 조합은 정해진 틀 안에서…」 — 앞 문장이 수리로 사라짐): 지시어 + 앞말을 묶는 명사로 여는 첫 문장. */
+const ORPHAN_REF = /^(이|그|저) (조합|두 (가지|힘|기운|글자|흐름)|셋|흐름|차이|결|구조|방식|습관|점|평가표)(은|는|이|가|을|를|도)\s/;
 /** 앞 문단이 없는 자리(소제목 첫 문단)의 첫 문장이 앞말에 기대어 여는가. */
 export function orphanStart(first: string): string | null {
   const s = first.replace(/[⟪⟫"'“”‘’]/g, "").trim();
   const m = s.match(ORPHAN_ADVERB); if (m) return m[1];
+  { const r = s.match(ORPHAN_REF); if (r) return r[0].trim(); }
   const w = s.split(/\s+/)[0] ?? "";
   // "성격도 같은 쪽을 가리킵니다": 첫 어절이 "~도"(명사 + 보조사)면 앞말을 전제한다.
   if (/^[가-힣]{1,8}도$/.test(w) && !NOUN_DO.test(w) && !/^(어디|아무|누구|무엇|언제|조금|하나|한 번|두 번)도$/.test(w)) return w;
@@ -86,8 +134,29 @@ export function guideCopy(sentence: string, windows: ReadonlySet<string>, w = GU
 }
 /** 독자에게 하는 금지 말투로 옮긴 작가 규칙("입력하지 않은 경력과 연차는 쓰지 마세요"): 책·글·문장을 쓰는 법을 독자에게 시킨다. */
 // 최종판2 1-6: 「지어낸 연차 없이」(작가 규칙 "지어낸 연차·경력 금지"를 독자 안내로 옮김).
-const META_INSTRUCTION = /(입력(하지 않은|에 없는|되지 않은)|브리프|재료|근거 없는)[^.?!]{0,30}(쓰지 마세요|적지 마세요|넣지 마세요|말하지 마세요)|(경력|연차)(과|와|는|을|를)? [^.?!]{0,12}(쓰지|적지) 마세요|지어낸 [가-힣]{1,6} 없이|(연차|경력)(을|를)? 지어내/;
-export const metaInstruction = (s: string) => META_INSTRUCTION.test(s);
+const META_INSTRUCTION = /(입력(하지 않은|에 없는|되지 않은)|브리프|재료|근거 없는)[^.?!]{0,30}(쓰지 마세요|적지 마세요|넣지 마세요|말하지 마세요)|(경력|연차)(과|와|는|을|를)? [^.?!]{0,12}(쓰지|적지) 마세요|지어낸 [가-힣]{1,6} 없이|(연차|경력)(을|를)? 지어내|(연차|경력|근속 ?연수|나이)(을|를|은|는)? ?(구체적으로|숫자로|정확히|일일이) ?(적기|쓰기|밝히기|말하기)(보다|보단|대신)/;
+/** AM 1부 판독: 분기 조건·금액 금지·연차 금지·장면 슬롯이 문장으로(「상태가 직장인이니」「상황이 정해지지 않았으니」「숫자 없이 감각으로만 적어」「오래 다닌 햇수 대신」「경력은 실제로 해 온 만큼만」「…장면이 맞아요」). */
+const META_TRACE = /상태가 [가-힣·]{1,10}(이)?니(까)?(?![가-힣])|상황이 (정해지지|입력되지) 않았으니|숫자 ?없이[^.?!]{0,16}(적어|적으|쓰세요|정해|두세요|감각으로)|(오래 다닌|다닌|근무한) (햇수|기간|연수) 대신|경력은 (실제로 )?(해 온|한) 만큼만|장면이 (맞아요|맞습니다|어울려요|어울립니다)(?![가-힣])/;
+// AM 1-1 ②: 「연차를 구체적으로 적기보다, …」(작가 규칙 "입력에 없는 연차는 쓰지 않는다"를 독자 조언 꼴로 옮김, 운영 판독 11/5).
+/** AM2-3 6-2(AM-01 4종 판독 커리어 9장 「이 로드맵에는 새로운 특성이 없습니다.」): 작성 지시·브리프 note를 옮긴 메모 꼴. */
+const META_NOTE = /새로운 특성(이|은) 없|새 특성(은|이)? 없|새 특성 없이|이 (로드맵|장|절|부분)에(는|선) [^.?!]{0,24}(없습니다|없어요|담지 않|넣지 않|다루지 않)/;
+export const metaInstruction = (s: string) => META_INSTRUCTION.test(s) || META_TRACE.test(s) || META_NOTE.test(s);
+/**
+ * AM2-3 4부·6-2 같은 문장·같은 뜻 연속(세운·대운 adjacentRepeats와 4종 tidy가 같이 쓴다): 정확히 같음 · 4자 창 자카드 0.6 이상 · 앞 세 어절이 같고 어절 80% 이상 겹침.
+ * AM-01 4종 판독 커리어 9장 「이번에는 일 사이사이에 하루에 한 번은 아무것도 안 하는 시간을 두세요. 이번에는 일 사이사이에 하루 한 번은 아무것도 하지 않는 시간을 두세요.」(수리 흔적).
+ */
+export function nearDuplicate(a: string, b: string): boolean {
+  const n = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
+  if (n(a) === n(b)) return true;
+  // 한 문장이 다른 문장 안에 통째로(AM-01 궁합 3장 「…기운이 둘 다에게 있어서, 둘 다 체면과 격식을 아는 사람이라 …」 뒤에 같은 꼬리만 다시).
+  { const x = n(a), y = n(b); if (Math.min(x.length, y.length) >= 20 && (x.includes(y) || y.includes(x))) return true; }
+  const win = (t: string) => { const x = n(t), o = new Set<string>(); for (let i = 0; i + 4 <= x.length; i++) o.add(x.slice(i, i + 4)); return o; };
+  const A = win(a), B = win(b); let k = 0; for (const w of A) if (B.has(w)) k++;
+  if (A.size && B.size && k / (A.size + B.size - k) >= 0.6) return true;
+  const wa = a.split(/\s+/), wb = b.split(/\s+/);
+  if (wa.length >= 4 && wb.length >= 4 && wa.slice(0, 3).join(" ") === wb.slice(0, 3).join(" ")) { const shared = wb.filter(w => wa.includes(w)).length; return shared / Math.max(wa.length, wb.length) >= 0.7; }
+  return false;
+}
 
 // ---------- 10 씨앗 원문(꼬리표·압축 구) ----------
 /** 재료 글 가운데 ×·→ 꼴(꼬리표 × 성향 → 결과)의 마디: 정규화 7자 이상이면 문장 안에 그대로 나오면 위반. */
@@ -172,7 +241,8 @@ const NATIVE: Readonly<Record<string, string>> = { 1: "한", 2: "두", 3: "세",
  */
 export function nativeNumbers(text: string): { text: string; count: number } {
   let count = 0;
-  const out = text.replace(/(?<![0-9.,])([1-9])\s?(해|달|번|명|가지|사람|군데|마디|걸음|잔|권)(?![가-힣]*(일|월째))/g, (_all, d: string, unit: string) => { count++; return `${NATIVE[d]} ${unit}`; });
+  // AM2 P2 판독(annual-1 을사월): 「흐름 세기는 1/5 잔잔함」 → 「1/다섯 잔잔함」(분수 뒤 숫자를 「5 잔」으로 읽었다) → 「/」 뒤 숫자는 그대로.
+  const out = text.replace(/(?<![0-9.,/])([1-9])\s?(해|달|번|명|가지|사람|군데|마디|걸음|잔|권)(?![가-힣]*(일|월째))/g, (_all, d: string, unit: string) => { count++; return `${NATIVE[d]} ${unit}`; });
   return { text: out, count };
 }
 
@@ -184,12 +254,16 @@ const READING: Readonly<Record<string, string>> = {
   木: "목", 火: "화", 土: "토", 金: "금", 水: "수",
 };
 /** 괄호 속 한자("식신(食神)")는 지우고, 괄호 밖 한자는 천간·지지·오행이면 한글 읽기로(그 밖은 지운다). 지운·바꾼 수를 센다. */
-export function stripHanja(text: string): { text: string; count: number } {
+/** keepStage(AM2-4 3부, 세운·대운 표면 정리만): 십이운성 한 글자 이름의 한자 꼴(「쇠(衰)」)은 남긴다 — 오행 「쇠(금)」와 동음 구분. 4종은 넘기지 않는다(그대로). */
+export function stripHanja(text: string, keepStage = false): { text: string; count: number } {
   let count = 0;
-  const out = text
+  const STAGE = /(?<![가-힣])(태|양|쇠|병|사|묘|절)\((胎|養|衰|病|死|墓|絶)\)/g, keep: string[] = [];
+  const src = keepStage ? text.replace(STAGE, (m) => { keep.push(m); return `\uE001${keep.length - 1}\uE001`; }) : text;
+  const out0 = src
     .replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (all, inner: string) => { if (/^[一-鿿\s·,]+$/.test(inner)) { count++; return ""; } const kept = inner.replace(/[一-鿿]+\s?/g, "").trim(); count++; return kept ? `(${kept})` : ""; })
     .replace(/[一-鿿]+/g, m => { count++; return [...m].every(ch => READING[ch]) ? [...m].map(ch => READING[ch]).join("") : ""; })
     .replace(/\(\s*\)/g, "").replace(/ {2,}/g, " ");
+  const out = keepStage ? out0.replace(/\uE001(\d+)\uE001/g, (_m, i: string) => keep[Number(i)] ?? "") : out0;
   return { text: out, count };
 }
 
@@ -211,6 +285,8 @@ export function plainWords(text: string): { text: string; count: number } {
   t = sub(t, /(?:내 힘의 세기는|일간의 힘이|일간의 힘은|내 힘은) (매우 |아주 |조금 )?신약(?=이|으로|인|,|\.)/g, (_a, deg: string | undefined) => `혼자 버티는 힘이 ${deg ? "아주 " : ""}여린 편`);
   t = sub(t, /(내 힘의 세기는|일간의 힘이|일간의 힘은|내 힘은) 중화(?=라서|라|예요|입니다|이고|,)/g, (_a, head: string) => `${head.startsWith("내 힘의 세기") ? "내 힘은" : head} 세지도 약하지도 않은 가운데`);
   t = t.replace(/가운데(,|라서) 세지도 여리지도 않은 가운데/g, "가운데");
+  // AM 재생성 2 판독(sodam 1장, 세 판째): 「내 힘의 세기는 중화예요.」를 바꾸면 바로 뒤 작가 문장 「세지도 여리지도 않아서 …」와 같은 말이 된다 → 두 문장을 하나로.
+  t = t.replace(/(내 힘은|일간의 힘이|일간의 힘은) 세지도 약하지도 않은 가운데(?:예요|입니다)\. (?=세지도 (?:약하지도|여리지도) 않)/g, "$1 ");
   // 최종판2 1-6: 오행 과다(내부 용어) → 쉬운 말("토 과다" → "흙 기운이 많아서"). 장덕민 연애 「여기에 토 과다가 겹칩니다」.
   const EL: Readonly<Record<string, string>> = { 목: "나무", 화: "불", 토: "흙", 금: "쇠", 수: "물" };
   t = sub(t, /(?<![가-힣])([목화토금수]) 과다(라서|여서|이라서|로|가|는|예요|입니다|이고|인)?(?![가-힣])/g, (_a, e: string, p: string | undefined) => {

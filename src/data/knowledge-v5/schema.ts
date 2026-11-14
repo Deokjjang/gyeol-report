@@ -287,7 +287,7 @@ export type SectionPlan = z.infer<typeof SectionPlanSchema>;
 export const ChapterPlanSchema = z.object({
   id: z.string().min(2), title: z.string().min(2).max(30), question: z.string().min(8).max(80), role: ChapterRoleSchema,
   domains: z.array(DomainSchema).min(1), dimensionFocus: z.array(DimensionId).optional(),
-  evidenceFamilies: z.array(z.string()).optional(), requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown", "pair"])).optional(),
+  evidenceFamilies: z.array(z.string()).optional(), requires: z.array(z.enum(["exactTime", "approximateTime", "mbtiKnown", "genderKnown", "contextKnown", "pair", "wish"])).optional(),
   paragraphs: z.object({ min: z.number().int().min(1), max: z.number().int().min(1) }),
   repeat: z.number().int().min(2).optional(),
   /** 비반복 장의 절 계획(P3.8 1). 반복 장(연·월)은 key가 절이다. */

@@ -35,8 +35,9 @@ const exportDir = process.env.TICKET_PUBLICATION_EXPORT;
 const exports: unknown[] = [];
 const sharePort = () => ({ ...sqlBookSharePort(local.db), async owned(reportId: string, user: string) { return (await local.db.query<{ r: { ok: boolean } }>("select book_share_publication($1,$2) r", [reportId, user])).rows[0].r.ok; } });
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async () => { local = await ticketPublicationSql(); }, 30000);
 beforeEach(async () => { await local.db.exec("reset role; truncate ticket_bundle_orders,report_ticket_grants,payment_orders cascade; set role service_role;"); });
 afterAll(async () => {
@@ -119,6 +120,8 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
   });
   it.each(fixtures)("$id real queue → V4 → owner/Book/library/share, stable clock and no side effects", async f => {
     await grant(); const requestId = randomUUID(), queued = await reserve(f.payload, requestId);
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 이용권 큐에 들어가지 않는다(예약 전 거절, 부작용 없음).
+    if (f.id === "major" || f.id === "annual") { expect(queued).toMatchObject({ ok: false, code: "TICKET_PRODUCT_EXCLUDED" }); return; }
     expect(queued).toMatchObject({ state: "QUEUED" });
     expect(await runTicketPublicationJob(local.queue)).toMatchObject({ state: "COMPLETED" });
     const reportId = String(queued.reportId);

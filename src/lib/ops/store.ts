@@ -6,7 +6,7 @@ import type { OpsStore } from "./generation/sinks";
 export type AccountOpsStore = { call(action: string, user: string, data?: Record<string, unknown>): Promise<Record<string, unknown>> };
 export type AuditEntry = { actor: "admin" | "system"; actorUserId?: string | null; action: string; target: string; detail?: Record<string, unknown> };
 /** signup: 가입 이용권(F, ops_signup) · funnel: 퍼널 익명 집계(F, ops_funnel) · sales: 4종 판매 중지 스위치(W3 P0, ops_sales). */
-export type OpsStores = { generation: OpsStore; raw: OpsStore; order: OpsStore; gift: OpsStore; comp: OpsStore; recon: OpsStore; notify: OpsStore; signup: OpsStore; funnel: OpsStore; sales: OpsStore; account: AccountOpsStore; audit(entry: AuditEntry): Promise<boolean>; db: SupabaseClient | null };
+export type OpsStores = { generation: OpsStore; raw: OpsStore; order: OpsStore; gift: OpsStore; comp: OpsStore; recon: OpsStore; notify: OpsStore; signup: OpsStore; funnel: OpsStore; sales: OpsStore; /** AM 3부 세운 → 대운 연결 할인(am_major_discount). */ discount: OpsStore; /** AM 4부 진행률·미리보기(am_writer_progress, 읽기 전용). */ progress: OpsStore; /** AM2-3 6-1 발행 보류 경보. */ hold: OpsStore; account: AccountOpsStore; audit(entry: AuditEntry): Promise<boolean>; db: SupabaseClient | null };
 export const OPS_RPC_TIMEOUT_MS = 10_000;
 
 /** 운영 기반 저장소(서버 전용, service_role). 환경이 없으면 모든 호출이 STORAGE_UNAVAILABLE. */
@@ -23,7 +23,10 @@ export function createOpsStores(env: Readonly<Record<string, string | undefined>
   const store = (fn: string): OpsStore => ({ call: (action, data = {}) => rpc(fn, { p_action: action, p_data: data }) });
   return {
     generation: store("ops_generation"), raw: store("ops_writer_raw"), order: store("ops_order"), gift: store("ops_gift"), comp: store("ops_comp"), recon: store("ops_recon"), notify: store("ops_notify"),
-    signup: store("ops_signup"), funnel: store("ops_funnel"), sales: store("ops_sales"),
+    signup: store("ops_signup"), funnel: store("ops_funnel"), sales: store("ops_sales"), discount: store("am_major_discount"),
+    // AM2-3 6-1: 발행 보류 경보(주문당 1번 — dedupe_key hold:<reportId>). 알림 종류는 migration 20261112100000.
+    hold: { call: (_action, data = {}) => rpc("ops_notify_enqueue", { p_kind: "generation_hold", p_bot: "ops", p_key: `hold:${String((data as { reportId?: string }).reportId ?? "")}`, p_payload: data }) },
+    progress: { call: (_action, data = {}) => rpc("am_writer_progress", { p_data: data }) },
     account: { call: (action, user, data = {}) => rpc("ops_account", { p_action: action, p_user: user, p_data: data }) },
     async audit(e) {
       if (!db) return false;

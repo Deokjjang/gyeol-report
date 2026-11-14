@@ -125,7 +125,9 @@ it.each(["hour", "mbti", "both"])("H unknown %s preserves absence and does not i
 it("2025 is retrospective; 2027 is explicitly offline and still rejected operationally", async () => {
   expect(samples.get("H2025")!.r.narrative.sections.at(-1)!.title).toBe("2025년에서 가져갈 배움");
   expect(samples.get("H2027")!.r.narrative.sections.at(-1)!.title).toBe("2027년을 준비하는 기준");
-  const blocked = await generateV4ShadowReport(cases.find(f => f.id === "H2027")!.payload, clock);
+  // AM 2부: 주문 관문은 신년판 연도(기본 2027)를 받는다. 그 다음 해(2028)는 여전히 운영에서 거절한다.
+  const h2027 = cases.find(f => f.id === "H2027")!.payload as { productOptions: Record<string, unknown> };
+  const blocked = await generateV4ShadowReport({ ...h2027, productOptions: { ...h2027.productOptions, selectedYear: "2028" } } as never, clock);
   expect(blocked.ok).toBe(false);
   expect(JSON.stringify(blocked)).toContain("SELECTED_YEAR_INVALID");
 });

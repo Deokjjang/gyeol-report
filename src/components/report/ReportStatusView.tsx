@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL, SUPPORT_PAGE_ADDRESS_HINT } from "../../lib/legal/socialLinks";
 import { BookPublishingVisual } from "./BookPublishingVisual";
@@ -58,7 +59,10 @@ const copy = {
   },
 } as const;
 
-export function ReportStatusView({ state, title, message, support = false, stage }: ReportStatusViewProps) {
+export function ReportStatusView({ state, title, message, support = false, stage, chapters, eta, preview }: ReportStatusViewProps & {
+  /** AM 4부: 진짜 진행률(「13장 중 5장 완성」)·남은 시간(실측 중앙값, 없으면 숨김)·먼저 읽기 칸. */
+  readonly chapters?: { readonly done: number; readonly total: number | null }; readonly eta?: string | null; readonly preview?: ReactNode;
+}) {
   const waiting = state === "preparing" || state === "delayed";
   const showSupport = support || state === "attention";
 
@@ -73,11 +77,13 @@ export function ReportStatusView({ state, title, message, support = false, stage
               <h1 id="report-status-title" className={styles.title}>{title ?? copy[state].title}</h1>
               {(message ?? copy[state].message) ? <p className={styles.message}>{message ?? copy[state].message}</p> : null}
             </div>
+            {waiting && chapters && chapters.total ? <p className={styles.message} data-chapter-progress>{chapters.total}장 중 {Math.min(chapters.done, chapters.total)}장 완성{eta ? ` · ${eta}` : ""}</p> : waiting && eta ? <p className={styles.message} data-chapter-progress>{eta}</p> : null}
             {waiting && stage !== undefined ? <PublicationStages stage={stage} /> : null}
+            {waiting && preview ? preview : null}
             {waiting ? (
               <div className={styles.note}>
+                <p>창을 닫아도 서재에 저장돼요. 완성되면 서재에서 바로 열 수 있어요.</p>
                 <p>완성되면 이 화면에서 자동으로 보여드립니다.</p>
-                <p>페이지를 닫아도 준비는 계속됩니다.<br />이 주소를 저장해 두시면 다시 확인하실 수 있습니다.</p>
               </div>
             ) : null}
             {/* 운영 Q: 상담 창구는 카카오톡 채널 링크 하나(전화·이메일 링크 없음). */}

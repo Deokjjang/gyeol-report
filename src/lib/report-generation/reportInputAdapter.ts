@@ -21,10 +21,14 @@ import {
   type SinglePersonReportProductKey,
   type SinglePersonReportProductSlug,
 } from "./reportInputTypes";
-import { getAnnualFortuneCurrentYear, isAnnualFortuneCommerceYearSelectable } from "../report-knowledge/annualFortuneYearRules";
+import { getAnnualFortuneCurrentYear } from "../report-knowledge/annualFortuneYearRules";
+import { writerV5Products } from "../writer/flags";
+import { isAnnualOrderYearSelectable } from "./annualOrderYear";
 
 export type ReportInputAdapterOptions = {
   readonly now?: () => Date;
+  /** AM2-4 7부: 대운을 정할 수 없는 생일(시각 미상)도 세운을 받는지. 기본 = 세운이 v5 작가 경로일 때만(v5 세운 책은 대운 없이도 쓴다 — 예전 v4 세운 생성은 대운이 필요). 대운 상품은 늘 막는다. */
+  readonly annualWithoutDayun?: () => boolean;
 };
 
 export type ReportProductKind =
@@ -196,12 +200,16 @@ export function toSinglePersonGenerationInput(
 
   if (payload.productKey === "major_fortune" || payload.productKey === "annual_fortune") {
     const calculated = calculateCustomerDayun(personResult.value);
-    if (!calculated.ok) return calculated;
+    // AM2-4 7부(덕짱님 결정 2026-11-12): 대운은 결제 전에 막고(입력 단계 안내 · dayunReadiness), 세운은 권한다 — v5 세운은 대운 없이 쓴다.
+    const annualOk = payload.productKey === "annual_fortune" && !calculated.ok && calculated.error === "DAYUN_UNCERTAIN" && (options.annualWithoutDayun ?? (() => writerV5Products().includes("annual_fortune")))();
+    if (!calculated.ok && !annualOk) return calculated;
+    if (calculated.ok) {
     const selectedYear = payload.productKey === "annual_fortune"
       ? Number(productOptionsResult.value.selectedYear)
       : getAnnualFortuneCurrentYear(options.now?.());
     const selected = selectCustomerDayun(calculated.value, selectedYear);
     if (!selected.ok) return selected;
+    }
   }
 
   return {
@@ -355,15 +363,19 @@ function normalizeSingleProductOptions(
   const policyDate = options.now?.() ?? new Date();
   if (
     !Number.isInteger(parsedYear) ||
-    !isAnnualFortuneCommerceYearSelectable(parsedYear, policyDate)
+    !isAnnualOrderYearSelectable(parsedYear, policyDate)
   ) {
     return { ok: false, error: "SELECTED_YEAR_INVALID" };
   }
 
+  // AM 2부: 소망(선택, 200자) — 제어문자·링크를 지우고 자른다. 위험 표현·지시 꼴은 브리프(design/annual.readWish)가 다시 거른다.
+  const wishRaw = typeof value.wish === "string" ? value.wish : "";
+  const wish = wishRaw.normalize("NFC").replace(new RegExp("[\\u0000-\\u001f\\u007f-\\u009f\\u200b-\\u200f\\u2028-\\u202e\\ufeff]", "g"), " ").replace(/https?:\/\/\S+|www\.\S+/gi, " ").replace(/\s+/g, " ").trim().slice(0, 200);
   return {
     ok: true,
     value: {
       selectedYear,
+      ...(wish ? { wish } : {}),
     },
   };
 }

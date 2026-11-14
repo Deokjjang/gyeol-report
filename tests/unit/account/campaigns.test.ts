@@ -43,8 +43,9 @@ const balance=async(id:string)=>(await sqlTicketStore(db).call("summary",id)).qu
 const attr=async(id:string)=>(await db.query<Record<string,unknown>>("select * from campaign_attributions where user_id=$1",[id])).rows[0];
 const payload=(index:number)=>{const p=structuredClone(RUNTIME_FIXTURES[index].payload);return p.productKey==="annual_fortune"?{...p,productOptions:{selectedYear:String(new Date().getFullYear())}}:p;};
 // P6d-ops: 대운·세운 판매는 기본 닫힘. 이 파일은 다시 연(FORTUNE_SALES_OPEN=1) 경로를 시험한다(닫힘은 tests/unit/ops·customerDayunGeneration).
-beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; });
-afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; });
+// AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
+beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
+afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async()=>{db=(await localCampaignDatabase())!;await seedCampaignFixtures(db);c=sqlCampaignStore(db);r=sqlReferralStore(db);
   if(process.env.CAMPAIGN_REVIEW_EXPORT){mkdirSync(process.env.CAMPAIGN_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.CAMPAIGN_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
 },30000);
@@ -125,7 +126,10 @@ describe("12A actual SQL acquisition authority",()=>{
   });
   it.each(RUNTIME_FIXTURES)("$id campaign ticket → unchanged six-product generation → persisted valid conversion",async f=>{
     const s=await capture(),id=await newUser();await settle(id,s);const tickets=withCampaignTickets(sqlTicketStore(db),c),index=RUNTIME_FIXTURES.indexOf(f);
-    const result=await redeemReportTicket(tickets,id,randomUUID(),payload(index));expect(result.state).toBe("COMPLETED");expect((await attr(id)).first_report_id).toBe(result.reportId);
+    const result=await redeemReportTicket(tickets,id,randomUUID(),payload(index));
+    // AM 3부(약관 「이용권으로 만들 수 있는 리포트는 4종」): 대운·세운은 가입 캠페인 이용권으로도 만들지 않는다 — 전환도 생기지 않는다.
+    if(f.id==="major"||f.id==="annual"){expect(result).toMatchObject({ok:false,code:"TICKET_PRODUCT_EXCLUDED"});expect((await attr(id)).first_report_id).toBeNull();return;}
+    expect(result.state).toBe("COMPLETED");expect((await attr(id)).first_report_id).toBe(result.reportId);
     const read=await tickets.call("read",id,{reportId:result.reportId}),book=storedBook(read.snapshot)!;expect(book).toBeTruthy();
     if(f.id==="major"){const p=book.data.pages.find(p=>p.kind==="timeline");expect(p?.kind==="timeline"&&p.years).toHaveLength(14);}
     if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}

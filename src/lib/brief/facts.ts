@@ -73,6 +73,20 @@ export function sceneFits(req: SceneRequires, p: FactProfile, text?: string): bo
 }
 
 /** 장면 글 검사(P6b B-6): 입력에 없는 가족 구성원, 학생이 아닌데 학교 소품, 사무직이 아닌데 사무실 소품이면 쓰지 않는다. */
+/** 구직·취업 준비 장면(직장인·사업자에게는 입력과 반대). */
+const JOB_SEEK = /구직|이력서|자소서|자기소개서|면접|채용 공고|취업 준비|취준/;
+/**
+ * AM 결정(2026-11-11 밤 「부딪치는 씨앗만 거름」): 종합 씨앗은 직업 꼬리표로 거르지 않되(최종판2 1-2), 입력 직군과 정면으로 부딪치는 것만 뺀다.
+ * 사무 장면인데 사무 직군이 아님 · 외주 장면인데 외주 생활이 아님(직업을 모르면 그대로) · 구직 장면인데 직장인·사업자.
+ */
+export function seedClashesJob(s: { readonly text: string; readonly ctx?: readonly string[] }, p: FactProfile): boolean {
+  const c = p.scene; if (!c) return false;
+  const tags = s.ctx ?? sceneTagsOf(s.text);
+  if ((tags.includes("office") || SCENE_TAGS.office.test(s.text)) && !c.office) return true;
+  if ((tags.includes("freelance") || SCENE_TAGS.freelance.test(s.text)) && p.job !== "none" && c.freelance === false) return true;
+  return JOB_SEEK.test(s.text) && (p.job === "employed" || p.job === "business");
+}
+
 export function sceneTextFits(text: string, p: FactProfile): boolean {
   if (!p.scene?.familyOk && FAMILY_MEMBER.test(text)) return false;
   if (!p.scene) return true;

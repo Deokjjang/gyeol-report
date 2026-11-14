@@ -12,6 +12,7 @@ import { superviseQueueJob } from "../ops/generation/supervisor";
 import { holdCode, liveAlerts } from "../ops/generation/paidJob";
 import { priorBooks } from "./prior";
 import type { ChapterSink, SavedChapter } from "./runner";
+import { chapterForStore, chapterFromStore } from "./runner";
 
 /** priorReader: 이전 Book을 읽는 저장소(이용권 report_tickets의 library·read, P6b E-1). 없으면 발행 저장소로 시도한다.
  * ops: 생성 감독 저장소(P6d-ops, 시험 주입). 없으면 운영 저장소(Supabase). openAiKey·opsNow: 시험 주입. */
@@ -21,13 +22,13 @@ const GATE_VERSION = "paid-report-v1";
 export function ticketChapterSink(store: TicketPublicationStore, user: string, origin: { redemptionId: string; token: string }): ChapterSink {
   return {
     async save(c: SavedChapter) {
-      const r = await store.call("save-chapter", user, { ...origin, n: c.n, source: c.source, chapter: c.chapter });
+      const r = await store.call("save-chapter", user, { ...origin, n: c.n, source: c.source, chapter: chapterForStore(c) });
       return r.ok === true;
     },
     async load() {
       const r = await store.call("chapters", user, origin);
       if (!r.ok || !Array.isArray(r.chapters)) return [];
-      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: x.chapter }));
+      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: chapterFromStore(x.chapter) }));
     },
   };
 }
@@ -49,7 +50,7 @@ export async function runV5TicketJob(store: TicketPublicationStore, job: TicketR
   const prior = await priorBooks(priorReader ?? store, user, job.input);
   let published: TicketResult | null = null;
   const { decision, settled } = await superviseQueueJob({ reportId, origin: "ticket", originRef: job.redemptionId, payload: job.input as never, policyAt, sink: ticketChapterSink(store, user, origin), prior, raw },
-    { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}), ...(all ? { creditAlert: (code: string) => all.signup.call("credit_alert", { code }), ...(await liveAlerts(all.db, all.signup)) } : {}) }, async d => {
+    { store: ops, deps: build, ...(openAiKey !== undefined ? { openAiKey } : {}), ...(opsNow ? { now: opsNow } : {}), ...(all ? { creditAlert: (code: string) => all.signup.call("credit_alert", { code }), holdAlert: (data: Record<string, unknown>) => all.hold.call("alert", data), ...(await liveAlerts(all.db, all.signup)) } : {}) }, async d => {
       try {
         if (d.kind === "publish") { published = await store.call("publish", user, { ...origin, snapshot: d.snapshot, gateVersion: GATE_VERSION }); return { ok: published.ok === true && published.state === "COMPLETED", code: published.code ? String(published.code) : undefined }; }
         // 최종판 0-6: 비용 상한 보류도 큐로 길게 미룬다(이용권 환급 없음, 관리자 지연 목록).

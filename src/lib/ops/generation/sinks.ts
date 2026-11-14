@@ -1,5 +1,5 @@
 import type { BookChapter } from "../../writer/format";
-import type { ChapterSink, RawEntry, SavedChapter, WriterCache } from "../../writer/runner";
+import { chapterForStore, chapterFromStore, type ChapterSink, type RawEntry, type SavedChapter, type WriterCache } from "../../writer/runner";
 
 export type OpsStore = { call(action: string, data: Record<string, unknown>): Promise<Record<string, unknown>> };
 
@@ -14,11 +14,11 @@ export function memorySink(): ChapterSink {
 /** 결제 경로·교체 레인 장 저장(ops_writer_chapters). 현재 lease 토큰만 저장·조회된다. */
 export function opsChapterSink(store: OpsStore, reportId: string, token: string): ChapterSink {
   return {
-    async save(c) { const r = await store.call("chapters_save", { reportId, token, n: c.n, source: c.source, chapter: c.chapter }); return r.ok === true; },
+    async save(c) { const r = await store.call("chapters_save", { reportId, token, n: c.n, source: c.source, chapter: chapterForStore(c) }); return r.ok === true; },
     async load() {
       const r = await store.call("chapters_load", { reportId, token });
       if (!r.ok || !Array.isArray(r.chapters)) return [];
-      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: x.chapter }));
+      return (r.chapters as { n: number; source: SavedChapter["source"]; chapter: BookChapter }[]).map(x => ({ n: x.n, source: x.source, chapter: chapterFromStore(x.chapter) }));
     },
   };
 }

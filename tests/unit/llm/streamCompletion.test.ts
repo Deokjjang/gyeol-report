@@ -179,3 +179,41 @@ describe("config and prices", () => {
     expect(computeCostUsd("anthropic", "claude-haiku-5-5", { inputTokens: 50_000, cachedInputTokens: 0, outputTokens: 0 })).toBeCloseTo(0.005, 8);
   });
 });
+
+// AM 7부(annual-4): 출력이 상한까지 났는데 text_delta가 0자였다. 텍스트가 아닌 블록은 원고로 쓰지 않고 종류·글자 수만 남긴다.
+describe("streamCompletion: 텍스트가 아닌 출력 블록 기록", () => {
+  it("anthropic: thinking 블록만 오다 상한에 닿으면 text 0자 · finish length · hidden에 종류와 글자 수", async () => {
+    const chunks = [
+      sse("message_start", { type: "message_start", message: { id: "msg_2", usage: { input_tokens: 10, output_tokens: 1 } } }),
+      sse("content_block_start", { type: "content_block_start", index: 0, content_block: { type: "thinking", thinking: "" } }),
+      sse("content_block_delta", { type: "content_block_delta", index: 0, delta: { type: "thinking_delta", thinking: "가나다라" } }),
+      sse("content_block_delta", { type: "content_block_delta", index: 0, delta: { type: "signature_delta", signature: "sig" } }),
+      sse("message_delta", { type: "message_delta", delta: { stop_reason: "max_tokens" }, usage: { output_tokens: 200 } }),
+      sse("message_stop", { type: "message_stop" }),
+    ];
+    const seen: string[] = [];
+    const result = await streamCompletion(base("anthropic", respond(chunks), { onText: (d) => seen.push(d) }));
+    expect(result).toMatchObject({ text: "", finishReason: "length", usage: { outputTokens: 200 }, hidden: { blocks: { thinking: 1 }, chars: 4 } });
+    expect(seen).toEqual([]);
+  });
+  it("anthropic: 글 블록만 오면 hidden이 없다(기존 결과 모양 그대로)", async () => {
+    const result = await streamCompletion(base("anthropic", respond(anthropicOk(["본문"]))));
+    expect(result.text).toBe("본문");
+    expect(result.hidden).toBeUndefined();
+  });
+});
+
+describe("anthropic 요청: 생각 설정", () => {
+  it("기본은 모델 설정(Sonnet 5.5 between_tools), thinking adaptive-low면 adaptive + effort low(JSON 스키마와 합침)", async () => {
+    const bodies: Record<string, unknown>[] = [];
+    const fetchImpl = vi.fn(async (_u: unknown, init?: RequestInit) => { bodies.push(JSON.parse(String(init?.body))); return new Response(streamOf(anthropicOk(["x"])), { status: 200, headers: { "content-type": "text/event-stream" } }); }) as unknown as typeof fetch;
+    await streamCompletion(base("anthropic", fetchImpl, { model: "claude-sonnet-5-5" }));
+    await streamCompletion(base("anthropic", fetchImpl, { model: "claude-sonnet-5-5", thinking: "adaptive-low" }));
+    await streamCompletion(base("anthropic", fetchImpl, { model: "claude-sonnet-5-5", thinking: "adaptive-low", jsonSchema: { type: "object" } }));
+    expect(bodies[0].thinking).toEqual({ type: "between_tools" });
+    expect(bodies[0].output_config).toBeUndefined();
+    expect(bodies[1].thinking).toEqual({ type: "adaptive" });
+    expect(bodies[1].output_config).toEqual({ effort: "low" });
+    expect(bodies[2].output_config).toEqual({ effort: "low", format: { type: "json_schema", schema: { type: "object" } } });
+  });
+});

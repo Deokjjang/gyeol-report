@@ -140,12 +140,13 @@ describe("부록 내 모든 기운(v5)", () => {
 });
 
 describe("대운·세운 표 왼쪽 굵은 줄 범례", () => {
-  it("v5 표에 굵은 줄(흐름 세기 4칸 이상)이 있으면 표 위에 한 줄 범례", () => {
-    const data = read(snap("major_fortune")), tl = pageOf(data, "timeline"), out = html(data, tl);
-    expect(tl.years.filter(y => y.importance === "HIGH").every(y => (y.flow ?? 0) >= 4)).toBe(true);
-    expect(tl.years.some(y => y.importance === "HIGH")).toBe(true);
-    expect(out).toContain("왼쪽 굵은 줄은 흐름 세기가 4칸 이상인 해예요.");
-    expect(out.indexOf("왼쪽 굵은 줄")).toBeLessThan(out.indexOf("data-impact"));
+  // AM2-3 5부(덕짱님과 정한 시안): AM 대운 10년표는 굵은 줄 대신 흐름 점·단어와 핵심 해 ★(범례는 표 위 한 줄).
+  it("v5 AM 10년표: 흐름은 점 5개 + 단어, 핵심 해 ★과 그 범례를 표 위에", () => {
+    const data = read(snap("major_fortune")), dt = pageOf(data, "decadeTable"), out = html(data, dt);
+    expect(dt.rows.filter(y => y.star)).toHaveLength(3);
+    expect(out).toContain("★은 이 10년에서 눈여겨볼 해예요.");
+    expect(out.indexOf("★은")).toBeLessThan(out.indexOf("aria-label=\"흐름"));
+    expect(out).not.toContain("왼쪽 굵은 줄");
   });
   it("과거 V4 표에는 범례를 두지 않는다", () => {
     for (const name of ["major_fortune-v4", "annual_fortune-v4"]) {

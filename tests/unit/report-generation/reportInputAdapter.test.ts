@@ -210,7 +210,8 @@ describe("report input adapter", () => {
     ["2024", true],
     ["2025", true],
     ["2026", true],
-    ["2027", false],
+    // AM 2부: 주문 관문은 신년판 연도(설정값, 기본 2027)를 더 받는다(12월에 「나의 2027」). 그 밖의 다음 해는 그대로 막는다.
+    ["2027", true],
     ["2028", false],
   ])("validates the 2026 commerce year %s at the server boundary", (selectedYear, allowed) => {
     const result = normalizeReportInputPayload(

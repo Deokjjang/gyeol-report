@@ -9,6 +9,9 @@ import HomeReveal from "../components/product/HomeReveal";
 import { GYEOL_HOME_PRODUCT_GRID } from "../lib/product/gyeolProducts";
 import styles from "./home.module.css";
 
+/** AM: 판매 상태(대운·세운 시각 관문)가 정적 화면에 굳지 않게 60초마다 다시 그린다(ops/config FORTUNE_SALES_OPEN_AT). */
+export const revalidate = 60;
+
 export default function Home() {
   if (bookExperiencePublicEnabled()) return <BookHomeRoute />;
   return (

@@ -24,6 +24,9 @@ const ROWS: readonly Row[] = [
   { version: "v5", source: "paid", productType: "career_money_study", names: "최지우" },
   { version: "v5", source: "paid", productType: "love_marriage_child", names: "정하은" },
   { version: "v5", source: "paid", productType: "saju_mbti_compatibility", names: "윤서아·강민준" },
+  // AM: 대운·세운 v5 결제 책(12/1 형식 추가).
+  { version: "v5", source: "paid", productType: "major_fortune", names: "한서진" },
+  { version: "v5", source: "paid", productType: "annual_fortune", names: "오하린" },
 ];
 const label = (r: Row) => `${r.version} ${r.source === "paid" ? "결제" : "이용권"} ${r.productType}`;
 const modelOf = (r: Row, i: number): BookShareModel => {
