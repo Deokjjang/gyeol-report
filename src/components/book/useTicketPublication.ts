@@ -15,9 +15,8 @@ export function useTicketPublication(product: string, enabled: boolean) {
   const key = ticketPendingKey(product);
   const [pending, setPending] = useState<Pending | null>(null), [loaded, setLoaded] = useState(false), [message, setMessage] = useState("");
   const [retryable, setRetryable] = useState(false), [revision, setRevision] = useState(0), [submitting, setSubmitting] = useState(false);
+  /** 넘어갈 책 주소(완성된 책, 또는 W3 P2부터 만드는 중인 책의 대기 화면). 정해지면 이 주문서는 잠긴다. */
   const [completedUrl, setCompletedUrl] = useState<string | null>(null);
-  /** AM 4부: 진짜 진행률(저장된 장 / 전체)·남은 시간·1장 미리보기(결정론 검사 뒤). */
-  const [progress, setProgress] = useState<{ done: number; total: number | null; etaMs: number | null; first?: { title: string; sections: { heading: string; paragraphs: string[] }[] } } | null>(null);
   const current = useRef<Pending | null>(null), sending = useRef(false), mounted = useRef(false);
   const forget = useCallback(() => {
     try { sessionStorage.removeItem(key); } catch { /* terminal state is confirmed by the server */ }
@@ -27,15 +26,15 @@ export function useTicketPublication(product: string, enabled: boolean) {
     if (body.ok === true && typeof body.state === "string") {
       if (typeof body.message === "string") setMessage(body.message);
       setRetryable(false);
-      if (body.progress && typeof body.progress === "object") setProgress(body.progress as never);
-      if (body.state === "COMPLETED" && typeof body.reportUrl === "string" && /^\/reports\/report_[a-f0-9]{32}$/.test(body.reportUrl)) {
-        // Terminal server acknowledgement ends recovery. Keep this mounted
-        // receipt locked until navigation; a later NEW purchase must not bounce
+      // W3 P2: 접수(QUEUED·RUNNING)되면 바로 그 책의 대기 화면으로 간다(결제 책과 같은 화면, 실패·반환 안내도 서버 상태에서 — 다른 탭·기기에서도 같다).
+      if (["COMPLETED", "QUEUED", "RUNNING"].includes(body.state) && typeof body.reportUrl === "string" && /^\/reports\/report_[a-f0-9]{32}$/.test(body.reportUrl)) {
+        // Server-owned state ends local recovery. Keep this mounted receipt
+        // locked until navigation; a later NEW purchase must not bounce
         // forever to the previous report. No reservation is made on reload.
         try { sessionStorage.removeItem(key); sessionStorage.removeItem(checkoutReturnKey(product)); }
-        catch { /* storage becoming unavailable must not hide a completed book */ }
+        catch { /* storage becoming unavailable must not hide the book */ }
         setCompletedUrl(body.reportUrl);
-        funnel("book_published"); // F 퍼널: 이용권 책 발행 완료(세션당 1번)
+        if (body.state === "COMPLETED") funnel("book_published"); // F 퍼널: 이용권 책 발행 완료(세션당 1번). 대기 화면에서 완성되면 책 화면이 센다.
         window.location.assign(body.reportUrl);
       } else if (body.state === "REVERSED") { forget(); setRevision(n => n + 1); }
       return;
@@ -100,5 +99,5 @@ export function useTicketPublication(product: string, enabled: boolean) {
     } catch { if (mounted.current) setMessage("발행 상태를 확인 중입니다. 같은 요청으로 다시 확인합니다."); }
     finally { clearTimeout(deadline); sending.current = false; if (mounted.current) setSubmitting(false); }
   };
-  return { pending: pending !== null, loaded, message, retryable, revision, submitting, completedUrl, submit, progress };
+  return { pending: pending !== null, loaded, message, retryable, revision, submitting, completedUrl, submit };
 }

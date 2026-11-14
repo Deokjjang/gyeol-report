@@ -8,7 +8,8 @@ import { accountPublicEnabled } from "../../../lib/account/gate";
 import { createPaidReportReliabilityStore } from "../../../lib/payment/paidReportReliabilityStore";
 import { validateProductPublication } from "../../../lib/report-generation/productPublishGate";
 import { ReportGenerationStatus } from "../../../components/report/ReportGenerationStatus";
-import { readGenerationProgress } from "../../../components/report/generationProgressServer";
+import { readGenerationProgress, readRefundedBeforePublish } from "../../../components/report/generationProgressServer";
+import type { GenerationProgress } from "../../../components/report/generationProgress";
 import { ReportStatusView } from "../../../components/report/ReportStatusView";
 import type { ReactNode } from "react";
 import MetaPurchaseTracker from "../../../components/analytics/MetaPurchaseTracker";
@@ -105,7 +106,10 @@ type ReportResultPageProps = {
 };
 
 type PageState =
-  | { readonly kind: "processing"; readonly attention: boolean; readonly delayed: boolean; readonly status?: string }
+  /** 만드는 중·결론(환불·반환) 대기 화면(W3 P2). progress가 있으면 그 값(발행 전 자동 환불된 책), 없으면 status로 다시 읽는다. */
+  | { readonly kind: "processing"; readonly status?: string; readonly progress?: GenerationProgress }
+  /** 발행된 책이 이번 열람 검사에 걸림(readRejected): 안내와 문의만. */
+  | { readonly kind: "attention" }
   | {
       readonly kind: "invalid";
     }
@@ -161,8 +165,12 @@ async function loadPageState(reportId: string): Promise<PageState> {
     if (durable.ok) {
       if (durable.status === "EXPIRED") return { kind: "expired" };
       if (durable.status === "COMPLETED" && durable.snapshot) return { kind: "productPreview", productPreview: durable.snapshot as ProductPreviewSnapshot };
-      return { kind: "processing", attention: durable.status === "FAILED_REQUIRES_ATTENTION", delayed: durable.status === "RETRYING", status: typeof durable.status === "string" ? durable.status : undefined };
+      if ("readRejected" in durable && durable.readRejected) return { kind: "attention" };
+      return { kind: "processing", status: typeof durable.status === "string" ? durable.status : undefined };
     }
+    // W3 P2: 30분 안에 못 만들어 결제가 자동 취소된 책(발행 전) → 같은 대기 화면의 「결제를 취소했어요」.
+    const concluded = await readRefundedBeforePublish(reportId);
+    if (concluded) return { kind: "processing", progress: concluded };
     // 환불된 주문의 책이면 재확인 없이 안내한다. 기존 읽기 함수는 환불을 '없음'으로 돌려줘서 여기서 따로 확인한다.
     if (await refundedBook(reportId)) return { kind: "refunded" };
     // 저장소 일시 장애는 자동으로 다시 확인한다(정적 화면에 멈추지 않게).
@@ -1572,13 +1580,16 @@ export default async function ReportResultPage({
     const ticket = await loadOwnedTicketBook(routeParams.reportId ?? "");
     if (ticket.kind === "ticketBook") {
       const { StoredBookReport } = await import("../../../lib/book/storedReport");
-      const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
-      const interim = await isInterimEdition(ticket.snapshot.reportId);
       // 운영 Q 3부: 책 본문을 내줄 때 열람 1번(응답 뒤 기록, 실패해도 열람은 그대로).
       await (await import("../../../lib/ops/notify/views")).scheduleBookView(ticket.snapshot.reportId);
       const { bookEndNotice } = await import("../../../lib/book/storedReport");
       const endNotice = await bookEndNotice(ticket.snapshot.reportId, true);
-      return <><EditionNotice interim={interim} /><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} endNotice={endNotice} /><FunnelPingPaid steps={BOOK_OPEN_STEPS} /></>;
+      return <><StoredBookReport snapshot={ticket.snapshot} shareOwner={{ reportId: ticket.snapshot.reportId }} endNotice={endNotice} /><FunnelPingPaid steps={BOOK_OPEN_STEPS} /></>;
+    }
+    // W3 P2: 접수 직후 이 주소로 온다 — 결제 책과 같은 대기 화면(주인만, 반환 안내도 서버 상태에서).
+    if (ticket.kind === "ticketPending") {
+      const reportId = routeParams.reportId ?? "";
+      return <ReportGenerationStatus reportId={reportId} progress={await readGenerationProgress(reportId, { ticketOwner: ticket.userId })} />;
     }
     if (ticket.kind === "storageError") return <ReportGenerationStatus retry />;
     if (ticket.kind === "expired") return renderExpiredState();
@@ -1587,10 +1598,14 @@ export default async function ReportResultPage({
   const state = await loadPageState(routeParams.reportId ?? "");
 
   if (state.kind === "processing") {
-    // ⑦ 생성 감독의 실제 상태(읽기 전용)로 단계·지연을 그리고, 화면은 그 상태를 계속 묻는다(v5 최종 2-1 #7).
+    // W3 P2: 실제 상태(Book·주문·환불·감독·저장된 장, 읽기 전용)로 문구·단계를 그리고, 화면은 결론(책·결제 취소)까지 계속 묻는다.
     const reportId = routeParams.reportId ?? "";
-    const progress = state.attention ? undefined : await readGenerationProgress(reportId, state.status);
-    return <><MetaPurchaseTracker reportId={reportId} /><ReportGenerationStatus attention={state.attention} delayed={state.delayed} reportId={state.attention ? undefined : reportId} progress={progress} /></>;
+    const progress = state.progress ?? await readGenerationProgress(reportId, { knownStatus: state.status });
+    return <>{progress.state === "refunded" ? null : <MetaPurchaseTracker reportId={reportId} />}<ReportGenerationStatus reportId={reportId} progress={progress} /></>;
+  }
+
+  if (state.kind === "attention") {
+    return <ReportStatusView state="attention" />;
   }
 
   if (state.kind === "invalid") {
@@ -1620,13 +1635,11 @@ export default async function ReportResultPage({
   if (state.kind === "productPreview") {
   const reportId = routeParams.reportId ?? "";
   const isPaid = state.productPreview.access.mode === "paid";
-  // P 속도: 소유 확인·공유 링크·임시본 여부는 서로 기다릴 필요가 없어 동시에 묻는다(예전에는 줄줄이 3번). 소유가 아니면 나머지 결과는 버린다.
-  const { EditionNotice, isInterimEdition } = await import("../../../components/ops/EditionNotice");
+  // P 속도: 소유 확인·공유 링크는 서로 기다릴 필요가 없어 동시에 묻는다. 소유가 아니면 나머지 결과는 버린다.
   const mustOwn = isPaid && isBookSnapshotVersion(state.productPreview.productVersion) && accountPublicEnabled();
-  const [owned, url, interim] = await Promise.all([
+  const [owned, url] = await Promise.all([
     mustOwn ? import("../../../lib/book/ownerAccess").then(m => m.canReadPurchasedBook(reportId)) : Promise.resolve(true),
     isPaid ? existingReportShareUrl(reportId) : Promise.resolve(null),
-    isPaid ? isInterimEdition(reportId) : Promise.resolve(false),
   ]);
   if (!owned) return await refundedBook(reportId) ? <ReportStatusView state="refunded" /> : renderUnavailableState();
   if (isPaid) await (await import("../../../lib/ops/notify/views")).scheduleBookView(reportId);
@@ -1638,7 +1651,6 @@ export default async function ReportResultPage({
 
   return (
     <>
-      <EditionNotice interim={interim} />
       {product ? (
         <MetaPurchaseTracker
           reportId={reportId}

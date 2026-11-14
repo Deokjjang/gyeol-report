@@ -89,7 +89,7 @@ describe("production version combinations on the actual SQL", () => {
     const snapshot = JSON.parse(JSON.stringify(load(product, version)).replaceAll("saju-calendar-kst-v2", UNKNOWN)) as Record<string, unknown>;
     const { reportId, stored } = await published(snapshot);
     const read = await readPublishedReport(store, reportId, validateBookPublication);
-    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null });
+    expect(read).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", code: "UNKNOWN_CALCULATION_VERSION", snapshot: null, readRejected: true });
     expect(log).toHaveBeenCalledWith(JSON.stringify({ event: "REPORT_READ_UNKNOWN_CALCULATION_VERSION", reportId, versions: [UNKNOWN] }));
     expect(await row(reportId)).toEqual({ status: "COMPLETED", snapshot_json: stored, gate_version: "paid-report-v1" });
   });

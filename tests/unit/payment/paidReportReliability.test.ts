@@ -306,7 +306,7 @@ describe("quarantined snapshot preservation and recovery", () => {
   it("retains identical JSON, input, order and attempts while recording attention on report + job", async () => {
     const { id, original, before } = await corruptCompleted();
     const orders = await rows("payment_orders"), inputs = await rows("report_input_snapshots"), attempts = await rows("report_generation_attempts");
-    expect(await readPublishedReport(store, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await readPublishedReport(store, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true });
     expect((await rows("paid_report_snapshots"))[0]).toEqual(original);
     expect(await isolate(id)).toEqual({ ok: true, quarantined: true });
     expect(await storedText()).toBe(before);
@@ -447,7 +447,7 @@ describe("quarantined snapshot preservation and recovery", () => {
     const { id } = await corruptCompleted();
     const unavailable: ReliabilityStore = { call: (action, data) => action === "quarantine"
       ? Promise.resolve({ ok: false, code: "DURABLE_STORAGE_FAILED" }) : store.call(action, data) };
-    expect(await readPublishedReport(unavailable, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
+    expect(await readPublishedReport(unavailable, id)).toEqual({ ok: true, status: "FAILED_REQUIRES_ATTENTION", snapshot: null, readRejected: true });
     expect((await rows("paid_report_snapshots"))[0].status).toBe("COMPLETED");
     expect(await readPublishedReport(store, id)).toMatchObject({ status: "FAILED_REQUIRES_ATTENTION", snapshot: null });
   });

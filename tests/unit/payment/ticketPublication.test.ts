@@ -185,12 +185,20 @@ describe("public API security and safe response", () => {
     expect((await handleTicketPublication(request("redeem", { ...body, padding: "가".repeat(17000) }), "redeem", ticketAuth(), store)).status).toBe(413);
     expect(store.call).not.toHaveBeenCalled();
   });
-  it("owner-only status includes no token/input/snapshot and exposes only safe completed URL", async () => {
+  // W3 P2: 만드는 중(QUEUED)에도 그 책의 대기 화면 주소를 준다(로그인한 주인에게만). 그 화면도 주인만 본다(ticketPending).
+  it("owner-only status includes no token/input/snapshot and exposes only the safe report URL (also while making)", async () => {
     await grant(); const key = randomUUID(), r = await reserve(fixtures[0].payload, key);
     const response = await handleTicketPublication(request(`status?requestId=${key}`), "status", ticketAuth(), local.queue);
     expect(response.status).toBe(202); expect(response.headers.get("cache-control")).toContain("no-store");
-    const data = await response.json(); expect(data).toMatchObject({ state: "QUEUED", redemptionId: r.redemptionId }); expect(JSON.stringify(data)).not.toMatch(/token|input|snapshot|reportId|birthDate/);
+    const data = await response.json(); expect(data).toMatchObject({ state: "QUEUED", redemptionId: r.redemptionId, reportUrl: `/reports/${r.reportId}` }); expect(JSON.stringify(data)).not.toMatch(/token|input|snapshot|reportId|birthDate/);
     expect((await handleTicketPublication(request(`status?redemptionId=${r.redemptionId}`), "status", ticketAuth(B), local.queue)).status).toBe(404);
     expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), { call: async () => ({ ok: false, code: "STORAGE_UNAVAILABLE" }) })).toEqual({ kind: "storageError" });
+    // 발행 전인 내 이용권 책 → 대기 화면(주인 확인은 같은 회원의 접수 행). 남의 책·확인 실패·확인 없음은 지금처럼 없음.
+    const pending = async (user: string, reportId: string) => (await local.db.query("select 1 from report_ticket_redemptions where user_id=$1 and report_id=$2 and state in ('QUEUED','RUNNING','REVERSED')", [user, reportId])).rows.length > 0;
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets, pending)).toEqual({ kind: "ticketPending", userId: A });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(B), local.tickets, pending)).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets, async () => { throw new Error("down"); })).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(), local.tickets)).toEqual({ kind: "absent" });
+    expect(await readOwnedTicketReport(String(r.reportId), ticketAuth(A, false), local.tickets, pending)).toEqual({ kind: "absent" }); // 필수 동의 없는 회원
   });
 });

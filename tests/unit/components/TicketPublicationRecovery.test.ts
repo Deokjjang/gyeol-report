@@ -95,6 +95,21 @@ describe("ticket publication client recovery callbacks", () => {
     else { expect(window.location.assign).not.toHaveBeenCalled(); expect(readHook().pending).toBe(false); }
     expect(fetch).toHaveBeenCalledTimes(1);
   });
+  // W3 P2: 접수(QUEUED·RUNNING)되면 바로 그 책의 대기 화면으로 간다 — 실패·반환 안내는 그 화면이 서버 상태로 보인다(세션 저장소만의 상태 없음).
+  it.each(["QUEUED", "RUNNING"])("%s acceptance with a report URL opens the same waiting screen and ends local recovery", async state => {
+    const hook = await mount(), reportUrl = `/reports/report_${"b".repeat(32)}`;
+    vi.mocked(fetch).mockResolvedValue(response({ ok: true, state, reportUrl })); await hook.submit(payload, consent);
+    expect(window.location.assign).toHaveBeenCalledWith(reportUrl);
+    expect(values.has(ticketPendingKey(product))).toBe(false);
+    expect(readHook()).toMatchObject({ pending: true, completedUrl: reportUrl }); // 넘어갈 때까지 주문서는 잠긴다
+    await readHook().submit(payload, consent); expect(fetch).toHaveBeenCalledTimes(1);
+  });
+  it("acceptance without a safe report URL stays on the receipt and keeps polling (no navigation)", async () => {
+    const hook = await mount();
+    vi.mocked(fetch).mockResolvedValue(response({ ok: true, state: "QUEUED", reportUrl: "https://evil.example/reports/x" })); await hook.submit(payload, consent);
+    expect(window.location.assign).not.toHaveBeenCalled();
+    expect(values.has(ticketPendingKey(product))).toBe(true);
+  });
   it.each(["NO_USABLE_TICKET", "REFUND_HOLD"])("%s releases method lock, requests balance refresh, never starts PG", async code => {
     const hook = await mount(); vi.mocked(fetch).mockResolvedValue(response({ ok: false, code })); await hook.submit(payload, consent);
     expect(readHook()).toMatchObject({ pending: false, revision: 1 });
