@@ -25,7 +25,7 @@ import { createLocalAccountPort } from "../../../src/lib/account/localReview";
 // P 추가 A: 비회원 결제가 없다 — 공유 책 준비물(createLocalShareFixture)은 로컬 회원 세션으로 산다(결제 때 회원에게 바로 묶임, 구매 연결 쿠키 없음).
 // 로컬 회원 id는 local-<provider>(account/localReview), SQL 사용자 id는 localTicketUserId(그 id).
 // 실제 SQL(PGlite) + 실제 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
-vi.setConfig({ testTimeout: 90_000 });
+vi.setConfig({ testTimeout: 180_000 });
 const origin="http://127.0.0.1:3189", A=localTicketUserId("local-kakao"), anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
 let db:PGlite, store:ReferralStore, reportId:string, model:BookShareModel, snapshot:unknown;
 const request=(body:unknown,cookie="",source=origin)=>new NextRequest(`${origin}/dev/book-flow/referral`,{method:"POST",headers:{host:"127.0.0.1:3189",origin:source,cookie},body:JSON.stringify(body)});

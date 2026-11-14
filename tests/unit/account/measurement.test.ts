@@ -21,11 +21,11 @@ import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { confirmPaidReport } from "../../../src/lib/payment/paidReportReliability";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { TICKET_PRODUCTS } from "../../../src/lib/ops/config";
-import { reportPriceKrw } from "../../../src/lib/payment/reportProductCatalog";
+import { getReportProduct } from "../../../src/lib/payment/reportProductCatalog";
 // 실제 SQL(PGlite) + 실제 작업자: 혼자 돌려도 한 시험이 5초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
-vi.setConfig({ testTimeout: 90_000 });
+vi.setConfig({ testTimeout: 180_000 });
 /** 검수 캠페인 쿠폰(seedCampaignFixtures)은 300원 정액 할인 — 결제 사실 금액 = 카탈로그 가격 − 300. */
-const COUPON_PAID_KRW = reportPriceKrw(RUNTIME_FIXTURES[0].payload.productKey) - 300;
+const COUPON_PAID_KRW = getReportProduct(RUNTIME_FIXTURES[0].payload.productKey)!.amount - 300;
 let db: PGlite, port: MeasurementPort, campaigns: CampaignStore, legacyReport: string;
 async function user() {
   const id = randomUUID(); await db.query("insert into auth.users(id) values($1)", [id]);

@@ -21,7 +21,7 @@ import { libraryItem, type LibraryRow } from "../../../src/lib/library/model";
 import { handleTickets } from "../../../src/lib/tickets/handler";
 import type { TossConfirmRequest,TossConfirmClientResult } from "../../../src/lib/payment/tossConfirmTypes";
 // 실제 SQL(PGlite) + 실제 V4 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
-vi.setConfig({ testTimeout: 90_000 });
+vi.setConfig({ testTimeout: 180_000 });
 const A="11111111-1111-4111-8111-111111111111",B="22222222-2222-4222-8222-222222222222";
 const member=(user=A):CouponIdentity=>({user,actor:`user:${user}`}),guest=(char="a"):CouponIdentity=>({user:null,actor:`guest:${char.repeat(64)}`});
 const now=new Date(),consent=createCheckoutConsentAssertion(confirmedAdultDevTossCheckoutLegalConfirmations);

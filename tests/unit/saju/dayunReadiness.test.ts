@@ -43,7 +43,7 @@ describe("AM2-4 7부 시각 미상 대운", () => {
     }
     expect(uncertain).toBe(65);
     expect(asked + blocked).toBe(uncertain);
-  }, 240_000);
+  }, 600_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 
   it("대략 시간대로도 정해지지 않으면 「이 생일은 대운을 정확히 계산할 수 없어요」 + 세운 권함, 입력 확인 API도 같은 코드", async () => {
     // 판정 불가 사람을 하나 찾아, 대운이 정해지지 않는 시간대를 고른 입력으로.
@@ -59,5 +59,5 @@ describe("AM2-4 7부 시각 미상 대운", () => {
     const { POST } = await import("@/app/api/reports/dayun-readiness/route");
     const res = await POST(new Request("http://x/api/reports/dayun-readiness", { method: "POST", body: JSON.stringify(approx) }));
     expect(await res.json()).toMatchObject({ ok: false, code: "DAYUN_UNDETERMINABLE" });
-  }, 120_000);
+  }, 300_000);
 });

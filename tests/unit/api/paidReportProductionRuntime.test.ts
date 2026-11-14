@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+// 실제 워커 묶음(paidWorkerBatch)을 돈다: 혼자 1초 안, 전체 실행(병렬 부하)에서는 기본 5초를 넘는다(넘으면 뒤 시험이 앞 시험 호출까지 센다).
+vi.setConfig({ testTimeout: 60_000 });
 
 const mocks = vi.hoisted(() => ({
   confirmPaidReport: vi.fn(),

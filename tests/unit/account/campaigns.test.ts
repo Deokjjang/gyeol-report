@@ -25,7 +25,7 @@ import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { POST as publicEntry } from "../../../src/app/api/campaign-entry/route";
 // 실제 SQL(PGlite) + 실제 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
-vi.setConfig({ testTimeout: 90_000 });
+vi.setConfig({ testTimeout: 180_000 });
 const origin="http://127.0.0.1:3192";
 const anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
 const identity=(id:string)=>({id,provider:"kakao" as const,displayName:"회원"});

@@ -127,7 +127,7 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
       delete evidence.contentDigest; evidence.contentDigest = v4Digest(evidence);
       expect(validateV4Publication("annual_fortune", result.draft, evidence).errors).toContain("V4_EDITORIAL_BLOCKED");
     }
-  }, 30000);
+  }, 180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it.each([false, true])("legacy purchase remains V3 with Book gate %s", async book => {
     state.book = book;
     const payload = RUNTIME_FIXTURES[0].payload;
@@ -165,7 +165,7 @@ describe("public paid worker → existing V4 engine → frozen snapshot → Book
     if (f.id === "annual") expect(book.data.pages.find(p => p.kind === "months")?.months).toHaveLength(12);
     expect((await readPublishedReport(store, reportId, validateBookPublication)).snapshot).toEqual(snapshot);
     expect(fetch).not.toHaveBeenCalled();
-  }, 30000);
+  }, 180_000);
   it("purchase identity mismatch fails closed before generation", async () => {
     state.book = true;
     const store: ReliabilityStore = { call: vi.fn(async action => action === "claim_job" ? { ok: true, job: { order_id: "one", report_id: reportId, product_type: "saju_mbti_full" } } : { ok: true, order: { payment_order_id: "different", status: "paid" } }) };

@@ -38,7 +38,7 @@ const sharePort = () => ({ ...sqlBookSharePort(local.db), async owned(reportId: 
 // AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
 beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
 afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
-beforeAll(async () => { local = await ticketPublicationSql(); }, 30000);
+beforeAll(async () => { local = await ticketPublicationSql(); }, 180_000);
 beforeEach(async () => { await local.db.exec("reset role; truncate ticket_bundle_orders,report_ticket_grants,payment_orders cascade; set role service_role;"); });
 afterAll(async () => {
   if (exportDir) { mkdirSync(exportDir, { recursive: true }); writeFileSync(`${exportDir}/six-products.json`, JSON.stringify(exports)); }
@@ -96,7 +96,7 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     const result = await runTicketPublicationJob(queue, failure === "generation" ? async () => { throw Error("GENERATION"); } : undefined);
     expect(result).toMatchObject({ state: failure === "ack" ? "COMPLETED" : "REVERSED" });
     expect((await local.tickets.call("summary", A)).quantity).toBe(failure === "ack" ? 0 : 1);
-  }, 60000);
+  }, 240_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it("wrong lease/cross-user publish rejected, no caller may reverse a queued reservation", async () => {
     await grant(); const r = await reserve();
     expect(await local.queue.call("reverse", A, { redemptionId: r.redemptionId, token: randomUUID() })).toMatchObject({ code: "STALE_LEASE" });
@@ -163,11 +163,11 @@ describe("public ticket queue: real SQL chain, deterministic V4, no financial ca
     expect(await readOwnedTicketReport(reportId, ticketAuth(), local.tickets)).toEqual({ kind: "expired" });
     expect(await loadSharedBookData(model.shareToken, sqlBookSharePort(local.db))).toBeNull();
     expect((await local.tickets.call("summary", A)).quantity).toBe(0);
-  }, 60000);
+  }, 240_000);
   it.each(BOOK_FIXTURES.filter(f => /unknown|approx/.test(f.id)))("$id input uncertainty contracts survive queued publication", async f => {
     await grant(); expect(await reserve(f.payload)).toMatchObject({ state: "QUEUED" });
     expect(await runTicketPublicationJob(local.queue)).toMatchObject({ state: "COMPLETED" });
-  }, 60000);
+  }, 240_000);
   it("bounded worker stops admission, never races already-started publication", async () => {
     const runJob = vi.fn(async () => ({ ok: true, state: "COMPLETED" }));
     expect(await runTicketPublicationBatch(local.queue, { runJob, now: () => 0, rss: () => 0 })).toMatchObject({ processed: 2, stop: "job_limit" });
