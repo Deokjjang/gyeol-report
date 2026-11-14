@@ -30,7 +30,8 @@ describe("서재 책장(buildShelf)", () => {
     const books = buildShelf([row(1), row(2)], [order(5, { bookStatus: "GENERATING" }), order(6, { bookStatus: "FAILED_REQUIRES_ATTENTION" }), order(7, { bookStatus: null }), order(8, { paymentStatus: "refunded", bookStatus: "GENERATING" })],
       [{ reportId: id(9), productType: "career_money_study", state: "QUEUED", createdAt: "2026-11-06T00:00:00Z" }], NOW);
     expect(books.slice(0, 4).map(b => b.state).sort()).toEqual(["attention", "making", "making", "making"]);
-    expect(books.find(b => b.reportId === id(9))).toMatchObject({ state: "making", href: null, viaTicket: true });
+    // W3 P2: 만드는 중인 이용권 책도 결제 책과 같은 대기 화면으로 열린다.
+    expect(books.find(b => b.reportId === id(9))).toMatchObject({ state: "making", href: `/reports/${id(9)}`, viaTicket: true });
     expect(books.find(b => b.reportId === id(8))).toBeUndefined(); // 환불된 주문은 만드는 중으로 보이지 않는다
     expect(books.slice(4).map(b => b.reportId)).toEqual([id(2), id(1)]);
   });
@@ -67,6 +68,24 @@ describe("서재 문의 결과·환불 카드(운영 Q 2부)", () => {
     expect(b).toMatchObject({ state: "refunded", href: null, orderCode: "GR-1" });
     expect(cardResult(b, NOW)).toEqual({ kind: "refund", text: "환불됐어요. 결제수단에 따라 바로 또는 영업일 3~5일 안에 돌아가요.", channel: false });
     expect(refunded("2026-10-29T00:00:00Z")).toEqual([]);
+  });
+  // W3 P2 30분 결론: 카드가 갑자기 사라지지 않는다 — 자동 환불 중 「결제 취소 중」(대기 화면으로 열림), 환불 뒤 7일 「환불됐어요」, 이용권 반환 7일.
+  it("자동 환불 요청·처리·재시도 중인 주문은 「결제 취소 중」 카드로 남고, 환불이 끝나면 7일 환불 카드", () => {
+    for (const refundState of ["requested", "processing", "failed"]) {
+      const [b] = buildShelf([], [order(5, { bookStatus: "FAILED_REQUIRES_ATTENTION", refundState })], [], NOW);
+      expect(b).toMatchObject({ reportId: id(5), state: "refunding", href: `/reports/${id(5)}`, orderCode: "GR-5" });
+      expect(cardResult(b, NOW)).toBeNull();
+    }
+    const [done] = buildShelf([], [order(5, { bookStatus: "FAILED_REQUIRES_ATTENTION", paymentStatus: "refunded", refundState: "done", refundedAt: "2026-11-06T02:00:00Z" })], [], NOW);
+    expect(done).toMatchObject({ state: "refunded", href: null });
+    expect(cardResult(done, NOW)?.kind).toBe("refund");
+  });
+  it("이용권을 돌려준 책은 접수 뒤 7일 동안 「이용권을 돌려드렸어요」 카드(열 책 없음), 그 뒤 사라진다", () => {
+    const pending = (createdAt: string) => [{ reportId: id(9), productType: "saju_mbti_full", state: "REVERSED", createdAt, displayName: "하람" }];
+    const [b] = buildShelf([], [], pending("2026-11-06T02:00:00Z"), NOW);
+    expect(b).toMatchObject({ reportId: id(9), state: "returned", href: null, viaTicket: true, displayName: "하람" });
+    expect(buildShelf([], [], pending("2026-10-29T00:00:00Z"), NOW)).toEqual([]);
+    expect(stillMaking(b, NOW)).toBe(false);
   });
   it("결제 30분 안이고 만드는 중이면 「안 나와요」 대신 기다려 달라고 한다(stillMaking)", () => {
     const at = (iso: string) => buildShelf([], [order(5, { bookStatus: "GENERATING", paidAt: iso })], [], NOW)[0];

@@ -4,21 +4,26 @@
  * - 기한이 지난 v5 이전 책·환불·회수된 책은 서재에 남기지 않는다(「만료됨」 카드 없음, P 추가 B).
  * - 만드는 중(결제 주문·이용권 접수) / 확인이 필요해요(생성 실패로 사람이 확인 중)만 상태를 붙인다.
  * - 운영 Q 2부: 문의 결과 한 줄(열린 요청 = 「접수됨」, 처리 결과는 7일 동안). 환불된 주문 카드는 7일 동안만 「환불됐어요」로 남는다.
+ * - W3 P2 30분 결론: 자동 환불 중인 주문은 「결제 취소 중」 카드로 남고(환불이 끝나면 위 7일 카드), 이용권을 돌려준 책은 7일 동안
+ *   「이용권을 돌려드렸어요」 카드로 남는다(카드가 갑자기 사라지지 않게). 만드는 중인 이용권 책도 대기 화면(/reports/<id>)으로 열린다.
  * 책 본문(snapshot)은 여기 없다 — 책을 열 때만 받는다.
  */
 import { bookForProduct, readerTitle } from "../book/product";
 import { isOpenEndedAccess, reportAccessOpen } from "../book/accessWindow";
 import { REQUEST_RESULT_COPY } from "../legal/socialLinks";
+import { CONCLUSION_DEADLINE_MS } from "../ops/config";
 import { validLibraryReportId, type LibraryRow } from "./model";
 
 export type ShelfOrder = { orderCode: string; reportId: string | null; productType: string; paymentStatus: string; bookStatus: string | null; createdAt: string; paidAt: string | null; refundState?: string | null; refundedAt?: string | null };
 /** 서재 문의 결과(ops_notify 'card_results'): 주문·책마다 가장 최근 요청 1건(열린 것 또는 7일 안에 처리된 것). */
 export type ShelfRequest = { orderCode: string | null; reportId: string | null; reason: string; status: string; resolution: string | null; resolvedAt: string | null; createdAt: string };
+/** 이용권 접수(ops_order 'pending_books' = QUEUED·RUNNING, W3 P2부터 서재가 따로 읽는 7일 안 REVERSED). */
 export type ShelfPending = { reportId: string; productType: string; state: string; createdAt: string; displayName?: string };
 export type ShelfBook = {
   reportId: string; title: string; displayName: string; coverColor: string; ink: string;
-  state: "ready" | "making" | "attention" | "refunded";
-  /** 카드 링크. 이용권으로 접수해 만드는 중인 책은 아직 열 화면이 없어 null. */
+  /** attention = 결과 확인 중(생성 실패, 곧 자동 환불) · refunding = 결제 취소 중 · refunded = 환불됨(7일) · returned = 이용권 반환(7일). */
+  state: "ready" | "making" | "attention" | "refunding" | "refunded" | "returned";
+  /** 카드 링크(대기 화면 또는 책). 환불됨·이용권 반환 카드는 열 책이 없어 null. */
   href: string | null;
   publishedAt: string | null; openEnded: boolean; expiresAt: string | null;
   orderCode: string | null; viaTicket: boolean;
@@ -65,22 +70,27 @@ export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: Sh
   }
   for (const o of orders) {
     if (!o.reportId || seen.has(o.reportId) || o.paymentStatus !== "paid" || o.bookStatus === "COMPLETED" || o.bookStatus === "EXPIRED") continue;
-    if (o.refundState && o.refundState !== "none") continue;
+    // W3 P2: 자동 환불 요청·처리 중(실패 뒤 다시 시도 포함)인 주문은 「결제 취소 중」 카드로 남긴다. 그 밖의 환불 상태는 위 7일 카드가 맡는다.
+    const refunding = o.refundState === "requested" || o.refundState === "processing" || o.refundState === "failed";
+    if (!refunding && o.refundState && o.refundState !== "none") continue;
     const book = bookForProduct(o.productType);
     if (!book) continue;
     const attention = o.bookStatus === "FAILED_REQUIRES_ATTENTION";
-    if (!attention && o.bookStatus !== null && !MAKING.has(o.bookStatus)) continue;
+    if (!refunding && !attention && o.bookStatus !== null && !MAKING.has(o.bookStatus)) continue;
     seen.add(o.reportId);
-    working.push({ reportId: o.reportId, title: readerTitle(book, ""), displayName: "", coverColor: book.color, ink: book.ink, state: attention ? "attention" : "making",
+    working.push({ reportId: o.reportId, title: readerTitle(book, ""), displayName: "", coverColor: book.color, ink: book.ink, state: refunding ? "refunding" : attention ? "attention" : "making",
       href: `/reports/${o.reportId}`, publishedAt: null, openEnded: false, expiresAt: null, orderCode: o.orderCode, viaTicket: false, madeAt: o.paidAt ?? o.createdAt,
       request: reqOf(o.orderCode, o.reportId), refundedAt: null, at: Date.parse(o.paidAt ?? o.createdAt) || 0 });
   }
   for (const p of pending) {
     const book = bookForProduct(p.productType);
     if (!book || seen.has(p.reportId)) continue;
+    // W3 P2: 이용권을 돌려준 책은 접수 뒤 7일 동안 「이용권을 돌려드렸어요」 카드(열 책 없음). 만드는 중이면 대기 화면으로 열린다.
+    const returned = p.state === "REVERSED";
+    if (returned && !recent(p.createdAt)) continue;
     seen.add(p.reportId);
-    working.push({ reportId: p.reportId, title: readerTitle(book, ""), displayName: p.displayName ?? "", coverColor: book.color, ink: book.ink, state: "making",
-      href: null, publishedAt: null, openEnded: false, expiresAt: null, orderCode: null, viaTicket: true, madeAt: p.createdAt, request: reqOf(null, p.reportId), refundedAt: null,
+    working.push({ reportId: p.reportId, title: readerTitle(book, ""), displayName: p.displayName ?? "", coverColor: book.color, ink: book.ink, state: returned ? "returned" : "making",
+      href: returned ? null : `/reports/${p.reportId}`, publishedAt: null, openEnded: false, expiresAt: null, orderCode: null, viaTicket: true, madeAt: p.createdAt, request: reqOf(null, p.reportId), refundedAt: null,
       at: Date.parse(p.createdAt) || 0 });
   }
   const strip = ({ at: _at, ...b }: ShelfBook & { at: number }): ShelfBook => { void _at; return b; };
@@ -99,6 +109,6 @@ export function cardResult(b: ShelfBook, now = Date.now()): CardResult | null {
   if (q.resolution === "ticket") return { kind: "ticket", text: REQUEST_RESULT_COPY.ticket, channel: false };
   return { kind: "guide", text: q.reason === "not_open" ? REQUEST_RESULT_COPY.guideNotOpen : REQUEST_RESULT_COPY.guideOther, channel: true };
 }
-/** 결제(접수) 뒤 30분 안이고 아직 만드는 중이면 「안 나와요」를 접수하지 않고 기다려 달라고 한다. */
-export const MAKING_GRACE_MS = 30 * 60_000;
+/** 결제(접수) 뒤 30분 안이고 아직 만드는 중이면 「안 나와요」를 접수하지 않고 기다려 달라고 한다(30분 안에 결론이 난다 — W3 P2). */
+export const MAKING_GRACE_MS = CONCLUSION_DEADLINE_MS;
 export const stillMaking = (b: ShelfBook, now = Date.now()) => b.state === "making" && Number.isFinite(Date.parse(b.madeAt ?? "")) && now - Date.parse(b.madeAt!) < MAKING_GRACE_MS;
