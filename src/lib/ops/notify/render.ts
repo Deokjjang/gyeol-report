@@ -207,7 +207,7 @@ function opsMessageBody(f: ItemFacts, method: string | null, now: number): Messa
   return { text: [`${title} · ${esc(codeOf(f))}`, line2, line3, accountLine(f)].filter(Boolean).join("\n"), buttons };
 }
 const KIND_LABEL: Record<string, string> = { payment: "매출 결제", refund: "매출 환불", request: "처리 문의", unpublished: "처리 미발행", reminder: "처리 미처리 알림", notify_failed: "처리 실패 경고", share_failed: "처리 공유 실패 경보",
-  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보", generation_hold: "처리 발행 보류 경보" };
+  signup_surge: "처리 가입 급증 경보", api_credit: "처리 API 잔액 경보" };
 
 // ── F 가입 이용권 캠페인(처리 봇) ─────────────────────────────────────
 /** 버튼 값(돈이 오가지 않아 비밀번호 없음, 덕짱님 id만 — 웹훅 첫 관문). */
