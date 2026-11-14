@@ -188,7 +188,7 @@ describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
     expect(body).toContain("다듬어진 결입니다");
     // 7절: 정보량 지표는 Book 메타에 기록만(본문은 지표 계산 전후 같다).
     const info = (built.meta.safety as { metrics?: { info?: { version: string; sentences: number } } }).metrics?.info;
-    expect(info?.version).toBe("info-v2"); expect(info!.sentences).toBeGreaterThan(50);
+    expect(info?.version).toBe("info-v3"); expect(info!.sentences).toBeGreaterThan(50);
   }, 180_000);
 });
 
@@ -235,7 +235,7 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
   const dict = { traits: ["편인", "정관"], names: ["INTP"], scenes: ["저녁 산책길에 카페에 들러 노트북을 여는 날이 많다"] };
   const m = infoMetrics(chapters, { dict });
   it("같은 문장·장 사이 같은 구절·처방 계열·재진술·교훈문·노출을 센다", () => {
-    expect(m.version).toBe("info-v2"); expect(m.cards).toBe(false);
+    expect(m.version).toBe("info-v3"); expect(m.cards).toBe(false);
     expect(m.totals.sameSentence).toBe(1);
     expect(m.totals.phraseRepeat).toBeGreaterThanOrEqual(1); // 「시동이 걸리면 남들」
     expect(m.rxFamilies["적기·목록"]).toBe(4); expect(m.totals.rxRepeat).toBe(2); expect(m.totals.rxFamilies3).toBe(1);
@@ -306,6 +306,16 @@ describe("W3 P3 보강 1 — 카드에 없는 구체 장면(concreteScene · sce
     expect(unbackedScene("쉬는 날에도 냉장고 정리로 오후를 보내는 편이에요.", card(0, null, ["주말에 냉장고 정리하기"]))).toBeNull();
     expect(unbackedScene("회의실에 먼저 들어가 자리를 정리하는 편이에요.", card(0, null), ["회의실 세팅"])).toBeNull();
     expect(unbackedScene("택배 알림이 오면 상자부터 여는 편이죠?", card(0, null))).toBeNull(); // 물음은 lint가 잡지 않는다
+  });
+  it("지식 DB·관계 장면(ask)은 물음 재료: 그 장면을 단정하면 근거 없음, 물음은 허용 · 작가 카드에 ask, 씨앗은 그대로 장면", () => {
+    const s = "새 동네로 이사 가면 단골 가게 사장님과 어느새 인사하는 사이가 되어 있어요.", kb = "새 동네로 이사 오면 단골 미용실·세탁소 주인과 금세 친해진다.";
+    const ask: InfoCard = { chapter: 1, section: 0, evidence: [{ name: "편재", where: ["연간"] }], scene: { text: kb, ask: true }, text: [] };
+    expect(unbackedScene(s, ask)).toEqual(["동네", "이사", "단골", "가게"]);
+    expect(unbackedScene("새 동네로 이사 가면 단골 가게 사장님과 금세 친해지는 편이죠?", ask)).toBeNull();
+    const base = { q: "q", evidence: [], link: null, punch: null, rx: null };
+    expect(writerCard({ ...base, scene: { text: kb, from: "knowledge" } }, new Map()).scene).toEqual({ text: kb, ask: true });
+    expect(writerCard({ ...base, scene: { text: kb, from: "relation", who: "A / B" } }, new Map()).scene).toMatchObject({ ask: true });
+    expect(writerCard({ ...base, scene: { text: kb, from: "seed" } }, new Map()).scene).toEqual({ text: kb });
   });
   const ctx: LintCtx = {
     facts: { birthTimeKnown: true, mbti: "ISTP", relationship: "single", children: "unknown", job: "employee" }, jobDetail: "", schoolStage: "none", coreImage: "봄 숲의 새 철길",

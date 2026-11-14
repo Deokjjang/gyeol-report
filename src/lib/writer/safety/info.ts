@@ -28,8 +28,11 @@ export type InfoSection = { readonly heading: string; readonly paragraphs: reado
 export type InfoChapter = { readonly n: number; readonly sections: readonly InfoSection[]; readonly source?: string; readonly keys?: readonly string[] };
 /** 카드 쪽(brief.design)이 줄 절 카드의 최소 꼴. chapter = 장 번호, section = 장 안 절 순서(0부터). */
 export type InfoEvidence = { readonly name: string; readonly where?: readonly string[]; readonly facts?: readonly string[]; readonly context?: boolean };
-/** text: 그 절 카드 글 전부(장면 근거 대조용 — 질문·근거 뜻·사실·장면·소품·팩폭·연결 이유·근거 trait 글). */
-export type InfoCard = { readonly chapter: number; readonly section: number; readonly evidence: readonly InfoEvidence[]; readonly scene?: { readonly text: string; readonly props?: readonly string[] } | null; readonly text?: readonly string[] };
+/**
+ * text: 그 절 카드 글 전부(장면 근거 대조용 — 질문·근거 뜻·사실·장면·소품·팩폭·연결 이유·근거 trait 글).
+ * scene.ask: 지식 DB·관계 장면(입력으로 거른 씨앗이 아님) — 성향 물음 재료라 단정 문장의 근거가 되지 않는다.
+ */
+export type InfoCard = { readonly chapter: number; readonly section: number; readonly evidence: readonly InfoEvidence[]; readonly scene?: { readonly text: string; readonly ask?: boolean; readonly props?: readonly string[] } | null; readonly text?: readonly string[] };
 /** 카드 없는 책의 사전: trait·용어 이름(쉬운 이름 포함), 지우고 비교할 이름(고객 이름·MBTI 유형), 근거 있는 장면 글(씨앗·DB 장면). */
 export type InfoDict = { readonly traits?: readonly string[]; readonly names?: readonly string[]; readonly scenes?: readonly string[]; readonly props?: readonly string[] };
 export type InfoSectionMetric = { readonly at: string; readonly evidenceUsed: number; readonly restatements: number; readonly lessons: number; readonly sameSentence: number; readonly rehash: number; readonly phraseRepeat: number; readonly rxRepeat: number; readonly sceneUnbacked: number; readonly sceneFirst: number; readonly sceneMbti: number; readonly sceneAsk: number; readonly exposure: number };
@@ -46,7 +49,8 @@ export type InfoMetric = {
 };
 export type InfoKind = "restatement" | "lesson" | "sameSentence" | "rehash" | "phraseRepeat" | "rxRepeat" | "sceneUnbacked" | "sceneFirst" | "sceneMbti" | "sceneAsk" | "exposureGrade" | "exposureRule";
 /** info-v2(W3 P3 보강): 구체 장면 탐지(concreteScene)·장면 물음(sceneAsk)·근거 이름 정리와 핵심 낱말·사실 낱말 대조. */
-export const INFO_VERSION = "info-v2" as const;
+/** info-v3(W3 P3 보강 2): 지식 DB·관계 장면(scene.ask)은 단정의 근거가 아니다(물음 재료). */
+export const INFO_VERSION = "info-v3" as const;
 
 /** 같은 문장 기준(수리 재검 repair3·지표 sameSentence 공용): 한글·숫자만 남겨 같거나, 두 글자 묶음 자카드 ≥ 0.8, 둘 다 14자 이상. */
 export const SAME_JACCARD = 0.8, SAME_MIN = 14;
@@ -219,8 +223,11 @@ export function sceneBacked(sentence: string, words: readonly string[], backing:
 export type SceneBacking = { readonly scenes: readonly string[]; readonly all: readonly string[]; readonly near?: readonly string[] };
 export const sceneBackedBy = (sentence: string, nouns: readonly string[], b: SceneBacking, props: readonly string[] = []) =>
   sceneBacked(sentence, nouns, b.scenes) || (b.near ?? []).some(t => nouns.filter(n => t.includes(n)).length * 2 >= nouns.length) || nounsBacked(nouns, [...b.all, ...props]);
-/** 카드 하나의 장면 근거(카드가 없으면 없음). */
-export const cardBacking = (card: InfoCard | undefined): SceneBacking => ({ scenes: card?.scene?.text ? [card.scene.text] : [], near: card?.scene?.text ? [card.scene.text] : [], all: [...(card?.text ?? []), ...(card?.scene ? [card.scene.text, ...(card.scene.props ?? [])] : [])] });
+/** 카드 하나의 장면 근거(카드가 없으면 없음). 물음 재료 장면(ask)은 단정의 근거가 아니다 — 그 장면을 단정하면 근거 없음(수리가 성향 물음으로). */
+export const cardBacking = (card: InfoCard | undefined): SceneBacking => {
+  const sc = card?.scene && !card.scene.ask ? card.scene : null;
+  return { scenes: sc ? [sc.text] : [], near: sc ? [sc.text] : [], all: [...(card?.text ?? []), ...(sc ? [sc.text, ...(sc.props ?? [])] : [])] };
+};
 
 export function infoMetrics(chapters: readonly InfoChapter[], opts: { readonly dict?: InfoDict; readonly cards?: readonly InfoCard[]; readonly detail?: boolean } = {}): InfoMetric {
   const dict = opts.dict ?? {}, cards = opts.cards?.length ? opts.cards : null;

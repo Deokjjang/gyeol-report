@@ -23,7 +23,7 @@ export function infoCardsOf(brief: Pick<Brief, "chapters"> & Partial<Pick<Brief,
     const traitText = k.evidence.flatMap(e => { const t = e.traitId ? traits.get(e.traitId) : undefined; return t ? [t.forYou, ...t.good, t.where ?? "", t.positionNote ?? ""] : []; });
     const text = [k.q, ...k.evidence.flatMap(e => [e.name, e.meaning ?? "", ...(e.facts ?? [])]), ...(k.punch ? [k.punch.text, k.punch.basis, k.punch.warm] : []), k.link?.why ?? "", k.scene?.who ?? "", ...traitText].filter(Boolean);
     out.push({ chapter: c.n, section: si, evidence: k.evidence.map(e => ({ name: e.name, where: e.where ? e.where.split(SPLIT).filter(Boolean) : [], ...(e.facts?.length ? { facts: e.facts } : {}), ...(e.kind === "context" ? { context: true } : {}) })),
-      scene: k.scene ? { text: k.scene.text, ...(k.scene.props?.length ? { props: k.scene.props } : {}) } : null, text });
+      scene: k.scene ? { text: k.scene.text, ...(k.scene.from === "seed" ? {} : { ask: true }), ...(k.scene.props?.length ? { props: k.scene.props } : {}) } : null, text });
   });
   return out;
 }

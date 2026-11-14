@@ -309,7 +309,8 @@ export function writerCard(c: SectionCard | import("../schema").SectionCardBrief
   return {
     ...(c.evidence.length ? { evidence: c.evidence.map(e => ({ ...(e.traitId ? { id: e.traitId } : {}), ...(e.kind === "context" ? {} : { name: e.name }), ...(e.where ? { where: e.where } : {}), ...(e.meaning ? { meaning: e.meaning } : {}), ...(e.facts ? { facts: e.facts } : {}), ...(e.ref ? { ref: e.ref } : {}), ...(e.rule ? { rule: e.rule } : {}) })) } : {}),
     ...(c.link ? { link: { kind: c.link.kind, a: nm(c.link.a), b: nm(c.link.b), tag: c.link.tagName, why: c.link.why, ...(c.link.dir ? { dir: c.link.dir } : {}) } } : {}),
-    ...(c.scene ? { scene: { text: c.scene.text, ...(c.scene.who ? { who: c.scene.who } : {}), ...(props?.length ? { props } : {}) } } : {}),
+    // 입력 조건으로 거른 씨앗(seed)만 장면으로 쓴다. 지식 DB·관계 장면은 이 고객이 겪었다는 근거가 없어 성향 물음 재료(ask)로만(W3 P3 — 바넘 금지).
+    ...(c.scene ? { scene: { text: c.scene.text, ...(c.scene.from === "seed" ? {} : { ask: true }), ...(c.scene.who ? { who: c.scene.who } : {}), ...(props?.length ? { props } : {}) } } : {}),
     ...(c.punch ? { punch: c.punch } : {}),
     ...(c.rx ? { rx: c.rx } : {}),
   };
