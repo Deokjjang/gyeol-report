@@ -258,7 +258,19 @@
 | 2026-11-13 21:06 | W1 p4-5-reduced-gr6aa2 | anthropic/claude-sonnet-5-5 | 24880 | 0 | 23449 | 0.28425000 | complete | req_011Cgzts2qGmJcmBnQc1Bkor | 16.06197970 |
 | 2026-11-13 21:07 | W1 p4-5-reduced-gr6aa2 review | anthropic/claude-haiku-5-5 | 21206 | 0 | 8404 | 0.00632260 | complete | req_011Cgzu5syL9EqzRmLey5im8 | 16.06830230 |
 | 2026-11-13 21:07 | W1 p4-5-reduced-gr6aa2 repair | anthropic/claude-sonnet-5-5 | 7253 | 0 | 1532 | 0.02982600 | complete | req_011Cgzu8eLNcaXpJmCBpjeRH | 16.09812830 |
-누적 합계: **$16.09812830** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-14 16:40 | W3 P2 p2-normal-love | anthropic/claude-sonnet-5-5 | 23767 | 0 | 11946 | 0.16699400 | complete | req_011Ch2STkfGkFqviyQfMZSkd | 16.26512230 |
+| 2026-11-14 16:40 | W3 P2 p2-normal-love review | anthropic/claude-haiku-5-5 | 19676 | 0 | 5866 | 0.00490060 | complete | req_011Ch2Saas6sXZdNC1kYAQfn | 16.27002290 |
+| 2026-11-14 16:40 | W3 P2 p2-normal-love repair | anthropic/claude-sonnet-5-5 | 5868 | 0 | 1026 | 0.02199600 | complete | req_011Ch2Sca3ZEWmY5uBthCwYP | 16.29201890 |
+| 2026-11-14 16:41 | W3 P2 p2-forced-career | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error:http_529 | - | 16.29201890 |
+| 2026-11-14 16:42 | W3 P2 p2-forced-career | anthropic/claude-sonnet-5-5 | 25135 | 0 | 14977 | 0.20004000 | complete | req_011Ch2Se8g8gnKRWgK7N8tNt | 16.49205890 |
+| 2026-11-14 16:43 | W3 P2 p2-forced-career review | anthropic/claude-haiku-5-5 | 23092 | 0 | 7597 | 0.00610770 | complete | req_011Ch2Sn7k3MEqai2rHVrHqA | 16.49816660 |
+| 2026-11-14 16:43 | W3 P2 p2-forced-career repair | anthropic/claude-sonnet-5-5 | 11376 | 0 | 2430 | 0.04705200 | complete | req_011Ch2SpeXm4XsQtWc166HfH | 16.54521860 |
+| 2026-11-14 16:44 | W3 P2 p2-forced2-career | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error:http_529 | - | 16.54521860 |
+| 2026-11-14 16:44 | W3 P2 p2-forced2-career | anthropic/claude-sonnet-5-5 | 0 | 0 | 0 | 0.00000000 | error:http_529 | - | 16.54521860 |
+| 2026-11-14 16:48 | W3 P2 p2-forced2-career | anthropic/claude-sonnet-5-5 | 25140 | 0 | 13983 | 0.19011000 | complete | req_011Ch2T5w8ZqnDhSEkjxuES9 | 16.73532860 |
+| 2026-11-14 16:49 | W3 P2 p2-forced2-career review | anthropic/claude-haiku-5-5 | 21897 | 0 | 6927 | 0.00565320 | complete | req_011Ch2TD8mVnpJuVsEAwfiXL | 16.74098180 |
+| 2026-11-14 16:49 | W3 P2 p2-forced2-career repair | anthropic/claude-sonnet-5-5 | 11202 | 0 | 2509 | 0.04749400 | complete | req_011Ch2TFyzytLLDnP6BC8PrG | 16.78847580 |
+누적 합계: **$16.78847580** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |
