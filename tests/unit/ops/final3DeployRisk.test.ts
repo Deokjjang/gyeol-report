@@ -62,16 +62,16 @@ describe("대운·세운 판매 중지: 승인 전 주문은 토스 승인을 �
   ] as const)("%s(%s, FORTUNE_SALES_OPEN=%s) → 막음 %s", async (product, status, open, blocked) => {
     if (open) vi.stubEnv("FORTUNE_SALES_OPEN", open);
     const store = storeWith(order(product, status)), confirm = vi.fn(async () => ({ ok: true as const, confirm: { provider: "toss" as const, paymentKeyReceived: true as const, orderId: "o-1", amount: 1490, status: "DONE" } }));
-    expect(await closedProductOrder(store, "o-1")).toBe(blocked);
+    expect(await closedProductOrder(store, "o-1", async () => false)).toBe(blocked ? "PRODUCT_SALES_CLOSED" : null);
     store.call.mockClear();
-    const result = await confirmPaidReport({ orderId: "o-1", paymentKey: "k", amount: 1490 }, store, confirm, id => closedProductOrder(store, id));
+    const result = await confirmPaidReport({ orderId: "o-1", paymentKey: "k", amount: 1490 }, store, confirm, id => closedProductOrder(store, id, async () => false));
     if (blocked) { expect(result).toEqual({ ok: false, code: "PRODUCT_SALES_CLOSED" }); expect(confirm).not.toHaveBeenCalled(); expect(store.call.mock.calls.map(([a]) => a)).toEqual(["find_order"]); }
     else expect(store.call.mock.calls.map(([a]) => a)).toEqual(["find_order", "confirm_claim", "confirm_finish"]);
   });
   it("주문 조회 실패·다른 주문 번호는 막지 않는다(기존 흐름)", async () => {
-    expect(await closedProductOrder(storeWith({ ok: false, code: "DURABLE_STORAGE_FAILED" }), "o-1")).toBe(false);
-    expect(await closedProductOrder(storeWith({ ok: true, order: { provider_order_id: "other", status: "ready", product_type: "major_fortune" } }), "o-1")).toBe(false);
-    expect(await closedProductOrder({ call: async () => { throw new Error("down"); } }, "o-1")).toBe(false);
+    expect(await closedProductOrder(storeWith({ ok: false, code: "DURABLE_STORAGE_FAILED" }), "o-1", async () => true)).toBeNull();
+    expect(await closedProductOrder(storeWith({ ok: true, order: { provider_order_id: "other", status: "ready", product_type: "major_fortune" } }), "o-1", async () => true)).toBeNull();
+    expect(await closedProductOrder({ call: async () => { throw new Error("down"); } }, "o-1", async () => true)).toBeNull();
   });
   it("salesGate를 넘기지 않는 내부 호출(결제 복구·시험 도구)은 기존과 같다", async () => {
     const store = storeWith(order("major_fortune"));

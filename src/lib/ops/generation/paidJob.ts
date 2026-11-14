@@ -39,10 +39,11 @@ export async function paidWriterBudget(db: JobsDb | null | undefined, job: { job
   return db && (await extendPaidLease(db, job.job_id, job.lease_token)) ? want : PAID_SHORT_BUDGET_MS;
 }
 
-/** HOTFIX-W1 3부 3·6: 운영 알림(서비스 롤 DB + 처리 봇). DB가 없으면 없음. */
-export async function liveAlerts(db: import("@supabase/supabase-js").SupabaseClient | null | undefined): Promise<Pick<GenerationEnv, "alerts">> {
+/** HOTFIX-W1 3부 3·6: 운영 알림(서비스 롤 DB + 처리 봇). DB가 없으면 없음.
+ * W3 P0: 잔액·인증 경보도 여기서 — Anthropic은 판매 자동 멈춤 + 처리 봇(1시간 1번, OpenAI와 쿨다운 따로), OpenAI는 예전 대기표(signup 'credit_alert'). */
+export async function liveAlerts(db: import("@supabase/supabase-js").SupabaseClient | null | undefined, signup?: OpsStore | null): Promise<Pick<GenerationEnv, "alerts" | "creditAlert">> {
   if (!db) return {};
-  try { const m = await import("./alerts"); return { alerts: m.createGenerationAlerts(db, await m.opsBotSender()) }; } catch { return {}; }
+  try { const m = await import("./alerts"), send = await m.opsBotSender(); return { alerts: m.createGenerationAlerts(db, send), creditAlert: m.creditAlerter(db, send, signup) }; } catch { return {}; }
 }
 
 export async function runPaidV5Job(job: { payload: unknown; report_id: string; job_id: string; lease_token: string; order_id: string; policyAt: string; budgetMs?: number },
@@ -53,7 +54,7 @@ export async function runPaidV5Job(job: { payload: unknown; report_id: string; j
   const prior = ops.db ? await (await import("./paidPrior")).paidPriorBooks(ops.db, job.order_id, job.report_id, job.payload) : undefined;
   const budgetMs = job.budgetMs ? await paidWriterBudget(ops.db, job, job.budgetMs) : undefined;
   const { decision } = await superviseQueueJob({ reportId: job.report_id, origin: "paid", originRef: job.order_id, payload: job.payload as ReportInputPayload, policyAt: job.policyAt,
-    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(ops.raw ? { raw: opsRawCache(ops.raw, job.report_id, job.lease_token) } : {}), ...(budgetMs ? { budgetMs } : {}), ...(prior?.books ? { prior } : {}) }, { ...opts.env, store: ops.generation, ...(!opts.ops ? { creditAlert: (code: string) => (ops as import("../store").OpsStores).signup.call("credit_alert", { code }), ...(await liveAlerts(ops.db)) } : {}) }, async d => {
+    sink: opsChapterSink(ops.generation, job.report_id, job.lease_token), ...(ops.raw ? { raw: opsRawCache(ops.raw, job.report_id, job.lease_token) } : {}), ...(budgetMs ? { budgetMs } : {}), ...(prior?.books ? { prior } : {}) }, { ...opts.env, store: ops.generation, ...(!opts.ops ? { creditAlert: (code: string) => (ops as import("../store").OpsStores).signup.call("credit_alert", { code }), ...(await liveAlerts(ops.db, (ops as import("../store").OpsStores).signup)) } : {}) }, async d => {
     if (d.kind === "publish") last = await finish({ success: true, snapshot: d.snapshot, gateVersion: PUBLISH_GATE_VERSION });
     else if (d.kind === "defer") last = await ops.generation.call("paid_defer", { jobId: job.job_id, token: job.lease_token, until: d.until, code: "V5_DEFERRED" }) as ReliabilityResult;
     // 최종판 0-6: 주문당 비용 상한 — 자동으로 다시 돌리지 않게 길게 보류한다(관리자 지연 목록, 환불은 관리자가 정한다).

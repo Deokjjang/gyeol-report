@@ -81,7 +81,7 @@ type DevTossCheckoutRunOptions = {
   readonly consentUi?: CheckoutConsentUiClaim;
 };
 /** 서버가 고객에게 그대로 보여 줄 수 있는 안내(가입 정보·구매자 입력·판매 종료). */
-const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED", "LOGIN_REQUIRED"];
+const PASS_THROUGH_CODES = ["PROFILE_REQUIRED", "BUYER_INFO_INVALID", "PRODUCT_SALES_CLOSED", "PRODUCT_SALES_PAUSED", "LOGIN_REQUIRED"];
 
 export type DevTossCheckoutLegalConfirmations = CheckoutLegalConfirmations;
 export type DevTossCheckoutAgeGateStatus = CheckoutAgeGateStatus;

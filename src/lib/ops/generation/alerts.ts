@@ -1,12 +1,17 @@
 /**
  * 생성 운영 알림(HOTFIX-W1 3부 1·3·6). 문구 만들기는 순수 함수(시험), 보내기는 처리 봇(📮)으로 바로(대기표 종류를 늘리지 않으려 — migration 없음).
  * - 보류 즉시 알림: 「보류 — 환불 또는 대기 결정 필요」 + 실패 한 줄 + 관리자 주문 화면 주소.
- * - 실패율 경보: 같은 상품에서 1시간 안에 생각 소진 2건 이상, 또는 그날(KST) 실패율이 선을 넘으면 「판매 일시 중지 검토」. 판매는 멈추지 않는다(결정은 덕짱님).
+ * - 실패율 경보: 같은 상품에서 1시간 안에 생각 소진 2건 이상, 또는 그날(KST) 실패율이 선을 넘으면 「판매 일시 중지 검토」 + [4종 멈춤] 버튼. 이 경보로는 멈추지 않는다.
  *   상태를 따로 저장하지 않고 「이번 기록으로 선을 막 넘었을 때」만 보낸다(같은 경보를 매번 다시 보내지 않게).
+ * - W3 P0 자동 멈춤: 연결 오류(429·5xx·529·과부하·끊김·시간 초과 — 작가 호출 cls=connection)로 실패한 주문이 10분 안에 3건이면 4종 판매를 멈추고 알린다.
+ *   마지막으로 다시 연 뒤의 실패만 센다. 다시 여는 것은 처리 봇 버튼으로만. 생각 소진 등 다른 실패는 위 경보(알림)만.
+ * - W3 P0 Anthropic 잔액/인증 경보: 1시간 1번(OpenAI 잔액 경보 api_credit과 쿨다운 따로) + 판매 자동 멈춤(ops_sales 'alarm').
  */
 import type { SupabaseClient } from "@supabase/supabase-js";
 import type { CallLog } from "../../writer/runner";
 import { exhaustedCall, orderCostCap, spentOf } from "./policy";
+import type { OpsStore } from "./sinks";
+import { anthropicAlarmText, salesAutoPauseText, salesButtons } from "../notify/render";
 
 const won = (usd: number) => `$${usd.toFixed(2)}`;
 const KST = 9 * 3_600_000;
@@ -83,7 +88,59 @@ export function rateAlert(runs: readonly RunLite[], latest: RunLite, now: number
     if (over(fails, total) && !over(before.fails, before.total)) reasons.push(`오늘 실패율 ${Math.round((fails / total) * 100)}%(실패 ${fails} / 시도 ${total})`);
   }
   if (!reasons.length) return null;
-  return [`🚨 <b>판매 일시 중지 검토</b> · ${esc(productLabel(latest.product))}`, ...reasons.map(esc), "판매는 자동으로 멈추지 않아요. 지연 목록: " + ADMIN_DELAYED_URL].join("\n");
+  return [`🚨 <b>판매 일시 중지 검토</b> · ${esc(productLabel(latest.product))}`, ...reasons.map(esc), "이 경보로는 판매가 멈추지 않아요(연결 오류 연속만 자동 멈춤). 멈추려면 [4종 멈춤]. 지연 목록: " + ADMIN_DELAYED_URL].join("\n");
+}
+
+/** W3 P0 자동 멈춤 선: 연결 오류로 실패한 주문(책) 수 / 창. */
+export const AUTO_PAUSE = { connectionOrders: 3, windowMs: 10 * 60_000 } as const;
+/** 연결 오류로 실패한 시도인가: 실패(deferred·gave_up)이고 작가 호출 중 하나가 연결 분류(cls=connection). */
+export const connectionRun = (r: RunLite) => failedOutcome(r.outcome) && Array.isArray(r.calls) && (r.calls as { cls?: string }[]).some(c => c?.cls === "connection");
+/**
+ * 자동 멈춤을 걸 때인가(순수 함수). since = max(지금 − 10분, 마지막으로 다시 연 시각). 주문 수는 책(report_id) 단위로 센다(한 주문의 시도 여러 번은 1건).
+ */
+export function autoPauseCheck(runs: readonly RunLite[], now: number, resumedAt: number | null = null): { pause: boolean; count: number; products: string[] } {
+  const since = Math.max(now - AUTO_PAUSE.windowMs, resumedAt ?? -Infinity);
+  const hit = runs.filter(r => connectionRun(r) && Date.parse(r.created_at) >= since && Date.parse(r.created_at) <= now);
+  const ids = new Map<string, string | null>();
+  for (const r of hit) ids.set(r.report_id, r.product);
+  const products = [...new Set([...ids.values()].map(productLabel))];
+  return { pause: ids.size >= AUTO_PAUSE.connectionOrders, count: ids.size, products };
+}
+type SalesRpc = (action: string, data: Record<string, unknown>) => Promise<Record<string, unknown>>;
+const salesRpcOf = (db: SupabaseClient): SalesRpc => async (action, data) => {
+  const { data: r, error } = await db.rpc("ops_sales", { p_action: action, p_data: data });
+  return !error && r && typeof r === "object" ? r as Record<string, unknown> : { ok: false };
+};
+type Send = (text: string, extra?: Record<string, unknown>) => Promise<unknown>;
+const resumeKeyboard = { reply_markup: { inline_keyboard: salesButtons(true) } };
+/** 자동 멈춤: 선을 넘었고 지금 판매 중이면 멈춘다(SQL이 바뀔 때만 changed — 여러 워커가 겹쳐도 알림 1번). */
+export async function maybeAutoPause(rpc: SalesRpc, send: Send, runs: readonly RunLite[], now: number): Promise<boolean> {
+  const st = await rpc("status", {});
+  if (st.ok !== true || st.on === true) return false;
+  const resumedAt = typeof st.at === "string" ? Date.parse(st.at) : NaN;
+  const c = autoPauseCheck(runs, now, Number.isFinite(resumedAt) ? resumedAt : null);
+  if (!c.pause) return false;
+  const r = await rpc("pause", { by: "auto", reason: "connection", detail: { count: c.count, windowMin: AUTO_PAUSE.windowMs / 60_000 } });
+  if (r.ok !== true || r.changed !== true) return false;
+  await send(salesAutoPauseText({ count: c.count, windowMin: AUTO_PAUSE.windowMs / 60_000, products: c.products }), resumeKeyboard);
+  return true;
+}
+/** Anthropic 잔액/인증 경보 + 판매 자동 멈춤(1시간 1번은 SQL이 정한다). */
+export async function anthropicAlarm(rpc: SalesRpc, send: Send, code: "anthropic_credit" | "anthropic_auth"): Promise<boolean> {
+  const r = await rpc("alarm", { code });
+  if (r.ok !== true || r.alerted !== true) return false;
+  await send(anthropicAlarmText({ code, paused: r.paused === true }), resumeKeyboard);
+  return true;
+}
+/**
+ * 작가 호출 잔액·인증 경보 받는 곳(감독 creditAlert). Anthropic은 위 경보(판매 멈춤 포함), OpenAI는 예전 그대로 처리 봇 대기표(api_credit, 1시간 1번).
+ */
+export function creditAlerter(db: SupabaseClient, send: Send, signup?: OpsStore | null) {
+  const rpc = salesRpcOf(db);
+  return async (code: string): Promise<unknown> => {
+    if (code === "anthropic_credit" || code === "anthropic_auth") return anthropicAlarm(rpc, send, code);
+    return signup ? signup.call("credit_alert", { code }) : null;
+  };
 }
 
 export type GenerationAlerts = {
@@ -94,7 +151,7 @@ export type GenerationAlerts = {
 };
 
 /** 운영 알림(서비스 롤 DB + 처리 봇). 실패는 삼킨다(알림이 생성·발행을 막지 않는다). */
-export function createGenerationAlerts(db: SupabaseClient, send: (text: string) => Promise<unknown>, now: () => number = Date.now): GenerationAlerts {
+export function createGenerationAlerts(db: SupabaseClient, send: Send, now: () => number = Date.now): GenerationAlerts {
   const orderCodeOf = async (paymentOrderId: string) => {
     try { const { data } = await db.from("order_records").select("order_code").eq("payment_order_id", paymentOrderId).maybeSingle(); return typeof data?.order_code === "string" ? data.order_code : null; } catch { return null; }
   };
@@ -117,15 +174,17 @@ export function createGenerationAlerts(db: SupabaseClient, send: (text: string) 
         const latest = [...lite].reverse().find(r => r.report_id === a.reportId);
         if (!latest) return;
         const text = rateAlert(lite, { ...latest, product: latest.product ?? a.product }, t, dayStart);
-        if (text) await send(text);
+        if (text) await send(text, { reply_markup: { inline_keyboard: salesButtons(false) } });
+        // W3 P0: 연결 오류 연속이면 4종 자동 멈춤(다시 열기는 버튼으로만).
+        if (connectionRun({ ...latest, product: latest.product ?? a.product })) { try { await maybeAutoPause(salesRpcOf(db), send, lite, t); } catch { /* 무시 */ } }
       } catch { /* 알림 실패는 무시 */ }
     },
   };
 }
 
 /** 운영 처리 봇으로 보내기(토큰·주인 id는 telegram.ts 안에서만). */
-export async function opsBotSender(): Promise<(text: string) => Promise<unknown>> {
+export async function opsBotSender(): Promise<Send> {
   const { createTelegram } = await import("../notify/telegram");
   const tg = createTelegram();
-  return async (text: string) => (tg.configured("ops") && tg.ownerId ? tg.call("ops", "sendMessage", { chat_id: tg.ownerId, text, parse_mode: "HTML", disable_web_page_preview: true }) : null);
+  return async (text: string, extra: Record<string, unknown> = {}) => (tg.configured("ops") && tg.ownerId ? tg.call("ops", "sendMessage", { chat_id: tg.ownerId, text, parse_mode: "HTML", disable_web_page_preview: true, ...extra }) : null);
 }

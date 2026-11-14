@@ -31,7 +31,7 @@ export type GenerationEnv = {
   /** 최종판3 6: 호출 원문 저장소(ops_writer_raw RPC). 교체 레인이 lease 토큰으로 쓴다. */
   readonly raw?: OpsStore;
   /** F: 작가 호출이 잔액 부족·결제 문제로 실패했을 때 처리 봇 경보(ops_signup 'credit_alert', SQL이 1시간 1번만). 시험 주입이면 없음. */
-  readonly creditAlert?: (code: "anthropic_credit" | "openai_quota") => Promise<unknown>;
+  readonly creditAlert?: (code: "anthropic_credit" | "anthropic_auth" | "openai_quota") => Promise<unknown>;
   /** HOTFIX-W1 3부 3·6: 보류 즉시 알림·실패율 경보(처리 봇). 시험 주입이면 없음. */
   readonly alerts?: GenerationAlerts;
   /** HOTFIX-W1 6: 교체 레인 작가 시간 예산(크론 앞 단계가 쓴 시간을 뺀 값). 없으면 작가 기본 700초. */
@@ -103,9 +103,10 @@ async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; r
     verdict = { kind: "incomplete", reason: `build_exception:${e instanceof Error ? e.name : "unknown"}`, rejected: [], missing: [], preOutput: true };
   }
   if (seen.openaiQuota) { try { await env.store.call("provider_set", { provider: "openai", disabled: true, reason: "insufficient_quota" }); } catch { /* 다음 시도에서 다시 감지 */ } }
-  if ((seen.anthropicCredit || seen.openaiQuota) && env.creditAlert) { try { await env.creditAlert(seen.anthropicCredit ? "anthropic_credit" : "openai_quota"); } catch { /* 경보 실패는 생성과 무관 */ } }
+  // W3 P0: Anthropic 인증·권한(401·403)도 잔액과 같은 경보(판매 자동 멈춤, 1시간 1번).
+  if ((seen.anthropicCredit || seen.anthropicAuth || seen.openaiQuota) && env.creditAlert) { try { await env.creditAlert(seen.anthropicAuth ? "anthropic_auth" : seen.anthropicCredit ? "anthropic_credit" : "openai_quota"); } catch { /* 경보 실패는 생성과 무관 */ } }
   const summary = built ? runSummary(built) : { provider: target.provider, model: target.model, costUsd: 0, durationMs: (env.now ?? Date.now)() - started, calls: [], chapters: [] };
-  const reason = verdict.kind === "incomplete" ? `${lane}:${verdict.reason}${seen.openaiQuota ? ":openai_quota" : ""}${seen.anthropicCredit ? ":anthropic_credit" : ""}` : `${lane}:${verdict.kind}`;
+  const reason = verdict.kind === "incomplete" ? `${lane}:${verdict.reason}${seen.openaiQuota ? ":openai_quota" : ""}${seen.anthropicCredit ? ":anthropic_credit" : ""}${seen.anthropicAuth ? ":anthropic_auth" : ""}` : `${lane}:${verdict.kind}`;
   return { built, verdict, summary: { ...summary, provider: summary.provider ?? target.provider, model: summary.model ?? target.model }, reason, seen };
 }
 
