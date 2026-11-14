@@ -13,14 +13,15 @@ export type ModelPrice = {
 };
 
 // 단일 가격표. 출처와 확인일을 항목 옆에 적는다. 확인하지 못한 값은 넣지 않는다(없으면 null → 토큰만 기록).
-// Anthropic: https://platform.claude.com/docs/en/about-claude/pricing (2026-10-28 확인, 2026-10-30 재확인, 5분 캐시 쓰기 기준, 표준 처리)
+// Anthropic: https://platform.claude.com/docs/en/about-claude/pricing (2026-10-28 확인, 2026-10-30 재확인, 2026-11-14 Sonnet·Haiku·Opus 5.5 재확인, 5분 캐시 쓰기 기준, 표준 처리)
 // OpenAI:    https://developers.openai.com/api/docs/pricing (2026-10-28 확인, 표준 등급, 짧은 컨텍스트)
 const PRICES: Record<LlmProvider, Record<string, ModelPrice>> = {
   anthropic: {
     "claude-fable-5-1": { input: 10, cachedInput: 0.25, cacheWrite: 12.5, output: 50 },
     "claude-opus-5-5": { input: 4, cachedInput: 0.2, cacheWrite: 5, output: 20 },
-    // 캐시 읽기 $0.20(최종판2 0: claude-api 문서 "Claude Sonnet 5.5 … $2 / $10 per MTok, cache reads $0.20"로 바로잡음, 이전 표 0.1은 과소 계산).
-    "claude-sonnet-5-5": { input: 2, cachedInput: 0.2, cacheWrite: 2.5, output: 10 },
+    // 캐시 읽기 $0.10(W3 P3 14: 공식 가격표 「Claude Sonnet 5.5 | $2 / MTok | $2.50 / MTok | $4 / MTok | $0.10 / MTok | $10 / MTok」 — 0.05× 입력 단가, 2026-11-14 확인.
+    // 최종판2에서 0.20으로 올렸던 것은 그때 문서 기준이었고 지금 표와 다르다).
+    "claude-sonnet-5-5": { input: 2, cachedInput: 0.1, cacheWrite: 2.5, output: 10 },
     "claude-haiku-5-5": {
       input: 0.1, cachedInput: 0.01, cacheWrite: 0.125, output: 0.5,
       overPromptTokens: { threshold: 100_000, price: { input: 0.5, cachedInput: 0.05, cacheWrite: 0.625, output: 2.5 } },

@@ -48,8 +48,9 @@ describe("최종판2 0 비용 원장", () => {
       const l2 = B.readLedger(); expect(l2.calls).toHaveLength(2); expect(l2.calls[1].pending).toBeUndefined(); expect(l2.calls[1].costUsd).toBe(0.0001);
     } finally { delete process.env.LLM_CACHE_DIR; delete process.env.LLM_COST_LOG; }
   });
-  it("Sonnet 5.5 캐시 읽기 단가 $0.20/1M", () => {
-    expect(computeCostUsd("anthropic", "claude-sonnet-5-5", { inputTokens: 0, cachedInputTokens: 1_000_000, outputTokens: 0 })).toBeCloseTo(0.2);
+  // W3 P3 14: 공식 가격표(2026-11-14 확인) — Sonnet 5.5 캐시 읽기 $0.10/1M(입력 단가의 0.05배).
+  it("Sonnet 5.5 캐시 읽기 단가 $0.10/1M", () => {
+    expect(computeCostUsd("anthropic", "claude-sonnet-5-5", { inputTokens: 0, cachedInputTokens: 1_000_000, outputTokens: 0 })).toBeCloseTo(0.1);
   });
 });
 
