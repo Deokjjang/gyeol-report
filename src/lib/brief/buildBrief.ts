@@ -19,7 +19,7 @@ import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
-import { fitSegments, fitTimelineTexts, inputsOf, needMet, neutralize, type Inputs } from "./premise";
+import { fitSegments, fitTimelineTexts, inputsOf, itemFits, needMet, neutralize, type Inputs } from "./premise";
 import { TEN_GOD_ROW } from "./core";
 import { buildAnnualEntries, buildYearEntries, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
@@ -45,7 +45,6 @@ import { designCards, type BookDesign, type CardPerson } from "./cards/design";
 import { buildFactSheet } from "@/lib/factsheet/build";
 import { cleanSeed, SENIORITY_PROP, WORKPLACE } from "@/lib/writer/chunked/card";
 import { seedFits } from "@/lib/writer/chunked/intake";
-import { itemFits } from "./premise";
 import type { RxKind } from "./prescriptions";
 
 /** 세운 × 원국 관계 근거를 흐름·시기 장에 넣는 상품(AM 1-1 ①). 대운·세운은 자기 카드(2·3부)를 쓴다. */
@@ -236,7 +235,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
 }
 
 /** W3 P3: 직업 소품 낱말(연애·가족 장 소품 힌트에서 뺀다 — 사업자 통장·대금 받는 날·견적 문의 연락). */
-const JOB_PROP = /사업자|대금|견적|정산|단가|의뢰|매출|손님|거래처|납품|클라이언트|외주|발주|계약서|업무|출근|퇴근|사무실/;
+const JOB_PROP = /사업자|대금|견적|정산|단가|의뢰|매출|손님|거래처|납품|클라이언트|외주|발주|계약서|업무|출근|퇴근|사무실|마감|작업/;
 /** 생활 단계 이름(P6c C1): 작가가 장면을 이 고객의 삶에 맞추게 한다. */
 const LIFE_STAGE_KO = (stage: string, age: number) => ({
   student: age < 19 ? "초·중·고 학생" : "대학생 이상 학생(초·중·고 장면 금지: 모의고사·학원·급식·담임 등)",

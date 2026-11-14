@@ -55,7 +55,6 @@ export type DesignInput = {
 };
 
 const P1: Readonly<Record<string, string>> = { year: "연", month: "월", day: "일", hour: "시" };
-const SLOT_KO = (s: Slot) => `${P1[s.replace(/(Stem|Branch)$/, "")]}${s.endsWith("Stem") ? "간" : "지"}`;
 
 /** 카드 자리 이름과 정답지 대조. 맞지 않으면 이유(그 카드 근거를 뺀다). */
 export function cardWhere(t: Trait, hit: FeatureHit | undefined, f: PersonFacts): { where: string[]; drop?: string } {
