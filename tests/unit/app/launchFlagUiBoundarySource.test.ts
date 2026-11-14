@@ -60,8 +60,8 @@ describe("launch flag UI boundary source", () => {
     const expectedMarkers = [
       "입력값 최종 확인",
       "전체 리포트",
-      "결제금액 1,290원",
-      "1,290원 결제하고 리포트 생성하기",
+      "`결제금액 ${REPORT_PRICE_LABEL_KO}`",
+      "`${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`",
       "리포트 생성을 위해 필요한 정보를 먼저 입력해 주세요.",
       "inputSnapshot={checkoutInputSnapshot}",
       "onEditInput",

@@ -1,9 +1,16 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
+
+// 공개 관문(bookExperiencePublicEnabled)은 운영에서 늘 true라 Home은 비동기 Book 홈(BookHomeRoute)을 그린다.
+// 이 시험은 관문 OFF 갈래(상품 격자 홈)를 본다 — bookPublicFlow 시험과 같은 방식으로 관문만 끈다.
+vi.mock("server-only", () => ({}));
+vi.mock("../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => false }));
 
 import Home from "../../../src/app/page";
+import { REPORT_PRICE_LABEL_KO } from "../../../src/lib/payment/reportProductCatalog";
+import { GYEOL_HOME_PRODUCT_GRID } from "../../../src/lib/product/gyeolProducts";
 
 const productCatalogSource = readFileSync(
   join(process.cwd(), "src/lib/product/gyeolProducts.ts"),
@@ -32,7 +39,7 @@ describe("home page product source", () => {
       "대운 리포트",
       "세운 리포트",
       "궁합 리포트",
-      "1,290원",
+      REPORT_PRICE_LABEL_KO,
       "생성일로부터 90일 온라인 열람",
       "최대 24시간 이내 제공",
       "자동 생성 디지털 리포트",
@@ -72,7 +79,7 @@ describe("home page product source", () => {
       "구매 가능",
       "판매 상품",
       "구매 상태",
-      "1,290원 결제하고 리포트 생성하기",
+      `${REPORT_PRICE_LABEL_KO} 결제하고 리포트 생성하기`,
       "오행팔찌 구매",
       "굿즈 구매",
       "대운 구매",
@@ -115,13 +122,13 @@ describe("home page product source", () => {
     const html = renderToStaticMarkup(Home());
     const cards = html.match(/<article\b[\s\S]*?<\/article>/g) ?? [];
     expect(cards).toHaveLength(6);
-    for (const card of cards) {
-      expect(card.match(/1,290원/g)).toHaveLength(1);
+    cards.forEach((card, index) => {
+      expect(card.split(GYEOL_HOME_PRODUCT_GRID[index].priceLabelKo)).toHaveLength(2);
       expect(card.match(/<a\b/g)).toHaveLength(1);
       expect(card).toMatch(/href="\/report\/new\?product=[a-z-]+"/);
       expect(card).toContain("시작하기");
       expect(card).not.toMatch(/구매 가능|판매 상품|자동 생성 디지털|90일|최대 24시간/);
-    }
+    });
     expect(html.match(/최대 24시간 이내 제공/g)).toHaveLength(1);
     expect(html.indexOf("공통 상품 안내")).toBeGreaterThan(html.lastIndexOf("</article>"));
   });
@@ -141,7 +148,7 @@ describe("home page product source", () => {
 
     expect(hero).toContain("나를 읽는<br/>또 하나의 방식");
     expect(hero).toContain("사주 × MBTI 종합 리포트");
-    expect(hero).toContain("1,290원");
+    expect(hero).toContain(REPORT_PRICE_LABEL_KO);
     expect(hero).toContain("90일 열람");
     expect(hero).toContain('href="/report/new?product=saju-mbti-full"');
     expect(hero).not.toContain(">결리포트<");

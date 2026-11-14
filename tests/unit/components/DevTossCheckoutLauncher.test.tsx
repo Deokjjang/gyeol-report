@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
+import { REPORT_PRICE_KRW, REPORT_PRICE_LABEL_KO } from "../../../src/lib/payment/reportProductCatalog";
 
 import type { DevTossCheckoutInputSnapshot, DevTossCheckoutLauncherRuntime } from "../../../src/components/payment/DevTossCheckoutLauncher";
 
@@ -48,7 +49,7 @@ function createTossRequestDraft(): Record<string, unknown> {
       orderName: "사주×MBTI 종합 리포트",
       amount: {
         currency: "KRW",
-        value: 1290,
+        value: REPORT_PRICE_KRW,
       },
       successUrl: "https://example.com/payments/toss/success",
       failUrl: "https://example.com/payments/toss/fail",
@@ -254,7 +255,7 @@ describe("DevTossCheckoutLauncher", () => {
     expect(html).toContain("MBTI");
     expect(html).toContain("INFP");
     expect(html).toContain("사주×MBTI 종합 리포트");
-    expect(html).toContain("1,290원");
+    expect(html).toContain(REPORT_PRICE_LABEL_KO);
     expect(html).toContain("총 결제금액");
     expect(html).toContain("90일");
     expect(html).toContain("결제 후 온라인 열람");

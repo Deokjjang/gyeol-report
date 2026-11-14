@@ -25,7 +25,7 @@ describe("mock paid complete route source", () => {
       "parsePaymentProviderId",
       "toMockPaymentProviderStorageId",
       "toss",
-      "1290",
+      "const paymentAmount = REPORT_PRICE_KRW",
       "KRW",
       "sharePath",
       "MOCK_PAID_REPORT_INVALID_PAYMENT_METHOD",
