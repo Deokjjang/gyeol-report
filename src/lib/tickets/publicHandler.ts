@@ -1,5 +1,5 @@
 import "server-only";
-import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, TICKET_PRODUCT_CODE, TICKET_PRODUCT_MESSAGE } from "../ops/config";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, salesPausedMessage, TICKET_PRODUCT_CODE, TICKET_PRODUCT_MESSAGE } from "../ops/config";
 import { PROFILE_REQUIRED_CODE, PROFILE_REQUIRED_MESSAGE } from "../account/profile";
 import { NextRequest, NextResponse } from "next/server";
 import { accountSession } from "../account/policy";
@@ -19,6 +19,10 @@ const messages: Record<string, string> = {
   [SALES_CLOSED_CODE]: SALES_CLOSED_MESSAGE, [SALES_PAUSED_CODE]: SALES_PAUSED_MESSAGE,
   [TICKET_PRODUCT_CODE]: TICKET_PRODUCT_MESSAGE,
 };
+async function pausedMessage(): Promise<string> {
+  try { const { readSalesPause, SALES_PAUSE_CACHE_MS } = await import("../ops/salesPause"); return salesPausedMessage((await readSalesPause({ maxAgeMs: SALES_PAUSE_CACHE_MS }))?.reason); }
+  catch { return SALES_PAUSED_MESSAGE; }
+}
 // Only mounted after BOTH server gates. The injectable ports are tests, not an
 // HTTP/env/cookie bypass. No provider, promotion or generation runs in this API.
 export async function handleTicketPublication(request: NextRequest, action: string, auth: AccountPort, store: TicketPublicationStore) {
@@ -58,7 +62,9 @@ export async function handleTicketPublication(request: NextRequest, action: stri
     if ((await auth.currentUser())?.id !== user.id) return json({}, 401);
     if (!result.ok) {
       const code = ["INVALID_INPUT", "REQUEST_CONFLICT", "NOT_FOUND", "NO_USABLE_TICKET", "REFUND_HOLD", SALES_CLOSED_CODE, SALES_PAUSED_CODE, TICKET_PRODUCT_CODE].includes(result.code ?? "") ? result.code! : "STORAGE_UNAVAILABLE";
-      return json({ ok: false, code, message: messages[code] ?? "발행 상태를 확인 중입니다." }, code === "STORAGE_UNAVAILABLE" ? 503 : code === "NOT_FOUND" ? 404 : 409);
+      // W4 Q0: 판매 멈춤 문구는 멈춘 이유대로(막기 판단이 방금 읽은 값을 10초 기억에서 다시 쓴다).
+      const message = code === SALES_PAUSED_CODE ? await pausedMessage() : messages[code];
+      return json({ ok: false, code, message: message ?? "발행 상태를 확인 중입니다." }, code === "STORAGE_UNAVAILABLE" ? 503 : code === "NOT_FOUND" ? 404 : 409);
     }
     const state = result.state;
     if (!state || !messages[state] || !validTicketRequestId(result.redemptionId)) return json({ ok: false, code: "STORAGE_UNAVAILABLE" }, 503);

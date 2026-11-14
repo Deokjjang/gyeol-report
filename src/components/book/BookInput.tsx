@@ -16,7 +16,7 @@ import { interaction } from "../../lib/analytics/client";
 import { checkoutReturnKey, ticketPendingKey } from "./useTicketPublication";
 import { bundleReturnKey } from "../../lib/tickets/shopContract";
 import { AccountChannelOnboarding } from "../account/AccountSession";
-import { FORTUNE_REOPEN_LINE, SALES_PAUSED_MESSAGE, annualProductYear } from "../../lib/ops/config";
+import { FORTUNE_REOPEN_LINE, annualProductYear } from "../../lib/ops/config";
 import { useSalesPaused } from "./useSalesPaused";
 import { EventPopupHost } from "../event/EventPopup";
 
@@ -45,7 +45,7 @@ export function BookInput({ internal, now, initial, authEnabled = internal, tick
   const withPopup = (page: ReactElement) => (popup ? <>{page}{popup}</> : page);
   if (closed.includes(book.productKey)) return withPopup(<SalesClosedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />);
   // W3 P0: 4종 판매 중지(DB 스위치) — 입력·결제 대신 잠시 멈춤 안내. 결제 준비·주문·승인·이용권 API도 같은 스위치로 거절한다.
-  if (paused) return withPopup(<SalesPausedNotice book={book} home={internal ? "/dev/book-flow" : "/"} />);
+  if (paused) return withPopup(<SalesPausedNotice book={book} home={internal ? "/dev/book-flow" : "/"} message={paused} />);
   // Product is the component key supplied by the wrapper below via navigation;
   // drafts are additionally namespaced per product and cannot activate routes.
   return withPopup(<BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} giftEventProducts={giftEventProducts} />);
@@ -63,12 +63,12 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
     </div></section>
   </main>;
 }
-function SalesPausedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
+function SalesPausedNotice({ book, home, message }: { book: typeof BOOKS[number]; home: string; message: string }) {
   return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-paused style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="잠시 멈춤 안내">
       <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>지금은 책 만들기를 잠시 멈췄어요</h1>
-      <p>{SALES_PAUSED_MESSAGE}</p>
+      <p>{message}</p>
       <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
       <p><a href="/account">내 서재 →</a></p>
     </div></section>

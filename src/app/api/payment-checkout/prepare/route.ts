@@ -8,8 +8,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { accountPublicEnabled } from "../../../../lib/account/gate";
 import { isPublicSameOrigin } from "../../../../lib/account/origin";
 import { bookExperiencePublicEnabled } from "../../../../lib/book/publicGate";
-import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE } from "../../../../lib/ops/config";
-import { salesPaused } from "../../../../lib/ops/salesPause";
+import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
+import { salesPauseNotice } from "../../../../lib/ops/salesPause";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
 import { preparePaymentCheckoutSession } from "../../../../lib/payment/paymentCheckoutSessionBoundary";
@@ -369,8 +369,10 @@ export async function POST(request: Request): Promise<NextResponse> {
     return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
   }
   // W3 P0: 4종 판매 중지(DB 스위치) — 결제를 시작하지 않는다. 못 읽으면 판매를 계속한다.
-  if (await salesPaused()) {
-    return createErrorResponse(SALES_PAUSED_CODE, SALES_PAUSED_MESSAGE, 409);
+  // W4 Q0: 문구는 멈춘 이유대로(AI 장애·연결 오류 = 「AI 서버 점검」, 그 밖 = 기존 문구).
+  const pausedNotice = await salesPauseNotice();
+  if (pausedNotice) {
+    return createErrorResponse(SALES_PAUSED_CODE, pausedNotice, 409);
   }
 
   if (!isJsonObject(json.inputSnapshot)) {

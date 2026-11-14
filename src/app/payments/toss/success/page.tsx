@@ -1,7 +1,7 @@
 import { isDirectReportPaymentAmount } from "../../../../lib/payment/reportProductCatalog";
 import { ReportStatusView } from "../../../../components/report/ReportStatusView";
 import { closedProductOrder, confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
-import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
+import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_AI_MESSAGE, SALES_PAUSED_CODE, salesPausedMessage } from "../../../../lib/ops/config";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { redirect } from "next/navigation";
 
@@ -26,7 +26,8 @@ type InitialSuccessState =
   | "payment_failed"
   | "generation_failed"
   | "sales_closed"
-  | "sales_paused";
+  | "sales_paused"
+  | "sales_paused_ai";
 
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
@@ -111,6 +112,14 @@ function createInitialCopy(state: InitialSuccessState): {
   }
 
   // W3 P0: 4종 판매 중지 중인 승인 전 주문 — 토스 승인을 부르지 않아 결제되지 않는다.
+  // W4 Q0: AI 서버 장애·연결 오류로 자동 멈춘 동안(이유 outage·connection).
+  if (state === "sales_paused_ai") {
+    return {
+      title: "AI 서버 점검으로 잠시 멈췄어요.",
+      message: "곧 다시 열게요. 이 주문은 결제를 승인하지 않아 결제되지 않았어요. 이미 결제한 책은 그대로 만들어져요.",
+    };
+  }
+
   if (state === "sales_paused") {
     return {
       title: "지금은 책 만들기를 잠시 멈췄어요.",
@@ -141,7 +150,10 @@ async function confirmAndGenerateReport(input: {
   const result = await confirmPaidReport(input, store,
     (payment) => confirmTossPayment({ ...payment, secretKey: process.env[tossSecretKeyEnv] ?? "" }), orderId => closedProductOrder(store, orderId));
   if (!result.ok && result.code === SALES_CLOSED_CODE) return "sales_closed";
-  if (!result.ok && result.code === SALES_PAUSED_CODE) return "sales_paused";
+  if (!result.ok && result.code === SALES_PAUSED_CODE) {
+    const { readSalesPause, SALES_PAUSE_CACHE_MS } = await import("../../../../lib/ops/salesPause");
+    return salesPausedMessage((await readSalesPause({ maxAgeMs: SALES_PAUSE_CACHE_MS }))?.reason) === SALES_PAUSED_AI_MESSAGE ? "sales_paused_ai" : "sales_paused";
+  }
   if (result.ok && typeof result.reportId === "string") return { redirectReportId: result.reportId, ...(typeof result.receiptUrl === "string" ? { receiptUrl: result.receiptUrl } : {}) };
   if (result.ok && result.pending) return "ready_to_confirm";
   return "generation_failed";
