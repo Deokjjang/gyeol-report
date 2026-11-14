@@ -115,11 +115,23 @@ describe("production paid report runtime boundaries", () => {
 
   it("V4 query/cookie hints cannot replace the default generation or publication contract", async () => {
     mocks.storeCall.mockResolvedValue({ ok: true });
+    expect((await runWorker(authorizedRequest("/api/internal/report-jobs", "mock-cron-secret"))).status).toBe(200);
+    const plain = mocks.runJob.mock.calls[0];
+    mocks.runJob.mockClear();
     const request = new Request("http://localhost/api/internal/report-jobs?reportVersion=v4&mode=shadow", {
       headers: { authorization: "Bearer mock-cron-secret", cookie: "reportVersion=v4; contentVersion=v4", "x-report-version": "v4" },
     });
     expect((await runWorker(request)).status).toBe(200);
-    expect(mocks.runJob.mock.calls[0]).toEqual([{ call: mocks.storeCall }, { enabled: false, reason: "flag_disabled" }]);
+    const hinted = mocks.runJob.mock.calls[0];
+    // 공개 Book 관문(bookExperiencePublicEnabled)은 늘 켜져 있어 runPublicPaidReportJob이 주문 확인 저장소 감싸개·작가 꺼짐 런타임·생성·발행 검사(·v5 훅)를 넘긴다.
+    // 요청의 쿼리·쿠키·헤더 힌트는 이 계약을 바꾸지 못한다: 힌트 없는 호출과 같은 모양.
+    expect(hinted.map((arg: unknown) => typeof arg)).toEqual(plain.map((arg: unknown) => typeof arg));
+    expect(hinted[1]).toEqual({ enabled: false, reason: "flag_disabled" });
+    expect(hinted[2]).toBeTypeOf("function");
+    expect(hinted[3]).toBeTypeOf("function");
+    mocks.storeCall.mockClear();
+    await hinted[0].call("expire");
+    expect(mocks.storeCall).toHaveBeenCalledWith("expire", undefined);
   });
 
   it("protects attention listing and admin retry with REPORT_ADMIN_SECRET", async () => {
