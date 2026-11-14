@@ -17,7 +17,7 @@ import type { Knowledge } from "../knowledge";
 import { allocateChapters, PRODUCT_CHAPTER_RX, RX, rxKindsOf, type RxKind } from "../prescriptions";
 import type { Brief, ChapterBrief, Material, Trait } from "../schema";
 import { splitSentences } from "@/lib/writer/safety/patterns";
-import { AREA6_OF, connect, connectionKey, mbtiCards, myeongriCard, type Connection, type FeatureCard } from "./features";
+import { AREA6_OF, connectAll, connectionKey, mbtiCards, myeongriCard, type Connection, type FeatureCard } from "./features";
 
 export const CARDS_VERSION = "cards-v1" as const;
 /** 같은 차원 연결은 책에서 이 횟수까지. */
@@ -208,25 +208,23 @@ export function designCards(input: DesignInput): BookDesign {
       if (!pair) {
         const mc = mbtiOf.get(x.person) ?? []; if (!mc.length) continue;
         const t = x.trait, target = t.fusion ? mc.find(c => c.key === t.fusion!.target) ?? mc[0] : mc[0];
-        const conn = t.fusion ? connect(x.card, target, k, t.fusion.source === "fusion" ? { rule: ruleOf(t), kind: t.fusion.kind, why: t.fusion.why } : t.fusion.source === "mbtiLink" ? { rule: null, kind: t.fusion.kind, why: t.fusion.why, source: "mbtiLink" } : { rule: null })
-          : connect(x.card, mc[0], k, { ruleOk: x.person.ruleOk });
-        if (conn) cands.push({ slot, conn, score: bonus + rank(conn) });
+        const conns = t.fusion ? connectAll(x.card, target, k, t.fusion.source === "fusion" ? { rule: ruleOf(t), kind: t.fusion.kind, why: t.fusion.why } : t.fusion.source === "mbtiLink" ? { rule: null, kind: t.fusion.kind, why: t.fusion.why, source: "mbtiLink" } : { rule: null })
+          : connectAll(x.card, mc[0], k, { ruleOk: x.person.ruleOk });
+        conns.forEach((conn, i) => cands.push({ slot, conn, score: bonus + rank(conn) - i * 0.1 }));
       } else {
         // 궁합: 두 사람 카드끼리(상대의 MBTI 유형 카드 → 상대의 명리 카드). 방향은 카드 주인 → 상대.
         const other = people.find(p => p !== x.person); if (!other) continue;
         const targets = [...(mbtiOf.get(other) ?? []).slice(0, 1), ...[...byTrait.values()].filter(y => y.person === other && !y.drop && y.trait.chapters.length).map(y => y.card)];
         for (const target of targets) {
           // Fusion 규칙은 한 사람 안의 명리 × MBTI라 두 사람 사이에는 쓰지 않는다(차원 양끝 설명으로 잇는다).
-          const conn = connect(x.card, target, k, { rule: null });
-          if (!conn) continue;
           const d = rel!.score.direction[x.person.owner === "a" ? "aToB" : "bToA"];
           const [from, to] = x.person.owner === "a" ? [rel!.a.callName, rel!.b.callName] : [rel!.b.callName, rel!.a.callName];
-          cands.push({ slot, conn: { ...conn, dir: `${from}→${to}: ${d.tenGod}(${d.role})` }, score: bonus + rank(conn) + (target.system === "mbti" ? 0.5 : 0) });
+          connectAll(x.card, target, k, { rule: null }).forEach((conn, i) => cands.push({ slot, conn: { ...conn, dir: `${from}→${to}: ${d.tenGod}(${d.role})` }, score: bonus + rank(conn) + (target.system === "mbti" ? 0.5 : 0) - i * 0.1 }));
         }
       }
     }
     // 같은 연결(두 카드 + 차원)은 책에서 한 번, 같은 차원은 두 번까지, 같은 MBTI 쪽(상대 카드) + 같은 차원도 한 번(계산 이유 문장이 같아진다).
-    const sideKey = (c: Connection) => `${cardById.get(c.b)?.key ?? c.b}|${c.tag}`;
+    const sideKey = (c: Connection) => (c.source === "computed" ? `${cardById.get(c.b)?.key ?? c.b}|${c.tag}` : `-${connectionKey(c, cardById)}`);
     const best = cands.filter(c => !usedLinks.has(connectionKey(c.conn, cardById)) && !usedLinks.has(sideKey(c.conn)) && (dimUse.get(c.conn.tag) ?? 0) < MAX_DIM_LINKS)
       .sort((a, b) => b.score - a.score || a.slot.si - b.slot.si || a.conn.a.localeCompare(b.conn.a) || a.conn.b.localeCompare(b.conn.b))[0];
     if (!best) continue;

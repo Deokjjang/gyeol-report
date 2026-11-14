@@ -167,5 +167,17 @@ export function connect(a: FeatureCard, b: FeatureCard, k: Knowledge, opts: Conn
   return null;
 }
 
+/** 두 카드의 연결 후보 전부: connect가 고른 것(Fusion 우선) + 함께 가진 다른 차원의 계산 연결(같은 차원·같은 이유가 책에서 겹칠 때 고를 다른 차원). */
+export function connectAll(a: FeatureCard, b: FeatureCard, k: Knowledge, opts: ConnectOpts = {}): Connection[] {
+  const first = connect(a, b, k, opts), out = first ? [first] : [];
+  const nameOf = (dim: string) => k.ontology.dimensions.find(d => d.id === dim)?.name ?? dim;
+  for (const s of sharedDims(a, b)) {
+    if (out.some(c => c.tag === s.dim)) continue;
+    const kind = kindOf(s.va, s.vb);
+    if (kind) out.push({ kind, a: a.id, b: b.id, tag: s.dim, tagName: nameOf(s.dim), why: computedWhy(kind, s.dim, a, b, s.va, s.vb, k), source: "computed" });
+  }
+  return out;
+}
+
 /** 연결의 같음 판정 열쇠(책에서 같은 연결 두 번 금지): 두 카드 key + 차원. */
 export const connectionKey = (c: Connection, cards: ReadonlyMap<string, FeatureCard>) => `${cards.get(c.a)?.key ?? c.a}|${cards.get(c.b)?.key ?? c.b}|${c.tag}`;
