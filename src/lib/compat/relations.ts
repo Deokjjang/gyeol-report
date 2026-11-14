@@ -38,6 +38,10 @@ const PLACE: Readonly<Record<ChartPosition, number>> = { day: 3, month: 2, year:
 const HAP_KINDS: readonly RelationKind[] = ["STEM_HAP", "YUKHAP", "SAMHAP", "BANGHAP"];
 const sortKey = (s: string) => [...s].sort().join("");
 
+/** 짧은 관계 이름(천간합·육합·반합·충·천간충·삼형·형·파·해·원진). 정답지 개수 대조(factsheet/check fact_count)도 이 이름으로 센다. */
+export function relationName(kind: RelationKind, completeness: PairRelation["completeness"], subtype?: string): string { return nameOf(kind, completeness, subtype); }
+/** 합 묶음(천간합·육합·삼합·방합)인가 — 나머지는 형·충·파·해(마찰). */
+export const isHapKind = (kind: RelationKind): boolean => HAP_KINDS.includes(kind);
 function nameOf(kind: RelationKind, completeness: PairRelation["completeness"], subtype?: string): string {
   if (kind === "HYEONG") return subtype === "삼형" && completeness === "full" ? "삼형" : "형";
   if (kind === "SAMHAP") return completeness === "half" ? "반합" : "삼합";

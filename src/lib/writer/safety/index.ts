@@ -42,7 +42,8 @@ export type P6cMetric = { readonly tidy: { readonly prefix: number; readonly mbt
   readonly noticesRemoved?: readonly string[]; readonly noticesKept?: readonly string[];
   /** 최종판 1-7: 핵심 이미지(표지 = 1장 첫 소제목)·피할 이미지와 겹친 명사·표지 수리 호출 수. */
   readonly image?: { readonly line: string; readonly overlap: readonly string[]; readonly repairCalls: number } };
-export type SafetyMetrics = { readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric; readonly p6c?: P6cMetric };
+/** info(W3 P3 7절): 정보량 지표(info.ts) — 발행 마지막 본문(렌더 뒤)에서 센다. */
+export type SafetyMetrics = { readonly info?: import("./info").InfoMetric; readonly briefCopy: BriefCopyMetric; readonly connectors: readonly ConnectorRepeat[]; readonly merged: number; readonly backrefFixed: number; readonly props?: Readonly<Record<string, number>>; readonly experience?: { readonly replaced: number; readonly deleted: number }; readonly traitUse?: TraitUseMetric; readonly infoRepeats?: InfoRepeatMetric; readonly p6b?: P6bMetric; readonly p6c?: P6cMetric };
 export type SafetyReport = { readonly deletions: readonly Deletion[]; readonly warnings: readonly StyleWarning[]; readonly replacements?: readonly Replacement[]; readonly metrics?: SafetyMetrics };
 /** 같은 소품이 본문에 나와도 되는 장 수(P3.6 A1). */
 export const MAX_PROP_CHAPTERS = 2;

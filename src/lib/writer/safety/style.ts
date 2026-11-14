@@ -9,7 +9,7 @@ import { ORPHAN_CONNECTIVE } from "./orphan";
 import { splitSentences } from "./patterns";
 import { TERMS } from "./terms";
 
-export type StyleRule = "chapter_phrase_repeat" | "start_repeat" | "connective_excess" | "advice_repeat" | "stage_bare";
+export type StyleRule = "chapter_phrase_repeat" | "start_repeat" | "connective_excess" | "advice_repeat" | "stage_bare" | "term_unexplained";
 export type StyleFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: StyleRule; readonly sentence: string; readonly detail?: string };
 
 const stripMarks = (s: string) => s.replace(/[⟪⟫]/g, "");
@@ -70,6 +70,8 @@ export function styleFlags(chapters: readonly FinalChapter[]): StyleFlag[] {
     const k = (fam.get(f) ?? 0) + 1; fam.set(f, k);
     if (k > ADVICE_MAX) out.push({ chapter: x.c, section: x.s, paragraph: x.p, rule: "advice_repeat", sentence: x.text, detail: f });
   }
+  // ⑥ W3 P3 4절: 용어가 책에서 처음 나왔는데 쉬운 뜻이 없다(예전에는 styleScore 지표만) → 수리로 뜻을 붙인다(문체 규칙, 지우지 않는다).
+  for (const t of unexplainedTerms(all)) out.push({ chapter: t.c, section: t.s, paragraph: t.p, rule: "term_unexplained", sentence: t.text, detail: t.term });
   return out;
 }
 
@@ -82,12 +84,15 @@ const ADVICE_FAMILY: readonly [RegExp, string][] = [
   [/한도|상한/, "지출 한도"], [/견적|비교해 보|두 곳 이상/, "견적 비교"], [/고맙|감사/, "고마움 말하기"], [/거절|안 된다고/, "거절 연습"], [/산책|걷기|걸어/, "걷기"], [/통장/, "통장 나누기"],
 ];
 export const ADVICE_MAX = 2;
+/** 행동 조언 문장의 계열(조언 끝맺음이 아니거나 계열이 없으면 null). 정보량 지표(info.ts rxRepeat)도 쓴다. */
+export const adviceFamilyOf = (sentence: string): string | null => (ADVICE_END.test(sentence) ? ADVICE_FAMILY.find(([re]) => re.test(sentence))?.[1] ?? null : null);
 
 export const STYLE_HINT: Readonly<Record<StyleRule, string>> = {
   chapter_phrase_repeat: "같은 장 안에서 같은 구절을 세 번째로 썼다 → 이번 문장은 다른 말로, 새 정보(장면·근거)를 붙여 다시 쓴다",
   start_repeat: "같은 말로 시작하는 문장이 세 번 이어졌다 → 이 문장의 첫머리를 다른 말로 바꾼다(뜻은 그대로)",
   connective_excess: "같은 연결어(그래서·하지만 등)로 여는 문장이 이 장에 너무 많다 → 연결어를 빼거나 다른 이음으로 바꾼다",
   advice_repeat: "같은 계열의 행동 조언을 책에서 세 번째로 썼다 → 이 장 재료에 맞는 다른 행동으로 바꾸거나, 조언 없이 장면·이해로 마무리한다",
+  term_unexplained: "명리 용어(detail)가 책에서 처음 나왔는데 쉬운 뜻이 없다 → 같은 문장 안에 쉬운 말 뜻을 붙인다(예: '편인(혼자 깊이 파고들어 배우는 힘)'), 뜻 공식('~은 명리학에서')은 쓰지 않는다",
   stage_bare: "십이운성 한 글자 이름을 맨몸으로 썼다 → 「사(死) 단계」처럼 한자와 '단계'를 붙이고 쉬운 뜻을 바로 붙인다(땅 글자 자체가 단계인 것처럼 쓰지 않는다)",
 };
 
@@ -107,21 +112,24 @@ export type StyleScore = {
 
 const pct = (a: number, b: number) => (b ? Math.round((a / b) * 1000) / 10 : 0);
 /** 용어 첫 등장 뒤 쉬운 뜻: 괄호 안(쉬운 말(용어)·용어(쉬운 말)), 같은 문장의 「뜻·말해요·기운·힘」, 또는 다음 문장이 뜻을 푼다. */
-function termViolations(chapters: readonly FinalChapter[]): number {
-  const seen = new Set<string>(); let bad = 0;
-  const sens = sentencesOf(chapters).map(x => x.text);
-  sens.forEach((s, i) => {
-    for (const t of TERMS) {
-      if (seen.has(t.term) || t.term.length < 2) continue;
-      const at = s.search(new RegExp(`(?<![가-힣])${t.term}(?=[은는이가을를의에과와도로만(]|[^가-힣]|$)`)); if (at < 0) continue;
+const TERM_RES = TERMS.filter(t => t.term.length >= 2).map(t => ({ t, re: new RegExp(`(?<![가-힣])${t.term}(?=[은는이가을를의에과와도로만(]|[^가-힣]|$)`) }));
+/** 책에서 처음 나온 용어 가운데 쉬운 뜻이 없는 것(문장 자리·용어). */
+function unexplainedTerms(sens: readonly Sen[]): (Sen & { term: string })[] {
+  const seen = new Set<string>(), out: (Sen & { term: string })[] = [];
+  sens.forEach((x, i) => {
+    const s = x.text;
+    for (const { t, re } of TERM_RES) {
+      if (seen.has(t.term)) continue;
+      const at = s.search(re); if (at < 0) continue;
       seen.add(t.term);
-      const near = `${s} ${sens[i + 1] ?? ""}`;
+      const near = `${s} ${sens[i + 1]?.text ?? ""}`;
       const inParen = s.lastIndexOf("(", at) > s.lastIndexOf(")", at) || /^\s*\(/.test(s.slice(at + t.term.length).replace(/^\([一-鿿]+\)/, "").slice(0, 2));
-      if (!inParen && !/뜻|말해요|말합니다|가리켜|기운(이에요|입니다|이라)|힘(이에요|입니다|이라)|이라는|라는/.test(near) && !(t.easy && near.includes(t.easy.slice(0, 4)))) bad++;
+      if (!inParen && !/뜻|말해요|말합니다|가리켜|기운(이에요|입니다|이라)|힘(이에요|입니다|이라)|이라는|라는/.test(near) && !(t.easy && near.includes(t.easy.slice(0, 4)))) out.push({ ...x, term: t.term });
     }
   });
-  return bad;
+  return out;
 }
+function termViolations(chapters: readonly FinalChapter[]): number { return unexplainedTerms(sentencesOf(chapters)).length; }
 
 /** 책 한 권 문체 점수(결정론). banned: 사실·금지 규칙 깃발 수(부르는 쪽이 lint에서 센 값). */
 export function styleScore(chapters: readonly FinalChapter[], banned = 0): StyleScore {

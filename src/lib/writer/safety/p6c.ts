@@ -17,6 +17,7 @@ import * as F from "./final2";
 import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
 import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style";
+import { exposureOf } from "./exposure";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -31,7 +32,9 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // 최종판3 3: 정답지 대조(사실·뜻·관계·강약·간지·개수와 세기·공통 특징) · 렌더(중복 치환·내부 라벨) · 종합 시점 · 입력 밖 직업 상황
   | FactRule | "phrase_repeat"
   // AM 1-1 ②·1-4: 장 안 같은 구절 · 같은 문장 시작 3연속 · 같은 연결어 과다(문체 규칙, style.ts)
-  | StyleRule | "fn_role";
+  | StyleRule | "fn_role"
+  // W3 P3 4절: 판정 등급어·생성 규칙 문구 노출(exposure.ts)
+  | "grade_leak" | "rule_leak";
 export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -42,7 +45,8 @@ export type LintFlag = { readonly chapter: number; readonly section: number; rea
 export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "school_scene", "presumed_partner", "past_assertion", "yinyang_claim", "element_claim", "dayun_claim", "star_claim", "ten_god_direction", "marriage_talk",
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
-  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role"]);
+  "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role",
+  "grade_leak", "rule_leak", "fact_count"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -119,6 +123,9 @@ const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|�
 export const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
   fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
+  grade_leak: "엔진 판정 등급 말(신약·신강·중화·오행 과다·'세기는 보통'·'힘은 약입니다')을 그대로 썼다 → 등급 이름 없이 뜻으로만 쓴다(예: '혼자 버티는 힘이 여린 편이라 도움을 빌리면 수월해요', '흙 기운이 많은 편', '값을 받는 힘이 고르게 있는 편')",
+  rule_leak: "책을 만든 규칙·입력 상태·날짜 기준을 독자에게 말했다('시간 미상', '입력된 게 없으니', '가정으로만', '…를 기준으로 썼어요') → 그 말을 빼고 이 사람 이야기만 쓴다(가정이 필요하면 '~하게 된다면' 한 마디로)",
+  fact_count: "합·충·형·해·관계의 개수를 정답지와 다르게 말했다 → detail의 개수로 고치거나 개수 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
   fact_term: "정답지와 다른 신살·귀인·운성(이름·자리·주인) → detail의 맞는 사실로 고치거나 그 주장을 뺀다",
   fact_relation: "정답지와 다른 관계(없는 글자·글자 수·완성도·건드리지 않는 해) → detail의 맞는 관계로 고친다",
@@ -165,7 +172,7 @@ export const HINT: Readonly<Record<P6cRule, string>> = {
   pair_both: "'둘 다 ~'가 한 사람에게만 맞는다 → 두 사람 각각의 엔진 값대로 나눠 쓴다",
   self_correction: "괄호 안에 자기 정정('~이 아니라')이 드러났다 → 맞는 이름 하나만",
   chapter_ref: "장 번호로 앞 장을 가리켰다('7장에서') → 번호 없이 그 내용을 짧게 다시 부른다",
-  time_deictic: "읽는 때를 못 박는 말('지금·이번 달·올해 남은')이다 → 기준일(이 책의 기준 날짜)·그 해·그 달 이름으로",
+  time_deictic: "읽는 때를 못 박는 말('지금·이번 달·올해 남은')이다 → 그 해·그 달 이름(예: '2026년 병오년', '경인월')으로 쓰거나, 행동 제안은 '앞으로 한 달'로",
   calendar_month: "세운 본문에 달력월 이름('1월·2월')을 썼다 → 간지월 이름(경인월 등)으로",
   closing_repeat: "여러 달이 같은 마무리 문형으로 끝난다 → 이 달만의 끝맺음으로",
   negative_claim: "엔진이 관계(합·충·형·해 등)를 짚었는데 '건드리지 않는다'고 했다 → 관계 표시(marks) 그대로",
@@ -239,6 +246,8 @@ function sentenceRules(s: string, n: number, ctx: LintCtx, heading = false): P6c
   if (ctx.investChapters?.has(n) && D.INVEST_DIRECTIVE.test(s)) return "invest_directive";
   // P6e 1: 독자에게 쓰는 법을 시키는 꼴("~쓰지 마세요")만 사실·금지(guide_copy). 지침 글과 겹치는 창은 문체(guide_echo, 수리만, 빼지 않는다).
   if (E.metaInstruction(s) && !E.isNoticeSentence(s)) return "guide_copy";
+  // W3 P3 4절: 판정 등급어·생성 규칙 문구는 어디서나(소제목·카드 줄 포함) 사실·금지 규칙(독자에게 시키는 꼴은 위 guide_copy가 먼저).
+  { const ex = exposureOf(s); if (ex) return ex.kind === "grade" ? "grade_leak" : "rule_leak"; }
   if (ctx.owners && E.featureOwnerMismatch(s, ctx.owners)) return "feature_owner";
   if (ctx.positions && E.pillarClaims(s, ctx.positions)) return "pillar_claim";
   if (ctx.positionsBy) for (const p of ctx.positionsBy) if (s.includes(p.name) && !ctx.positionsBy.some(o => o !== p && s.includes(o.name)) && E.pillarClaims(s, p.positions)) return "pillar_claim";
@@ -431,7 +440,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
           { const fx = ctx.fact ? factCheck(sen, ctx.fact, stripMarks(p), c.n, /^\d{4}(-M\d{2})?$/.test(s.heading)) : null; if (fx) { flag({ ...at, rule: fx.rule, detail: fx.detail }); continue; } }
-          const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : {}) }); continue; }
+          const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : r === "grade_leak" || r === "rule_leak" ? { detail: exposureOf(sen)!.text } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
           // AM 1부 판독: 주기능·부기능 오기(「ISFJ는 마음 살피기가 주기능이라」).

@@ -10,6 +10,10 @@ import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun
 import type { FinalChapter } from "./safety";
 import { RURAL_PROP, splitSentences } from "./safety/patterns";
 import { HARD_RULES, type LintFlag } from "./safety/p6c";
+import { emptyPreview } from "./safety/p6d";
+import { factTokens, type FactKind } from "./chunked/accept";
+import { relationName } from "@/lib/compat/relations";
+import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
@@ -157,7 +161,9 @@ export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactS
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
 /** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|이 |그 )/;
+const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|그렇다면|그럼(?![가-힣])|그때마다|이 조합|이 두|이 |그 )/;
+/** W3 P3 6절(AM cut.ts ASKS 이식): 답이 뒤따라야 서는 수사 물음(「…낯설죠?」「…일까요?」). 답 문장을 지우면 물음도 함께 지운다. 물음표 없는 「…나요.」는 서술이다. */
+const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
 /**
  * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
  * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
@@ -221,6 +227,72 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), reverted };
 }
+/**
+ * W3 P3 6절 — 수리 뒤 결정론 재검(호출 0). revertWorse·revertRepairSideEffects 다음에 돈다. 수리 문장이
+ *  ① 책 안 다른 문장(이웃 문단·다른 소제목·다른 장)과 같거나 거의 같으면(정규화 같음 또는 두 글자 묶음 자카드 ≥ 0.8, 14자 이상) 원문으로 되돌린다(같은 문단은 위 repair_duplicate).
+ *  ② 원문의 근거 낱말(간지·십성·관계·신살 이름·대운·숫자, AM accept.ts factTokens)을 잃었으면 되돌린다. 그 문장의 깃발 규칙이 바로 그 사실을 고치라는 것이면 그 종류는 봐준다.
+ *  ③ 예고만 남았으면(받는 내용이 없는 「이런 변화가 있을 거예요」「다음 두 가지를 볼게요」) 되돌린다.
+ * 되돌린 원문에 HARD 깃발이 남아 있으면 뒤의 deleteFlagged가 지운다.
+ */
+/** 깃발 규칙 → 수리가 바꿔도 되는 사실 종류(그 깃발이 바로 그 사실을 고치라는 것일 때만). all = 모든 종류(안전망 금지 규칙: 시주·내부 용어 등은 그 낱말을 빼는 게 수리다). */
+const REPAIR_FACT_EXEMPT: Readonly<Record<string, readonly FactKind[] | "all">> = {
+  safety: "all", label_leak: "all", rule_leak: "all", input_outside: "all", guide_copy: "all", glyph_list: ["ganji", "rel"], pillar_claim: ["tg", "ganji"],
+  fact_relation: ["rel"], fact_term: ["rel", "tg"], fact_ganji: ["ganji", "dayun", "num", "month"], fact_dayun: ["dayun", "num", "ganji"], dayun_claim: ["dayun", "num", "ganji"], dayun_year: ["dayun", "num", "ganji"],
+  fact_meaning: ["tg"], fact_count: ["num", "rel"], fact_mix: ["num"], count_mismatch: ["num"], ten_god_direction: ["tg"], feature_owner: ["rel"], common_split: ["rel"], group_claim: ["tg"], element_count: ["num"],
+  time_fixed: ["num", "month", "ganji"], time_deictic: ["num", "month"], calendar_month: ["month"], intensity_claim: ["num"], negative_claim: ["rel"], mbti_misattr: [], fn_role: [],
+};
+/** 원문이 잃은 근거 낱말(봐줄 종류 빼고). names: 관계 이름·신살 이름·기둥 간지(한글)처럼 2글자 이상 낱말. */
+export function lostFactTokens(before: string, after: string, names: readonly string[], exempt: ReadonlySet<FactKind> | "all" = new Set()): string[] {
+  if (exempt === "all" || !after) return [];
+  const a = factTokens(before, names), b = factTokens(after, names), out: string[] = [];
+  for (const k of Object.keys(a) as FactKind[]) if (!exempt.has(k)) for (const v of a[k]) if (!b[k].has(v) && !after.includes(v)) out.push(`${k}:${v}`);
+  return out;
+}
+const PREVIEW_ONLY = /(다음|아래|이런|이렇게|몇 가지|두 가지|세 가지|네 가지|한 가지)[^.?!]{0,18}(살펴볼게요|볼게요|정리해 볼게요|말씀드릴게요|이야기해 볼게요|짚어 볼게요|알려 드릴게요|소개할게요)[.!]?$|[:：]$/;
+const isEmptyPreview = (sen: string, next: string | undefined) => emptyPreview(sen, next) || (PREVIEW_ONLY.test(sen.trim()) && !next);
+/** flags: 수리 전 검사 깃발(봐줄 사실 종류를 정한다), names: 근거 낱말(관계·신살 이름·기둥 간지). */
+export type RecheckCtx = { readonly flags: readonly LintFlag[]; readonly names: readonly string[] };
+/** 정답지의 근거 낱말(관계 「축미충」「자축 육합」·관계 이름·신살 이름·기둥 간지 한글). */
+export function factNamesOf(sheet: FactSheet): string[] {
+  const out = new Set<string>();
+  const rels = [...sheet.people.flatMap(p => [...p.relations, ...p.stemClashes]), ...(sheet.pair ? [...sheet.pair.relations, ...sheet.pair.stemClashes] : [])];
+  for (const r of rels) { const n = relationName(r.kind as never, r.completeness as never, r.subtype); out.add(`${r.keyKo}${n}`); out.add(`${r.keyKo} ${n}`); if (n.length >= 2) out.add(n); }
+  for (const p of sheet.people) { for (const x of p.shinsal) { out.add(x.name); if (/살$/.test(x.name) && x.name.length >= 3) out.add(x.name.slice(0, -1)); } for (const pl of Object.values(p.pillars)) if (pl) out.add(pl.ganjiKo); }
+  return [...out].filter(x => x.length >= 2);
+}
+export function revertRepairRegressions(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: RecheckCtx): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  const all = () => out.flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => splitSentences(p).map((t, ti) => ({ at: `${c.n}.${si}.${pi}`, ti, t: t.replace(/[⟪⟫]/g, "") })))));
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after || !a.before) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(x => norm(x).includes(key));
+    if (i < 0) continue;
+    const here = ss[i].replace(/[⟪⟫]/g, "");
+    let rule = "", detail = "";
+    // ① 책 안 같은 문장(같은 문단은 revertRepairSideEffects가 이미 본다).
+    const dup = all().find(x => !(x.at === a.at) && sameSentence(here, x.t));
+    if (dup) { rule = "repair_duplicate_book"; detail = dup.at; }
+    // ② 근거 낱말 손실.
+    if (!rule) {
+      const rules = [...new Set(ctx.flags.filter(f => f.sentence && `${f.chapter}.${f.section}.${f.paragraph}` === a.at && (norm(f.sentence) === norm(a.before) || norm(a.before).includes(norm(f.sentence).slice(0, 24)) || norm(f.sentence).includes(norm(a.before).slice(0, 24)))).map(f => f.rule as string))];
+      const ex = rules.some(r => REPAIR_FACT_EXEMPT[r] === "all") ? "all" as const : new Set<FactKind>([...rules.flatMap(r => { const e = REPAIR_FACT_EXEMPT[r]; return e && e !== "all" ? e : []; }), ...(a.source.includes("review") ? ["num", "month"] as FactKind[] : [])]);
+      const lost = lostFactTokens(a.before, here, ctx.names, ex);
+      if (lost.length) { rule = "repair_fact_lost"; detail = lost.join(","); }
+    }
+    // ③ 예고만 남음.
+    if (!rule && isEmptyPreview(here, ss[i + 1]?.replace(/[⟪⟫]/g, "")) && !isEmptyPreview(a.before, ss[i + 1]?.replace(/[⟪⟫]/g, ""))) rule = "repair_empty_preview";
+    if (!rule) continue;
+    const marked = /⟪/.test(ss[i]);
+    ss[i] = marked ? `⟪${a.before.replace(/[⟪⟫]/g, "")}⟫` : a.before;
+    (sec.paragraphs as string[])[pn] = ss.join(" ");
+    reverted.push({ at: a.at, after: a.after, before: a.before, rule: detail ? `${rule}:${detail}` : rule });
+  }
+  return { chapters: out, reverted };
+}
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {
@@ -241,8 +313,12 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
     const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && /셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
-    const rest = orphan ? rest0.filter((_, j) => j !== i) : rest0;
+    const rest1b = orphan ? rest0.filter((_, j) => j !== i) : rest0;
     if (orphan) deleted.push({ at, sentence: rest0[i], rule: `${f.rule}:orphan_summary` });
+    // W3 P3 6절(AM cut.ts ASKS): 지운 문장이 바로 앞 수사 물음의 답이었으면 물음도 뺀다(예고만 남은 물음). 문단이나 소제목에 다른 문장이 남을 때만.
+    const asks = i > 0 && ASKS.test(ss[i - 1].replace(/[⟪⟫]/g, "").trim()) && !/[⟪⟫]/.test(ss[i - 1]) && (rest1b.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const rest = asks ? rest1b.filter((_, j) => j !== i - 1) : rest1b;
+    if (asks) deleted.push({ at, sentence: ss[i - 1].replace(/[⟪⟫]/g, ""), rule: `${f.rule}:question` });
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
     deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });

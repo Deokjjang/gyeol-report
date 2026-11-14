@@ -37,7 +37,7 @@ import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
@@ -47,6 +47,7 @@ import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } fro
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
 import { imageClash } from "./safety/imageClash";
+import { infoDictOf, infoMetrics } from "./safety/info";
 import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/brief/imageLedger";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
@@ -120,6 +121,8 @@ export function worstUsd(model: string, inputChars: number, maxOut: number): num
 export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep" | "budgetMs" | "apiKey" | "fetchImpl" | "maxOutputTokens" | "cache" | "costCapUsd" | "cacheSystem" | "startStage" | "exhaustedMaxTokens">> & {
   /** 최종판3 5: 검수 모델(없으면 reviewModelOf). testRun: 시험 생성 책(고객 원장에서 뺀다). */
   readonly reviewModel?: string; readonly testRun?: boolean;
+  /** W3 P3 6절: 검수 판(기본 review-v4). review-v6-card이면 설계 카드 지침 + reviewDesignSummary(카드 렌더러가 만든 절마다 한 줄 요약)를 쓴다. 리드 재측정 전까지 운영은 넣지 않는다. */
+  readonly reviewVersion?: import("./review").ReviewVersion; readonly reviewDesignSummary?: string;
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
   readonly replay?: boolean;
   /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
@@ -372,6 +375,8 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (MYEONGRI_PREFIX.test(v) || /일주(예요|입니다|이에요)|(입니다|이에요|예요|해요)[.!]?$/.test(v)) return { reason: "설명문", level: "hard" };
   // 연차·경력 햇수는 입력에 없다(P6c r1·r2: 문체 예시의 "영업 4년 차"를 따라 "서비스 기획 7년 차"를 지어냈다).
   if (/\d+ ?년 ?(차|째)|경력 \d+/.test(v)) return { reason: "연차", level: "hard" };
+  // W3 P3 6절(rw2 L1 「사 년째」를 수리가 표지로 옮김 · F7 표지 끝 「경인」): 한글 숫자 연차, 입력과 다른 나이, 이 사람 기둥·올해·지금 대운에 없는 간지.
+  { const w = coverNumberIssue(v, brief); if (w) return { reason: w, level: "hard" }; }
   { const j = brief.person.facts.job, w = !brief.compatibility && /^(employee|freelancer|self_employed|business_owner)$/.test(j.status) ? seniorityHit(v, `${j.detail ?? ""} ${j.status}`) : null; if (w) return { reason: `연차(${w}) — 입력에 없는 연차·나이 말 없이`, level: "hard" }; }
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
@@ -392,6 +397,18 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   const am = brief.product === "annual_fortune" || brief.product === "major_fortune";
   if (am && /(?<![가-힣])(그림|이야기|모습)$|[가-힣]의 (그림|해|한 해|10년|시간|이야기|시기|모습)$/.test(v)) return { reason: "채움말(「…의 그림」 「…의 해」) — 그 사람의 그림 자체로", level: "length" };
   if (n < (am ? 12 : 16) || n > 26) return { reason: `길이 ${n}자(공백 뺌, ${am ? 12 : 16}~26자)`, level: "length" };
+  return null;
+}
+/** 표지 숫자·간지 대조(W3 P3 6절): 한글 숫자 연차(「사 년째」), 입력 나이와 다른 「N살·N세」, 이 사람 기둥·올해·지금 대운에 없는 간지 이름. */
+export function coverNumberIssue(v: string, brief: Brief): string | null {
+  const y = v.match(/(?<![가-힣])(일|이|삼|사|오|육|칠|팔|구|십|한|두|세|네|다섯|여섯|일곱|여덟|아홉|열) ?년 ?(차|째)/); if (y) return `연차(${y[0]}) — 입력에 없는 연차`;
+  const age = v.match(/(\d{1,3}) ?(살|세)(?![가-힣])/); if (age && Number(age[1]) !== brief.person.age) return `나이(${age[0]}) — 입력 나이 ${brief.person.age}와 다름`;
+  if (brief.compatibility) return null;
+  const own = new Set([...Object.values(brief.chart.pillars).flatMap(g => (g ? [g.hangul] : [])), brief.chart.thisYear.ganji.hangul, ...(brief.chart.currentDayun ? [brief.chart.currentDayun.ganji.hangul] : [])]);
+  for (const m of v.matchAll(/(?<![가-힣])([갑을병정무기경신임계][자축인묘진사오미신유술해])(?=년|월|일주|일|대운|의 |\s|$|[,.])/g)) {
+    const g = m[1], si = "갑을병정무기경신임계".indexOf(g[0]), bi = "자축인묘진사오미신유술해".indexOf(g[1]);
+    if (si % 2 === bi % 2 && !own.has(g)) return `간지(${g}) — 이 사람 기둥·올해·지금 대운에 없는 간지`;
+  }
   return null;
 }
 /**
@@ -486,13 +503,14 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const flags = lintBook(chapters, lctx);
   const canCall = Boolean(run?.writer && !run.stale && (live || deps.replay));
   const capLeft = () => deps.costCapUsd === undefined ? Infinity : deps.costCapUsd - (run?.costUsd ?? 0);
-  const review: Record<string, unknown> = { version: REVIEW_VERSION, model: null, calls: 0, kept: [], direct: [], dropped: [], skipped: null };
+  const reviewVariant = { ...(deps.reviewVersion ? { version: deps.reviewVersion } : {}), ...(deps.reviewDesignSummary ? { reviewDesignSummary: deps.reviewDesignSummary } : {}) };
+  const review: Record<string, unknown> = { version: deps.reviewVersion ?? REVIEW_VERSION, model: null, calls: 0, kept: [], direct: [], dropped: [], skipped: null };
   // 검수 1회(정해진 7범주 JSON, 안전장치). 실패·형식 오류·예산 초과면 검수만 건너뛴다(발행은 막지 않는다).
   let issues: ReviewIssue[] = [];
   const priorLines = priorSummaryOf(a.prior?.sentences ?? [], (a.prior?.covers ?? []).map(c => `(이전 책 표지) ${c}`));
-  const rpBase = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines });
+  const rpBase = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, ...reviewVariant });
   const flagged = flags.map(f => f.sentence).filter(Boolean);
-  const rp = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, machineFlagged: rpBase.numbered.filter(x => flagged.some(s => s.includes(x.text) || x.text.includes(s))).map(x => x.n) });
+  const rp = reviewPrompt({ brief, sheet, k, chapters, cover: image, prior: priorLines, ...reviewVariant, machineFlagged: rpBase.numbered.filter(x => flagged.some(s => s.includes(x.text) || x.text.includes(s))).map(x => x.n) });
   const reviewModel = deps.reviewModel ?? reviewModelOf();
   const repairReserve = run?.writer ? worstUsd(run.writer.model, 12_000, repair3MaxTokens(6_000, REPAIR3_MAX_ITEMS, run.writer.model)) : 0;
   if (!canCall) review.skipped = "no_writer";
@@ -515,7 +533,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     } catch { review.skipped = "call_failed"; }
   }
   // 수리 1회(작가 모델): 결정론 깃발 + 검수 지적 + 표지 문제를 문장 단위로 한 번에. 예산이 모자라면 건너뛴다.
-  const items = repairItems({ chapters, flags: lintBook(chapters, lctx), issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null });
+  const preRepairFlags = lintBook(chapters, lctx);
+  const items = repairItems({ chapters, flags: preRepairFlags, issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null });
   let repair: { items: number; calls: number; applied: AppliedRepair[]; skipped: string | null } = { items: items.length, calls: 0, applied: [], skipped: null };
   let repairedCover = "";
   if (items.length && canCall) {
@@ -533,7 +552,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const rv0 = revertWorse(fixed, repair.applied, remaining.filter(f => HARD_RULES.has(f.rule)));
   // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
   const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
-  const rv = { chapters: side.chapters, reverted: [...rv0.reverted, ...side.reverted] };
+  // W3 P3 6절: 수리가 책 안 다른 문장과 같은 말을 만들었거나, 원문의 근거 낱말(간지·십성·관계·신살)을 잃었거나, 예고만 남겼으면 되돌린다(호출 0).
+  const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet) });
+  const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;
@@ -545,12 +566,14 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = writeKeyFill(brief, plan, enforced.chapters, enforced.emptyKeys);
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
+  // W3 P3 7절: 정보량 지표(기록만, 본문은 바꾸지 않는다). 카드(brief.design)가 생기면 cards를 넘긴다 — 지금은 trait·자리 이름 사전과 씨앗 장면으로 센다.
+  const info = (() => { try { return infoMetrics(chapters, { dict: infoDictOf(brief) }); } catch { return undefined; } })();
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
   const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
-  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
+  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), ...(info ? { info } : {}), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),
     rewriteTargets: 0, rewritten: 0, rewriteCalls: 0, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
     noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: 0, ...(firstProblem ? { firstProblem } : {}) } } } };
