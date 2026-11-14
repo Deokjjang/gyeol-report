@@ -1,6 +1,6 @@
 import { randomUUID, randomBytes } from "node:crypto";
 import { readFileSync, mkdirSync, writeFileSync } from "node:fs";
-import { beforeAll, afterAll, describe, it, expect } from "vitest";
+import { beforeAll, afterAll, describe, it, expect, vi } from "vitest";
 import { NextRequest } from "next/server";
 import type { PGlite } from "@electric-sql/pglite";
 import type { AccountPort } from "../../../src/lib/account/handler";
@@ -24,6 +24,8 @@ import { loadBookShare } from "../../../src/lib/book/shareServer";
 import { runLocalBookJob } from "../../../src/lib/book/localReview";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { POST as publicEntry } from "../../../src/app/api/campaign-entry/route";
+// 실제 SQL(PGlite) + 실제 생성·발행: 혼자 돌려도 한 시험이 8초를 넘고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 180_000 });
 const origin="http://127.0.0.1:3192";
 const anonymous:AccountPort={currentUser:async()=>null,start:async()=>null,exchange:async()=>false,logout:async()=>true,read:async()=>({profile:null,consents:[]}),consent:async()=>false,authorizationOrigin:origin,finish:r=>r};
 const identity=(id:string)=>({id,provider:"kakao" as const,displayName:"회원"});
@@ -48,14 +50,15 @@ beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALE
 afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
 beforeAll(async()=>{db=(await localCampaignDatabase())!;await seedCampaignFixtures(db);c=sqlCampaignStore(db);r=sqlReferralStore(db);
   if(process.env.CAMPAIGN_REVIEW_EXPORT){mkdirSync(process.env.CAMPAIGN_REVIEW_EXPORT,{recursive:true});writeFileSync(`${process.env.CAMPAIGN_REVIEW_EXPORT}/fixtures.json`,JSON.stringify(RUNTIME_FIXTURES));}
-},30000);
+},180_000);
 afterAll(async()=>{await db?.close();});
 describe("12A actual SQL acquisition authority",()=>{
-  it("server presentation and windows: active/NONE, draft, paused, ended, scheduled; public OFF",async()=>{
+  it("server presentation and windows: active/NONE, draft, paused, ended, scheduled; public entry fails closed without account backend",async()=>{
     expect((await campaignPresentation(c,"book-ticket"))?.active).toBe(true);
     expect((await campaignPresentation(c,"book-none"))?.offer).toBe("NONE");
     for(const slug of ["book-draft","book-paused","book-ended","book-future","unknown-campaign"]){expect((await campaignPresentation(c,slug))?.active??false).toBe(false);expect((await captureCampaign(req({slug}),anonymous,c,true)).cookies.getAll()).toHaveLength(0);}
-    expect(await campaignPresentation(c,"book-draft")).toBeNull();expect((await publicEntry(req({}))).status).toBe(404);
+    // 공개 관문(Book·계정)은 승인된 직판 출시로 늘 켜져 있다. 계정 백엔드 설정이 없으면 공개 입구는 쿠키 없이 닫힌다(503).
+    expect(await campaignPresentation(c,"book-draft")).toBeNull();const entry=await publicEntry(req({}));expect(entry.status).toBe(503);expect(entry.headers.get("set-cookie")).toBeNull();
     await db.exec("update growth_campaigns set starts_at=now()-interval '1 day' where public_slug='book-future'");expect((await campaignPresentation(c,"book-future"))?.active).toBe(true);
   });
   it("forged authority, unsafe redirect, origin, raw metadata rejected; only approved UTM survives",async()=>{
@@ -135,7 +138,7 @@ describe("12A actual SQL acquisition authority",()=>{
     if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}
     if(f.id==="compatibility"){const p=book.data.pages.find(p=>p.kind==="pair");expect(p?.kind==="pair"&&p.directions).toHaveLength(2);}
     await Promise.all(Array.from({length:8},()=>reconcileCampaigns(c,id)));expect((await attr(id)).first_report_id).toBe(result.reportId);
-  },30000);
+  });
   it("failed/incomplete/unowned publication never converts; complete snapshot recovery only",async()=>{
     const s=await capture(),id=await newUser();await settle(id,s);const t=sqlTicketStore(db);
     expect((await redeemReportTicket(withCampaignTickets(t,c),id,randomUUID(),payload(0),{generate:async()=>{throw new Error("LOCAL_TEST");}})).state).toBe("REVERSED");expect((await attr(id)).published_at).toBeNull();
@@ -161,7 +164,7 @@ describe("12A actual SQL acquisition authority",()=>{
     expect((await attributeReferral(r,u,referralHash(ref2))).ok).toBe(false);expect(await balance(u)).toBe(1);
     const raceCamp=await capture(),raceRef=await captureReferral(req({shareToken:link.shareToken,ref:link.referral!.token}),anonymous,r,true),raceUser=await newUser();
     await Promise.allSettled([settle(raceUser,raceCamp),attributeReferral(r,raceUser,referralHash(raceRef.cookies.get(referralCookie(true))!.value))]);expect(await balance(raceUser)).toBe(1);
-  },30000);
+  });
   it("funnel read is durable/idempotent, no PII; RLS and immutable family deny direct clients",async()=>{
     const events=await c.call("funnel",null);expect(await c.call("funnel",null)).toEqual(events);expect(CAMPAIGN_EVENTS).toHaveLength(8);
     expect(JSON.stringify(events)).not.toMatch(/displayName|birthDate|snapshot|user_id|email|narrative|context_hash/);

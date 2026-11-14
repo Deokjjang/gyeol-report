@@ -14,7 +14,7 @@ let db: PGlite, h: ReturnType<typeof launchHelpers>;
 // AM 6부: 판매를 연 경로 = 판매 플래그 + 가격 설정값(비면 팔지 않음). 가격은 예전 자리값 4,900원.
 beforeAll(() => { process.env.FORTUNE_SALES_OPEN = "1"; process.env.FORTUNE_SALES_OPEN_AT_TEST = "2000-01-01T00:00:00+09:00"; process.env.FORTUNE_PRICE_MAJOR_KRW = "4900"; process.env.FORTUNE_PRICE_ANNUAL_KRW = "4900"; });
 afterAll(() => { delete process.env.FORTUNE_SALES_OPEN; delete process.env.FORTUNE_SALES_OPEN_AT_TEST; delete process.env.FORTUNE_PRICE_MAJOR_KRW; delete process.env.FORTUNE_PRICE_ANNUAL_KRW; });
-beforeAll(async () => { ({db,h}=await launchSql()); },30000);
+beforeAll(async () => { ({db,h}=await launchSql()); },180_000);
 afterAll(async () => { await db?.close(); });
 beforeEach(async () => {
   await db.exec("truncate launch_event_policy,growth_campaigns,report_ticket_grants,referral_invites,campaign_attributions,new_user_acquisitions cascade");
@@ -36,7 +36,7 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
       before=await fingerprint(existing);
     });
     try{expect(await fingerprint(old.db)).toEqual(before);expect((await old.h.state()).state).toBe("PAUSED");expect(await old.h.count("report_ticket_grants")).toBe(0);}finally{await old.db.close();}
-  },30000);
+  },180_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it.each([
     ["2026-10-10T23:59:59+09:00","SCHEDULED"], ["2026-10-11T00:00:00+09:00","ACTIVE"],
     ["2026-10-12T12:00:00+09:00","ACTIVE"], ["2026-10-29T00:00:00+09:00","ACTIVE"],
@@ -97,7 +97,7 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
       expect((await old.db.query("select status,starts_at,ends_at from growth_campaigns where public_slug='launch-20261029'")).rows[0]).toEqual({status:"PAUSED",starts_at:new Date(START),ends_at:new Date(END)});
       expect(await old.h.count("report_ticket_grants")).toBe(0);
     }finally{await old.db.close();}
-  },30000);
+  },180_000);
   it("100 callback retries yield one immutable acquisition/one grant; unconsented and old accounts denied",async () => {
     const a=await h.acquisition(); expect(a.result.ok).toBe(true);
     for(let i=0;i<100;i++) expect((await h.campaign("attribute",a.user,{contextHash:a.contextHash,versions})).ok).toBe(true);
@@ -191,7 +191,7 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
       expect(await old.h.count("report_ticket_grants",`user_id='${TICKET_A}'`)).toBe(3);
       await old.h.clock(END);expect((await old.h.tickets("summary",TICKET_A)).quantity).toBe(2);
     } finally { await old.db.close(); }
-  },30000);
+  },180_000);
   it("RLS/service-only, no client clock overrides, no mutation of grant/ledger history",async () => {
     await h.acquisition();
     for(const role of ["anon","authenticated"]) {
@@ -216,7 +216,7 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
     if(f.id==="annual"){const p=book.data.pages.find(p=>p.kind==="months");expect(p?.kind==="months"&&p.months).toHaveLength(12);}
     if(f.id==="compatibility"){const p=book.data.pages.find(p=>p.kind==="pair");expect(p?.kind==="pair"&&p.directions).toHaveLength(2);}
     expect((await h.tickets("summary",a.user)).quantity).toBe(0);
-  },30000);
+  },180_000);
   it("actual complete free Books drive A → B → C rewards through service reconciliation, not fabricated publish events",async()=>{
     const store=withReferralTickets(sqlTicketStore(db),sqlReferralStore(db));
     const full=async (user:string,index:number)=>{
@@ -234,5 +234,5 @@ describe("operator-activated launch with fixed end (isolated SQL clock, not OS/c
     const d=await h.referred(ai);expect(d.result.ok).toBe(true);
     expect(await h.count("referral_attributions","status='INVITER_REWARD_GRANTED'")).toBe(2);
     for(const user of [a.user,b.user])expect(await h.count("report_ticket_grants",`user_id='${user}'`)).toBe(2);
-  },60000);
+  },240_000);
 });

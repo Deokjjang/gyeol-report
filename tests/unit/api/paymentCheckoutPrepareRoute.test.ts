@@ -1,9 +1,15 @@
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { POST } from "../../../src/app/api/payment-checkout/prepare/route";
+import { REPORT_PRICE_KRW } from "../../../src/lib/payment/reportProductCatalog";
+
+// P 추가 A: 결제는 같은 출처(Origin) + 로그인한 회원만. 계정·서재·운영 저장소는 로컬 대역(customerDayunGeneration 시험과 같은 방식).
+vi.mock("../../../src/lib/account/supabase", async () => (await import("../../helpers/opsStoreStub")).memberAccountModule);
+vi.mock("../../../src/lib/library/supabase", () => ({ createLibraryPort: () => ({ bind: async () => true }) }));
+vi.mock("../../../src/lib/ops/store", async () => (await import("../../helpers/opsStoreStub")).opsStoreModule);
 
 const routeSource = readFileSync(
   join(process.cwd(), "src/app/api/payment-checkout/prepare/route.ts"),
@@ -38,10 +44,11 @@ function restoreOptionalEnv(name: string, value: string | undefined): void {
 }
 
 function createJsonRequest(body: unknown): Request {
-  return new Request("http://localhost:3000/api/payment-checkout/prepare", {
+  return new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
     method: "POST",
     headers: {
       "content-type": "application/json",
+      origin: "https://gyeolreport.com",
     },
     body: JSON.stringify(isRecord(body) ? { consent: adultCheckoutConsent(), ...body } : body),
   });
@@ -109,13 +116,13 @@ describe("payment checkout prepare route", () => {
     expect(body.paymentOrder).toMatchObject({
       productType: "saju_mbti_full",
       provider: "toss",
-      amount: 1490,
+      amount: REPORT_PRICE_KRW,
       currency: "KRW",
       status: "ready",
     });
     expect(body.checkoutSession).toMatchObject({
       productLabelKo: "사주×MBTI 종합 리포트",
-      amount: 1490,
+      amount: REPORT_PRICE_KRW,
       currency: "KRW",
       status: "prepared",
     });
@@ -125,13 +132,15 @@ describe("payment checkout prepare route", () => {
       requestPayment: {
         method: "CARD",
         orderId: expect.stringMatching(/^provider_order_/),
-        orderName: "사주×MBTI 종합 리포트",
-        successUrl: "http://localhost:3000/payments/toss/success",
-        failUrl: "http://localhost:3000/payments/toss/fail",
-        customerName: "결리포트 고객",
+        // P6d-ops 3: 주문명 뒤에 짧은 주문코드, 구매자는 서버가 읽은 회원 가입 정보.
+        orderName: expect.stringMatching(/^사주×MBTI 종합 리포트 GR-T\d{3}$/),
+        successUrl: "https://gyeolreport.com/payments/toss/success",
+        failUrl: "https://gyeolreport.com/payments/toss/fail",
+        customerName: "검수 회원",
+        customerEmail: "member@example.com",
         amount: {
           currency: "KRW",
-          value: 1490,
+          value: REPORT_PRICE_KRW,
         },
       },
       metadata: {
@@ -175,7 +184,7 @@ describe("payment checkout prepare route", () => {
     expect(response.status).toBe(200);
     expect(body.paymentOrder).toMatchObject({
       provider: "kakao_pay",
-      amount: 1490,
+      amount: REPORT_PRICE_KRW,
       currency: "KRW",
     });
     expect(body).not.toHaveProperty("tossCheckoutRequest");

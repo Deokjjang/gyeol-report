@@ -1,7 +1,8 @@
 import { COMPATIBILITY_INDEX_VERSION } from "../../../src/lib/interpretation-v4/compatibilityIndex";
+import { randomUUID } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { afterAll, afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
 import { createLocalShareFixture, localBookShareDatabase, sqlBookShareLibrary, sqlBookSharePort } from "../../../src/lib/book/shareLocalReview";
@@ -30,27 +31,38 @@ import type { AccountPort } from "../../../src/lib/account/handler";
 import * as publicGate from "../../../src/lib/book/publicGate";
 import * as shareStore from "../../../src/lib/sharing/reportShareStore";
 import SharedPage, { generateMetadata } from "../../../src/app/r/[token]/page";
+import { SUPPORT_CHAT_URL } from "../../../src/lib/legal/socialLinks";
 
 const origin = "http://127.0.0.1:3189";
 const req = (body: unknown, cookie = "", source = origin) => new NextRequest(`${origin}/dev/book-flow/share`, { method: "POST", headers: { host: "127.0.0.1:3189", origin: source, cookie }, body: JSON.stringify(body) });
 const noOp = () => {};
+// 실제 SQL(PGlite) + 6종 V4 생성·발행·OG 그림: 혼자 돌려도 준비가 20초 넘게 걸리고, 전체 실행(병렬 부하)에서는 몇 배 걸린다.
+vi.setConfig({ testTimeout: 60_000 });
 afterEach(() => { vi.restoreAllMocks(); });
 let db: PGlite;
 const fixtures: Array<{ id: string; reportId: string; cookie: string; model: BookShareModel }> = [];
+// P 추가 A: 비회원 결제가 없다 — 준비물 책은 로컬 회원 세션으로 산다(결제 때 회원에게 바로 묶임, 구매 연결 쿠키 없음). cookie = 그 회원 세션.
+async function memberCookie() {
+  const port = createLocalAccountPort(new NextRequest(`${origin}/dev/account`, { headers: { host: "127.0.0.1:3189" } }))!;
+  const login = await port.start("kakao", `${origin}/dev/account/api/callback`); expect(await port.exchange(new URL(login!).searchParams.get("code")!)).toBe(true);
+  const member = (await port.currentUser())!; expect(await port.consent(member, randomUUID(), "first_login")).toBe(true);
+  const cookie = port.finish(new NextResponse()).cookies.get("gyeol-local-account")!; return `${cookie.name}=${cookie.value}`;
+}
 beforeAll(async () => {
   db = (await localBookShareDatabase())!;
+  const cookie = await memberCookie();
   for (const f of RUNTIME_FIXTURES) {
     const payload = f.payload.productKey === "annual_fortune" ? { ...structuredClone(f.payload), productOptions: { selectedYear: String(new Date().getFullYear()) } } : structuredClone(f.payload);
-    const response = await createLocalShareFixture(req({}), payload);
+    const response = await createLocalShareFixture(req({}, cookie), payload);
     expect(response.status, `${f.id} ${await response.clone().text()} ${JSON.stringify((await db.query("select failure_stage,error_code from report_generation_attempts")).rows)}`).toBe(200);
-    const { reportId } = await response.json(), cookie = response.cookies.getAll().map(c => `${c.name}=${c.value}`).join("; ");
+    const { reportId } = await response.json();
     const request = req({ reportId }, cookie);
     const issued = await prepareBookShare(request, createLocalAccountPort(request)!, sqlBookShareLibrary(db), sqlBookSharePort(db), true);
     expect(issued.status).toBe(200);
     fixtures.push({ id: f.id, reportId, cookie, model: (await issued.json()).model });
   }
   if (process.env.BOOK_SHARE_REVIEW_EXPORT) { mkdirSync(process.env.BOOK_SHARE_REVIEW_EXPORT, { recursive: true }); writeFileSync(`${process.env.BOOK_SHARE_REVIEW_EXPORT}/models.json`, JSON.stringify(fixtures.map(f => f.model), null, 2)); writeFileSync(`${process.env.BOOK_SHARE_REVIEW_EXPORT}/inputs.json`, JSON.stringify(RUNTIME_FIXTURES)); }
-}, 60000);
+}, 180_000);
 afterAll(async () => { await db?.close(); });
 
 describe("V4 Book share, real V4 generation and existing SQL", () => {
@@ -100,7 +112,9 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
     }
     vi.stubGlobal("navigator", { share: async () => { throw new DOMException("cancel", "AbortError"); } }); expect(await nativeShare(bookNativeData(fixtures[0].model))).toBe("cancelled");
     vi.stubGlobal("navigator", {}); expect(await nativeShare(bookNativeData(fixtures[0].model))).toBe("fallback");
-    expect(readFileSync("src/app/dev/book-preview/BookPages.tsx", "utf8")).toContain('href="http://pf.kakao.com/_sbHaX/chat"');
+    // 고객센터 링크는 한 곳(socialLinks SUPPORT_CHAT_URL)에서 읽는다.
+    expect(SUPPORT_CHAT_URL).toBe("http://pf.kakao.com/_sbHaX/chat");
+    expect(readFileSync("src/app/dev/book-preview/BookPages.tsx", "utf8")).toContain("href={SUPPORT_CHAT_URL}");
   });
   it("internally enabled /r entry and data use the stored V4 version, never expose the private report ID", async () => {
     const f = fixtures[0], original = shareStore.loadSharedReport;
@@ -140,14 +154,16 @@ describe("V4 Book share, real V4 generation and existing SQL", () => {
     const cross = req({ reportId: f.reportId }, f.cookie, "https://evil.example"); expect((await prepareBookShare(cross, createLocalAccountPort(cross)!, sqlBookShareLibrary(db), sqlBookSharePort(db), true)).status).toBe(403);
     expect(await loadBookShare(f.reportId, sqlBookSharePort(db))).toBeNull();
   });
-  it("ownership claim changes who may issue without giving a share viewer ownership", async () => {
-    const f = fixtures[5], library = sqlBookShareLibrary(db), hash = claimHash(f.cookie.split("=")[1]);
-    expect(await library.claim(f.reportId, "new-owner", hash, true)).toBe("owned");
-    const old = req({ reportId: f.reportId }, f.cookie);
-    expect((await prepareBookShare(old, createLocalAccountPort(old)!, library, sqlBookSharePort(db), true)).status).toBe(403);
+  // P 추가 A: 비회원 결제·구매 연결 쿠키(claim)가 없다 — 책은 결제 때 산 회원에게 바로 묶인다(옛 「쿠키로 주인 바꾸기」 대신 지금 계약).
+  it("member-bound purchase: only the buying member may issue; another member or a share viewer cannot claim", async () => {
+    const f = fixtures[5], library = sqlBookShareLibrary(db);
+    expect(await library.claim(f.reportId, "new-owner", claimHash(f.model.shareToken!), true)).toBe("unavailable");
+    expect(await library.claim(f.reportId, "new-owner", null, true)).toBe("unavailable");
     const user = { id: "new-owner", provider: "kakao" as const, displayName: "회원" };
-    const auth: AccountPort = { ...createLocalAccountPort(old)!, currentUser: async () => user, read: async () => ({ profile: user, consents: Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, is_agreed: true, required: true, recorded_at: new Date().toISOString() })) }) };
-    expect((await prepareBookShare(req({ reportId: f.reportId }), auth, library, sqlBookSharePort(db), true)).status).toBe(200);
+    const owner = req({ reportId: f.reportId }, f.cookie);
+    const auth: AccountPort = { ...createLocalAccountPort(owner)!, currentUser: async () => user, read: async () => ({ profile: user, consents: Object.entries(ACCOUNT_POLICY_VERSIONS).map(([consent_type, document_version]) => ({ consent_type: consent_type as "terms" | "privacy", document_version, is_agreed: true, required: true, recorded_at: new Date().toISOString() })) }) };
+    expect((await prepareBookShare(req({ reportId: f.reportId }), auth, library, sqlBookSharePort(db), true)).status).toBe(403);
+    expect((await prepareBookShare(owner, createLocalAccountPort(owner)!, library, sqlBookSharePort(db), true)).status).toBe(200);
   });
   it("expired/cancelled/unpublished/corrupt and revoked reports fail closed, no token resurrection", async () => {
     const f = fixtures[1], base = sqlBookSharePort(db), read = await base.read("read_report", { reportId: f.reportId });

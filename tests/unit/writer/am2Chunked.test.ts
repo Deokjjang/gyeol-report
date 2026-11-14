@@ -260,5 +260,5 @@ describe("AM2 발행(가짜 작가, 호출 0)", () => {
     // AM2-6 5부: 지우면 그 장의 처방이 없어지는 차단 문장은 지우지 않고 교체로 넘긴다 — 가짜 작가는 고치지 못하니 「남김」(처리 기록 kept)으로 남는다. 그 밖의 차단은 0.
     const kept = new Set(((review.disposition as { kept: { at: string; rule: string }[] }).kept).map(k => `${k.at}|${k.rule}`));
     expect((review.remainingHard as { rule: string; at: string }[]).filter(f => f.rule !== "must_miss" && f.rule !== "key_len" && !kept.has(`${f.at}|${f.rule}`))).toEqual([]);
-  }, 120_000);
+  }, 300_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
 });

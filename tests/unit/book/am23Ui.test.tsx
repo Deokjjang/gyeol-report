@@ -37,7 +37,7 @@ describe("AM2-3 5부 세운", () => {
     expect(data.pages.some(p => p.kind === "months")).toBe(false);
     const h = html(ft);
     expect(h).toContain("data-el=\"fire\""); expect(h).toMatch(/오름|살필/); expect(h).not.toMatch(/흐름[^<]{0,6}\d\/5/);
-  }, 120_000);
+  }, 300_000); // 전체 실행(병렬 부하)에서 혼자 돌 때의 3~5배가 걸린다.
   it("달 카드: 머리(달·날짜·흐름 단어) → 한 줄 뜻 → 좋은 것/살필 점 → 이달의 한 가지, 「명리로 보면」에 관계 이름 + 쉬운 뜻, 간지는 한 번, 지난 달은 돌아보기", async () => {
     const data = await book("annual_fortune");
     const cards = data.pages.filter((p): p is Extract<BookPage, { kind: "periodCard" }> => p.kind === "periodCard");
@@ -48,7 +48,7 @@ describe("AM2-3 5부 세운", () => {
     const h = html(now);
     expect((h.match(/data-el=/g) ?? []).length).toBe(2); // 간지 칸은 머리에 한 번
     expect(h).toContain("명리로 보면"); expect(h).not.toContain("앞으로");
-  }, 120_000);
+  }, 300_000);
 });
 
 describe("AM2-3 5부 대운", () => {
@@ -60,7 +60,7 @@ describe("AM2-3 5부 대운", () => {
     expect(life.cycles.filter(c => c.current)).toHaveLength(1);
     const h = html(life);
     expect(h).toContain("지금"); expect(h).not.toMatch(/대운수 \d+\)/);
-  }, 120_000);
+  }, 300_000);
   it("10년표: 연도·나이 | 간지 | 한 줄 뜻 | 십성 | 흐름, 핵심 해 ★, 대운이 바뀌는 곳에 구분 줄, 해 카드는 달 카드와 같은 문법 · 지난 해는 돌아보기만", async () => {
     const data = await book("major_fortune");
     const dt = data.pages.find((p): p is Extract<BookPage, { kind: "decadeTable" }> => p.kind === "decadeTable")!;
@@ -72,5 +72,5 @@ describe("AM2-3 5부 대운", () => {
     const past = cards.find(c => c.past)!;
     expect(past.caution).toBeUndefined(); expect(past.one?.label).toBe("돌아보기");
     expect(html(cards.find(c => !c.past)!)).not.toMatch(/대운 [갑을병정무기경신임계]/);
-  }, 120_000);
+  }, 300_000);
 });
