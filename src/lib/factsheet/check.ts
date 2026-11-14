@@ -7,7 +7,7 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import type { FactSheet, PersonFacts, RelationFact, Slot } from "./build";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
-export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
+export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
 export type FactHit = { readonly rule: FactRule; readonly detail: string };
 export type FactCtx = {
   readonly sheet: FactSheet; readonly aliases: readonly ShinsalAlias[];
