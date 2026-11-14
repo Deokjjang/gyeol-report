@@ -4,7 +4,7 @@
  * 사용자 메시지 = 이번 묶음의 장 목록(짧다). 다시 쓰기는 같은 접두부 + 「걸린 문장 인용 + 이유 한 줄」.
  * 제약은 이 파일의 작가 규칙 한 곳에만 둔다(브리프·카드에는 고객에게 그대로 나가도 되는 말만).
  */
-import { STYLE_EXAMPLES } from "../prompt/examples";
+import { AM_STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
 import { neutralize, soften, type Inputs } from "@/lib/brief/premise";
 import { cardDir, type Dir3 } from "./accept";
@@ -123,13 +123,13 @@ export const chunkRules = (c: RuleCtx | Intake["product"]) => {
 };
 /**
  * AM2-6 4부: 세운·대운 작가 규칙의 예문에는 실제 명리 값(관계 · 십성 · 신살 · 일주 이름)을 쓰지 않는다(P4 「축오해가 아닌」 · P5 「축오해가 걸리는 것이 아니라」 — 규칙 예문이 두 판 연속 본문 재료가 됐다).
- * 4종과 함께 쓰는 문체 예시(STYLE_EXAMPLES)는 그대로 두고, 이 작가에게 보낼 때만 값을 자리표시로 바꾼다. 세운 한 달 예시(카드 줄 · 네 영역 나열 · 「…의 결」)는 달 key 규칙과 어긋나 보내지 않는다.
+ * 세운·대운 문체 예시(AM_STYLE_EXAMPLES — W4부터 4종 예시와 분리, 운영 값 그대로)를 이 작가에게 보낼 때만 값을 자리표시로 바꾼다. 세운 한 달 예시(카드 줄 · 네 영역 나열 · 「…의 결」)는 달 key 규칙과 어긋나 보내지 않는다.
  */
 export const VALUE_WORDS = /(?:[갑을병정무기경신임계][자축인묘진사오미신유술해])일주|(?:도화|홍염|백호대|역마|화개|양인|괴강|현침|귀문관|원진)살|(?:비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)|(?:[갑을병정무기경신임계][자축인묘진사오미신유술해])월|[자축인묘진사오미신유술해]{2}(?:합|충|형|파|해)/g;
 export function chunkExamples(): { label: string; text: string }[] {
   // AM2-7 4부: 자리표시에 꺾쇠를 쓰지 않는다(P6 — 작가가 꺾쇠를 서식으로 읽어 본문 달 · 해 이름을 감쌌다). 값 자리는 「○○」.
   const ph = (t: string) => t.replace(VALUE_WORDS, m => /일주$/.test(m) ? "○○일주" : /살$/.test(m) ? "○○살" : /월$/.test(m) ? "○○월" : /(합|충|형|파|해)$/.test(m) && m.length === 3 ? "○○" : "○○").replace(/[壬辛]午|[壬辛]卯/g, "○○일주").replace(/[〈〉]/g, "");
-  return STYLE_EXAMPLES.filter(e => !/세운 한 달/.test(e.label)).map(e => ({ label: ph(e.label), text: ph(e.text) }));
+  return AM_STYLE_EXAMPLES.map(e => ({ label: ph(e.label), text: ph(e.text) }));
 };
 
 const RULES_ANNUAL = `

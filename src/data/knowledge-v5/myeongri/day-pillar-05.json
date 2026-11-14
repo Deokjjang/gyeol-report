@@ -526,8 +526,7 @@
         "verbalOutput": 0.5,
         "independence": 0.6,
         "empathyResponse": -0.6,
-        "emotionalExpression": -0.5,
-        "reactivity": -0.4
+        "emotionalExpression": -0.5
       },
       "mbtiLinks": [
         {
@@ -867,7 +866,6 @@
         "empathyResponse": 0.8,
         "caretaking": 0.7,
         "verbalOutput": 0.4,
-        "reactivity": 0.4,
         "boundarySetting": -0.6,
         "conflictApproach": -0.6,
         "directness": -0.5

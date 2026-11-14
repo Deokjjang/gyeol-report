@@ -386,7 +386,7 @@
       "myeongriId": "element:FIRE:STRONG",
       "mbtiTarget": "INTP",
       "kind": "tension",
-      "dimension": "socialEnergy",
+      "dimension": "emotionalExpression",
       "score": 1.45,
       "why": "화가 넘치는 구성은 기분이 먼저 달아올라 얼굴과 목소리로 바로 번집니다. INTP는 감정을 말로 다루는 Fe가 가장 늦게 깨는 사람이라, 그 열이 무엇이었는지 설명할 말이 한참 뒤에 옵니다. 표정은 벌써 뜨거운데 입은 '화난 게 아니라 논리가 틀렸다는 거야'만 되풀이해, 상대는 더 헷갈립니다.",
       "scene": { "text": "보드게임 규칙을 두고 친구와 언성이 높아진 밤, 얼굴이 벌겋게 달아오른 채 '흥분한 거 아니야, 규칙서 3쪽을 봐'를 세 번 말합니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

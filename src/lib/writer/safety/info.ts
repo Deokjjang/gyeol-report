@@ -13,7 +13,7 @@
  *    근거와 겹치지 않는 것(rw2 R9·F1). 카드가 있으면 그 절 카드 글(장면·소품·근거 사실·뜻·연결 이유·근거 trait 글) + 입력의 직업 장면(dict.props)에 장면 낱말이 모두 있거나
  *    카드 장면과 겹치면 근거 있음, 카드 없는 책은 씨앗·DB 장면(scenes)과 겹치거나 dict.props에 낱말이 모두 있으면. 겹침 = 장면 낱말 하나 + 다른 내용 낱말 하나 이상 공유.
  *    sceneFirst: 그 가운데 소제목 첫 문장(F1). sceneMbti: 그 가운데 MBTI 유형·기능을 붙인 문장(소품에 MBTI를 붙인 꼴, rw2 L5).
- *    sceneAsk: 같은 낱말 기준의 근거 없는 장면 물음(「택배 알림이 오면 …지 않나요?」 — 단정이 아니라 lint는 잡지 않는다, 추세만).
+ *    sceneAsk: 같은 낱말 기준의 근거 없는 장면 물음(「택배 알림이 오면 …지 않나요?」). W4(info-v4)부터 sceneUnbacked에도 들어가고 lint scene_unbacked도 잡는다.
  *  - exposure: 4절 노출 금지 낱말 수(exposure.ts, grade·rule).
  * 카드가 없는 옛 책(운영 저장본)은 dict(trait·자리 이름, 씨앗 장면)로 센다. 카드가 있으면 cards(절 id → evidence·scene)를 쓴다.
  */
@@ -50,7 +50,8 @@ export type InfoMetric = {
 export type InfoKind = "restatement" | "lesson" | "sameSentence" | "rehash" | "phraseRepeat" | "rxRepeat" | "sceneUnbacked" | "sceneFirst" | "sceneMbti" | "sceneAsk" | "exposureGrade" | "exposureRule";
 /** info-v2(W3 P3 보강): 구체 장면 탐지(concreteScene)·장면 물음(sceneAsk)·근거 이름 정리와 핵심 낱말·사실 낱말 대조. */
 /** info-v3(W3 P3 보강 2): 지식 DB·관계 장면(scene.ask)은 단정의 근거가 아니다(물음 재료). */
-export const INFO_VERSION = "info-v3" as const;
+/** info-v4(W4 Q2): 근거 없는 장면이 물음 꼴도 센다. */
+export const INFO_VERSION = "info-v4" as const;
 
 /** 같은 문장 기준(수리 재검 repair3·지표 sameSentence 공용): 한글·숫자만 남겨 같거나, 두 글자 묶음 자카드 ≥ 0.8, 둘 다 14자 이상. */
 export const SAME_JACCARD = 0.8, SAME_MIN = 14;
@@ -182,10 +183,13 @@ export function evidenceUsed(text: string, e: InfoEvidence): boolean {
   const keys = e.context ? factTokens(e.facts ?? []) : [plainName(e.name), ...nameTokens(e.name), ...(e.facts ? factTokens(e.facts) : []), ...(e.where ?? []).filter(w => w.length >= 2 && !WIDE_WHERE.test(w))];
   return keys.some(k => k.length >= 2 && text.includes(k));
 }
-/** lint scene_unbacked(W3 P3 보강): 카드 있는 책에서 그 절 카드 근거가 없는 구체 장면 단정의 낱말(물음은 null — 근거에 묶인 성향 물음은 허용). */
+/**
+ * lint scene_unbacked(W3 P3 보강, W4 Q2-4): 4종 책에서 그 절 근거가 없는 구체 장면의 낱말 — 단정이든 물음이든(「헬스장에서 무게를 올리며 …죠?」도 지어낸 장면이다).
+ * 근거에 묶인 성향 물음(구체 장소·물건·앱·사건 낱말 없음)은 concreteScene이 잡지 않는다.
+ */
 export function unbackedScene(sentence: string, card: InfoCard | undefined, props: readonly string[] = []): readonly string[] | null {
   const h = concreteScene(sentence);
-  return h && !h.ask && !sceneBackedBy(sentence, h.nouns, cardBacking(card), props) ? h.nouns : null;
+  return h && !sceneBackedBy(sentence, h.nouns, cardBacking(card), props) ? h.nouns : null;
 }
 /** 장면 낱말이 모두 근거 글(카드 장면·소품·근거 사실·뜻, 입력의 직업 장면)에 있는가. */
 export const nounsBacked = (nouns: readonly string[], backing: readonly string[]) => nouns.length > 0 && nouns.every(n => backing.some(b => b.includes(n)));
@@ -266,7 +270,8 @@ export function infoMetrics(chapters: readonly InfoChapter[], opts: { readonly d
     const hit = concreteScene(x.text); if (!hit) continue;
     const card = cards?.find(k => k.chapter === x.c && k.section === x.s);
     const backed = sceneBackedBy(x.text, hit.nouns, cards ? cardBacking(card) : { scenes: dict.scenes ?? [], all: [] }, dict.props ?? []);
-    if (hit.ask) { if (!backed) { r.sceneAsk++; mark(x, "sceneAsk"); } continue; }
+    // W4 Q2-4(info-v4): 근거 없는 장면 물음도 「근거 없는 장면」으로 센다(W3 P4 — 물음 꼴 장면을 판독자는 지어낸 장면으로 셌다). sceneAsk는 그 가운데 물음 수.
+    if (hit.ask) { scenes++; if (!backed) { r.sceneAsk++; mark(x, "sceneAsk"); r.sceneUnbacked++; sceneAt.push(at(x)); mark(x, "sceneUnbacked"); } continue; }
     scenes++; if (backed) continue;
     r.sceneUnbacked++; sceneAt.push(at(x)); mark(x, "sceneUnbacked"); if (x.first) { r.sceneFirst++; mark(x, "sceneFirst"); } if (MBTI_MARK.test(x.text)) { r.sceneMbti++; mark(x, "sceneMbti"); }
   }
@@ -328,6 +333,7 @@ export function infoDictOf(brief: Brief): InfoDict {
     names: [brief.person.name, brief.person.callName, brief.partner?.person.name, brief.partner?.person.callName, brief.mbti?.type, brief.partner?.mbti?.type].filter((x): x is string => typeof x === "string" && x.length >= 2),
     scenes: [...new Set(scenes)].filter(x => x.length >= 15),
     // 입력의 직업 장면(고객이 적은 직업·그 직업의 일 단계 장면)·궁합 두 사람 차이 줄(성향 끝 설명)은 지어낸 장면이 아니다.
-    props: [brief.person.facts.job.detail, ...Object.values(brief.person.workScenes ?? {}).flat(), ...(brief.compatibility?.differences ?? []).flatMap(d => [d.a, d.b]), ...(brief.compatibility?.profiles ?? []).map(p => p.line)].filter(x => typeof x === "string" && x.length >= 2),
+    // W4 Q2-2: 장 소품 힌트(sceneHint — 입력 관계·직업·생활 단계에서 나온 소품)도 근거다.
+    props: [...brief.chapters.flatMap(c => c.sceneHint ?? []), brief.person.facts.job.detail, ...Object.values(brief.person.workScenes ?? {}).flat(), ...(brief.compatibility?.differences ?? []).flatMap(d => [d.a, d.b]), ...(brief.compatibility?.profiles ?? []).map(p => p.line)].filter(x => typeof x === "string" && x.length >= 2),
   };
 }

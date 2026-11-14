@@ -182,13 +182,14 @@ describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
     const review = built.meta.review as { skipped: string | null; repair: { skipped: string | null }; deleted: { rule: string }[] };
     expect(review.skipped).toBe("budget");
     expect(review.repair.skipped).toBe("budget");
-    expect(review.deleted.some(d => d.rule === "grade_leak")).toBe(true);
+    // W4: 같은 문장을 정답지 강약 대조(fact_strength)가 먼저 잡을 수 있다 — 어느 HARD로든 지워지면 된다.
+    expect(review.deleted.some(d => d.rule === "grade_leak" || d.rule === "fact_strength")).toBe(true);
     const body = JSON.stringify(built.snapshot.draft.chapters);
     expect(body).not.toContain("세기는 신강");
     expect(body).toContain("다듬어진 결입니다");
     // 7절: 정보량 지표는 Book 메타에 기록만(본문은 지표 계산 전후 같다).
     const info = (built.meta.safety as { metrics?: { info?: { version: string; sentences: number } } }).metrics?.info;
-    expect(info?.version).toBe("info-v3"); expect(info!.sentences).toBeGreaterThan(50);
+    expect(info?.version).toBe("info-v4"); expect(info!.sentences).toBeGreaterThan(50);
   }, 180_000);
 });
 
@@ -235,7 +236,7 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
   const dict = { traits: ["편인", "정관"], names: ["INTP"], scenes: ["저녁 산책길에 카페에 들러 노트북을 여는 날이 많다"] };
   const m = infoMetrics(chapters, { dict });
   it("같은 문장·장 사이 같은 구절·처방 계열·재진술·교훈문·노출을 센다", () => {
-    expect(m.version).toBe("info-v3"); expect(m.cards).toBe(false);
+    expect(m.version).toBe("info-v4"); expect(m.cards).toBe(false);
     expect(m.totals.sameSentence).toBe(1);
     expect(m.totals.phraseRepeat).toBeGreaterThanOrEqual(1); // 「시동이 걸리면 남들」
     expect(m.rxFamilies["적기·목록"]).toBe(4); expect(m.totals.rxRepeat).toBe(2); expect(m.totals.rxFamilies3).toBe(1);
@@ -252,9 +253,9 @@ describe("W3 P3 7절 정보량 지표(info.ts)", () => {
     expect(lifeScene("주말에 쉬게 된다면 카페에 가 보는 편이에요.")).toBeNull(); // 가정
     const first = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰곤 해요. 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
     expect([first.totals.sceneUnbacked, first.totals.sceneFirst, first.totals.sceneMbti, first.totals.sceneAsk]).toEqual([1, 1, 1, 0]);
-    // 보강: 같은 꼴의 물음은 단정이 아니라 장면 물음(sceneAsk)으로만 센다.
+    // W4(info-v4): 같은 꼴의 물음도 근거 없는 장면으로 센다(sceneAsk는 그 가운데 물음 수).
     const ask = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰지 않나요? 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
-    expect([ask.totals.sceneUnbacked, ask.totals.sceneAsk]).toEqual([0, 1]);
+    expect([ask.totals.sceneUnbacked, ask.totals.sceneAsk]).toEqual([1, 1]);
   });
   it("근거 사용: 카드 없으면 trait·자리 이름 사전, 카드 있으면 card.evidence·card.scene만", () => {
     const s11 = m.bySection.find(x => x.at === "1.1")!; expect(s11.evidenceUsed).toBe(2); // 일지 · 편인
@@ -305,13 +306,16 @@ describe("W3 P3 보강 1 — 카드에 없는 구체 장면(concreteScene · sce
     expect(unbackedScene(s, card(0, "새 동네로 이사 오면 단골 미용실·세탁소 주인과 금세 친해진다."))).toBeNull(); // 낱말 절반 이상이 카드 장면에
     expect(unbackedScene("쉬는 날에도 냉장고 정리로 오후를 보내는 편이에요.", card(0, null, ["주말에 냉장고 정리하기"]))).toBeNull();
     expect(unbackedScene("회의실에 먼저 들어가 자리를 정리하는 편이에요.", card(0, null), ["회의실 세팅"])).toBeNull();
-    expect(unbackedScene("택배 알림이 오면 상자부터 여는 편이죠?", card(0, null))).toBeNull(); // 물음은 lint가 잡지 않는다
+    // W4 Q2-4: 근거 없는 구체 장면은 물음 꼴이어도 잡는다(W3 P4 — 「헬스장에서 무게를 올리며 …죠?」).
+    expect(unbackedScene("택배 알림이 오면 상자부터 여는 편이죠?", card(0, null))).toEqual(["택배", "상자", "알림"]);
+    expect(unbackedScene("사람이 많은 곳에서 먼저 말을 거는 편이죠?", card(0, null))).toBeNull(); // 구체 낱말 없는 성향 물음은 허용
   });
   it("지식 DB·관계 장면(ask)은 물음 재료: 그 장면을 단정하면 근거 없음, 물음은 허용 · 작가 카드에 ask, 씨앗은 그대로 장면", () => {
     const s = "새 동네로 이사 가면 단골 가게 사장님과 어느새 인사하는 사이가 되어 있어요.", kb = "새 동네로 이사 오면 단골 미용실·세탁소 주인과 금세 친해진다.";
     const ask: InfoCard = { chapter: 1, section: 0, evidence: [{ name: "편재", where: ["연간"] }], scene: { text: kb, ask: true }, text: [] };
     expect(unbackedScene(s, ask)).toEqual(["동네", "이사", "단골", "가게"]);
-    expect(unbackedScene("새 동네로 이사 가면 단골 가게 사장님과 금세 친해지는 편이죠?", ask)).toBeNull();
+    // W4 Q2-1: 지식 DB 장면은 작가에게 보내지 않으므로 물음으로 써도 근거 없음.
+    expect(unbackedScene("새 동네로 이사 가면 단골 가게 사장님과 금세 친해지는 편이죠?", ask)).toEqual(["동네", "이사", "단골", "가게"]);
     const base = { q: "q", evidence: [], link: null, punch: null, rx: null };
     expect(writerCard({ ...base, scene: { text: kb, from: "knowledge" } }, new Map()).scene).toEqual({ text: kb, ask: true });
     expect(writerCard({ ...base, scene: { text: kb, from: "relation", who: "A / B" } }, new Map()).scene).toMatchObject({ ask: true });
@@ -327,7 +331,7 @@ describe("W3 P3 보강 1 — 카드에 없는 구체 장면(concreteScene · sce
     const f = lintBook(scenes, ctx).filter(x => x.rule === "scene_unbacked");
     expect(f.map(x => `${x.chapter}.${x.section}.${x.paragraph}:${x.detail}`)).toEqual(["1.0.0:동네·이사·단골·가게"]);
     expect(HARD_RULES.has("scene_unbacked")).toBe(false);
-    expect(HINT.scene_unbacked).toMatch(/지우지 말고/); expect(HINT.scene_unbacked).toMatch(/성향 물음/);
+    expect(HINT.scene_unbacked).toMatch(/구체 소품을 빼고/); expect(HINT.scene_unbacked).toMatch(/물음은 장마다 하나/);
     expect(lintBook(scenes, { ...ctx, sceneCards: undefined }).some(x => x.rule === "scene_unbacked")).toBe(false); // 카드 없는 책(세운·대운·옛 책)은 걸지 않는다
   });
   it("수리 항목: 문체 깃발 가운데 scene_unbacked를 먼저 넣는다(40칸 상한 앞자리), 장면 숫자를 빼는 수리는 되돌리지 않는다", () => {

@@ -90,7 +90,7 @@ export function applyProfile(vec: ReadonlyMap<string, number>, c: ProfileCodes):
 
 /** 문장 단서(검사 pair_profile): 칸별로 이 단서가 나오면 그 값이라고 말한 것이다. */
 export const PROFILE_CUES = {
-  E: /모임이 끝나면 (오히려 )?(기운|힘)|사람을 만나면 (오히려 )?기운이 나/,
+  E: /모임이 끝나면 (오히려 )?(기운|힘)|어울리고 나면 (오히려 )?(기운|힘)|사람을 만나면 (오히려 )?기운이 나/,
   I: /약속이 이어지면 지|혼자 있는 시간이 (꼭 )?필요/,
   front: /가운데에 서|발표를 자원|(가장 )?먼저 나서(서|는|고)|앞에 나서(서|는) (이끄|분위기)/,
   back: /뒤에서 챙기는|앞에 나서기보다/,

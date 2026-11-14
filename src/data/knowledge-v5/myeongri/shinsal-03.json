@@ -464,7 +464,6 @@
       "dimensionTags": {
         "detailFocus": 0.5,
         "trustThreshold": 0.4,
-        "reactivity": 0.4,
         "emotionalExpression": -0.4,
         "conflictApproach": -0.4,
         "boundarySetting": 0.3
@@ -910,11 +909,8 @@
       },
       "dimensionTags": {
         "trustThreshold": 0.5,
-        "planning": 0.4,
         "introspection": 0.4,
-        "intimacyPace": -0.4,
-        "empathyResponse": 0.3,
-        "detailFocus": 0.3
+        "intimacyPace": -0.4
       },
       "mbtiLinks": [
         {
@@ -928,19 +924,9 @@
           "why": "날짜와 역할을 다시 확인하는 Si의 습관과 겹칩니다"
         },
         {
-          "target": "J",
-          "kind": "resonance",
-          "why": "어긋남을 계획과 확인으로 줄이려는 점이 같습니다"
-        },
-        {
           "target": "ENFP",
           "kind": "tension",
-          "why": "즉흥으로 움직이는 Ne와 한 번 더 확인하는 습관이 속도에서 부딪칩니다"
-        },
-        {
-          "target": "ESTP",
-          "kind": "tension",
-          "why": "그때그때 맞추는 Se에게 미리 맞춰 두려는 마음은 답답해 보입니다"
+          "why": "마음이 가면 바로 다가가는 Ne-Fi와 가까운 사이일수록 박자를 한 번 더 맞추는 습관이 속도에서 부딪칩니다"
         }
       ],
       "engineSupport": true,

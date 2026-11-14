@@ -149,7 +149,8 @@ export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Know
   const lack = st.lacking;
   const partnerLines = lack.flatMap(e => { const f = k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`); return f?.remedy ? [`채워 줄 ${josa(ELEMENT_KO[e], "을를")} 가진 사람: ${f.remedy.partner[0]}`] : []; });
   // 남녀가 나뉘는 곳(사우나·온천·찜질방)은 새 인연을 만나는 자리가 아니다(P3.7 r1).
-  const places = lack.flatMap(e => (k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places ?? []).filter(x => !/사우나|온천|찜질|목욕/.test(x)).slice(0, 3));
+  // W4 Q2-7: 부족한 기운이 둘 이상이면 기운별로 따로 준다(W3 6-5 — 섞어 한 줄로 보내 작가가 「물 기운을 채우는 곳: 볕 잘 드는 남향 카페」처럼 근거와 어긋나게 썼다).
+  const placeBy = lack.map(e => ({ e, places: (k.features.get(`element:${e}:${st.missing.includes(e) ? "MISSING" : "WEAK"}`)?.remedy?.places ?? []).filter(x => !/사우나|온천|찜질|목욕/.test(x)).slice(0, 3) })).filter(x => x.places.length);
   return {
     spouseStar: starEvidence("spouseStar", "배우자 별", saju, det, k, spouseStars),
     spousePalace: palaceEvidence("spousePalace", "배우자 자리(태어난 날의 땅 글자)", "day", saju, det, k),
@@ -157,7 +158,8 @@ export function loveEvidence(saju: SajuCalcResult, det: ChartDetections, k: Know
     childPalace: palaceEvidence("childPalace", "자녀 자리(태어난 시각의 땅 글자)", "hour", saju, det, k),
     partnerMatch: { kind: "evidence", key: "partnerMatch", facts: [...partnerPortrait(k, st, mbti), ...(partnerLines.length ? partnerLines : ["뚜렷하게 부족한 기운이 없어 '나와 속도가 비슷한 사람'이 편합니다."])] },
     ...Object.fromEntries(Object.entries(sig).filter((x): x is [string, Evidence] => x[1] !== null)),
-    meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: places.length ? [`새 인연을 만나기 좋은 곳(부족한 기운을 채우는 곳): ${places.join(", ")}`] : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."], note: "쉼터가 아니라 사람을 만나는 자리로 쓴다" },
+    meetingPlaces: { kind: "evidence", key: "meetingPlaces", facts: placeBy.length ? placeBy.map(x => `새 인연을 만나기 좋은 곳 — ${ELEMENT_KO[x.e]} 기운을 채우는 곳: ${x.places.join(", ")}`) : ["부족한 기운이 뚜렷하지 않아 장소 추천은 일상 동선(늘 가는 곳에서 한 번 더 말 걸기)으로 둡니다."],
+      note: placeBy.length > 1 ? "쉼터가 아니라 사람을 만나는 자리로 쓴다. 기운마다 그 줄의 장소만 그 기운과 묶는다(두 기운의 장소를 섞어 한 기운에 붙이지 않는다)" : "쉼터가 아니라 사람을 만나는 자리로 쓴다" },
   };
 }
 

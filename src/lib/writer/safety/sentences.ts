@@ -7,7 +7,7 @@
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { ORPHAN_CONNECTIVE, stripConnective } from "./orphan";
-import { STYLE_EXAMPLES } from "../prompt/examples";
+import { AM_STYLE_EXAMPLES, STYLE_EXAMPLES } from "../prompt/examples";
 import ontology from "@/data/knowledge-v5/behavior-ontology.json";
 import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
 
@@ -89,7 +89,8 @@ export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
 const exampleWindows = (() => {
   const set = new Set<string>();
-  for (const e of STYLE_EXAMPLES) for (const line of e.text.split("\n")) {
+  // W4 Q2-3: 4종 예시 + 세운·대운 예시(운영 그대로) 둘 다.
+  for (const e of [...STYLE_EXAMPLES, ...AM_STYLE_EXAMPLES]) for (const line of e.text.split("\n")) {
     if (line.startsWith("#")) continue;
     const n = norm(line); for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) set.add(n.slice(i, i + EXAMPLE_WINDOW));
   }
@@ -100,6 +101,41 @@ export function copiesExample(sentence: string, allowed?: ReadonlySet<string>): 
   const n = norm(sentence);
   for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) { const w = n.slice(i, i + EXAMPLE_WINDOW); if (exampleWindows.has(w) && !allowed?.has(w)) return true; }
   return false;
+}
+/**
+ * W4 Q2-3 복사 검사(4종): 본문이 4종 문체 예시 문장과 세 어절 이상 이어서 같으면(조사까지 같은 낱말 셋) 예시 복사로 본다(HARD → 수리).
+ * 세 어절 모두가 흔한 말(당신·그래서·있어요…)이면 세지 않는다 — 내용 낱말(두 글자 이상, 흔한 말 아님)이 하나 이상 있어야 한다.
+ */
+const WORD_STOP = /^(당신|그래서|하지만|그리고|그런데|다만|이|그|저|이런|그런|더|잘|좀|또|한|두|세|수|것|거|때|번|있어요|있습니다|있는|있고|있을|있어|없어요|없는|해요|합니다|하는|하고|하면|해서|해도|돼요|됩니다|이에요|예요|입니다|편이에요|쪽이에요|사람|마음|먼저|조금|정말|가장|자주|오늘|하루|지금|그때|이때|이렇게|그렇게|아니라|함께|오래|다시|바로|모두|서로|둘|힘|속|곁|쪽|편|날|말|일|라고|이라고|처럼|주면|주세요|줘요|두면|두세요|보면|보세요|하면|되면|싶어요|같아요|글자|자리|기둥|하늘|땅|태어난|기운)$/;
+/** 낱말 뒤 조사를 뗀 꼴(내용 낱말 세기용). */
+const bareWord = (w: string) => w.replace(/(에서는|에서도|에게는|에서|에게|으로는|으로|에는|에도|까지|부터|처럼|마다|이랑|하고|이나|의|을|를|이|가|은|는|도|만|과|와|로|에)$/, "");
+const content = (w: string) => { const b = bareWord(w); return b.length >= 2 && !WORD_STOP.test(b) && !WORD_STOP.test(w); };
+// 괄호 속(한자·기능 약어·자리 약어 「(월지)」「(Fe)」)은 떼고 앞 낱말에 조사를 붙여 둔다(「살피기(Fe)가」 → 「살피기가」).
+const words = (t: string) => t.replace(/\([^)]*\)/g, "").replace(/[⟪⟫"'“”‘’「」]/g, " ").split(/\s+/).map(w => w.replace(/[.,!?…·:;]+$/g, "")).filter(Boolean);
+/** 예시 세 어절 가운데 예시가 생기기 전에 쓴 책(운영 v5 24권 + 시험 책 19권, 2026-11-14)에도 나온 흔한 말 — 복사로 보지 않는다(그 책들이 예시를 볼 수 없었다). */
+const EXAMPLE_COMMON: ReadonlySet<string> = new Set(["혼자 있는 시간에", "서운한 일이 생기면", "주변 마음 살피기가", "쌓이기 전에 풀립니다", "이유가 여기에 있습니다", "이름을 붙여 보세요", "고정 지출 하나를", "다툼은 큰 사건보다", "이미 끝난 일로", "새로 벌이기보다 이미"]);
+const exampleTrigrams = (() => {
+  const set = new Set<string>();
+  for (const e of STYLE_EXAMPLES) for (const line of e.text.split("\n")) {
+    // 머리글·카드 줄([표지]·[그림]…)만 뺀다(「[이름]님의 …」 문단은 본문이다).
+    if (line.startsWith("#") || /^\[(표지|그림|해 볼 것|살필 점|돌아보기|키워드)\]/.test(line)) continue;
+    // 내용 낱말이 둘 이상인 세 어절만(「있을 수 있어요」「그래서 두 사람의」 같은 이음말은 우연히 같다 — 시험 책 19권 오탐).
+    const w = words(line); for (let i = 0; i + 3 <= w.length; i++) { const g = w.slice(i, i + 3); if (g.filter(content).length >= 2 && !EXAMPLE_COMMON.has(g.join(" "))) set.add(g.join(" ")); }
+  }
+  return set;
+})();
+/**
+ * 예시와 이어서 같은 세 어절(없으면 null). 고객 브리프에도 있는 세 어절은 복사가 아니다 — allowed에는 조사 뗀 낱말을 이어 붙이고 공백·문장부호를 뺀 열쇠를 준다
+ * (브리프 쪽도 normWords(괄호 뗌)로 만들어 견준다).
+ */
+export const normWords = (t: string) => t.replace(/\([^)]*\)/g, "").replace(/[\s\p{P}\p{S}]/gu, "");
+export function exampleTrigram(sentence: string, allowed?: (key: string) => boolean): string | null {
+  const w = words(sentence);
+  for (let i = 0; i + 3 <= w.length; i++) {
+    const gw = w.slice(i, i + 3), g = gw.join(" ");
+    if (exampleTrigrams.has(g) && !allowed?.(normWords(gw.map(bareWord).join("")))) return g;
+  }
+  return null;
 }
 /** 브리프 글에서 예시와 겹치는 15자 창만 모은다(예외 목록). */
 export function allowedWindows(briefText: string): Set<string> {

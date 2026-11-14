@@ -638,7 +638,6 @@
       "dimensionTags": {
         "perfectionism": 0.9,
         "detailFocus": 0.8,
-        "reactivity": 0.6,
         "statusDrive": 0.5,
         "ruleAdherence": 0.5,
         "trustThreshold": 0.4,
@@ -1099,7 +1098,6 @@
         "detailFocus": 0.7,
         "perfectionism": 0.6,
         "trustThreshold": 0.6,
-        "reactivity": 0.5,
         "empathyResponse": 0.4,
         "conflictApproach": -0.4
       },

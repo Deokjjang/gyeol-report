@@ -439,9 +439,87 @@ function countClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], p
 }
 
 /** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지), inKey = 대운 연도·세운 달 카드 소제목 안(유입 문맥, AM 7부). */
+// ── W4 Q2-6 사실 대조 보강(W3 P4 판독이 찾은 꼴, 정답지만 씀) ─────────────────────────────
+const TEN_GODS = ["비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"] as const;
+/** 십성 이름 뒤는 조사·띄어쓰기·문장부호만(「정관이」「편관의」는 잡고 「정관념」은 뺀다). */
+const TG_AFTER = "(?=[이가은는을를의도과와로으에만]|\\s|[,.?!)·(]|$)";
+const TG_RE = new RegExp(`(?<![가-힣])(${TEN_GODS.join("|")})${TG_AFTER}`, "g");
+const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|나란히 (가졌|있)|똑같이 (가졌|있)/;
+/** 문단이 두 사람 공통을 말하는 꼴(「두 사람에게 있는 귀인의 기운」 → 다음 문장 「천덕귀인과 월덕귀인은 …」). */
+const BOTH_CTX = /두 사람에게 (?:모두 |다 )?있는|두 사람 모두|두 사람 다|두 분 모두|둘 다/;
+/** 궁합 「두 사람 모두 천덕귀인」: 한 사람에게만 있는 신살·귀인·십성을 두 사람 공통으로 말함(W3 1차 궁합 A·A+연결). 이름이 없는 문장은 문단의 공통 말도 본다. */
+function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
+  if (ctx.people.length < 2 || NEG.test(sen) || HYPO.test(sen)) return null;
+  const named = ctx.people.filter(p => p.names?.test(sen)).length;
+  if (!BOTH.test(sen) && !(named === 0 && BOTH_CTX.test(paragraph))) return null;
+  for (const a of ctx.aliases) {
+    if (!a.re.test(sen)) continue;
+    const has = ctx.people.map(p => p.facts.shinsal.some(x => x.name === a.name));
+    if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${a.name}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}에게만 있다(두 사람 공통 아님)` };
+  }
+  for (const m of sen.matchAll(TG_RE)) {
+    const has = ctx.people.map(p => Object.values(p.facts.tenGods).some(v => v?.includes(m[1])));
+    if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${m[1]}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}의 원국에만 있다(두 사람 공통 아님)` };
+  }
+  return null;
+}
+/** 배우자 별·자녀 별의 성별 기준(남 = 배우자 재성·자녀 관성, 여 = 배우자 관성·자녀 식상). 별 말과 같은 마디의 십성 묶음 이름이 반대면(W3 2차 연애 — 여성인데 재성). */
+const STAR_OF: Readonly<Record<"MALE" | "FEMALE", { spouse: RegExp; child: RegExp; name: { spouse: string; child: string } }>> = {
+  MALE: { spouse: /재성|편재|정재/, child: /관성|편관|정관/, name: { spouse: "재성(편재·정재)", child: "관성(편관·정관)" } },
+  FEMALE: { spouse: /관성|편관|정관/, child: /식상|식신|상관/, name: { spouse: "관성(편관·정관)", child: "식상(식신·상관)" } },
+};
+const GROUP_ANY = new RegExp(`(?<![가-힣])(재성|관성|식상|인성|비겁|편재|정재|편관|정관|식신|상관|편인|정인|비견|겁재)${TG_AFTER}`);
+function starGender(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || !owners[0].gender || HYPO.test(sen)) return null;
+  const o = owners[0], want = STAR_OF[o.gender as "MALE" | "FEMALE"];
+  for (const [kind, re] of [["spouse", /(?:배우자|남편|아내)(?:의)? ?별/], ["child", /자녀(?:의)? ?별/]] as const) {
+    const m = sen.match(re); if (!m) continue;
+    // 십성 이름은 별 말 뒤쪽(같은 마디)에서만 — 앞 마디의 다른 십성(「마음 자리에는 정재가, 배우자 별로 …」)을 집지 않는다.
+    const clause = clauseAt(sen, m.index!), g = clause.slice(Math.max(0, clause.indexOf(m[0]))).match(GROUP_ANY)?.[1];
+    const who = `${o.name}(${o.gender === "MALE" ? "남" : "여"})의 ${kind === "spouse" ? "배우자" : "자녀"} 별은 ${want.name[kind]}`;
+    if (g && !want[kind].test(g)) return { rule: "fact_term", detail: `${who} — ${g} 아님` };
+    // 십성 이름 없이 자리로만 말한 꼴(W3 2차 연애 — 여성인데 재성 자리를 배우자 별로): 말한 자리(배우자·자녀 자리 말 빼고) 어디에도 그 별이 없으면.
+    if (!g) {
+      const poss = POSITION_WORDS.filter(p => p.re.test(sen.replace(/(?:배우자|자녀) ?(?:자리|궁)/g, "")));
+      const truth = (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.some(t => want[kind].test(t))).map(([sl]) => sl);
+      if (poss.length && truth.length && !poss.some(p => p.slots.some(sl => truth.includes(sl)))) return { rule: "fact_term", detail: `${who} — ${slotsKo(truth)}에 있다(${poss.map(p => p.label).join("·")} 아님)` };
+    }
+  }
+  return null;
+}
+/** 해마다 십성(W3 2차 연애 A — 2032·2033년 편관·정관 뒤바꿈): 「2032년은 정관의 해」「2033년에 편관이 들어오는」 꼴에서 그 해의 하늘·땅 십성과 견준다. */
+function annualTenGod(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen)) return null;
+  // 「…의 해」「…이 들어오는」처럼 그 해에 들어오는 기운을 말하는 문장만(「2030년에는 당신의 정재가 힘을 받아요」는 원국 십성이라 뺀다).
+  if (!/의 해|(?:이|가) (?:들어오|들어와|오는|찾아오|들어서)|들어오는 해|해예요|해입니다/.test(sen)) return null;
+  // 해마다 그 해와 다음 해 말 사이의 십성 하나(「2032년 임자년은 편관, 2033년 계축년은 정관이 들어오는 해예요」).
+  const marks = [...sen.matchAll(/(20\d\d)년/g)];
+  for (let i = 0; i < marks.length; i++) {
+    const y = Number(marks[i][1]), seg = sen.slice(marks[i].index! + 5, i + 1 < marks.length ? marks[i + 1].index! : sen.length);
+    const tgs = [...new Set([...seg.matchAll(TG_RE)].map(m => m[1]))];
+    if (tgs.length !== 1) continue;
+    const a = owners[0].annual.find(x => x.year === y); if (!a) continue;
+    if (a.stemTenGod !== tgs[0] && a.branchTenGod !== tgs[0]) return { rule: "fact_dayun", detail: `${y}년(${a.ganjiKo})은 하늘 글자 ${a.stemTenGod}·땅 글자 ${a.branchTenGod} — ${tgs[0]} 아님` };
+  }
+  return null;
+}
+/** 한 특성 + 자리 여럿 나열(「편인은 연지·월지·월간에」): 나열한 자리가 모두 정답지 자리 안에 있어야 한다(W3 1차 종합 — 같은 책 안에서 편인 자리가 둘로 갈림). */
+function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+  const poss = POSITION_WORDS.filter(p => p.re.test(sen));
+  if (poss.length < 2) return null;
+  const o = owners[0];
+  const tgs = [...new Set([...sen.matchAll(TG_RE)].map(m => m[1]))], terms = ctx.aliases.filter(a => a.re.test(sen));
+  if (tgs.length + terms.length !== 1) return null;
+  const truth = tgs.length ? (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.[0] === tgs[0]).map(([k]) => k) : o.shinsal.filter(x => x.name === terms[0].name).flatMap(x => x.slots);
+  if (!truth.length) return null;
+  const bad = poss.filter(p => !p.slots.some(x => truth.includes(x)));
+  return bad.length ? { rule: "fact_term", detail: `${tgs[0] ?? terms[0].name}은 ${slotsKo([...new Set(truth)])}에 있다(${bad.map(p => p.label).join("·")} 아님)` } : null;
+}
+
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

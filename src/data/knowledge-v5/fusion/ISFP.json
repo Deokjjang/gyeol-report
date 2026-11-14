@@ -360,7 +360,7 @@
       "myeongriId": "stem:甲",
       "mbtiTarget": "ISFP",
       "kind": "tension",
-      "dimension": "controlNeed",
+      "dimension": "planning",
       "score": 1.65,
       "why": "갑목은 비 온 다음 날 땅을 뚫고 곧게 솟는 기운이라 먼저 방향을 정하고 첫 기둥을 박습니다. ISFP는 계획표를 공들여 꾸며 두고도 그날 손이 가는 순서대로 움직이는 사람입니다. 목표는 내가 세우고 싶고 순서는 내 감각에 맡기고 싶어서, 남이 대신 짠 일정표에는 금세 흥미를 잃습니다.",
       "scene": { "text": "책상 앞 벽에 올해 목표를 큰 글씨로 붙여 두고도, 동료가 일정표를 짜 주겠다고 하면 '제 속도로 할게요'라며 조용히 표를 접어 둡니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

@@ -265,7 +265,8 @@ export function designCards(input: DesignInput): BookDesign {
     type Cand = { slot: Slot0; conn: Connection; score: number };
     const cands: Cand[] = [];
     for (const slot of mine) for (const e of slot.card.evidence) {
-      const x = e.traitId ? byTrait.get(e.traitId) : undefined; if (!x || x.drop) continue;
+      // W4 Q2-5: 합·충·형·해·파는 성격 연결에 쓰지 않는다(관계·시기 근거로만).
+      const x = e.traitId ? byTrait.get(e.traitId) : undefined; if (!x || x.drop || x.trait.family === "relation") continue;
       const bonus = slot.fusionTraits.has(x.trait.id) ? 10 : 0;
       if (!pair) {
         const mc = mbtiOf.get(x.person) ?? []; if (!mc.length) continue;
@@ -276,7 +277,7 @@ export function designCards(input: DesignInput): BookDesign {
       } else {
         // 궁합: 두 사람 카드끼리(상대의 MBTI 유형 카드 → 상대의 명리 카드). 방향은 카드 주인 → 상대.
         const other = people.find(p => p !== x.person); if (!other) continue;
-        const targets = [...(mbtiOf.get(other) ?? []).slice(0, 1), ...[...byTrait.values()].filter(y => y.person === other && !y.drop && y.trait.chapters.length).map(y => y.card)];
+        const targets = [...(mbtiOf.get(other) ?? []).slice(0, 1), ...[...byTrait.values()].filter(y => y.person === other && !y.drop && y.trait.family !== "relation" && y.trait.chapters.length).map(y => y.card)];
         for (const target of targets) {
           // Fusion 규칙은 한 사람 안의 명리 × MBTI라 두 사람 사이에는 쓰지 않는다(차원 양끝 설명으로 잇는다).
           const d = rel!.score.direction[x.person.owner === "a" ? "aToB" : "bToA"];

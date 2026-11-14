@@ -598,7 +598,7 @@
       "myeongriId": "dayPillar:丁丑",
       "mbtiTarget": "ENTP",
       "kind": "tension",
-      "dimension": "ruleAdherence",
+      "dimension": "persistence",
       "score": 1.38,
       "why": "정축은 일지 식신이 꾸준한 산출을 만드는 구성이라, 하루 조금씩 쌓는 일을 오래 이어 갑니다. ENTP의 Ne는 같은 일이 몇 주만 반복돼도 지루해하며 새 판을 찾습니다. 취미와 계획은 계절마다 갈아엎으면서, 손에 익은 작은 습관 하나만은 몇 년째 끊지 않습니다.",
       "scene": { "text": "새 앱과 새 취미는 석 달마다 갈아타면서, 잠든 시각과 일어난 시각을 엑셀 한 줄에 적는 일은 4년째 하루도 거르지 않습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },

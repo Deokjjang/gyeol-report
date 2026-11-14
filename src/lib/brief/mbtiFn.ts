@@ -106,7 +106,7 @@ export const POLE_DEMAND: Readonly<Record<string, string>> = {
 export const FN_CUES: readonly { readonly re: RegExp; readonly tag: FnTag; readonly why: string }[] = [
   { re: /구체 사실(부터|을 하나씩)|숫자[,·와 ]{1,3}날짜|하나씩 확인|지난번(과|처럼) 같은 순서|예전 기록(부터|을 꺼내)|늘 하던 순서/, tag: { fn: ["Si"] }, why: "지난 경험·구체 사실 확인(Si)" },
   { re: /말하지 않아도 (필요한 것|먼저)|부탁(하기|받기) 전에 (먼저 )?(챙|준비)|분위기를 (먼저 )?맞추|모두의 기분을 (먼저 )?(살피|챙기)/, tag: { fn: ["Fe", "Si"] }, why: "주변 마음 먼저 챙기기(Fe)" },
-  { re: /모임이 끝나면 (오히려 )?(기운|힘)이 (나|솟)|사람 (속|사이)에서 (충전|기운을 얻)|사람을 만나야 (힘|기운)이 (나|난)/, tag: { att: ["E"] }, why: "사람 속에서 충전(E)" },
+  { re: /모임이 끝나면 (오히려 )?(기운|힘)이 (나|솟)|어울리고 나면 (오히려 )?(기운|힘)이 (나|솟)|사람 (속|사이)에서 (충전|기운을 얻)|사람을 만나야 (힘|기운)이 (나|난)/, tag: { att: ["E"] }, why: "사람 속에서 충전(E)" },
   { re: /약속이 (이어지|연달아 잡히)면 지(쳐|친)|혼자 (있는|보내는) 시간이 (꼭|반드시) (있어야|필요)|혼자서 충전/, tag: { att: ["I"] }, why: "혼자서 충전(I)" },
   { re: /전날 (미리 )?(정리|챙겨|짜)|일정표를 (미리|먼저) (짜|만들)|계획표대로|예정대로 (움직|진행)/, tag: { att: ["J"] }, why: "미리 짜는 생활(J)" },
   { re: /닥쳐서 (정하|하)|계획 없이 (떠나|움직)|그때그때 (정하|바꾸)/, tag: { att: ["P"] }, why: "그때그때 정하는 생활(P)" },
@@ -129,7 +129,7 @@ export const POLE_CUES: Readonly<Record<string, RegExp>> = {
   "emotionalExpression+": /기분이 (바로|표정에) 묻어|표정과 말에/, "emotionalExpression-": /티를 (내지 않|안 내)|속상해도/,
   "controlNeed+": /역할과 순서를 (내가|직접) 정/, "controlNeed-": /누가 이끌든|정해진 대로 따라가/,
   "persistence+": /끝을 보는|정한 일은 끝까지/, "persistence-": /흥미가 식으면/,
-  "socialEnergy+": /모임이 끝나면 (오히려 )?(기운|힘)/, "socialEnergy-": /약속이 이어지면 지|혼자 있는 시간이 꼭/,
+  "socialEnergy+": /모임이 끝나면 (오히려 )?(기운|힘)|어울리고 나면 (오히려 )?(기운|힘)/, "socialEnergy-": /약속이 이어지면 지|혼자 있는 시간이 꼭/,
   "ruleAdherence+": /절차와 기한을 그대로|예외를 싫어/, "ruleAdherence-": /더 나은 길이 보이면/,
   "perfectionism+": /오타 하나|숫자 하나가 틀리/, "perfectionism-": /큰 틀이 맞으면/,
   "possessiveness+": /내 물건, 내 자리|경계를 분명히/, "possessiveness-": /빌려주고 나누/,

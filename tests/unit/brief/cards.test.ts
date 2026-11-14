@@ -126,11 +126,17 @@ describe("W3 P3 절 설계 카드(4종)", () => {
     expect(cardWhere(b.traits.find(x => x.family === "dayPillar")!, undefined, facts as never).drop).toBeTruthy();
     for (const { brief } of books) expect(Array.isArray(brief.design!.card_fact_drop)).toBe(true);
   });
-  it("작가 입력: 절은 {q, card}(materials 없음), design·shadows는 안 가고 등급 말(신강·신약·중화·과다·묶음 강/보통/약)이 없다", () => {
+  it("작가 입력(W4 Q2 — 카드 바꿔치기 철회): 절은 {q, materials}(card 없음), shadows는 가고 design은 안 간다. 특성 지식 DB 장면·등급 말(신강·신약·중화·과다·묶음 강/보통/약)이 없다", () => {
     for (const { label, brief } of books) {
-      const w = renderWriterBrief(brief, { knowledge: k }) as Record<string, unknown> & { chapters: { sections?: Record<string, unknown>[] }[] };
-      expect(w).not.toHaveProperty("design"); expect(w).not.toHaveProperty("shadows");
-      for (const c of w.chapters) for (const s of c.sections ?? []) { expect(s, label).toHaveProperty("card"); expect(s, label).not.toHaveProperty("materials"); }
+      const w = renderWriterBrief(brief, { knowledge: k }) as Record<string, unknown> & { chapters: { sections?: Record<string, unknown>[] }[]; traits: Record<string, unknown>[] };
+      expect(w).not.toHaveProperty("design"); expect(w, label).toHaveProperty("shadows");
+      for (const c of w.chapters) for (const s of c.sections ?? []) {
+        expect(s, label).toHaveProperty("materials"); expect(s, label).not.toHaveProperty("card");
+        for (const m of s.materials as { kind: string; scene?: string }[]) if (m.kind === "trait") expect(m.scene, label).toBeUndefined();
+      }
+      // 특성 자리(정답지로 맞춘 카드 자리)를 쉬운 이름으로 준다. 세기는 등급 말 대신 드러나는 정도로.
+      expect(w.traits.some(t => typeof t.at === "string" && /태어난 (해|달|날|시각) (하늘 글자|땅 글자|기둥)\([연월일시][간지주]\)/.test(t.at as string)), label).toBe(true);
+      for (const t of w.traits) expect(t, label).not.toHaveProperty("strength");
       const text = JSON.stringify(w);
       expect(text, label).not.toMatch(/신강|신약|중화|과다/);
       expect(text, label).not.toMatch(/(비겁|식상|재성|관성|인성)(\([^)]*\))?\)? (강함|강|보통|약함|약)(?![가-힣])/);

@@ -43,6 +43,7 @@ import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./d
 import { pairYearRelationEvidence, yearRelationEvidence } from "./yearRelation";
 import { designCards, type BookDesign, type CardPerson } from "./cards/design";
 import { buildFactSheet } from "@/lib/factsheet/build";
+import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { cleanSeed, SENIORITY_PROP, WORKPLACE } from "@/lib/writer/chunked/card";
 import { seedFits } from "@/lib/writer/chunked/intake";
 import type { RxKind } from "./prescriptions";
@@ -520,6 +521,21 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const rxFits = (kd: RxKind) => kd === "월급날·먼저 떼어 두기" ? job.class === "employed" : kd === "값 매기기" ? job.class === "business" || job.status === "freelancer" : true;
     design = designCards({ product: input.product, chapters, people: [personOf(me, input.person, 0, isPair ? "a" : undefined), ...(other && input.partner ? [personOf(other, input.partner, 1, "b")] : [])],
       brief: { chart: me.chart, mbti, shadows, ...(compatibility ? { compatibility } : {}), ...(ledgerNotes ? { ledgerNotes } : {}) }, k, spread, rxFits });
+    // W4 Q2-6 쓰기 전 대조: 원재료(특성 글·연결 이유·팩폭 재료) 문장을 정답지(factCheck — 쓴 뒤 검사와 같은 함수)로 보고, 틀린 문장은 작가에게 보내기 전에 뺀다.
+    // 칸이 다 빠지면 원문을 둔다(쓴 뒤 검사가 잡는다). 뺀 것은 design.card_fact_drop에 chapter "materials"로 남긴다.
+    const nm = (full: string, call: string) => [...new Set([full, call.replace(/님$/, ""), full.length >= 3 ? full.slice(1) : ""].filter(x => x.length >= 2))];
+    const fctx = factCtxOf(sheet, k, compatibility && other ? [nm(me.person.name, compatibility.a.callName), nm(other.person.name, compatibility.b.callName)] : [nm(me.person.name, me.person.callName)]);
+    const scrub = (text: string, label: string): string => { const kept = splitSentences(text).filter(x => { const h = factCheck(x, fctx, x); if (h) design!.card_fact_drop.push({ chapter: "materials", section: -1, name: label, where: "", reason: `${h.rule}: ${h.detail}`.slice(0, 160) }); return !h; }); return kept.join(" ") || text; };
+    for (const t of traitsAll) {
+      t.forYou = scrub(t.forYou, `${t.id}.forYou`); t.meaning = scrub(t.meaning, `${t.id}.meaning`);
+      if (t.positionNote) t.positionNote = scrub(t.positionNote, `${t.id}.positionNote`);
+      if (t.strengthNote) t.strengthNote = scrub(t.strengthNote, `${t.id}.strengthNote`);
+      if (t.overuse) t.overuse = scrub(t.overuse, `${t.id}.overuse`);
+      if (t.fusion) t.fusion = { ...t.fusion, why: scrub(t.fusion.why, `${t.id}.fusion`) };
+      const good = t.good.filter(g => { const h = splitSentences(g).map(x => factCheck(x, fctx, x)).find(Boolean); if (h) design!.card_fact_drop.push({ chapter: "materials", section: -1, name: `${t.id}.good`, where: "", reason: `${h.rule}: ${h.detail}`.slice(0, 160) }); return !h; });
+      if (good.length) t.good = good;
+    }
+    for (const sh of shadows) { sh.text = scrub(sh.text, `${sh.id}.text`); sh.basis = scrub(sh.basis, `${sh.id}.basis`); sh.warmTurn = scrub(sh.warmTurn, `${sh.id}.warmTurn`); }
   }
   const chars = PRODUCT_CHARS[input.product];
   // 책 단위 소품 사용 기록(P3.6 A1): 안전망이 본문에서 같은 소품이 2회를 넘는지 센다.

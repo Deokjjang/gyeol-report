@@ -3,7 +3,7 @@
  * 가족 다양성 제약(일간·일주 1, 오행·음양·조후 1~2, 십성 2~3, 신살·귀인 2~3, 운성·합충 1~2, 천간·지지 0~1) 안에서 10개(8~12)를 고른다.
  * Fusion은 정확한 유형 > 인지기능(주·부 > 3차·열등) > 선호 글자 순.
  */
-import { poleFits } from "./mbtiFn";
+import { poleFits, poleKey, POLE_TAGS, stackOf } from "./mbtiFn";
 import type { FeatureFamily, FusionRule, MbtiLink, MbtiProfile, MbtiType, MyeongriFeature } from "@/data/knowledge-v5/schema";
 import type { ChartPosition } from "@/lib/saju/detections/types";
 import type { TenGod, SajuCalcResult } from "@/lib/saju/types";
@@ -64,6 +64,11 @@ function linkRank(target: string, profile: MbtiProfile): number {
 }
 
 export type FusionChoice = { readonly target: string; readonly kind: "resonance" | "tension" | "conditional"; readonly why: string; readonly scene?: FusionRule["scene"]; readonly source: "fusion" | "mbtiLink"; readonly rank: number };
+/**
+ * W4 Q2-5(덕짱님 결정): 합·충·형·해·파는 관계·시기 근거로만 쓴다 — 성격 연결(명리×MBTI)·성격 차원 값 계산에서 뺀다.
+ * 특성 고르기 점수(chooseFusion → mbtiFactor)는 그대로 두고(어떤 특성이 책에 들어가는지는 바꾸지 않는다), 책에 실리는 연결만 enforceMbtiLinks에서 지운다.
+ */
+export const NO_PERSONA_LINK = (feature: Pick<MyeongriFeature, "family">) => feature.family === "relation";
 export function chooseFusion(featureId: string, feature: MyeongriFeature, k: Knowledge, f: FactsForFusion): FusionChoice | null {
   if (!f.mbti) return null;
   const profile = k.mbti.get(f.mbti); if (!profile) return null;
@@ -223,11 +228,22 @@ export const LETTER_FUNCTION_CAP = 2;
 export const MBTI_LINK_DENSITY = 0.7;
 
 /** dimensionTags 공명·긴장 점수로 연결 후보를 만들고, 차원 설명으로 why를 조립한다(출처: 계산 연결). 유형 코드는 모두 J·P로 끝나 조사는 가/는. */
-export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: Knowledge, min = COMPUTED_LINK_MIN): NonNullable<Trait["fusion"]> | null {
+/**
+ * W4 Q2(Q1 표 2 R4 — fusion 검증): ① 같은 쪽(공명) 문장은 그 끝을 만드는 기능이 유형의 주·부·3차 기능일 때만(열등 기능을 강점으로 잇지 않는다 — 월살×Fe)
+ * ② 한 이유 안에 「같은 쪽으로 겹칩니다」와 「…쪽인데 …는」을 섞지 않는다(자기모순) — 첫 기여와 같은 방향 기여만 ③ 책 안에서 이미 쓴 차원 설명(dimUsed)은 다시 쓰지 않는다(같은 틀 두 번).
+ */
+export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: Knowledge, min = COMPUTED_LINK_MIN, dimUsed?: Set<string>): NonNullable<Trait["fusion"]> | null {
+  if (NO_PERSONA_LINK(feature)) return null;
   const s = scorePair(feature.id, feature.dimensionTags, profile.type, profile.dimensionTags);
   if (!s || s.strength < min) return null;
+  const top3 = stackOf(profile.type).slice(0, 3);
+  const strongFits = (dim: string, v: number) => { const tag = POLE_TAGS[poleKey(dim, v)]; return poleFits(profile.type, dim, v) && (!tag?.fn?.length || tag.fn.some(f => top3.includes(f))); };
   // P6e 4: 그 유형의 기능·태도에 맞지 않는 끝은 연결 근거로 쓰지 않는다.
-  const sentences = s.contributions.filter(c => poleFits(profile.type, c.dimension, c.mbti)).slice(0, 2).flatMap(c => {
+  const fit = s.contributions.filter(c => (c.product > 0 ? strongFits(c.dimension, c.mbti) : poleFits(profile.type, c.dimension, c.mbti)) && !dimUsed?.has(c.dimension));
+  const lead = fit[0];
+  if (!lead) return null;
+  const chosen = fit.filter(c => Math.sign(c.product) === Math.sign(lead.product)).slice(0, 2);
+  const sentences = chosen.flatMap(c => {
     const d = k.ontology.dimensions.find(x => x.id === c.dimension); if (!d) return [];
     const f = c.feature >= 0 ? d.poles.plus : d.poles.minus, m = c.mbti >= 0 ? d.poles.plus : d.poles.minus;
     // 축 이름·양끝 이름은 내부 라벨이라 쓰지 않는다(P6b E-6). 그림 별명 대신 용어 이름(B-2).
@@ -237,7 +253,8 @@ export function computedLink(feature: MyeongriFeature, profile: MbtiProfile, k: 
       : [`${josa(name, "은는")} ${f.description.replace(/ 편입니다\.$/, " 쪽인데")} ${profile.type}는 ${m.description}`];
   });
   if (!sentences.length) return null;
-  return { target: profile.type, kind: s.kind, why: sentences.join(" "), source: "computed" };
+  for (const c of chosen) dimUsed?.add(c.dimension);
+  return { target: profile.type, kind: lead.product > 0 ? "resonance" : s.kind === "resonance" ? "tension" : s.kind, why: sentences.join(" "), source: "computed" };
 }
 
 const FUNCTION_CODE = /\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/g;
@@ -246,8 +263,13 @@ const isLetterOrFunction = (target: string) => target.length <= 2 && !/^[EI][NS]
  * 브리프 규칙: ① 1장 핵심 특성(일간·일주)은 정확한 유형 연결 필수(일주에 없으면 그 일간 × 유형 Fusion),
  * ② 같은 글자·기능 연결은 최대 2개(넘으면 계산 연결로 바꿈), ③ 연결 없는 특성은 계산 연결로 채워 70% 이상.
  */
-export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFeature[], profile: MbtiProfile | null, k: Knowledge, f: FactsForFusion, fnUsed: Map<string, number> = new Map()): Map<string, FusionRule["scene"]> {
+/** 책 하나(궁합은 두 사람)가 같이 쓰는 「이미 쓴 차원 설명」 — fnUsed와 같은 수명(W4 Q2 같은 틀 두 번 거름). */
+const DIM_USED = new WeakMap<Map<string, number>, Set<string>>();
+export const dimUsedFor = (fnUsed: Map<string, number>): Set<string> => { let x = DIM_USED.get(fnUsed); if (!x) { x = new Set(); DIM_USED.set(fnUsed, x); } return x; };
+export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFeature[], profile: MbtiProfile | null, k: Knowledge, f: FactsForFusion, fnUsed: Map<string, number> = new Map(), dimUsed: Set<string> = dimUsedFor(fnUsed)): Map<string, FusionRule["scene"]> {
   const scenes = new Map<string, FusionRule["scene"]>();
+  // W4 Q2-5: 합·충·형·해·파 특성은 성격 연결을 싣지 않는다(관계·시기 근거로만).
+  traits.forEach((t, i) => { if (features[i] && NO_PERSONA_LINK(features[i])) delete t.fusion; });
   if (!profile) return scenes;
   const exactRule = (featureId: string) => (k.fusionByFeature.get(featureId) ?? []).find(r => r.mbtiTarget === profile.type && r.factBoundary.requires.every(q => q === "mbtiKnown" || (q === "exactTime" || q === "approximateTime" ? f.birthTimeKnown : q === "genderKnown" ? f.genderKnown : f.contextKnown)));
   traits.forEach((t, i) => {
@@ -261,17 +283,17 @@ export function enforceMbtiLinks(traits: Trait[], features: readonly MyeongriFea
     const tg = t.fusion?.target;
     if (!tg || !isLetterOrFunction(tg)) return;
     const n = (used.get(tg) ?? 0) + 1; used.set(tg, n);
-    if (n > LETTER_FUNCTION_CAP) { const c = computedLink(features[i], profile, k, 0); if (c) t.fusion = c; else delete t.fusion; }
+    if (n > LETTER_FUNCTION_CAP) { const c = computedLink(features[i], profile, k, 0, dimUsed); if (c) t.fusion = c; else delete t.fusion; }
   });
   for (const min of [COMPUTED_LINK_MIN, 0]) {
-    traits.forEach((t, i) => { if (!t.fusion && traits.filter(x => x.fusion).length / traits.length < (min ? 1 : MBTI_LINK_DENSITY)) { const c = computedLink(features[i], profile, k, min); if (c) t.fusion = c; } });
+    traits.forEach((t, i) => { if (!t.fusion && traits.filter(x => x.fusion).length / traits.length < (min ? 1 : MBTI_LINK_DENSITY)) { const c = computedLink(features[i], profile, k, min, dimUsed); if (c) t.fusion = c; } });
   }
   // 연결 설명(why) 안의 인지기능 코드도 책 전체 2번까지(P3.7 r1: ENFP 책에 "Ne 큰 그림 대 세부"가 네 번). 넘는 trait는 계산 연결(기능 코드 없음)로 바꾼다. 궁합은 두 사람이 fnUsed를 함께 쓴다.
   traits.forEach((t, i) => {
     const codes = [...new Set(t.fusion?.why.match(FUNCTION_CODE) ?? [])];
     if (!codes.length) return;
     if (codes.some(c => (fnUsed.get(c) ?? 0) >= LETTER_FUNCTION_CAP)) {
-      const c = computedLink(features[i], profile, k, 0);
+      const c = computedLink(features[i], profile, k, 0, dimUsed);
       if (c) t.fusion = c; else delete t.fusion;
       scenes.delete(t.id);
       return;

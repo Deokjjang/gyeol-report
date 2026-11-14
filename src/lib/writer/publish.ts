@@ -47,6 +47,8 @@ import { WRITER_SYSTEM } from "./prompt/system";
 import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } from "./safety";
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
+import { personaContext } from "./safety/persona";
+import { normWords } from "./safety/sentences";
 import { imageClash } from "./safety/imageClash";
 import { infoDictOf, infoMetrics } from "./safety/info";
 import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/brief/imageLedger";
@@ -166,8 +168,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...p6eContext(brief, k),
     ...final2Context(brief),
     ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...new Set([...(job?.props ?? []), ...stages, ...jobWordsOf(brief.person.facts.job.detail)])] }) } : {}),
-    // W3 P3 보강: 4종 카드 책은 카드에 없는 구체 장면 단정을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면.
-    ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [] } : {}),
+    // W3 P3 보강·W4 Q2: 4종 책은 근거에 없는 구체 장면(단정·물음)을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면 + 장 소품 힌트(sceneHint, W4에 작가에게 다시 감).
+    ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [], questionCap: true, persona: personaContext(brief, k), exampleWords: true, briefNorm: normWords(JSON.stringify(renderWriterBrief(brief, { knowledge: k }))) } : {}),
   };
 }
 
