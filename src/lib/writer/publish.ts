@@ -47,6 +47,7 @@ import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } fro
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
 import { imageClash } from "./safety/imageClash";
+import { infoDictOf, infoMetrics } from "./safety/info";
 import { avoidOverlaps, COVER_MOTIFS, coverMotifs, iljuPhrasesFor } from "@/lib/brief/imageLedger";
 import { CAREER_REQUIRED } from "@/lib/brief/design/career";
 import { LOVE_REQUIRED } from "@/lib/brief/design/love";
@@ -565,12 +566,14 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = writeKeyFill(brief, plan, enforced.chapters, enforced.emptyKeys);
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
+  // W3 P3 7절: 정보량 지표(기록만, 본문은 바꾸지 않는다). 카드(brief.design)가 생기면 cards를 넘긴다 — 지금은 trait·자리 이름 사전과 씨앗 장면으로 센다.
+  const info = (() => { try { return infoMetrics(chapters, { dict: infoDictOf(brief) }); } catch { return undefined; } })();
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
   const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
-  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
+  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), ...(info ? { info } : {}), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),
     rewriteTargets: 0, rewritten: 0, rewriteCalls: 0, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
     noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: 0, ...(firstProblem ? { firstProblem } : {}) } } } };

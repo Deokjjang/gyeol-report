@@ -84,6 +84,8 @@ const ADVICE_FAMILY: readonly [RegExp, string][] = [
   [/한도|상한/, "지출 한도"], [/견적|비교해 보|두 곳 이상/, "견적 비교"], [/고맙|감사/, "고마움 말하기"], [/거절|안 된다고/, "거절 연습"], [/산책|걷기|걸어/, "걷기"], [/통장/, "통장 나누기"],
 ];
 export const ADVICE_MAX = 2;
+/** 행동 조언 문장의 계열(조언 끝맺음이 아니거나 계열이 없으면 null). 정보량 지표(info.ts rxRepeat)도 쓴다. */
+export const adviceFamilyOf = (sentence: string): string | null => (ADVICE_END.test(sentence) ? ADVICE_FAMILY.find(([re]) => re.test(sentence))?.[1] ?? null : null);
 
 export const STYLE_HINT: Readonly<Record<StyleRule, string>> = {
   chapter_phrase_repeat: "같은 장 안에서 같은 구절을 세 번째로 썼다 → 이번 문장은 다른 말로, 새 정보(장면·근거)를 붙여 다시 쓴다",

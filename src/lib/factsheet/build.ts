@@ -7,7 +7,7 @@ import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { calculateCustomerDayun } from "@/lib/saju/customerDayun";
 import { currentDayunAt, personDaeunsu } from "@/lib/brief/labels";
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
-import { analyzeChartDetections, analyzeIncoming, detectRelations, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
+import { analyzeChartDetections, analyzeIncoming, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
 import type { ChartPosition, RelationHit, TemporalPosition } from "@/lib/saju/detections/types";
 import { CHEONMUN_BRANCHES, HYEONCHIM_CHARS } from "@/lib/saju/detections/tables";
 import { groupStrength, GROUP_NAME_KO, GROUP_STRONG, GROUP_WEAK, TEN_GOD_GROUP_KEYS, type TenGodGroupKey } from "@/lib/saju/groupStrength";

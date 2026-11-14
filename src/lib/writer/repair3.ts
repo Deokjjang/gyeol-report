@@ -13,6 +13,7 @@ import { HARD_RULES, type LintFlag } from "./safety/p6c";
 import { emptyPreview } from "./safety/p6d";
 import { factTokens, type FactKind } from "./chunked/accept";
 import { relationName } from "@/lib/compat/relations";
+import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
@@ -233,16 +234,6 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
  *  ③ 예고만 남았으면(받는 내용이 없는 「이런 변화가 있을 거예요」「다음 두 가지를 볼게요」) 되돌린다.
  * 되돌린 원문에 HARD 깃발이 남아 있으면 뒤의 deleteFlagged가 지운다.
  */
-export const BOOK_DUP_JACCARD = 0.8, BOOK_DUP_MIN = 14;
-const bigrams = (t: string) => { const out = new Set<string>(); for (let i = 0; i + 1 < t.length; i++) out.add(t.slice(i, i + 2)); return out; };
-/** 두 문장이 같은 문장인가(정규화 같음 또는 두 글자 묶음 자카드 ≥ 0.8, 둘 다 14자 이상). 정보량 지표(info.ts sameSentence)와 같은 기준. */
-export function sameSentence(a: string, b: string, min = BOOK_DUP_MIN, jac = BOOK_DUP_JACCARD): boolean {
-  const x = a.replace(/[^가-힣0-9]/g, ""), y = b.replace(/[^가-힣0-9]/g, "");
-  if (x.length < min || y.length < min) return false;
-  if (x === y) return true;
-  const p = bigrams(x), q = bigrams(y); let inter = 0; for (const g of p) if (q.has(g)) inter++;
-  return inter / (p.size + q.size - inter) >= jac;
-}
 /** 깃발 규칙 → 수리가 바꿔도 되는 사실 종류(그 깃발이 바로 그 사실을 고치라는 것일 때만). all = 모든 종류(안전망 금지 규칙: 시주·내부 용어 등은 그 낱말을 빼는 게 수리다). */
 const REPAIR_FACT_EXEMPT: Readonly<Record<string, readonly FactKind[] | "all">> = {
   safety: "all", label_leak: "all", rule_leak: "all", input_outside: "all", guide_copy: "all", glyph_list: ["ganji", "rel"], pillar_claim: ["tg", "ganji"],

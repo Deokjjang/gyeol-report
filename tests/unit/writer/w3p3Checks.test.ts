@@ -9,6 +9,7 @@ import type { BriefPersonInput } from "@/lib/brief/buildBrief";
 import { buildFactSheet } from "@/lib/factsheet/build";
 import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { exposureHits, exposureOf, plainStrength } from "@/lib/writer/safety/exposure";
+import { infoMetrics, lifeScene, sameSentence } from "@/lib/writer/safety/info";
 import { HARD_RULES, HINT } from "@/lib/writer/safety/p6c";
 import { styleFlags } from "@/lib/writer/safety/style";
 import type { FinalChapter } from "@/lib/writer/safety";
@@ -183,6 +184,9 @@ describe("W3 P3 6절 수리 뒤 결정론 재검", () => {
     const body = JSON.stringify(built.snapshot.draft.chapters);
     expect(body).not.toContain("세기는 신강");
     expect(body).toContain("다듬어진 결입니다");
+    // 7절: 정보량 지표는 Book 메타에 기록만(본문은 지표 계산 전후 같다).
+    const info = (built.meta.safety as { metrics?: { info?: { version: string; sentences: number } } }).metrics?.info;
+    expect(info?.version).toBe("info-v1"); expect(info!.sentences).toBeGreaterThan(50);
   }, 180_000);
 });
 
@@ -214,5 +218,52 @@ describe("W3 P3 0.6·6절 설계 카드 검수 변형(선택, 기본은 review-v
     expect(guardReview(issues("card:1.0"), v4.numbered, v4.ids)?.dropped[0]?.reason).toBe("F_without_ref");
     expect(guardReview(issues("", "I", "card.scene"), v4.numbered, v4.ids)?.dropped[0]?.reason).toBe("I_without_field");
     expect(designCardIds(`${summary}\ncard:2.1 | 근거: 정관(월간)`)).toEqual(["card:1.0", "card:2.1"]);
+  });
+});
+
+describe("W3 P3 7절 정보량 지표(info.ts)", () => {
+  const book = (chs: { n: number; sections: string[][] }[]) => chs.map(c => ({ n: c.n, source: "writer", sections: c.sections.map((ps, i) => ({ heading: `소제목 ${c.n}.${i}`, paragraphs: ps })) }));
+  const dup = "서운한 일이 생기면 그날이 가기 전에 짧게 말해 두는 게 당신에게 맞아요.";
+  const chapters = book([
+    { n: 1, sections: [["당신의 일지에 편인이 있어 혼자 깊이 파고들어요. 택배 도착 알림이 오면 상자부터 열어 보는 편이죠.", `${dup} 내 힘의 세기는 신강이에요.`]] },
+    { n: 2, sections: [[`월간의 정관이 규칙을 잡아 줘요. ${dup} 생각을 적어 두세요.`], ["당신은 결국 혼자 길을 내는 사람이에요. 오늘 할 일을 목록으로 적어 두세요."]] },
+    { n: 3, sections: [["시동이 걸리면 남들 한 달 치를 몰아서 해요. 해야 할 일을 메모장에 적어 두세요.", "느긋함은 게으름이 아니라 나만의 속도예요."]] },
+    { n: 4, sections: [["한 번 시동이 걸리면 남들 한 달 치를 끝내는 편이에요. 저녁 산책길 카페에 들러 노트북을 여는 날이 많죠. 떠오른 생각은 노트에 적어 두세요."]] },
+  ]);
+  const dict = { traits: ["편인", "정관"], names: ["INTP"], scenes: ["저녁 산책길에 카페에 들러 노트북을 여는 날이 많다"] };
+  const m = infoMetrics(chapters, { dict });
+  it("같은 문장·장 사이 같은 구절·처방 계열·재진술·교훈문·노출을 센다", () => {
+    expect(m.version).toBe("info-v1"); expect(m.cards).toBe(false);
+    expect(m.totals.sameSentence).toBe(1);
+    expect(m.totals.phraseRepeat).toBeGreaterThanOrEqual(1); // 「시동이 걸리면 남들」
+    expect(m.rxFamilies["적기·목록"]).toBe(4); expect(m.totals.rxRepeat).toBe(2); expect(m.totals.rxFamilies3).toBe(1);
+    expect(m.totals.restatements).toBe(1);
+    expect(m.totals.lessons).toBe(1);
+    expect(m.totals.exposureGrade).toBe(1); expect(m.totals.exposureRule).toBe(0);
+    expect(m.hits).toBeUndefined();
+  });
+  it("근거 없는 생활 장면: 씨앗과 겹치면 근거 있음, 소품만 있는 장면은 근거 없음(첫 문장·MBTI 따로)", () => {
+    expect(m.totals.scenes).toBe(2);
+    expect(m.totals.sceneUnbacked).toBe(1); // 택배 알림(씨앗 없음) · 카페 노트북은 씨앗과 겹침
+    expect(lifeScene("택배 도착 알림이 오면 상자부터 열어 보는 편이죠.")).toEqual(["택배", "알림"]);
+    expect(lifeScene("택배가 오면 상자부터 열어 보세요.")).toBeNull(); // 권유
+    expect(lifeScene("주말에 쉬게 된다면 카페에 가 보는 편이에요.")).toBeNull(); // 가정
+    const first = infoMetrics(book([{ n: 1, sections: [["INTP답게 퇴근길 지하철에서 메시지를 몇 번이고 고쳐 쓰지 않나요? 그다음 문장이에요."]] }]), { dict: { scenes: [] } });
+    expect([first.totals.sceneUnbacked, first.totals.sceneFirst, first.totals.sceneMbti]).toEqual([1, 1, 1]);
+  });
+  it("근거 사용: 카드 없으면 trait·자리 이름 사전, 카드 있으면 card.evidence·card.scene만", () => {
+    const s11 = m.bySection.find(x => x.at === "1.1")!; expect(s11.evidenceUsed).toBe(2); // 일지 · 편인
+    const cards = [{ chapter: 1, section: 0, evidence: [{ name: "편인", where: ["일지"] }, { name: "정재" }], scene: { text: "택배 도착 알림이 오면 상자부터 여는 사람" } }];
+    const c = infoMetrics(chapters, { dict, cards });
+    expect(c.cards).toBe(true);
+    expect(c.bySection.find(x => x.at === "1.1")!.evidenceUsed).toBe(1);
+    expect(c.bySection.find(x => x.at === "1.1")!.sceneUnbacked).toBe(0); // 카드 장면과 겹침
+    expect(c.bySection.find(x => x.at === "4.1")!.sceneUnbacked).toBe(1); // 카드 장면이 없는 절은 씨앗이 있어도 근거 없음
+  });
+  it("detail은 문장마다 걸린 지표를 준다(평가 도구용), 같은 문장 기준은 수리 재검과 같다", () => {
+    const d = infoMetrics(chapters, { dict, detail: true });
+    expect(d.hits!.filter(h => h.kinds.includes("sameSentence"))).toHaveLength(2);
+    expect(sameSentence(dup, dup.replace("짧게", "짧게라도"))).toBe(true);
+    expect(sameSentence("짧은 문장이에요.", "짧은 문장이에요.")).toBe(false); // 14자 미만
   });
 });
