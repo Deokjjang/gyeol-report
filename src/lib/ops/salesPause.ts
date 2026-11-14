@@ -1,5 +1,6 @@
 import "server-only";
 import type { OpsStore } from "./generation/sinks";
+import { salesPausedMessage } from "./config";
 
 /**
  * W3 P0 4종 판매 중지 스위치 읽기(ops_sales 'status' → ops_settings 'sales_pause'). 쓰기는 처리 봇·자동 멈춤만(SQL 함수 안에서 감사 한 줄).
@@ -37,6 +38,11 @@ export async function readSalesPause(opts: { store?: OpsStore; maxAgeMs?: number
 /** 판매 진입점용: 멈춤이면 true. 못 읽으면 false(판매 계속). */
 export async function salesPaused(opts: { store?: OpsStore; maxAgeMs?: number; now?: number } = {}): Promise<boolean> {
   return (await readSalesPause(opts))?.on === true;
+}
+/** W4 Q0: 멈춤이면 이유에 맞는 고객 문구, 아니면(또는 못 읽으면) null. 판매 진입점이 막을 때 쓴다(매번 새로 읽음 — 막기 판단과 같은 읽기 1번). */
+export async function salesPauseNotice(opts: { store?: OpsStore; maxAgeMs?: number; now?: number } = {}): Promise<string | null> {
+  const p = await readSalesPause(opts);
+  return p?.on === true ? salesPausedMessage(p.reason) : null;
 }
 /** 시험용: 캐시·기본 저장소 비우기. */
 export function resetSalesPauseCache() { cache = null; defaultStore = null; }
