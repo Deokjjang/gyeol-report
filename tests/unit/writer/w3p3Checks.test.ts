@@ -2,7 +2,12 @@
  * W3 P3 검사(4·5·6절): 노출 금지 HARD 규칙 · 개수 말 대조 · 수리 뒤 결정론 재검.
  * 양성 문장은 research-w2(3c2b7bac) 결함 인용(R7·CO4·LO1·LO7·5-5·4-4)과 저장소 원고 꼴, 음성 문장은 운영·저장소 말뭉치에서 본 일상어 꼴.
  */
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { buildBrief, loadKnowledge } from "@/lib/brief";
+import type { BriefPersonInput } from "@/lib/brief/buildBrief";
+import { buildFactSheet } from "@/lib/factsheet/build";
+import { factCheck, factCtxOf } from "@/lib/factsheet/check";
 import { exposureHits, exposureOf, plainStrength } from "@/lib/writer/safety/exposure";
 import { HARD_RULES, HINT } from "@/lib/writer/safety/p6c";
 import { styleFlags } from "@/lib/writer/safety/style";
@@ -70,5 +75,40 @@ describe("W3 P3 4절 노출 금지", () => {
     expect(HARD_RULES.has("term_unexplained" as never)).toBe(false);
     const ok = styleFlags([ch(1, [["당신 사주에는 편인(혼자 깊이 파고들어 배우는 힘)이 두드러져요."]])]);
     expect(ok.filter(f => f.rule === "term_unexplained")).toEqual([]);
+  });
+});
+
+describe("W3 P3 5절 사실 대조: 궁합 관계 셈 하나로 · 개수 말", () => {
+  const k = loadKnowledge(join(process.cwd(), "src/data/knowledge-v5"));
+  const BASE = "2026-11-04";
+  const SODAM: BriefPersonInput = { name: "장소담", gender: "FEMALE", birthDate: "1996-12-06", birthTime: "14:15", birthTimeUnknown: false, mbtiType: "INTP", context: { relationshipStatus: "dating", jobStatus: "self_employed", detailJob: "카페 사장" } };
+  const SEONGMIN: BriefPersonInput = { name: "전성민", gender: "MALE", birthDate: "1992-11-09", birthTime: "19:45", birthTimeUnknown: false, mbtiType: "ISTJ" };
+  const input = { product: "saju_mbti_compatibility" as const, baseDate: BASE, person: SODAM, partner: SEONGMIN, relationshipType: "love" as const };
+  const brief = buildBrief(input, k);
+  const sheet = buildFactSheet(input, brief, k);
+  const ctx = factCtxOf(sheet, k, [["장소담", "소담"], ["전성민", "성민"]]);
+  it("정답지 두 사람 관계 = 브리프 요약·화면 목록(compat/relations 한 구현, CO5 11 대 15)", () => {
+    const rows = [...sheet.pair!.relations, ...sheet.pair!.stemClashes];
+    expect(rows.length).toBe(brief.compatibility!.relationsSummary!.names.length);
+    expect(rows.length).toBe(12);
+    expect(brief.compatibility!.relationsSummary!.line).toContain(`모두 ${rows.length}가지`);
+    // 삼형은 한 줄(세 글자), 그 안의 두 글자 형은 맞는 말로 읽는다.
+    for (const r of rows.filter(x => x.kind === "HYEONG" && x.subtype === "삼형")) expect(new Set(r.members.map(m => m.char)).size).toBeGreaterThanOrEqual(2);
+  });
+  it("개수 말이 정답지와 다르면 fact_count, 같으면 통과, 일부를 가리키는 말은 보지 않는다", () => {
+    expect(factCheck("두 사람 사이에서 찾은 관계는 모두 15가지예요.", ctx)?.rule).toBe("fact_count");
+    expect(factCheck("두 사람 사이에서 찾은 관계는 모두 12가지예요.", ctx)).toBeNull();
+    expect(factCheck("두 사람 사이에는 합 6가지가 있어 서로 끌어당겨요.", ctx)).toBeNull();
+    expect(factCheck("두 사람 사이에는 합이 다섯 가지 있어요.", ctx)).toMatchObject({ rule: "fact_count" });
+    expect(factCheck("두 사람 사이의 관계 가운데 영향이 큰 세 가지를 먼저 볼게요.", ctx)).toBeNull();
+    expect(factCheck("서로 끌어당기는 힘이 커요.", ctx)).toBeNull();
+  });
+  it("한 사람 책은 원국 관계 수와 견준다(때 낱말 문장은 보지 않는다)", () => {
+    const one = { product: "saju_mbti_full" as const, baseDate: BASE, person: SODAM };
+    const s1 = buildFactSheet(one, buildBrief(one, k), k), c1 = factCtxOf(s1, k, [["장소담", "소담"]]);
+    const n = s1.people[0].relations.length + s1.people[0].stemClashes.length;
+    expect(factCheck(`타고난 글자 사이에 관계가 ${n + 3}가지 엮여 있어요.`, c1)?.rule).toBe("fact_count");
+    expect(factCheck(`타고난 글자 사이에 관계가 ${n}가지 엮여 있어요.`, c1)?.rule).not.toBe("fact_count");
+    expect(factCheck(`올해는 관계가 ${n + 3}가지 엮여 있어요.`, c1)?.rule).not.toBe("fact_count");
   });
 });

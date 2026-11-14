@@ -19,6 +19,7 @@ import type { Brief } from "@/lib/brief/schema";
 import type { BriefInput, BriefPersonInput } from "@/lib/brief/buildBrief";
 import { TEN_GOD_KO } from "@/lib/brief/labels";
 import { BASE_POINTS } from "@/lib/compat/display";
+import { pairRelations as compatPairRelations, type PairRelation } from "@/lib/compat/relations";
 
 export const FACTSHEET_VERSION = "factsheet-v1" as const;
 export type Pos = ChartPosition;
@@ -110,9 +111,9 @@ function slotsOf(code: string, positions: readonly Pos[], saju: SajuCalcResult, 
 }
 
 const PILLAR_BASED = new Set(["GOEGANG", "EUMCHAK_YANGCHA", "BAEKHODAESAL"]);
-function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner", baseAt?: string): PersonFacts {
-  const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
-  const saju = sajuOf(input, gender);
+const genderOf = (input: BriefPersonInput) => (input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null);
+function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner", baseAt?: string, saju: SajuCalcResult = sajuOf(input, genderOf(input))): PersonFacts {
+  const gender = genderOf(input);
   const det = analyzeChartDetections(saju);
   const dm = saju.dayMaster;
   const P = saju.pillars as Record<Pos, Pillar | undefined>;
@@ -189,27 +190,31 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
   };
 }
 
-/** 두 사람 기둥끼리 관계(A 자리 × B 자리). 원국 감지와 같은 함수(라벨은 계산에 쓰이지 않는다). */
-function pairRelations(a: PersonFacts, b: PersonFacts): { relations: RelationFact[]; stemClashes: RelationFact[] } {
+/**
+ * 두 사람 기둥끼리 관계(A 자리 × B 자리). W3 P3 5절: 브리프 요약·화면과 같은 한 구현(compat/relations.pairRelations — 같은 관계는 한 줄, 삼형 한 줄)을 쓴다.
+ * 예전에는 자리 쌍마다 한 줄을 따로 만들어 정답지 15개 대 요약 11가지로 셈이 갈렸다(research-w2 CO5).
+ */
+function pairRelationFacts(rows: readonly PairRelation[], a: PersonFacts, b: PersonFacts): { relations: RelationFact[]; stemClashes: RelationFact[] } {
   const relations: RelationFact[] = [], stemClashes: RelationFact[] = [];
-  for (const pa of POSITIONS) for (const pb of POSITIONS) {
-    const x = a.pillars[pa], y = b.pillars[pb]; if (!x || !y) continue;
-    const label = (pos: string) => pos === "year" ? `${a.name} ${whereKo(pa)}` : `${b.name} ${whereKo(pb)}`;
-    const entries = [{ position: "year" as const, pillar: { stem: x.stem, branch: x.branch } }, { position: "month" as const, pillar: { stem: y.stem, branch: y.branch } }];
-    for (const r of detectRelations(entries)) relations.push(relFact(r, label));
-    for (const r of detectStemClashes(entries)) stemClashes.push(relFact(r, label));
+  for (const r of rows) {
+    const part = r.sky ? "stem" : "branch";
+    const side = (p: PersonFacts, ps: readonly Pos[]) => ps.flatMap(pos => { const pl = p.pillars[pos]; return pl ? [{ where: `${p.name} ${whereKo(pos)}`, char: pl[part] as string }] : []; });
+    const fact: RelationFact = { kind: r.kind, key: r.key, keyKo: hangulOf(r.key), members: [...side(a, r.a), ...side(b, r.b)], completeness: r.completeness, ...(r.subtype ? { subtype: r.subtype } : {}), glyphCount: new Set(r.chars).size };
+    (r.kind === "STEM_CHUNG" ? stemClashes : relations).push(fact);
   }
   return { relations, stemClashes };
 }
 
 export function buildFactSheet(input: BriefInput, brief: Brief | null, k: Knowledge): FactSheet {
-  const a = personFacts(input.person, k, input.baseDate, brief, "person", input.baseAt);
+  const sajuA = sajuOf(input.person, genderOf(input.person));
+  const a = personFacts(input.person, k, input.baseDate, brief, "person", input.baseAt, sajuA);
   const people: PersonFacts[] = [a];
   let pair: PairFacts | undefined;
   if (input.partner) {
-    const b = personFacts(input.partner, k, input.baseDate, brief, "partner", input.baseAt);
+    const sajuB = sajuOf(input.partner, genderOf(input.partner));
+    const b = personFacts(input.partner, k, input.baseDate, brief, "partner", input.baseAt, sajuB);
     people.push(b);
-    const rel = pairRelations(a, b);
+    const rel = pairRelationFacts(compatPairRelations(sajuA, sajuB), a, b);
     const bIds = new Set(b.shinsal.map(s => s.id));
     const dayStage = (p: PersonFacts) => p.twelveStages.find(t => t.position === "day")?.ko ?? null;
     const sc = brief?.compatibility?.score;

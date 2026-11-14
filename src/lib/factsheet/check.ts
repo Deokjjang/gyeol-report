@@ -5,6 +5,7 @@
  */
 import type { Knowledge } from "@/lib/brief/knowledge";
 import type { FactSheet, PersonFacts, RelationFact, Slot } from "./build";
+import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
 export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
@@ -128,6 +129,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     if (!x.stem && x.chars.some(c => !/[子丑寅卯辰巳午未申酉戌亥]/.test(c))) continue;
     const found = pool.filter(r => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars));
     if (found.length) continue;
+    // W3 P3 5절: 궁합 정답지가 삼형을 한 줄(세 글자)로 묶는다 — 그 안의 두 글자 형(「축술형」)은 맞는 말.
+    if (x.chars.length === 2 && x.kinds.includes("HYEONG") && pool.some(r => r.kind === "HYEONG" && r.subtype === "삼형" && x.chars.every(c => r.members.some(m => m.char === c)))) continue;
     // AM 7부(annual-3 판독): 「사유축 반합」은 무리 이름 + 반합(세 글자 중 두 글자만)이다 — 그 무리의 반합(두 글자)이 있으면 맞는 말.
     if (/반합$/.test(x.text) && x.chars.length === 3 && pool.some(r => r.kind === "SAMHAP" && r.completeness !== "full" && r.members.every(m => x.chars.includes(m.char)))) continue;
     // AM 7부(annual-2 판독): 세 글자 형·합(축술미형·인사신형)이 원국 두 글자 + 그 해·달·대운 한 글자로 다 모이면 엔진 카드와 같이 본다.
@@ -394,11 +397,52 @@ function dayunSpan1(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): 
   }
   return null;
 }
+/**
+ * W3 P3 5절 개수 말: 「관계는 모두 11가지」「합 4가지」「형·충·파·해 7가지」「충이 두 개」가 정답지 개수와 다르면 fact_count.
+ * 셈은 compat/relations와 같은 관계 이름(relationName)으로 한다. 궁합은 두 사람 사이(이름이 하나만 나온 문장은 그 사람 원국), 한 사람 책은 원국.
+ * 때 낱말(세운·대운·올해)이 든 문장·문단, 해·달 카드, 세운·대운 책은 유입 관계와 섞이므로 보지 않는다. 「번」(횟수)은 개수로 보지 않는다.
+ */
+const NUM_KO: Readonly<Record<string, number>> = { 하나: 1, 한: 1, 둘: 2, 두: 2, 셋: 3, 세: 3, 넷: 4, 네: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8, 아홉: 9, 열: 10, 열한: 11, 열하나: 11, 열두: 12, 열둘: 12, 열세: 13, 열셋: 13, 열네: 14, 열넷: 14, 열다섯: 15, 열여섯: 16, 열일곱: 17, 열여덟: 18, 열아홉: 19, 스무: 20, 스물: 20 };
+const NUM = "(\\d{1,2}|열하나|열한|열둘|열두|열셋|열세|열넷|열네|열다섯|열여섯|열일곱|열여덟|열아홉|스무|스물|하나|한|둘|두|셋|세|넷|네|다섯|여섯|일곱|여덟|아홉|열)";
+const UNIT = " ?(?:가지|개|곳|군데|쌍)";
+/** 일부만 가리키는 말(「영향 큰 관계 세 가지」「그중 두 가지」)이면 전체 개수 주장이 아니다. */
+const SUBSET = /큰|중요한|대표|주요|그중|가운데|눈에 띄는|굵직한|핵심|먼저 볼|골라/;
+const numOf = (w: string) => /^\d+$/.test(w) ? Number(w) : NUM_KO[w] ?? NaN;
+const REL_NAMES = ["천간합", "천간충", "육합", "삼합", "반합", "방합", "삼형", "원진", "충", "파", "형"] as const;
+function relCounts(rows: readonly RelationFact[]): { total: number; hap: number; friction: number; by: Map<string, number> } {
+  const by = new Map<string, number>(); let hap = 0;
+  for (const r of rows) { const n = relationName(r.kind as never, r.completeness as never, r.subtype); by.set(n, (by.get(n) ?? 0) + 1); if (isHapKind(r.kind as never)) hap++; }
+  return { total: rows.length, hap, friction: rows.length - hap, by };
+}
+function countClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  if (inKey || ctx.product === "annual_fortune" || ctx.product === "major_fortune" || TEMPORAL.test(sen) || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
+  if (!/(관계|합|충|형|파|해|원진)/.test(sen)) return null;
+  const pair = ctx.sheet.pair, named = ctx.people.filter(p => p.names?.test(sen));
+  const between = Boolean(pair) && (named.length !== 1 || /두 사람|둘 사이|사이에서|사이에는|사이의|서로/.test(sen));
+  const rows: RelationFact[] = between && pair ? [...pair.relations, ...pair.stemClashes] : owners.length === 1 ? [...owners[0].relations, ...owners[0].stemClashes] : [];
+  if (!between && owners.length !== 1) return null;
+  const c = relCounts(rows), who = between ? "두 사람 사이" : `${owners[0].name} 원국`;
+  const said = (re: RegExp) => { const m = sen.match(re); return m ? numOf(m[m.length - 1]) : NaN; };
+  const subset = SUBSET.test(sen);
+  const checks: [number, number, string][] = subset ? [] : [
+    [/관계|엮/.test(sen) ? said(new RegExp(`(?:모두|전부|총|통틀어|다 해서) ${NUM}${UNIT}`)) : NaN, c.total, "관계 모두"],
+    [said(new RegExp(`관계(?:가|는|도)? ${NUM}${UNIT}(?:가|나|이나)? (?:있|엮|찾)`)), c.total, "관계 모두"],
+    [said(new RegExp(`(?<![가-힣·])합(?:이|은|는|도)? ${NUM}${UNIT}`)), c.hap, "합"],
+    [said(new RegExp(`형·충·파·해(?:는|가|도)? ${NUM}${UNIT}`)), c.friction, "형·충·파·해"],
+  ];
+  if (!subset) for (const n of REL_NAMES) checks.push([said(new RegExp(`(?<![가-힣·])${n}(?:이|가|은|는|도)? ${NUM}${UNIT}`)), c.by.get(n) ?? 0, n]);
+  for (const [s0, real, label] of checks) {
+    if (!Number.isFinite(s0) || s0 === real) continue;
+    return { rule: "fact_count", detail: `${who} ${label} ${real}${label === "관계 모두" ? "가지" : "개"}(${s0} 아님) — 합 ${c.hap}·형·충·파·해 ${c.friction}${[...c.by].length ? `(${[...c.by].map(([k, v]) => `${k} ${v}`).join("·")})` : ""}` };
+  }
+  return null;
+}
+
 /** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지), inKey = 대운 연도·세운 달 카드 소제목 안(유입 문맥, AM 7부). */
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
   return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
-    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
+    ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 
 /** 괄호 약어·한자 뒤 조사를 앞 한글 받침에 맞춘다(「눈(Ni)는」→「눈(Ni)은」). 결정론 정리(호출 0). */
