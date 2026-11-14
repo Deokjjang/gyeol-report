@@ -49,7 +49,7 @@ function fromMarkdown(file: string, text: string): Book {
     const h3 = l.match(/^### (.*)$/); if (h3) { cur.sections.push({ heading: h3[1], paragraphs: [] }); continue; }
     if (l.trim() && !/^[-#[>]/.test(l.trim()) && cur.sections.length) cur.sections.at(-1)!.paragraphs.push(l.trim());
   }
-  const product = /종합/.test(head) ? "saju_mbti_full" : /커리어/.test(head) ? "career_money_study" : /연애/.test(head) ? "love_marriage_child" : /궁합/.test(head) ? "saju_mbti_compatibility" : "?";
+  const product = /궁합|×/.test(head) ? "saju_mbti_compatibility" : /종합/.test(head) ? "saju_mbti_full" : /커리어/.test(head) ? "career_money_study" : /연애/.test(head) ? "love_marriage_child" : "?";
   return { id: basename(file).replace(/\.md$/, ""), product, chapters, backing: false, dict: { traits: [...new Set([...TERM_NAMES, ...featureNames([...k.features.keys()])].filter(t => t.length >= 2))], names: name ? [name, name.slice(1)] : [], scenes: [] } };
 }
 function load(path: string): Book[] {
