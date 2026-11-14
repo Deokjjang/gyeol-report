@@ -211,7 +211,9 @@ describe("production paid report runtime boundaries", () => {
       schedule: "* * * * *",
     });
     expect(statusSource).toContain("ReportStatusView");
-    expect(statusSource).toContain("if (attention || refreshing) return");
+    // W3 P2: 결과 확인 중·결제 취소 중에도 계속 확인하고, 결론(취소 완료·이용권 반환)에서만 멈춘다.
+    expect(statusSource).toContain('const stopped = progress?.state === "refunded" || progress?.state === "returned"');
+    expect(statusSource).toContain("if (stopped) return");
     expect(statusSource).not.toContain("FAILED_REQUIRES_ATTENTION");
     expect(resultSource).toContain('<ReportStatusView state="expired" />');
   });
