@@ -105,7 +105,7 @@ expect(layoutSource).toContain("url: SHARE_IMAGE");
       "ProductGrid",
       "GYEOL_HOME_PRODUCT_GRID",
       "사주 × MBTI 종합 리포트",
-      "1,290원",
+      "오픈 기념 · 모든 리포트 {REPORT_PRICE_LABEL_KO}",
       "90일 열람",
     ];
 

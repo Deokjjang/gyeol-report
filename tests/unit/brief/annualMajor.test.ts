@@ -5,6 +5,7 @@ import { getMonthlyPillars } from "../../../src/lib/saju/detections";
 import { domainSignals, loveLineFits, luckyOf, readWish, samjaeOf, yearVerdict } from "../../../src/lib/brief/design/annual";
 import { relationYears, yearName, yearRelationCard, yearRelationEvidence } from "../../../src/lib/brief/yearRelation";
 import { renderWriterBrief } from "../../../src/lib/writer/prompt";
+import { amBrief } from "../../../src/lib/brief/chapters";
 
 const k = loadKnowledge();
 const person = (o: Partial<{ name: string; birthDate: string; birthTime: string; gender: "MALE" | "FEMALE"; mbtiType: string; unknown: boolean; rel: string; job: string }> = {}) => ({
@@ -435,10 +436,9 @@ describe("AM 결정(밤): 종합 씨앗은 입력 직군과 정면으로 부딪�
     expect(seedClashesJob({ text: "프리랜서 의뢰서의 모호한 문장 되묻기" }, unknown)).toBe(false);
     expect(seedClashesJob({ text: "구직 공고 요건을 분해해 따져 보기" }, unknown)).toBe(false);
   });
-  it("sodam 입력(INTP · 자영업 카페 사장) 종합 브리프에 사무·구직·외주 씨앗이 없다", () => {
-    const b = buildBrief({ product: "saju_mbti_full", person: { ...person({ name: "가상소담", birthDate: "1994-05-21", birthTime: "14:20", mbtiType: "INTP" }), context: { relationshipStatus: "", jobStatus: "self_employed", detailJob: "카페 사장" } }, baseDate: "2026-12-02", baseAt: "2026-12-02T03:00:00Z" } as never, k);
-    const text = JSON.stringify(b);
-    for (const w of ["업무 지시", "질문 메일", "구직 공고", "프리랜서 의뢰서"]) expect(text, w).not.toContain(w);
+  // W3 P1: 종합 직군 충돌 씨앗 거름은 amBrief 상품(세운·대운)에서만 켠다 — 4종 종합은 운영 그대로(P3 연결 시스템에서 판단해 켠다). 거름 함수 자체는 위에서 본다.
+  it("직군 충돌 씨앗 거름은 amBrief 상품(세운·대운)에서만 켜진다 — 4종 종합은 P3에서 판단", () => {
+    expect(amBrief("saju_mbti_full")).toBe(false); expect(amBrief("annual_fortune")).toBe(true); expect(amBrief("major_fortune")).toBe(true);
   });
 });
 

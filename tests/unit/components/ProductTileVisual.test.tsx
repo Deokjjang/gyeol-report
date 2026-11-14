@@ -24,7 +24,7 @@ describe("product visual collection", () => {
       expect(cards[index]).toContain(`data-product-visual="${variant}"`);
       expect(cards[index]).toContain(`href="/report/new?product=${slug}"`);
       expect(cards[index].match(/<a\b/g)).toHaveLength(1);
-      expect(cards[index].match(/1,290원/g)).toHaveLength(1);
+      expect(cards[index].split(GYEOL_HOME_PRODUCT_GRID[index].priceLabelKo)).toHaveLength(2);
       expect(cards[index]).toContain('data-product-card="true"');
     });
   });

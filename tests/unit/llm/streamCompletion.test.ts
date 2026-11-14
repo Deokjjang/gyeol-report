@@ -182,7 +182,8 @@ describe("config and prices", () => {
 
 // AM 7부(annual-4): 출력이 상한까지 났는데 text_delta가 0자였다. 텍스트가 아닌 블록은 원고로 쓰지 않고 종류·글자 수만 남긴다.
 describe("streamCompletion: 텍스트가 아닌 출력 블록 기록", () => {
-  it("anthropic: thinking 블록만 오다 상한에 닿으면 text 0자 · finish length · hidden에 종류와 글자 수", async () => {
+  // W3 P1: 관측은 observed 하나로 합쳤다(AM hidden → observed.blocks: 종류별 수·글자 수).
+  it("anthropic: thinking 블록만 오다 상한에 닿으면 text 0자 · finish length · observed.blocks에 종류와 글자 수", async () => {
     const chunks = [
       sse("message_start", { type: "message_start", message: { id: "msg_2", usage: { input_tokens: 10, output_tokens: 1 } } }),
       sse("content_block_start", { type: "content_block_start", index: 0, content_block: { type: "thinking", thinking: "" } }),
@@ -193,13 +194,13 @@ describe("streamCompletion: 텍스트가 아닌 출력 블록 기록", () => {
     ];
     const seen: string[] = [];
     const result = await streamCompletion(base("anthropic", respond(chunks), { onText: (d) => seen.push(d) }));
-    expect(result).toMatchObject({ text: "", finishReason: "length", usage: { outputTokens: 200 }, hidden: { blocks: { thinking: 1 }, chars: 4 } });
+    expect(result).toMatchObject({ text: "", finishReason: "length", usage: { outputTokens: 200 }, observed: { blocks: { thinking: { n: 1, chars: 4 } } } });
     expect(seen).toEqual([]);
   });
-  it("anthropic: 글 블록만 오면 hidden이 없다(기존 결과 모양 그대로)", async () => {
+  it("anthropic: 글 블록만 오면 observed.blocks에 text만(생각 블록 없음)", async () => {
     const result = await streamCompletion(base("anthropic", respond(anthropicOk(["본문"]))));
     expect(result.text).toBe("본문");
-    expect(result.hidden).toBeUndefined();
+    expect(Object.keys(result.observed?.blocks ?? {}).filter(k => k !== "text")).toEqual([]);
   });
 });
 

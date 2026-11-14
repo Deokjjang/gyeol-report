@@ -79,7 +79,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "tension: t6/work/new-domain traits.t6.fusion t1/work/new-domain mbti/work",
     "fact-bomb: t2/work/first shadows.s1 t7/relationships/first shadows.s2 mbti.shadows mbti/alone",
     "fortune: fortunes mbti/work t2/alone/new-domain traits.t2.fusion",
-    "work: t5/work/first traits.t5.fusion t12/work/new-domain mbti/work chart.thisYear chart.currentDayun ev:yearRelation",
+    "work: t5/work/first traits.t5.fusion t12/work/new-domain mbti/work chart.thisYear chart.currentDayun",
     "money: t3/work/first traits.t3.fusion t9/money/new-domain mbti/money mbti/money mbti/money",
     "love: t8/relationships/first mbti/love t9/love/new-domain mbti/love t11/love/new-domain traits.t11.fusion",
     "family: ev:familyRoots ev:careReceive mbti/relationships t5/relationships/new-domain ev:careGive",
@@ -100,7 +100,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 11371,
+  "tokens": 11201,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,why,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,fortune]",
@@ -198,7 +198,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "conflict: t1/love/new-domain shadows.s1 ev:dayRelations t2/relationships/new-domain mbti/relationships ev:dangerSigns",
     "marriage: ev:marriageView ev:homeState t1/marriage/new-domain mbti/marriage",
     "parenting: ev:childStar ev:parentState t9/marriage/first traits.t9.fusion",
-    "flow: ev:loveTiming ev:yearRelation ev:loveRoadmap chapters.in-love mbti/relationships",
+    "flow: ev:loveTiming ev:loveRoadmap chapters.in-love mbti/relationships",
   ],
   "chart": "己巳 丁卯 庚辰 - 丙午",
   "fortunes": [
@@ -214,7 +214,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8777,
+  "tokens": 8619,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [contact,conflict,marriage]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-engine,in-love,conflict]",
@@ -242,7 +242,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "docs: ev:docsLevel ev:docsTiming ev:docsStatus",
     "money: t6/money/new-domain ev:moneyStructure ev:moneyStatus t9/money/new-domain ev:moneyRisk",
     "invest: ev:investStyle ev:investMistakes ev:investPrinciples",
-    "roadmap: ev:timingNow ev:threeYears ev:yearRelation ev:roadmap",
+    "roadmap: ev:timingNow ev:threeYears ev:roadmap",
   ],
   "chart": "戊午 己未 戊寅 癸亥 丙午",
   "fortunes": [
@@ -257,7 +257,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8748,
+  "tokens": 8560,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [engine,now,people]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - []",
@@ -288,7 +288,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "friction: compatibility.dayRelations at3/relationships/new-domain at4/relationships/new-domain compatibility.differences at2/relationships/new-domain shadows.s1",
     "domain-scene: bt7/relationships/first rel:데이트 비용 rel:연락 at3/relationships/new-domain rel:데이트 계획 bt5/relationships/new-domain",
     "felt-differently: bt2/relationships/new-domain rel:기념일 rel:다툰 뒤 bt7/relationships/new-domain rel:연락 chart.strength",
-    "one-thing: chapters.friction ev:yearRelation chapters.attraction chart.elements chapters.felt-differently chart.yinYang",
+    "one-thing: chapters.friction chart.elements chapters.attraction chart.yinYang chapters.felt-differently chart.climate",
   ],
   "chart": "丙子 己亥 丁丑 乙巳 丙午",
   "fortunes": [
@@ -306,7 +306,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt6",
   ],
   "timeline": undefined,
-  "tokens": 14158,
+  "tokens": 13938,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,attraction,direction-ab]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [attraction,direction-ab,friction]",
