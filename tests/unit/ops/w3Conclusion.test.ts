@@ -1,6 +1,6 @@
 // W3 P2 「30분 결론」 가짜 공급자 시뮬레이션(비용 0): 가짜 시계 + 1분 크론 흉내 + 스크립트 작가로 결제·이용권 주문 하나가 결론(발행 또는 자동 환불·이용권 반환)에
 // 닿는 시각을 잰다. 경로: (a) 생각 소진 → 2차 성공 / (a2) 생각 소진 두 번 → 결론 / (b) 529 장애 / (c) Anthropic 잔액 소진 / (d) 검사 탈락(장 빠짐) / (e) 첫 이벤트 멈춤 /
-// (f) 함수 죽음 / (g) 장애 자동 멈춤 신호 / 이용권 경로. 모든 경로가 시작 + 30분 안.
+// (f) 함수 죽음 / 이용권 경로. 모든 경로가 시작 + 30분 안. (장애 자동 멈춤 — 529 연결 실패 주문 3건 → 4종 판매 멈춤 — 은 실제 SQL로 w3SafetySql.test.ts가 본다.)
 import { describe, expect, it } from "vitest";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { superviseQueueJob, type Decision, type QueueJob } from "@/lib/ops/generation/supervisor";
@@ -38,10 +38,11 @@ function scriptedStream(clock: ReturnType<typeof fakeClock>, steps: Step[]) {
   return { stream, writer };
 }
 
-type Outcome = { conclusion: "published" | "refunded" | "returned" | "none"; atMin: number; attempts: number; decisions: Decision["kind"][] };
+type Outcome = { conclusion: "published" | "refunded" | "returned" | "none"; atMin: number; attempts: number; decisions: Decision["kind"][]; by?: "supervisor" | "sweep" };
 /**
  * 크론 흉내: 시작(결제 확정) + 30초에 첫 claim, 미룸(defer)이면 그 시각 뒤 첫 분 정각에 다시, 결론이면 끝.
  * die: 그 번째(1부터) claim은 정산 없이 죽는다(lease 15분 뒤 다시 claim, priorClaims +1). 결제는 포기 직후 환불(refundNow)을 부른다.
+ * 마감 청소: 운영처럼 매분 크론(report-jobs)이 같이 돈다 — 죽은 claim의 lease를 기다리는 동안 청소 판단(paidSweepAction·ticketSweepDue)이 결론을 내면 그 분에 끝.
  */
 async function simulate(steps: Step[], opts: { origin?: "paid" | "ticket"; die?: number[]; fetchImpl?: typeof fetch } = {}): Promise<Outcome & { writer: { maxTokens: number; at: number }[]; refundNowAt: number | null }> {
   const clock = fakeClock(), t0 = clock.now(), ops = memoryOpsStore(clock), sc = scriptedStream(clock, steps);
@@ -52,7 +53,16 @@ async function simulate(steps: Step[], opts: { origin?: "paid" | "ticket"; die?:
   let claimAt = t0 + 30_000, claims = 0, refundNowAt: number | null = null, attempts = 0;
   for (let guard = 0; guard < 20; guard++) {
     clock.advanceTo(claimAt); claims++;
-    if (opts.die?.includes(guard + 1)) { attempts++; claimAt = clock.now() + 15 * MIN; continue; } // lease가 끝날 때까지 아무도 못 잡는다
+    if (opts.die?.includes(guard + 1)) { // lease가 끝날 때까지 아무도 못 잡는다 — 그 사이 매분 마감 청소만 돈다(작업은 RUNNING)
+      attempts++; claimAt = clock.now() + 15 * MIN;
+      for (let m = Math.ceil((clock.now() + 1) / MIN) * MIN; m < claimAt; m += MIN) {
+        const due = origin === "paid" ? paidSweepAction({ status: "RUNNING", startedAt: t0, now: m, refunded: false, published: false }) === "refund" : ticketSweepDue({ state: "RUNNING", startedAt: t0, now: m });
+        if (!due) continue;
+        clock.advanceTo(m); if (origin === "paid") refundNowAt = m;
+        return { conclusion: origin === "paid" ? "refunded" : "returned", atMin: (m - t0) / MIN, attempts, decisions, by: "sweep", writer: sc.writer, refundNowAt };
+      }
+      continue;
+    }
     const r = await superviseQueueJob({ ...job, ...(claims > 1 ? { priorClaims: claims - 1 } : {}) }, env, async d => {
       decisions.push(d.kind);
       if (d.kind === "give_up" && origin === "paid") refundNowAt = clock.now();
@@ -154,9 +164,13 @@ describe("시뮬레이션: 모든 경로가 30분 안에 결론", { timeout: 60_
     const o = await simulate([{ kind: "ok" }], { die: [1] });
     within30(o); expect(o.conclusion).toBe("published"); expect(o.attempts).toBe(2);
   });
-  it("(f2) 1차·2차 모두 죽음 → 세 번째 claim은 시도 없이 결론(환불)", async () => {
+  it("(f2) 1차·2차 모두 죽음 → 2차 lease(시작 + 30.5분)를 기다리지 않고 매분 마감 청소가 28분에 자동 환불", async () => {
     const o = await simulate([{ kind: "ok" }], { die: [1, 2] });
-    expect(o.conclusion).toBe("refunded"); expect(o.decisions).toEqual(["give_up"]); expect(o.atMin).toBeLessThan(31);
+    within30(o); expect(o).toMatchObject({ conclusion: "refunded", by: "sweep", decisions: [] }); expect(o.atMin).toBeLessThanOrEqual(SWEEP_AFTER_MS / MIN + 1); expect(o.refundNowAt).not.toBeNull();
+  });
+  it("(f2) 이용권: 1차·2차 모두 죽음 → 28분 마감 청소가 이용권 반환", async () => {
+    const o = await simulate([{ kind: "ok" }], { die: [1, 2], origin: "ticket" });
+    within30(o); expect(o).toMatchObject({ conclusion: "returned", by: "sweep" }); expect(o.atMin).toBeLessThanOrEqual(SWEEP_AFTER_MS / MIN + 1);
   });
   it("이용권: 연결 장애 → 2차 뒤 이용권 반환(결론)", async () => {
     const o = await simulate([{ kind: "status", code: "http_529" }], { origin: "ticket" });
