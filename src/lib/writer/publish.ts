@@ -38,7 +38,8 @@ import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type 
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
-import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
+import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
+import { designSummaryOf, infoCardsOf } from "./design";
 import { priceFor } from "@/lib/llm/prices";
 import * as E from "./safety/p6e";
 import { annotateChapter, termDictionary } from "./render";
@@ -503,7 +504,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const flags = lintBook(chapters, lctx);
   const canCall = Boolean(run?.writer && !run.stale && (live || deps.replay));
   const capLeft = () => deps.costCapUsd === undefined ? Infinity : deps.costCapUsd - (run?.costUsd ?? 0);
-  const reviewVariant = { ...(deps.reviewVersion ? { version: deps.reviewVersion } : {}), ...(deps.reviewDesignSummary ? { reviewDesignSummary: deps.reviewDesignSummary } : {}) };
+  // 설계 카드 검수(review-v6-card)를 고르면 요약을 따로 주지 않아도 브리프 카드에서 만든다.
+  const designSummary = deps.reviewDesignSummary ?? (deps.reviewVersion === REVIEW_VERSION_CARD ? designSummaryOf(brief) : "");
+  const reviewVariant = { ...(deps.reviewVersion ? { version: deps.reviewVersion } : {}), ...(designSummary ? { reviewDesignSummary: designSummary } : {}) };
   const review: Record<string, unknown> = { version: deps.reviewVersion ?? REVIEW_VERSION, model: null, calls: 0, kept: [], direct: [], dropped: [], skipped: null };
   // 검수 1회(정해진 7범주 JSON, 안전장치). 실패·형식 오류·예산 초과면 검수만 건너뛴다(발행은 막지 않는다).
   let issues: ReviewIssue[] = [];
@@ -566,8 +569,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   chapters = writeKeyFill(brief, plan, enforced.chapters, enforced.emptyKeys);
   chapters = insertFixedLines(chapters, brief);
   const rendered = renderTerms(chapters, brief, k); chapters = rendered.chapters;
-  // W3 P3 7절: 정보량 지표(기록만, 본문은 바꾸지 않는다). 카드(brief.design)가 생기면 cards를 넘긴다 — 지금은 trait·자리 이름 사전과 씨앗 장면으로 센다.
-  const info = (() => { try { return infoMetrics(chapters, { dict: infoDictOf(brief) }); } catch { return undefined; } })();
+  // W3 P3 7절: 정보량 지표(기록만, 본문은 바꾸지 않는다). 절 설계 카드가 있으면 카드로(그 절 근거·장면), 없으면 trait·자리 이름 사전과 씨앗 장면으로 센다.
+  const info = (() => { try { const cards = infoCardsOf(brief); return infoMetrics(chapters, { dict: infoDictOf(brief), ...(cards.length ? { cards } : {}) }); } catch { return undefined; } })();
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
