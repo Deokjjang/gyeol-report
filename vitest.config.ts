@@ -15,8 +15,18 @@ export const LEGACY_TESTS = [
   "tests/unit/app/dev/**",
 ];
 
+/**
+ * 손으로 켜는 로컬 측정(운영 부하 시험 아님). 환경 변수를 줄 때만 모은다 — 기본 실행에서 「건너뜀」으로 세지 않는다.
+ *   GYEOL_WORKER_CAPACITY=1 pnpm exec vitest run tests/unit/payment/paidWorkerCapacity.test.ts
+ *   GYEOL_WORKER_MEASURE=before|after pnpm exec vitest run tests/unit/payment/paidWorkerMeasurement.test.ts
+ */
+const OPT_IN_TESTS: Record<string, boolean> = {
+  "tests/unit/payment/paidWorkerCapacity.test.ts": process.env.GYEOL_WORKER_CAPACITY === "1",
+  "tests/unit/payment/paidWorkerMeasurement.test.ts": ["before", "after"].includes(process.env.GYEOL_WORKER_MEASURE ?? ""),
+};
+
 export default defineConfig({
-  test: { setupFiles: ["./tests/networkGuard.ts"], exclude: [...configDefaults.exclude, ...LEGACY_TESTS] },
+  test: { setupFiles: ["./tests/networkGuard.ts"], exclude: [...configDefaults.exclude, ...LEGACY_TESTS, ...Object.keys(OPT_IN_TESTS).filter(file => !OPT_IN_TESTS[file])] },
   resolve: {
     alias: {
       "@": resolve(rootDir, "src"),
