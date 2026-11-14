@@ -50,8 +50,13 @@ const GRADE_WORDS: readonly (readonly [RegExp, string])[] = [
   [/매우 신강/g, "힘이 아주 센 쪽"], [/신강/g, "힘이 센 쪽"], [/매우 신약/g, "힘이 많이 여린 쪽"], [/신약/g, "힘이 여린 쪽"], [/중화/g, "힘이 고른 쪽"], [/ ?과다/g, " 많음"],
 ];
 /** 묶음 세기 단계(「규칙의 힘(관성) 강」)도 뜻 말로(상품 근거 사실 줄). */
-export const GROUP_LEVEL_PLAIN: Readonly<Record<string, string>> = { 강: "넉넉한 쪽", 보통: "있는 만큼 쓰는 쪽", 약: "적은 쪽", 있음: "있지만 계절에 눌린 쪽" };
-export const plainGrade = (t: string) => GRADE_WORDS.reduce((x, [re, to]) => x.replace(re, to), t).replace(/(\((?:비겁|식상|재성|관성|인성)\)) (강|보통|약|있음)(?![가-힣])/g, (_m, g: string, lv: string) => `${g} ${GROUP_LEVEL_PLAIN[lv]}`);
+export const GROUP_LEVEL_PLAIN: Readonly<Record<string, string>> = { 강: "넉넉한 쪽", 강함: "넉넉한 쪽", 보통: "있는 만큼 쓰는 쪽", 약: "적은 쪽", 약함: "적은 쪽", 있음: "있지만 계절에 눌린 쪽" };
+const GROUP_NAME = "(비겁|식상|재성|관성|인성)";
+const GROUP_PHRASE: readonly (readonly [RegExp, string])[] = [
+  [new RegExp(`${GROUP_NAME}이 보통이라`, "g"), "$1이 고른 편이라"], [new RegExp(`${GROUP_NAME}이 약해`, "g"), "$1이 적어"], [new RegExp(`${GROUP_NAME}이 강해`, "g"), "$1이 넉넉해"],
+  [new RegExp(`${GROUP_NAME}이 약한`, "g"), "$1이 적은"], [new RegExp(`${GROUP_NAME}이 강한`, "g"), "$1이 넉넉한"],
+];
+export const plainGrade = (t: string) => [...GRADE_WORDS, ...GROUP_PHRASE].reduce((x, [re, to]) => x.replace(re, to), t).replace(/((?:비겁|식상|재성|관성|인성)(?:\([^)]*\))?|\((?:비겁|식상|재성|관성|인성)\)) (강함|강|보통|약함|약|있음)(?![가-힣])/g, (_m, g: string, lv: string) => `${g} ${GROUP_LEVEL_PLAIN[lv]}`);
 
 export const LINK_MIN = 0.3;
 export const LINK_STRONG = 0.4;
@@ -155,7 +160,9 @@ export function connect(a: FeatureCard, b: FeatureCard, k: Knowledge, opts: Conn
   }
   if (opts.kind) return mk(FUSION_KIND[opts.kind], shared[0], opts.why ? linkWhy(opts.why, mbtiKeys) : "", opts.source ?? "mbtiLink");
   const sc = scorePair(a.key, a.tags, b.key, b.tags);
-  if (sc?.kind === "conditional") return mk("보완", shared[0], "", "computed");
+  // 섞임(conditional) → 보완: 두 카드가 반대 끝에 선 차원에서(같은 끝이면 「채운다」가 아니라 겹침이다).
+  const opp = shared.find(x => Math.sign(x.va) !== Math.sign(x.vb));
+  if (sc?.kind === "conditional" && opp) return mk("보완", opp, "", "computed");
   for (const s of shared) { const kind = kindOf(s.va, s.vb); if (kind) return mk(kind, s, "", "computed"); }
   return null;
 }

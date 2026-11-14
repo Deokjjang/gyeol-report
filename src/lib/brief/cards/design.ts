@@ -11,7 +11,7 @@
  */
 import type { FusionRule, MbtiProfile, MyeongriFeature } from "@/data/knowledge-v5/schema";
 import type { PersonFacts, Slot } from "@/lib/factsheet/build";
-import { TEN_GOD_KO } from "../labels";
+import { josa, TEN_GOD_KO } from "../labels";
 import type { FeatureHit } from "../featureTypes";
 import type { Knowledge } from "../knowledge";
 import { allocateChapters, PRODUCT_CHAPTER_RX, RX, rxKindsOf, type RxKind } from "../prescriptions";
@@ -79,7 +79,10 @@ export function cardWhere(t: Trait, hit: FeatureHit | undefined, f: PersonFacts)
       const s = f.shinsal.find(x => x.id === t.featureId);
       if (!s) return { where: [], drop: `정답지에 없는 ${family === "gwiin" ? "귀인" : "신살"}` };
       const bad = ps.filter(p => !s.positions.includes(p));
-      return bad.length ? { where: [], drop: `${s.name} 자리 다름(${bad.join(",")})` } : { where: [...new Set(s.slots.map(SLOT_KO))] };
+      if (bad.length) return { where: [], drop: `${s.name} 자리 다름(${bad.join(",")})` };
+      // 기둥 단위 신살(백호·괴강 등: 한 기둥의 하늘·땅 글자 둘 다)은 「일주」처럼 기둥 이름으로.
+      const pos = [...new Set(s.slots.map(x => x.replace(/(Stem|Branch)$/, "")))];
+      return { where: pos.flatMap(p => { const st = s.slots.includes(`${p}Stem` as Slot), br = s.slots.includes(`${p}Branch` as Slot); return st && br ? [`${P1[p]}주`] : st ? [`${P1[p]}간`] : br ? [`${P1[p]}지`] : []; }) };
     }
     case "twelveStage": {
       const bad = ps.filter(p => !f.twelveStages.some(x => x.position === p && x.stage === code));
@@ -99,11 +102,14 @@ const REF_LABEL: Readonly<Record<string, readonly [string, string]>> = {
   "chart.climate": ["태어난 계절", "월지"], "chart.strength": ["내 힘의 세기", "원국 전체"], "chart.elements": ["오행 분포", "원국 전체"], "chart.yinYang": ["음양 비율", "원국 전체"],
   "chart.thisYear": ["올해 운", "그 해"], "chart.currentDayun": ["지금 대운", "대운"], fortunes: ["좋은 기운", "원국 전체"], unused: ["덜 쓴 기운", "원국 전체"],
   "mbti.functions": ["MBTI 기능", "MBTI"], "compatibility.score": ["궁합 점수", "두 사람"], "compatibility.common": ["두 사람 공통", "두 사람"], "compatibility.complement": ["서로 채우는 점", "두 사람"],
-  "compatibility.mbtiConvention": ["MBTI 통념 궁합", "두 사람"], "compatibility.tenGodAB": ["A가 보는 B", "두 사람"], "compatibility.tenGodBA": ["B가 보는 A", "두 사람"], "compatibility.dayRelations": ["두 사람 일주 관계", "두 사람"],
+  "compatibility.mbtiConvention": ["MBTI 통념 궁합", "두 사람"], "compatibility.tenGodAB": ["A→B", "두 사람"], "compatibility.tenGodBA": ["B→A", "두 사람"], "compatibility.dayRelations": ["두 사람 일주 관계", "두 사람"],
   "compatibility.differences": ["두 사람 차이", "두 사람"], "compatibility.a": ["A의 바탕", "A"], "compatibility.b": ["B의 바탕", "B"],
 };
-/** 상품 근거 사실 줄의 이름(「이름: 뜻」 앞 마디), 없으면 key. */
-const evName = (key: string, facts: readonly string[]) => facts[0]?.match(/^([^:—]{2,24})(?::| —) /)?.[1]?.trim() ?? key;
+const whereText = (c: FeatureCard) => c.where.join(c.where.some(w => w.includes("·")) ? " / " : "·");
+/** 앞 마디가 이름이 아닌 상품 근거(사실 줄이 문장으로 시작)의 이름. */
+const EV_NAME: Readonly<Record<string, string>> = { loveEngine: "배우자 자리", matchTypes: "맞는 사람", childStar: "자녀 별", jobGroups: "넓혀 갈 직군", jobGroupsFar: "길게 볼 직군", investMistakes: "투자에서 되풀이하기 쉬운 실수", investPrinciples: "투자 원칙", spouseStar: "배우자 별", childPalace: "자녀 자리" };
+/** 상품 근거 사실 줄의 이름(「이름: 뜻」 앞 마디), 없으면 이름 표, 그래도 없으면 첫 마디. 내부 key는 이름으로 쓰지 않는다. */
+const evName = (key: string, facts: readonly string[]) => facts[0]?.match(/^([^:—]{2,24})(?::| —) /)?.[1]?.trim() ?? EV_NAME[key] ?? (facts[0]?.split(/[.,:·(—→]/)[0]?.trim().slice(0, 20) || "근거");
 
 export function designCards(input: DesignInput): BookDesign {
   const { k, brief, people } = input;
@@ -117,6 +123,7 @@ export function designCards(input: DesignInput): BookDesign {
       const f: MyeongriFeature | undefined = k.features.get(t.featureId); if (!f) continue;
       const w = cardWhere(t, p.hits.get(t.featureId), p.facts);
       const c0 = myeongriCard(t, f, w.where, k, p.owner), card = { ...c0, name: name(p, c0.name) };
+      // 자리 글: 같은 특성의 자리는 「·」, 합충형해 짝이 여럿이면 짝 사이를 「 / 」로.
       cards.push(card); byTrait.set(t.id, { card, ...(w.drop ? { drop: w.drop } : {}), person: p, trait: t });
     }
     const mc = p.mbti ? mbtiCards(p.mbti, k, p.owner).map(c => ({ ...c, name: name(p, c.name) })) : [];
@@ -129,7 +136,8 @@ export function designCards(input: DesignInput): BookDesign {
     if (ref === "chart.dayMaster") return [brief.chart.dayMaster.name.replace(/\s?\([^)]*\)/g, ""), "일간"];
     if (ref === "mbti") return [brief.mbti?.type ?? "MBTI", "MBTI"];
     const l = REF_LABEL[ref];
-    const ab = (s: string) => (rel ? s.replace(/^A/, rel.a.callName).replace(/^B/, rel.b.callName).replace(/(?<=가 보는 )B$/, rel.b.callName).replace(/(?<=가 보는 )A$/, rel.a.callName) : s);
+    // 「A→B」 = A가 보는 B(조사는 호칭에 맞춰).
+    const ab = (s: string) => (!rel ? s : s === "A→B" ? `${josa(rel.a.callName, "이가")} 보는 ${rel.b.callName}` : s === "B→A" ? `${josa(rel.b.callName, "이가")} 보는 ${rel.a.callName}` : s.replace(/^A/, rel.a.callName).replace(/^B/, rel.b.callName));
     return l ? [ab(l[0]), ab(l[1])] : [ref.replace(/^(chart|compatibility)\./, ""), ""];
   };
 
@@ -148,8 +156,8 @@ export function designCards(input: DesignInput): BookDesign {
         if (m.kind === "trait") {
           const x = byTrait.get(m.traitId); if (!x) continue;
           const meaning = m.angle === "first" ? x.trait.meaning : `이번 장에서 새로 보는 쓰임: ${AREA6_OF[m.domain]}${m.angle === "known" ? "(뜻은 다른 책에서 풀었다)" : ""}`;
-          if (x.drop) { drops.push({ chapter: ch.id, section: si, name: x.card.name, where: x.card.where.join("·"), reason: x.drop }); }
-          else ev.push({ name: x.card.name, where: x.card.where.join("·"), meaning, traitId: m.traitId });
+          if (x.drop) { drops.push({ chapter: ch.id, section: si, name: x.card.name, where: whereText(x.card), reason: x.drop }); }
+          else ev.push({ name: x.card.name, where: whereText(x.card), meaning, traitId: m.traitId });
           if (m.scene) scene({ text: m.scene, from: "knowledge" });
         } else if (m.kind === "mbti") {
           if (m.seedId === "prop") continue;
@@ -162,7 +170,7 @@ export function designCards(input: DesignInput): BookDesign {
           if (sh) {
             const s = shadowById.get(sh); if (!s) continue;
             if (!punchUsed) { card.punch = { text: s.text, basis: s.basis, warm: s.warmTurn }; punchUsed = true; }
-            else { const x = byTrait.get(s.traitId); ev.push({ name: `${x?.card.name ?? s.traitId}이 지나칠 때`, where: x?.card.where.join("·") ?? "", meaning: `${s.text} 근거: ${s.basis}` }); }
+            else { const x = byTrait.get(s.traitId); ev.push({ name: `${josa(x?.card.name ?? s.traitId, "이가")} 지나칠 때`, where: (x ? whereText(x.card) : ""), meaning: `${s.text} 근거: ${s.basis}` }); }
           } else if (fu) fusionTraits.add(fu);
           else if (m.ref === "mbti.shadows") { if (brief.mbti?.shadows[0]) ev.push({ name: `${brief.mbti.type}의 그늘`, where: "MBTI", meaning: brief.mbti.shadows[0] }); }
           else if (m.ref.startsWith("chapters.")) { const title = input.chapters.find(c => c.id === m.ref.slice(9))?.title ?? ""; ev.push({ name: "앞 장 종합", where: "", meaning: `「${title}」 장의 근거로`, ...(m.note ? { rule: m.note } : {}) }); }
@@ -208,7 +216,8 @@ export function designCards(input: DesignInput): BookDesign {
         const other = people.find(p => p !== x.person); if (!other) continue;
         const targets = [...(mbtiOf.get(other) ?? []).slice(0, 1), ...[...byTrait.values()].filter(y => y.person === other && !y.drop && y.trait.chapters.length).map(y => y.card)];
         for (const target of targets) {
-          const conn = connect(x.card, target, k, { ruleOk: x.person.ruleOk });
+          // Fusion 규칙은 한 사람 안의 명리 × MBTI라 두 사람 사이에는 쓰지 않는다(차원 양끝 설명으로 잇는다).
+          const conn = connect(x.card, target, k, { rule: null });
           if (!conn) continue;
           const d = rel!.score.direction[x.person.owner === "a" ? "aToB" : "bToA"];
           const [from, to] = x.person.owner === "a" ? [rel!.a.callName, rel!.b.callName] : [rel!.b.callName, rel!.a.callName];
@@ -216,10 +225,12 @@ export function designCards(input: DesignInput): BookDesign {
         }
       }
     }
-    const best = cands.filter(c => !usedLinks.has(connectionKey(c.conn, cardById)) && (dimUse.get(c.conn.tag) ?? 0) < MAX_DIM_LINKS)
+    // 같은 연결(두 카드 + 차원)은 책에서 한 번, 같은 차원은 두 번까지, 같은 MBTI 쪽(상대 카드) + 같은 차원도 한 번(계산 이유 문장이 같아진다).
+    const sideKey = (c: Connection) => `${cardById.get(c.b)?.key ?? c.b}|${c.tag}`;
+    const best = cands.filter(c => !usedLinks.has(connectionKey(c.conn, cardById)) && !usedLinks.has(sideKey(c.conn)) && (dimUse.get(c.conn.tag) ?? 0) < MAX_DIM_LINKS)
       .sort((a, b) => b.score - a.score || a.slot.si - b.slot.si || a.conn.a.localeCompare(b.conn.a) || a.conn.b.localeCompare(b.conn.b))[0];
     if (!best) continue;
-    best.slot.card.link = best.conn; usedLinks.add(connectionKey(best.conn, cardById)); dimUse.set(best.conn.tag, (dimUse.get(best.conn.tag) ?? 0) + 1); links.push(best.conn);
+    best.slot.card.link = best.conn; usedLinks.add(connectionKey(best.conn, cardById)); usedLinks.add(sideKey(best.conn)); dimUse.set(best.conn.tag, (dimUse.get(best.conn.tag) ?? 0) + 1); links.push(best.conn);
   }
 
   // ④ 처방: 장마다 마지막 절에 한 종류(같은 종류 책에 두 번까지, 이전 책 처방 종류는 피한다).

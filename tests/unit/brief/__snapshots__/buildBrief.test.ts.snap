@@ -100,7 +100,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c1 종합 1`] = `
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 10261,
+  "tokens": 10197,
   "traits": [
     "t1 dayPillar:丁丑 medium day ENTJ/tension [core,why,tension]",
     "t2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [fact-bomb,fortune]",
@@ -214,7 +214,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c2 연애(시간 미상) 1`
     "t5",
   ],
   "timeline": undefined,
-  "tokens": 8028,
+  "tokens": 7986,
   "traits": [
     "t1 shinsal:GWASUKSAL strong day Fi/resonance [contact,conflict,marriage]",
     "t2 dayPillar:庚辰 medium day INFP/tension [love-engine,in-love,conflict]",
@@ -257,7 +257,7 @@ exports[`brief builder — 고정 입력 스냅샷 > c3 커리어(MBTI 없음) 1
     "t10",
   ],
   "timeline": undefined,
-  "tokens": 8561,
+  "tokens": 8584,
   "traits": [
     "t1 dayPillar:戊寅 strong day - [engine,now,people]",
     "t2 gwiin:HAK_DANG_GWIIN strong day - []",
@@ -306,7 +306,7 @@ exports[`brief builder — 고정 입력 스냅샷 > 궁합 연인 1`] = `
     "bt6",
   ],
   "timeline": undefined,
-  "tokens": 14375,
+  "tokens": 14388,
   "traits": [
     "at1 dayPillar:丁丑 medium day ENTJ/tension [pair-core,attraction,direction-ab]",
     "at2 shinsal:EUMCHAK_YANGCHA strong day J/resonance [attraction,direction-ab,friction]",
