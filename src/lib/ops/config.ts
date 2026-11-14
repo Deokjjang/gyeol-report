@@ -58,6 +58,14 @@ export const SALES_PAUSED_MESSAGE = "지금은 책 만들기를 잠시 멈췄어
  * 결제 = 첫 실패 + 이 시간 안에 못 만들면 포기 + 자동 환불, 이용권 = 환급. 생성 정책(ops/generation/policy.ts)과 고객 진행 화면이 같은 값을 읽는다
  * (여기 두는 까닭: 열람 경로가 생성 모듈을 끌어오지 않게 — readPathProtection).
  */
+/**
+ * W3 P2 30분 결론(덕짱님 결정): 결제 확정(이용권은 접수) 시각부터 이 시간 안에 책 또는 자동 전액 환불(이용권은 자동 반환). 마감은 이 상수 한 곳.
+ * 생성 정책(ops/generation/policy.ts — 25분이 지나면 새 시도 없이 포기)·마감 청소(deadline.ts)·고객 대기 화면 문구가 모두 이 값에서 나온다.
+ */
+export const CONCLUSION_DEADLINE_MS = 30 * 60_000;
+/** 대기 화면 문구 바뀌는 때(5분 「평소보다 조금 더」, 15분 「기다리게 해서 죄송해요」). */
+export const DELAY_NOTICE_MS = 5 * 60_000;
+export const APOLOGY_NOTICE_MS = 15 * 60_000;
 export const AUTO_REFUND_HOURS_DEFAULT = 6;
 export function autoRefundHours(env: Env = process.env): number {
   const v = Number(env.AUTO_REFUND_HOURS);

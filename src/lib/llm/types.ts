@@ -25,6 +25,8 @@ export type StreamCompletionInput = {
   readonly system: string;
   readonly user: string;
   readonly maxOutputTokens: number;
+  /** W3 P2: 첫 스트림 이벤트(어떤 이벤트든 — 생각 블록 시작 포함)를 기다리는 시간. 넘으면 first_event_timeout(연결 실패로 분류). 기본 90초, 0이면 끔. */
+  readonly firstEventTimeoutMs?: number;
   readonly timeoutMs: number;
   /** 텍스트 조각이 도착할 때마다 호출된다. */
   readonly onText?: (delta: string) => void;

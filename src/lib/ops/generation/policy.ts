@@ -6,8 +6,8 @@
  */
 import type { ChapterMeta, WriterMeta } from "../../writer/book";
 import type { CallLog, LadderStage, WriterRun } from "../../writer/runner";
-import { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours } from "../config";
-export { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours };
+import { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours, CONCLUSION_DEADLINE_MS } from "../config";
+export { AUTO_REFUND_HOURS_DEFAULT, autoRefundHours, CONCLUSION_DEADLINE_MS };
 
 const MIN = 60_000, HOUR = 60 * MIN;
 /** 출력 전 실패·중간 끊김 뒤 다음 시도까지(n번째 실패 → n번째 값, 끝 값은 반복). */
@@ -36,6 +36,13 @@ export const NORMAL_BOOK_USD: Readonly<Record<string, number>> = {
   saju_mbti_full: 0.38, career_money_study: 0.36, love_marriage_child: 0.34, saju_mbti_compatibility: 0.36, major_fortune: 0.42, annual_fortune: 0.40,
 };
 export const ORDER_COST_CAP_MULTIPLIER = 2.5;
+/**
+ * W3 P2: 4종 주문 상한 = 1차 최악 + 2차 최악 + 검수·수리 몫(상품별 실측, 11-14 덤프). 정상 1권은 $0.19~0.27(운영 17권)이라 실패 경로에서만 닿는다.
+ * - 1차 최악 = 입력(약 25~32k토큰 × $2/M ≈ $0.05~0.065) + 1단 한도 전부(본문 추정 + 36,000 — 종합 64,722 · 커리어 62,112 · 연애·궁합 61,183토큰 × $10/M).
+ * - 2차 최악 = 입력 + 시간으로 깎인 한도(남은 작가 시간 약 600초 × 130토큰/초 ≈ 78,000토큰) ≈ $0.84.
+ * - 검수·수리 몫 ≈ $0.10.
+ */
+export const ORDER_COST_CAP_V2: Readonly<Record<string, number>> = { saju_mbti_full: 1.65, career_money_study: 1.6, love_marriage_child: 1.6, saju_mbti_compatibility: 1.65 };
 /** 상품을 모를 때의 정상 1권 비용. */
 export const NORMAL_BOOK_USD_DEFAULT = 0.4;
 /** 최종판3 6(옛 값, 기록용): 검수·수리만 거는 상한이었다. HOTFIX-W1부터는 orderCostCap(상품)이 작가를 포함해 건다. */
@@ -49,7 +56,52 @@ export function orderCostCap(product?: string | null, env: Readonly<Record<strin
   if (product && AM_PRODUCTS.has(product)) { const a = Number(env.ORDER_COST_CAP_AM_USD); return Number.isFinite(a) && a > 0 && a <= 10 ? a : ORDER_COST_CAP_AM_USD; }
   const v = Number(env.ORDER_COST_CAP_USD);
   if (env.ORDER_COST_CAP_USD !== undefined && Number.isFinite(v) && v > 0 && v <= 10) return v;
+  if (product && ORDER_COST_CAP_V2[product] !== undefined) return ORDER_COST_CAP_V2[product];
   return Math.round((NORMAL_BOOK_USD[product ?? ""] ?? NORMAL_BOOK_USD_DEFAULT) * ORDER_COST_CAP_MULTIPLIER * 1e4) / 1e4;
+}
+
+// ── W3 P2 30분 결론 ───────────────────────────────────────────────
+/** 시작(결제 확정·이용권 접수)부터 이 시간이 지나면 새 시도를 하지 않고 포기한다(포기 직후 자동 환불·이용권 반환 → 30분 안 결론). */
+export const GIVE_UP_AFTER_MS = CONCLUSION_DEADLINE_MS - 5 * MIN;
+/** 마감 청소(deadline.ts): 이 시간이 지난 미발행 주문은 워커 상태와 상관없이 결론(환불·반환)을 낸다. */
+export const SWEEP_AFTER_MS = CONCLUSION_DEADLINE_MS - 2 * MIN;
+/** 연결 오류 뒤 2차까지 기다리는 시간(1~3분). */
+export const CONNECTION_RETRY_MS = 2 * MIN;
+/** 한 시도(작가 + 검수·수리 + 발행)에 필요한 최소 시간 — 포기 시각까지 이보다 적게 남았으면 시작하지 않는다. */
+export const MIN_ATTEMPT_MS = 4 * MIN;
+/** 발행·정산 몫(시도 예산에서 뺀다). */
+export const SETTLE_MARGIN_MS = 30_000;
+/** 시도 횟수: 1차 + 2차 1번. */
+export const MAX_ATTEMPTS = 2;
+/** 실패 분류(W3 P2): 생각 소진 / 연결(429·5xx·529·끊김·첫 이벤트 90초 초과) / 검사 탈락 / 잔액·인증 / 기타. */
+export type FailClass = "thinking_exhausted" | "connection" | "check" | "credit_auth" | "other";
+export const FAIL_CLASS_LABEL: Readonly<Record<FailClass, string>> = { thinking_exhausted: "생각 소진", connection: "연결", check: "검사 탈락", credit_auth: "잔액·인증", other: "기타" };
+/** 이번 시도의 실패를 나눈다(판정 + 바깥 fetch가 본 잔액·인증). */
+export function failClassOf(v: Extract<BuildVerdict, { kind: "incomplete" }>, seen: { readonly anthropicCredit?: boolean; readonly anthropicAuth?: boolean } = {}): FailClass {
+  if (seen.anthropicCredit || seen.anthropicAuth) return "credit_auth";
+  if (v.cls === "thinking_exhausted" || v.ladderEnd) return "thinking_exhausted";
+  if (v.cls === "connection") return "connection";
+  if (/build_exception/.test(v.reason)) return "other";
+  if (v.cls === "other" && v.preOutput) return "other";
+  return "check";
+}
+/** 이번 시도의 빌드 예산(ms): 기본 예산과 「포기 시각 − 정산 몫」 중 작은 값. 최소 시도 시간도 안 남았으면 null(시도하지 않고 포기). */
+export function attemptBudgetMs(a: { originAt: number; now: number; defaultBudgetMs: number }): number | null {
+  const left = a.originAt + GIVE_UP_AFTER_MS - a.now - SETTLE_MARGIN_MS;
+  if (left < MIN_ATTEMPT_MS) return null;
+  return Math.min(a.defaultBudgetMs, left);
+}
+/**
+ * 실패 뒤 다음 걸음(W3 P2): 2차는 1번만. 잔액·인증 → 2차 없이 결론. 연결 → 2분 뒤 같은 설정. 생각 소진 → 즉시 더 큰 한도(사다리 2단, 시간·비용 안) — 장이 일부 있으면 빠진 장만.
+ * 검사 탈락·기타 → 즉시 같은 설정. 비용 상한에 닿았거나 2차를 시작해도 포기 시각 전에 못 끝내면 결론(포기).
+ */
+export function nextAfterFailure(a: { cls: FailClass; attemptIndex: number; originAt: number; now: number; capped?: boolean }): { kind: "defer"; until: number } | { kind: "give_up"; why: string } {
+  if (a.cls === "credit_auth") return { kind: "give_up", why: "credit_auth" };
+  if (a.capped) return { kind: "give_up", why: "cost_cap" };
+  if (a.attemptIndex + 1 >= MAX_ATTEMPTS) return { kind: "give_up", why: "second_failed" };
+  const until = a.now + (a.cls === "connection" ? CONNECTION_RETRY_MS : 0);
+  if (until + MIN_ATTEMPT_MS + SETTLE_MARGIN_MS > a.originAt + GIVE_UP_AFTER_MS) return { kind: "give_up", why: "no_time" };
+  return { kind: "defer", until };
 }
 
 type RunRow = { cost_usd?: number | string | null; created_at?: string | null; calls?: unknown; lane?: string | null };
@@ -164,7 +216,8 @@ export function runSummary(built: { readonly meta: WriterMeta; readonly run: Wri
   return {
     provider: m.writer?.provider ?? null, model: m.writer?.model ?? null, costUsd: m.costUsd, durationMs: m.durationMs,
     // HOTFIX-W1 1부: 호출마다 stop_reason·usage(입력·캐시·출력)·보낸 max_tokens·생각 설정·블록별 수와 글자·첫 본문까지 ms·사다리 단계·분류(생각 내용 없음).
-    calls: m.calls.map(c => ({ kind: c.kind, provider: c.provider, model: c.model, finish: c.finish, ...(c.error ? { error: c.error } : {}), chars: c.chars, costUsd: c.costUsd ?? 0, ms: c.ms,
+    // W3 P2: request id도 남긴다(공급자 지원 문의·대조용 — 그전에는 운영 기록에 없었다).
+    calls: m.calls.map(c => ({ kind: c.kind, provider: c.provider, model: c.model, finish: c.finish, ...(c.error ? { error: c.error } : {}), chars: c.chars, costUsd: c.costUsd ?? 0, ms: c.ms, ...(c.requestId ? { requestId: c.requestId } : {}),
       maxTokens: c.maxTokens, usage: c.usage, ...(c.cached ? { cached: true } : {}), ...(c.stop !== undefined ? { stop: c.stop } : {}), ...(c.sent ? { sent: c.sent } : {}), ...(c.blocks ? { blocks: c.blocks } : {}),
       ...(c.firstTextMs !== undefined ? { firstTextMs: c.firstTextMs } : {}), ...(c.thinkingTokens !== undefined ? { thinkingTokens: c.thinkingTokens } : {}),
       ...(c.stage ? { stage: c.stage } : {}), ...(c.body ? { body: c.body } : {}), ...(c.cls ? { cls: c.cls } : {}) })),

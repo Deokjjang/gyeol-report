@@ -1,6 +1,6 @@
 /**
- * 생성 운영 알림(HOTFIX-W1 3부 1·3·6). 문구 만들기는 순수 함수(시험), 보내기는 처리 봇(📮)으로 바로(대기표 종류를 늘리지 않으려 — migration 없음).
- * - 보류 즉시 알림: 「보류 — 환불 또는 대기 결정 필요」 + 실패 한 줄 + 관리자 주문 화면 주소.
+ * 생성 운영 알림(HOTFIX-W1 3부 1·3·6, W3 P2). 문구 만들기는 순수 함수(시험), 보내기는 처리 봇(📮)으로 바로(대기표 종류를 늘리지 않으려 — migration 없음).
+ * - W3 P2: 보류 알림은 없앴다(보류 상태가 없다). 결론(자동 환불·이용권 반환)마다 「↩️ 자동 환불 · GR-… · 사유 · 비용」 한 줄, 그날 자동 결론이 선(3건)을 막 넘으면 경보 1번.
  * - 실패율 경보: 같은 상품에서 1시간 안에 생각 소진 2건 이상, 또는 그날(KST) 실패율이 선을 넘으면 「판매 일시 중지 검토」 + [4종 멈춤] 버튼. 이 경보로는 멈추지 않는다.
  *   상태를 따로 저장하지 않고 「이번 기록으로 선을 막 넘었을 때」만 보낸다(같은 경보를 매번 다시 보내지 않게).
  * - W3 P0 자동 멈춤: 연결 오류(429·5xx·529·과부하·끊김·시간 초과 — 작가 호출 cls=connection)로 실패한 주문이 10분 안에 3건이면 4종 판매를 멈추고 알린다.
@@ -23,16 +23,17 @@ export const hmKst = (iso: string | number | null | undefined) => {
 };
 const esc = (s: string) => s.replace(/[&<>]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;" })[c]!);
 
-export const CLASS_LABEL: Readonly<Record<string, string>> = { thinking_exhausted: "생각 소진", connection: "연결", other: "기타", cost_cap: "비용 상한" };
+export const CLASS_LABEL: Readonly<Record<string, string>> = { thinking_exhausted: "생각 소진", connection: "연결", other: "기타", cost_cap: "비용 상한", check: "검사 탈락", credit_auth: "잔액·인증", deadline: "시간 끝" };
 const PRODUCT_LABEL: Readonly<Record<string, string>> = { saju_mbti_full: "종합", career_money_study: "커리어·돈·공부", love_marriage_child: "연애·결혼·자녀", saju_mbti_compatibility: "궁합", major_fortune: "대운", annual_fortune: "세운" };
 export const productLabel = (p: string | null | undefined) => PRODUCT_LABEL[p ?? ""] ?? (p || "상품 미상");
 
 /** 실패 한 줄(3부 1): 실패 분류 · 몇 단 · 다음 자동 시도 시각 · 지금까지 쓴 비용. */
 export function failureLine(a: { cls?: string | null; stage?: number | null; nextAt?: string | number | null; spentUsd: number; capUsd?: number }): string {
   const cls = CLASS_LABEL[a.cls ?? ""] ?? "기타";
-  const stage = a.stage ? `${a.stage}단` : "단계 없음";
+  // W3 P2: 단계(1단·2단)는 생각 소진일 때만 뜻이 있다 — 연결 오류에 「1단」을 붙이지 않는다.
+  const stage = a.cls === "thinking_exhausted" ? (a.stage ? ` · ${a.stage}단` : " · 단계 없음") : "";
   const next = a.nextAt ? `다음 자동 시도 ${hmKst(a.nextAt)}` : "다음 자동 시도 없음";
-  return `${cls} · ${stage} · ${next} · 지금까지 ${won(a.spentUsd)}${a.capUsd ? `(상한 ${won(a.capUsd)})` : ""}`;
+  return `${cls}${stage} · ${next} · 지금까지 ${won(a.spentUsd)}${a.capUsd ? `(상한 ${won(a.capUsd)})` : ""}`;
 }
 
 /**
@@ -55,13 +56,6 @@ export function generationLineOf(runs: readonly { outcome?: string; cost_usd?: n
 export const ADMIN_ORDER_URL = (code: string) => `https://www.gyeolreport.com/admin/orders/${encodeURIComponent(code)}`;
 export const ADMIN_DELAYED_URL = "https://www.gyeolreport.com/admin/orders?tab=delayed";
 
-/** 보류 즉시 알림(3부 3). */
-export function holdText(a: { orderCode: string | null; origin: "paid" | "ticket"; product: string | null; line: string; why: string; test?: boolean }): string {
-  return [`${a.test ? "🧪 시험(집계 제외) · " : ""}⏸ <b>보류 — 환불 또는 대기 결정 필요</b> · ${esc(a.orderCode ?? (a.origin === "ticket" ? "이용권 책" : "-"))}`,
-    `${esc(productLabel(a.product))} · ${esc(a.why)}`, esc(a.line),
-    a.orderCode ? ADMIN_ORDER_URL(a.orderCode) : ADMIN_DELAYED_URL].join("\n");
-}
-
 /** 실패율 경보 선(3부 6, 결정 대기 — 기본값). */
 export const RATE_ALERT = { exhaustedPerHour: 2, dayFailRate: 0.3, dayMinFails: 3 } as const;
 export type RunLite = { readonly report_id: string; readonly outcome: string; readonly created_at: string; readonly calls?: unknown; readonly product: string | null };
@@ -71,19 +65,25 @@ const thinkingRun = (r: RunLite) => Array.isArray(r.calls) && (r.calls as { cls?
 
 /**
  * 이번 기록(latest)으로 선을 막 넘었는지(3부 6). runs: 최근 기록(latest 포함, 상품 붙임). dayStart: 그날 KST 0시(ms).
- * 1시간 생각 소진: latest가 생각 소진이고 1시간 안 생각 소진 수가 정확히 기준값이 됐을 때. 하루 실패율: latest가 실패이고, 넣기 전엔 선 아래·넣은 뒤 선 위일 때.
+ * W3 P2: 모두 주문(책) 단위로 센다 — 한 주문의 시도 여러 번은 1건(예전에는 시도 수라 한 주문의 재시도 3번에 경보가 떴다).
+ * 1시간 생각 소진: latest가 생각 소진이고 1시간 안 생각 소진 주문 수가 정확히 기준값이 됐을 때.
+ * 하루 실패율: latest가 실패이고, 그날 주문 중 실패가 있었던 주문의 비율이 이번 기록으로 막 선을 넘었을 때(그 주문이 이미 실패로 세어졌으면 새로 넘지 않는다).
  */
 export function rateAlert(runs: readonly RunLite[], latest: RunLite, now: number, dayStart: number): string | null {
   const same = runs.filter(r => r.product === latest.product);
   const reasons: string[] = [];
+  const orders = (rs: readonly RunLite[]) => new Set(rs.map(r => r.report_id)).size;
   if (thinkingRun(latest)) {
-    const hour = same.filter(r => thinkingRun(r) && now - Date.parse(r.created_at) <= 3_600_000).length;
-    if (hour === RATE_ALERT.exhaustedPerHour) reasons.push(`최근 1시간 생각 소진 ${hour}건`);
+    const hourRuns = same.filter(r => thinkingRun(r) && now - Date.parse(r.created_at) <= 3_600_000);
+    const hour = orders(hourRuns), before = orders(hourRuns.filter(r => r !== latest));
+    if (hour === RATE_ALERT.exhaustedPerHour && before < hour) reasons.push(`최근 1시간 생각 소진 ${hour}건`);
   }
   if (failedOutcome(latest.outcome)) {
     const day = same.filter(r => counted(r.outcome) && Date.parse(r.created_at) >= dayStart);
-    const fails = day.filter(r => failedOutcome(r.outcome)).length, total = day.length;
-    const before = { fails: fails - 1, total: total - 1 };
+    const failedOrders = new Set(day.filter(r => failedOutcome(r.outcome)).map(r => r.report_id));
+    const fails = failedOrders.size, total = orders(day);
+    const wasFailed = day.some(r => r !== latest && r.report_id === latest.report_id && failedOutcome(r.outcome));
+    const before = wasFailed ? { fails, total } : { fails: fails - 1, total: day.some(r => r !== latest && r.report_id === latest.report_id) ? total : total - 1 };
     const over = (f: number, t: number) => f >= RATE_ALERT.dayMinFails && t > 0 && f / t > RATE_ALERT.dayFailRate;
     if (over(fails, total) && !over(before.fails, before.total)) reasons.push(`오늘 실패율 ${Math.round((fails / total) * 100)}%(실패 ${fails} / 시도 ${total})`);
   }
@@ -144,24 +144,42 @@ export function creditAlerter(db: SupabaseClient, send: Send, signup?: OpsStore 
 }
 
 export type GenerationAlerts = {
-  /** 보류가 정해지면 바로(3부 3). */
-  hold(a: { reportId: string; origin: "paid" | "ticket"; originRef: string; product: string | null; line: string; why: string }): Promise<void>;
-  /** 실패 기록 뒤(3부 6). */
+  /** 실패 기록 뒤(3부 6) — 실패율 경보·연결 오류 자동 멈춤. */
   failed(a: { reportId: string; product: string | null }): Promise<void>;
 };
 
+/** W3 P2 결론 한 줄 재료(결제 자동 환불 · 이용권 반환 · 마감 청소). */
+export type ConclusionNote = { readonly origin: "paid" | "ticket"; readonly reportId: string; readonly paymentOrderId: string | null; readonly product: string | null; readonly cls: string | null; readonly spentUsd: number; readonly reason?: string; readonly sweep?: boolean };
+/** 하루 자동 결론(환불 + 이용권 반환) 경보 선(오판 방지): 그날 KST 이 수에 막 닿으면 한 번. */
+export const AUTO_CONCLUSION_DAILY_ALERT = 3;
+/** 「↩️ 자동 환불 · GR-… · 종합 · 생각 소진 · $0.71」 / 「↩️ 이용권 반환 · 이용권 책 · …」. */
+export function conclusionText(n: ConclusionNote, orderCode: string | null): string {
+  const what = n.origin === "paid" ? "자동 환불" : "이용권 반환";
+  const why = CLASS_LABEL[n.cls ?? ""] ?? (n.cls || "기타");
+  return `↩️ <b>${what}</b> · ${esc(orderCode ?? (n.origin === "ticket" ? "이용권 책" : "-"))} · ${esc(productLabel(n.product))} · ${esc(why)}${n.sweep ? " · 마감 청소" : ""} · ${won(n.spentUsd)}`;
+}
+export function dailyConclusionText(count: number): string {
+  return [`🚨 <b>오늘 자동 결론 ${count}건</b>(자동 환불 + 이용권 반환)`, "같은 원인이 겹치는지 확인해 주세요. 계속 늘면 [4종 멈춤]을 눌러 주세요.", ADMIN_DELAYED_URL].join("\n");
+}
+/** 결론 한 줄 + (그날 자동 결론이 선에 막 닿으면) 경보. 실패는 삼킨다. */
+export async function conclusionAlert(db: SupabaseClient, send: Send, n: ConclusionNote, now: () => number = Date.now): Promise<void> {
+  try {
+    let code: string | null = null;
+    if (n.paymentOrderId) { const { data } = await db.from("order_records").select("order_code").eq("payment_order_id", n.paymentOrderId).maybeSingle(); code = typeof data?.order_code === "string" ? data.order_code : null; }
+    await send(conclusionText(n, code));
+    const t = now(), d = new Date(t + KST), dayStart = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) - KST).toISOString();
+    const [{ count: refunds }, { count: returns }] = await Promise.all([
+      db.from("order_refunds").select("payment_order_id", { count: "exact", head: true }).eq("source", "auto").gte("created_at", dayStart),
+      db.from("report_ticket_ledger").select("id", { count: "exact", head: true }).eq("event_type", "REVERSAL").gte("created_at", dayStart),
+    ]);
+    const total = (refunds ?? 0) + (returns ?? 0);
+    if (total === AUTO_CONCLUSION_DAILY_ALERT) await send(dailyConclusionText(total));
+  } catch { /* 알림 실패는 무시 */ }
+}
+
 /** 운영 알림(서비스 롤 DB + 처리 봇). 실패는 삼킨다(알림이 생성·발행을 막지 않는다). */
 export function createGenerationAlerts(db: SupabaseClient, send: Send, now: () => number = Date.now): GenerationAlerts {
-  const orderCodeOf = async (paymentOrderId: string) => {
-    try { const { data } = await db.from("order_records").select("order_code").eq("payment_order_id", paymentOrderId).maybeSingle(); return typeof data?.order_code === "string" ? data.order_code : null; } catch { return null; }
-  };
   return {
-    async hold(a) {
-      try {
-        const code = a.origin === "paid" ? await orderCodeOf(a.originRef) : null;
-        await send(holdText({ orderCode: code, origin: a.origin, product: a.product, line: a.line, why: a.why }));
-      } catch { /* 알림 실패는 무시 */ }
-    },
     async failed(a) {
       try {
         const t = now(), d = new Date(t + KST), dayStart = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate()) - KST;

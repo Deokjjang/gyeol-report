@@ -143,7 +143,7 @@ export type WriterOptions = {
   readonly postReserveUsd?: number;
 };
 
-const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
+const RETRYABLE = /^(network|stream_interrupted|stream_ended|empty_body|invalid_event|timeout|first_event_timeout|overloaded_error|api_error|rate_limit_error|http_429|http_5\d\d)$/;
 
 /**
  * 호출 실패 분류(HOTFIX-W1 2부 3). 생각 소진 = length로 끝났는데 본문이 비었거나 원한 장이 빠졌다
