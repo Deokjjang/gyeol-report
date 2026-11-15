@@ -11,10 +11,11 @@ import { splitSentences } from "./safety/patterns";
 import { removeSentenceAt, stripConnective } from "./safety/orphan";
 import { HARD_RULES, type LintFlag, type P6cRule } from "./safety/p6c";
 import type { AppliedRepair } from "./repair3";
+import { gateClassOf, IMPROVE_DROP_MIN_LEFT } from "./gate";
 
 export type RepairMode = "rewrite" | "drop" | "none";
 /** HARD 가운데 문장 떼기(다시 써도 같은 내부 말이 남거나 없는 사실을 새로 만든 규칙). */
-const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "negative_claim", "fact_mark", "label_leak"]);
+const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "negative_claim", "fact_mark", "label_leak", "broken_sentence"]);
 /** SOFT 가운데 문장 떼기(재탕·물음 초과·씨앗 단정). */
 const DROP_SOFT: ReadonlySet<string> = new Set(["question_excess", "phrase_repeat", "notice_repeat", "scene_repeat", "prop_repeat", "advice_repeat", "seed_assert", "meaning_repeat", "closing_repeat"]);
 /** SOFT 가운데 다시 쓰기(R0 득: 근거 없는 장면 28/30 · 용어 풀이 22/26, 그 밖 표본 작지만 고침 1/1인 별명·다섯 힘 이름·피할 그림·같은 일주 구절·이전 책 겹침·필수 근거 덧붙임·비문 꼴). */
@@ -43,8 +44,10 @@ const norm = (s: string) => s.replace(/[⟪⟫]/g, "");
 const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|그렇다면|그럼(?![가-힣])|그때마다|이 조합|이 두|이건|그건|이것은|그것은|이 |그 )/;
 const BECAUSE = /^[^.?!]{0,60}때문(?:입니다|이에요|이죠)[.!]?$/;
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
-export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" };
-export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean };
+export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" };
+export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean; readonly detail?: string };
+/** W6 S0-1: 개선 규칙은 떼고 난 문단이 IMPROVE_DROP_MIN_LEFT(3)문장 이상일 때만 뗀다(차단 규칙은 그대로). */
+export const improveOnly = (rule: string, detail?: string) => gateClassOf(rule, detail) === "improve";
 /**
  * 그 문장만 뗀다(호출 0). 앞뒤 이음 확인: ① 다음 문장이 앞말에 기대면(지시어·「때문입니다」) SOFT는 남기고, HARD는 기대는 문장까지 함께 뗀다
  * ② 뗀 문장이 바로 앞 물음의 답이면 물음도 뗀다 ③ 다음 문장 머리 접속어는 뗀다 ④ 소제목에 문장이 하나만 남으면 SOFT는 떼지 않는다 ⑤ ⟪핵심 문장⟫은 SOFT면 떼지 않는다.
@@ -63,6 +66,7 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     if (!t.hard && inSection <= 2) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "only_sentence" }); continue; }
     const next = ss[i + 1] !== undefined ? norm(ss[i + 1]) : undefined;
     const leans = next !== undefined && (LEANS.test(next) || BECAUSE.test(next));
+    if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     let rest = removeSentenceAt(ss, i).sentences;
     if (leans) { dropped.push({ at, sentence: rest[i], rule: `${t.rule}:leans` }); rest = rest.filter((_, j) => j !== i); }
@@ -141,6 +145,8 @@ export function postRepairTidy(chapters: readonly FinalChapter[], applied: reado
     const ss = splitSentences(p); if (ss.length < 2) return;
     for (let i = 1; i < ss.length; i++) {
       if (wordOverlap(ss[i - 1], ss[i]) < 0.7) continue;
+      // W6 S0-1: 이웃 문장 되풀이는 개선 규칙 — 떼고 난 문단이 3문장 이상일 때만.
+      if (ss.length - 1 < IMPROVE_DROP_MIN_LEFT) { records.push({ at: `${c.n}.${si}.${pi}`, rule: "f1_neighbor", sentence: `(남김·얇음) ${norm(ss[i])}` }); continue; }
       const j = /⟪/.test(ss[i]) && !/⟪/.test(ss[i - 1]) ? i - 1 : i;
       records.push({ at: `${c.n}.${si}.${pi}`, rule: "f1_neighbor", sentence: norm(ss[j]) });
       ss.splice(j, 1); i--;
@@ -157,7 +163,8 @@ export function dropOverflowParagraphs(chapters: readonly FinalChapter[], remain
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const dropped: { at: string; rule: string }[] = [];
   const keys = new Set<string>();
-  for (const f of remaining) if (HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card && overflow.has(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`)) keys.add(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`);
+  // W6 S0-1: 문단째 지우기는 차단 규칙만(개선 규칙은 기록만).
+  for (const f of remaining) if (HARD_RULES.has(f.rule) && !improveOnly(f.rule, f.detail) && f.paragraph >= 0 && !f.card && overflow.has(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`)) keys.add(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`);
   for (const k of keys) {
     const [at, rule] = k.split("|"); const [cn, sn, pn] = at.split(".").map(Number);
     const ch = out.find(c => c.n === cn); const sec = ch?.sections[sn]; if (!ch || !sec || sec.paragraphs[pn] === undefined) continue;

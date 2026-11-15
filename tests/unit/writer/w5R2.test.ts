@@ -41,15 +41,19 @@ describe("R2 문장 떼기 · 접속어", () => {
     const soft = dropSentences([ch(1, [[lean, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "같은 말을 또 했어요.", rule: "phrase_repeat", hard: false }]);
     expect(soft.chapters[0].sections[0].paragraphs[0]).toBe(lean);
     expect(soft.dropped[0].kept).toBe("leans");
-    const hard = dropSentences([ch(1, [[lean, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "같은 말을 또 했어요.", rule: "safety", hard: true }]);
+    const hard = dropSentences([ch(1, [[lean, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "같은 말을 또 했어요.", rule: "fact_mark", hard: true }]);
     expect(hard.chapters[0].sections[0].paragraphs[0]).toBe("첫 문장이에요. 끝 문장이에요.");
+    // W6 S0-1: 개선 규칙(HARD여도 — 노출 rule_leak)은 떼고 난 문단이 3문장 이상일 때만 뗀다.
+    const thin = dropSentences([ch(1, [[lean, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "같은 말을 또 했어요.", rule: "rule_leak", hard: true }]);
+    expect(thin.chapters[0].sections[0].paragraphs[0]).toBe(lean);
+    expect(thin.dropped[0].kept).toBe("thin");
     const ask = "근거 문장이에요. 이런 편이죠? 그 답이 되는 문장이에요. 마지막 문장이에요.";
-    const q = dropSentences([ch(1, [[ask, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "그 답이 되는 문장이에요.", rule: "rule_leak", hard: true }]);
+    const q = dropSentences([ch(1, [[ask, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "그 답이 되는 문장이에요.", rule: "fact_mark", hard: true }]);
     expect(q.chapters[0].sections[0].paragraphs[0]).toBe("근거 문장이에요. 마지막 문장이에요.");
   });
   it("「~때문입니다」로 앞말에 기대는 다음 문장(W4 2차 궁합 3장 끊김) · 핵심 문장 ⟪⟫ · 소제목에 문장 둘뿐이면 SOFT는 떼지 않는다", () => {
     const p = "둘은 통념으로 보면 보통 궁합이에요. 안정을 지키는 쪽과 새 시도를 하는 쪽이 만났기 때문입니다. 끝 문장이에요.";
-    const r = dropSentences([ch(1, [[p, "다른 문단."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "둘은 통념으로 보면 보통 궁합이에요.", rule: "safety", hard: true }]);
+    const r = dropSentences([ch(1, [[p, "다른 문단."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "둘은 통념으로 보면 보통 궁합이에요.", rule: "safety", hard: true, detail: "hour_pillar" }]);
     expect(r.chapters[0].sections[0].paragraphs[0]).toBe("끝 문장이에요.");
     const key = dropSentences([ch(1, [["⟪핵심 문장이에요.⟫ 다른 문장이에요. 셋째 문장이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "핵심 문장이에요.", rule: "phrase_repeat", hard: false }]);
     expect(key.dropped[0].kept).toBe("key");
@@ -88,9 +92,12 @@ describe("R2 늘린 수리 답 거절 · 수리 뒤 정리(F1) · 칸 초과 문
       { id: 2, kind: "sentence" as const, at: "1.0.0", before: "도윤님이 놀라는 지점은 하린님의 여유예요.", after: "도윤님은 사람 모이는 자리를 앞두고 더 느긋한 하린님을 보며 놀라요.", source: ["lint"] }]);
     expect(c2.records.map(x => x.rule)).toContain("f1_converge");
     expect(c2.chapters[0].sections[0].paragraphs[0]).toContain("도윤님이 놀라는 지점은 하린님의 여유예요.");
-    const nb = postRepairTidy([ch(1, [["다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이에요. 다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이라 늦게 말해요. 끝이에요."]])], []);
+    const nb = postRepairTidy([ch(1, [["다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이에요. 다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이라 늦게 말해요. 셋째 문장이에요. 끝이에요."]])], []);
     expect(nb.records.map(x => x.rule)).toEqual(["f1_neighbor"]);
-    expect(nb.chapters[0].sections[0].paragraphs[0]).toBe("다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이에요. 끝이에요.");
+    expect(nb.chapters[0].sections[0].paragraphs[0]).toBe("다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이에요. 셋째 문장이에요. 끝이에요.");
+    // W6 S0-1: 떼면 3문장 아래로 줄어드는 문단은 기록만(본문을 얇게 만들지 않는다).
+    const nb3 = "다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이에요. 다툼이 생기면 바로 따지지 않고 일단 덮어 두는 쪽이라 늦게 말해요. 끝이에요.";
+    expect(postRepairTidy([ch(1, [[nb3]])], []).chapters[0].sections[0].paragraphs[0]).toBe(nb3);
     expect(wordOverlap("오늘은 비가 와요.", "내일은 맑아요.")).toBe(0);
   });
   it("칸이 모자라 못 고친 HARD가 남은 문단은 문단째 지운다 — 장에 문단이 하나뿐이면 지우지 않는다", () => {

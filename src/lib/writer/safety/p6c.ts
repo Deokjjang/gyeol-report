@@ -20,7 +20,9 @@ import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style"
 import { exposureOf } from "./exposure";
 import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } from "./info";
 import { personaHit, type PersonaCtx } from "./persona";
-import { MARK_LEFT, renderMarks, type MarkTable } from "../marks";
+import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
+import { brokenSentence, unbalancedAt } from "./broken";
+import { contradictionFlags, inferiorAsStrength, relationLink, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -41,7 +43,9 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // W4 Q2-4: 물음 상한(장마다 1개, 같은 꼬리 책 6번 — 수리 → 남으면 그 문장만 뗀다) · 문체 예시 세 어절 복사(HARD, 수리) · 남의 성격 문장(차원 문구 방향 틀림 HARD / 그대로 복사 SOFT)
   | "question_excess" | "example_words" | "persona_mismatch" | "persona_copy"
   // W5 R1: 사실 표시(⟦…⟧)가 남았거나 모르는·깨진 표시(HARD, 문장 떼기) · R3 F4: 씨앗으로만 받쳐진 장면을 이 사람의 버릇으로 단정(문체, 문장 떼기)
-  | "fact_mark" | "seed_assert";
+  | "fact_mark" | "seed_assert"
+  // W6: 깨진 문장(S0-2, HARD 떼기) · 같은 사람 성격 모순(A4, HARD 수리 → 남으면 떼기) · 합·충·형·해·파를 MBTI 성격과 잇기(S1-5, 잘못된 연결)
+  | "broken_sentence" | "self_contradiction" | "link_relation";
 export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -53,7 +57,8 @@ export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "sch
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
   "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role",
-  "grade_leak", "rule_leak", "fact_count", "example_words", "persona_mismatch", "fact_mark"]);
+  "grade_leak", "rule_leak", "fact_count", "example_words", "persona_mismatch", "fact_mark",
+  "broken_sentence", "self_contradiction", "link_relation", "fact_season", "fact_direction"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -131,6 +136,12 @@ export type LintCtx = {
   readonly marks?: MarkTable;
   /** W5 R3 F4: 4종 — 절(장.절)마다 MBTI 씨앗 장면 글(씨앗으로만 받쳐진 단정 장면을 seed_assert로). */
   readonly seedScenes?: ReadonlyMap<string, readonly string[]>;
+  /** W6 S0-2: 4종 — 깨진 문장 검사(broken_sentence)를 건다. */
+  readonly broken?: boolean;
+  /** W6 A4: 4종 — 사람마다 성격 요약표 칸(같은 차원 반대 끝 단서가 책 안에 둘 다 단정으로 나오면 self_contradiction). */
+  readonly contradiction?: ContradictionCtx;
+  /** W6 S1-5: 4종 — 관계(합·충) × MBTI 성격 잇기 검사. */
+  readonly linkCheck?: boolean;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 /** 대운·세운(달력 책): 고친 문장에 「지금·지금의·지금은」을 다시 쓰면 또 걸린다. */
@@ -143,6 +154,11 @@ export const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
   fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
   fact_mark: "사실 표시(⟦…⟧)가 바뀌지 않고 남았다(모르는 번호·깨진 꼴) → 이 문장은 뗀다",
+  broken_sentence: "깨진 문장(같은 구절 되풀이·괄호 짝·조사 겹침·앞말 없는 조각·자리 말 겹침: detail) → 이 문장은 뗀다",
+  self_contradiction: "같은 사람의 같은 성향을 책 앞쪽과 반대로 단정했다(detail) → 앞쪽 성향과 같은 쪽으로 고치거나, 조건(어떤 상황에서)을 밝혀 한 문장으로",
+  link_relation: "합·충·형·해·파(관계)를 MBTI 성격의 원인으로 이었다 → 관계는 사람 사이·시기 근거로만 쓰고, 성격은 일간·십성·MBTI 근거로",
+  fact_season: "태어난 계절을 정답지와 다르게 말했다(detail) → 그 계절로 고치거나 계절 말을 뺀다",
+  fact_direction: "두 사람이 서로 보는 십성의 방향(누가 누구를 무엇으로 보는지)을 틀렸다(detail) → detail대로 「A님에게 B님은 X」 꼴로",
   seed_assert: "MBTI 씨앗 장면(detail)을 이 사람의 버릇·겪음으로 단정했다 → 이 문장은 뗀다(씨앗은 「~할 때」 조건이나 근거에 묶인 물음으로만)",
   grade_leak: "엔진 판정 등급 말(신약·신강·중화·오행 과다·'세기는 보통'·'힘은 약입니다')을 그대로 썼다 → 등급 이름 없이 뜻으로만 쓴다(예: '혼자 버티는 힘이 여린 편이라 도움을 빌리면 수월해요', '흙 기운이 많은 편', '값을 받는 힘이 고르게 있는 편')",
   question_excess: "물음이 너무 많다(물음은 장마다 하나, 같은 꼬리 「~죠?」 등은 책에서 6번까지: detail) → 이 물음은 그 소제목 근거에서 나온 단정 문장으로 바꾼다(물음표 없이)",
@@ -360,10 +376,12 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     introduced.add(code);
     return particle ? withJosa(word, particle) : word;
   });
-  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => {
+  // W6 A1: 표시 렌더는 책 순서로 상태를 이어 간다(가까운 반복은 짧은 꼴, 자리 목록은 책에서 한 번).
+  const markState = newMarkState();
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map((s, si) => {
     let ps = s.paragraphs.map(p => {
       // W5 R1: 사실 표시 → 정답지 구절(뒤 조사 맞춤). 모르는 표시는 그대로 남아 fact_mark(HARD)가 잡는다.
-      let q = ctx.marks ? renderMarks(p, ctx.marks) : p;
+      let q = ctx.marks ? renderMarks(p, ctx.marks, markState, `${c.n}.${si}`) : p;
       // W5 R3 F5: 한 사람 책에서 독자에게 묻는 물음의 3인칭(「이 사람은 ~편이죠?」 — W4 판독 「메모를 읽는 느낌」)은 「당신」으로(받침이 같아 조사 그대로).
       if (ctx.seedScenes && ctx.compat === false && /이 사람/.test(q)) { const ss = splitSentences(q), next = ss.map(x => (/[?？]["'”’)]*$/.test(x.trim()) ? x.replace(/(^|[\s"“‘⟪])이 사람(?=[은이의도]|에게)/g, "$1당신") : x)); if (next.some((x, i) => x !== ss[i])) { words++; q = next.join(" "); } }
       if (L.MYEONGRI_PREFIX.test(q)) { const r = L.dropMyeongriPrefix(q); if (r !== q) prefix++; q = r; }
@@ -454,6 +472,9 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   const explained = new Set<string>();
   // 책 안 반복(A2): 소제목마다 색인 하나, 다른 소제목 색인과 견준다(같은 소제목 안 비슷한 문장은 문단 흐름이라 보지 않는다).
   const bySection: { at: string; idx: ReturnType<typeof L.overlapIndex> }[] = [];
+  // W6 S0-2: 이 책 사실 표시의 렌더 구절(같은 문장 되풀이 판정에서 구절 하나 안의 되풀이를 빼고, 이웃 문장 겹침을 본다).
+  const markPhrases = ctx.broken && ctx.marks ? [...new Set([...ctx.marks.values()].flatMap(m => [m.text, m.bare, m.list, m.later].filter((x): x is string => Boolean(x))))] : [];
+  const mbtiAnchor = !ctx.compat ? ctx.mbtiPeople?.[0]?.anchors ?? null : null;
   for (const c of chapters) {
     const writer = c.source !== "deterministic";
     let jobUses = 0;
@@ -469,11 +490,18 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
       for (const ref of D.countMismatch(secText)) { const pi = s.paragraphs.findIndex(p => stripMarks(p).includes(ref)); if (pi >= 0) flag({ chapter: c.n, section: si, paragraph: pi, rule: "count_mismatch", sentence: ref }); }
       s.paragraphs.forEach((p, pi) => {
         const sens = splitSentences(p);
+        const unbalanced = ctx.broken ? unbalancedAt(sens) : -1;
         for (const [i, raw] of sens.entries()) {
           const sen = stripMarks(raw);
           const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
           // W5 R1: 바뀌지 않은 사실 표시(모르는 번호·깨진 꼴·대괄호로 바꿔 쓴 것)는 가장 먼저(사실을 확인할 수 없는 문장).
           if (MARK_LEFT.test(sen)) { flag({ ...at, rule: "fact_mark", detail: sen.match(MARK_LEFT)![0] }); continue; }
+          // W6 S0-2 깨진 문장(출시 차단, 문장 떼기). 소제목 첫 문장의 기댐은 orphan_start(다시 쓰기)가 먼저 본다.
+          if (ctx.broken) {
+            if (i === unbalanced) { flag({ ...at, rule: "broken_sentence", detail: "bracket: 짝 안 맞는 괄호" }); continue; }
+            const bk = brokenSentence(raw, { phrases: markPhrases, sectionFirst: pi === 0 && i === 0 && !keyed && !E.orphanStart(sen), ...(i > 0 ? { prev: stripMarks(sens[i - 1]) } : {}) });
+            if (bk) { flag({ ...at, rule: "broken_sentence", detail: `${bk.kind}: ${bk.detail}` }); continue; }
+          }
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.
@@ -482,6 +510,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           { const g = writer && ctx.exampleWords ? exampleTrigram(sen, key => Boolean(ctx.briefNorm?.includes(key))) : null; if (g) { flag({ ...at, rule: "example_words", detail: g }); continue; } }
           // W4 Q2-4: 남의 성격 문장(차원 설명의 방향이 그 주인 값과 반대 = HARD, 그대로 복사 = 문체).
           { const ph = writer && ctx.persona ? personaHit(sen, ctx.persona) : null; if (ph?.rule === "persona_mismatch") { flag({ ...at, rule: ph.rule, detail: ph.detail }); continue; } if (ph) flag({ ...at, rule: ph.rule, detail: ph.detail }); }
+          // W6 S1-5 잘못된 연결(한 사람 4종): 합·충을 MBTI 성격과 잇기, 열등 기능을 강점으로.
+          if (writer && ctx.linkCheck && !ctx.compat) { const lk = relationLink(sen, i > 0 ? sens.slice(Math.max(0, i - 2), i).map(stripMarks).join(" ") : undefined, mbtiAnchor) ?? inferiorAsStrength(sen, ctx.facts.mbti, ctx.mbtiPlain); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
           const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : r === "grade_leak" || r === "rule_leak" ? { detail: exposureOf(sen)!.text } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }
@@ -533,6 +563,12 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         }
       });
     });
+  }
+  // W6 A4: 같은 사람·같은 차원 반대 끝 단정(책 순서, 한 사람 책은 성격 요약표가 먼저) → 뒤 문장(HARD, 수리 → 남으면 뗀다).
+  if (ctx.contradiction) {
+    const list = chapters.filter(c => c.source !== "deterministic" && !c.keys?.length).flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => splitSentences(p).map(raw => ({ chapter: c.n, section: si, paragraph: pi, sentence: stripMarks(raw) })))));
+    const flagged = new Set(out.filter(f => HARD_RULES.has(f.rule)).map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`));
+    for (const h of contradictionFlags(list, ctx.contradiction)) if (!flagged.has(`${h.chapter}.${h.section}.${h.paragraph}:${h.sentence}`)) flag({ chapter: h.chapter, section: h.section, paragraph: h.paragraph, sentence: h.sentence, rule: "self_contradiction", detail: h.detail });
   }
   // G 장마다 써야 하는 근거(문체 규칙: 문단은 빼지 않고 수리로 근거 한 문장을 더하게 한다).
   for (const c of chapters) { const terms = ctx.requiredTerms?.get(c.n); if (!terms || c.source === "deterministic") continue;
@@ -666,7 +702,8 @@ export function dropNoticeSentences(chapters: readonly FinalChapter[], flags: re
       if (!targets.has(`${c.n}.${si}.${pi}|${stripMarks(x)}`)) continue;
       const i = keep.indexOf(x), next = keep[i + 1];
       // 최종 A-9: 다음 문장이 접속어로 시작하면 접속어만 떼고 지운다. 지시어(앞 내용을 가리킴)로 시작하면 그대로 둔다.
-      if (keep.length - 1 >= 2 && !(next && E.orphanStart(next) && !stripConnective(next)) && !/[⟪⟫]/.test(x)) { removed.push(stripMarks(x)); keep = removeSentenceAt(keep, i).sentences; continue; }
+      // W6 S0-1: 개선 규칙 떼기는 떼고 난 문단이 3문장 이상일 때만.
+      if (keep.length - 1 >= 3 && !(next && E.orphanStart(next) && !stripConnective(next)) && !/[⟪⟫]/.test(x)) { removed.push(stripMarks(x)); keep = removeSentenceAt(keep, i).sentences; continue; }
       kept.push(stripMarks(x));
     }
     return keep.length === sens.length ? p : keep.join(" ");

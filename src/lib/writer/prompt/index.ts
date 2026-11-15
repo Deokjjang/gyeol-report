@@ -16,6 +16,7 @@ import type { SectionCardBrief } from "@/lib/brief/schema";
 import { GROUP_EASY_BY_NAME } from "@/lib/brief/labels";
 import type { FactSheet } from "@/lib/factsheet/build";
 import { buildMarks, writerMarks, type MarkTable } from "../marks";
+import { profileCodes, profileLine, type PairProfile } from "@/lib/brief/pairProfile";
 
 /** 작가 입력 옵션(P6c A1): 지식 DB가 있으면 원문 문장을 재료(씨앗·방향·핵심 뜻)로 바꿔 보낸다. 없으면(단위 시험) 브리프 그대로. */
 /** W5 R1: facts(정답지)가 있으면 4종 브리프에 사실 표시(marks)를 넣는다 — 발행 렌더가 같은 표로 바꿔 넣는다(markTableFor). */
@@ -102,6 +103,22 @@ function plainChart(c: Brief["chart"]) {
 /** 최종판3 2b: 공통 특징 규칙(두 사람 모두 가진 것은 「공통」으로만, 차이의 근거·한 사람만의 특징으로 쓰지 않는다). */
 export const COMMON_RULE = "commonTraits는 두 사람이 모두 가진 것이다. '두 사람 모두'로만 쓰고, 차이의 근거나 한 사람만의 특징('○○님의 반안살')으로 쓰지 않는다";
 const writerCompat = (c: NonNullable<Brief["compatibility"]>) => ({ ...omit(c, "profiles", "pairImage", "commonIds", "commonNames"), pairImage: c.pairImage.meaning ?? c.pairImage.line });
+/**
+ * W6 A4 성격 요약표(한 사람 4종): 궁합 성격표와 같은 계산(MBTI 글자 + 특성·MBTI 행동 차원 벡터)으로 차원마다 값 하나.
+ * 작가 브리프 맨 앞(profile)에 한 줄로 두고, 장마다 앞 장 주장(before)·검사(self_contradiction)가 같은 값을 쓴다.
+ */
+export function personProfileOf(brief: Brief, k: Knowledge): PairProfile | null {
+  if (brief.compatibility || !brief.design) return null;
+  const v = new Map<string, number>();
+  const add = (tags: Readonly<Record<string, number>>, w: number) => { for (const [d, x] of Object.entries(tags)) v.set(d, (v.get(d) ?? 0) + x * w); };
+  for (const t of brief.traits) { const f = k.features.get(t.featureId); if (f && f.family !== "relation") add(f.dimensionTags, t.score); }
+  const mp = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
+  if (mp) add(mp.dimensionTags, 1.5 * Math.max(1, ...brief.traits.map(t => t.score)));
+  const codes = profileCodes(brief.mbti?.type ?? null, v, brief.traits.map(t => t.featureId));
+  const line = profileLine(brief.person.callName, codes, brief.mbti?.type ?? null);
+  return line.includes(":") && line.split(":")[1].trim() ? { name: brief.person.callName, ...codes, line } : null;
+}
+const SELF_PROFILE_RULE = "이 사람의 바뀌지 않는 성향이다. 모든 장의 성향 설명·장면은 이 줄과 같은 쪽으로 쓴다(반대 성향을 단정하지 않는다)";
 const PROFILE_RULE = "두 사람의 바뀌지 않는 성향(에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)이다. 모든 장의 장면과 설명은 이 줄을 따른다. 두 사람을 묶어 말할 때(두 사람은·둘 다)는 두 사람 칸이 같을 때만 묶는다";
 
 /**
@@ -113,7 +130,20 @@ const INFERIOR_DIMS: Readonly<Record<string, readonly [string, number][]>> = {
   Fe: [["empathyResponse", 1], ["caretaking", 1], ["directness", -1]], Fi: [["introspection", 1], ["emotionalExpression", -1]], Te: [["planning", 1], ["decisionSpeed", 1], ["controlNeed", 1]], Ti: [["inquiry", 1], ["perfectionism", 1]],
   Se: [["riskTaking", 1], ["mobility", 1]], Si: [["detailFocus", 1], ["ruleAdherence", 1]], Ne: [["noveltySeeking", 1], ["learningDrive", 1]], Ni: [["detailFocus", -1], ["persistence", 1]],
 };
-export function chapterClaims(brief: Brief, k: Knowledge): Map<number, { before: string[]; tension: string[] }> {
+const PROFILE_DIMS = (c: PairProfile | null): Map<string, number> => {
+  const out = new Map<string, number>(); if (!c) return out;
+  if (c.energy) out.set("socialEnergy", c.energy === "E" ? 1 : -1);
+  if (c.lead) out.set("attentionSeeking", c.lead === "front" ? 1 : -1);
+  if (c.conflict) { out.set("reactivity", c.conflict === "now" ? 1 : -1); out.set("conflictApproach", c.conflict === "now" ? 1 : -1); }
+  if (c.express === "행동") { out.set("verbalOutput", -1); out.set("emotionalExpression", -1); }
+  if (c.express === "말" || c.express === "말·표정") out.set("verbalOutput", 1);
+  if (c.decide === "fast") out.set("decisionSpeed", 1); if (c.decide === "slow") out.set("decisionSpeed", -1);
+  if (c.offer) { out.set("riskTaking", c.offer === "open" ? 1 : -1); out.set("noveltySeeking", c.offer === "open" ? 1 : -1); }
+  if (c.money === "plan") out.set("spendingControl", 1); if (c.money === "now") out.set("spendingControl", -1);
+  return out;
+};
+export function chapterClaims(brief: Brief, k: Knowledge, self: PairProfile | null = null): Map<number, { before: string[]; tension: string[] }> {
+  const fixed = PROFILE_DIMS(self);
   const chapters = writerChapters(brief);
   const say = (d: string, v: number) => { const o = k.ontology.dimensions.find(x => x.id === d); return o ? (v > 0 ? o.poles.plus : o.poles.minus).description.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "") : d; };
   const prof = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
@@ -128,7 +158,8 @@ export function chapterClaims(brief: Brief, k: Knowledge): Map<number, { before:
     for (const m of mats) {
       if (m.kind === "trait" && m.angle === "first") {
         const t = brief.traits.find(x => x.id === m.traitId), f = t ? k.features.get(t.featureId) : undefined;
-        if (t && f) { const top = Object.entries(f.dimensionTags).filter(([, v]) => Math.abs(v) >= 0.6).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 2) as [string, number][];
+        // W4 Q2-5·W6 S1-5: 합·충·형·해·파(relation)는 성격 주장을 싣지 않는다(W5 1차 종합 「삼합 인오술(정한 일은 끝을 보는 편)」). W6 A4: 요약표와 반대 끝인 차원은 뺀다.
+        if (t && f && f.family !== "relation") { const top = Object.entries(f.dimensionTags).filter(([d, v]) => Math.abs(v) >= 0.6 && !(fixed.has(d) && Math.sign(fixed.get(d)!) !== Math.sign(v))).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 2) as [string, number][];
           mine.push({ n: c.n, text: `${t.name.replace(/\(.*?\)/g, "").trim()}${top[0] ? `(${say(top[0][0], top[0][1])})` : ""}`, dims: top }); }
       }
       if ((m.kind === "mbti" || (m.kind === "ref" && m.ref.startsWith("mbti"))) && prof && inferior && !seen.concat(mine).some(x => x.inferior))
@@ -170,8 +201,9 @@ export function renderWriterBrief(brief: Brief, opts: WriterInputOptions = {}): 
 function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
   const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
   if (!opts.knowledge) return out;
-  // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims).
-  const claims = chapterClaims(brief, opts.knowledge);
+  // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims). W6 A4: 성격 요약표와 반대인 차원은 주장에 쓰지 않는다.
+  const self = personProfileOf(brief, opts.knowledge);
+  const claims = chapterClaims(brief, opts.knowledge, self);
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
   // 지식 DB 원문을 재료로(P6c A1). MBTI 기능은 쉬운 이름을 먼저(P6c C5): "일 되게 하는 판단(Te) · 주기능: 방향".
   const table = materialTable(opts.knowledge);
@@ -180,7 +212,7 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
   // W3 P3·W4 Q2: 4종(brief.design)은 처방 종류가 카드 배분(card.rx — 장마다 하나, 같은 종류 책 두 번까지)이고 renderRaw가 절 act로 준다. 그 밖(AM)은 act 슬롯 배분 그대로.
   if (!brief.design) assignActions(swapped, brief);
-  return ownGlyphsOnly({ ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
+  return ownGlyphsOnly({ ...(self ? { profile: { rule: SELF_PROFILE_RULE, line: self.line } } : {}), ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
 }
 
 /**

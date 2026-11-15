@@ -5,10 +5,12 @@
  */
 import type { Knowledge } from "@/lib/brief/knowledge";
 import { hangulOf, type FactSheet, type Pos, type PersonFacts, type RelationFact, type Slot } from "./build";
+import { TEN_GOD_KO } from "@/lib/brief/labels";
+import { getTenGod } from "@/lib/saju/tenGods";
 import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
-export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
+export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside" | "fact_season" | "fact_direction";
 export type FactHit = { readonly rule: FactRule; readonly detail: string };
 export type FactCtx = {
   readonly sheet: FactSheet; readonly aliases: readonly ShinsalAlias[];
@@ -182,13 +184,60 @@ function relationGlyphMismatch(sen: string): FactHit | null {
   return null;
 }
 /** W5 R1-3: 땅 글자 자리(일지 등)를 기둥 이름(간지 두 글자)으로 부름(W4 1차 궁합 「장덕민님의 일지는 갑신입니다」 — 일지는 申 한 글자, 갑신은 일주). */
-const BRANCH_AS_PILLAR = /(연지|월지|일지|시지|년지)(?:는|은|가|이|의)? ([가-힣]{2})(?=[이가은는의으로입예,\s]|$)/;
-function branchAsPillar(sen: string, owners: readonly PersonFacts[]): FactHit | null {
-  const m = sen.match(BRANCH_AS_PILLAR); if (!m || owners.length !== 1 || !isGanjiKo(m[2])) return null;
+const BRANCH_AS_PILLAR = /(연지|월지|일지|시지|년지)(?:는|은|가|이|의)? ([가-힣]{2})(?=[이가은는의으로입예에과와을를도만,\s]|$)/;
+function branchAsPillar(sen: string, owners: readonly PersonFacts[], ctx?: FactCtx): FactHit | null {
+  const m = sen.match(BRANCH_AS_PILLAR); if (!m || !isGanjiKo(m[2])) return null;
+  // W6 A3(W5 1차 궁합 「장덕민님의 일지 갑신에는」 — 두 이름이 든 문장이라 사람을 못 정했다): 자리 말 앞 가장 가까운 이름의 사람.
+  if (owners.length !== 1 && ctx && ctx.people.length > 1) { const who = nearestOwner(sen, m.index ?? 0, ctx); if (who < 0) return null; owners = [ctx.people[who].facts]; }
+  if (owners.length !== 1) return null;
   const pos = ({ 연지: "year", 년지: "year", 월지: "month", 일지: "day", 시지: "hour" } as Record<string, Pos>)[m[1]], pl = owners[0].pillars[pos];
   const nun = (w: string) => `${w}${(w.charCodeAt(w.length - 1) - 0xac00) % 28 ? "은" : "는"}`;
   return pl ? { rule: "fact_ganji", detail: `${m[1]}는 땅 글자 하나(${hangulOf(pl.branch)})다 — ${nun(m[2])} ${pl.ganjiKo === m[2] ? `${m[1][0]}주(기둥) 이름` : "이 사람 기둥에 없다"}` } : null;
 }
+/** 위치 앞에서 마지막으로 불린 사람(없으면 뒤에서 처음 불린 사람, 그것도 없으면 -1). */
+function nearestOwner(sen: string, at: number, ctx: FactCtx): number {
+  let best = -1, pos = -1, next = -1, npos = Infinity;
+  ctx.people.forEach((p, i) => { if (!p.names) return; for (const m of sen.matchAll(new RegExp(p.names.source, "g"))) { if (m.index! < at && m.index! >= pos) { pos = m.index!; best = i; } if (m.index! >= at && m.index! < npos) { npos = m.index!; next = i; } } });
+  return best >= 0 ? best : next;
+}
+
+/** W6 A2: 태어난 계절(월지 계절) 주장 — W5 1차 종합 수리 답 「겨울을 앞둔 봄의 경금」(봄 태생). 가정·조건 문장은 보지 않는다. */
+const SEASON_KO: Readonly<Record<string, string>> = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" };
+const NEXT_SEASON: Readonly<Record<string, string>> = { 봄: "여름", 여름: "가을", 가을: "겨울", 겨울: "봄" };
+const PREV_SEASON: Readonly<Record<string, string>> = { 봄: "겨울", 여름: "봄", 가을: "여름", 겨울: "가을" };
+const SEASON_IF = /(?:이)?거나|라면|다면|경우|이면|생이면/;
+const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
+function seasonClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || SEASON_IF.test(sen)) return null;
+  const o = owners[0], real = SEASON_KO[o.climate.season]; if (!real) return null;
+  const S = "(봄|여름|가을|겨울)";
+  const before = sen.match(new RegExp(`${S}(?:을|를|이|가)? (?:앞둔|앞에 둔|코앞에 둔|오기 전의?|다가오는) (?:늦|이른 |초)?${S}`));
+  if (before && (before[2] !== real || before[1] !== NEXT_SEASON[before[2]])) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다 — 「${before[0]}」(${real} 다음은 ${NEXT_SEASON[real]})` };
+  const after = sen.match(new RegExp(`${S}(?:을|를|이|가)? (?:지난|막 지난|끝난|건너온) (?:늦|이른 |초)?${S}`));
+  if (after && (after[2] !== real || after[1] !== PREV_SEASON[after[2]])) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다 — 「${after[0]}」(${real} 앞은 ${PREV_SEASON[real]})` };
+  const dm = `${o.dayMaster.ko}${EL_KO[o.dayMaster.element] ?? ""}`;
+  const born = sen.match(new RegExp(`(?:늦|초|이른 )?${S}(?:에 태어난|에 난|생(?![가-힣])|생이라|생인| 태생|의 ${dm})`));
+  if (born && born[1] !== real) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다(${born[1]} 아님)` };
+  return null;
+}
+
+/** W6 A3: 두 사람이 서로 보는 십성(A가 보는 B = A 일간 기준 B 일간의 십성). 「A님에게 B님은 X」「A님이 보는 B님은 X」「A님 눈에 B님은 X」 · 「X의 눈으로」(십성은 보는 눈이 아니다). */
+const TG_NAMES = "비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인";
+function tenGodView(sen: string, ctx: FactCtx): FactHit | null {
+  if (ctx.people.length !== 2) return null;
+  const eye = sen.match(new RegExp(`(${TG_NAMES})의 (?:눈|시선)(?:으로|에|에는|에서)`));
+  if (eye) return { rule: "fact_direction", detail: `「${eye[0]}」 — 십성은 보는 눈이 아니라 보이는 쪽이다(「A님에게 B님은 ${eye[1]}」 꼴)` };
+  const [a, b] = ctx.people;
+  if (!a.names || !b.names) return null;
+  const truth = (viewer: number) => { const x = ctx.people[viewer].facts.dayMaster.stem, y = ctx.people[1 - viewer].facts.dayMaster.stem; return TEN_GOD_KO[getTenGod(x, y) as keyof typeof TEN_GOD_KO] as string | undefined; };
+  for (const [vi, v, w] of [[0, a, b], [1, b, a]] as const) {
+    const re = new RegExp(`(?:${v.names!.source})님?(?:에게는|에게|이 보는|가 보는|의 눈에는|의 눈에|눈에)? (?:[^.?!]{0,6})?(?:${w.names!.source})님?(?:은|는|이|가|의)? (?:[^.?!]{0,12}?)(${TG_NAMES})`);
+    const m = sen.match(re); if (!m) continue;
+    const t = truth(vi); if (t && m[1] !== t) return { rule: "fact_direction", detail: `${v.facts.name}님에게 ${w.facts.name}님은 ${t}다(${m[1]} 아님 — ${m[1]}는 반대 방향이거나 없는 십성)` };
+  }
+  return null;
+}
+
 function insideAsPair(sen: string, ctx: FactCtx): FactHit | null {
   const pair = ctx.sheet.pair;
   if (!pair || ctx.people.length < 2 || /사주 안/.test(sen) || HYPO.test(sen)) return null;
@@ -578,7 +627,7 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
 
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

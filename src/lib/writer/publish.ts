@@ -32,13 +32,13 @@ import type { ReportInputPayload } from "@/lib/report-generation/reportInputType
 import { withV5NatalRows } from "@/lib/report-tables/v5NatalRows";
 import { analyzeChartDetections } from "@/lib/saju/detections";
 import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta } from "./book";
-import { buildWriterPrompt, markTableFor, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
+import { buildWriterPrompt, markTableFor, personProfileOf, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
 import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
-import { dropOverflowParagraphs, dropSentences, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
+import { dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { designSummaryOf, infoCardsOf } from "./design";
 import { priceFor } from "@/lib/llm/prices";
@@ -175,9 +175,17 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...(brief.design ? { seedScenes: new Map(plan.flatMap(ch => (ch.sections ?? []).map((s, si) => [`${ch.n}.${si}`, s.materials.flatMap(m => (m.kind === "mbti" && m.seedId !== "prop" ? [m.scene] : []))] as const)).filter(([, v]) => v.length)) } : {}),
     // W3 P3 보강·W4 Q2: 4종 책은 근거에 없는 구체 장면(단정·물음)을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면 + 장 소품 힌트(sceneHint, W4에 작가에게 다시 감).
     ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [], questionCap: true, persona: personaContext(brief, k), exampleWords: true, briefNorm: normWords(JSON.stringify(renderWriterBrief(brief, { knowledge: k }))) } : {}),
+    // W6 S0-2·A4·S1-5(4종): 깨진 문장 · 같은 사람 성격 모순(한 사람 책은 성격 요약표가 먼저 — 궁합은 성격표 대조 pair_profile이 따로 있어 글끼리만) · 합·충 × MBTI 연결.
+    ...(brief.design ? { broken: true, linkCheck: true, contradiction: contradictionCtxOf(brief, k) } : {}),
   };
 }
 
+/** W6 A4: 모순 검사 문맥 — 사람마다 이름 꼴과 성격 요약표(한 사람 책만). */
+export function contradictionCtxOf(brief: Brief, k: Knowledge): import("./safety/contradiction").ContradictionCtx {
+  const names = personNames(brief), compat = Boolean(brief.compatibility && brief.partner);
+  const self = compat ? null : personProfileOf(brief, k);
+  return { compat, people: names.map((n, i) => ({ names: n, label: compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName][i] ?? "" : brief.person.callName, codes: i === 0 ? self : null })) };
+}
 /** 사람마다 부르는 이름 꼴(전체 이름·부를 이름·성 뺀 이름). 궁합은 두 사람, 한 사람 책은 하나. */
 export function personNames(brief: Brief): string[][] {
   const c = brief.compatibility, partner = brief.partner;
@@ -551,7 +559,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const conn = deps.replay ? { chapters, count: 0 } : stripConnectiveFlags(chapters, flags1); chapters = conn.chapters;
   const byN0 = new Map(rp.numbered.map(x => [x.n, x]));
   const dropTargets: DropTarget[] = [
-    ...flags1.filter(f => modeOf(f.rule) === "drop" && f.paragraph >= 0 && !f.card && f.sentence).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, sentence: f.sentence, rule: f.rule as string, hard: HARD_RULES.has(f.rule) })),
+    ...flags1.filter(f => modeOf(f.rule) === "drop" && f.paragraph >= 0 && !f.card && f.sentence).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, sentence: f.sentence, rule: f.rule as string, hard: HARD_RULES.has(f.rule), ...(f.detail ? { detail: f.detail } : {}) })),
     ...issues.filter(i => reviewModeOf(i.cat) === "drop").flatMap(i => { const x = byN0.get(i.s); return x && x.paragraph >= 0 ? [{ chapter: x.chapter, section: x.section, paragraph: x.paragraph, sentence: x.text, rule: `review_${i.cat}`, hard: i.cat === "L" }] : []; }),
   ];
   const drops: { chapters: FinalChapter[]; dropped: DropRecord[] } = deps.replay ? { chapters, dropped: [] } : dropSentences(chapters, dropTargets); chapters = drops.chapters;
@@ -585,7 +593,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // W5 R2: 칸이 모자라 수리하지 못한 HARD가 남은 문단은 문단째(장이 비지 않게).
   const ov = deps.replay ? { chapters: fixed, dropped: [] as { at: string; rule: string }[] } : dropOverflowParagraphs(fixed, remaining, overflow);
   if (ov.dropped.length) { fixed = ov.chapters; remaining = lintBook(fixed, lctx); }
-  const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
+  const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES, improveOnly);
   fixed = del.chapters;
   remaining = lintBook(fixed, lctx);
   const dropped = { chapters: fixed, dropped: [] as { at: string; heading: string; rules: string[]; sentences: string[] }[], kept: [] };

@@ -304,9 +304,10 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
   }
   return { chapters: out, reverted };
 }
-export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
+export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" | "thin"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
-export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {
+/** W6 S0-1: improve(rule, detail)가 참인 규칙(개선)은 지우고 난 문단이 3문장 이상 남을 때만 지운다(아니면 kept: "thin" 기록). */
+export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean): { chapters: FinalChapter[]; deleted: Deleted[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const deleted: Deleted[] = [];
   for (const f of flags) {
@@ -331,6 +332,7 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const rest = asks ? rest1b.filter((_, j) => j !== i - 1) : rest1b;
     if (asks) deleted.push({ at, sentence: ss[i - 1].replace(/[⟪⟫]/g, ""), rule: `${f.rule}:question` });
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
+    if (improve?.(f.rule, f.detail) && rest.length < 3) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "thin" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
     deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });
   }
