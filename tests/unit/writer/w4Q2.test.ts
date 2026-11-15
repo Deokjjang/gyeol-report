@@ -73,7 +73,7 @@ describe("Q2-1·2 원재료 복구·정제 · 소품 힌트(4종)", () => {
   });
   it("작가 요청: 지침 v5-27 이후(자리·두 근거 엮기·물음 한 번·구조 말 금지 — W5 v5-28도 유지) · 4종 예시는 새 가상 인물, 세운·대운 예시는 운영 그대로", () => {
     const w = buildWriterPrompt(books[0].brief, { knowledge: k });
-    expect(WRITER_PROMPT_VERSION).toBe("writer-prompt-v5-29");
+    expect(WRITER_PROMPT_VERSION).toBe("writer-prompt-v5-30"); // W7: profile → persona(정답지)
     for (const x of ["traits[].at", "근거 둘을 한 원인으로", "장마다 한 번까지", "구조 말", "다음 대운"]) expect(WRITER_SYSTEM).toContain(x);
     expect(w.system).toContain("예시 1 — 가상 인물(정시·ESFJ·간호사·기혼)");
     expect(w.system).not.toContain("정시·ESTP·영업직");

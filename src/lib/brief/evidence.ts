@@ -377,7 +377,9 @@ const CAREER_PATHS: readonly { name: string; groups: Partial<Record<keyof typeof
 ];
 /** 묶음 세기 낱말(P6d A): 만세력 가중값 단계 그대로(강 3 이상 · 약 1.5 미만, 0은 없음). */
 export const LEVEL_WORD = (s: number) => (s >= GROUP_STRONG ? "강함" : s >= GROUP_WEAK ? "보통" : s > 0 ? "약함" : "없음");
-function careerPaths(k: Knowledge, scores: Record<string, number>, mbti: MbtiProfile | null, strength: string, part?: "good" | "less"): Evidence {
+/** W7-2 D8: 지금 직업 판정이 「덜 맞음」이면 지금 일하는 형태의 길(사업·프리랜서·직장)을 「잘 맞음」으로 말하지 않는다(적합도와 길이 반대로 말하지 않게). */
+const FORM_PATH: Readonly<Record<string, string>> = { business_owner: "사업", self_employed: "사업", freelancer: "프리랜서", employee: "직장(조직)" };
+function careerPaths(k: Knowledge, scores: Record<string, number>, mbti: MbtiProfile | null, strength: string, part?: "good" | "less", cap?: { readonly name: string }): Evidence {
   const strong = strength === "STRONG" || strength === "VERY_STRONG", weak = strength === "WEAK" || strength === "VERY_WEAK";
   const rows = CAREER_PATHS.map(p => {
     const ws = Object.entries(p.groups) as [keyof typeof GROUP_KO, number][];
@@ -390,10 +392,12 @@ function careerPaths(k: Knowledge, scores: Record<string, number>, mbti: MbtiPro
     return { p, total, lead, mbtiReason: m?.reason, weakNote: p.risky && weak ? "일간이 약한 편이라 혼자 다 떠안는 구조는 부담" : "" };
   });
   const max = Math.max(...rows.map(r => r.total));
-  const level = (t: number) => (t >= max * 0.85 ? "잘 맞음" : t >= max * 0.65 ? "보통" : "덜 맞음");
+  const level0 = (t: number) => (t >= max * 0.85 ? "잘 맞음" : t >= max * 0.65 ? "보통" : "덜 맞음");
+  const capped = (r: { p: { name: string }; total: number }) => cap && r.p.name === cap.name && level0(r.total) === "잘 맞음";
+  const level = (t: number, r?: { p: { name: string }; total: number }) => (r && capped(r) ? "보통(지금 하는 일보다 일하는 형태가 맞는 쪽)" : level0(t));
   // 다섯 길을 잘 맞는 쪽(위 셋)과 덜 맞는 쪽(아래 둘)으로 나눠 절마다 다른 근거로 쓴다(P6c E1 커리어 4, 소제목마다 새 근거 2개 이상).
   const ranked = [...rows].sort((a, b) => b.total - a.total), pick = part === "good" ? ranked.slice(0, 3) : part === "less" ? ranked.slice(3) : rows;
-  return { kind: "evidence", key: part === "less" ? "pathsLess" : part === "good" ? "pathsGood" : "careerPaths", facts: pick.map(r => `${r.p.name}: ${level(r.total)} — ${r.p.why}. 명리: ${GROUP_KO[r.lead]} ${LEVEL_WORD(scores[r.lead] ?? 0)}${r.weakNote ? `, ${r.weakNote}` : ""}${r.mbtiReason ? ` / MBTI: ${r.mbtiReason}` : ""}`),
+  return { kind: "evidence", key: part === "less" ? "pathsLess" : part === "good" ? "pathsGood" : "careerPaths", facts: pick.map(r => `${r.p.name}: ${level(r.total, r)} — ${r.p.why}. 명리: ${GROUP_KO[r.lead]} ${LEVEL_WORD(scores[r.lead] ?? 0)}${r.weakNote ? `, ${r.weakNote}` : ""}${r.mbtiReason ? ` / MBTI: ${r.mbtiReason}` : ""}`),
     note: "길마다 판정과 근거 하나씩. 지금 직업을 바꾸라고 단정하지 않는다" };
 }
 
@@ -504,6 +508,7 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
   const inv = investment(d, scores, saju.structureAnalysis.dayMasterStrength.level, yearTg, { banghap: opts.hitIds?.has("relation:BANGHAP") });
   // 지금 직업 판정(P6b D 커리어 1): 잘 맞음·보통·덜 맞음 + 성향(십성 묶음)·성격(MBTI)·운(대운·올해) 근거.
   const verdict = fitLevel ? (fitLevel.startsWith("잘") ? "잘 맞음" : fitLevel.startsWith("절반") ? "보통" : "덜 맞음") : null;
+  const formCap = verdict === "덜 맞음" && FORM_PATH[jobStatus] ? { name: FORM_PATH[jobStatus] } : undefined;
   const jobMbti = fit && mbti ? mbtiFit(k, groupDims(k, fit.groups[0] as keyof typeof GROUP_KO), mbti).reason : undefined;
   const luck = [chart.currentDayun ? `지금 10년 흐름(대운)은 ${chart.currentDayun.tenGod}` : "", `올해는 ${chart.thisYear.tenGod}`].filter(Boolean).join(", ");
   // 줄마다 같은 틀("A는 ~과 ~이 함께 쓰이는 일이에요")이 9번 되풀이됐다(P6): 문장 모양을 줄마다 바꾸게 한다.
@@ -562,9 +567,9 @@ export function careerEvidence(saju: SajuCalcResult, k: Knowledge, chart: ChartB
       `돈 버는 방식: ${Math.max(d.正財 ?? 0, d.偏財 ?? 0) < 0.5 ? "돈 기운(재성)이 옅어, 큰 판을 굴리기보다 일한 만큼 받는 구조에서 돈이 남는 쪽" : Math.abs((d.正財 ?? 0) - (d.偏財 ?? 0)) < 0.3 ? "고정 수입과 성과형 수입을 함께 굴리는 쪽(어느 한쪽으로 기울지 않음)" : (d.正財 ?? 0) > (d.偏財 ?? 0) ? "고정 수입을 차곡차곡 쌓을 때 돈이 남는 쪽(정재형)" : "성과·부업·기회를 크게 굴릴 때 돈이 붙는 쪽(편재형)"}`,
     ] },
     moneyLeak: { kind: "evidence", key: "moneyLeak", facts: inv.leak.length ? inv.leak : [`올해 ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해의 돈 주의: ${(period?.year.caution.find(c => !c.when)?.text) ?? "큰 지출은 하루 미뤄 다시 본다"}`] },
-    careerPaths: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level),
-    pathsGood: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "good"),
-    pathsLess: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "less"),
+    careerPaths: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, undefined, formCap),
+    pathsGood: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "good", formCap),
+    pathsLess: careerPaths(k, scores, mbti, saju.structureAnalysis.dayMasterStrength.level, "less", formCap),
     honor: honorEvidence(d, scores, opts.hitIds ?? new Set(traits.map(t => t.featureId))),
     investment: { kind: "evidence", key: "investment", facts: [
       `올해 ${chart.thisYear.ganji.hanja}(${chart.thisYear.ganji.hangul}): ${josa(chart.thisYear.tenGod, "이가")} 들어오는 해(돈의 주의는 '새는 곳'에서 한 번만)`,

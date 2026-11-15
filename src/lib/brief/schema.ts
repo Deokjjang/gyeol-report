@@ -248,6 +248,14 @@ export const CompatibilityBriefSchema = z.object({
   }),
 });
 
+/** W7-2 성격 정답지(작가 입력에서 빼고 요약만 보낸다 — persona.ts). */
+const PoleCondSchema = z.object({ who: z.string().optional(), sit: z.string().optional() });
+export const PersonaSheetSchema = z.object({
+  dims: z.array(z.object({ id: z.string(), v: z.union([z.literal(1), z.literal(-1), z.literal(0)]), plus: z.number(), minus: z.number(), tension: z.object({ plus: PoleCondSchema, minus: PoleCondSchema }).optional(), why: z.array(z.string()) })),
+  core: z.array(z.object({ id: z.string(), v: z.union([z.literal(1), z.literal(-1)]), why: z.array(z.string()) })),
+  tensions: z.array(z.object({ id: z.string(), plus: PoleCondSchema, minus: PoleCondSchema, why: z.array(z.string()) })),
+  discoveries: z.array(z.object({ id: z.string(), v: z.union([z.literal(1), z.literal(-1)]), domain: z.string(), key: z.string() })),
+});
 export const BriefSchema = z.object({
   version: z.literal(BRIEF_VERSION),
   /** 최종판2 1-1: 이미지 대장에서 뺄 책(저장본 검사·replay). 작가에게 보내지 않는다. */
@@ -272,6 +280,8 @@ export const BriefSchema = z.object({
     lifetime: z.array(z.object({ ganji: z.string(), hanja: z.string(), startYear: z.number().int(), endYear: z.number().int(), ages: z.string(), tenGod: z.string(), theme: z.string(), current: z.boolean(), label: z.string() })).optional() }).optional(),
   partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
   compatibility: CompatibilityBriefSchema.optional(),
+  /** W7-2 성격 정답지: [본인, 상대(궁합)]. 4종만(세운·대운 없음). */
+  persona: z.array(PersonaSheetSchema).max(2).optional(),
   /**
    * 배정 기록(P3.8 1, 작가에게는 안 감): trait별 소개 장·적용 장, 축별 사용 수. 안전망이 원고의 실제 언급과 비교한다.
    * axis = 의미 그룹 또는 가장 센 행동 차원(+/-). 상한: trait 소개 1 + 적용 2, 축 3, 한 장에 같은 trait·같은 축 1.

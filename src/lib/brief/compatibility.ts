@@ -18,6 +18,7 @@ import { ELEMENT_KO, ganjiLabel, halfHapLine, josa, relationPlain, SAMHYEONG_PLA
 import type { ChartBrief, CompatibilityBrief, Trait } from "./schema";
 import { pairImage } from "./coreImage";
 import { applyProfile, profileCodes, profileLine, type PairProfile } from "./pairProfile";
+import { profileCodesFromSheet, type PersonaSheet } from "./persona";
 import { groupValues } from "@/lib/saju/groupStrength";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 
@@ -28,11 +29,13 @@ const LENS_FOCUS: Record<CompatibilityRelationshipType, string> = {
 export type PairSide = {
   readonly saju: SajuCalcResult; readonly chart: ChartBrief; readonly st: ElementState; readonly traits: readonly Trait[]; readonly hitIds: readonly string[];
   readonly mbti: MbtiProfile | null; readonly callName: string; readonly gender: "MALE" | "FEMALE" | null;
+  /** W7-2 성격 정답지(있으면 성격표가 이 값을 쓴다 — 단일 출처). */
+  readonly persona?: PersonaSheet;
 };
 
 /** 최종판2 1-3: 이 사람의 고정 성격표. */
 export function sideProfile(side: PairSide, k: Knowledge): PairProfile {
-  const codes = profileCodes(side.mbti?.type ?? null, dimensionVector(side, k), side.hitIds);
+  const codes = side.persona ? profileCodesFromSheet(side.persona, side.mbti?.type ?? null) : profileCodes(side.mbti?.type ?? null, dimensionVector(side, k), side.hitIds);
   return { name: side.callName, ...codes, line: profileLine(side.callName, codes, side.mbti?.type ?? null) };
 }
 /** 성격표를 반영한 행동 차원 벡터(차이 목록·장면 주인 who가 표와 같은 쪽을 가리키게). */

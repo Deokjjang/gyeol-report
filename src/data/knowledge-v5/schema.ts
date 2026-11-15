@@ -74,7 +74,11 @@ export const BehaviorDimensionSchema = z.object({
   domains: z.array(DomainSchema).min(1),
   sceneTemplates: z.array(z.object({ pole: z.enum(["+", "-"]), domain: DomainSchema, text: z.string().min(8).max(140) })).min(2),
 });
-export const BehaviorOntologySchema = z.object({ version: z.string(), note: z.string().optional(), domains: z.array(DomainSchema), dimensions: z.array(BehaviorDimensionSchema).min(25).max(40) });
+/** W7-1 성격 정답지 차원 사전(닫힌 목록 ≤ 20): 양 끝 정의 한 줄 + 옛 차원 대응(1 같음, -1 뒤집음). */
+export const PersonaDimSchema = z.object({ id: DimensionId, name: z.string().min(2).max(10), plus: z.string().min(6).max(60), minus: z.string().min(6).max(60), from: z.array(z.tuple([DimensionId, z.union([z.literal(1), z.literal(-1)])])) }).strict();
+export type PersonaDim = z.infer<typeof PersonaDimSchema>;
+export const BehaviorOntologySchema = z.object({ version: z.string(), note: z.string().optional(), domains: z.array(DomainSchema), dimensions: z.array(BehaviorDimensionSchema).min(25).max(40),
+  persona: z.object({ version: z.string(), note: z.string().optional(), dims: z.array(PersonaDimSchema).min(5).max(20) }).strict().optional() });
 export type BehaviorOntology = z.infer<typeof BehaviorOntologySchema>;
 
 // ---------- 2) myeongri/<family>.json ----------
@@ -393,3 +397,19 @@ export type CareerJob = z.infer<typeof CareerJobSchema>;
  */
 export const MaterialsFileSchema = z.object({ version: z.string(), note: z.string().optional(), items: z.record(z.string().regex(/^[0-9a-f]{12}$/), z.string().min(3).max(80)) }).strict();
 export type MaterialsFile = z.infer<typeof MaterialsFileSchema>;
+/**
+ * W7-1 재료 줄 꼬리표(원문·재료는 그대로, 새 파일): 재료 키(원문 sha1 앞 12자) → 꼬리표.
+ * k = 갈래(trait 성격·기질 · situ 상황 경향 · flow 흐름·시기 · pair 두 사람 관계 · advice 처방 · explain 설명),
+ * d = [차원(persona 사전), 끝(+1/−1), 세기 1~3] 0~3개, c = 원문(작가 재료)에 적힌 조건만(대상·상황 + 근거 낱말), s = 한 사람/두 사람,
+ * rw = 작가에게 보낼 바꾼 재료(결정 2 사주 안 관계 줄 → 흐름·변화 장면, 건강 단정 → 생활 리듬), drop = 작가에게 보내지 않음, by = 붙인 길(data·haiku·sonnet).
+ */
+export const PersonaTagSchema = z.object({
+  k: z.enum(["trait", "situ", "flow", "pair", "advice", "explain"]),
+  d: z.array(z.tuple([DimensionId, z.union([z.literal(1), z.literal(-1)]), z.union([z.literal(1), z.literal(2), z.literal(3)])])).max(3),
+  c: z.object({ who: z.enum(["self", "others", "close"]).optional(), sit: z.enum(["pressure", "work", "relation", "alone", "money"]).optional(), span: z.string().min(1).max(40) }).strict().optional(),
+  s: z.union([z.literal(1), z.literal(2)]),
+  rw: z.string().min(3).max(80).optional(), drop: z.literal(true).optional(),
+  by: z.enum(["data", "haiku", "sonnet"]),
+}).strict();
+export type PersonaTag = z.infer<typeof PersonaTagSchema>;
+export const PersonaTagsFileSchema = z.object({ version: z.string(), note: z.string().optional(), items: z.record(z.string().regex(/^[0-9a-f]{12}$/), PersonaTagSchema) }).strict();

@@ -323,6 +323,14 @@ export const STRENGTH_ACT: Readonly<Record<string, readonly string[]>> = {
   WEAK: ["받쳐 주는 사람과 정해진 순서가 있을 때 힘이 오래 가는 편", "혼자 짊어지기보다 함께 나눠 질 때 힘이 오래 가는 편"],
   VERY_WEAK: ["도움과 순서를 빌릴 때 힘이 제대로 나는 편", "기댈 곳을 먼저 만들어 두면 일이 풀리는 편"],
 };
+/** W7-3: 세기 행동 줄마다 말하는 성격 차원(정답지 사전 id, +1/−1) — 작가 입력이 정답지와 반대 끝인 줄을 고르지 않게. STRENGTH_ACT와 같은 순서. */
+export const STRENGTH_ACT_DIMS: Readonly<Record<string, readonly (readonly (readonly [string, 1 | -1])[])[]>> = {
+  VERY_STRONG: [[["independence", 1], ["persistence", 1]], [["attentionSeeking", 1]]],
+  STRONG: [[["persistence", 1], ["independence", 1]], [["independence", 1], ["ruleAdherence", -1]]],
+  BALANCED: [[], [["noveltySeeking", 1]], []],
+  WEAK: [[["independence", -1], ["ruleAdherence", 1]], [["independence", -1]]],
+  VERY_WEAK: [[["independence", -1]], [["independence", -1]]],
+};
 /** 신강약 말 · 같은 문단의 신약 + 비겁·인성 강. */
 const STRENGTH_KO: Readonly<Record<string, string>> = { VERY_WEAK: "매우 신약", WEAK: "신약", BALANCED: "중화", STRONG: "신강", VERY_STRONG: "매우 신강" };
 /** 문장이 쓴 세기 행동 줄의 세기(쉼표는 빼고 앞 14자로 찾는다 — 「꺼내 쓰고, 나머지는」). 없으면 null. */

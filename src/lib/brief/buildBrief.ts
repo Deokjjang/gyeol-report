@@ -38,6 +38,8 @@ import { annualEvidence, annualStatusQ, bridgeEvidence, domainSignals, monthEvid
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
+import { personaSheet, type PersonaSheet } from "./persona";
+import type { FeatureHit } from "./featureTypes";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
 import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 import { pairYearRelationEvidence, yearRelationEvidence } from "./yearRelation";
@@ -121,7 +123,7 @@ const STYLE_RULES = [
 type PersonPack = {
   readonly saju: SajuCalcResult; readonly facts: CustomerFacts; readonly profile: FactProfile; readonly person: PersonBrief;
   readonly chart: ChartBrief; readonly traits: Trait[]; readonly sources: TraitSource[]; readonly hitIds: string[];
-  readonly scored: ReturnType<typeof scoreHits>; readonly selected: ReturnType<typeof selectTraits>;
+  readonly scored: ReturnType<typeof scoreHits>; readonly selected: ReturnType<typeof selectTraits>; readonly hits: readonly FeatureHit[]; readonly persona?: PersonaSheet;
   readonly det: ReturnType<typeof analyzeChartDetections>; readonly dayun: ReturnType<typeof dayunOf>; readonly st: ElementState; readonly bc: BalanceCtx;
   /** 이 재료(feature id·차원)가 고른 trait와 같은 차원에서 반대인가(P3.8 1). */
   readonly clashes: (id: string, tags: Readonly<Record<string, number>> | undefined) => boolean;
@@ -232,7 +234,9 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     ...(override ? {} : (() => { const stage = lifeStage({ jobStatus: facts.jobStatus, age }, profile), job = matchJob(facts.detailJob);
       return { lifeStage: LIFE_STAGE_KO(stage, age), ...(job?.stages ? { workScenes: job.stages } : {}) }; })()),
   };
-  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc, clashes };
+  // W7-2 성격 정답지(4종만 — 결정 6). 궁합 성격표·성격 요약표·작가 입력 거르기가 이 값을 쓴다.
+  const persona = !amBrief(product) ? personaSheet(k, hits, saju.tenGods.stems as Record<string, string | null>, facts.mbti) : undefined;
+  return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), hits, scored, selected, det, dayun, st: st0, bc, clashes, ...(persona ? { persona } : {}) };
 }
 
 /** W3 P3: 직업 소품 낱말(연애·가족 장 소품 힌트에서 뺀다 — 사업자 통장·대금 받는 날·견적 문의 연락). */
@@ -547,6 +551,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     ...(timeline ? { timeline } : {}),
     ...(other ? { partner: { person: other.person, mbti: mbtiBrief(k, other.facts.mbti), chart: other.chart } } : {}),
     ...(compatibility ? { compatibility } : {}),
+    // W7-2: 성격 정답지(4종만 — 결정 6).
+    ...(me.persona ? { persona: [me.persona, ...(other?.persona ? [other.persona] : [])] } : {}),
     style: { version: "style-v5-1", register: "존댓말, 가볍게(~입니다/~예요 혼용)", readingLevel: "초·중등", totalChars: chars.total, rules: STYLE_RULES, forbidden: [...narrative.forbidden] },
   };
   // 토큰 추정은 작가가 실제로 받는 입력 그대로(P3.8: 절·배정 기록·안 쓰는 trait를 빼고 센다).
@@ -608,6 +614,6 @@ function pairSides(a: PersonPack, b: PersonPack, k: Knowledge) {
 }
 function side(p: PersonPack, k: Knowledge): PairSide {
   return {
-    saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName, gender: p.person.gender,
+    saju: p.saju, chart: p.chart, st: p.st, traits: p.traits, hitIds: p.hitIds, mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, callName: p.person.callName, gender: p.person.gender, ...(p.persona ? { persona: p.persona } : {}),
   };
 }

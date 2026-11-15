@@ -8,7 +8,11 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 
 export const materialKey = (text: string) => createHash("sha1").update(text).digest("hex").slice(0, 12);
-export type MaterialTable = { readonly exact: ReadonlyMap<string, string>; readonly byHead: ReadonlyMap<string, readonly (readonly [string, string])[]>; readonly plain: ReadonlyMap<string, string> };
+export type MaterialTable = { readonly exact: ReadonlyMap<string, string>; readonly byHead: ReadonlyMap<string, readonly (readonly [string, string])[]>; readonly plain: ReadonlyMap<string, string>;
+  /** W7-3: 재료로 바꾼 조각(원문 전체 또는 그 한 문장) → 원문(꼬리표 키를 찾는다). */
+  readonly origOf: ReadonlyMap<string, string> };
+/** W7-3: 원문 조각을 작가에게 보낼지(정답지 거르기). false면 그 조각을 뺀다. */
+export type KeepPiece = (original: string) => boolean | string;
 const HEAD = 10;
 
 /** 재료가 있는 지식 DB 원문 전체(tools/p6c/seeds/rules.ts의 변환 대상과 같은 필드). */
@@ -41,37 +45,50 @@ export function* dbTexts(k: Knowledge): Generator<string> {
 const cache = new WeakMap<Knowledge, MaterialTable>();
 export function materialTable(k: Knowledge): MaterialTable {
   const hit = cache.get(k); if (hit) return hit;
-  const exact = new Map<string, string>(), plain = new Map<string, string>();
+  const exact = new Map<string, string>(), plain = new Map<string, string>(), origOf = new Map<string, string>();
   for (const text of dbTexts(k)) {
     if (!text || text.length < HEAD || exact.has(text)) continue;
     const m = k.materials.get(materialKey(text)); if (!m) continue;
     // MBTI 기능은 "쉬운 이름 | 방향": 원문 자리에는 방향만, 쉬운 이름은 따로(기능 목록을 만들 때 쓴다).
     const [a, b] = m.split("|").map(x => x.trim());
     if (b) { exact.set(text, b); plain.set(text, a); } else exact.set(text, m);
+    origOf.set(text, text);
+  }
+  // W7-3: 심화 재료(deep)는 재료 변환 없이 원문 그대로 가지만, 정답지 거르기가 조각을 알아보도록 같은 표에 둔다(바꿔 넣는 글 = 원문).
+  for (const [topic, entries] of k.deep) {
+    if (/^(annual-|major-|year-energy)/.test(topic)) continue;
+    const leaves = (o: unknown): void => { if (typeof o === "string") { if (o.length >= HEAD * 2 && !exact.has(o)) { exact.set(o, o); origOf.set(o, o); } } else if (Array.isArray(o)) o.forEach(leaves); else if (o && typeof o === "object") for (const [kk, v] of Object.entries(o)) if (!["key", "facet", "level", "id", "sources", "when"].includes(kk)) leaves(v); };
+    for (const e of entries) leaves(e);
   }
   const byHead = new Map<string, [string, string][]>();
   const put = (text: string, mat: string) => { const h = text.slice(0, HEAD); const l = byHead.get(h); if (l) l.push([text, mat]); else byHead.set(h, [[text, mat]]); };
   for (const [text, mat] of exact) put(text, mat);
   // 브리프가 원문 일부만 옮긴 경우(첫 문장, 출처 문장을 뺀 나머지)도 문장 단위로 그 원문의 재료로 바꾼다. 긴 일치(원문 전체)가 먼저.
-  for (const [text, mat] of exact) { const ss = splitSentences(text); if (ss.length > 1) for (const x of ss) if (x.length >= HEAD * 2 && !exact.has(x)) put(x, mat); }
+  for (const [text, mat] of exact) { const ss = splitSentences(text); if (ss.length > 1) for (const x of ss) if (x.length >= HEAD * 2 && !exact.has(x)) { put(x, mat); if (!origOf.has(x)) origOf.set(x, text); } }
   for (const l of byHead.values()) l.sort((a, b) => b[0].length - a[0].length);
-  const t = { exact, byHead, plain };
+  const t = { exact, byHead, plain, origOf };
   cache.set(k, t);
   return t;
 }
 
 /** 문자열 하나: 통째로 원문이면 재료, 원문을 품고 있으면 그 부분만 재료로. */
-export function swapMaterials(s: string, t: MaterialTable): string {
-  const whole = t.exact.get(s); if (whole) return whole;
+export function swapMaterials(s: string, t: MaterialTable, keep?: KeepPiece): string {
+  const whole = t.exact.get(s); if (whole) { if (!keep) return whole; const r = keep(t.origOf.get(s) ?? s); return r === false ? "" : typeof r === "string" ? r : whole; }
   if (s.length < HEAD) return s;
   let out = "", i = 0;
   while (i < s.length) {
     const cands = i + HEAD <= s.length ? t.byHead.get(s.slice(i, i + HEAD)) : undefined;
     const hit = cands?.find(([text]) => s.startsWith(text, i));
     // 같은 원문의 문장이 이어 나오면 재료는 한 번만.
+    const verdict = hit && keep ? keep(t.origOf.get(hit[0]) ?? hit[0]) : true;
+    if (hit && typeof verdict === "string") { if (!out.trimEnd().endsWith(verdict)) out += verdict; i += hit[0].length; continue; }
+    if (hit && verdict === false) { out = out.replace(/(?:\s*(?:\/|·|;|,)\s*)$/, ""); i += hit[0].length; const rest = s.slice(i).match(/^\s*(?:\/|·|;|,)?\s*/); if (rest) i += rest[0].length; if (out && i < s.length) out += " / "; continue; }
     if (hit) { if (!out.trimEnd().endsWith(hit[1])) out += hit[1]; else out = out.trimEnd(); i += hit[0].length; } else { out += s[i]; i++; }
   }
-  return out;
+  if (!keep) return out;
+  const tidy = out.replace(/^\s*(?:\/|·|;|,|→)\s*/, "").replace(/\s*(?:\/|·|;|,|→)\s*$/, "").trim();
+  // 이름표만 남으면(「결정 습관에서 나온 원칙:」) 통째로 뺀다.
+  return /^[^.?!]{0,40}[:：]$/.test(tidy) ? "" : tidy;
 }
 
 /** 객체 전체(작가 입력)를 걸으며 문자열을 바꾼다. 원본은 건드리지 않는다. */

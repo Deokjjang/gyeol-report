@@ -150,8 +150,9 @@ describe("S1 A4 성격 요약표 · 모순 · S1-5 잘못된 연결", () => {
     const p = personProfileOf(F.brief, k);
     expect(p?.line).toContain(F.brief.person.callName);
     const view = renderWriterBrief(F.brief, { knowledge: k, facts: F.sheet });
-    expect(Object.keys(view)[0]).toBe("profile");
-    expect((view.profile as { line: string }).line).toBe(p!.line);
+    // W7-3: 4종 한 사람 책은 profile 자리에 성격 정답지 요약(persona: core·tensions). 요약표(personProfileOf)는 정답지에서 뽑아 검사·장 주장에 쓴다.
+    expect(Object.keys(view)[0]).toBe("persona");
+    expect((view.persona as { core: string[] }).core.length).toBeGreaterThan(0);
     expect(personProfileOf(C.brief, k)).toBeNull();
   });
   it("같은 사람·같은 차원 반대 끝 단정은 뒤 문장에 · 한 사람 책은 요약표와 반대도 · 조언·가정·대비·같은 절 대비는 아니다", () => {

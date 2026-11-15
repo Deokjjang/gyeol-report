@@ -6,11 +6,27 @@
  *    주인: 궁합은 단서 앞 가장 가까운 이름(없으면 뒤 이름), 한 사람 책은 「당신」·이름 또는 다른 사람 말(상대·연인·동료 …)이 없는 문장만.
  */
 import { POLE_CUES } from "@/lib/brief/mbtiFn";
+import type { PersonaSheet } from "@/lib/brief/persona";
 import { PROFILE_CUES, type ProfileCodes } from "@/lib/brief/pairProfile";
 import { fnStack } from "./style";
 
 export type ContradictionPerson = { readonly names: readonly string[]; readonly label: string; readonly codes?: ProfileCodes | null };
-export type ContradictionCtx = { readonly people: readonly ContradictionPerson[]; readonly compat: boolean };
+/** W7-4: sheets = 사람별 성격 정답지(있으면 차원마다 「먼저 말한 끝」이 정답지 값), dimMap = 옛 차원 → 사전 차원(뒤집음 포함). */
+export type ContradictionCtx = { readonly people: readonly ContradictionPerson[]; readonly compat: boolean; readonly sheets?: readonly PersonaSheet[]; readonly dimMap?: ReadonlyMap<string, readonly [string, 1 | -1]>; /** 사전 차원 → 이름·끝 글(수리에 정답지 한 줄로 준다). */ readonly dimText?: ReadonlyMap<string, { readonly name: string; readonly plus: string; readonly minus: string }> };
+/** 문장이 단정한 끝을 사전 차원으로(옛 차원 이름·EXTRA 차원은 dimMap으로 옮기고, 사전에 없으면 그대로). */
+export function assertedPersona(s: string, ctx: ContradictionCtx): { who: number; dim: string; pole: 1 | -1; cue: string }[] {
+  return assertedPoles(s, ctx).map(a => { const m = ctx.dimMap?.get(a.dim); return m ? { ...a, dim: m[0], pole: (a.pole * m[1]) as 1 | -1 } : a; });
+}
+/** W7-4: 정답지와 반대 끝 단정(긴장 아닌 차원). 긴장 차원은 tension으로 따로(기록만). */
+export function sheetOpposes(s: string, ctx: ContradictionCtx): { hard: { who: number; dim: string; cue: string }[]; tension: { who: number; dim: string; cue: string }[] } {
+  const hard: { who: number; dim: string; cue: string }[] = [], tension: { who: number; dim: string; cue: string }[] = [];
+  if (!ctx.sheets?.length) return { hard, tension };
+  for (const a of assertedPersona(s, ctx)) {
+    const d = ctx.sheets[a.who]?.dims.find(x => x.id === a.dim); if (!d || d.v === 0 || d.v === a.pole) continue;
+    (d.tension ? tension : hard).push({ who: a.who, dim: a.dim, cue: a.cue });
+  }
+  return { hard, tension };
+}
 export type SentenceAt = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string };
 export type ContradictionHit = SentenceAt & { readonly detail: string };
 
@@ -121,11 +137,15 @@ const SPLIT_SUBJECT = /한쪽|다른 쪽|한 사람은|다른 사람은|반면/;
 export function contradictionFlags(sentences: readonly SentenceAt[], ctx: ContradictionCtx): ContradictionHit[] {
   const first = new Map<string, { pole: 1 | -1; where: string; at: string; cue: string }>();
   ctx.people.forEach((p, i) => { for (const [d, s] of profilePoles(p.codes)) first.set(`${i}|${d}`, { pole: s, where: "성격 요약표", at: "profile", cue: `${p.label} ${d}${s > 0 ? "+" : "−"}` }); });
+  // W7-4: 정답지가 있으면 긴장 아닌 차원마다 정답지 값이 「먼저 말한 끝」(긴장 차원은 두 끝 모두 허용 — 기록만은 sheetOpposes).
+  const tensionDims = new Set<string>();
+  ctx.sheets?.forEach((sh, i) => { for (const d of sh.dims) { if (d.tension) { tensionDims.add(`${i}|${d.id}`); continue; } if (d.v !== 0) { const t = ctx.dimText?.get(d.id); first.set(`${i}|${d.id}`, { pole: d.v, where: "성격 정답지", at: "persona", cue: t ? `${ctx.people[i]?.label ?? ""} ${t.name}: ${d.v > 0 ? t.plus : t.minus}` : `${ctx.people[i]?.label ?? ""} ${d.id}${d.v > 0 ? "+" : "−"}` }); } } });
   const out: ContradictionHit[] = [];
   for (const [xi, x] of sentences.entries()) {
     const pv = sentences[xi - 1], carried = ctx.compat && pv && pv.chapter === x.chapter && pv.section === x.section && pv.paragraph === x.paragraph && BOTH_LEAD.test(pv.sentence.replace(/[⟪⟫]/g, "").trim()) && !SPLIT_SUBJECT.test(x.sentence) && !ctx.people.some(p => p.names.some(n => x.sentence.includes(n) || pv.sentence.includes(n)));
-    for (const a of carried ? assertedPoles(`둘 다 ${x.sentence.replace(/[⟪⟫]/g, "").trim()}`, ctx) : assertedPoles(x.sentence, ctx)) {
-      const k = `${a.who}|${a.dim}`, was = first.get(k);
+    for (const a of carried ? assertedPersona(`둘 다 ${x.sentence.replace(/[⟪⟫]/g, "").trim()}`, ctx) : assertedPersona(x.sentence, ctx)) {
+      const k = `${a.who}|${a.dim}`; if (tensionDims.has(k)) continue;
+      const was = first.get(k);
       if (!was) { first.set(k, { pole: a.pole, where: `${x.chapter}장`, at: `${x.chapter}.${x.section}`, cue: a.cue }); continue; }
       // 같은 절 안에서 바로 대비해 풀어 쓴 것(「그런데 ESTP의 결은 …」)은 모순이 아니라 설명된 긴장이다 — 장·절이 다를 때만.
       if (was.pole !== a.pole && (was.at !== `${x.chapter}.${x.section}` || (a.dim === "cueReading" && !CONTRAST.test(x.sentence)))) { out.push({ ...x, detail: `${ctx.people[a.who]?.label ?? ""} ${a.dim}: ${was.where}에서 「${was.cue}」 쪽인데 「${a.cue}」(반대 끝)` }); break; }

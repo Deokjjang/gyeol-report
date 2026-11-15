@@ -51,6 +51,7 @@ import { applySafetyNet, safetyFacts, sentenceViolation, type DraftChapter } fro
 import { copyWindows, dayunPhase, MYEONGRI_PREFIX, NICKNAME_KEYS, type ElementPresence } from "./safety/lint";
 import { dropNoticeSentences, enforce, HARD_RULES, lintBook, tidyBook, type LintCtx, type LintFlag } from "./safety/p6c";
 import { personaContext } from "./safety/persona";
+import { personaDimMap } from "@/lib/brief/persona";
 import { normWords } from "./safety/sentences";
 import { imageClash } from "./safety/imageClash";
 import { infoDictOf, infoMetrics } from "./safety/info";
@@ -187,7 +188,7 @@ export function contradictionCtxOf(brief: Brief, k: Knowledge): import("./safety
   const names = personNames(brief), compat = Boolean(brief.compatibility && brief.partner);
   const self = compat ? null : personProfileOf(brief, k);
   // W6.1 P5: 궁합도 사람별 성격표(브리프 단일 출처)를 「앞에서 이미 말한 끝」으로 둔다(W6은 한 사람 책만).
-  return { compat, people: names.map((n, i) => ({ names: n, label: compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName][i] ?? "" : brief.person.callName, codes: compat ? brief.compatibility?.profiles?.[i] ?? null : i === 0 ? self : null })) };
+  return { compat, people: names.map((n, i) => ({ names: n, label: compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName][i] ?? "" : brief.person.callName, codes: compat ? brief.compatibility?.profiles?.[i] ?? null : i === 0 ? self : null })) , ...(brief.persona?.length ? { sheets: brief.persona, dimMap: personaDimMap(k), dimText: new Map((k.ontology.persona?.dims ?? []).map(d => [d.id, { name: d.name, plus: d.plus, minus: d.minus }])) } : {}) };
 }
 /** 사람마다 부르는 이름 꼴(전체 이름·부를 이름·성 뺀 이름). 궁합은 두 사람, 한 사람 책은 하나. */
 export function personNames(brief: Brief): string[][] {
@@ -589,7 +590,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // AM 판독: 수리가 이웃 문장과 같은 말을 만들거나 시골 소품을 넣은 문장도 되돌린다(문체 규칙이라 위 검사가 못 봄).
   const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
   // W3 P3 6절: 수리가 책 안 다른 문장과 같은 말을 만들었거나, 원문의 근거 낱말(간지·십성·관계·신살)을 잃었거나, 예고만 남겼으면 되돌린다(호출 0).
-  const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet) });
+  const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet), ...(lctx.contradiction?.sheets ? { persona: lctx.contradiction } : {}) });
   const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   // W5 R2 F1: 수리 뒤 결정론 정리 — 수리 문장이 이웃과 같은 뜻·끊긴 문장·같은 문단 수리끼리 같은 구절이면 원문으로, 이웃 문장 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다.
@@ -613,7 +614,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
-  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
+  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, ...(regress.claims.length ? { personaClaims: regress.claims } : {}), reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
   // W6: 출시 관문 지표(차단 = 남은 깃발의 차단 갈래 수, 개선 지표는 기록만). 4종만.
   const gate = brief.design ? (() => { try { return gateMetrics(chapters, remaining, splitSentences); } catch { return undefined; } })() : undefined;

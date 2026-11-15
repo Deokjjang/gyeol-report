@@ -4,6 +4,7 @@
  * 수리본은 다시 검사하고, 실패한 문장만 지운다. 지우면 문단이 깨지는 경우(앞말에 기대는 다음 문장, 소제목의 마지막 문단)는 원문을 두고 기록한다.
  */
 import { dependsOnRemoved, listItemIn, removeSentenceAt } from "./safety/orphan";
+import { assertedPersona, sheetOpposes, type ContradictionCtx } from "./safety/contradiction";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
@@ -260,7 +261,9 @@ export function lostFactTokens(before: string, after: string, names: readonly st
 const PREVIEW_ONLY = /(다음|아래|이런|이렇게|몇 가지|두 가지|세 가지|네 가지|한 가지)[^.?!]{0,18}(살펴볼게요|볼게요|정리해 볼게요|말씀드릴게요|이야기해 볼게요|짚어 볼게요|알려 드릴게요|소개할게요)[.!]?$|[:：]$/;
 const isEmptyPreview = (sen: string, next: string | undefined) => emptyPreview(sen, next) || (PREVIEW_ONLY.test(sen.trim()) && !next);
 /** flags: 수리 전 검사 깃발(봐줄 사실 종류를 정한다), names: 근거 낱말(관계·신살 이름·기둥 간지). */
-export type RecheckCtx = { readonly flags: readonly LintFlag[]; readonly names: readonly string[] };
+export type RecheckCtx = { readonly flags: readonly LintFlag[]; readonly names: readonly string[]; /** W7-4(지시 6): 수리 답도 정답지 대조. */ readonly persona?: ContradictionCtx };
+/** W7-4: 수리가 새로 만든 성격 주장(원문에 없던 차원 끝) 기록. */
+export type RepairClaim = { readonly at: string; readonly sentence: string; readonly dims: readonly string[] };
 /** 정답지의 근거 낱말(관계 「축미충」「자축 육합」·관계 이름·신살 이름·기둥 간지 한글). */
 export function factNamesOf(sheet: FactSheet): string[] {
   const out = new Set<string>();
@@ -269,10 +272,10 @@ export function factNamesOf(sheet: FactSheet): string[] {
   for (const p of sheet.people) { for (const x of p.shinsal) { out.add(x.name); if (/살$/.test(x.name) && x.name.length >= 3) out.add(x.name.slice(0, -1)); } for (const pl of Object.values(p.pillars)) if (pl) out.add(pl.ganjiKo); }
   return [...out].filter(x => x.length >= 2);
 }
-export function revertRepairRegressions(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: RecheckCtx): { chapters: FinalChapter[]; reverted: Reverted[] } {
+export function revertRepairRegressions(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: RecheckCtx): { chapters: FinalChapter[]; reverted: Reverted[]; claims: RepairClaim[] } {
   const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
-  const reverted: Reverted[] = [];
+  const reverted: Reverted[] = [], claims: RepairClaim[] = [];
   const all = () => out.flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => splitSentences(p).map((t, ti) => ({ at: `${c.n}.${si}.${pi}`, ti, t: t.replace(/[⟪⟫]/g, "") })))));
   for (const a of applied) {
     if (a.kind !== "sentence" || !a.after || !a.before) continue;
@@ -297,6 +300,10 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
       const lb = L(a.before), la = L(here), gone = [...lb].filter(x => !la.has(x)), added = [...la].filter(x => !lb.has(x));
       const others = ss.filter((_, j) => j !== i).join(" ");
       if (gone.length && added.length) { const kept = gone.find(x => others.includes(x)); if (kept) { rule = "repair_label_flip"; detail = `${kept}→${added.join("·")}`; } } }
+    // ⑤ W7-4(지시 6): 수리 문장이 정답지와 반대 끝(긴장 아닌 차원)을 단정하면 원문으로(원문도 걸리면 뒤 재검사·지우기가 뗀다 — P2 주어 지키기).
+    if (!rule && ctx.persona) { const h = sheetOpposes(here, ctx.persona).hard; if (h.length) { rule = "repair_persona"; detail = h.map(x => x.dim).join(","); } }
+    if (ctx.persona) { const was = new Set(assertedPersona(a.before, ctx.persona).map(x => `${x.who}:${x.dim}`)), now = assertedPersona(here, ctx.persona).map(x => `${x.who}:${x.dim}${x.pole > 0 ? "+" : "-"}`).filter(x => !was.has(x.slice(0, -1)));
+      if (now.length) claims.push({ at: a.at, sentence: here, dims: now }); }
     // ③ 예고만 남음.
     if (!rule && isEmptyPreview(here, ss[i + 1]?.replace(/[⟪⟫]/g, "")) && !isEmptyPreview(a.before, ss[i + 1]?.replace(/[⟪⟫]/g, ""))) rule = "repair_empty_preview";
     if (!rule) continue;
@@ -305,7 +312,7 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
     (sec.paragraphs as string[])[pn] = ss.join(" ");
     reverted.push({ at: a.at, after: a.after, before: a.before, rule: detail ? `${rule}:${detail}` : rule });
   }
-  return { chapters: out, reverted };
+  return { chapters: out, reverted, claims };
 }
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "list" | "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */

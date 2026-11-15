@@ -7,7 +7,8 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import type { Brief, ChapterBrief, Material } from "@/lib/brief/schema";
 import { amBrief } from "@/lib/brief/chapters";
 import { STYLE_EXAMPLES } from "./examples";
-import { materialTable, swapDeep } from "./materials";
+import { materialTable, swapDeep, swapMaterials } from "./materials";
+import { lineFits, personaKey, profileCodesFromSheet, type PersonaSheet } from "@/lib/brief/persona";
 import { WRITER_PROMPT_VERSION, WRITER_SYSTEM } from "./system";
 import { matchJob } from "@/lib/brief/props";
 import { GROUP_LEVEL_PLAIN, plainGrade } from "@/lib/brief/cards/features";
@@ -15,7 +16,7 @@ export { plainGrade } from "@/lib/brief/cards/features";
 import type { SectionCardBrief } from "@/lib/brief/schema";
 import { GROUP_EASY_BY_NAME } from "@/lib/brief/labels";
 import type { FactSheet } from "@/lib/factsheet/build";
-import { STRENGTH_ACT } from "@/lib/factsheet/check";
+import { STRENGTH_ACT, STRENGTH_ACT_DIMS } from "@/lib/factsheet/check";
 import { buildMarks, writerMarks, type MarkTable } from "../marks";
 import { profileCodes, profileLine, type PairProfile } from "@/lib/brief/pairProfile";
 
@@ -88,10 +89,13 @@ const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EART
  * W6 S2-2(B2): 일간 세기는 분류 문구(「세지도 여리지도 않은 가운데」「여린 편」「내 힘의 세기와 … 다른 저울」) 없이 그 결과 행동 한 줄로만 준다.
  * 같은 세기도 사주(원국 글자 해시)마다 다른 꼴을 고른다 — W5 판독이 「가운데」를 판정 틀로 셌다. 행동 줄 표(STRENGTH_ACT)는 정답지 검사와 한 출처(factsheet/check).
  */
-function plainChart(c: Brief["chart"]) {
+function plainChart(c: Brief["chart"], sheet?: PersonaSheet) {
   const base = writerChart(c), st = c.strength;
   const counts = c.elements.presence ? Object.entries(c.elements.presence).map(([e, v]) => `${EL_KO[e] ?? e} ${v.surface}`).join("·") : "";
-  const acts = STRENGTH_ACT[st.level] ?? STRENGTH_ACT.BALANCED, act = acts[fnv1a(Object.values(c.pillars).map(p => p?.hanja ?? "").join("")) % acts.length];
+  const acts = STRENGTH_ACT[st.level] ?? STRENGTH_ACT.BALANCED, h = fnv1a(Object.values(c.pillars).map(p => p?.hanja ?? "").join(""));
+  // W7-3: 세기 행동 줄도 정답지와 반대 끝이면 고르지 않는다(해시 순서로 다음 꼴, 모두 반대면 첫 꼴 — 그 줄의 차원은 STRENGTH_ACT_DIMS).
+  const order = acts.map((_, i) => (h + i) % acts.length), dimsOf = (i: number) => STRENGTH_ACT_DIMS[st.level]?.[i] ?? [];
+  const act = acts[(sheet ? order.find(i => lineFits(sheet, { k: "trait", d: dimsOf(i).map(([d, p]) => [d, p, 2] as [string, 1 | -1, 2]), s: 1, by: "data" })) : undefined) ?? order[0]];
   const pos = c.positions, mains = pos ? [pos.yearStem, pos.monthStem, pos.hourStem, pos.yearBranch, pos.monthBranch, pos.dayBranch, pos.hourBranch].flatMap(x => (x?.[0] ? [x[0]] : [])) : [];
   // W5 R3 F3: 묶음 세기 「보통」은 작가에게 주지 않는다(「있는 만큼 쓰는 쪽」「보통 세기」가 판정 틀로 읽혔다 — W4 판독). 넉넉·적음만 뜻으로.
   // R4 관문(1차 커리어 분량 73%): 보통 묶음을 줄째 빼니 다섯 힘이 재료인 커리어 장이 짧아졌다 → 묶음 이름·자리 수는 남기고 세기 말만 뺀다.
@@ -118,10 +122,67 @@ export function personProfileOf(brief: Brief, k: Knowledge): PairProfile | null 
   for (const t of brief.traits) { const f = k.features.get(t.featureId); if (f && f.family !== "relation") add(f.dimensionTags, t.score); }
   const mp = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
   if (mp) add(mp.dimensionTags, 1.5 * Math.max(1, ...brief.traits.map(t => t.score)));
-  const codes = profileCodes(brief.mbti?.type ?? null, v, brief.traits.map(t => t.featureId));
+  // W7-2: 정답지가 있으면 성격 요약표도 정답지에서(단일 출처).
+  const codes = brief.persona?.[0] ? profileCodesFromSheet(brief.persona[0], brief.mbti?.type ?? null) : profileCodes(brief.mbti?.type ?? null, v, brief.traits.map(t => t.featureId));
   const line = profileLine(brief.person.callName, codes, brief.mbti?.type ?? null);
   return line.includes(":") && line.split(":")[1].trim() ? { name: brief.person.callName, ...codes, line } : null;
 }
+/**
+ * W7-3 재료 거르기: 작가 브리프를 걸으며 원문 조각마다 꼬리표를 찾아 주인(본인·상대)의 정답지와 맞는지 본다.
+ * 주인: `partner` 아래 · id/traitId가 b로 시작 = 상대, a로 시작·그 밖 = 본인(궁합에서 주인을 모르면 두 정답지 모두와 반대일 때만 뺀다).
+ */
+export type PersonaPiece = { readonly owner: number; readonly text: string; readonly kept: boolean; readonly rw?: string };
+export function personaSwap(o: Record<string, unknown>, table: ReturnType<typeof materialTable>, brief: Brief, k: Knowledge): { out: Record<string, unknown>; dropped: { owner: number; text: string }[]; seen: PersonaPiece[] } {
+  const sheets = brief.persona ?? [], compat = Boolean(brief.compatibility) && sheets.length === 2, dropped: { owner: number; text: string }[] = [], seen: PersonaPiece[] = [];
+  // 정답지 값이 0인 차원(근거 없음)은 처음 보낸 줄의 끝을 그 책의 값으로 삼고, 뒤의 반대 끝 줄은 뺀다(같은 차원 반대 쌍 0).
+  const dyn = new Map<string, 1 | -1>();
+  const fitsFor = (owner: number) => (orig: string): boolean | string => {
+    const tag = k.personaTags.get(personaKey(orig));
+    const no = () => { dropped.push({ owner, text: orig }); seen.push({ owner, text: orig, kept: false }); return false as const; };
+    // 결정 2(사주 안 관계 성격 단정 → 흐름 장면)·건강 단정 → 생활 리듬: 꼬리표의 바꾼 재료(rw)를 보내고, drop이면 뺀다.
+    if (tag?.drop) return no();
+    const ok = owner >= 0 ? lineFits(sheets[owner] ?? sheets[0], tag) : sheets.some(sh => lineFits(sh, tag));
+    if (!ok) return no();
+    if (tag && (tag.k === "trait" || tag.k === "situ")) {
+      const sh = sheets[owner >= 0 ? owner : 0];
+      const open = tag.d.filter(([d]) => (sh?.dims.find(x => x.id === d)?.v ?? 0) === 0);
+      if (open.some(([d, p]) => { const w = dyn.get(`${owner}|${d}`); return w !== undefined && w !== p; })) return no();
+      for (const [d, p] of open) dyn.set(`${owner}|${d}`, p);
+    }
+    seen.push({ owner, text: orig, kept: true, ...(tag?.rw ? { rw: tag.rw } : {}) });
+    return tag?.rw ?? true;
+  };
+  const ownerOf = (x: Record<string, unknown>, inherited: number) => { const id = String(x.traitId ?? x.id ?? ""); return /^b(t\d|\d)/.test(id) ? 1 : /^a(t\d|\d)/.test(id) ? 0 : inherited; };
+  const walk = (x: unknown, owner: number): unknown => {
+    if (typeof x === "string") return swapMaterials(x, table, fitsFor(owner));
+    if (Array.isArray(x)) return x.map(y => walk(y, owner)).filter(y => y !== "");
+    if (x && typeof x === "object") { const me = ownerOf(x as Record<string, unknown>, owner); return Object.fromEntries(Object.entries(x).map(([kk, v]) => [kk, walk(v, kk === "partner" ? 1 : me)]).filter(([, v]) => v !== "")); }
+    return x;
+  };
+  return { out: walk(o, compat ? -1 : 0) as Record<string, unknown>, dropped, seen };
+}
+/** W7-4 전수 시험용: 작가 입력에 들어가는 지식 DB 조각마다 주인·보냄 여부(renderWriterBriefRaw와 같은 순서). */
+export function personaAudit(brief: Brief, opts: WriterInputOptions & { knowledge: Knowledge }): ReturnType<typeof personaSwap> | null {
+  if (!brief.persona?.length) return null;
+  const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
+  const self = personProfileOf(brief, opts.knowledge), claims = chapterClaims(brief, opts.knowledge, self);
+  out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
+  return personaSwap(out, materialTable(opts.knowledge), brief, opts.knowledge);
+}
+/** W7-3 작가 입력: 정답지 요약(core·tensions) + 장마다 발견 하나(find). 차원 이름·끝 글은 사전(behavior-ontology persona) 그대로. */
+const COND_KO: Readonly<Record<string, string>> = { self: "자기 자신에게", others: "남에게", close: "가까운 사람에게", pressure: "압박을 받을 때", work: "일에서", relation: "관계에서", alone: "혼자일 때", money: "돈 앞에서" };
+const condKo = (c: { who?: string; sit?: string }) => [c.who, c.sit].filter(Boolean).map(x => COND_KO[x!] ?? x).join(" ") || "평소";
+export function personaSummary(sheet: PersonaSheet, k: Knowledge): { core: string[]; tensions: string[]; finds: string[] } {
+  const dict = new Map((k.ontology.persona?.dims ?? []).map(d => [d.id, d]));
+  const pole = (id: string, v: number) => { const d = dict.get(id); return d ? `${d.name}: ${v > 0 ? d.plus : d.minus}` : id; };
+  const why = (w: readonly string[]) => (w.length ? `(근거: ${w.slice(0, 2).join(" · ")})` : "");
+  const core = sheet.core.map(c => `${pole(c.id, c.v)}${why(c.why)}`);
+  const tensions = sheet.tensions.map(t => { const d = dict.get(t.id); return d ? `${d.name}: ${condKo(t.plus)}에는 ${d.plus} ↔ ${condKo(t.minus)}에는 ${d.minus}${why(t.why)}` : t.id; });
+  const DOM: Readonly<Record<string, string>> = { work: "일", money: "돈", love: "연애", relationships: "관계", marriage: "가족" };
+  const finds = sheet.discoveries.map(x => { const d = dict.get(x.id); return d ? `${DOM[x.domain] ?? x.domain}에서 드러나는 ${d.name}: ${x.v > 0 ? d.plus : d.minus}` : x.id; });
+  return { core, tensions, finds };
+}
+const PERSONA_RULE = "이 사람의 성향 값(정답지)이다. core는 모든 장에서 같은 쪽으로만 쓴다. tensions는 조건과 함께 책에서 한 번만 풀고, 뒤 장에서는 새 쓰임만 쓴다";
 const SELF_PROFILE_RULE = "이 사람의 바뀌지 않는 성향이다. 모든 장의 성향 설명·장면은 이 줄과 같은 쪽으로 쓴다(반대 성향을 단정하지 않는다)";
 const PROFILE_RULE = "두 사람의 바뀌지 않는 성향(에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)이다. 모든 장의 장면과 설명은 이 줄을 따른다. 두 사람을 묶어 말할 때(두 사람은·둘 다)는 두 사람 칸이 같을 때만 묶는다";
 
@@ -209,14 +270,24 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   const self = personProfileOf(brief, opts.knowledge);
   const claims = chapterClaims(brief, opts.knowledge, self);
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
+  // W7-3 장 배정: 장마다 정답지 발견 하나(같은 차원을 잇달아 주지 않는다), 긴장 풀이는 한 장에만(가운데 장).
+  const sum = brief.persona?.[0] && !brief.compatibility ? personaSummary(brief.persona[0], opts.knowledge) : null;
+  if (sum) {
+    const chs = out.chapters as { n: number }[], finds = sum.finds;
+    const pick: string[] = []; let last = "";
+    chs.forEach((_, i) => { const cand = finds.filter(f => f.split(":")[0] !== last); const f = cand.length ? cand[i % cand.length] : finds[i % Math.max(1, finds.length)]; if (f) { pick.push(f); last = f.split(":")[0]; } else pick.push(""); });
+    const mid = Math.floor(chs.length / 2);
+    out.chapters = chs.map((c, i) => ({ ...c, ...(pick[i] ? { find: pick[i] } : {}), ...(i === mid && sum.tensions.length ? { tensionOnce: sum.tensions[0] } : {}) }));
+  }
   // 지식 DB 원문을 재료로(P6c A1). MBTI 기능은 쉬운 이름을 먼저(P6c C5): "일 되게 하는 판단(Te) · 주기능: 방향".
   const table = materialTable(opts.knowledge);
-  const swapped = swapDeep(out, table);
+  // W7-3: 성격 정답지와 반대 끝인 재료 조각은 작가에게 보내지 않는다(긴장 차원은 조건 맞는 줄만). 4종(brief.persona)만.
+  const swapped = brief.persona?.length ? personaSwap(out, table, brief, opts.knowledge).out : swapDeep(out, table);
   const fn = (b: Brief["mbti"]) => { const p = b && opts.knowledge!.mbti.get(b.type); return p && p.cognitiveFunctions.every(c => table.plain.has(c.easy)) ? p.cognitiveFunctions.map(c => `${table.plain.get(c.easy)}(${c.code}) · ${c.role}: ${table.exact.get(c.easy)}`) : null; };
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
   // W3 P3·W4 Q2: 4종(brief.design)은 처방 종류가 카드 배분(card.rx — 장마다 하나, 같은 종류 책 두 번까지)이고 renderRaw가 절 act로 준다. 그 밖(AM)은 act 슬롯 배분 그대로.
   if (!brief.design) assignActions(swapped, brief);
-  return ownGlyphsOnly({ ...(self ? { profile: { rule: SELF_PROFILE_RULE, line: self.line } } : {}), ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
+  return ownGlyphsOnly({ ...(sum ? { persona: { rule: PERSONA_RULE, core: sum.core, ...(sum.tensions.length ? { tensions: sum.tensions } : {}) } } : self ? { profile: { rule: SELF_PROFILE_RULE, line: self.line } } : {}), ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
 }
 
 /**
@@ -388,7 +459,7 @@ function renderRaw(brief: Brief): Record<string, unknown> {
   // 특징 카드·연결(brief.design)은 지우지 않고 브리프에 둔다(자미두수·Q4 덧붙이기용 — 작가에게는 안 감). 바꾸는 것은 정제뿐:
   // 판정어 → 뜻(plainChart·plainGrade, W3 P3 그대로), 처방 종류 = 카드 배분(card.rx)을 절 act로, 지식 DB 장면은 보내지 않는다(writerMaterial).
   const refined = Boolean(brief.design);
-  const chartOf = refined ? plainChart : writerChart;
+  const chartOf = (c: Brief["chart"], sheet?: PersonaSheet) => (refined ? plainChart(c, sheet) : writerChart(c));
   // W4 Q2-1(Q1 표 2 R2): 특성 자리를 쉬운 이름으로(정답지로 맞춘 카드 자리 — 「태어난 달 땅 글자(월지)」). 합충형해는 where(짝 자리 문장)가 이미 있다.
   const atOf = traitAtMap(brief);
   const fusionRefs = new Set(brief.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)]).flatMap(m => { const x = m.kind === "ref" ? m.ref.match(/^traits\.([a-z0-9]+)\.fusion$/) : null; return x ? [x[1]] : []; }));
@@ -396,14 +467,14 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
     ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
     // 새 최상위 칸은 여기서 빼지 않으면 작가에게 간다(design = 특징 카드·연결 기록, 작가는 절 card만).
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView", "ledgerNotes", "display", "design"),
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView", "ledgerNotes", "display", "design", "persona"),
     ...(brief.compatibility ? { compatibility: writerCompat(brief.compatibility) } : {}),
     ...(brief.compatibility?.commonIds?.length ? { commonTraits: { rule: COMMON_RULE, items: brief.compatibility.commonNames ?? [] } } : {}),
-    chart: chartOf(brief.chart),
+    chart: chartOf(brief.chart, brief.persona?.[0]),
     mbti: brief.mbti ? omit(brief.mbti, "image") : null,
     // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.
     unused: brief.unused.map(u => omit(u, "easyName", "oneLiner")),
-    ...(brief.partner ? { partner: { ...brief.partner, chart: chartOf(brief.partner.chart), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
+    ...(brief.partner ? { partner: { ...brief.partner, chart: chartOf(brief.partner.chart, brief.persona?.[1]), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
     // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
     // 최종판 1-5(P6e 3): 궁합은 특성마다 주인(그 기운을 가진 사람 이름)을 붙인다.
