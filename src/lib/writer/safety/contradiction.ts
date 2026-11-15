@@ -99,6 +99,21 @@ export function assertedPoles(s: string, ctx: ContradictionCtx): { who: number; 
   return out.filter(x => !out.some(y => y.who === x.who && y.dim === x.dim && y.pole !== x.pole));
 }
 
+/**
+ * W6.1(2차 궁합 8장 「같은 글자가 겹쳐 서로를 몰아붙이는 흐름이에요」 ↔ 9장 「앞서 본 부딪힘은 서로를 몰아붙이는 마찰이 아니라 …」): 앞에서 단정한 말을 「앞서 본 X는 Y가 아니라」로 뒤집음.
+ * Y의 앞머리(끝 이름 낱말을 뺀 5자 이상, 한글만)가 앞 장·절 문장에 부정 없이 있으면 모순.
+ */
+const REVERSAL = /(?:앞서|앞에서) (?:본|말한|살펴본) [^.?!]{0,24}?(?:은|는) ([^.?!]{4,30}?)(?:이|가) 아니라/;
+export function reversalFlags(sentences: readonly SentenceAt[]): ContradictionHit[] {
+  const out: ContradictionHit[] = [], hk = (x: string) => x.replace(/[^가-힣]/g, "");
+  sentences.forEach((x, i) => {
+    const m = x.sentence.match(REVERSAL); if (!m) return;
+    const words = m[1].trim().split(/\s+/), core = hk(words.length > 1 ? words.slice(0, -1).join(" ") : words[0]); if (core.length < 5) return;
+    const was = sentences.slice(0, i).find(y => `${y.chapter}.${y.section}` !== `${x.chapter}.${x.section}` && hk(y.sentence).includes(core) && !/아니|않|없/.test(y.sentence));
+    if (was) out.push({ ...x, detail: `${was.chapter}장에서 「${m[1].trim()}」 쪽으로 말해 놓고 「…아니라」로 뒤집음` });
+  });
+  return out;
+}
 /** 책 순서로 문장을 받아 같은 사람·같은 차원 반대 끝 단정을 찾는다(뒤 문장에 단다). 한 사람 책은 요약표 값을 먼저 둔다. */
 /** W6.1 P5: 궁합에서 이름 없는 문장이 같은 문단 바로 앞 「둘 다·두 사람 모두」 문장을 잇는 꼴(「둘 다 식상이 적고 …. 말보다 속으로 깊이 생각하는 힘이 있고, … 결이 같아요」). */
 const BOTH_LEAD = /^(?:둘 다|두 사람 모두|두 사람은 (?:둘 다|모두)) /;

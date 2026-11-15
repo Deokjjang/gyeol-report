@@ -82,7 +82,8 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
   const src00 = src0.replace(new RegExp(`(있|앉아 있|자리하고 있|자리 잡고 있|들어 있)(?:고|는데|으며|으니),\\s*(?:이|그) 자리(?:는|가) (${MARK_RE.source})(?:이에요|예요|입니다)\\.`, "g"), (all: string, verb: string, _mk: string, kind: string, id: string, offset: number, whole: string) => {
     const m = table.get(`${kind}:${id}`); if (!m) return all;
     const start = Math.max(whole.lastIndexOf(".", offset), whole.lastIndexOf("?", offset), whole.lastIndexOf("!", offset)) + 1, before = whole.slice(start, offset).replace(MARK_RE, "");
-    if (!(m.codes?.some(c => before.includes(c)) || before.includes(placeCore(m.text)))) return all;
+    // W6.1(1차 종합 1·4장 「땅 글자에는 인목이 앉아 있고, 이 자리는 ⟦at⟧입니다」「…하늘 글자·땅 글자에 편인이 있고, 이 자리는 ⟦at⟧입니다」): 작가가 자리를 글로 말했으면(하늘·땅 글자) 그것도 「이미 말함」.
+    if (!(m.codes?.some(c => before.includes(c)) || before.includes(placeCore(m.text)) || /(?:하늘|땅) 글자(?:·(?:하늘|땅) 글자)?(?:에는|에|엔)\s/.test(before))) return all;
     count.dropped++; return `${verb}어요.`;
   });
   // ⓪'' 작가가 자리를 글로 쓴 바로 뒤에 표시를 붙인 꼴(「태어난 해 하늘 글자와 달 땅 글자 ⟦at:t3⟧에 편관이」「태어난 달 땅 글자의 ⟦at:t5⟧에는」) — 표시를 떼고 작가 말에 조사를 맞춘다.

@@ -22,7 +22,7 @@ import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } fro
 import { personaHit, type PersonaCtx } from "./persona";
 import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
 import { brokenSentence, fixBareParenParticle, stripGlossEcho, unbalancedAt } from "./broken";
-import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame, type ContradictionCtx } from "./contradiction";
+import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame, reversalFlags, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -573,7 +573,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   if (ctx.contradiction) {
     const list = chapters.filter(c => c.source !== "deterministic" && !c.keys?.length).flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => splitSentences(p).map(raw => ({ chapter: c.n, section: si, paragraph: pi, sentence: stripMarks(raw) })))));
     const flagged = new Set(out.filter(f => HARD_RULES.has(f.rule)).map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.sentence}`));
-    for (const h of contradictionFlags(list, ctx.contradiction)) if (!flagged.has(`${h.chapter}.${h.section}.${h.paragraph}:${h.sentence}`)) flag({ chapter: h.chapter, section: h.section, paragraph: h.paragraph, sentence: h.sentence, rule: "self_contradiction", detail: h.detail });
+    for (const h of [...contradictionFlags(list, ctx.contradiction), ...reversalFlags(list)]) if (!flagged.has(`${h.chapter}.${h.section}.${h.paragraph}:${h.sentence}`)) flag({ chapter: h.chapter, section: h.section, paragraph: h.paragraph, sentence: h.sentence, rule: "self_contradiction", detail: h.detail });
   }
   // G 장마다 써야 하는 근거(문체 규칙: 문단은 빼지 않고 수리로 근거 한 문장을 더하게 한다).
   for (const c of chapters) { const terms = ctx.requiredTerms?.get(c.n); if (!terms || c.source === "deterministic") continue;

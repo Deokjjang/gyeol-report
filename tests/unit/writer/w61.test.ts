@@ -2,7 +2,7 @@
 import { describe, expect, it } from "vitest";
 import { brokenSentence, contrastSame, fixBareParenParticle, glossEchoes, stripGlossEcho } from "@/lib/writer/safety/broken";
 import { dependsOnRemoved } from "@/lib/writer/safety/orphan";
-import { relationLinkAfter, relationLinkFrame } from "@/lib/writer/safety/contradiction";
+import { relationLinkAfter, relationLinkFrame, reversalFlags } from "@/lib/writer/safety/contradiction";
 import { revertRepairRegressions } from "@/lib/writer/repair3";
 import { contradictionFlags, type ContradictionCtx } from "@/lib/writer/safety/contradiction";
 import { dropSentences } from "@/lib/writer/repairPlan";
@@ -191,5 +191,20 @@ describe("W6.1 다시 발행 읽기에서 찾은 것", () => {
     const r = revertRepairRegressions(chs, [{ id: 1, kind: "sentence", at: "3.0.0", before, after, source: ["lint"] }] as never, { flags: [], names: [] });
     expect(r.reverted[0]?.rule).toContain("repair_label_flip");
     expect(r.chapters[0].sections[0].paragraphs[0]).toContain(before);
+  });
+});
+
+describe("W6.1 v8: 자리를 글로 말한 뒤 「이 자리는 ⟦at⟧입니다」 · 앞 주장 뒤집기", () => {
+  const m: Mark = { key: "at:t5", kind: "at", text: "태어난 해 땅 글자(연지)와 태어난 달 기둥(월주)", short: "이 자리", codes: ["연지", "월간", "월지"] } as Mark;
+  it("앞 마디가 하늘·땅 글자를 말했으면 뒤 마디를 뗀다", () => {
+    expect(renderMarks("태어난 해 땅 글자와 태어난 달 하늘 글자·땅 글자에 편인이 있고, 이 자리는 ⟦at:t5⟧입니다.", new Map([["at:t5", m]]))).toBe("태어난 해 땅 글자와 태어난 달 하늘 글자·땅 글자에 편인이 있어요.");
+  });
+  it("「앞서 본 X는 Y가 아니라」가 다른 장의 Y 단정을 뒤집으면 모순", () => {
+    const hits = reversalFlags([
+      { chapter: 6, section: 0, paragraph: 0, sentence: "같은 글자가 겹쳐 서로를 몰아붙이는 흐름이에요." },
+      { chapter: 9, section: 0, paragraph: 0, sentence: "앞서 본 부딪힘은 서로를 몰아붙이는 마찰이 아니라 속도의 어긋남에서 왔습니다." },
+    ]);
+    expect(hits).toHaveLength(1);
+    expect(reversalFlags([{ chapter: 9, section: 0, paragraph: 0, sentence: "앞서 본 부딪힘은 서로를 몰아붙이는 마찰이 아니라 속도의 어긋남에서 왔습니다." }])).toHaveLength(0);
   });
 });
