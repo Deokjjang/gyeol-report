@@ -41,3 +41,29 @@ export function gateKindOf(rule: string, detail?: string): GateKind | null {
 export const gateClassOf = (rule: string, detail?: string): GateClass => (gateKindOf(rule, detail) ? "block" : "improve");
 /** 개선 규칙 문장 떼기의 하한: 떼고 난 문단이 이만큼 남을 때만 뗀다. */
 export const IMPROVE_DROP_MIN_LEFT = 3;
+
+/**
+ * W6 개선 지표(기록만 — 관문에 쓰지 않는다). 발행 메타 report.metrics.gate에 남겨 운영 관찰에서도 읽는다.
+ *  - tails: 같은 꼬리 틀(문장 끝 「~사람이에요」「~편이에요」 …, 처방 머리 「이번 주에는」「한마디만」 …) 책당 횟수(B4).
+ *  - verdict: 판정 풀어쓰기 꼴(「세지도 여리지도」「가운데예요」「여린 편」 …, B2).
+ *  - thin: 3문장 미만 문단 수(B5). scenes: 입력 근거 없는 구체 장면 깃발 수(scene_unbacked·seed_assert, B1).
+ */
+const TAILS: readonly (readonly [string, RegExp])[] = [
+  ["~사람이에요", /사람(?:이에요|입니다)[.!]?$/], ["~편이에요", /편(?:이에요|입니다)[.!]?$/], ["~쪽이에요", /쪽(?:이에요|입니다)[.!]?$/], ["~거예요", /거(?:예요|에요)[.!]?$/],
+  ["~힘이에요", /힘(?:이에요|입니다)[.!]?$/], ["~이유예요", /이유(?:예요|입니다)[.!]?$/], ["~방식이에요", /방식(?:이에요|입니다)[.!]?$/],
+  ["이번 주에는", /^이번 주(?:에는|엔|에)/], ["한마디만", /한마디(?:만|면)/], ["한 줄만", /한 줄(?:만|이면)/], ["~해 보세요", /해 보세요[.!]?$/],
+];
+const VERDICT = /세지도 (?:여리지도|약하지도)|센 쪽도 여린 쪽도|가운데(?:예요|이에요|입니다|라서|라,| 쪽)|여린 쪽 힘|힘이 (?:아주 |많이 )?여린 편|힘이 (?:아주 )?센 편|힘의 세기(?:는|가)|있는 만큼 쓰는 쪽|보통 세기/g;
+export type GateMetrics = { readonly block: Readonly<Record<GateKind, number>>; readonly blockRules: Readonly<Record<string, number>>; readonly tails: Readonly<Record<string, number>>; readonly verdict: number; readonly thin: number; readonly paragraphs: number; readonly scenes: number };
+export function gateMetrics(chapters: readonly { readonly sections: readonly { readonly paragraphs: readonly string[] }[] }[], flags: readonly { readonly rule: string; readonly detail?: string; readonly paragraph: number; readonly card?: string }[], split: (p: string) => string[]): GateMetrics {
+  const block: Record<GateKind, number> = { fact: 0, link: 0, contradiction: 0, broken: 0 }, blockRules: Record<string, number> = {};
+  let scenes = 0;
+  for (const f of flags) { if (f.card) continue; const k = gateKindOf(f.rule, f.detail); if (k) { block[k]++; blockRules[f.rule] = (blockRules[f.rule] ?? 0) + 1; } if (f.rule === "scene_unbacked" || f.rule === "seed_assert") scenes++; }
+  const tails: Record<string, number> = {}; let verdict = 0, thin = 0, paragraphs = 0;
+  for (const c of chapters) for (const s of c.sections) for (const p of s.paragraphs) {
+    const ss = split(p); paragraphs++; if (ss.length < 3) thin++;
+    verdict += (p.match(VERDICT) ?? []).length;
+    for (const x of ss) { const t = x.replace(/[⟪⟫"'”’)\]]+$/g, "").trim(); for (const [name, re] of TAILS) if (re.test(t)) tails[name] = (tails[name] ?? 0) + 1; }
+  }
+  return { block, blockRules, tails, verdict, thin, paragraphs, scenes };
+}

@@ -46,7 +46,8 @@ export const SceneRequiresSchema = z.object({
   job: z.enum(JOB_REQUIREMENTS),
 }).strict();
 export type SceneRequires = z.infer<typeof SceneRequiresSchema>;
-export const SceneItemSchema = z.object({ text: Scene, requires: SceneRequiresSchema }).strict();
+/** W6 S2-1 broad: 2단 「넓은 꼴」(상황 종류 + 행동 경향, 구체 명사 없음) — 4종 작가는 이것을 받는다(원문 text는 그대로 둔다). */
+export const SceneItemSchema = z.object({ text: Scene, broad: z.string().min(8).max(120).optional(), requires: SceneRequiresSchema }).strict();
 export type SceneItem = z.infer<typeof SceneItemSchema>;
 /** 설명문(강약 규칙·위치 뉘앙스·근거 포함 팩폭). */
 export const Para = z.string().min(10).max(220);
@@ -343,6 +344,7 @@ export type CareerFile = z.infer<typeof CareerFileSchema>;
  */
 export const CompatSceneSchema = z.object({
   text: Scene,
+  broad: z.string().min(8).max(120).optional(),
   dims: DimensionTagsSchema.refine(t => Object.keys(t).length >= 1 && Object.keys(t).length <= 3, "dims 1~3개"),
   ages: z.enum(["any", "minor", "adult"]).optional(),
 }).strict();

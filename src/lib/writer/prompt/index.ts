@@ -83,18 +83,28 @@ const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage
  */
 const GROUP_TG: Readonly<Record<string, readonly string[]>> = { 비겁: ["비견", "겁재"], 식상: ["식신", "상관"], 재성: ["편재", "정재"], 관성: ["편관", "정관"], 인성: ["편인", "정인"] };
 const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
-const GRADE_LABEL = /신강|신약|중화/;
+/**
+ * W6 S2-2(B2): 일간 세기는 분류 문구(「세지도 여리지도 않은 가운데」「여린 편」「내 힘의 세기와 … 다른 저울」) 없이 그 결과 행동 한 줄로만 준다.
+ * 같은 세기도 사주(원국 글자 해시)마다 다른 꼴을 고른다 — W5 판독이 「가운데」를 판정 틀로 셌다.
+ */
+const STRENGTH_ACT: Readonly<Record<string, readonly string[]>> = {
+  VERY_STRONG: ["내 판을 직접 짜고 그 판을 끝까지 끌고 갈 때 힘이 제대로 쓰이는 편", "주도권을 쥐고 방향을 정할 때 가장 힘이 잘 나는 편"],
+  STRONG: ["맡은 일을 내 힘으로 끝까지 밀고 나가는 편", "남의 판을 따르기보다 내 방식으로 일을 끌고 갈 때 힘이 나는 편"],
+  BALANCED: ["상황을 봐서 밀 때와 물러설 때를 골라 쓰는 편", "판이 바뀌면 힘 쓰는 방향을 그에 맞춰 바꾸는 편", "필요한 만큼만 힘을 꺼내 쓰고 나머지는 아껴 두는 편"],
+  WEAK: ["받쳐 주는 사람과 정해진 순서가 있을 때 힘이 오래 가는 편", "혼자 짊어지기보다 함께 나눠 질 때 힘이 오래 가는 편"],
+  VERY_WEAK: ["도움과 순서를 빌릴 때 힘이 제대로 나는 편", "기댈 곳을 먼저 만들어 두면 일이 풀리는 편"],
+};
 function plainChart(c: Brief["chart"]) {
   const base = writerChart(c), st = c.strength;
   const counts = c.elements.presence ? Object.entries(c.elements.presence).map(([e, v]) => `${EL_KO[e] ?? e} ${v.surface}`).join("·") : "";
-  const frame = GRADE_LABEL.test(st.label) ? "" : `${st.label}입니다. `;
+  const acts = STRENGTH_ACT[st.level] ?? STRENGTH_ACT.BALANCED, act = acts[fnv1a(Object.values(c.pillars).map(p => p?.hanja ?? "").join("")) % acts.length];
   const pos = c.positions, mains = pos ? [pos.yearStem, pos.monthStem, pos.hourStem, pos.yearBranch, pos.monthBranch, pos.dayBranch, pos.hourBranch].flatMap(x => (x?.[0] ? [x[0]] : [])) : [];
   // W5 R3 F3: 묶음 세기 「보통」은 작가에게 주지 않는다(「있는 만큼 쓰는 쪽」「보통 세기」가 판정 틀로 읽혔다 — W4 판독). 넉넉·적음만 뜻으로.
   // R4 관문(1차 커리어 분량 73%): 보통 묶음을 줄째 빼니 다섯 힘이 재료인 커리어 장이 짧아졌다 → 묶음 이름·자리 수는 남기고 세기 말만 뺀다.
   const groups = c.groups ? Object.entries(c.groups.levels).map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g})${lv === "보통" ? "" : ` ${GROUP_LEVEL_PLAIN[lv] ?? lv}`}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
   return {
     ...base,
-    strength: { meaning: `${frame}${st.reading ?? ""}`.trim(), ...(st.note ? { skew: st.note.replace(/내 힘의 세기\([^)]*\)/, "내 힘의 세기") } : {}), ...(counts ? { basis: `오행 겉 글자 수 ${counts}` } : {}) },
+    strength: { meaning: act, ...(counts ? { basis: `오행 겉 글자 수 ${counts}` } : {}) },
     ...(groups ? { groups: { line: `${groups} — 만세력 오행 칸(겉 글자 + 지장간) 기준. 묶음 세기는 이 뜻으로만 쓴다. 처음 나올 때 "내 방식의 힘(비겁)"처럼 쉬운 이름과 함께` } } : {}),
   };
 }
@@ -265,8 +275,11 @@ const STRENGTH_PLAIN: Readonly<Record<string, string>> = { strong: "뚜렷하게
  * W4 Q2-1 원재료 정제(4종): 특성의 지식 DB 장면(trait 재료의 scene — 「줄 서는 맛집…」처럼 이 고객이 겪었다는 입력이 없다)은 보내지 않는다(W3 6-6 ②, 바넘 결정).
  * 입력 조건으로 거른 씨앗(mbti 재료)·입력 소품(sceneHint)·궁합 관계 장면(rel — 입력한 관계 유형의 생활 주제로 고른 상황)은 그대로 둔다.
  */
-function writerMaterial(m: Material): Material[] {
+function writerMaterial(m: Material, brief?: Pick<Brief, "traits">): unknown[] {
   if (m.kind === "trait" && "scene" in m && m.scene) return [omit(m as Material & { scene: string }, "scene") as Material];
+  // W6 S2-3(B3): 명리×MBTI 연결(긴장·공명 설명)은 배정된 절에만 싣는다 — 특성 목록(traits[].fusion)에 두면 그 특성이 나오는 장마다 같은 논지를 다시 풀었다.
+  const fx = m.kind === "ref" ? m.ref.match(/^traits\.([a-z0-9]+)\.fusion$/) : null;
+  if (fx && brief) { const t = brief.traits.find(x => x.id === fx[1]); if (t?.fusion) return [{ kind: "fusion", traitId: t.id, target: t.fusion.target, why: t.fusion.why, ...(t.fusion.scene ? { scene: t.fusion.scene } : {}) }]; }
   return [m];
 }
 function assignActions(out: Record<string, unknown>, brief: Brief): void {
@@ -368,6 +381,7 @@ function renderRaw(brief: Brief): Record<string, unknown> {
   const chartOf = refined ? plainChart : writerChart;
   // W4 Q2-1(Q1 표 2 R2): 특성 자리를 쉬운 이름으로(정답지로 맞춘 카드 자리 — 「태어난 달 땅 글자(월지)」). 합충형해는 where(짝 자리 문장)가 이미 있다.
   const atOf = traitAtMap(brief);
+  const fusionRefs = new Set(brief.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)]).flatMap(m => { const x = m.kind === "ref" ? m.ref.match(/^traits\.([a-z0-9]+)\.fusion$/) : null; return x ? [x[1]] : []; }));
   return {
     // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
     ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
@@ -383,7 +397,8 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
     // 최종판 1-5(P6e 3): 궁합은 특성마다 주인(그 기운을 가진 사람 이름)을 붙인다.
-    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs", ...(refined ? (["strength"] as const) : [])), ...(refined ? { show: STRENGTH_PLAIN[t.strength] ?? t.strength, ...(!t.where && atOf.get(t.id) ? { at: atOf.get(t.id) } : {}) } : {}), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: brief.compatibility.commonIds?.includes(t.featureId) ? "두 사람 모두(공통)" : t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
+    // W6 S2-3: 절에 배정된 연결(traits.X.fusion 참조)은 그 절 재료로만 싣고 특성 목록에서는 뺀다. 배정이 없는 연결(궁합 등)은 예전처럼 특성에 둔다.
+    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs", ...(refined ? (["strength"] as const) : []), ...(refined && fusionRefs.has(t.id) ? (["fusion"] as const) : [])), ...(refined ? { show: STRENGTH_PLAIN[t.strength] ?? t.strength, ...(!t.where && atOf.get(t.id) ? { at: atOf.get(t.id) } : {}) } : {}), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: brief.compatibility.commonIds?.includes(t.featureId) ? "두 사람 모두(공통)" : t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
     // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.
@@ -394,7 +409,7 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     ...(brief.ledgerNotes?.avoidActions?.length ? { avoidActions: brief.ledgerNotes.avoidActions } : {}),
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
     // W4 Q2-2: 장 소품 힌트(sceneHint — 입력에서 나온 부부 일정표·회계 결산 등)는 4종도 장 칸에 남긴다(W3 P4 원인 3).
-    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => (refined ? { q: x.q, materials: x.materials.flatMap(writerMaterial), ...(x.card?.rx ? { act: actLine(x.card.rx, false) } : {}) } : { q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars),
+    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => (refined ? { q: x.q, materials: x.materials.flatMap(m => writerMaterial(m, brief)), ...(x.card?.rx ? { act: actLine(x.card.rx, false) } : {}) } : { q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars),
       ...(c.sceneHint ? { sceneHint: c.sceneHint.filter(h => jf.hint(h, c.id)) } : {}) })),
     // 최종판3 2c: 종합은 업무 씨앗을 주지 않는다(직업 장면은 일·돈 장의 장면 힌트로만). 다른 상품은 입력 밖 가정 씨앗만 뺀다.
     person: brief.product === "saju_mbti_full" ? omit(brief.person, "workScenes") : brief.person.workScenes ? { ...brief.person, workScenes: Object.fromEntries(Object.entries(brief.person.workScenes).map(([k2, v]) => [k2, v.filter(jf.scene)])) } : brief.person,

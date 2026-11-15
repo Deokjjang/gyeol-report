@@ -74,7 +74,7 @@ export type PlanCtx = {
   /** 같은 고객의 다른 책에서 이미 뜻을 푼 특성(feature id, P6c A3): 이 책에서는 처음 나와도 뜻을 다시 풀지 않는다(angle=known). */
   readonly known?: ReadonlySet<string>;
   /** MBTI 장면 씨앗(P6d F): 유형 → 영역 → 씨앗. excludeSeeds: 같은 고객의 앞 책이 쓴 씨앗 id. */
-  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
+  readonly mbtiSeeds?: ReadonlyMap<string, Readonly<Record<string, readonly { id: string; text: string; broad?: string; rel?: string; job?: string; ctx?: readonly string[] }[]>>>;
   readonly excludeSeeds?: ReadonlySet<string>;
   /** AM 2·3부: 반복 장 key마다 붙는 근거(세운 달 영역 신호·1월 다리, 대운 핵심 해 깊이). */
   readonly keyMaterials?: ReadonlyMap<string, readonly Material[]>;
@@ -297,7 +297,7 @@ export function planChapters(input: PlanCtx): PlanResult {
       if (sa || sb) return [`${end(sa || sb)} 쪽 = ${(sa ? a : b).name}`];
       return [];
     }) : [];
-    return { m: { kind: "rel", topic: best.t.label, scene: best.s.text, ...(who.length ? { who } : {}) }, dims: Object.keys(best.s.dims) };
+    return { m: { kind: "rel", topic: best.t.label, scene: !amBrief(ctx.product) && best.s.broad ? best.s.broad : best.s.text, ...(who.length ? { who } : {}) }, dims: Object.keys(best.s.dims) };
   };
   const takeAux = (key: string) => { if (ctx.usedAux!.has(key)) return false; ctx.usedAux!.add(key); return true; };
 
@@ -307,7 +307,8 @@ export function planChapters(input: PlanCtx): PlanResult {
   const seedFor = (p: Plan, d: Domain, label: string, owner: { profile: MbtiProfile; who?: string }): Material | null => {
     const pool = ctx.mbtiSeeds?.get(owner.profile.type)?.[SEED_DOMAIN[d] ?? d] ?? [];
     const f = ctx.facts;
-    const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
+    // W6: 이전 책 장면(excludeScenes)은 원문(옛 책)이나 넓은 꼴(W6 뒤 책)로 기록돼 있다 — 둘 다로 거른다.
+    const ok = pool.filter(s => !usedSeeds.has(s.id) && !ctx.usedScenes.has(s.text) && !(s.broad && ctx.usedScenes.has(s.broad)) && (s.rel !== "partner" || f.relationship === "dating" || f.relationship === "married")
       && (!s.job || s.job === "any" || (s.job === "employed" && f.job === "employed") || (s.job === "business" && f.job === "business") || (s.job === "student" && f.job === "student")) && !directionClash(s.text, dominantOf(ctx))
       // P6e 16: 직업군·상태 태그(ctx, 없으면 글에서 읽음)가 이 고객 생활과 맞지 않으면 뽑지 않는다. 학교·가족 소품도 같은 규칙.
       // 최종판2 1-2: 종합은 P6d처럼 이 거름 없이(보편 성향 씨앗). AM 결정(2026-11-11 밤): 단, 입력 직군과 정면으로 부딪치는 씨앗만 뺀다(sodam 카페 사장에게 「질문 메일」「업무 지시」「구직 공고」「프리랜서 의뢰서」).
@@ -316,8 +317,9 @@ export function planChapters(input: PlanCtx): PlanResult {
       // W3 P3(설계 3): 4종 모두(종합 포함) 입력 조건표 + 씨앗 꼬리표 + cleanSeed 거름(buildBrief가 준다). AM은 intake가 따로 거른다.
       && (!ctx.seedOk || ctx.seedOk(s)));
     if (!ok.length) return null;
-    const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text);
-    return { kind: "mbti", domain: d, scene: s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
+    const s = ctx.rng.fork(`${p.id}:${label}:seed:${d}`).pick(ok); usedSeeds.add(s.id); ctx.usedScenes.add(s.text); if (s.broad) ctx.usedScenes.add(s.broad);
+    // W6 S2-1(결정 2): 4종 작가는 씨앗의 넓은 꼴(상황 종류 + 행동 경향)을 받는다. 세운·대운은 원문 그대로.
+    return { kind: "mbti", domain: d, scene: !amBrief(ctx.product) && s.broad ? s.broad : s.text, seedId: s.id, ...(owner.who ? { who: owner.who } : {}) };
   };
   const hasBasis = (sec: Section | undefined) => Boolean(sec?.materials.some(m => m.kind === "trait" || m.kind === "evidence" || m.kind === "ref" || m.kind === "rel"));
   const mbtiScene = (p: Plan, domains: readonly Domain[], label: string, sec?: Section): Material | null => {

@@ -15,7 +15,7 @@ export const DUP_MIN = 6;
 
 /**
  * 같은 문장 안 되풀이 구절. 시험 책 59권 첫판(글자 그대로 6자)은 133건 대부분이 맞는 대구(「도윤님에게 모자란 …, 하린님에게 모자란 …」「한 사람에게는 …, 한 사람에게는 …」)·날짜라 둘로 좁혔다:
- *  A 렌더 구절이 끼인 되풀이 — 두 자리 가운데 하나라도 표시 구절 안에 있고 둘이 같은 구절 하나 안이 아닐 때(「…(일지)에 태어난 날 땅 글자(일지)의 절」·「…현침살처럼 이 기운은 두 사람 모두에게」).
+ *  A 렌더 구절이 끼인 되풀이 — 두 자리 가운데 하나라도 표시 구절 안에 있고 둘이 같은 구절 하나 안이 아닐 때(「…(일지)에 태어난 날 땅 글자(일지)의 절」·「…현침살처럼 이 기운은 두 사람 모두에게」), 두 자리 사이 20자 이내.
  *  B 작가 글 되풀이 — 숫자 없는 6자 이상이 사이 없이 바로 되풀이(말 더듬기 꼴). 사이 3자까지 넓히면 59권에서 대구 12건이 걸리고 진짜 0건이라 좁혔다.
  */
 export function dupPhrase(sen: string, phrases: readonly string[] = []): string | null {
@@ -28,7 +28,8 @@ export function dupPhrase(sen: string, phrases: readonly string[] = []): string 
     if (n.slice(i, i + DUP_MIN) !== n.slice(j, j + DUP_MIN)) continue;
     let k = DUP_MIN; while (j + k < n.length && n[i + k] === n[j + k] && i + k < j) k++;
     const w = n.slice(i, i + k);
-    if (!sameSpan(i, j, k) && (inSpan(i, k) >= 0 || inSpan(j, k) >= 0)) return w;
+    // A는 가까울 때(사이 20자 이내)만 — 두 관계를 한 문장에 이은 긴 문장의 「장덕민님의 태어난 …」 되풀이(사이 60자)는 겹침이 아니다.
+    if (!sameSpan(i, j, k) && (inSpan(i, k) >= 0 || inSpan(j, k) >= 0) && j - (i + k) <= 20) return w;
     if (!/[0-9]/.test(w) && j === i + k) return w;
   }
   return null;

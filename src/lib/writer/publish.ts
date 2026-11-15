@@ -38,6 +38,8 @@ import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type 
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { gateMetrics } from "./gate";
+import { splitSentences } from "./safety/patterns";
 import { dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { designSummaryOf, infoCardsOf } from "./design";
@@ -610,7 +612,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const thin = thinSections(chapters);
   const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
-  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), ...(info ? { info } : {}), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
+  // W6: 출시 관문 지표(차단 = 남은 깃발의 차단 갈래 수, 개선 지표는 기록만). 4종만.
+  const gate = brief.design ? (() => { try { return gateMetrics(chapters, remaining, splitSentences); } catch { return undefined; } })() : undefined;
+  report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), ...(info ? { info } : {}), ...(gate ? { gate } : {}), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),
     rewriteTargets: 0, rewritten: 0, rewriteCalls: 0, droppedSections: dropped.dropped, hanjaStripped: tidy.count.hanja ?? 0, termsAnnotated: rendered.count,
     noticesRemoved: notices.removed, noticesKept: notices.kept, image: { line: image, overlap: firstProblem?.startsWith("피할") ? avoidOverlaps(writerCover, avoid) : [], repairCalls: 0, ...(firstProblem ? { firstProblem } : {}) } } } };

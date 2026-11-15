@@ -112,23 +112,35 @@ export const PRODUCT_CHAPTER_RX: Readonly<Record<string, Readonly<Record<string,
 };
 
 /** 배분 옵션(W3 P3 4종): table = 장 선호표, cap = 같은 종류 책 상한, spread = 시작 자리(고객 해시), avoid = 이전 책 종류, fits = 입력에 맞는 종류, fallback = 선호표가 다 차면 고를 종류. 없으면 AM 동작 그대로. */
-export type AllocateOpts = { readonly table?: Readonly<Record<string, readonly RxKind[]>>; readonly cap?: number; readonly spread?: number; readonly avoid?: ReadonlySet<RxKind>; readonly fits?: (kind: RxKind) => boolean; readonly fallback?: readonly RxKind[] };
+export type AllocateOpts = { readonly table?: Readonly<Record<string, readonly RxKind[]>>; readonly cap?: number; readonly spread?: number; readonly avoid?: ReadonlySet<RxKind>; readonly fits?: (kind: RxKind) => boolean; readonly fallback?: readonly RxKind[]; readonly family?: boolean };
 /** 장 처방 배분: key 카드가 쓴 종류를 빼고, 장마다 선호 순서에서 하나. 쓰는 종류와 금지 종류(책의 다른 곳이 쓴 모든 종류 — cap이 있으면 상한에 닿은 종류). */
+/**
+ * W6 S2-6(B6): 「말 한마디·한 줄 보내기·한 번 묻기」 계열 — 종류가 달라도 책에서는 같은 처방으로 읽힌다(W5 궁합 「이번 주에는 … 한마디」 10회).
+ * 4종 카드 배분은 이 갈래를 한 종류로 센다(갈래 안 상한 = 종류 상한).
+ */
+export const RX_FAMILY: Readonly<Partial<Record<RxKind, string>>> = { "한마디 건네기": "말 건네기", "연락·안부": "말 건네기", "보내기 전 다시 읽기": "말 건네기", "말 다듬기·한 박자": "말 건네기", "끝까지 듣기": "말 건네기" };
 export function allocateChapters(chapterIds: readonly { readonly n: number; readonly id: string; readonly keyed: boolean }[], keyUsed: ReadonlyMap<RxKind, string>, opts: AllocateOpts = {}): Map<number, { use: RxKind | null; forbid: RxKind[] }> {
   const cap = opts.cap ?? 1, table = opts.table ?? CHAPTER_RX;
-  const count = new Map<RxKind, number>([...keyUsed.keys()].map(kd => [kd, cap] as const));
+  const fam = (kd: RxKind): string => (opts.family ? RX_FAMILY[kd] ?? kd : kd);
+  const count = new Map<string, number>([...keyUsed.keys()].map(kd => [fam(kd), cap] as const));
   const mine = new Map<number, RxKind | null>();
   let prev: RxKind | null = null;
   chapterIds.forEach((c, i) => {
     if (c.keyed) return;
     const pref0 = table[c.id.replace(/:.*$/, "")] ?? [], off = opts.spread !== undefined && pref0.length ? (opts.spread + i) % pref0.length : 0;
     const pref = [...pref0.slice(off), ...pref0.slice(0, off)];
-    const ok = (p: RxKind) => (count.get(p) ?? 0) < cap && !opts.avoid?.has(p) && (opts.fits?.(p) ?? true) && p !== prev;
+    const ok = (p: RxKind) => (count.get(fam(p)) ?? 0) < cap && !opts.avoid?.has(p) && (opts.fits?.(p) ?? true) && (!prev || fam(p) !== fam(prev));
     const pick = pref.find(ok) ?? opts.fallback?.find(ok) ?? null;
-    if (pick) count.set(pick, (count.get(pick) ?? 0) + 1);
+    if (pick) count.set(fam(pick), (count.get(fam(pick)) ?? 0) + 1);
     mine.set(c.n, pick); prev = pick;
   });
   const out = new Map<number, { use: RxKind | null; forbid: RxKind[] }>();
-  for (const c of chapterIds) { const use = mine.get(c.n) ?? null; out.set(c.n, { use: c.keyed ? null : use, forbid: [...count].filter(([kd, n]) => n >= cap && kd !== use).map(([kd]) => kd) }); }
+  const kinds = [...new Set<RxKind>([...RX.map(([kd]) => kd), ...keyUsed.keys()])];
+  for (const c of chapterIds) {
+    const use = mine.get(c.n) ?? null;
+    // 갈래를 쓰면(4종) 상한에 닿은 갈래의 종류 모두가 금지, 아니면 예전 그대로(종류별).
+    const forbid = opts.family ? kinds.filter(kd => (count.get(fam(kd)) ?? 0) >= cap && kd !== use) : [...count].filter(([kd, n]) => n >= cap && kd !== use).map(([kd]) => kd as RxKind);
+    out.set(c.n, { use: c.keyed ? null : use, forbid });
+  }
   return out;
 }

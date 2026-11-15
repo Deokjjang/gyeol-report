@@ -139,8 +139,9 @@ describe("P6c A·D 문형·별명·겹침", () => {
     expect(L.secondImage("가을 쇠 위에 선 큰 나무", "한여름 도시 아스팔트 위에 선 큰 나무")).toBe(true);
     expect(L.secondImage("한여름 도시 아스팔트 위에 선 큰 나무", "한여름 도시 아스팔트 위에 선 큰 나무")).toBe(false);
   });
-  it("작가 지침: 명리학에서 금지·뜻 공식 4번·앞에서 본 2번·재료·카드·표지·⟪⟫를 담는다", () => {
-    for (const x of ["명리학에서·명리학적으로·명리에서는", "4번까지", "2번까지", "[그림]", "[해 볼 것]", "[돌아보기]", "[살필 점]", "⟪ ⟫", "chart.elements.presence", "chart.currentDayun.phase", "chart.stars"]) expect(WRITER_SYSTEM).toContain(x);
+  it("작가 지침: 뜻 공식 4번·재료·표지·⟪⟫를 담는다 — W6 v5-29: 「명리학에서」는 정리(tidyBook)가 떼고, 사실 값은 chart 값대로(4종은 카드 줄·keys 장이 없다)", () => {
+    for (const x of ["4번까지", "⟪ ⟫", "[표지]", "chart 값대로만", "chart.avoidImages"]) expect(WRITER_SYSTEM).toContain(x);
+    expect(L.dropMyeongriPrefix("명리학에서 식신은 손끝의 힘이에요.")).not.toMatch(/명리학에서/);
   });
 });
 

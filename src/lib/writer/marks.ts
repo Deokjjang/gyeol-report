@@ -13,7 +13,9 @@ import { isHapKind, relationName } from "@/lib/compat/relations";
 
 export type MarkKind = "rel" | "cnt" | "in" | "star" | "at" | "un" | "ju" | "tg";
 /** short: 가까이(같은 문단·바로 앞 문단 끝 문장) 다시 나올 때의 짧은 꼴(W6 A1). codes: 자리 칸 이름(「일지」) — 바로 앞에 같은 자리 말이 있으면 겹치지 않게. list: 자리가 셋 이상일 때 책에서 한 번만 펼치는 목록. */
-export type Mark = { readonly key: string; readonly kind: MarkKind; readonly text: string; readonly flow?: string; readonly bare?: string; readonly owner?: string; readonly short?: string; readonly codes?: readonly string[]; readonly list?: string; readonly later?: string };
+export type Mark = { readonly key: string; readonly kind: MarkKind; readonly text: string; readonly flow?: string; readonly bare?: string; readonly owner?: string; readonly short?: string; readonly codes?: readonly string[]; readonly list?: string; readonly later?: string;
+  /** W6: 관계 구절의 글자만 꼴(「신과 해 사이의 해(…)」) — 문장이 이미 자리를 말했을 때. */
+  readonly glyph?: string };
 export type MarkTable = ReadonlyMap<string, Mark>;
 
 const HANGUL: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해" };
@@ -61,7 +63,17 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
   const prevTail = state?.tail ?? new Set<string>();
   if (!table?.size || !text.includes("⟦")) { if (state) state.tail = new Set(); return text; }
   const count = state?.count ?? { short: 0, dropped: 0, paren: 0 };
-  const src = text.replace(new RegExp(`([가-힣]{1,8})( 대운)?\\((${MARK_RE.source})\\)`, "g"), (all: string, w: string, dae: string | undefined, mk: string, kind: string, id: string) => {
+  // ⓪ 브리프 칸 「⟦at:t1⟧ = 태어난 날 기둥(일주)」를 그대로 옮긴 꼴은 표시만 남긴다(W5 1차 종합 「태어난 날 기둥(일주) = 태어난 날 기둥(일주)이」).
+  const src0 = (() => {
+    const re = new RegExp(`(${MARK_RE.source})\\s*=\\s*`, "g"); let out = "", i = 0, x: RegExpExecArray | null;
+    while ((x = re.exec(text))) {
+      const m = table.get(`${x[2]}:${x[3]}`), rest = text.slice(x.index + x[0].length);
+      const hit = m && [m.list ?? "", m.text, placeCore(m.text)].find(t => t && rest.startsWith(t));
+      if (hit) { out += text.slice(i, x.index) + x[1]; i = x.index + x[0].length + hit.length; re.lastIndex = i; count.dropped++; }
+    }
+    return out + text.slice(i);
+  })();
+  const src = src0.replace(new RegExp(`([가-힣]{1,8})( 대운)?\\((${MARK_RE.source})\\)`, "g"), (all: string, w: string, dae: string | undefined, mk: string, kind: string, id: string) => {
     const m = table.get(`${kind}:${id}`); if (!m) return all;
     count.paren++;
     return m.text.includes(w) || (m.bare ?? "").includes(w) ? mk : `${w}${dae ?? ""}`;
@@ -77,8 +89,15 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     const si = sentenceOf(at), before = whole.slice(sentenceStart(si), at).replace(MARK_RE, "");
     const near = inPara.has(key) || prevTail.has(key);
     let t = m.list ? (state?.seen.has(key) ? m.later ?? m.text : m.list) : m.text;
+    const endRel0 = whole.slice(at + all.length).search(/[.?!]/), after = whole.slice(at + all.length, endRel0 < 0 ? undefined : at + all.length + endRel0).replace(MARK_RE, "");
+    // ⑤ 관계 구절 앞에서 문장이 이미 자리를 말했으면(「두 사람의 태어난 날 땅 글자 사이에는 ⟦rel⟧」「묘와 진 사이에 ⟦in⟧」) 글자만 꼴로.
+    if (m.glyph && /(?:하늘|땅) 글자|태어난 (?:해|달|날|시각)|[연월일시](?:간|지)|[가-힣]와 [가-힣] 사이|[가-힣]과 [가-힣] 사이/.test(before.slice(-30))) t = m.glyph;
+    // ⑥ 구절 끝 괄호 뜻(「(정재의 10년)」「(가까운 사이의 작은 서운함)」)을 문장 뒤에서 또 말하면 괄호를 뗀다.
+    { const pm = t.match(/\(([^()]+)\)$/); if (pm && pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
     // ② 바로 앞에 같은 자리 말.
-    const tail30 = before.slice(-30);
+    const tail30 = before.slice(-30), prevSentence = si > 0 ? whole.slice(sentenceStart(si - 1), sentenceStart(si)).replace(MARK_RE, "") : "";
+    // ④' 바로 앞 문장이 같은 구절을 글로 이미 썼으면(「지금은 을축 대운(정재의 10년)이 …. ⟦un:now⟧은 …」) 짧은 꼴.
+    if (m.short && m.kind !== "cnt" && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = m.short; count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
     if (m.codes?.some(c => tail30.includes(c)) || (m.kind === "at" && tail30.includes(placeCore(m.text)))) {
       count.dropped++; used.push([key, si]); inPara.add(key);
       if (gen) return "";
@@ -119,6 +138,11 @@ function insideText(r: RelationFact): string {
     return `${wa(sideText([x], sky))} ${sideText([y], sky)} 사이의 ${plain}`;
   }
   return `${iga(sideText(r.members, sky))} 모인 ${plain}`;
+}
+/** W6: 관계의 글자만 꼴(「신과 해 사이의 해(가까운 사이의 작은 서운함)」, 셋 이상은 「인·오·술이 모인 삼합(…)」) — 문장이 자리를 이미 말했을 때 렌더가 쓴다. */
+function glyphText(r: RelationFact): string {
+  const gs = [...new Set(r.members.map(m => HANGUL[m.char] ?? m.char))];
+  return gs.length === 2 ? `${wa(gs[0])} ${gs[1]} 사이의 ${relPlain(r)}` : `${iga(gs.join("·"))} 모인 ${relPlain(r)}`;
 }
 /** 두 사람 사이 관계 구절: 「장덕민님의 태어난 날 땅 글자 신과 최지우님의 태어난 날 땅 글자 해 사이의 해(가까운 사이의 작은 서운함)」. */
 function pairText(r: RelationFact, people: readonly { name: string; call: string }[]): string {
@@ -167,18 +191,18 @@ export function placeForms(at: string): { text: string; codes: string[]; short: 
 export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, traitAt: ReadonlyMap<string, string>): MarkTable {
   const out = new Map<string, Mark>();
   if (!sheet || !brief.design) return out;
-  const add = (kind: MarkKind, id: string, text: string, flow?: string, extra: Partial<Pick<Mark, "bare" | "owner" | "short" | "codes" | "list" | "later">> = {}) => out.set(`${kind}:${id}`, { key: `${kind}:${id}`, kind, text, ...(flow ? { flow } : {}), ...extra });
+  const add = (kind: MarkKind, id: string, text: string, flow?: string, extra: Partial<Pick<Mark, "bare" | "owner" | "short" | "codes" | "list" | "later" | "glyph">> = {}) => out.set(`${kind}:${id}`, { key: `${kind}:${id}`, kind, text, ...(flow ? { flow } : {}), ...extra });
   const compat = Boolean(sheet.pair && brief.compatibility && sheet.people.length === 2);
   const calls = compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName] : [brief.person.callName];
   const people = sheet.people.map((p, i) => ({ name: p.name, call: calls[i] ?? `${p.name}님` }));
   if (compat) {
     const rows = pairRows(sheet, brief);
-    rows.forEach((x, i) => add("rel", String(i + 1), pairText(x.r, people), x.flow, { short: "이 관계" }));
+    rows.forEach((x, i) => add("rel", String(i + 1), pairText(x.r, people), x.flow, { short: "이 관계", glyph: glyphText(x.r) }));
     const hap = rows.filter(x => isHapKind(x.r.kind)).length;
     add("cnt", "all", `${rows.length}가지`); add("cnt", "hap", `${hap}가지`); add("cnt", "clash", `${rows.length - hap}가지`);
   }
   sheet.people.forEach((p: PersonFacts, i) => {
-    [...p.relations, ...p.stemClashes].forEach((r, j) => add("in", compat ? `${"ab"[i]}${j + 1}` : String(j + 1), compat ? `${people[i].call} 사주 안의 ${insideText(r)}` : insideText(r), undefined, { short: "이 관계" }));
+    [...p.relations, ...p.stemClashes].forEach((r, j) => add("in", compat ? `${"ab"[i]}${j + 1}` : String(j + 1), compat ? `${people[i].call} 사주 안의 ${insideText(r)}` : insideText(r), undefined, { short: "이 관계", glyph: glyphText(r) }));
   });
   if (compat) {
     const [a, b] = sheet.people, names = [...new Set([...a.shinsal, ...b.shinsal].map(s => s.name))];
@@ -199,8 +223,10 @@ export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, tr
   }
   const cd = compat ? null : brief.chart.currentDayun;
   if (cd) {
-    add("un", "now", `${cd.ganji.hangul} 대운(${cd.tenGod}의 10년)`, undefined, { short: "이 대운", codes: [`${cd.ganji.hangul} 대운`] });
-    if (cd.next) add("un", "next", `${cd.next.ganji.hangul} 대운(${cd.next.tenGod}의 10년)`, undefined, { short: "다음 대운", codes: [`${cd.next.ganji.hangul} 대운`] });
+    // W6: 십성 이름의 한자 괄호는 뗀다(「(정재(正財)의 10년)」 겹괄호면 뜻 괄호 떼기 ⑥이 못 본다 — 한자는 렌더 단계가 붙인다).
+    const han = (x: string) => x.replace(/\s?\([一-鿿]+\)/g, "");
+    add("un", "now", `${cd.ganji.hangul} 대운(${han(cd.tenGod)}의 10년)`, undefined, { short: "이 대운", codes: [`${cd.ganji.hangul} 대운`] });
+    if (cd.next) add("un", "next", `${cd.next.ganji.hangul} 대운(${han(cd.next.tenGod)}의 10년)`, undefined, { short: "다음 대운", codes: [`${cd.next.ganji.hangul} 대운`] });
   }
   return out;
 }

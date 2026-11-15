@@ -562,6 +562,8 @@ function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
   if (!BOTH.test(sen) && !(named === 0 && BOTH_CTX.test(paragraph))) return null;
   for (const a of ctx.aliases) {
     if (!a.re.test(sen)) continue;
+    // W6(59권 판정 오탐): 「천덕귀인은 장덕민님에게, 월덕귀인은 두 사람 모두에게」 — 신살 바로 뒤(14자)에 주인 이름을 밝혔으면 그 신살은 공통 주장이 아니다.
+    { const m = sen.match(a.re); const after = m ? sen.slice(m.index! + m[0].length, m.index! + m[0].length + 14) : ""; if (ctx.people.some(p => p.names?.test(after))) continue; }
     const has = ctx.people.map(p => p.facts.shinsal.some(x => x.name === a.name));
     if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${a.name}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}에게만 있다(두 사람 공통 아님)` };
   }

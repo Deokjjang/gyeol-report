@@ -297,7 +297,7 @@ export function designCards(input: DesignInput): BookDesign {
   // ④ 처방: 장마다 마지막 절에 한 종류(같은 종류 책에 두 번까지, 이전 책 처방 종류는 피한다).
   const avoid = new Set((brief.ledgerNotes?.avoidActions ?? []).flatMap(rxKindsOf));
   const table = PRODUCT_CHAPTER_RX[input.product] ?? {};
-  const rx = allocateChapters(chapters.map((c, i) => ({ n: i + 1, id: c.id, keyed: false })), new Map(), { table, cap: MAX_RX_KIND, spread: input.spread, avoid, fits: input.rxFits, fallback: RX.map(([kd]) => kd) });
+  const rx = allocateChapters(chapters.map((c, i) => ({ n: i + 1, id: c.id, keyed: false })), new Map(), { table, cap: MAX_RX_KIND, spread: input.spread, avoid, fits: input.rxFits, fallback: RX.map(([kd]) => kd), family: true });
   chapters.forEach((ch, i) => { const use = rx.get(i + 1)?.use ?? null; const last = slots.filter(s => s.ch === ch).at(-1); if (last && use) last.card.rx = use; });
 
   return { version: CARDS_VERSION, cards, links, card_fact_drop: drops };

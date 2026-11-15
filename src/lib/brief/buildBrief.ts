@@ -219,7 +219,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
     // 결혼·자녀 언젠가형 장면은 연애 상품에서만(P3.5 A5, 종합 '사람' 장 배정은 장 단계에서 본다).
-    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile, sc.text) && !usedScenes.has(sc.text) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
+    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile, sc.text) && !usedScenes.has(sc.text) && !(sc.broad && usedScenes.has(sc.broad)) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: !amBrief(product) && sc.broad ? sc.broad : sc.text }; usedScenes.add(sc.text); if (sc.broad) usedScenes.add(sc.broad); }
   });
   const age = ageAt(input.birthDate, baseDate);
   const person: PersonBrief = {
