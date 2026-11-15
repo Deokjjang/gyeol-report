@@ -38,6 +38,7 @@ import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type 
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { dropOverflowParagraphs, dropSentences, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { designSummaryOf, infoCardsOf } from "./design";
 import { priceFor } from "@/lib/llm/prices";
@@ -542,14 +543,25 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     } catch { review.skipped = "call_failed"; }
   }
   // 수리 1회(작가 모델): 결정론 깃발 + 검수 지적 + 표지 문제를 문장 단위로 한 번에. 예산이 모자라면 건너뛴다.
+  // W5 R2(R0 표): 결정론 먼저 — 접속어 과다는 앞 접속어만 떼고, 떼기 규칙(노출 safety·rule_leak, 재탕, 물음 초과, 씨앗 단정, 검수 R·L·C)은 그 문장만 뗀다(앞뒤 이음 확인).
+  // 다시 쓰기(작가 모델 1회)는 R0에서 득으로 나온 규칙만(사실 HARD·grade_leak·guide_copy·근거 없는 장면·용어 풀이·검수 I·T). 문구 복사·검수 F는 기록만.
+  const flags1 = lintBook(chapters, lctx);
+  const conn = deps.replay ? { chapters, count: 0 } : stripConnectiveFlags(chapters, flags1); chapters = conn.chapters;
+  const byN0 = new Map(rp.numbered.map(x => [x.n, x]));
+  const dropTargets: DropTarget[] = [
+    ...flags1.filter(f => modeOf(f.rule) === "drop" && f.paragraph >= 0 && !f.card && f.sentence).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, sentence: f.sentence, rule: f.rule as string, hard: HARD_RULES.has(f.rule) })),
+    ...issues.filter(i => reviewModeOf(i.cat) === "drop").flatMap(i => { const x = byN0.get(i.s); return x && x.paragraph >= 0 ? [{ chapter: x.chapter, section: x.section, paragraph: x.paragraph, sentence: x.text, rule: `review_${i.cat}`, hard: i.cat === "L" }] : []; }),
+  ];
+  const drops: { chapters: FinalChapter[]; dropped: DropRecord[] } = deps.replay ? { chapters, dropped: [] } : dropSentences(chapters, dropTargets); chapters = drops.chapters;
   const preRepairFlags = lintBook(chapters, lctx);
-  const items = repairItems({ chapters, flags: preRepairFlags, issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null });
-  let repair: { items: number; calls: number; applied: AppliedRepair[]; skipped: string | null } = { items: items.length, calls: 0, applied: [], skipped: null };
+  const overflow = new Set<string>();
+  const items = repairItems({ chapters, flags: preRepairFlags, issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null, overflow });
+  let repair: { items: number; calls: number; applied: AppliedRepair[]; rejected: { id: number; at: string; after: string }[]; skipped: string | null } = { items: items.length, calls: 0, applied: [], rejected: [], skipped: null };
   let repairedCover = "";
   if (items.length && canCall) {
     const p0 = repair3Prompt(sheet, brief, chapters, items);
     if (worstUsd(run!.writer!.model, p0.user.length + p0.system.length, repair3MaxTokens(p0.chars, items.length, run!.writer!.model)) > capLeft()) repair.skipped = "budget";
-    else try { const before = run!.calls.length; const r = await repair3Pass(opts(), run!, sheet, brief, chapters, items); run = r.run; chapters = r.chapters; repairedCover = r.cover ?? ""; repair = { items: items.length, calls: run.calls.length - before, applied: r.applied, skipped: r.text ? null : "call_failed" }; }
+    else try { const before = run!.calls.length; const r = await repair3Pass(opts(), run!, sheet, brief, chapters, items); run = r.run; chapters = r.chapters; repairedCover = r.cover ?? ""; repair = { items: items.length, calls: run.calls.length - before, applied: r.applied, rejected: r.rejected, skipped: r.text ? null : "call_failed" }; }
     catch { repair.skipped = "call_failed"; }
   } else if (items.length) repair.skipped = "no_writer";
   // 최종판2 1-1: 고친 표지 → 작가 첫 표지 순으로 덜 걸린 것. 엔진 기본 이미지는 작가 표지가 없을 때만.
@@ -565,6 +577,12 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet) });
   const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
+  // W5 R2 F1: 수리 뒤 결정론 정리 — 수리 문장이 이웃과 같은 뜻·끊긴 문장·같은 문단 수리끼리 같은 구절이면 원문으로, 이웃 문장 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다.
+  const f1: { chapters: FinalChapter[]; records: TidyRecord[] } = deps.replay ? { chapters: fixed, records: [] } : postRepairTidy(fixed, repair.applied);
+  if (f1.records.length) { fixed = f1.chapters; remaining = lintBook(fixed, lctx); }
+  // W5 R2: 칸이 모자라 수리하지 못한 HARD가 남은 문단은 문단째(장이 비지 않게).
+  const ov = deps.replay ? { chapters: fixed, dropped: [] as { at: string; rule: string }[] } : dropOverflowParagraphs(fixed, remaining, overflow);
+  if (ov.dropped.length) { fixed = ov.chapters; remaining = lintBook(fixed, lctx); }
   const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES);
   fixed = del.chapters;
   remaining = lintBook(fixed, lctx);
@@ -580,7 +598,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
-  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
+  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
   report = { ...report, metrics: { ...(report.metrics as NonNullable<typeof report.metrics>), ...(info ? { info } : {}), p6c: { tidy: tidy.count, flags: byRule(flags), repairTargets: items.length, repaired: repair.applied.length, repairCalls: repair.calls, redoCalls: 0, redoChapters: [], remaining: byRule(remaining), removed: enforced.removed, droppedParagraphs: enforced.droppedParagraphs,
     dropped: remaining.filter(f => f.paragraph >= 0 && !f.card && HARD_RULES.has(f.rule)).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, ...(f.detail ? { detail: f.detail } : {}), sentence: f.sentence.slice(0, 200) })), cover: imageSource, cardFlags: remaining.filter(f => f.card).map(f => `${f.chapter}.${f.section}.${f.card}:${f.rule}`),

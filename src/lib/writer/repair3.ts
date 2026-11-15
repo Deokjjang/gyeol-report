@@ -15,9 +15,10 @@ import { factTokens, type FactKind } from "./chunked/accept";
 import { relationName } from "@/lib/compat/relations";
 import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
+import { modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
-- 지적된 문장만 고친다. 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓰고 돌려주지 않는다. 문단 흐름이 이어지게 쓴다.
+- 지적된 문장만 고친다. 고친 답도 한 문장이다(문장을 늘리거나 앞뒤 문장 내용을 끌어오지 않는다 — 늘린 답은 버려진다). 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓴다.
 - 정답지(facts)와 맞게 쓴다. 새 사실·새 사람·새 사건·입력에 없는 상황을 만들지 않는다. 같은 장면·같은 처방을 다른 말로 되풀이하지 않는다.
 - 고칠 수 없거나 빼는 게 맞으면 "[R번호] (삭제)"라고만 쓴다.
 - 쉬운 존댓말(~입니다/~예요), 원문과 비슷한 길이. 한자·"명리학에서"·그림 별명·안내·면책 문장 금지. 행동 시점은 연·월 숫자 대신 "앞으로 한 달".
@@ -40,50 +41,54 @@ const locate = (chapters: readonly FinalChapter[], chapter: number, section: num
   return splitSentences(p.replace(/[⟪⟫]/g, "")).find(s => s === sentence || s.includes(sentence) || sentence.includes(s)) ?? null;
 };
 
-/** 깃발·지적·표지 문제 → 항목(같은 문장은 한 항목, 문제는 모은다). */
-export function repairItems(a: { chapters: readonly FinalChapter[]; flags: readonly LintFlag[]; issues: readonly ReviewIssue[]; numbered: readonly Numbered[]; cover?: { line: string; problem: string } | null; byN?: ReadonlyMap<number, Numbered> }): RepairItem[] {
+/**
+ * 깃발·지적·표지 문제 → 항목(같은 문장은 한 항목, 문제는 모은다).
+ * W5 R2: 다시 쓰기 규칙만(repairPlan.modeOf = rewrite, 검수는 I·T만) · 칸 순서 = 표지 → 사실 HARD → 노출 → 근거 없는 장면·입력 밖 → 그 밖.
+ * overflow: 칸이 모자라 못 든 HARD 깃발(「장.절.문단|규칙」) — 발행이 그 문단을 지운다(장이 비지 않게).
+ */
+export function repairItems(a: { chapters: readonly FinalChapter[]; flags: readonly LintFlag[]; issues: readonly ReviewIssue[]; numbered: readonly Numbered[]; cover?: { line: string; problem: string } | null; byN?: ReadonlyMap<number, Numbered>; overflow?: Set<string> }): RepairItem[] {
   const out: RepairItem[] = [], key = new Map<string, RepairItem>();
-  const add = (k: string, base: Omit<RepairItem, "id" | "problems" | "source">, problem: string, src: RepairItem["source"][number]) => {
+  const add = (k: string, base: Omit<RepairItem, "id" | "problems" | "source">, problem: string, src: RepairItem["source"][number]): boolean => {
     const had = key.get(k);
-    if (had) { if (!had.problems.includes(problem)) had.problems.push(problem); if (!had.source.includes(src)) had.source.push(src); return; }
-    if (out.length >= REPAIR3_MAX_ITEMS) return;
-    const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it);
+    if (had) { if (!had.problems.includes(problem)) had.problems.push(problem); if (!had.source.includes(src)) had.source.push(src); return true; }
+    if (out.length >= REPAIR3_MAX_ITEMS) return false;
+    const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it); return true;
   };
   if (a.cover) add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: a.cover.line }, `표지: ${a.cover.problem}`, "cover");
-  // AM 재생성 판독(major-1·annual-1): 수리 40칸이 모두 lint(대부분 문체 깃발)로 차서 검수가 맞게 짚은 사실·면책 지적이 고쳐지지 않았고, 8칸은 조립이 어차피 떼는 머리 문장 베낌에 쓰였다.
-  // → 칸 순서: 사실·금지 깃발(안 고치면 지워진다) → 검수 지적 → 문체 깃발. 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)에는 칸을 주지 않는다.
+  // AM 재생성 판독(major-1·annual-1): 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)·대운 시작 되풀이에는 칸을 주지 않는다. 검수 지적에도 같은 거르기.
   const HEAD_COPY = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)/;
-  // AM 재생성 2 판독(major-1 2030): 머리 둘째 문장(「이 해 5월 무렵부터 병인 대운이 시작되고」)의 사본이 칸을 받아 조립이 못 떼는 꼴로 바뀌었다 → 달·해 key 소제목 첫 문단의 대운 시작 되풀이도 칸을 주지 않는다. 검수 지적에도 같은 거르기.
   const DAYUN_HEAD = /무렵(?:부터|에)[^.?!]{0,24}대운(?:이|은)? (?:시작|열리)/;
   const headCopy = (chapter: number, section: number, paragraph: number, sentence: string | undefined) => {
     if (!sentence) return false; if (HEAD_COPY.test(sentence)) return true;
     const h = a.chapters.find(c => c.n === chapter)?.sections[section]?.heading ?? "";
     return paragraph === 0 && /^\d{4}(-M\d{2})?$/.test(h) && DAYUN_HEAD.test(sentence);
   };
-  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !headCopy(f.chapter, f.section, f.paragraph, f.sentence));
-  const addFlags = (list: readonly LintFlag[]) => { for (const f of list) {
-    const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) continue;
+  const addFlag = (f: LintFlag) => {
+    const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) return;
     const problem = `${f.hint}${f.detail ? ` [${f.detail}]` : ""}`;
-    if (f.paragraph < 0) { add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint"); continue; }
-    if (!f.sentence) { add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint"); continue; }
-    const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) continue;
-    add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint");
-  } };
-  addFlags(flagsOf(true));
+    let ok = true;
+    if (f.paragraph < 0) ok = add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint");
+    else if (!f.sentence) ok = add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint");
+    else { const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) return; ok = add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint"); }
+    if (!ok && HARD_RULES.has(f.rule as never)) a.overflow?.add(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`);
+  };
   const byN = a.byN ?? new Map(a.numbered.map(x => [x.n, x]));
-  for (const i of a.issues) {
-    const x = byN.get(i.s); if (!x) continue;
-    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) continue;
+  const addIssue = (i: ReviewIssue) => {
+    const x = byN.get(i.s); if (!x) return;
+    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) return;
     const other = i.s2 ? byN.get(i.s2)?.text : undefined;
     const problem = `${CAT_KO[i.cat] ?? i.cat}: ${i.why}${i.ref ? ` (근거 ${i.ref})` : ""}${i.field ? ` (입력 칸 ${i.field})` : ""}${other ? ` — 비교 문장: "${other.slice(0, 120)}"` : ""}`;
-    if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); continue; }
-    if (x.paragraph < 0) { add(`h:${x.chapter}.${x.section}`, { kind: "heading", chapter: x.chapter, section: x.section, paragraph: -1, original: x.text }, problem, "review"); continue; }
-    const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text) ?? x.text;
+    if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); return; }
+    if (x.paragraph < 0) { add(`h:${x.chapter}.${x.section}`, { kind: "heading", chapter: x.chapter, section: x.section, paragraph: -1, original: x.text }, problem, "review"); return; }
+    const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text); if (!s) return;
     add(`s:${x.chapter}.${x.section}.${x.paragraph}:${s}`, { kind: "sentence", chapter: x.chapter, section: x.section, paragraph: x.paragraph, original: s }, problem, "review");
-  }
-  // W3 P3 보강: 문체 깃발 가운데 카드에 없는 구체 장면(scene_unbacked)을 먼저(상품 규칙 — 40칸이 다른 문체 깃발로 차기 전에).
-  const soft = flagsOf(false);
-  addFlags([...soft.filter(f => f.rule === "scene_unbacked"), ...soft.filter(f => f.rule !== "scene_unbacked")]);
+  };
+  type Cand = { p: number; run: () => void };
+  const cands: Cand[] = [
+    ...a.flags.filter(f => modeOf(f.rule) === "rewrite" && !headCopy(f.chapter, f.section, f.paragraph, f.sentence)).map(f => ({ p: priorityOf(f.rule), run: () => addFlag(f) })),
+    ...a.issues.filter(i => reviewModeOf(i.cat) === "rewrite").map(i => ({ p: reviewPriorityOf(i.cat), run: () => addIssue(i) })),
+  ];
+  for (const c of cands.map((c, i) => ({ ...c, i })).sort((x, y) => x.p - y.p || x.i - y.i)) c.run();
   return out;
 }
 
@@ -129,8 +134,8 @@ export function parseRepair3(text: string): Map<number, string> {
 export type AppliedRepair = { readonly id: number; readonly kind: RepairItem["kind"]; readonly at: string; readonly before: string; readonly after: string; readonly source: readonly string[] };
 const DELETE = /^\(?삭제\)?\.?$/;
 /** 고친 문장을 제자리에 넣는다. (삭제)는 지운 것으로 기록. 표지는 cover로 돌려준다. */
-export function applyRepair3(chapters: readonly FinalChapter[], items: readonly RepairItem[], fixes: ReadonlyMap<number, string>): { chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[] } {
-  const applied: AppliedRepair[] = [];
+export function applyRepair3(chapters: readonly FinalChapter[], items: readonly RepairItem[], fixes: ReadonlyMap<number, string>): { chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; rejected: { id: number; at: string; after: string }[] } {
+  const applied: AppliedRepair[] = [], rejected: { id: number; at: string; after: string }[] = [];
   let cover: string | null = null;
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   for (const it of items) {
@@ -141,6 +146,8 @@ export function applyRepair3(chapters: readonly FinalChapter[], items: readonly 
     if (it.kind === "heading") { if (!DELETE.test(v)) { sec.heading = v.replace(/^#+\s*/, ""); applied.push({ id: it.id, kind: it.kind, at, before: it.original, after: sec.heading, source: it.source }); } continue; }
     if (it.kind === "append") { if (!DELETE.test(v)) { sec.paragraphs[it.paragraph] = `${sec.paragraphs[it.paragraph]} ${v}`.trim(); applied.push({ id: it.id, kind: it.kind, at, before: "", after: v, source: it.source }); } continue; }
     const p = sec.paragraphs[it.paragraph] ?? ""; if (!p.includes(it.original) && !p.replace(/[⟪⟫]/g, "").includes(it.original)) continue;
+    // W5 R2(R0 늘림 13건 → 겹침·반쪽 되돌림): 원문보다 문장이 많은 답은 받지 않는다(원문 그대로 — HARD면 뒤에서 뗀다).
+    if (!DELETE.test(v) && splitSentences(v.replace(/[⟪⟫]/g, "")).length > Math.max(1, splitSentences(it.original).length)) { rejected.push({ id: it.id, at, after: v }); continue; }
     const marked = p.includes(`⟪${it.original}⟫`);
     const after = DELETE.test(v) ? "" : v.replace(/[⟪⟫]/g, "");
     // 최종 A-9: (삭제)면 바로 뒤 문장이 접속어로 시작하는 고아 문장이 되지 않게 접속어를 뗀다.
@@ -148,17 +155,17 @@ export function applyRepair3(chapters: readonly FinalChapter[], items: readonly 
     sec.paragraphs[it.paragraph] = (!after && di >= 0 ? removeSentenceAt(ss, di).sentences.join(" ") : (marked ? p.replace(`⟪${it.original}⟫`, after ? `⟪${after}⟫` : "") : p.replace(it.original, after))).replace(/\s{2,}/g, " ").trim();
     applied.push({ id: it.id, kind: it.kind, at, before: it.original, after, source: it.source });
   }
-  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), cover, applied };
+  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), cover, applied, rejected };
 }
 
 /** 수리 호출 1회(작가 모델). 항목이 없거나 작가가 없으면 그대로. */
-export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactSheet, brief: Brief, chapters: readonly FinalChapter[], items: readonly RepairItem[]): Promise<{ run: WriterRun; chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; text: string }> {
-  if (!items.length || !run.writer) return { run, chapters: [...chapters], cover: null, applied: [], text: "" };
+export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactSheet, brief: Brief, chapters: readonly FinalChapter[], items: readonly RepairItem[]): Promise<{ run: WriterRun; chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; rejected: { id: number; at: string; after: string }[]; text: string }> {
+  if (!items.length || !run.writer) return { run, chapters: [...chapters], cover: null, applied: [], rejected: [], text: "" };
   const p = repair3Prompt(sheet, brief, chapters, items);
   const maxTokens = repair3MaxTokens(p.chars, items.length, run.writer.model);
   const r = await completeText(o, run, p.system, p.user, maxTokens, "repair");
   const a = applyRepair3(chapters, items, parseRepair3(r.text));
-  return { run: r.run, chapters: a.chapters, cover: a.cover, applied: a.applied, text: r.text };
+  return { run: r.run, chapters: a.chapters, cover: a.cover, applied: a.applied, rejected: a.rejected, text: r.text };
 }
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
@@ -238,7 +245,7 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
  */
 /** 깃발 규칙 → 수리가 바꿔도 되는 사실 종류(그 깃발이 바로 그 사실을 고치라는 것일 때만). all = 모든 종류(안전망 금지 규칙: 시주·내부 용어 등은 그 낱말을 빼는 게 수리다). */
 const REPAIR_FACT_EXEMPT: Readonly<Record<string, readonly FactKind[] | "all">> = {
-  safety: "all", label_leak: "all", rule_leak: "all", input_outside: "all", guide_copy: "all", glyph_list: ["ganji", "rel"], pillar_claim: ["tg", "ganji"],
+  safety: "all", label_leak: "all", rule_leak: "all", input_outside: "all", guide_copy: "all", glyph_list: ["ganji", "rel"], pillar_claim: ["tg", "ganji", "rel"],
   fact_relation: ["rel"], fact_term: ["rel", "tg"], fact_ganji: ["ganji", "dayun", "num", "month"], fact_dayun: ["dayun", "num", "ganji"], dayun_claim: ["dayun", "num", "ganji"], dayun_year: ["dayun", "num", "ganji"],
   fact_meaning: ["tg"], fact_count: ["num", "rel"], fact_mix: ["num"], count_mismatch: ["num"], ten_god_direction: ["tg"], feature_owner: ["rel"], common_split: ["rel"], group_claim: ["tg"], element_count: ["num"],
   time_fixed: ["num", "month", "ganji"], time_deictic: ["num", "month"], calendar_month: ["month"], intensity_claim: ["num"], negative_claim: ["rel"], mbti_misattr: [], fn_role: [],
