@@ -22,7 +22,7 @@ import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } fro
 import { personaHit, type PersonaCtx } from "./persona";
 import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
 import { brokenSentence, unbalancedAt } from "./broken";
-import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, type ContradictionCtx } from "./contradiction";
+import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -513,7 +513,7 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // W4 Q2-4: 남의 성격 문장(차원 설명의 방향이 그 주인 값과 반대 = HARD, 그대로 복사 = 문체).
           { const ph = writer && ctx.persona ? personaHit(sen, ctx.persona) : null; if (ph?.rule === "persona_mismatch") { flag({ ...at, rule: ph.rule, detail: ph.detail }); continue; } if (ph) flag({ ...at, rule: ph.rule, detail: ph.detail }); }
           // W6 S1-5 잘못된 연결(한 사람 4종): 합·충을 MBTI 성격과 잇기, 열등 기능을 강점으로.
-          if (writer && ctx.linkCheck && !ctx.compat) { const prev2 = i > 0 ? sens.slice(Math.max(0, i - 3), i).map(stripMarks).join(" ") : undefined; const lk = relationLink(sen, prev2, mbtiAnchor) ?? relationLinkAfter(sen, prev2, mbtiAnchor) ?? inferiorAsStrength(sen, ctx.facts.mbti, ctx.mbtiPlain); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
+          if (writer && ctx.linkCheck && !ctx.compat) { const prev2 = i > 0 ? sens.slice(Math.max(0, i - 3), i).map(stripMarks).join(" ") : undefined; const lk = relationLink(sen, prev2, mbtiAnchor) ?? relationLinkAfter(sen, prev2, mbtiAnchor) ?? relationLinkFrame(sen, sens[i + 1] !== undefined ? stripMarks(sens[i + 1]) : undefined, prev2 ?? (pi > 0 ? stripMarks(s.paragraphs[pi - 1]) : undefined), mbtiAnchor) ?? inferiorAsStrength(sen, ctx.facts.mbti, ctx.mbtiPlain); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
           if (writer && ctx.linkCheck && pairAnchor && c.n === 2) { const prev2 = i > 0 ? sens.slice(Math.max(0, i - 3), i).map(stripMarks).join(" ") : pi > 0 ? splitSentences(s.paragraphs[pi - 1]).map(stripMarks).join(" ") : undefined; const lk = relationLink(sen, prev2, pairAnchor) ?? relationLinkAfter(sen, prev2, pairAnchor); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
           const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : r === "grade_leak" || r === "rule_leak" ? { detail: exposureOf(sen)!.text } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.

@@ -125,7 +125,7 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     const prevSentence = prev0.replace(new RegExp(MARK_RE.source, "g"), (x: string, k2: string, i2: string) => table.get(`${k2}:${i2}`)?.text ?? "");
     const tail30 = before.slice(-30);
     // ⑪ W6 S4(2차 궁합·커리어): 자리 표시를 주어·목적어로 쓰면(「⟦at⟧가 이때 작동해서」「⟦at⟧를 떠올려 보세요」) 자리만 남아 무엇이 작동하는지 빠진다 → 「자리의 특성 이름」.
-    const named = (x: string) => (m.kind === "at" && m.name && p && /^(?:이|가|을|를)$/.test(p) && !before.slice(-24).includes(m.name) && !after.slice(0, 24).includes(m.name) && !NAMEY.test(after.trimStart()) ? `${x}의 ${m.name}` : x);
+    const named = (x: string) => (m.kind === "at" && m.name && p && /^(?:이|가|을|를)$/.test(p) && !x.includes(m.name) && !before.slice(-24).includes(m.name) && !after.slice(0, 24).includes(m.name) && !NAMEY.test(after.trimStart()) ? `${x}의 ${m.name}` : x);
     // ④' 바로 앞 문장이 같은 구절을 글로 이미 썼으면(「지금은 을축 대운(정재의 10년)이 …. ⟦un:now⟧은 …」) 짧은 꼴.
     if (m.short && m.kind !== "cnt" && !before.slice(-10).includes(m.short) && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = named(m.short); count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
     if (m.codes?.some(c => tail30.includes(c)) || (m.kind === "at" && tail30.includes(placeCore(m.text)))) {

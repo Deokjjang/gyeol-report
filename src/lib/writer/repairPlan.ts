@@ -132,7 +132,11 @@ export type TidyRecord = { readonly at: string; readonly rule: "f1_neighbor" | "
  *    같은 문단의 다른 수리 문장과 10자 이상 같은 구절(원문끼리는 없던 것)이면 원문으로 되돌린다.
  * ② 책 전체 이웃 문장(작가·수리 모두): 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다(뒤가 ⟪핵심⟫이고 앞이 아니면 앞을 뗀다).
  */
-export function postRepairTidy(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[]): { chapters: FinalChapter[]; records: TidyRecord[] } {
+/**
+ * W6 S4 3판(2차 커리어 8장): 수리가 차단 깃발(모순 「…절차형이라,」)을 고쳤는데 이웃과 뜻이 겹친다고(개선) 원문으로 되돌리면 차단 문장이 돌아와 지워지고 「이 순서가 방패가 됩니다」만 남았다.
+ * blocked(원문) = 수리 전 차단 갈래 깃발이 있던 문장 — 뜻 겹침·수렴(개선)으로는 그 원문으로 되돌리지 않는다(끊긴 수리 답 f1_broken은 그대로 되돌린다).
+ */
+export function postRepairTidy(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], blocked: (before: string) => boolean = () => false): { chapters: FinalChapter[]; records: TidyRecord[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const records: TidyRecord[] = [];
   const seenPhrase = new Map<string, string[]>();
@@ -148,6 +152,7 @@ export function postRepairTidy(chapters: readonly FinalChapter[], applied: reado
     else if (!/[.!?。」”"')…]$/.test(a.after.trim()) || BROKEN.test(a.after.trim().replace(/[.!?]+$/, ""))) rule = "f1_broken";
     else { const others = seenPhrase.get(a.at) ?? []; if (others.some(o => commonRun(o, here) >= 10)) rule = "f1_converge"; seenPhrase.set(a.at, [...others, here]); }
     if (!rule) continue;
+    if (rule !== "f1_broken" && blocked(a.before)) { records.push({ at: a.at, rule, sentence: `(남김·원문 차단) ${here}` }); continue; }
     // 수리 답 그 자리만 원문으로(끝 문장부호가 없던 답은 다음 문장과 붙어 있다 — 문장째 바꾸면 다음 문장이 사라진다).
     const cur = sec.paragraphs[pn];
     (sec.paragraphs as string[])[pn] = cur.includes(a.after) ? cur.replace(a.after, a.before).replace(/\s{2,}/g, " ") : (() => { ss[i] = /⟪/.test(ss[i]) ? `⟪${norm(a.before)}⟫` : a.before; return ss.join(" "); })();

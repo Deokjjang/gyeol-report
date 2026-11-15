@@ -10,12 +10,12 @@ import { gateClassOf, gateKindOf } from "@/lib/writer/gate";
 import { markTableFor, personProfileOf, renderWriterBrief } from "@/lib/writer/prompt";
 import { newMarkState, placeForms, renderMarks, type Mark } from "@/lib/writer/marks";
 import { brokenSentence, dupPhrase, unbalancedAt } from "@/lib/writer/safety/broken";
-import { assertedPoles, contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter } from "@/lib/writer/safety/contradiction";
+import { assertedPoles, contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame } from "@/lib/writer/safety/contradiction";
 import { splitSentences } from "@/lib/writer/safety/patterns";
 import { INTERNAL_LABEL } from "@/lib/writer/safety/sentences";
 import { careerGroupNames } from "@/lib/writer/safety/p6e";
 import { personNames } from "@/lib/writer/publish";
-import { dropSentences, leadNamesSubject } from "@/lib/writer/repairPlan";
+import { dropSentences, leadNamesSubject, postRepairTidy } from "@/lib/writer/repairPlan";
 import { sentenceViolation } from "@/lib/writer/safety";
 import { deleteFlagged } from "@/lib/writer/repair3";
 import { HARD_RULES, type LintFlag } from "@/lib/writer/safety/p6c";
@@ -260,5 +260,30 @@ describe("S4 2판 직접 읽기 결함 고침(측정 8권 2판)", () => {
   });
   it("관계 문장 두 문장 뒤에도 기능 부호(Fi)로 이은 MBTI 성향은 잇기", () => {
     expect(relationLinkAfter("서운함을 속으로 오래 담아 두는 면은 내 감정을 안으로 곱씹는 성향(Fi)과 닮아 있어요.", "여기에는 원진살이라는 근거가 있어요. 태어난 해와 날 사이에 거슬리는 짝이 있어요.", /ENTJ|\(Fi\)/)).not.toBeNull();
+  });
+});
+
+describe("S4 3판 직접 읽기 결함 고침(측정 8권 3판)", () => {
+  it("MBTI 문단 뒤 「사주 쪽도 같은 방향을 가리킵니다」 + 다음 문장 관계 = 잇기 · 다음 문장이 관계가 아니면 아니다", () => {
+    expect(relationLinkFrame("사주 쪽도 같은 방향을 가리킵니다.", "태어난 해·날·시각 땅 글자 술·인·오가 모인 삼합이 있어서 힘이 한 방향으로 쏠려요.", "ISTP는 손끝 해결사예요.", /ISTP/)).not.toBeNull();
+    expect(relationLinkFrame("사주 쪽도 같은 방향을 가리킵니다.", "현침살이 있어서 숫자를 날카롭게 봐요.", "ISTP는 손끝 해결사예요.", /ISTP/)).toBeNull();
+  });
+  it("구절에 이미 특성 이름이 있는 자리 표시에는 이름을 또 붙이지 않는다(「자유파의 자유파」)", () => {
+    const t = new Map<string, Mark>([["at:bt6", { key: "at:bt6", kind: "at", text: "하린님의 태어난 달과 날 사이의 자유파", short: "자유파", codes: ["자유파"], owner: "하린님", name: "자유파" }]]);
+    expect(renderMarks("이 관계는 ⟦at:bt6⟧가 만들어요.", t)).toBe("이 관계는 하린님의 태어난 달과 날 사이의 자유파가 만들어요.");
+  });
+  it("수리가 차단 원문을 고쳤으면 이웃과 뜻이 겹쳐도(개선) 원문으로 되돌리지 않는다 · 차단 아닌 원문은 예전처럼 되돌린다", () => {
+    const before = "규정과 선례를 먼저 확인하고 정하는 절차형이라 확인 순서를 쓰세요.", after = "마음 가는 쪽으로 빠르게 정하는 직감형이라 확인 순서를 쓰세요.";
+    const p = `셋째는 결정 습관에서 나온 원칙입니다. ${after} 마음 가는 쪽으로 빠르게 정하는 직감형이라 결정이 빨라요. 세 원칙은 모두 규칙 지키기예요.`;
+    const applied = [{ id: 1, kind: "sentence" as const, at: "1.0.0", before, after, source: ["lint"] }];
+    expect(postRepairTidy([ch(1, [[p]])], applied as never, () => true).chapters[0].sections[0].paragraphs[0]).toContain(after);
+    expect(postRepairTidy([ch(1, [[p]])], applied as never).chapters[0].sections[0].paragraphs[0]).toContain(before);
+  });
+  it("지운 문장을 받는 짧은 「…더 그래요」도 함께 지운다", () => {
+    const p = "배우는 자리에서도 수 부족의 영향을 받아요. 물이 부족하면 완충이 얇아서 부딪친 일이 오래 머물러요. INFJ가 겹치면 더 그래요. 하지만 배운 것은 바로 써 봅니다. 그 방식이 맞는 공부예요.";
+    const f = { chapter: 1, section: 0, paragraph: 0, rule: "self_contradiction", sentence: "물이 부족하면 완충이 얇아서 부딪친 일이 오래 머물러요." } as LintFlag;
+    const r = deleteFlagged([ch(1, [[p]])], [f], HARD_RULES);
+    expect(r.chapters[0].sections[0].paragraphs[0]).not.toContain("더 그래요");
+    expect(r.deleted.some(d => d.rule.endsWith(":orphan_summary"))).toBe(true);
   });
 });

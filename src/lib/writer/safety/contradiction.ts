@@ -122,6 +122,14 @@ export function relationLink(sen: string, prev: string | undefined, mbtiAnchor: 
 }
 /** W6 S4(1차 종합 1장): 관계 문장 바로 뒤(2문장 안)에서 MBTI 성향과 「만나서·겹쳐·합쳐」 잇는 꼴 — 「현장에서 바로 시험하는 ISTP의 손과 한곳으로 몰리는 힘이 만나서」. */
 const COMBINE = /만나(?:서|면|니)|겹쳐|겹치|합쳐|합치|더해져|맞물려|같은 (?:방향|쪽)을 (?:가리|향)|닮아 있|닮았|방식이 비슷|결이 같|[과와]도 (?:잘 )?맞(?:아|습|는)|(?:이|그) 힘을 (?:더 )?(?:키우|키웁|키워)/;
+/**
+ * W6 S4 3판(1차 종합 1장): MBTI 문단 바로 뒤 「사주 쪽도 같은 방향을 가리킵니다.」 — 틀 문장이 다음 문장의 관계(삼합)를 MBTI 성향과 같은 방향으로 묶는다(잇는 말이 관계 문장 앞에 온 꼴).
+ */
+const FRAME = /(?:사주|명리)[^.?!]{0,10}(?:같은 (?:방향|쪽)을 (?:가리|향)|같은 그림을|닮은 그림을|같은 말을 (?:해|합))/;
+export function relationLinkFrame(sen: string, next: string | undefined, prev: string | undefined, mbtiAnchor: RegExp | null): string | null {
+  if (!mbtiAnchor || !next || !prev || !FRAME.test(sen) || RELATION_TERM.test(sen) || !mbtiAnchor.test(prev)) return null;
+  const rel = next.match(RELATION_TERM); return rel ? `틀 문장이 다음 문장의 「${rel[1]}」를 앞의 MBTI 성향과 같은 방향으로 이음` : null;
+}
 export function relationLinkAfter(sen: string, prev: string | undefined, mbtiAnchor: RegExp | null): string | null {
   if (!mbtiAnchor || !prev || !mbtiAnchor.test(sen) || !COMBINE.test(sen) || RELATION_TERM.test(sen)) return null;
   const rel = prev.match(RELATION_TERM); return rel ? `앞 문장의 「${rel[1]}」를 MBTI 성향과 이음` : null;

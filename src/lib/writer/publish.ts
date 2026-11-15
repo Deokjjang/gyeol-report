@@ -38,7 +38,7 @@ import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type 
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
-import { gateMetrics } from "./gate";
+import { gateClassOf, gateMetrics } from "./gate";
 import { splitSentences } from "./safety/patterns";
 import { dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
@@ -592,7 +592,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   // W5 R2 F1: 수리 뒤 결정론 정리 — 수리 문장이 이웃과 같은 뜻·끊긴 문장·같은 문단 수리끼리 같은 구절이면 원문으로, 이웃 문장 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다.
-  const f1: { chapters: FinalChapter[]; records: TidyRecord[] } = deps.replay ? { chapters: fixed, records: [] } : postRepairTidy(fixed, repair.applied);
+  const f1: { chapters: FinalChapter[]; records: TidyRecord[] } = deps.replay ? { chapters: fixed, records: [] } : postRepairTidy(fixed, repair.applied, before => { const b = before.replace(/[^가-힣0-9]/g, ""); return preRepairFlags.some(f => f.sentence && gateClassOf(f.rule, f.detail) === "block" && b.includes(f.sentence.replace(/[^가-힣0-9]/g, "").slice(0, 24))); });
   if (f1.records.length) { fixed = f1.chapters; remaining = lintBook(fixed, lctx); }
   // W5 R2: 칸이 모자라 수리하지 못한 HARD가 남은 문단은 문단째(장이 비지 않게).
   const ov = deps.replay ? { chapters: fixed, dropped: [] as { at: string; rule: string }[] } : dropOverflowParagraphs(fixed, remaining, overflow);
