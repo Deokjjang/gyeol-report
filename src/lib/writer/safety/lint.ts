@@ -262,7 +262,7 @@ const TEN_GOD_TO_GROUP: Readonly<Record<string, string>> = { 비견: "비겁", �
 const EASY_GROUP: Readonly<Record<string, string>> = { "내 방식의 힘": "비겁", "만드는 힘": "식상", "값을 받는 힘": "재성", "규칙의 힘": "관성", "배우는 힘": "인성" };
 const easyGroupOf = (name: string): string | undefined => EASY_GROUP[name] ?? (/^내 방식/.test(name) ? "비겁" : /^만[들드]/.test(name) ? "식상" : /^값을 받/.test(name) ? "재성" : /^규칙/.test(name) ? "관성" : /^배우/.test(name) ? "인성" : undefined);
 // "많이 쓴다"는 쓰임(일이 그 힘을 많이 쓴다)이지 세기가 아니다(r2 커리어: 문단을 잘못 뺐다).
-const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리|큰 (편|쪽|확장형|사람|구조|사주)|크고|큽니|커서|커요|크다)/;
+const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리|큰 (편|쪽|확장형|사람|구조|사주)|크고|큽니|커서|커요|크다|크기 때문|크니)/; // W7 m1(1차 커리어 2장 「만들고 넓히는 힘이 크기 때문에」, 식상 약)
 const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
 const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모자란|적은 편|적어|적고|없어|없는|없고|없으|빈약|얇)/;
 export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {

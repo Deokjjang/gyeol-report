@@ -28,6 +28,8 @@ export const ANAPHOR_SHORT = /^[^.?!]{0,20}(?:더|특히|역시|훨씬) 그(?:�
 const ADDITIVE = /^[^.?!]{0,50}[가-힣]도 (?:함께|같이) /;
 /** W6.1 P3(1차 궁합 2장): 「그중 장덕민님이 더 그렇습니다」 — 앞 문장의 공통 성향을 받는 비교 꼬리. */
 export const COMPARE_TAIL = /^그중(?:에서도)? [가-힣]{1,6}님(?:이|은|께서) (?:더|특히|훨씬|조금 더) /;
+/** W7 m1(1차 궁합 3장 「일은 잘 맞지만 변화 속도에서 부딪친다는 평가죠」): 앞 문장이 꺼낸 출처(통념·궁합표)의 평가를 받는 꼬리 — 출처 문장을 떼면 무엇의 평가인지 빠진다. */
+const EVAL_TAIL = /^[^.?!]{0,60}(?:다는|라는) (?:평가|통념|속설)(?:죠|예요|이에요|입니다)[.!]?$/;
 /** 근거 이름(신살·십성·관계·자리) — 문장이 꺼낸 주어인지 본다. */
 export const SUBJECT_TERM = /(?:[가-힣]{1,4}살|[가-힣]{1,3}귀인|천문성|금여록|암록|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|비겁|식상|재성|관성|인성|원진|삼합|반합|육합|방합|[자축인묘진사오미신유술해]{2}\s?(?:충|합|형|파|해)|연간|월간|일간|연지|월지|일지|일주|(?:하늘|땅) 글자|기둥)(?=[은는이가을를의과와도에]|[\s(),.·]|$)/;
 /** 근거 이름을 주어로 받아야 서는 서술(「…드러나는 힘이라」「…눈입니다」). */
@@ -55,7 +57,7 @@ const PERSON_WORD = /당신|두 사람|둘 다|둘은|둘이|서로|[가-힣]{1,
 export function dependsOnRemoved(removed: string, next: string | undefined, o: { readonly names?: readonly (readonly string[])[] } = {}): "leans" | "subject" | null {
   if (next === undefined) return null;
   const n = next.replace(/[⟪⟫]/g, "").trim(), r = removed.replace(/[⟪⟫]/g, "").trim();
-  if (LEANS_START.test(n) || BECAUSE_ONLY.test(n) || ANAPHOR_SHORT.test(n) || ADDITIVE.test(n) || COMPARE_TAIL.test(n) || PARTICLE_START.test(n) || (LIST_ITEM.test(r) && LIST_BACK.test(n))) return "leans";
+  if (LEANS_START.test(n) || BECAUSE_ONLY.test(n) || ANAPHOR_SHORT.test(n) || ADDITIVE.test(n) || COMPARE_TAIL.test(n) || EVAL_TAIL.test(n) || PARTICLE_START.test(n) || (LIST_ITEM.test(r) && LIST_BACK.test(n))) return "leans";
   const people = o.names ?? [];
   // 궁합: 지운 문장이 한 사람 이름을 문장 머리 주어로 세웠을 때만(「그중 X님이 더 …」처럼 이름이 뒤에 오면 주어를 꺼낸 문장이 아니다 — 1차 궁합 8장 W6.1 다시 발행).
   if (people.length >= 2) {

@@ -50,10 +50,12 @@ const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습
  */
 export const leadNamesSubject = (lead: string, next: string | undefined): boolean => next !== undefined && SUBJECT_TERM.test(lead) && !SUBJECT_TERM.test(next);
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
-export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" | "list" };
+export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" | "list" | "mid" };
 export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean; readonly detail?: string };
 /** W6 S0-1: 개선 규칙은 떼고 난 문단이 IMPROVE_DROP_MIN_LEFT(3)문장 이상일 때만 뗀다(차단 규칙은 그대로). */
 export const improveOnly = (rule: string, detail?: string) => gateClassOf(rule, detail) === "improve";
+/** W7 m1: 내용 반복 규칙(뒤 문장이 기대는 내용 문장을 뗀다) — 문단 끝 문장만 뗀다. */
+export const REPEAT_DROP = /^(?:phrase|scene|prop|advice)_repeat$|^review_R$/;
 /**
  * 그 문장만 뗀다(호출 0). 앞뒤 이음 확인: ① 다음 문장이 앞말에 기대면(지시어·「때문입니다」) SOFT는 남기고, HARD는 기대는 문장까지 함께 뗀다
  * ② 뗀 문장이 바로 앞 물음의 답이면 물음도 뗀다 ③ 다음 문장 머리 접속어는 뗀다 ④ 소제목에 문장이 하나만 남으면 SOFT는 떼지 않는다 ⑤ ⟪핵심 문장⟫은 SOFT면 떼지 않는다.
@@ -80,6 +82,8 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     if (improveOnly(t.rule, t.detail) && next !== undefined && POINTS_BACK.test(next)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
+    // W7 m1(1차 궁합 9장 「두 사람에게는 귀한 기운도 함께 있어요」 뒤 · 1차 커리어 8장 「한가한 평일 하루를 정해 두면」): 반복 규칙으로 문단 가운데 문장을 떼면 뒤 문장이 기대던 앞말(무엇을·누구의)이 빠진다 → 반복 규칙은 문단 끝 문장만 뗀다(노출·금지 규칙은 그대로).
+    if (REPEAT_DROP.test(t.rule) && i < ss.length - 1) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "mid" }); continue; }
     let rest = removeSentenceAt(ss, i).sentences;
     if (leans) { let prevGone = t.sentence; for (let n = 0; n < 3 && i < rest.length; n++) { const d = n === 0 ? dep : dependsOnRemoved(prevGone, norm(rest[i]), o); if (!d) break; dropped.push({ at, sentence: norm(rest[i]), rule: `${t.rule}:${d}` }); prevGone = norm(rest[i]); rest = rest.filter((_, j) => j !== i); } }
     if (i > 0 && ASKS.test(norm(ss[i - 1]).trim()) && !/⟪/.test(ss[i - 1]) && !ASKS.test(t.sentence.trim()) && (rest.length > 1 || sec.paragraphs.filter(Boolean).length > 1)) { dropped.push({ at, sentence: norm(ss[i - 1]), rule: `${t.rule}:question` }); rest = rest.filter((_, j) => j !== i - 1); }
