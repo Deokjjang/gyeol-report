@@ -887,10 +887,10 @@
       "id": "fusion:tenGod:正官:INTJ",
       "myeongriId": "tenGod:正官",
       "mbtiTarget": "INTJ",
-      "kind": "tension",
+      "kind": "resonance",
       "dimension": "planning",
       "score": 0.78,
-      "why": "정관이 두드러지면 정시에 출근해 당직 일지를 빠짐없이 쓰는 사람처럼 약속과 자리를 지켜 믿음을 쌓습니다. INTJ의 Ni는 규칙이 비효율이면 이유부터 따지고 다른 길을 그립니다. 지켜야 한다는 마음과 더 나은 길이 보이는 눈이 당겨, 따르면서 속으로 수정안을 씁니다.",
+      "why": "정관은 질서를 세우고 정해진 길을 따라 믿음을 쌓는 힘이라, 할 일의 차례를 미리 잡아 둬야 편합니다. INTJ도 머릿속에 몇 수 앞까지 그려 두고, 필요한 준비를 먼저 끝내 놓는 사람이지요. 두 쪽이 같은 방향으로 겹쳐 준비성이 더 또렷해지는 만큼, 짜 둔 차례를 바꾸는 일은 더 무겁게 느껴집니다.",
       "scene": { "text": "출석을 부르는 방식이 비효율인 걸 알면서도 규칙대로 따르고, 집에 와 개선안을 몇 줄 적어 놓고 아무에게도 안 보냅니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [

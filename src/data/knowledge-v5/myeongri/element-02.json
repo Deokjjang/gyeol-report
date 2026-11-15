@@ -272,7 +272,6 @@
       "dimensionTags": {
         "ruleAdherence": 0.6,
         "noveltySeeking": -0.7,
-        "planning": -0.5,
         "independence": -0.5,
         "conflictApproach": -0.5,
         "decisionSpeed": -0.4
@@ -658,7 +657,6 @@
         "places": ["야구장 응원석", "여름밤 야외 페스티벌", "캠핑장 모닥불 앞", "해돋이 명소", "스피치나 즉흥 연기 모임"]
       },
       "dimensionTags": {
-        "directness": 0.4,
         "emotionalExpression": -0.8,
         "attentionSeeking": -0.7,
         "socialEnergy": -0.5,

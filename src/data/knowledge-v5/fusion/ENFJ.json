@@ -247,7 +247,7 @@
       "kind": "resonance",
       "dimension": "caretaking",
       "score": 1.8,
-      "why": "봄 기토는 꽃씨 열 봉지를 한꺼번에 받은 꽃밭이라, 씨를 가리지 않고 다 키웁니다. ENFJ는 남에게 설명하면서 자기도 배우기 때문에, 가르칠 사람이 늘수록 오히려 신이 납니다. 사람이 자라는 자리가 되는 대신, 뿌리에 양분을 뺏기듯 내 몫이 비는 걸 늦게 압니다.",
+      "why": "봄의 기토는 새싹이 한꺼번에 뿌리를 내리는 밭이라, 달라고 하기 전부터 양분을 내어 주는 흙입니다. ENFJ도 곁 사람에게 무엇이 필요한지 먼저 읽고 자랄 수 있게 미리 손을 써 두는 사람이지요. 두 쪽이 같은 방향을 향해 먼저 내어 주는 마음이 더 또렷해지니, 내 몫의 햇볕과 물도 챙겨야 합니다.",
       "scene": { "text": "동네 도서관 글쓰기 모임을 맡아 열두 명 원고마다 한 쪽씩 답장을 붙여 돌려줍니다. 모임이 끝나는 날 펴 본 자기 노트는 첫 장이 그대로입니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
@@ -864,10 +864,10 @@
       "id": "fusion:dayMaster:壬:ENFJ",
       "myeongriId": "dayMaster:壬",
       "mbtiTarget": "ENFJ",
-      "kind": "tension",
+      "kind": "resonance",
       "dimension": "socialEnergy",
       "score": 0.32,
-      "why": "임수는 넓게 퍼져 갈라진 것을 하나로 잇고, 한 번 방향을 잡으면 쉽게 틀지 않습니다. ENFJ의 Fe는 사람들 반응에 맞춰 바로 결을 바꾸려 합니다. 큰 흐름을 잡고도 한 사람의 표정이 걸리면 물길을 돌렸다 되돌리기를 반복합니다.",
+      "why": "임수는 넓게 받아들이고 흩어진 것을 하나로 잇는 물이라, 여러 사람 사이를 오가며 흐를수록 기운이 살아납니다. ENFJ도 사람들과 마음을 주고받는 자리에서 힘이 차오르는 편이에요. 둘이 같은 방향으로 겹쳐, 사람 속에서 충전되는 결이 더 또렷해집니다.",
       "scene": { "text": "여럿이 정한 여행 코스를 한 친구가 시큰둥해하자, 출발 전날 밤 일정을 반쯤 갈아엎다가 새벽에야 원래대로 돌려놓습니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [
@@ -1189,10 +1189,10 @@
       "id": "fusion:tenGod:正官:ENFJ",
       "myeongriId": "tenGod:正官",
       "mbtiTarget": "ENFJ",
-      "kind": "tension",
+      "kind": "resonance",
       "dimension": "dutifulness",
       "score": 1.01,
-      "why": "정관은 약속과 규칙을 지켜서 신뢰를 쌓는 기운입니다. ENFJ의 Fe는 규칙보다 지금 눈앞 사람의 표정이 먼저 보입니다. 원칙대로 하면 누군가 서운하고 봐주면 내 기준이 흔들려서, 어느 쪽을 골라도 밤에 다시 생각하게 됩니다.",
+      "why": "정관은 약속과 자기 자리를 지켜 믿음을 쌓는 힘이라, 맡겨진 역할은 끝까지 붙들고 갑니다. ENFJ도 사람들이 기대를 걸어 오면 그 기대를 마지막까지 책임지려 합니다. 이 두 결이 겹쳐 책임감이 더 또렷해지는 만큼, 어깨에 얹히는 무게도 함께 커집니다.",
       "scene": { "text": "참가 신청 마감이 지난 밤, 늦게 연락 온 친구 이름을 명단 끝에 몰래 적어 넣고는 규칙을 어겼다는 생각에 잠이 안 옵니다.", "requires": { "relationship": "any", "children": "any", "job": "any" } },
       "factBoundary": {
         "requires": [

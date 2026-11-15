@@ -713,7 +713,6 @@
       },
       "dimensionTags": {
         "attentionSeeking": -0.5,
-        "caretaking": 0.4,
         "spendingControl": 0.4,
         "planning": 0.3
       },
@@ -1072,7 +1071,6 @@
       "dimensionTags": {
         "statusDrive": 0.4,
         "spendingControl": -0.3,
-        "caretaking": 0.3,
         "trustThreshold": 0.3
       },
       "mbtiLinks": [

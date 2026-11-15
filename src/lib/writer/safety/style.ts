@@ -124,7 +124,10 @@ function unexplainedTerms(sens: readonly Sen[]): (Sen & { term: string })[] {
       seen.add(t.term);
       const near = `${s} ${sens[i + 1]?.text ?? ""}`;
       const inParen = s.lastIndexOf("(", at) > s.lastIndexOf(")", at) || /^\s*\(/.test(s.slice(at + t.term.length).replace(/^\([一-鿿]+\)/, "").slice(0, 2));
-      if (!inParen && !/뜻|말해요|말합니다|가리켜|기운(이에요|입니다|이라)|힘(이에요|입니다|이라)|이라는|라는/.test(near) && !(t.easy && near.includes(t.easy.slice(0, 4)))) out.push({ ...x, term: t.term });
+      // W5 R0(용어 풀이 수리 4/26이 같은 문단에 이미 있던 풀이와 겹침 — 「정재(…)가 두 군데 … 정재는 … 현실 감각이에요」): 같은 문단에 「용어는 …이에요」 풀이 문장이 있으면 풀이가 있는 것으로 본다.
+      const para = sens.filter(y => y.c === x.c && y.s === x.s && y.p === x.p).map(y => y.text).join(" ");
+      const defined = new RegExp(`${t.term}(?:\\([^)]*\\))?(?:은|는|이란|란) [^.?!]{4,80}(?:이에요|예요|입니다|이죠|뜻해요|말해요)`).test(para);
+      if (!inParen && !defined && !/뜻|말해요|말합니다|가리켜|기운(이에요|입니다|이라)|힘(이에요|입니다|이라)|이라는|라는/.test(near) && !(t.easy && near.includes(t.easy.slice(0, 4)))) out.push({ ...x, term: t.term });
     }
   });
   return out;

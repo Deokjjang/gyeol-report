@@ -462,10 +462,7 @@
         "rule": "지지 쌍 子未 丑午 寅酉 卯申 辰亥 巳戌이 원국에 함께 있으면 성립. 인접(년월·월일·일시) 가중, 일지 포함 최대. 궁합은 두 사람 일지·년지 비교. 子未·丑午는 육해와 겹침"
       },
       "dimensionTags": {
-        "detailFocus": 0.5,
-        "trustThreshold": 0.4,
         "emotionalExpression": -0.4,
-        "conflictApproach": -0.4,
         "boundarySetting": 0.3
       },
       "mbtiLinks": [

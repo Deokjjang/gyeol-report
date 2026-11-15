@@ -53,10 +53,10 @@ const GRADE_WORDS: readonly (readonly [RegExp, string])[] = [
 export const GROUP_LEVEL_PLAIN: Readonly<Record<string, string>> = { 강: "넉넉한 쪽", 강함: "넉넉한 쪽", 보통: "있는 만큼 쓰는 쪽", 약: "적은 쪽", 약함: "적은 쪽", 있음: "있지만 계절에 눌린 쪽" };
 const GROUP_NAME = "(비겁|식상|재성|관성|인성)";
 const GROUP_PHRASE: readonly (readonly [RegExp, string])[] = [
-  [new RegExp(`${GROUP_NAME}이 보통이라`, "g"), "$1이 고른 편이라"], [new RegExp(`${GROUP_NAME}이 약해`, "g"), "$1이 적어"], [new RegExp(`${GROUP_NAME}이 강해`, "g"), "$1이 넉넉해"],
+  [new RegExp(`${GROUP_NAME}이 보통이라`, "g"), "$1이 있어"], [new RegExp(`${GROUP_NAME}이 약해`, "g"), "$1이 적어"], [new RegExp(`${GROUP_NAME}이 강해`, "g"), "$1이 넉넉해"],
   [new RegExp(`${GROUP_NAME}이 약한`, "g"), "$1이 적은"], [new RegExp(`${GROUP_NAME}이 강한`, "g"), "$1이 넉넉한"],
 ];
-export const plainGrade = (t: string) => [...GRADE_WORDS, ...GROUP_PHRASE].reduce((x, [re, to]) => x.replace(re, to), t).replace(/((?:비겁|식상|재성|관성|인성)(?:\([^)]*\))?|\((?:비겁|식상|재성|관성|인성)\)) (강함|강|보통|약함|약|있음)(?![가-힣])/g, (_m, g: string, lv: string) => `${g} ${GROUP_LEVEL_PLAIN[lv]}`);
+export const plainGrade = (t: string) => [...GRADE_WORDS, ...GROUP_PHRASE].reduce((x, [re, to]) => x.replace(re, to), t).replace(/((?:비겁|식상|재성|관성|인성)(?:\([^)]*\))?|\((?:비겁|식상|재성|관성|인성)\)) (강함|강|보통|약함|약|있음)(?![가-힣])/g, (_m, g: string, lv: string) => (lv === "보통" ? g : `${g} ${GROUP_LEVEL_PLAIN[lv]}`));
 
 export const LINK_MIN = 0.3;
 export const LINK_STRONG = 0.4;

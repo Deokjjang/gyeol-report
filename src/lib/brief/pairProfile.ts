@@ -7,7 +7,7 @@
  */
 export type ProfileCodes = {
   readonly energy: "E" | "I" | null;
-  /** front = 앞에 나서서 이끄는 편, back = 앞에 나서기보다 뒤에서 챙기는 편. */
+  /** front = 앞에 나서서 이끄는 편, back = 앞에 나서기보다 뒤에서 조용히 제 몫을 하는 편(W5 R3: 「챙기는」이 챙김 차원을 끌어와 바꿈). */
   readonly lead: "front" | "back" | null;
   /** now = 그 자리에서 말함, later = 정리한 뒤 말함. */
   readonly conflict: "now" | "later" | null;
@@ -55,7 +55,7 @@ export function profileCodes(mbti: string | null, vec: ReadonlyMap<string, numbe
 
 const TEXT = {
   energy: { E: "에너지 E(사람을 만나면 기운이 나는 편)", I: "에너지 I(혼자 있는 시간이 꼭 필요한 편)" },
-  lead: { front: "앞에 나서서 이끄는 편", back: "앞에 나서기보다 뒤에서 챙기는 편" },
+  lead: { front: "앞에 나서서 이끄는 편", back: "앞에 나서기보다 뒤에서 조용히 제 몫을 하는 편" },
   // 최종 A-8: 「불편을 바로 말하는지」도 다툼 반응 축 하나로 묶는다(따로 지어내면 같은 사람 모순이 된다 — 백정우×오지안 판독).
   conflict: { now: "다툼·불편한 일이 생기면 그 자리에서 말하는 편", later: "다툼·불편한 일이 생기면 속으로 정리한 뒤 말하는 편" },
   express: { "말": "마음을 말로 바로 드러내는 편", "말·표정": "마음이 말과 표정에 바로 드러나는 편", "행동": "마음을 말보다 행동으로 보여 주는 편" },
@@ -85,6 +85,11 @@ export function applyProfile(vec: ReadonlyMap<string, number>, c: ProfileCodes):
   if (c.decide === "fast") set("decisionSpeed", 1);
   if (c.decide === "slow") set("decisionSpeed", -1);
   if (c.decide === "mid") set("decisionSpeed", 0);
+  // W5 R3 F8(W4 1차 궁합 성격표 「새 제안은 한 번 묵혔다가」 ↔ 차이 줄 「일단 시작하고 가면서 고치는」): 같은 사람의 같은 차원은 성격표 한 값에서만.
+  if (c.offer === "hold") { set("riskTaking", -1); set("noveltySeeking", -1); }
+  if (c.offer === "open") { set("riskTaking", 1); set("noveltySeeking", 1); }
+  if (c.money === "plan") set("spendingControl", 1);
+  if (c.money === "now") set("spendingControl", -1);
   return out;
 }
 
@@ -93,7 +98,7 @@ export const PROFILE_CUES = {
   E: /모임이 끝나면 (오히려 )?(기운|힘)|어울리고 나면 (오히려 )?(기운|힘)|사람을 만나면 (오히려 )?기운이 나/,
   I: /약속이 이어지면 지|혼자 있는 시간이 (꼭 )?필요/,
   front: /가운데에 서|발표를 자원|(가장 )?먼저 나서(서|는|고)|앞에 나서(서|는) (이끄|분위기)/,
-  back: /뒤에서 챙기는|앞에 나서기보다/,
+  back: /뒤에서 (?:조용히 제 몫|챙기는)|앞에 나서기보다/,
   // "그 자리에서 짚는"·"따지는"은 직설(directness)이라 다툼 시점 단서로 보지 않는다(ISTJ도 틀린 사실은 바로 짚는다).
   // 최종판3: 「틀린 것은 그 자리에서 짚는」도 다툼=정리한 뒤와 함께 읽으면 모순으로 읽힌다(장소담×전성민 판독).
   // 최종 A-8: 「불편한 건 참지 않고 바로 말하는」도 다툼 반응 축(그 자리에서) 단서.

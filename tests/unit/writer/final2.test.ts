@@ -86,7 +86,7 @@ describe("최종판2 1-3 궁합 성격표", () => {
   it("장면 주인(who)도 표를 따른다: 최지우를 「가운데에 서고 발표를 자원」 쪽에 세우지 않는다", () => {
     const who = DJ.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(s => s.materials)]).flatMap(m => m.kind === "rel" ? m.who ?? [] : []);
     expect(who.some(w => /가운데에 서고 발표를 자원하는 편 쪽 = 최지우/.test(w))).toBe(false);
-    expect(who.some(w => /그 자리에서 받아치는 편 쪽 = 최지우/.test(w))).toBe(false);
+    expect(who.some(w => /그 자리에서 (받아치는|바로 반응이 나오는) 편 쪽 = 최지우/.test(w))).toBe(false);
     const v = applyProfile(new Map([["attentionSeeking", 0.91], ["reactivity", 0.91]]), profileCodes("ISTJ", new Map(), []));
     expect(v.get("attentionSeeking")).toBe(-1); expect(v.get("reactivity")).toBe(-1);
   });

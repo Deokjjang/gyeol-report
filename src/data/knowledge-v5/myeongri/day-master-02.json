@@ -770,7 +770,6 @@
         "detailFocus": 0.7,
         "boundarySetting": 0.5,
         "statusDrive": 0.4,
-        "reactivity": 0.4,
         "intimacyPace": -0.4,
         "emotionalExpression": -0.3
       },

@@ -88,7 +88,8 @@ function plainChart(c: Brief["chart"]) {
   const counts = c.elements.presence ? Object.entries(c.elements.presence).map(([e, v]) => `${EL_KO[e] ?? e} ${v.surface}`).join("·") : "";
   const frame = GRADE_LABEL.test(st.label) ? "" : `${st.label}입니다. `;
   const pos = c.positions, mains = pos ? [pos.yearStem, pos.monthStem, pos.hourStem, pos.yearBranch, pos.monthBranch, pos.dayBranch, pos.hourBranch].flatMap(x => (x?.[0] ? [x[0]] : [])) : [];
-  const groups = c.groups ? Object.entries(c.groups.levels).map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g}) ${GROUP_LEVEL_PLAIN[lv] ?? lv}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
+  // W5 R3 F3: 묶음 세기 「보통」은 작가에게 주지 않는다(「있는 만큼 쓰는 쪽」「보통 세기」가 판정 틀로 읽혔다 — W4 판독). 넉넉·적음만 뜻으로.
+  const groups = c.groups ? Object.entries(c.groups.levels).filter(([, lv]) => lv !== "보통").map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g}) ${GROUP_LEVEL_PLAIN[lv] ?? lv}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
   return {
     ...base,
     strength: { meaning: `${frame}${st.reading ?? ""}`.trim(), ...(st.note ? { skew: st.note.replace(/내 힘의 세기\([^)]*\)/, "내 힘의 세기") } : {}), ...(counts ? { basis: `오행 겉 글자 수 ${counts}` } : {}) },

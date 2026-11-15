@@ -171,6 +171,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...new Set([...(job?.props ?? []), ...stages, ...jobWordsOf(brief.person.facts.job.detail)])] }) } : {}),
     // W5 R1: 사실 표시 표(4종 — 작가 브리프와 같은 표). 정리 단계가 ⟦…⟧를 정답지 구절로 바꾼다.
     ...(sheet && brief.design ? { marks: markTableFor(brief, sheet) } : {}),
+    // W5 R3 F4: 절마다 MBTI 씨앗 장면(입력 조건으로 거른 것) — 씨앗으로만 받쳐진 단정 장면을 seed_assert로.
+    ...(brief.design ? { seedScenes: new Map(plan.flatMap(ch => (ch.sections ?? []).map((s, si) => [`${ch.n}.${si}`, s.materials.flatMap(m => (m.kind === "mbti" && m.seedId !== "prop" ? [m.scene] : []))] as const)).filter(([, v]) => v.length)) } : {}),
     // W3 P3 보강·W4 Q2: 4종 책은 근거에 없는 구체 장면(단정·물음)을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면 + 장 소품 힌트(sceneHint, W4에 작가에게 다시 감).
     ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [], questionCap: true, persona: personaContext(brief, k), exampleWords: true, briefNorm: normWords(JSON.stringify(renderWriterBrief(brief, { knowledge: k }))) } : {}),
   };

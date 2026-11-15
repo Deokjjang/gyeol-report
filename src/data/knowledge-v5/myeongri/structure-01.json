@@ -444,7 +444,6 @@
         "learningDrive": 0.7,
         "introspection": 0.6,
         "planning": 0.5,
-        "caretaking": 0.4,
         "decisionSpeed": -0.5,
         "riskTaking": -0.5,
         "independence": -0.3
