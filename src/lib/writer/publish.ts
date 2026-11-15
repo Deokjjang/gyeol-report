@@ -32,7 +32,7 @@ import type { ReportInputPayload } from "@/lib/report-generation/reportInputType
 import { withV5NatalRows } from "@/lib/report-tables/v5NatalRows";
 import { analyzeChartDetections } from "@/lib/saju/detections";
 import { assembleV5Book, createV5Snapshot, payloadToBriefInput, type WriterMeta } from "./book";
-import { buildWriterPrompt, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
+import { buildWriterPrompt, markTableFor, renderWriterBrief, WRITER_PROMPT_VERSION, type WriterChapter } from "./prompt";
 import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
@@ -168,6 +168,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
     ...p6eContext(brief, k),
     ...final2Context(brief),
     ...(sheet ? { fact: factCtxOf(sheet, k, personNames(brief), { jobWords: compat ? [] : [...new Set([...(job?.props ?? []), ...stages, ...jobWordsOf(brief.person.facts.job.detail)])] }) } : {}),
+    // W5 R1: 사실 표시 표(4종 — 작가 브리프와 같은 표). 정리 단계가 ⟦…⟧를 정답지 구절로 바꾼다.
+    ...(sheet && brief.design ? { marks: markTableFor(brief, sheet) } : {}),
     // W3 P3 보강·W4 Q2: 4종 책은 근거에 없는 구체 장면(단정·물음)을 수리로 보낸다(scene_unbacked). 근거 = 절 카드 글 + 입력의 직업 장면 + 장 소품 힌트(sceneHint, W4에 작가에게 다시 감).
     ...(brief.design ? { sceneCards: infoCardsOf(brief), sceneProps: infoDictOf(brief).props ?? [], questionCap: true, persona: personaContext(brief, k), exampleWords: true, briefNorm: normWords(JSON.stringify(renderWriterBrief(brief, { knowledge: k }))) } : {}),
   };
@@ -484,7 +486,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const previewSheet = factSheetFor(a.payload, a.policyAt, brief, k);
   const previewCtx = lintContext(brief, k, plan, a.prior?.sentences ?? [], undefined, previewSheet);
   const sink: ChapterSink = { save: c => { let preview: ChapterPreview | undefined; try { preview = chapterPreview(c, previewCtx, plan.find(p => p.n === c.n)); } catch { preview = undefined; } return a.sink.save({ ...c, total: plan.length, ...(preview ? { preview } : {}) }); }, load: () => a.sink.load() };
-  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...(Number.isFinite(postReserveUsd) ? { postReserveUsd } : {}), ...deps, budgetMs: budget - (now() - started), fallback: fb });
+  const opts = (): WriterOptions => ({ brief, provider: provider!, model: model!, sink, knowledge: k, facts: previewSheet, ...(envCap > 0 ? { maxOutputTokens: envCap } : {}), cacheSystem: promptCacheOn(), ...(Number.isFinite(postReserveUsd) ? { postReserveUsd } : {}), ...deps, budgetMs: budget - (now() - started), fallback: fb });
   if (!a.recover && model) {
     try { run = await runWriter(opts()); drafts = run.drafts; }
     catch { drafts = new Map(); }

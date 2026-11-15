@@ -4,7 +4,7 @@
  * detail에는 맞는 사실을 적는다(수리 지시에 그대로 간다).
  */
 import type { Knowledge } from "@/lib/brief/knowledge";
-import type { FactSheet, PersonFacts, RelationFact, Slot } from "./build";
+import { hangulOf, type FactSheet, type Pos, type PersonFacts, type RelationFact, type Slot } from "./build";
 import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
@@ -139,7 +139,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     const partial = x.chars.length === 3 ? pool.filter(r => x.kinds.includes(r.kind) && r.members.every(m => x.chars.includes(m.char))) : [];
     const have = new Set(owners.flatMap(o => Object.values(o.pillars).flatMap(p => (p ? [p.stem, p.branch] : []))));
     const missing = x.chars.filter(c => !have.has(c as never) && !ctx.sheet.pair);
-    if (negOrHypo(sen)) continue;
+    // W5 R1-3: 부정은 그 관계 말 바로 뒤(두 어절 안)에 붙은 것만 본다 — 「갑기합이 아니라 병신합이 걸려 있어」의 「아니」가 뒤의 병신합 주장까지 덮었다(W4 1차 궁합).
+    if (negatedAt(sen, x.text) || /라면|다면/.test(sen)) continue;
     return { rule: "fact_relation", detail: partial.length ? `「${x.text}」: 세 글자가 다 있지 않다(${partial.map(r => `${[...new Set(r.members.map(m => m.char))].join("")} 두 글자 형`).join("·")}만 있다)` : missing.length ? `「${x.text}」: ${missing.join("·")} 글자가 원국에 없다` : `「${x.text}」 관계는 정답지에 없다` };
   }
   // 글자 수·완성도: 관계 말이 하나일 때.
@@ -155,7 +156,65 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
   }
   return null;
 }
-const negOrHypo = (s: string) => /없(어|는|고|다|습니다)|아니|않|라면|다면/.test(s);
+/** 관계 말(text) 바로 뒤 두 어절 안에 부정(아니·없·않)이 붙었는가. */
+const negatedAt = (sen: string, text: string) => { const i = sen.indexOf(text); return i >= 0 && /^(이|가|은|는|도|과|와)?(\s[가-힣]{1,6}){0,2}\s?(아니(다|라|에요|고|야|죠)|없(다|어|습니다|고|는|으니|지만|을)|않(아|고|는|습니다|지만|다|을))/.test(sen.slice(i + text.length, i + text.length + 18)); };
+/**
+ * W5 R1-3 궁합: 한 사람 사주 안의 관계를 두 사람 사이 일처럼 씀(W4 1차 궁합 6장 「장덕민님의 연지 묘와 일지 신은 서로 원진이라 … 최지우님의 정재 일지와 만나면」).
+ * 관계 말(「묘신 원진」·「연지 묘와 일지 신은 서로 원진」)의 글자 짝이 두 사람 사이 관계에는 없고 한 사람 원국에만 있는데, 문장이 다른 사람 이름이나 「두 사람」을 부르면 잡는다.
+ * 표시 구절(「○○님 사주 안의 …」)을 그대로 쓴 문장은 주인을 밝혔으므로 보지 않는다.
+ */
+const POS_GLYPH = "(?:연지|월지|일지|시지|년지|태어난 (?:해|달|날|시각) 땅 글자) ?([자축인묘진사오미신유술해])";
+const POS_REL = new RegExp(`${POS_GLYPH}(?:과|와) (?:[^,.?!]{0,16}?)${POS_GLYPH}(?:은|는|이|가|의)? ?(?:서로 |사이의? |사이에는? |끼리 )?(육합|삼합|반합|합|충|형|파|해|원진)(?=[이가은는을를의와과도에로만]|[^가-힣]|$)`, "g");
+/**
+ * W5 R1-3: 자리 글자와 관계 글자가 다름(W4 1차 궁합 1장 「장덕민님의 월간 신금과 최지우님의 일간 기토 사이에는 … 병신합이 걸려 있어」 — 병신합은 있지만 그 두 자리 글자의 관계가 아니다).
+ * 한 문장에 자리+글자(「월간 신」「태어난 날 땅 글자 해」)가 둘 이상 있고, 부정되지 않은 글자 짝 관계 말의 글자가 그 자리 글자 안에 다 들지 않으면 잡는다.
+ */
+const POS_TOKEN = /(?:연간|월간|일간|시간|연지|월지|일지|시지|년간|년지|태어난 (?:해|달|날|시각) (?:하늘|땅) 글자) ?([갑을병정무기경신임계자축인묘진사오미유술해])[목화토금수]?(?=[과와은는이가의을를,\s]|$)/g;
+function relationGlyphMismatch(sen: string): FactHit | null {
+  const pos = [...sen.matchAll(POS_TOKEN)].map(m => m[1]);
+  if (pos.length < 2 || HYPO.test(sen)) return null;
+  const glyphs = new Set(pos);
+  for (const m of [...sen.matchAll(STEM_REL), ...sen.matchAll(BRANCH_REL)]) {
+    if (negatedAt(sen, m[0])) continue;
+    const chars = [...m[1]];
+    if (chars.some(c => !glyphs.has(c))) return { rule: "fact_relation", detail: `「${m[0]}」의 글자(${chars.join("·")})가 문장의 자리 글자(${[...glyphs].join("·")})와 다르다 — 그 두 자리의 관계가 아니다` };
+  }
+  return null;
+}
+/** W5 R1-3: 땅 글자 자리(일지 등)를 기둥 이름(간지 두 글자)으로 부름(W4 1차 궁합 「장덕민님의 일지는 갑신입니다」 — 일지는 申 한 글자, 갑신은 일주). */
+const BRANCH_AS_PILLAR = /(연지|월지|일지|시지|년지)(?:는|은|가|이|의)? ([가-힣]{2})(?=[이가은는의으로입예,\s]|$)/;
+function branchAsPillar(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  const m = sen.match(BRANCH_AS_PILLAR); if (!m || owners.length !== 1 || !isGanjiKo(m[2])) return null;
+  const pos = ({ 연지: "year", 년지: "year", 월지: "month", 일지: "day", 시지: "hour" } as Record<string, Pos>)[m[1]], pl = owners[0].pillars[pos];
+  const nun = (w: string) => `${w}${(w.charCodeAt(w.length - 1) - 0xac00) % 28 ? "은" : "는"}`;
+  return pl ? { rule: "fact_ganji", detail: `${m[1]}는 땅 글자 하나(${hangulOf(pl.branch)})다 — ${nun(m[2])} ${pl.ganjiKo === m[2] ? `${m[1][0]}주(기둥) 이름` : "이 사람 기둥에 없다"}` } : null;
+}
+function insideAsPair(sen: string, ctx: FactCtx): FactHit | null {
+  const pair = ctx.sheet.pair;
+  if (!pair || ctx.people.length < 2 || /사주 안/.test(sen) || HYPO.test(sen)) return null;
+  const both = /두 사람|둘 사이|두 분/.test(sen);
+  /** 그 자리 앞에서 마지막으로 불린 사람(없으면 -1). */
+  const ownerBefore = (end: number) => { let best = -1, at = -1; ctx.people.forEach((p, i) => { if (!p.names) return; for (const m of sen.slice(0, end).matchAll(new RegExp(p.names.source, "g"))) if (m.index! >= at) { at = m.index!; best = i; } }); return best; };
+  const mentions: { chars: string[]; kinds: readonly string[]; text: string; owner: number }[] = [];
+  for (const m of sen.matchAll(BRANCH_REL)) mentions.push({ chars: branchChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], owner: -2 });
+  for (const m of sen.matchAll(POS_REL)) {
+    // 두 자리가 한 사람 것인가: 첫 자리 앞 마지막 이름 = 주인, 두 자리 사이에 다른 이름이 없으면 같은 주인.
+    const second = m.index! + m[0].indexOf(m[2], m[0].indexOf("과 ") >= 0 || m[0].indexOf("와 ") >= 0 ? Math.max(m[0].indexOf("과 "), m[0].indexOf("와 ")) : 0);
+    const o1 = ownerBefore(m.index!), o2 = ownerBefore(second);
+    mentions.push({ chars: branchChars(`${m[1]}${m[2]}`), kinds: REL_KIND[m[3]] ?? [], text: m[0], owner: o1 >= 0 && o1 === o2 ? o1 : -2 });
+  }
+  for (const x of mentions) {
+    if (x.chars.length < 2 || negatedAt(sen, x.text)) continue;
+    const fits = (r: RelationFact) => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars);
+    // 자리 주인이 한 사람으로 정해졌으면(「장덕민님의 연지 묘와 일지 신은 서로 원진」) 두 사람 사이에 같은 글자 짝이 있어도 사주 안 관계다.
+    if (x.owner === -2 && [...pair.relations, ...pair.stemClashes].some(fits)) continue;
+    const owner = x.owner >= 0 ? x.owner : ctx.people.findIndex(p => [...p.facts.relations, ...p.facts.stemClashes].some(fits));
+    if (owner < 0 || ![...ctx.people[owner].facts.relations, ...ctx.people[owner].facts.stemClashes].some(fits)) continue;
+    const other = ctx.people[1 - owner];
+    if (both || other.names?.test(sen)) return { rule: "fact_relation", detail: `「${x.text}」는 ${ctx.people[owner].facts.name}님 사주 안의 관계다(두 사람 사이 관계가 아니다)` };
+  }
+  return null;
+}
 
 /** 세운이 원국과 관계가 있는데 「건드리지 않는 해」. */
 function annualNoTouch(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen): FactHit | null {
@@ -444,7 +503,7 @@ const TEN_GODS = ["비견", "겁재", "식신", "상관", "편재", "정재", "�
 /** 십성 이름 뒤는 조사·띄어쓰기·문장부호만(「정관이」「편관의」는 잡고 「정관념」은 뺀다). */
 const TG_AFTER = "(?=[이가은는을를의도과와로으에만]|\\s|[,.?!)·(]|$)";
 const TG_RE = new RegExp(`(?<![가-힣])(${TEN_GODS.join("|")})${TG_AFTER}`, "g");
-const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|나란히 (가졌|있)|똑같이 (가졌|있)/;
+const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|나란히 (가졌|있)|똑같이 (가졌|있)|두 사람의? (사주|원국|명식|여덟 글자)(에는|에|엔)/;
 /** 문단이 두 사람 공통을 말하는 꼴(「두 사람에게 있는 귀인의 기운」 → 다음 문장 「천덕귀인과 월덕귀인은 …」). */
 const BOTH_CTX = /두 사람에게 (?:모두 |다 )?있는|두 사람 모두|두 사람 다|두 분 모두|둘 다/;
 /** 궁합 「두 사람 모두 천덕귀인」: 한 사람에게만 있는 신살·귀인·십성을 두 사람 공통으로 말함(W3 1차 궁합 A·A+연결). 이름이 없는 문장은 문단의 공통 말도 본다. */
@@ -519,7 +578,7 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
 
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

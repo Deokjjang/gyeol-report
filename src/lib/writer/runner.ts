@@ -126,6 +126,8 @@ export type WriterOptions = {
   readonly fallback?: WriterTarget | null;
   /** 지식 DB(P6c A1): 작가 입력의 원문 문장을 재료로 바꾼다. */
   readonly knowledge?: Knowledge;
+  /** W5 R1: 정답지(사실 표시 표를 만든다). 없으면 표시 없이 예전 브리프. */
+  readonly facts?: import("@/lib/factsheet/build").FactSheet | null;
   /** 원문 저장소(최종판 0-2). 같은 입력 해시면 다시 부르지 않는다. */
   readonly cache?: WriterCache | null;
   /** 이 실행이 더 쓸 수 있는 비용(USD, 최종판 0-6). 쓴 비용이 이 값 이상이면 더 부르지 않는다. 없으면 상한 없음. */
@@ -329,7 +331,7 @@ const writtenOf = (s: Session, chapters: readonly WriterChapter[]) => chapters.f
 
 export async function runWriter(o: WriterOptions): Promise<WriterRun> {
   const s = session(o);
-  const prompt = buildWriterPrompt(o.brief, { knowledge: o.knowledge });
+  const prompt = buildWriterPrompt(o.brief, { knowledge: o.knowledge, facts: o.facts });
   for (const c of await o.sink.load()) if (s.plan.has(c.n) && !s.drafts.has(c.n)) s.drafts.set(c.n, { chapter: c.chapter, source: c.source });
   const missing = () => prompt.chapters.filter(c => !s.drafts.has(c.n));
   if (missing().length) {
@@ -341,7 +343,7 @@ export async function runWriter(o: WriterOptions): Promise<WriterRun> {
     const budget = o.budgetMs ?? WRITER_TIME_BUDGET_MS;
     for (let round = 0; round < 3 && missing().length && !s.stale; round++) {
       const rest = missing(), cont = s.drafts.size > 0;
-      const p = cont ? buildContinuationPrompt(o.brief, writtenOf(s, prompt.chapters), rest, { knowledge: o.knowledge }) : prompt;
+      const p = cont ? buildContinuationPrompt(o.brief, writtenOf(s, prompt.chapters), rest, { knowledge: o.knowledge, facts: o.facts }) : prompt;
       const kind = cont ? "continuation" as const : "first" as const;
       // 이어 쓰기는 예전처럼 검수·수리 몫을 빼고도 1분 넘게 남았을 때만(시간이 없으면 다음 시도가 빠진 장만 쓴다).
       if (round > 0 && leftOf(s) - postWriterMs(budget) < 60_000) { skipWriter(s, kind, stage, maxTokensFor(rest, s.target.model), "time"); break; }

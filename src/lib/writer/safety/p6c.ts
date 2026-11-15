@@ -20,6 +20,7 @@ import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style"
 import { exposureOf } from "./exposure";
 import { unbackedScene, type InfoCard } from "./info";
 import { personaHit, type PersonaCtx } from "./persona";
+import { MARK_LEFT, renderMarks, type MarkTable } from "../marks";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -38,7 +39,9 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   // W3 P3 4절: 판정 등급어·생성 규칙 문구 노출(exposure.ts) · 보강: 카드에 없는 구체 장면 단정(info.ts concreteScene, 문체 규칙 — 수리로만)
   | "grade_leak" | "rule_leak" | "scene_unbacked"
   // W4 Q2-4: 물음 상한(장마다 1개, 같은 꼬리 책 6번 — 수리 → 남으면 그 문장만 뗀다) · 문체 예시 세 어절 복사(HARD, 수리) · 남의 성격 문장(차원 문구 방향 틀림 HARD / 그대로 복사 SOFT)
-  | "question_excess" | "example_words" | "persona_mismatch" | "persona_copy";
+  | "question_excess" | "example_words" | "persona_mismatch" | "persona_copy"
+  // W5 R1: 사실 표시(⟦…⟧)가 남았거나 모르는·깨진 표시(HARD, 문장 떼기)
+  | "fact_mark";
 export type CardField = "image" | "todo" | "review" | "caution" | "good";
 /** paragraph: -1 = 소제목, card가 있으면 카드 줄. */
 export type LintFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly card?: CardField; readonly rule: P6cRule; readonly sentence: string; readonly hint: string; readonly detail?: string };
@@ -50,7 +53,7 @@ export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "sch
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
   "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role",
-  "grade_leak", "rule_leak", "fact_count", "example_words", "persona_mismatch"]);
+  "grade_leak", "rule_leak", "fact_count", "example_words", "persona_mismatch", "fact_mark"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
 export type LintCtx = {
@@ -124,6 +127,8 @@ export type LintCtx = {
   readonly questionCap?: boolean;
   /** W3 P3 보강: 4종 카드 책의 절 카드(장면 근거) · 입력의 직업 장면. 있으면 카드에 없는 구체 장면 단정을 scene_unbacked(문체, 수리로만)로 건다. */
   readonly sceneCards?: readonly InfoCard[]; readonly sceneProps?: readonly string[];
+  /** W5 R1: 사실 표시 표(정리 단계가 ⟦…⟧를 정답지 구절로 바꾼다). */
+  readonly marks?: MarkTable;
 };
 const PEAK = /가장 (거센|센|강한|뜨거운|크게 움직이는|큰|좋은|활발한|바쁜)( [가-힣]+)? ?(달|해|때|시기)/;
 /** 대운·세운(달력 책): 고친 문장에 「지금·지금의·지금은」을 다시 쓰면 또 걸린다. */
@@ -135,6 +140,7 @@ const ROUGH_FLOW = /흐름(?:이|은|도)? (?:한결 |훨씬 |더 )?(?:거세|�
 export const HINT: Readonly<Record<P6cRule, string>> = {
   ...STYLE_HINT,
   fn_role: "MBTI 기능 순서(주기능·부기능)를 틀렸다 → detail의 맞는 기능으로 고치거나 순서 말을 뺀다",
+  fact_mark: "사실 표시(⟦…⟧)가 바뀌지 않고 남았다(모르는 번호·깨진 꼴) → 이 문장은 뗀다",
   grade_leak: "엔진 판정 등급 말(신약·신강·중화·오행 과다·'세기는 보통'·'힘은 약입니다')을 그대로 썼다 → 등급 이름 없이 뜻으로만 쓴다(예: '혼자 버티는 힘이 여린 편이라 도움을 빌리면 수월해요', '흙 기운이 많은 편', '값을 받는 힘이 고르게 있는 편')",
   question_excess: "물음이 너무 많다(물음은 장마다 하나, 같은 꼬리 「~죠?」 등은 책에서 6번까지: detail) → 이 물음은 그 소제목 근거에서 나온 단정 문장으로 바꾼다(물음표 없이)",
   example_words: "문체 예시의 구절을 그대로 옮겼다(detail) → 이 고객의 근거로 새 문장을 짓는다(예시의 낱말 순서·표현을 쓰지 않는다)",
@@ -313,7 +319,7 @@ export type TidyCount = { readonly prefix: number; readonly mbtiCode: number; re
  * 한 자리 수 + 고유어 단위는 고유어 수("1해" → "한 해"). 본문 기준일 줄은 뗀다(1-13).
  */
 /** AM2: surfaceOnly면 표면 정리(한자·괄호 조사·약어 꼴·겹친 낱말·같은 문장 연속·장 번호/명리학 머리)만 한다. 뜻을 바꾸는 치환(시점 말·해 이름·달 이름·면책 마디 떼기)은 하지 않는다(세운·대운 장 묶음 — 걸리면 묶음을 다시 쓴다). */
-export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear">> & { readonly surfaceOnly?: boolean }): { chapters: FinalChapter[]; count: TidyCount } {
+export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "mbtiPlain" | "monthChapters"> & Partial<Pick<LintCtx, "careerGroups" | "baseDate" | "strictTime" | "fact" | "calendarChapters" | "monthNames" | "bookYear" | "marks">> & { readonly surfaceOnly?: boolean }): { chapters: FinalChapter[]; count: TidyCount } {
   const surface = Boolean(ctx.surfaceOnly);
   let prefix = 0, mbtiCode = 0, monthNow = 0, keyMarks = 0, hanja = 0, numbers = 0, fnJoin = 0, words = 0, groupNames = 0;
   const definedGroups = new Set<string>();
@@ -353,7 +359,8 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
   });
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => {
     let ps = s.paragraphs.map(p => {
-      let q = p;
+      // W5 R1: 사실 표시 → 정답지 구절(뒤 조사 맞춤). 모르는 표시는 그대로 남아 fact_mark(HARD)가 잡는다.
+      let q = ctx.marks ? renderMarks(p, ctx.marks) : p;
       if (L.MYEONGRI_PREFIX.test(q)) { const r = L.dropMyeongriPrefix(q); if (r !== q) prefix++; q = r; }
       // 장 번호 참조("7장에서 본 것처럼,")는 뜻을 바꾸지 않고 뗄 수 있는 꼴만 뗀다(P6d C). 나머지는 검사가 수리로 보낸다.
       if (D.CHAPTER_REF.test(q)) { const r = D.dropChapterRef(q); if (r !== q) prefix++; q = r; }
@@ -398,7 +405,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     const marks = ps.join("").match(L.KEY_MARK)?.length ?? 0;
     ps = oneKeySpan(ps);
     keyMarks += marks - (ps.join("").match(L.KEY_MARK)?.length ?? 0);
-    let heading = E.plainWords(E.stripHanja(L.dropMyeongriPrefix(s.heading).replace(L.KEY_MARK, "")).text).text;
+    let heading = E.plainWords(E.stripHanja(L.dropMyeongriPrefix(ctx.marks ? renderMarks(s.heading, ctx.marks) : s.heading).replace(L.KEY_MARK, "")).text).text;
     if (ctx.careerGroups) heading = E.careerGroupNames(heading, new Set(Object.keys(E.GROUP_EASY_NAME)), true).text;
     return { ...s, heading, paragraphs: ps };
   }) }));
@@ -440,7 +447,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
     const writer = c.source !== "deterministic";
     let jobUses = 0;
     c.sections.forEach((s, si) => {
-      if (s.heading && !/^\d{4}(-M\d{2})?$/.test(s.heading)) { const fx = ctx.fact ? factCheck(s.heading, ctx.fact, s.heading, c.n) : null; const r = fx ? null : sentenceRules(s.heading, c.n, ctx, true); if (fx) flag({ chapter: c.n, section: si, paragraph: -1, rule: fx.rule, sentence: s.heading, detail: fx.detail }); else if (r) flag({ chapter: c.n, section: si, paragraph: -1, rule: r, sentence: s.heading }); }
+      if (s.heading && MARK_LEFT.test(s.heading)) flag({ chapter: c.n, section: si, paragraph: -1, rule: "fact_mark", sentence: s.heading, detail: s.heading.match(MARK_LEFT)![0] });
+      else if (s.heading && !/^\d{4}(-M\d{2})?$/.test(s.heading)) { const fx = ctx.fact ? factCheck(s.heading, ctx.fact, s.heading, c.n) : null; const r = fx ? null : sentenceRules(s.heading, c.n, ctx, true); if (fx) flag({ chapter: c.n, section: si, paragraph: -1, rule: fx.rule, sentence: s.heading, detail: fx.detail }); else if (r) flag({ chapter: c.n, section: si, paragraph: -1, rule: r, sentence: s.heading }); }
       const key = s.heading, keyed = Boolean(c.keys?.includes(key));
       const yi = keyed ? ctx.yearIndex?.[key] : undefined, rel = keyed ? ctx.relationCount?.[key] : ctx.pairRelations, fl = keyed ? ctx.flow?.[key] : undefined;
       // AM 재생성 판독(major-1 2029): 대운 연도 key 안의 위치 말(「대운의 마지막 해」)은 기준 해가 아니라 그 해의 위치와 견준다(맞는 문단이 통째로 빠졌다).
@@ -453,6 +461,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
         for (const [i, raw] of sens.entries()) {
           const sen = stripMarks(raw);
           const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
+          // W5 R1: 바뀌지 않은 사실 표시(모르는 번호·깨진 꼴·대괄호로 바꿔 쓴 것)는 가장 먼저(사실을 확인할 수 없는 문장).
+          if (MARK_LEFT.test(sen)) { flag({ ...at, rule: "fact_mark", detail: sen.match(MARK_LEFT)![0] }); continue; }
           // 대운 연도의 위치 말은 가장 구체적인 사실이라 먼저 본다(수리 지시에 그 해의 위치를 준다).
           if (yi && D.dayunYearClaim(sen, yi.index, yi.total)) { flag({ ...at, rule: "dayun_year", detail: D.dayunYearClaim(sen, yi.index, yi.total)! }); continue; }
           // 최종판3 3: 정답지 대조(명확한 불일치만). 맞는 사실을 detail로 수리에 준다.

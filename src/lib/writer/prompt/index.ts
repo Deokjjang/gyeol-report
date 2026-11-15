@@ -14,9 +14,12 @@ import { GROUP_LEVEL_PLAIN, plainGrade } from "@/lib/brief/cards/features";
 export { plainGrade } from "@/lib/brief/cards/features";
 import type { SectionCardBrief } from "@/lib/brief/schema";
 import { GROUP_EASY_BY_NAME } from "@/lib/brief/labels";
+import type { FactSheet } from "@/lib/factsheet/build";
+import { buildMarks, writerMarks, type MarkTable } from "../marks";
 
 /** 작가 입력 옵션(P6c A1): 지식 DB가 있으면 원문 문장을 재료(씨앗·방향·핵심 뜻)로 바꿔 보낸다. 없으면(단위 시험) 브리프 그대로. */
-export type WriterInputOptions = { readonly knowledge?: Knowledge };
+/** W5 R1: facts(정답지)가 있으면 4종 브리프에 사실 표시(marks)를 넣는다 — 발행 렌더가 같은 표로 바꿔 넣는다(markTableFor). */
+export type WriterInputOptions = { readonly knowledge?: Knowledge; readonly facts?: FactSheet | null };
 
 export { WRITER_PROMPT_VERSION } from "./system";
 
@@ -163,7 +166,7 @@ export function renderWriterBrief(brief: Brief, opts: WriterInputOptions = {}): 
   return writerFacingText(renderWriterBriefRaw(brief, opts), Boolean(brief.design)) as Record<string, unknown>;
 }
 function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
-  const out = renderRaw(brief);
+  const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
   if (!opts.knowledge) return out;
   // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims).
   const claims = chapterClaims(brief, opts.knowledge);
@@ -299,6 +302,24 @@ function jobFilter(brief: Brief): { hint: (h: string, chapterId: string) => bool
   return { scene: s => !assumed(s), hint: (h, id) => !assumed(h) && !(full && !/^(work|money)$/.test(id) && jobWords.has(h)) };
 }
 
+/** W4 Q2-1 특성 자리(정답지로 맞춘 카드 자리의 쉬운 이름). 합충형해처럼 where(짝 자리 문장)가 있는 특성은 뺀다. W5 R1: 사실 표시 ⟦at:id⟧도 같은 값. */
+export function traitAtMap(brief: Brief): Map<string, string> {
+  const at = new Map((brief.design?.cards ?? []).flatMap(c => (c.system === "myeongri" && c.traitId && c.where.length ? [[c.traitId, c.where.map(easySlot).filter(Boolean).join(" · ")] as const] : [])));
+  for (const t of brief.traits) if (t.where) at.delete(t.id);
+  return at;
+}
+/** W5 R1: 작가 브리프와 발행 렌더가 같은 사실 표시 표를 쓴다. */
+export const markTableFor = (brief: Brief, facts: FactSheet | null | undefined): MarkTable => buildMarks(facts, brief, traitAtMap(brief));
+/** 사실 표시를 작가 브리프에 넣는다: marks 칸(표시 → 구절), 특성 자리 칸은 「⟦at:id⟧ = 자리」, 궁합 관계 문장 칸(같은 11줄 두 벌 + 요약)은 marks.between이 대신한다. */
+function withMarks(out: Record<string, unknown>, brief: Brief, t: MarkTable): Record<string, unknown> {
+  const view = writerMarks(t);
+  if (!view) return out;
+  const { chapters, ...head } = out;
+  const traits = (head.traits as { id: string; at?: string }[] | undefined)?.map(x => (x.at && t.has(`at:${x.id}`) ? { ...x, at: `⟦at:${x.id}⟧ = ${x.at}` } : x));
+  const compat = head.compatibility && view.between ? omit(head.compatibility as Record<string, unknown>, "dayRelations", "relationsPlain", "relationsSummary") : head.compatibility;
+  return { ...head, ...(compat ? { compatibility: compat } : {}), ...(traits ? { traits } : {}), marks: view, chapters };
+}
+
 function renderRaw(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
   const jf = jobFilter(brief);
@@ -309,7 +330,7 @@ function renderRaw(brief: Brief): Record<string, unknown> {
   const refined = Boolean(brief.design);
   const chartOf = refined ? plainChart : writerChart;
   // W4 Q2-1(Q1 표 2 R2): 특성 자리를 쉬운 이름으로(정답지로 맞춘 카드 자리 — 「태어난 달 땅 글자(월지)」). 합충형해는 where(짝 자리 문장)가 이미 있다.
-  const atOf = new Map((brief.design?.cards ?? []).flatMap(c => (c.system === "myeongri" && c.traitId && c.where.length ? [[c.traitId, c.where.map(easySlot).filter(Boolean).join(" · ")] as const] : [])));
+  const atOf = traitAtMap(brief);
   return {
     // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
     ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
