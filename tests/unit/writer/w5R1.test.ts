@@ -54,6 +54,12 @@ describe("R1 표시 바꿔 넣기 · 조사", () => {
     expect(renderMarks("⟦un:now⟧와 다음 흐름을 ⟦rel:1⟧를 통해", t)).toBe("기사 대운(정재의 10년)과 다음 흐름을 갑과 기 사이의 천간합(하늘 글자끼리 끌려 묶임)을 통해");
     expect(renderMarks("⟦rel:99⟧이 있어요.", t)).toBe("⟦rel:99⟧이 있어요.");
   });
+  it("신살 주인 표시: 문장이 이미 「두 사람 모두」를 말하거나 바로 앞에 주인 이름이 있으면 이름만(R4 판독 책의 한 문장 안 겹침)", () => {
+    const st = new Map([["star:1", { key: "star:1", kind: "star", text: "두 사람 모두에게 있는 현침살", bare: "현침살" } as Mark], ["star:6", { key: "star:6", kind: "star", text: "도윤님의 천덕귀인", bare: "천덕귀인", owner: "도윤님" } as Mark]]);
+    expect(renderMarks("⟦star:1⟧처럼 이 기운은 두 사람 모두에게 있습니다.", st)).toBe("현침살처럼 이 기운은 두 사람 모두에게 있습니다.");
+    expect(renderMarks("⟦star:1⟧은 말을 바늘처럼 만듭니다.", st)).toBe("두 사람 모두에게 있는 현침살은 말을 바늘처럼 만듭니다.");
+    expect(renderMarks("도윤님에게는 ⟦star:6⟧이 있어요. ⟦star:6⟧이 도와요.", st)).toBe("도윤님에게는 천덕귀인이 있어요. 도윤님의 천덕귀인이 도와요.");
+  });
   it("남은 표시·모르는 번호·깨진 꼴·대괄호로 바꿔 쓴 것은 fact_mark(HARD) — 정리 단계가 아는 표시는 바꾼 뒤라 걸리지 않는다", () => {
     expect(HARD_RULES.has("fact_mark")).toBe(true);
     const book = [ch(1, [["두 사람 사이에는 ⟦rel:1⟧이 있어요. 이것은 ⟦rel:99⟧이에요. 그리고 ⟦rel:2 같은 깨진 꼴도 있어요. 또 [rel:3]처럼 쓴 문장. 마지막은 rel:4 꼴이에요. 평범한 문장이에요."]])];

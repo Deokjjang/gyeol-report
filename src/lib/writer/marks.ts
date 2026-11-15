@@ -12,7 +12,7 @@ import { HALF_HAP_PLAIN, REL_PLAIN, SAMHYEONG_PLAIN } from "@/lib/brief/labels";
 import { isHapKind, relationName } from "@/lib/compat/relations";
 
 export type MarkKind = "rel" | "cnt" | "in" | "star" | "at" | "un";
-export type Mark = { readonly key: string; readonly kind: MarkKind; readonly text: string; readonly flow?: string };
+export type Mark = { readonly key: string; readonly kind: MarkKind; readonly text: string; readonly flow?: string; readonly bare?: string; readonly owner?: string };
 export type MarkTable = ReadonlyMap<string, Mark>;
 
 const HANGUL: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해" };
@@ -45,10 +45,19 @@ export const MARK_LEFT = /⟦|⟧|\[\[?(?:rel|cnt|in|star|at|un):[0-9a-z]{1,12}\
 /** 표시를 구절로 바꾼다. 바로 뒤 조사(은/는·이/가·을/를·와/과·으로/로·이에요/예요 등)는 받침에 맞춘다. 모르는 표시는 그대로 둔다(검사가 잡는다). */
 export function renderMarks(text: string, table: MarkTable | null | undefined): string {
   if (!table?.size || !text.includes("⟦")) return text;
-  return text.replace(new RegExp(`${MARK_RE.source}(${PARTICLE_RE.source.slice(1)})?`, "g"), (all, kind: string, id: string, p?: string) => {
+  return text.replace(new RegExp(`${MARK_RE.source}(${PARTICLE_RE.source.slice(1)})?`, "g"), (...g: unknown[]) => {
+    const [all, kind, id, p] = g as [string, string, string, string | undefined], at = g[g.length - 2] as number, whole = g[g.length - 1] as string;
     const m = table.get(`${kind}:${id}`);
     if (!m) return all;
-    return m.text + (p ? fixParticle(m.text, p) : "");
+    // R4 판독 책(1차 궁합): 「⟦star:1⟧처럼 이 기운은 두 사람 모두에게 있습니다」 → 「두 사람 모두에게 있는 현침살처럼 … 두 사람 모두에게」 겹침.
+    // 신살 주인을 문장이 이미 말했으면(같은 문장에 「두 사람 모두·둘 다」, 바로 앞에 주인 이름) 이름만 넣는다.
+    let t = m.text;
+    if (m.bare) {
+      const start = Math.max(whole.lastIndexOf(".", at), whole.lastIndexOf("?", at), whole.lastIndexOf("!", at)) + 1, endRel = whole.slice(at).search(/[.?!]/);
+      const sentence = (whole.slice(start, at) + whole.slice(at + all.length, endRel < 0 ? undefined : at + endRel)).replace(MARK_RE, "");
+      if (/두 사람 모두|두 분 모두|둘 다|두 사람에게|두 사람의 사주/.test(sentence) || (m.owner && whole.slice(Math.max(0, at - 12), at).includes(m.owner))) t = m.bare;
+    }
+    return t + (p ? fixParticle(t, p) : "");
   });
 }
 
@@ -103,7 +112,7 @@ const naturalAt = (at: string) => { const xs = at.split(" · ").filter(Boolean);
 export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, traitAt: ReadonlyMap<string, string>): MarkTable {
   const out = new Map<string, Mark>();
   if (!sheet || !brief.design) return out;
-  const add = (kind: MarkKind, id: string, text: string, flow?: string) => out.set(`${kind}:${id}`, { key: `${kind}:${id}`, kind, text, ...(flow ? { flow } : {}) });
+  const add = (kind: MarkKind, id: string, text: string, flow?: string, extra: Partial<Pick<Mark, "bare" | "owner">> = {}) => out.set(`${kind}:${id}`, { key: `${kind}:${id}`, kind, text, ...(flow ? { flow } : {}), ...extra });
   const compat = Boolean(sheet.pair && brief.compatibility && sheet.people.length === 2);
   const calls = compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName] : [brief.person.callName];
   const people = sheet.people.map((p, i) => ({ name: p.name, call: calls[i] ?? `${p.name}님` }));
@@ -120,7 +129,7 @@ export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, tr
     const [a, b] = sheet.people, names = [...new Set([...a.shinsal, ...b.shinsal].map(s => s.name))];
     names.forEach((n, i) => {
       const ha = a.shinsal.some(s => s.name === n), hb = b.shinsal.some(s => s.name === n);
-      add("star", String(i + 1), ha && hb ? `두 사람 모두에게 있는 ${n}` : `${people[ha ? 0 : 1].call}의 ${n}`);
+      add("star", String(i + 1), ha && hb ? `두 사람 모두에게 있는 ${n}` : `${people[ha ? 0 : 1].call}의 ${n}`, undefined, { bare: n, ...(ha && hb ? {} : { owner: people[ha ? 0 : 1].call }) });
     });
   }
   // R4(1차 종합): 자리가 없는 특성(빈 at)은 표에 넣지 않는다 — 작가가 지어 쓴 ⟦at:t12⟧가 빈칸으로 바뀌어 「의 지키는 힘이…」 조각이 됐다. 없는 번호는 fact_mark로 떼어진다.
