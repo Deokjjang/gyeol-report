@@ -34,9 +34,10 @@ describe("R2 규칙별 처리(R0 표)", () => {
 
 describe("R2 문장 떼기 · 접속어", () => {
   it("뗀 뒤 다음 문장 접속어를 떼고, 다음 문장이 앞말에 기대면 SOFT는 남긴다(HARD는 함께 뗀다), 앞 물음의 답이면 물음도 뗀다", () => {
-    const p = "첫 문장은 근거예요. 두 번째 문장은 재탕이에요. 그래서 세 번째 문장이 이어져요. 네 번째 문장도 있어요.";
-    const r = dropSentences([ch(1, [[p, "다른 문단이에요. 또 다른 문장이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "두 번째 문장은 재탕이에요.", rule: "phrase_repeat", hard: false }]);
-    expect(r.chapters[0].sections[0].paragraphs[0]).toBe("첫 문장은 근거예요. 세 번째 문장이 이어져요. 네 번째 문장도 있어요.");
+    // W6.1: 번호 말(「두 번째 …」「네 번째 …」)로 시작하는 문장이 같은 장에 둘 이상이면 목록 항목이라 개선 떼기를 하지 않는다 — 이 시험의 뜻(접속어 떼기)은 번호 없는 문장으로 본다.
+    const p = "첫 문장은 근거예요. 가운데 문장은 재탕이에요. 그래서 다음 문장이 이어져요. 마지막 문장도 있어요.";
+    const r = dropSentences([ch(1, [[p, "다른 문단이에요. 또 다른 문장이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "가운데 문장은 재탕이에요.", rule: "phrase_repeat", hard: false }]);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toBe("첫 문장은 근거예요. 다음 문장이 이어져요. 마지막 문장도 있어요.");
     const lean = "첫 문장이에요. 같은 말을 또 했어요. 이처럼 앞말에 기대는 문장이에요. 끝 문장이에요.";
     const soft = dropSentences([ch(1, [[lean, "다른 문단이에요."]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "같은 말을 또 했어요.", rule: "phrase_repeat", hard: false }]);
     expect(soft.chapters[0].sections[0].paragraphs[0]).toBe(lean);

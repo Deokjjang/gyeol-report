@@ -3,7 +3,7 @@
  * 지적된 문장만 고친다(문단 전체를 다시 쓰지 않는다). 정답지(엔진 사실)를 함께 준다.
  * 수리본은 다시 검사하고, 실패한 문장만 지운다. 지우면 문단이 깨지는 경우(앞말에 기대는 다음 문장, 소제목의 마지막 문단)는 원문을 두고 기록한다.
  */
-import { dependsOnRemoved, removeSentenceAt } from "./safety/orphan";
+import { dependsOnRemoved, listItemIn, removeSentenceAt } from "./safety/orphan";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
@@ -292,6 +292,11 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
       const lost = lostFactTokens(a.before, here, ctx.names, ex);
       if (lost.length) { rule = "repair_fact_lost"; detail = lost.join(","); }
     }
+    // ④ W6.1 다시 발행(2차 커리어 1장): 수리가 유형 이름(「규칙형」)을 다른 이름(「즉흥형」)으로 바꿨는데 같은 문단 다른 문장은 옛 이름(「규칙형 몰입」)을 그대로 쓰면 같은 문단 안 모순이 된다 → 원문으로.
+    if (!rule) { const L = (x: string) => new Set([...x.matchAll(/([가-힣]{2,3}형)(?=이에요|이고|입니다|이라|이며|으로|의|[,\s])/g)].map(m => m[1]));
+      const lb = L(a.before), la = L(here), gone = [...lb].filter(x => !la.has(x)), added = [...la].filter(x => !lb.has(x));
+      const others = ss.filter((_, j) => j !== i).join(" ");
+      if (gone.length && added.length) { const kept = gone.find(x => others.includes(x)); if (kept) { rule = "repair_label_flip"; detail = `${kept}→${added.join("·")}`; } } }
     // ③ 예고만 남음.
     if (!rule && isEmptyPreview(here, ss[i + 1]?.replace(/[⟪⟫]/g, "")) && !isEmptyPreview(a.before, ss[i + 1]?.replace(/[⟪⟫]/g, ""))) rule = "repair_empty_preview";
     if (!rule) continue;
@@ -302,7 +307,7 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
   }
   return { chapters: out, reverted };
 }
-export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
+export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "list" | "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 /** W6 S0-1: improve(rule, detail)가 참인 규칙(개선)은 지우고 난 문단이 3문장 이상 남을 때만 지운다(아니면 kept: "thin" 기록). */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean, o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; deleted: Deleted[] } {
@@ -320,10 +325,12 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     // W6.1 P2: 기대는 다음 문장 판정은 repairPlan.dropSentences와 같은 orphan.dependsOnRemoved(지시어·되받기·「~도 함께」·비교 꼬리·주어를 받는 문장). 개선 규칙이면 원문을 둔다.
     const dep = dependsOnRemoved(ss[i], ss[i + 1], o), leans = dep !== null;
     if (leans && improve?.(f.rule, f.detail)) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
+    if (improve?.(f.rule, f.detail) && listItemIn(ss[i], ch.sections.flatMap(x => x.paragraphs).join("\n"))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "list" }); continue; }
     if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
     const { sentences: rest1, stripped } = removeSentenceAt(ss, i);
-    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:${dep}` });
-    const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
+    // 기대는 문장을 지우면 그다음 문장이 또 그것에 기댈 수 있다(「…덕이라, …」 → 「이 덕은 …」) — 3문장까지 따라 지운다.
+    let rest0 = rest1;
+    if (leans) { let prevGone = f.sentence; for (let n = 0; n < 3 && i < rest0.length; n++) { const d = n === 0 ? dep : dependsOnRemoved(prevGone, rest0[i], o); if (!d) break; deleted.push({ at, sentence: rest0[i].replace(/[⟪⟫]/g, ""), rule: `${f.rule}:${d}` }); prevGone = rest0[i]; rest0 = rest0.filter((_, j) => j !== i); } }
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
     // W6 S4 3판(2차 종합 4장): 지운 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」도 같은 고아다.
     const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && (/셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) || ANAPHOR_SHORT.test(rest0[i].replace(/[⟪⟫]/g, "").trim())) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);

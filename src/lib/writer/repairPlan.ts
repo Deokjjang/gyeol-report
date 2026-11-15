@@ -8,7 +8,7 @@
  */
 import type { FinalChapter } from "./safety";
 import { splitSentences } from "./safety/patterns";
-import { ANAPHOR_SHORT, dependsOnRemoved, removeSentenceAt, stripConnective, SUBJECT_TERM } from "./safety/orphan";
+import { ANAPHOR_SHORT, dependsOnRemoved, listItemIn, removeSentenceAt, stripConnective, SUBJECT_TERM } from "./safety/orphan";
 import { HARD_RULES, type LintFlag, type P6cRule } from "./safety/p6c";
 import type { AppliedRepair } from "./repair3";
 import { gateClassOf, IMPROVE_DROP_MIN_LEFT } from "./gate";
@@ -50,7 +50,7 @@ const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습
  */
 export const leadNamesSubject = (lead: string, next: string | undefined): boolean => next !== undefined && SUBJECT_TERM.test(lead) && !SUBJECT_TERM.test(next);
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
-export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" };
+export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" | "list" };
 export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean; readonly detail?: string };
 /** W6 S0-1: 개선 규칙은 떼고 난 문단이 IMPROVE_DROP_MIN_LEFT(3)문장 이상일 때만 뗀다(차단 규칙은 그대로). */
 export const improveOnly = (rule: string, detail?: string) => gateClassOf(rule, detail) === "improve";
@@ -70,6 +70,8 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     const inSection = sec.paragraphs.reduce((n, q) => n + splitSentences(q).length, 0);
     if (!t.hard && /⟪/.test(ss[i])) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "key" }); continue; }
     if (!t.hard && inSection <= 2) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "only_sentence" }); continue; }
+    // W6.1: 목록 항목(「셋, …」「첫 번째 …」)은 개선 규칙으로 떼지 않는다 — 번호가 빈다.
+    if (improveOnly(t.rule, t.detail) && listItemIn(ss[i], ch.sections.flatMap(x => x.paragraphs).join("\n"))) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "list" }); continue; }
     // W6 S4(2차 연애·종합): 문단 첫 문장은 주어(신살·십성 이름)를 꺼내는 자리라, 개선 규칙으로 떼면 다음 문장이 주어 없이 남는다(「속마음이 … 드러나는 힘이라」). 개선 규칙은 문단 첫 문장을 떼지 않는다.
     if (improveOnly(t.rule, t.detail) && i === 0 && leadNamesSubject(norm(ss[0]), ss[1] !== undefined ? norm(ss[1]) : undefined)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "lead" }); continue; }
     const next = ss[i + 1] !== undefined ? norm(ss[i + 1]) : undefined;
@@ -79,7 +81,7 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     let rest = removeSentenceAt(ss, i).sentences;
-    if (leans) { dropped.push({ at, sentence: rest[i], rule: `${t.rule}:${dep}` }); rest = rest.filter((_, j) => j !== i); }
+    if (leans) { let prevGone = t.sentence; for (let n = 0; n < 3 && i < rest.length; n++) { const d = n === 0 ? dep : dependsOnRemoved(prevGone, norm(rest[i]), o); if (!d) break; dropped.push({ at, sentence: norm(rest[i]), rule: `${t.rule}:${d}` }); prevGone = norm(rest[i]); rest = rest.filter((_, j) => j !== i); } }
     if (i > 0 && ASKS.test(norm(ss[i - 1]).trim()) && !/⟪/.test(ss[i - 1]) && !ASKS.test(t.sentence.trim()) && (rest.length > 1 || sec.paragraphs.filter(Boolean).length > 1)) { dropped.push({ at, sentence: norm(ss[i - 1]), rule: `${t.rule}:question` }); rest = rest.filter((_, j) => j !== i - 1); }
     (sec.paragraphs as string[])[t.paragraph] = rest.join(" ");
     dropped.push({ at, sentence: t.sentence, rule: t.rule });

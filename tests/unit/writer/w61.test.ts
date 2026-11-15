@@ -2,6 +2,8 @@
 import { describe, expect, it } from "vitest";
 import { brokenSentence, contrastSame, fixBareParenParticle, glossEchoes, stripGlossEcho } from "@/lib/writer/safety/broken";
 import { dependsOnRemoved } from "@/lib/writer/safety/orphan";
+import { relationLinkAfter, relationLinkFrame } from "@/lib/writer/safety/contradiction";
+import { revertRepairRegressions } from "@/lib/writer/repair3";
 import { contradictionFlags, type ContradictionCtx } from "@/lib/writer/safety/contradiction";
 import { dropSentences } from "@/lib/writer/repairPlan";
 import { deleteFlagged } from "@/lib/writer/repair3";
@@ -154,5 +156,40 @@ describe("W6.1 P4 렌더 ⑤ — 관계 구절 뒤에서 같은 자리를 또 �
   it("뒤에 「태어난 해·날·시각」이 오면 글자만 꼴, 아니면 그대로", () => {
     expect(renderMarks("⟦in:1⟧가 있어서, 태어난 해·날·시각의 세 땅 글자가 한데 모여요.", table)).toBe("술·인·오가 모인 삼합(세 글자가 한 기운으로 모임)이 있어서, 태어난 해·날·시각의 세 땅 글자가 한데 모여요.");
     expect(renderMarks("⟦in:1⟧가 있어서, 한 방향으로 힘이 쏠려요.", table)).toBe("태어난 해·날·시각 땅 글자 술·인·오가 모인 삼합(세 글자가 한 기운으로 모임)이 있어서, 한 방향으로 힘이 쏠려요.");
+  });
+});
+
+describe("W6.1 다시 발행 읽기에서 찾은 것", () => {
+  const names = [["가람"], ["나래"]];
+  it("궁합 주어 판정은 이름이 문장 머리 주어일 때만 · 근거 이름 「…덕이라」는 궁합도", () => {
+    expect(dependsOnRemoved("그중 가람님이 더 그렇습니다.", "그래서 해결을 묻는 쪽과 마음을 묻는 쪽이 갈려요.", { names })).toBeNull();
+    expect(dependsOnRemoved("두 사람에게는 천덕귀인과 월덕귀인이 힘이 되어 줘요.", "어려움의 세기를 낮추고 다툼의 온도를 낮추는 덕이라, 크게 번지지 않아요.", { names })).toBe("subject");
+  });
+  it("차단 떼기는 기대는 문장을 3문장까지 따라 지운다", () => {
+    const paras = ["두 사람은 서로 채워 주는 사이예요.", "두 사람에게는 천덕귀인과 월덕귀인이 힘이 되어 줘요. 어려움의 세기를 낮추는 덕이라, 크게 번지지 않아요. 이 덕은 부드러운 태도 안에서 잘 작동해요.", "또 천을귀인이 있어서 막힐 때 길이 열려요."];
+    const f = { chapter: 3, section: 0, paragraph: 1, sentence: "두 사람에게는 천덕귀인과 월덕귀인이 힘이 되어 줘요.", rule: "fact_term" } as LintFlag;
+    const r = deleteFlagged(ch(paras), [f], HARD_RULES, improveOnly, { names });
+    expect(r.chapters[0].sections[0].paragraphs).toEqual([paras[0], paras[2]]);
+  });
+  it("목록 항목은 개선 떼기로 떼지 않는다", () => {
+    const p = ["원칙은 세 개예요. 하나, 손실 금액을 적어 보세요. 둘, 시세를 조사하세요. 셋, 감당 범위를 먼저 적고 결정하세요. 셋째는 결정 습관에서 나온 원칙이에요."];
+    const d = dropSentences(ch(p), [{ chapter: 3, section: 0, paragraph: 0, sentence: "셋, 감당 범위를 먼저 적고 결정하세요.", rule: "review_R", hard: false }]);
+    expect(d.dropped[0].kept).toBe("list");
+    expect(dependsOnRemoved("셋, 감당 범위를 먼저 적고 결정하세요.", "셋째는 결정 습관에서 나온 원칙이에요.")).toBe("leans");
+  });
+  it("관계 문단 뒤 「이 … 결을 더 키웁니다」 · 「사주의 구조도 … 쪽을 가리킵니다」", () => {
+    const anchor = /ENTP|Ne|ISTP|Ti|Se/;
+    expect(relationLinkAfter("ENTP의 끝없는 가능성(Ne)이 이 자유로운 결을 더 키웁니다.", "나래님의 사주에는 태어난 달과 날 사이에 자유파가 있어요.", anchor)).not.toBeNull();
+    expect(relationLinkFrame("사주의 구조도 한곳으로 모이는 쪽을 가리킵니다.", "술·인·오가 모인 삼합이 있어서 힘이 쏠려요.", "부기능인 지금 이 순간 감각(Se)은 손을 빠르게 해요.", anchor)).not.toBeNull();
+  });
+  it("「반면」: 낱말 셋 이어짐이 끊겨도 내용 낱말 셋 이상 같으면", () => {
+    expect(contrastSame("반면 손익 계산이 어려운 날에는 마음 가는 쪽으로 정하는 방식으로 메웁니다.", "의사결정은 마음이 먼저 가는 쪽으로 빠르게 정하는 직감형이에요.")).not.toBeNull();
+  });
+  it("수리가 유형 이름을 바꿨는데 같은 문단이 옛 이름을 쓰면 원문으로", () => {
+    const before = "몰입은 정해진 일과표대로 하루를 운영하는 규칙형이에요.", after = "몰입은 그날 끌리는 일에 바로 들어가는 즉흥형이에요.";
+    const chs = ch([`${after} 빠른 결정과 규칙형 몰입이 한 사람 안에서 같이 도는 셈이에요.`]);
+    const r = revertRepairRegressions(chs, [{ id: 1, kind: "sentence", at: "3.0.0", before, after, source: ["lint"] }] as never, { flags: [], names: [] });
+    expect(r.reverted[0]?.rule).toContain("repair_label_flip");
+    expect(r.chapters[0].sections[0].paragraphs[0]).toContain(before);
   });
 });

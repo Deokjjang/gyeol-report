@@ -85,7 +85,10 @@ const GENERIC = new Set(["편", "쪽", "것", "수", "때", "더", "잘", "있�
 const words3 = (s: string) => { const w = (s.replace(/[⟪⟫]/g, "").match(/[가-힣A-Za-z0-9]+/g) ?? []).map(x => x.replace(STRIP_P, "") || x); const out: string[] = []; for (let i = 0; i + 3 <= w.length; i++) if (w.slice(i, i + 3).some(x => x.length >= 2 && !GENERIC.has(x))) out.push(w.slice(i, i + 3).join(" ")); return out; };
 export function contrastSame(sen: string, prev: string): string | null {
   const m = sen.match(/^반면(?:에)?,? /); if (!m || /^반면(?:에)?,? [가-힣]{1,6}님/.test(sen)) return null;
-  const pv = new Set(words3(prev)); return words3(sen.slice(m[0].length)).find(x => pv.has(x)) ?? null;
+  const pv = new Set(words3(prev)), cur = sen.slice(m[0].length), tri = words3(cur).find(x => pv.has(x)); if (tri) return tri;
+  // W6.1 다시 발행(2차 커리어 1장): 수리가 앞 문장을 「마음이 먼저 가는 쪽으로」로 바꿔 낱말 셋 이어짐이 끊겨도, 내용 낱말 셋 이상이 같으면 같은 말이다.
+  const ws = (x: string) => new Set((x.replace(/[⟪⟫]/g, "").match(/[가-힣]+/g) ?? []).map(w => { const y = w.replace(STRIP_P, ""); return y.length >= 2 ? y : w; }).filter(w => w.length >= 2 && !GENERIC.has(w)));
+  const a = ws(prev), shared = [...ws(cur)].filter(w => a.has(w)); return shared.length >= 3 ? shared.slice(0, 3).join("·") : null;
 }
 const BOTH_WORD = /둘 다|두 사람 모두|두 사람 다|둘 모두|두 분 모두|두 사람은|둘은/;
 
