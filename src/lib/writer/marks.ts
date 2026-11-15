@@ -123,7 +123,8 @@ export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, tr
       add("star", String(i + 1), ha && hb ? `두 사람 모두에게 있는 ${n}` : `${people[ha ? 0 : 1].call}의 ${n}`);
     });
   }
-  for (const [id, at] of traitAt) add("at", id, compat && /^[ab]/.test(id) ? `${people[id.startsWith("a") ? 0 : 1].call}의 ${naturalAt(at)}` : naturalAt(at));
+  // R4(1차 종합): 자리가 없는 특성(빈 at)은 표에 넣지 않는다 — 작가가 지어 쓴 ⟦at:t12⟧가 빈칸으로 바뀌어 「의 지키는 힘이…」 조각이 됐다. 없는 번호는 fact_mark로 떼어진다.
+  for (const [id, at] of traitAt) if (at.trim()) add("at", id, compat && /^[ab]/.test(id) ? `${people[id.startsWith("a") ? 0 : 1].call}의 ${naturalAt(at)}` : naturalAt(at));
   const cd = compat ? null : brief.chart.currentDayun;
   if (cd) {
     add("un", "now", `${cd.ganji.hangul} 대운(${cd.tenGod}의 10년)`);
@@ -133,7 +134,7 @@ export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, tr
 }
 
 /** 작가 브리프 칸(marks): 표시 → 구절 목록. 자리(at)는 traits[].at 칸에 표시와 함께 준다(여기 목록에는 없음). */
-export const MARK_RULE = "⟦…⟧는 시스템이 오른쪽 구절로 바꿔 넣는 사실 표시다. 이 사실을 말할 때는 구절을 옮기거나 바꿔 쓰지 말고 표시를 그대로 쓴다(뒤 조사는 아무거나 — 시스템이 맞춘다). 목록에 없는 관계·주인·자리·대운은 쓰지 않는다. inside는 한 사람 사주 안의 일이라 두 사람 사이 일로 쓰지 않는다";
+export const MARK_RULE = "⟦…⟧는 시스템이 오른쪽 구절로 바꿔 넣는 사실 표시다. 이 사실을 말할 때는 구절을 옮기거나 바꿔 쓰지 말고 표시를 그대로 쓴다(뒤 조사는 아무거나 — 시스템이 맞춘다). 목록에 없는 관계·주인·자리·대운은 쓰지 않고, 표에 없는 번호를 만들지 않는다(traits[].at에 표시가 없는 특성은 이름으로만). inside는 한 사람 사주 안의 일이라 두 사람 사이 일로 쓰지 않는다";
 export function writerMarks(t: MarkTable): Record<string, unknown> | null {
   if (!t.size) return null;
   const list = (kind: MarkKind) => [...t.values()].filter(m => m.kind === kind).map(m => `⟦${m.key}⟧ = ${m.text}${m.flow ? ` — ${m.flow}` : ""}`);
