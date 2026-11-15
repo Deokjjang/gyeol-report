@@ -267,6 +267,7 @@ describe("S4 3판 직접 읽기 결함 고침(측정 8권 3판)", () => {
   it("MBTI 문단 뒤 「사주 쪽도 같은 방향을 가리킵니다」 + 다음 문장 관계 = 잇기 · 다음 문장이 관계가 아니면 아니다", () => {
     expect(relationLinkFrame("사주 쪽도 같은 방향을 가리킵니다.", "태어난 해·날·시각 땅 글자 술·인·오가 모인 삼합이 있어서 힘이 한 방향으로 쏠려요.", "ISTP는 손끝 해결사예요.", /ISTP/)).not.toBeNull();
     expect(relationLinkFrame("사주 쪽도 같은 방향을 가리킵니다.", "현침살이 있어서 숫자를 날카롭게 봐요.", "ISTP는 손끝 해결사예요.", /ISTP/)).toBeNull();
+    expect(relationLinkFrame("생각의 방향이 같은 쪽으로 몰린다는 점은 사주의 일간(日干)과 십성에서도 비슷하게 읽힙니다.", "술·인·오가 모인 삼합이 있어서 힘이 쏠려요.", "ISTP는 손끝 해결사예요.", /ISTP/)).not.toBeNull();
   });
   it("구절에 이미 특성 이름이 있는 자리 표시에는 이름을 또 붙이지 않는다(「자유파의 자유파」)", () => {
     const t = new Map<string, Mark>([["at:bt6", { key: "at:bt6", kind: "at", text: "하린님의 태어난 달과 날 사이의 자유파", short: "자유파", codes: ["자유파"], owner: "하린님", name: "자유파" }]]);
@@ -285,5 +286,8 @@ describe("S4 3판 직접 읽기 결함 고침(측정 8권 3판)", () => {
     const r = deleteFlagged([ch(1, [[p]])], [f], HARD_RULES);
     expect(r.chapters[0].sections[0].paragraphs[0]).not.toContain("더 그래요");
     expect(r.deleted.some(d => d.rule.endsWith(":orphan_summary"))).toBe(true);
+    // 수리 전 떼기(검수 C 등 차단)도 같은 고아를 함께 뗀다.
+    const d = dropSentences([ch(1, [[p]])], [{ ...f, rule: "review_C", hard: true }]);
+    expect(d.chapters[0].sections[0].paragraphs[0]).not.toContain("더 그래요");
   });
 });

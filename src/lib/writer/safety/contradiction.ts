@@ -125,7 +125,7 @@ const COMBINE = /만나(?:서|면|니)|겹쳐|겹치|합쳐|합치|더해져|맞
 /**
  * W6 S4 3판(1차 종합 1장): MBTI 문단 바로 뒤 「사주 쪽도 같은 방향을 가리킵니다.」 — 틀 문장이 다음 문장의 관계(삼합)를 MBTI 성향과 같은 방향으로 묶는다(잇는 말이 관계 문장 앞에 온 꼴).
  */
-const FRAME = /(?:사주|명리)[^.?!]{0,10}(?:같은 (?:방향|쪽)을 (?:가리|향)|같은 그림을|닮은 그림을|같은 말을 (?:해|합))/;
+const FRAME = /(?:사주|명리)[^.?!]{0,10}(?:같은 (?:방향|쪽)을 (?:가리|향)|같은 그림을|닮은 그림을|같은 말을 (?:해|합))|(?:사주|명리)[^.?!]{0,16}(?:에서도|도) (?:비슷하게|똑같이|그대로) (?:읽|보이|드러)/; // 4판: 수리가 「…점은 사주의 일간과 십성에서도 비슷하게 읽힙니다」로 다시 씀
 export function relationLinkFrame(sen: string, next: string | undefined, prev: string | undefined, mbtiAnchor: RegExp | null): string | null {
   if (!mbtiAnchor || !next || !prev || !FRAME.test(sen) || RELATION_TERM.test(sen) || !mbtiAnchor.test(prev)) return null;
   const rel = next.match(RELATION_TERM); return rel ? `틀 문장이 다음 문장의 「${rel[1]}」를 앞의 MBTI 성향과 같은 방향으로 이음` : null;

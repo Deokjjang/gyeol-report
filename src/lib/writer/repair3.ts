@@ -15,7 +15,7 @@ import { factTokens, type FactKind } from "./chunked/accept";
 import { relationName } from "@/lib/compat/relations";
 import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
-import { leadNamesSubject, modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
+import { ANAPHOR_SHORT, leadNamesSubject, modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
 - 지적된 문장만 고친다. 고친 답도 한 문장이다(문장을 늘리거나 앞뒤 문장 내용을 끌어오지 않는다 — 늘린 답은 버려진다). 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓴다.
@@ -326,7 +326,7 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
     // W6 S4 3판(2차 종합 4장): 지운 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」도 같은 고아다.
-    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && (/셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) || /^[^.?!]{0,20}(?:더|특히|역시|훨씬) 그(?:래요|렇습니다|렇죠)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim())) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && (/셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) || ANAPHOR_SHORT.test(rest0[i].replace(/[⟪⟫]/g, "").trim())) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
     const rest1b = orphan ? rest0.filter((_, j) => j !== i) : rest0;
     if (orphan) deleted.push({ at, sentence: rest0[i], rule: `${f.rule}:orphan_summary` });
     // W3 P3 6절(AM cut.ts ASKS): 지운 문장이 바로 앞 수사 물음의 답이었으면 물음도 뺀다(예고만 남은 물음). 문단이나 소제목에 다른 문장이 남을 때만.

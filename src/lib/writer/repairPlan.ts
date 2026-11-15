@@ -43,6 +43,8 @@ const norm = (s: string) => s.replace(/[⟪⟫]/g, "");
 /** 앞 문장 내용에 기대는 문장(지우면 고아가 된다). repair3 LEANS + 「~때문입니다」 이유 문장 + 「이건·그건」. */
 const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|그렇다면|그럼(?![가-힣])|그때마다|이 조합|이 두|이건|그건|이것은|그것은|이 |그 )/;
 const BECAUSE = /^[^.?!]{0,60}때문(?:입니다|이에요|이죠)[.!]?$/;
+/** W6 S4 4판(2차 종합 4장): 앞 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」 — 앞 문장을 떼면 기댈 곳이 없다(repair3.deleteFlagged 고아 요약과 같은 꼴). */
+export const ANAPHOR_SHORT = /^[^.?!]{0,20}(?:더|특히|역시|훨씬) 그(?:래요|렇습니다|렇죠)[.!]?$/;
 /** W6 S4(2차 커리어 8장): 문장 앞머리(20자 안)에서 앞 문장 내용을 「이 순서·이 방법」으로 받는 문장 — 개선 규칙으로 앞 문장을 떼면 가리킬 것이 없어진다(「셋째는 …」 원칙 내용이 빠지고 「이 순서가 방패가 됩니다」만 남음). */
 const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습관|규칙|원칙|장치|기준|패턴|방식|약속)/;
 /** 근거 이름(신살·십성·관계·자리) — 문단 첫 문장이 꺼낸 주어인지 본다. */
@@ -76,7 +78,7 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     // W6 S4(2차 연애·종합): 문단 첫 문장은 주어(신살·십성 이름)를 꺼내는 자리라, 개선 규칙으로 떼면 다음 문장이 주어 없이 남는다(「속마음이 … 드러나는 힘이라」). 개선 규칙은 문단 첫 문장을 떼지 않는다.
     if (improveOnly(t.rule, t.detail) && i === 0 && leadNamesSubject(norm(ss[0]), ss[1] !== undefined ? norm(ss[1]) : undefined)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "lead" }); continue; }
     const next = ss[i + 1] !== undefined ? norm(ss[i + 1]) : undefined;
-    const leans = next !== undefined && (LEANS.test(next) || BECAUSE.test(next));
+    const leans = next !== undefined && (LEANS.test(next) || BECAUSE.test(next) || ANAPHOR_SHORT.test(next.trim()));
     if (improveOnly(t.rule, t.detail) && next !== undefined && POINTS_BACK.test(next)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
