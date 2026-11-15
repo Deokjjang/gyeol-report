@@ -4,7 +4,9 @@ import { fixEchoPhrase, fixJudgeWords, glossEchoes, stripGlossEcho } from "@/lib
 import { dependsOnRemoved } from "@/lib/writer/safety/orphan";
 import { sentenceViolation } from "@/lib/writer/safety/sentences";
 import { groupClaims } from "@/lib/writer/safety/lint";
-import { dropSentences } from "@/lib/writer/repairPlan";
+import { dropBookTwins, dropSentences } from "@/lib/writer/repairPlan";
+import { tidyBook } from "@/lib/writer/safety/p6c";
+import { renderMarks } from "@/lib/writer/marks";
 
 const ch = (n: number, sections: string[][]) => ({ n, title: `${n}장`, source: "writer" as const, sections: sections.map((paragraphs, i) => ({ heading: `소제목 ${i + 1}`, paragraphs })) });
 const facts = { relationship: "single", children: "unknown", job: "employee", birthTimeKnown: true, mbti: "ISFP" } as never;
@@ -58,5 +60,28 @@ describe("W7 m2 사실", () => {
   });
   it("「만들고 넓히는 힘이 크기 때문에」는 식상 강 세기 말", () => {
     expect(groupClaims("만들고 넓히는 힘이 크기 때문에 판을 키우는 일에서 힘이 나요.")).toEqual([{ group: "식상", level: "강" }]);
+  });
+});
+
+describe("W7 m3 렌더 · 수리 뒤 같은 문장", () => {
+  it("MBTI 이름 되풀이는 낱말 머리에서만(「구하는」 안의 「하는」은 되풀이가 아니다)", () => {
+    const t = (x: string) => tidyBook([{ n: 2, id: "x", title: "x", source: "writer", chars: 0, sections: [{ heading: "h", paragraphs: [x] }] }], { mbtiPlain: { Te: "일 되게 하는 판단", Si: "지난 경험 기억" }, monthChapters: new Set() }).chapters[0].sections[0].paragraphs[0];
+    expect(t("상대의 의견을 구하는 모습이 낯설지 않으시죠? ENTJ는 일 되게 하는 판단(Te)이 주기능이에요.")).toBe("상대의 의견을 구하는 모습이 낯설지 않으시죠? ENTJ는 일 되게 하는 판단(Te)이 주기능이에요.");
+    expect(t("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)의 결과예요.")).toBe("지난 경험을 기준점으로 삼는 성향(Si)의 결과예요.");
+  });
+  it("작가가 「P님에게 Q님은」 틀을 쓰면 서로 보는 십성은 그 방향 이름만", () => {
+    const tb = new Map([["tg:ab", { key: "tg:ab", kind: "tg" as const, text: "가람님에게 비견인 나래님", short: "나래님" }], ["tg:ba", { key: "tg:ba", kind: "tg" as const, text: "나래님에게 겁재인 가람님", short: "가람님" }]]);
+    expect(renderMarks("나래님에게 가람님은 ⟦tg:ab⟧이에요.", tb)).toBe("나래님에게 가람님은 겁재예요.");
+    expect(renderMarks("가람님에게 나래님은 ⟦tg:ab⟧이에요.", tb)).toBe("가람님에게 나래님은 비견이에요.");
+    expect(renderMarks("두 사람은 ⟦tg:ab⟧이라 나란히 걸어요.", tb)).toBe("두 사람은 가람님에게 비견인 나래님이라 나란히 걸어요.");
+  });
+  it("수리 뒤 같은 문장 둘은 하나를 뗀다(다음 문장이 기대는 쪽은 남긴다)", () => {
+    const s = "숫자와 날짜, 순서 같은 구체 사실부터 확인하는 쪽은 두 사람 중 나래님이 더 강합니다.";
+    const book = [ch(1, [["짧은 글에서도 마음을 읽어요. " + s + " 용건만 있어도 마음은 같아요."]]), ch(2, [["비용이 어긋날 때가 있어요. " + s.replace("강합니다", "강해요") + " 그래서 나래님은 이미 정리하고 있어요."]])];
+    const r = dropBookTwins(book);
+    expect(r.dropped).toHaveLength(1);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toBe("짧은 글에서도 마음을 읽어요. 용건만 있어도 마음은 같아요.");
+    expect(r.chapters[1].sections[0].paragraphs[0]).toContain("더 강해요. 그래서");
+    expect(dropBookTwins([ch(1, [["가람님은 정한 일을 끝까지 붙드는 쪽이에요. 나래님은 새 길을 먼저 여는 쪽이에요."]])]).dropped).toHaveLength(0);
   });
 });

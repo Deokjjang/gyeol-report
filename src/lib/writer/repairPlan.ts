@@ -12,6 +12,7 @@ import { ANAPHOR_SHORT, dependsOnRemoved, listItemIn, removeSentenceAt, stripCon
 import { HARD_RULES, type LintFlag, type P6cRule } from "./safety/p6c";
 import type { AppliedRepair } from "./repair3";
 import { gateClassOf, IMPROVE_DROP_MIN_LEFT } from "./gate";
+import { SAME_MIN, sameSentence } from "./safety/info";
 
 export type RepairMode = "rewrite" | "drop" | "none";
 /** HARD 가운데 문장 떼기(다시 써도 같은 내부 말이 남거나 없는 사실을 새로 만든 규칙). */
@@ -91,6 +92,33 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     dropped.push({ at, sentence: t.sentence, rule: t.rule });
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(x => x.trim()) })) })), dropped };
+}
+/** W7 m3 같은 문장 둘 — 글자 2-gram 85% 이상(어미만 다른 꼴 포함). */
+export const TWIN_JACCARD = 0.85;
+/**
+ * W7 m3(1차 궁합 m2: 반복 규칙 「문단 끝만 떼기」로 「…쪽은 두 사람 중 최지우님이 더 강합니다/강해요」가 두 장에 모두 남음): 수리 뒤 책 안에 거의 같은 문장이
+ * 다시 나오면 하나를 뗀다 — 뒤 것을 떼되 다음 문장이 그 문장에 기대거나 접속어로 이으면(「그래서 …」) 앞 것을, 둘 다 기대거나 문단에 한 문장뿐이면 그대로 둔다. 표시(⟪⟫)·결정론 장은 건드리지 않는다. 호출 0.
+ */
+export function dropBookTwins(chapters: readonly FinalChapter[], o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; dropped: DropRecord[] } {
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const dropped: DropRecord[] = [];
+  type Pos = { ci: number; si: number; pi: number; ti: number; ss: string[] };
+  const list = (): Pos[] => out.flatMap((c, ci) => c.source === "deterministic" ? [] : c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => { const ss = splitSentences(p); return ss.map((_, ti) => ({ ci, si, pi, ti, ss })); })));
+  const removable = (x: Pos) => { const next = x.ss[x.ti + 1] !== undefined ? norm(x.ss[x.ti + 1]) : undefined; return x.ss.length >= 2 && !/⟪/.test(x.ss[x.ti]) && dependsOnRemoved(norm(x.ss[x.ti]), next, o) === null && !(next && stripConnective(next)); };
+  for (let guard = 0; guard < 20; guard++) {
+    const L = list(); let hit: Pos | undefined;
+    outer: for (let j = 1; j < L.length; j++) for (let i = 0; i < j; i++) {
+      const a = L[i], b = L[j];
+      if (!sameSentence(norm(a.ss[a.ti]), norm(b.ss[b.ti]), SAME_MIN, TWIN_JACCARD)) continue;
+      hit = removable(b) ? b : removable(a) ? a : undefined;
+      if (hit) break outer;
+    }
+    if (!hit) break;
+    const c = out[hit.ci], sec = c.sections[hit.si];
+    (sec.paragraphs as string[])[hit.pi] = removeSentenceAt(hit.ss, hit.ti).sentences.join(" ");
+    dropped.push({ at: `${c.n}.${hit.si}.${hit.pi}`, sentence: norm(hit.ss[hit.ti]), rule: "book_twin" });
+  }
+  return { chapters: out, dropped };
 }
 /** 접속어 과다(connective_excess): 걸린 문장의 앞 접속어만 뗀다(호출 0). */
 export function stripConnectiveFlags(chapters: readonly FinalChapter[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; count: number } {

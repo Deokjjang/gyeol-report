@@ -40,7 +40,7 @@ import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
 import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { gateClassOf, gateMetrics } from "./gate";
 import { splitSentences } from "./safety/patterns";
-import { dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
+import { dropBookTwins, dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
 import { guardReview, priorSummaryOf, REVIEW_MAX_INPUT_CHARS, REVIEW_SCHEMA, REVIEW_VERSION, REVIEW_VERSION_CARD, reviewMaxTokens, reviewPrompt, type ReviewIssue } from "./review";
 import { designSummaryOf, infoCardsOf } from "./design";
 import { priceFor } from "@/lib/llm/prices";
@@ -597,6 +597,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // W5 R2 F1: 수리 뒤 결정론 정리 — 수리 문장이 이웃과 같은 뜻·끊긴 문장·같은 문단 수리끼리 같은 구절이면 원문으로, 이웃 문장 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다.
   const f1: { chapters: FinalChapter[]; records: TidyRecord[] } = deps.replay ? { chapters: fixed, records: [] } : postRepairTidy(fixed, repair.applied, before => { const b = before.replace(/[^가-힣0-9]/g, ""); return preRepairFlags.some(f => f.sentence && gateClassOf(f.rule, f.detail) === "block" && b.includes(f.sentence.replace(/[^가-힣0-9]/g, "").slice(0, 24))); });
   if (f1.records.length) { fixed = f1.chapters; remaining = lintBook(fixed, lctx); }
+  // W7 m3: 수리 뒤 책 안 같은 문장 둘(반복 규칙은 문단 끝만 떼므로 가운데 문장 쌍이 모두 남을 수 있다) → 하나를 뗀다(기대는 다음 문장 확인, 호출 0).
+  const twins = deps.replay ? { chapters: fixed, dropped: [] as DropRecord[] } : dropBookTwins(fixed, { names: lctx.contradiction?.people.map(p => p.names) });
+  if (twins.dropped.length) { fixed = twins.chapters; remaining = lintBook(fixed, lctx); }
   // W5 R2: 칸이 모자라 수리하지 못한 HARD가 남은 문단은 문단째(장이 비지 않게).
   const ov = deps.replay ? { chapters: fixed, dropped: [] as { at: string; rule: string }[] } : dropOverflowParagraphs(fixed, remaining, overflow);
   if (ov.dropped.length) { fixed = ov.chapters; remaining = lintBook(fixed, lctx); }
@@ -615,7 +618,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const byRule = (fs: readonly LintFlag[]) => fs.reduce<Record<string, number>>((o, x) => ({ ...o, [x.rule]: (o[x.rule] ?? 0) + 1 }), {});
   // 최종 A-9: 삭제·정리 뒤 문장이 2개 이하로 남은 소제목을 기록한다(관리자 확인용, 동작은 바꾸지 않는다).
   const thin = thinSections(chapters);
-  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, ...(regress.claims.length ? { personaClaims: regress.claims } : {}), reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
+  const reviewMeta = { ...review, ...(thin.length ? { thinSections: thin } : {}), repair: { items: repair.items, calls: repair.calls, skipped: repair.skipped, applied: repair.applied, ...(regress.claims.length ? { personaClaims: regress.claims } : {}), reverted: rv.reverted, rejected: repair.rejected, dropped: drops.dropped, ...(twins.dropped.length ? { twins: twins.dropped } : {}), connectives: conn.count, f1: f1.records, overflowParagraphs: ov.dropped }, deleted: del.deleted.filter(d => !d.kept), keptWithRecord: del.deleted.filter(d => d.kept),
     remainingHard: remaining.filter(f => HARD_RULES.has(f.rule) && f.paragraph >= 0 && !f.card).map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })), cover: { source: imageSource, firstProblem: firstProblem ?? null } };
   // W6: 출시 관문 지표(차단 = 남은 깃발의 차단 갈래 수, 개선 지표는 기록만). 4종만.
   const gate = brief.design ? (() => { try { return gateMetrics(chapters, remaining, splitSentences); } catch { return undefined; } })() : undefined;

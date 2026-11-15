@@ -356,10 +356,13 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     fnJoin++; introduced.add(a); introduced.add(b);
     return `${pa}(${a})${hasBatchim(`${pa}(${a})`) ? "과" : "와"} ${pb}(${b})`;
   }).replace(/([가-힣]{2,4})(\((?:Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\))? \1(?=[과와은는이가을를의에도]|\s|$|[,.])/g, "$1$2");
+  // 이름의 말이 앞에 있는지: 낱말 머리에서만 · 흔한 용언 꼴은 빼고(W7 m3 1차 연애 「의견을 구하는 … 일 되게 하는 판단(Te)」 → 「성향(Te)」 — 「구하는」 안의 「하는」을 되풀이로 봤다).
+  const ECHO_GENERIC = /^(?:하는|되는|되게|하게|있는|없는|주는|보는)$/;
+  const echoed = (plain: string, before: string) => plain.split(/\s+/).some(w => w.length >= 2 && !ECHO_GENERIC.test(w) && new RegExp(`(?:^|[^가-힣])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(before));
   // 작가가 쓴 "쉬운 이름(약어)"도 바로 앞(24자)에 그 이름의 말이 있으면 "성향(약어)"로("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)", 최종판 1-14).
   const fixEcho = (p: string) => p.replace(new RegExp(`(${plains.length ? plains.join("|") : "(?!)"})\\((Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\\)`, "g"), (all, plain: string, code: string, offset: number, whole: string) => {
     const before = whole.slice(Math.max(0, offset - 24), offset);
-    if (!plain.split(/\s+/).some(w => w.length >= 2 && before.includes(w))) return all;
+    if (!echoed(plain, before)) return all;
     mbtiCode++; introduced.add(code); return `성향(${code})`;
   });
   const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])(\(([^()]{2,24})\))?(은|는|이|가|을|를|과|와)?/g, (all, code: string, _g: string, inner: string | undefined, particle: string | undefined, offset: number, whole: string) => {
@@ -370,9 +373,9 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     mbtiCode++;
     // 바로 앞(24자)에 쉬운 이름의 말(두 글자 이상)이 이미 있으면 이름을 되풀이하지 않는다("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)").
     const before = whole.slice(Math.max(0, offset - 24), offset);
-    const echoed = plain.split(/\s+/).some(w => w.length >= 2 && before.includes(w));
-    const name = echoed ? "성향" : plain;
-    const word = introduced.has(code) && !echoed ? name : `${name}(${code})`;
+    const echo = echoed(plain, before);
+    const name = echo ? "성향" : plain;
+    const word = introduced.has(code) && !echo ? name : `${name}(${code})`;
     introduced.add(code);
     return particle ? withJosa(word, particle) : word;
   });
