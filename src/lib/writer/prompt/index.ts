@@ -89,7 +89,8 @@ function plainChart(c: Brief["chart"]) {
   const frame = GRADE_LABEL.test(st.label) ? "" : `${st.label}입니다. `;
   const pos = c.positions, mains = pos ? [pos.yearStem, pos.monthStem, pos.hourStem, pos.yearBranch, pos.monthBranch, pos.dayBranch, pos.hourBranch].flatMap(x => (x?.[0] ? [x[0]] : [])) : [];
   // W5 R3 F3: 묶음 세기 「보통」은 작가에게 주지 않는다(「있는 만큼 쓰는 쪽」「보통 세기」가 판정 틀로 읽혔다 — W4 판독). 넉넉·적음만 뜻으로.
-  const groups = c.groups ? Object.entries(c.groups.levels).filter(([, lv]) => lv !== "보통").map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g}) ${GROUP_LEVEL_PLAIN[lv] ?? lv}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
+  // R4 관문(1차 커리어 분량 73%): 보통 묶음을 줄째 빼니 다섯 힘이 재료인 커리어 장이 짧아졌다 → 묶음 이름·자리 수는 남기고 세기 말만 뺀다.
+  const groups = c.groups ? Object.entries(c.groups.levels).map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g})${lv === "보통" ? "" : ` ${GROUP_LEVEL_PLAIN[lv] ?? lv}`}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
   return {
     ...base,
     strength: { meaning: `${frame}${st.reading ?? ""}`.trim(), ...(st.note ? { skew: st.note.replace(/내 힘의 세기\([^)]*\)/, "내 힘의 세기") } : {}), ...(counts ? { basis: `오행 겉 글자 수 ${counts}` } : {}) },
@@ -318,7 +319,10 @@ function withMarks(out: Record<string, unknown>, brief: Brief, t: MarkTable): Re
   const { chapters, ...head } = out;
   const traits = (head.traits as { id: string; at?: string }[] | undefined)?.map(x => (x.at && t.has(`at:${x.id}`) ? { ...x, at: `⟦at:${x.id}⟧ = ${x.at}` } : x));
   const compat = head.compatibility && view.between ? omit(head.compatibility as Record<string, unknown>, "dayRelations", "relationsPlain", "relationsSummary") : head.compatibility;
-  return { ...head, ...(compat ? { compatibility: compat } : {}), ...(traits ? { traits } : {}), marks: view, chapters };
+  // R4 관문(1차 궁합 분량 88%): 장 재료가 지운 관계 칸(compatibility.dayRelations·relationsPlain)을 가리키면 끊긴 참조가 된다 → 표시 칸(marks.between)을 가리키게.
+  const REL_REF = /^compatibility\.(dayRelations|relationsPlain|relationsSummary)$/;
+  const fixRefs = (x: unknown): unknown => Array.isArray(x) ? x.map(fixRefs) : x && typeof x === "object" ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, k === "ref" && typeof v === "string" && REL_REF.test(v) ? "marks.between" : fixRefs(v)])) : x;
+  return { ...head, ...(compat ? { compatibility: compat } : {}), ...(traits ? { traits } : {}), marks: view, chapters: view.between ? fixRefs(chapters) : chapters };
 }
 
 function renderRaw(brief: Brief): Record<string, unknown> {
