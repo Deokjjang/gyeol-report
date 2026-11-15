@@ -559,7 +559,8 @@ function lintPersona(): void {
   for (const doms of k.mbtiSeeds.values()) for (const xs of Object.values(doms)) for (const x of xs) known.add(materialKey(x.text));
   const leaves = (o: unknown): void => { if (typeof o === "string") { if (o.length >= 10) known.add(materialKey(o)); } else if (Array.isArray(o)) o.forEach(leaves); else if (o && typeof o === "object") for (const [kk, v] of Object.entries(o)) if (!["key", "facet", "level", "id", "sources", "when"].includes(kk)) leaves(v); };
   for (const [topic, entries] of k.deep) if (!/^(annual-|major-|year-energy)/.test(topic)) entries.forEach(leaves);
-  const HEALTH = /소화|수면|잠을? (?:설|못 자)|불면|두통|위장|피부|혈압|면역|몸살|몸이 먼저 (?:반응|무리|지침|아프)|몸도 예민|몸부터 지치|탈이 나/;
+  // 병·몸 증상 단정만(생활 리듬 잠·끼니·운동 계획·피로는 아님 — W6.1·A 집계·전수 시험과 같은 기준).
+  const HEALTH = /소화(?:가 (?:안|잘 안)|불량|·수면|와 수면)|수면 (?:먼저|문제|장애)|불면|두통|위장|장 건강|피부 (?:트러블|질환)|혈압|면역|몸살|몸도 예민|몸이 예민|탈이 나|아프기 쉽/;
   let unknown = 0;
   for (const [key, t] of Object.entries(r.data.items)) {
     if (!known.has(key)) { unknown++; if (unknown <= 10) warn("persona-tags.json", key, "원문 없는 꼬리표(원문이 바뀜)"); }

@@ -60,6 +60,11 @@ export function materialTable(k: Knowledge): MaterialTable {
     const leaves = (o: unknown): void => { if (typeof o === "string") { if (o.length >= HEAD * 2 && !exact.has(o)) { exact.set(o, o); origOf.set(o, o); } } else if (Array.isArray(o)) o.forEach(leaves); else if (o && typeof o === "object") for (const [kk, v] of Object.entries(o)) if (!["key", "facet", "level", "id", "sources", "when"].includes(kk)) leaves(v); };
     for (const e of entries) leaves(e);
   }
+  // W7-3: 넓은 꼴(broad — 융합 장면·MBTI 씨앗·궁합 장면, W6 S2-1)은 원문 대신 작가에게 간다 → 원문 꼬리표로 거르도록 원문에 잇는다(바꿔 넣는 글 = 넓은 꼴 그대로).
+  const broadOf = (text: string, broad?: string) => { if (broad && broad.length >= HEAD && !exact.has(broad)) { exact.set(broad, broad); origOf.set(broad, text); } };
+  for (const rules of k.fusionByFeature.values()) for (const r of rules) if (r.scene) broadOf(r.scene.text, (r.scene as { broad?: string }).broad);
+  for (const doms of k.mbtiSeeds.values()) for (const xs of Object.values(doms)) for (const x of xs) broadOf(x.text, x.broad);
+  for (const t of k.compatScenes.types) for (const topic of t.topics) for (const sc of topic.scenes) broadOf(sc.text, (sc as { broad?: string }).broad);
   const byHead = new Map<string, [string, string][]>();
   const put = (text: string, mat: string) => { const h = text.slice(0, HEAD); const l = byHead.get(h); if (l) l.push([text, mat]); else byHead.set(h, [[text, mat]]); };
   for (const [text, mat] of exact) put(text, mat);

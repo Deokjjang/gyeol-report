@@ -153,13 +153,18 @@ export function personaSwap(o: Record<string, unknown>, table: ReturnType<typeof
     return tag?.rw ?? true;
   };
   const ownerOf = (x: Record<string, unknown>, inherited: number) => { const id = String(x.traitId ?? x.id ?? ""); return /^b(t\d|\d)/.test(id) ? 1 : /^a(t\d|\d)/.test(id) ? 0 : inherited; };
+  // 궁합에서 주인을 모르는 글은 한 사람 이름만 들어 있으면 그 사람 것으로 본다(앞 장 주장 before 등).
+  const callA = brief.compatibility?.a.callName.replace(/님$/, "") ?? "", callB = brief.compatibility?.b.callName.replace(/님$/, "") ?? "";
+  const byName = (t: string, owner: number) => { if (owner !== -1 || !compat) return owner; const a = Boolean(callA) && t.includes(callA), b = Boolean(callB) && t.includes(callB); return a && !b ? 0 : b && !a ? 1 : -1; };
   const walk = (x: unknown, owner: number): unknown => {
-    if (typeof x === "string") return swapMaterials(x, table, fitsFor(owner));
+    if (typeof x === "string") return swapMaterials(x, table, fitsFor(byName(x, owner)));
     if (Array.isArray(x)) return x.map(y => walk(y, owner)).filter(y => y !== "");
     if (x && typeof x === "object") { const me = ownerOf(x as Record<string, unknown>, owner); return Object.fromEntries(Object.entries(x).map(([kk, v]) => [kk, walk(v, kk === "partner" ? 1 : me)]).filter(([, v]) => v !== "")); }
     return x;
   };
-  return { out: walk(o, compat ? -1 : 0) as Record<string, unknown>, dropped, seen };
+  // 궁합 맨 위 칸: chart·mbti·person은 A(본인), partner는 B, 그 밖(장·특성 목록)은 id·이름으로 가린다.
+  const out = compat ? Object.fromEntries(Object.entries(o).map(([kk, v]) => [kk, walk(v, kk === "chart" || kk === "mbti" || kk === "person" ? 0 : kk === "partner" ? 1 : -1)]).filter(([, v]) => v !== "")) : walk(o, 0);
+  return { out: out as Record<string, unknown>, dropped, seen };
 }
 /** W7-4 전수 시험용: 작가 입력에 들어가는 지식 DB 조각마다 주인·보냄 여부(renderWriterBriefRaw와 같은 순서). */
 export function personaAudit(brief: Brief, opts: WriterInputOptions & { knowledge: Knowledge }): ReturnType<typeof personaSwap> | null {
@@ -170,14 +175,16 @@ export function personaAudit(brief: Brief, opts: WriterInputOptions & { knowledg
   return personaSwap(out, materialTable(opts.knowledge), brief, opts.knowledge);
 }
 /** W7-3 작가 입력: 정답지 요약(core·tensions) + 장마다 발견 하나(find). 차원 이름·끝 글은 사전(behavior-ontology persona) 그대로. */
-const COND_KO: Readonly<Record<string, string>> = { self: "자기 자신에게", others: "남에게", close: "가까운 사람에게", pressure: "압박을 받을 때", work: "일에서", relation: "관계에서", alone: "혼자일 때", money: "돈 앞에서" };
-const condKo = (c: { who?: string; sit?: string }) => [c.who, c.sit].filter(Boolean).map(x => COND_KO[x!] ?? x).join(" ") || "평소";
+const COND_SIT: Readonly<Record<string, string>> = { pressure: "압박을 받을 때", work: "일에서", relation: "관계에서", alone: "혼자일 때", money: "돈 앞에서" };
+const COND_WHO: Readonly<Record<string, string>> = { self: "자기 자신에게", others: "남에게", close: "가까운 사람에게" };
+/** 조건 말(「~는」 앞까지): 상황이 있으면 상황(가까운 사람 + 관계 = 「가까운 사람과의 관계에서」), 없으면 대상, 둘 다 없으면 「평소」. */
+const condKo = (c: { who?: string; sit?: string }) => c.who === "close" && c.sit === "relation" ? "가까운 사람과의 관계에서" : c.sit ? COND_SIT[c.sit] ?? c.sit : c.who ? COND_WHO[c.who] ?? c.who : "평소";
 export function personaSummary(sheet: PersonaSheet, k: Knowledge): { core: string[]; tensions: string[]; finds: string[] } {
   const dict = new Map((k.ontology.persona?.dims ?? []).map(d => [d.id, d]));
   const pole = (id: string, v: number) => { const d = dict.get(id); return d ? `${d.name}: ${v > 0 ? d.plus : d.minus}` : id; };
   const why = (w: readonly string[]) => (w.length ? `(근거: ${w.slice(0, 2).join(" · ")})` : "");
   const core = sheet.core.map(c => `${pole(c.id, c.v)}${why(c.why)}`);
-  const tensions = sheet.tensions.map(t => { const d = dict.get(t.id); return d ? `${d.name}: ${condKo(t.plus)}에는 ${d.plus} ↔ ${condKo(t.minus)}에는 ${d.minus}${why(t.why)}` : t.id; });
+  const tensions = sheet.tensions.map(t => { const d = dict.get(t.id); return d ? `${d.name}: ${condKo(t.plus)}는 ${d.plus} ↔ ${condKo(t.minus)}는 ${d.minus}${why(t.why)}` : t.id; });
   const DOM: Readonly<Record<string, string>> = { work: "일", money: "돈", love: "연애", relationships: "관계", marriage: "가족" };
   const finds = sheet.discoveries.map(x => { const d = dict.get(x.id); return d ? `${DOM[x.domain] ?? x.domain}에서 드러나는 ${d.name}: ${x.v > 0 ? d.plus : d.minus}` : x.id; });
   return { core, tensions, finds };
@@ -272,6 +279,9 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
   // W7-3 장 배정: 장마다 정답지 발견 하나(같은 차원을 잇달아 주지 않는다), 긴장 풀이는 한 장에만(가운데 장).
   const sum = brief.persona?.[0] && !brief.compatibility ? personaSummary(brief.persona[0], opts.knowledge) : null;
+  // 궁합: 두 사람 정답지의 발견을 번갈아(이름을 앞에) — 장마다 하나.
+  const pairFinds = brief.compatibility && brief.persona?.length === 2 ? (() => { const fa = personaSummary(brief.persona![0], opts.knowledge!).finds.map(f => `${brief.compatibility!.a.callName} — ${f}`), fb = personaSummary(brief.persona![1], opts.knowledge!).finds.map(f => `${brief.compatibility!.b.callName} — ${f}`); const o: string[] = []; for (let i = 0; i < Math.max(fa.length, fb.length); i++) { if (fa[i]) o.push(fa[i]); if (fb[i]) o.push(fb[i]); } return o; })() : null;
+  if (pairFinds?.length) out.chapters = (out.chapters as { n: number }[]).map((c, i) => ({ ...c, find: pairFinds[i % pairFinds.length] }));
   if (sum) {
     const chs = out.chapters as { n: number }[], finds = sum.finds;
     const pick: string[] = []; let last = "";

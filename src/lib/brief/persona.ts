@@ -19,7 +19,7 @@ import type { ProfileCodes } from "./pairProfile";
 const keyOf = (text: string) => createHash("sha1").update(text).digest("hex").slice(0, 12);
 
 /** 긴장 기준값(W7-4 전수 분포로 정함 — w7.md 4절): 두 끝이 모두 THETA 이상이고 차이가 큰 쪽의 DELTA 이하면 긴장 후보. 값은 |합| ≥ ASSERT일 때만. */
-export const PERSONA_RULES = { THETA: 3, DELTA: 0.35, ASSERT: 1 } as const;
+export const PERSONA_RULES = { THETA: 9, DELTA: 0.35, ASSERT: 1 } as const;
 
 export type PoleCond = { readonly who?: string; readonly sit?: string };
 export type PersonaDim = {
@@ -131,8 +131,13 @@ export function personaSheet(k: Knowledge, hits: readonly FeatureHit[], stemTenG
   // 최종판2 1-3(판독 검증 — ISTJ를 「앞에 나서는·그 자리에서 받아치는」 쪽으로 쓴 결함): MBTI가 있으면 E/I·J/P 글자가 정하는 다섯 차원은 글자 쪽(조건부 긴장 제외).
   const m = mbti && /^[EI][NS][TF][JP]$/.test(mbti) ? mbti : null;
   if (m) for (const [id, pole] of [["socialEnergy", m[0] === "E" ? 1 : -1], ["attentionSeeking", m[0] === "E" ? 1 : -1], ["conflictApproach", m[0] === "E" ? 1 : -1], ["verbalOutput", m[0] === "E" ? 1 : -1], ["noveltySeeking", m[3] === "P" ? 1 : -1]] as const) {
-    const i = dims.findIndex(d => d.id === id); if (i < 0 || dims[i].tension || dims[i].v === pole) continue;
-    dims[i] = { ...dims[i], v: pole, why: [`MBTI ${m} 글자`, ...dims[i].why.filter(w => !w.startsWith("MBTI"))].slice(0, 3) };
+    const i = dims.findIndex(d => d.id === id); if (i < 0) continue;
+    // 조건부 긴장은 「평소」(조건 없는) 끝이 글자 쪽일 때만 남긴다 — 평소가 글자와 반대면 긴장을 풀고 글자 쪽 값으로.
+    const t = dims[i].tension;
+    if (t) { const plain = !(t.plus.who || t.plus.sit) ? 1 : !(t.minus.who || t.minus.sit) ? -1 : 0; if (plain === 0 || plain === pole) { if (dims[i].v !== pole) dims[i] = { ...dims[i], v: pole }; continue; } }
+    if (dims[i].v === pole && !t) continue;
+    const { tension: _drop, ...rest } = dims[i]; void _drop;
+    dims[i] = { ...rest, v: pole, why: [`MBTI ${m} 글자`, ...dims[i].why.filter(w => !w.startsWith("MBTI"))].slice(0, 3) };
   }
   const core = dims.filter(d => d.v !== 0 && !d.tension).sort((a, b) => Math.abs(b.plus - b.minus) - Math.abs(a.plus - a.minus)).slice(0, 5).map(d => ({ id: d.id, v: d.v as 1 | -1, why: d.why }));
   const tensions = dims.filter(d => d.tension).sort((a, b) => Math.min(b.plus, b.minus) - Math.min(a.plus, a.minus)).slice(0, 3).map(d => ({ id: d.id, plus: d.tension!.plus, minus: d.tension!.minus, why: d.why }));

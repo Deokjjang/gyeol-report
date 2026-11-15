@@ -242,7 +242,8 @@ function briefTexts(x: unknown, key = "", out: { guides: string[]; materials: st
  * 신살 주인·MBTI 사람·자리별 십성, 궁합 사람별 오행 개수.
  */
 function p6eContext(brief: Brief, k: Knowledge): Partial<LintCtx> {
-  const t = briefTexts(renderWriterBrief(brief, { knowledge: k }));
+  // W7-3: 검사의 씨앗·지침 창은 정답지로 거르기 전 재료 전부로(거른 재료를 옮겨 써도 잡는다 — 옛 책 재검사 포함).
+  const t = briefTexts(renderWriterBrief({ ...brief, persona: undefined } as Brief, { knowledge: k }));
   const c = brief.compatibility, partner = brief.partner;
   const OWN = /신살|귀인|십이운성/;
   const featureNames = (i: number) => new Set((brief.appendix?.[i]?.items ?? []).filter(x => OWN.test(x.group)).map(x => x.name.replace(/\s*\(.*$/, "").replace(/·.*$/, "").trim()).filter(n => n.length >= 2));
