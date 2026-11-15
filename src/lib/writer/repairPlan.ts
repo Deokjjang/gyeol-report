@@ -8,7 +8,7 @@
  */
 import type { FinalChapter } from "./safety";
 import { splitSentences } from "./safety/patterns";
-import { removeSentenceAt, stripConnective } from "./safety/orphan";
+import { ANAPHOR_SHORT, dependsOnRemoved, removeSentenceAt, stripConnective, SUBJECT_TERM } from "./safety/orphan";
 import { HARD_RULES, type LintFlag, type P6cRule } from "./safety/p6c";
 import type { AppliedRepair } from "./repair3";
 import { gateClassOf, IMPROVE_DROP_MIN_LEFT } from "./gate";
@@ -40,15 +40,10 @@ export const reviewModeOf = (cat: string): RepairMode => (cat === "I" || cat ===
 export const reviewPriorityOf = (cat: string): number => (cat === "I" ? 2 : 3);
 
 const norm = (s: string) => s.replace(/[⟪⟫]/g, "");
-/** 앞 문장 내용에 기대는 문장(지우면 고아가 된다). repair3 LEANS + 「~때문입니다」 이유 문장 + 「이건·그건」. */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|그렇다면|그럼(?![가-힣])|그때마다|이 조합|이 두|이건|그건|이것은|그것은|이 |그 )/;
-const BECAUSE = /^[^.?!]{0,60}때문(?:입니다|이에요|이죠)[.!]?$/;
-/** W6 S4 4판(2차 종합 4장): 앞 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」 — 앞 문장을 떼면 기댈 곳이 없다(repair3.deleteFlagged 고아 요약과 같은 꼴). */
-export const ANAPHOR_SHORT = /^[^.?!]{0,20}(?:더|특히|역시|훨씬) 그(?:래요|렇습니다|렇죠)[.!]?$/;
+/** W6 S4 4판(2차 종합 4장): 앞 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」 — 앞 문장을 떼면 기댈 곳이 없다. W6.1: 기대는 문장 판정은 orphan.dependsOnRemoved 하나로. */
+export { ANAPHOR_SHORT };
 /** W6 S4(2차 커리어 8장): 문장 앞머리(20자 안)에서 앞 문장 내용을 「이 순서·이 방법」으로 받는 문장 — 개선 규칙으로 앞 문장을 떼면 가리킬 것이 없어진다(「셋째는 …」 원칙 내용이 빠지고 「이 순서가 방패가 됩니다」만 남음). */
 const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습관|규칙|원칙|장치|기준|패턴|방식|약속)/;
-/** 근거 이름(신살·십성·관계·자리) — 문단 첫 문장이 꺼낸 주어인지 본다. */
-const SUBJECT_TERM = /(?:[가-힣]{1,4}살|[가-힣]{1,3}귀인|천문성|금여록|암록|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|비겁|식상|재성|관성|인성|원진|삼합|반합|육합|방합|[자축인묘진사오미신유술해]{2}\s?(?:충|합|형|파|해)|연간|월간|일간|연지|월지|일지|시지|일주|(?:하늘|땅) 글자|기둥)(?=[은는이가을를의과와도에]|[\s(),.·]|$)/;
 /**
  * W6 S4 2판: 개선 규칙으로 문단 첫 문장을 떼지 않는 것은 그 문장이 다음 문장의 주어(근거 이름)를 꺼낼 때만이다(「망신살이 있어요. 속마음이 … 드러나는 힘이라」).
  * 틀 문장(「이번 장의 행동은 이거예요」)·안내 문장은 지킬 주어가 없다 — 1판처럼 모두 지키면 1차 궁합에 「이번 장의 행동은 이거예요」가 6번 남았다.
@@ -63,7 +58,7 @@ export const improveOnly = (rule: string, detail?: string) => gateClassOf(rule, 
  * 그 문장만 뗀다(호출 0). 앞뒤 이음 확인: ① 다음 문장이 앞말에 기대면(지시어·「때문입니다」) SOFT는 남기고, HARD는 기대는 문장까지 함께 뗀다
  * ② 뗀 문장이 바로 앞 물음의 답이면 물음도 뗀다 ③ 다음 문장 머리 접속어는 뗀다 ④ 소제목에 문장이 하나만 남으면 SOFT는 떼지 않는다 ⑤ ⟪핵심 문장⟫은 SOFT면 떼지 않는다.
  */
-export function dropSentences(chapters: readonly FinalChapter[], targets: readonly DropTarget[]): { chapters: FinalChapter[]; dropped: DropRecord[] } {
+export function dropSentences(chapters: readonly FinalChapter[], targets: readonly DropTarget[], o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; dropped: DropRecord[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const dropped: DropRecord[] = [];
   for (const t of targets) {
@@ -78,12 +73,13 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     // W6 S4(2차 연애·종합): 문단 첫 문장은 주어(신살·십성 이름)를 꺼내는 자리라, 개선 규칙으로 떼면 다음 문장이 주어 없이 남는다(「속마음이 … 드러나는 힘이라」). 개선 규칙은 문단 첫 문장을 떼지 않는다.
     if (improveOnly(t.rule, t.detail) && i === 0 && leadNamesSubject(norm(ss[0]), ss[1] !== undefined ? norm(ss[1]) : undefined)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "lead" }); continue; }
     const next = ss[i + 1] !== undefined ? norm(ss[i + 1]) : undefined;
-    const leans = next !== undefined && (LEANS.test(next) || BECAUSE.test(next) || ANAPHOR_SHORT.test(next.trim()));
+    // W6.1 P2: 기대는 다음 문장(지시어·「때문」·되받기·「~도 함께」·비교 꼬리·주어를 받는 문장)은 개선 떼기면 원문을 두고, 차단 떼기면 함께 뗀다.
+    const dep = dependsOnRemoved(norm(ss[i]), next, o), leans = dep !== null;
     if (improveOnly(t.rule, t.detail) && next !== undefined && POINTS_BACK.test(next)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     let rest = removeSentenceAt(ss, i).sentences;
-    if (leans) { dropped.push({ at, sentence: rest[i], rule: `${t.rule}:leans` }); rest = rest.filter((_, j) => j !== i); }
+    if (leans) { dropped.push({ at, sentence: rest[i], rule: `${t.rule}:${dep}` }); rest = rest.filter((_, j) => j !== i); }
     if (i > 0 && ASKS.test(norm(ss[i - 1]).trim()) && !/⟪/.test(ss[i - 1]) && !ASKS.test(t.sentence.trim()) && (rest.length > 1 || sec.paragraphs.filter(Boolean).length > 1)) { dropped.push({ at, sentence: norm(ss[i - 1]), rule: `${t.rule}:question` }); rest = rest.filter((_, j) => j !== i - 1); }
     (sec.paragraphs as string[])[t.paragraph] = rest.join(" ");
     dropped.push({ at, sentence: t.sentence, rule: t.rule });

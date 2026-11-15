@@ -186,7 +186,8 @@ export function lintContext(brief: Brief, k: Knowledge, plan: readonly WriterCha
 export function contradictionCtxOf(brief: Brief, k: Knowledge): import("./safety/contradiction").ContradictionCtx {
   const names = personNames(brief), compat = Boolean(brief.compatibility && brief.partner);
   const self = compat ? null : personProfileOf(brief, k);
-  return { compat, people: names.map((n, i) => ({ names: n, label: compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName][i] ?? "" : brief.person.callName, codes: i === 0 ? self : null })) };
+  // W6.1 P5: 궁합도 사람별 성격표(브리프 단일 출처)를 「앞에서 이미 말한 끝」으로 둔다(W6은 한 사람 책만).
+  return { compat, people: names.map((n, i) => ({ names: n, label: compat ? [brief.compatibility!.a.callName, brief.compatibility!.b.callName][i] ?? "" : brief.person.callName, codes: compat ? brief.compatibility?.profiles?.[i] ?? null : i === 0 ? self : null })) };
 }
 /** 사람마다 부르는 이름 꼴(전체 이름·부를 이름·성 뺀 이름). 궁합은 두 사람, 한 사람 책은 하나. */
 export function personNames(brief: Brief): string[][] {
@@ -566,7 +567,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
     ...flags1.filter(f => modeOf(f.rule) === "drop" && f.paragraph >= 0 && !f.card && f.sentence).map(f => ({ chapter: f.chapter, section: f.section, paragraph: f.paragraph, sentence: f.sentence, rule: f.rule as string, hard: HARD_RULES.has(f.rule), ...(f.detail ? { detail: f.detail } : {}) })),
     ...issues.filter(i => reviewModeOf(i.cat) === "drop").flatMap(i => { const x = byN0.get(i.s); return x && x.paragraph >= 0 ? [{ chapter: x.chapter, section: x.section, paragraph: x.paragraph, sentence: x.text, rule: `review_${i.cat}`, hard: i.cat === "L" }] : []; }),
   ];
-  const drops: { chapters: FinalChapter[]; dropped: DropRecord[] } = deps.replay ? { chapters, dropped: [] } : dropSentences(chapters, dropTargets); chapters = drops.chapters;
+  const drops: { chapters: FinalChapter[]; dropped: DropRecord[] } = deps.replay ? { chapters, dropped: [] } : dropSentences(chapters, dropTargets, { names: lctx.contradiction?.people.map(p => p.names) }); chapters = drops.chapters;
   const preRepairFlags = lintBook(chapters, lctx);
   const overflow = new Set<string>();
   const items = repairItems({ chapters, flags: preRepairFlags, issues, numbered: rp.numbered, cover: firstProblem ? { line: image, problem: firstProblem } : null, overflow });
@@ -597,7 +598,7 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // W5 R2: 칸이 모자라 수리하지 못한 HARD가 남은 문단은 문단째(장이 비지 않게).
   const ov = deps.replay ? { chapters: fixed, dropped: [] as { at: string; rule: string }[] } : dropOverflowParagraphs(fixed, remaining, overflow);
   if (ov.dropped.length) { fixed = ov.chapters; remaining = lintBook(fixed, lctx); }
-  const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES, improveOnly);
+  const del = deps.replay ? { chapters: fixed, deleted: [] as Deleted[] } : deleteFlagged(fixed, remaining, HARD_RULES, improveOnly, { names: lctx.contradiction?.people.map(p => p.names) });
   fixed = del.chapters;
   remaining = lintBook(fixed, lctx);
   const dropped = { chapters: fixed, dropped: [] as { at: string; heading: string; rules: string[]; sentences: string[] }[], kept: [] };

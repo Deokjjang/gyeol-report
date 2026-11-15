@@ -66,6 +66,12 @@ function termPosition(sen: string, ctx: FactCtx, owners: readonly PersonFacts[])
 
 /** 정답지에 없는 신살·귀인·십이운성을 그 사람 것으로 말함(부정·가정·유입 문맥 제외). */
 function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  // W6.1 D7: 같은 신살의 다른 이름(년살 = 도화살)은 sameAs 이름 하나로만 쓴다(「도화살과 년살 두 힘」 방지) — 원국 신살 이름이라 때 낱말 문단도 본다. 둘이 같다고 풀어 말한 문장은 뺀다.
+  if (!NEG.test(sen) && !HYPO.test(sen)) for (const a of ctx.aliases) {
+    if (!a.re.test(sen)) continue;
+    const same = owners.flatMap(o => o.shinsal.filter(s => s.name === a.name && s.sameAs)), holders = owners.filter(o => o.shinsal.some(s => s.name === a.name)).length;
+    if (same.length && same.length === holders && !(sen.includes(same[0].sameAs!.replace(/살$/, "")) && /같은|달리 부른|다른 이름|곧 /.test(sen))) return { rule: "fact_term", detail: `${a.name}은 ${same[0].sameAs}과 같은 자리의 같은 신살이다(${same[0].sameAs} 하나로 쓴다 — 두 힘으로 나누지 않음)` };
+  }
   // AM 7부(annual-2·3 판독): 세운 달 카드의 「원진이 함께 걸려」「이 달은 공망에 들어서」는 그 달 기둥과 원국 사이 일이다 — 해·달 카드, 때 낱말이 든 문단은 유입 문맥으로 본다.
   if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen) || inKey || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
   for (const a of ctx.aliases) {
@@ -215,6 +221,19 @@ function tenGodMix(sen: string, owners: readonly PersonFacts[]): FactHit | null 
   const m = sen.match(TG_MIX); if (!m) return null;
   const o = owners[0]; if (Object.values(o.tenGods).some(v => v?.includes(m[1]))) return null;
   return { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${m[1]}은 없다 — 「${m[0]}」` };
+}
+/**
+ * W6.1 D5(2차 커리어 7장 「편재나 겁재나 상관 쪽이 더 크기 때문인데」 — 원국·지장간에 편재 없음): 없는 십성을 까닭·있음으로 단정.
+ * 까닭 틀(「X 쪽이 더 크기 때문」「X이 있어서·많아서·강해서」「X 덕분」)에 든 십성 이름(「A나 B나 C」「A·B」 나열 포함) 가운데 원국·지장간에 없는 것.
+ */
+const TG_NAME = "(?:비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)";
+const TG_CAUSE = new RegExp(`(?<![가-힣])(${TG_NAME}(?:\\([^()]*\\))?(?:(?:이나 |나 |과 |와 |·|, ?)${TG_NAME}(?:\\([^()]*\\))?){0,3})(?: 쪽)?(?:이|가)? (?:더 크기 때문|더 커서|더 큰 덕분|있어서|있기 때문|많아서|강해서|넉넉해서|커서|덕분에|덕분이)`);
+function tenGodCause(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen)) return null;
+  const m = sen.match(TG_CAUSE); if (!m) return null;
+  const o = owners[0], have = new Set(Object.values(o.tenGods).flatMap(v => v ?? []));
+  const missing = [...m[1].matchAll(new RegExp(TG_NAME, "g"))].map(x => x[0]).filter(t => !have.has(t));
+  return missing.length ? { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${missing.join("·")}은 없다 — 없는 십성을 근거로 단정(「${m[0]}」)` } : null;
 }
 /** W6 S4 2판(1차 종합 2장): 「다만 나무 글자가 셋 이상이면 …」 — 겉 글자 수가 그보다 적은데 조건으로 쓰면 그 사람 이야기로 읽힌다(개수 = 겉 글자, elementCount 정의). */
 const EL_WORD: Readonly<Record<string, FiveElement>> = { 나무: "WOOD", 목: "WOOD", 불: "FIRE", 화: "FIRE", 흙: "EARTH", 토: "EARTH", 쇠: "METAL", 금: "METAL", 물: "WATER", 수: "WATER" };
@@ -580,6 +599,12 @@ function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
   if (ctx.people.length < 2 || NEG.test(sen) || HYPO.test(sen)) return null;
   const named = ctx.people.filter(p => p.names?.test(sen)).length;
   if (!BOTH.test(sen) && !(named === 0 && BOTH_CTX.test(paragraph))) return null;
+  // W6.1 P4(1차 궁합 1장): 「장덕민님의 세 자리(…)에 걸린 현침살이 두 사람 모두에게」 — 한 사람의 자리에 걸린 신살을 두 사람 공통으로 말함(공통이면 한 사람 자리로 매지 않는다).
+  for (const p of ctx.people) {
+    if (!p.names) continue;
+    const m = sen.match(new RegExp(`(?:${p.names.source})님?의 [^.?!]{0,60}?(?:자리|글자|기둥)(?:\\([^()]*\\))?(?:에 걸린|에 있는|에 자리한|에 놓인|의) ([가-힣]{1,6}(?:살|귀인|성|록))(?:\\([^()]*\\))?(?:은|는|이|가)? [^.?!]{0,16}(?:두 사람 모두|두 사람 다|둘 다|두 사람에게)`));
+    if (m) return { rule: "fact_term", detail: `${p.facts.name}님 자리에 걸린 ${m[1]}을 두 사람 공통으로 말함(주인 자리 + 공통)` };
+  }
   for (const a of ctx.aliases) {
     if (!a.re.test(sen)) continue;
     // W6(59권 판정 오탐): 「천덕귀인은 장덕민님에게, 월덕귀인은 두 사람 모두에게」 — 신살 바로 뒤(14자)에 주인 이름을 밝혔으면 그 신살은 공통 주장이 아니다.
@@ -650,7 +675,7 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
 
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

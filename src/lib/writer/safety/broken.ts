@@ -43,6 +43,52 @@ const PARTICLE_START = /^(에서|에게|의|을|를|은|는|와|과|으로|로|�
 const DOUBLE_PARTICLE = /(을를|를을|은는|는은|이가|가이|과와|와과|의의|에에|로로|으로로)(?=[\s,.?!]|$)/;
 const HANGUL_PAREN = /([가-힣]{2,})\(\1(?=[\s(가-힣])/;
 
+/** 두 문자열(한글·숫자만)의 가장 긴 공통 구간. */
+function commonRun(a: string, b: string): number {
+  let best = 0;
+  for (let i = 0; i < a.length; i++) for (let j = 0; j < b.length; j++) { let k = 0; while (i + k < a.length && j + k < b.length && a[i + k] === b[j + k]) k++; if (k > best) best = k; }
+  return best;
+}
+const GLOSS = /([가-힣]{2,8})\(([^()]{8,60})\)((?:은|는|이|가|을|를|과|와|의|도|에는|에|으로|로)(?![가-힣]))?/g;
+export const GLOSS_ECHO_MIN = 8;
+/** W6.1 P1: 괄호 풀이 바로 뒤(같은 문장 60자 안)에서 본문이 풀이의 8자 이상(한글·숫자)을 되풀이한 곳 — 「정관(평가와 기준이 또렷한 자리에서 인정받는 힘)이 있어서 평가와 기준이 또렷한 자리에서」(1차 커리어 수리 답 ×3). */
+export function glossEchoes(sen: string): { readonly all: string; readonly base: string; readonly particle: string; readonly at: number }[] {
+  const out: { all: string; base: string; particle: string; at: number }[] = [];
+  for (const m of sen.matchAll(GLOSS)) {
+    const g = nk(m[2]); if (g.length < GLOSS_ECHO_MIN) continue;
+    const rest = sen.slice(m.index! + m[0].length), end = rest.search(/[.?!]/), after = nk((end < 0 ? rest : rest.slice(0, end)).slice(0, 60));
+    if (commonRun(g, after) >= GLOSS_ECHO_MIN) out.push({ all: m[0], base: m[1], particle: m[3] ?? "", at: m.index! });
+  }
+  return out;
+}
+const josaFor = (word: string, p: string): string => {
+  const code = word.charCodeAt(word.length - 1) - 0xac00, has = code >= 0 && code <= 11171 && code % 28 !== 0, rieul = has && code % 28 === 8;
+  const pick: Readonly<Record<string, string>> = { 은: has ? "은" : "는", 는: has ? "은" : "는", 이: has ? "이" : "가", 가: has ? "이" : "가", 을: has ? "을" : "를", 를: has ? "을" : "를", 과: has ? "과" : "와", 와: has ? "과" : "와", 으로: has && !rieul ? "으로" : "로", 로: has && !rieul ? "으로" : "로" };
+  return pick[p] ?? p;
+};
+/** P1 정리(호출 0): 되풀이된 풀이 괄호를 뗀다(조사는 앞 이름 받침에 맞춤). */
+export function stripGlossEcho(text: string): { text: string; count: number } {
+  let count = 0, out = text;
+  for (const sen of out.match(/[^.?!]+[.?!]*/g) ?? []) for (const e of glossEchoes(sen)) { const fixed = e.base + josaFor(e.base, e.particle); const next = sen.replace(e.all, fixed); if (next !== sen) { out = out.replace(sen, next); count++; } }
+  return { text: out, count };
+}
+/** W6.1(1차 커리어 6장): 「만드는 힘(식상) 적은 쪽이라」 — 괄호 이름 뒤 조사 없이 꾸밈말. 정리는 받침에 맞춘 「이·가」를 넣는다. */
+const BARE_PAREN = /([가-힣])\(((?:식상|재성|관성|인성|비겁|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)|[一-鿿]{1,4})\) (적은|많은|넉넉한|약한|강한|센|큰|작은|여린|부족한|모자란|두터운|얇은) /g;
+export function fixBareParenParticle(text: string): { text: string; count: number } {
+  let count = 0;
+  const out = text.replace(BARE_PAREN, (_a, ch: string, inner: string, adj: string) => { count++; return `${ch}(${inner})${josaFor(ch, "이")} ${adj} `; });
+  return { text: out, count };
+}
+/** P3: 앞 문장과 같은 말을 「반면」으로 이음 — 조사 뗀 낱말 셋이 이어서 같으면(「마음 가는 쪽」). */
+const STRIP_P = /(으로서|으로써|에게서|으로|에서|에게|까지|부터|처럼|보다|이라|이나|은|는|이|가|을|를|와|과|도|만|의|에|로)$/;
+const GENERIC = new Set(["편", "쪽", "것", "수", "때", "더", "잘", "있어요", "있습니다", "편이에요", "쪽이에요", "해요", "합니다", "돼요", "됩니다", "같은", "하는", "한", "그", "이", "두", "사람"]);
+const words3 = (s: string) => { const w = (s.replace(/[⟪⟫]/g, "").match(/[가-힣A-Za-z0-9]+/g) ?? []).map(x => x.replace(STRIP_P, "") || x); const out: string[] = []; for (let i = 0; i + 3 <= w.length; i++) if (w.slice(i, i + 3).some(x => x.length >= 2 && !GENERIC.has(x))) out.push(w.slice(i, i + 3).join(" ")); return out; };
+export function contrastSame(sen: string, prev: string): string | null {
+  const m = sen.match(/^반면(?:에)?,? /); if (!m || /^반면(?:에)?,? [가-힣]{1,6}님/.test(sen)) return null;
+  const pv = new Set(words3(prev)); return words3(sen.slice(m[0].length)).find(x => pv.has(x)) ?? null;
+}
+const BOTH_WORD = /둘 다|두 사람 모두|두 사람 다|둘 모두|두 분 모두|두 사람은|둘은/;
+
 export type BrokenOpts = {
   /** 이 책 사실 표시의 렌더 구절(전체·짧은 꼴). */
   readonly phrases?: readonly string[];
@@ -72,6 +118,12 @@ export function brokenSentence(raw: string, o: BrokenOpts = {}): BrokenHit | nul
     if (p) return { kind: "render_overlap", detail: `바로 앞 문장과 같은 구절 「${p}」` };
   }
   { const d = dupPhrase(sen, phrases); if (d) return { kind: "dup_phrase", detail: `같은 문장 안 되풀이 「${d}」` }; }
+  { const g = glossEchoes(sen)[0]; if (g) return { kind: "dup_phrase", detail: `괄호 풀이를 본문이 되풀이 「${g.all.slice(0, 30)}」` }; }
+  // W6.1 P3(1차 궁합 2장 수리 뒤): 「그중 장덕민님이 더 그렇습니다」 — 앞 문장이 두 사람 공통을 말하지 않았는데 비교 꼬리만 남음.
+  if (/^그중(?:에서도)? [가-힣]{1,6}님(?:이|은|께서) (?:더|특히|훨씬|조금 더) 그(?:렇|래)/.test(sen) && !BOTH_WORD.test(o.prev ?? "")) return { kind: "slot", detail: "앞 문장에 두 사람 공통 성향이 없는 비교 꼬리(「그중 ○○님이 더 그렇습니다」)" };
+  // W6.1 P3(2차 커리어 8장 수리 뒤): 「…마음 가는 쪽을 먼저 보고 빠르게 정하는 직감형이고 …. 반면 … 마음 가는 쪽으로 정하는 방식으로」 — 같은 말을 「반면」으로 맞세움.
+  if (o.prev) { const c = contrastSame(sen, o.prev.replace(/[⟪⟫]/g, "")); if (c) return { kind: "slot", detail: `앞 문장과 같은 말(「${c}」)을 「반면」으로 이음` }; }
+  if (BARE_PAREN.test(sen)) { BARE_PAREN.lastIndex = 0; return { kind: "particle", detail: "괄호 이름 뒤 조사 없이 꾸밈말(「(식상) 적은」)" }; }
   // 조사 겹침: 괄호 바로 뒤, 또는 렌더 구절 바로 뒤.
   { const m = sen.match(new RegExp(`\\)${DOUBLE_PARTICLE.source}`)); if (m) return { kind: "particle", detail: `조사 겹침 「)${m[1]}」` }; }
   for (const p of phrases) { const i = sen.indexOf(p); if (i < 0) continue; const m = sen.slice(i + p.length).match(new RegExp(`^${DOUBLE_PARTICLE.source}`)); if (m) return { kind: "particle", detail: `조사 겹침 「${p.slice(-6)}${m[1]}」` }; }

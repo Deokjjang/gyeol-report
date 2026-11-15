@@ -285,7 +285,7 @@ describe("S4 3판 직접 읽기 결함 고침(측정 8권 3판)", () => {
     const f = { chapter: 1, section: 0, paragraph: 0, rule: "self_contradiction", sentence: "물이 부족하면 완충이 얇아서 부딪친 일이 오래 머물러요." } as LintFlag;
     const r = deleteFlagged([ch(1, [[p]])], [f], HARD_RULES);
     expect(r.chapters[0].sections[0].paragraphs[0]).not.toContain("더 그래요");
-    expect(r.deleted.some(d => d.rule.endsWith(":orphan_summary"))).toBe(true);
+    expect(r.deleted.some(d => /:(?:leans|orphan_summary)$/.test(d.rule))).toBe(true); // W6.1: 기대는 문장 판정이 orphan.dependsOnRemoved 하나로 합쳐져 「:leans」로 적힌다
     // 수리 전 떼기(검수 C 등 차단)도 같은 고아를 함께 뗀다.
     const d = dropSentences([ch(1, [[p]])], [{ ...f, rule: "review_C", hard: true }]);
     expect(d.chapters[0].sections[0].paragraphs[0]).not.toContain("더 그래요");

@@ -116,7 +116,8 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     let t = m.list ? (state?.seen.has(key) ? m.later ?? m.text : m.list) : m.text;
     const endRel0 = whole.slice(at + all.length).search(/[.?!]/), after = whole.slice(at + all.length, endRel0 < 0 ? undefined : at + all.length + endRel0).replace(MARK_RE, "");
     // ⑤ 관계 구절 앞에서 문장이 이미 자리를 말했으면(「두 사람의 태어난 날 땅 글자 사이에는 ⟦rel⟧」「묘와 진 사이에 ⟦in⟧」) 글자만 꼴로.
-    if (m.glyph && /(?:하늘|땅) 글자|태어난 (?:해|달|날|시각)|[연월일시](?:간|지)|[가-힣]와 [가-힣] 사이|[가-힣]과 [가-힣] 사이/.test(before.slice(-30))) t = m.glyph;
+    // W6.1 P4(1차 종합 1장 「⟦in:1⟧가 있어서, 태어난 해·날·시각의 세 땅 글자가 …」): 사주 안 관계 구절 뒤(같은 문장 40자 안)에서 작가가 그 관계의 같은 자리(「태어난 해·날·시각」)를 또 말해도 글자만 꼴(다른 관계의 자리 말은 보지 않는다 — r4-1d 궁합 회귀).
+    if (m.glyph && (/(?:하늘|땅) 글자|태어난 (?:해|달|날|시각)|[연월일시](?:간|지)|[가-힣]와 [가-힣] 사이|[가-힣]과 [가-힣] 사이/.test(before.slice(-30)) || (m.kind === "in" && (() => { const pl = m.text.match(/^태어난 ([가-힣·]+) (?:하늘|땅) 글자/)?.[1]; return Boolean(pl && after.slice(0, 40).includes(`태어난 ${pl}`)); })()))) t = m.glyph;
     // ⑥ 구절 끝 괄호 뜻(「(정재의 10년)」「(가까운 사이의 작은 서운함)」)을 문장 뒤에서 또 말하면 괄호를 뗀다.
     { const pm = t.match(/\(([^()]+)\)$/); if (pm && pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
     // ② 바로 앞에 같은 자리 말.

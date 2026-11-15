@@ -113,7 +113,10 @@ export function careerDesign(c: CareerCtx): Record<string, Evidence> {
   const risk = [...we(top, "burnout", 1).map(x => `지칠 때 돈이 새는 신호: ${x}`), ...(c.base.moneyLeak?.kind === "evidence" ? c.base.moneyLeak.facts.slice(0, 2) : [])];
   // 투자 성향: 가장 강한·가장 약한 묶음의 면.
   const inv = (facet: string) => [...pick(fresh(deepLines(k, "invest", `group:${top}`, facet, lvl(top))), seed, 1).map(x => `${line(top)} → ${x}`), ...pick(fresh(deepLines(k, "invest", `group:${weak}`, facet, lvl(weak))), seed, 1).map(x => `${line(weak)} → ${x}`)];
-  const rotation = gs.WEALTH.level === "strong" || d.偏財 + d.劫財 + d.傷官 > d.正財 + d.正官 + d.正印 ? "주식이라면 회전형에 끌리는 성향(편재·겁재·상관 쪽이 더 큼): 규칙으로 속도를 묶는다" : "주식이라면 장기 분산형이 맞는 성향(정재·정관·정인 쪽이 더 큼): 정해 둔 날에만 본다";
+  // W6.1 D5(2차 커리어 「편재나 겁재나 상관 쪽이 더 크기 때문」 — 편재 없는 원국): 합계 비교 줄에는 원국·지장간에 있는 십성 이름만 적는다.
+  const named = (xs: readonly [keyof typeof d, string][]) => xs.filter(([t]) => d[t] > 0).map(([, n]) => n).join("·");
+  const fastSide = d.偏財 + d.劫財 + d.傷官 > d.正財 + d.正官 + d.正印, fastNames = named([["偏財", "편재"], ["劫財", "겁재"], ["傷官", "상관"]]), slowNames = named([["正財", "정재"], ["正官", "정관"], ["正印", "정인"]]);
+  const rotation = gs.WEALTH.level === "strong" || fastSide ? `주식이라면 회전형에 끌리는 성향(${fastSide && fastNames ? `${fastNames} 쪽이 더 큼` : "값을 받는 힘(재성)이 큼"}): 규칙으로 속도를 묶는다` : `주식이라면 장기 분산형이 맞는 성향(${slowNames ? `${slowNames} 쪽이 더 큼` : "빠른 쪽 십성이 작음"}): 정해 둔 날에만 본다`;
   // 타이밍: 대운 위치·다음 대운·세운 3년.
   const cd = chart.currentDayun;
   const three = years.slice(0, 3).map(x => `${x.y}년 ${ganjiOf(getAnnualPillar(x.y)).hangul} ${tenGodLabel(x.tg)}: 일 = ${DOMAIN_BY_TEN_GOD[x.tg][0]}, 돈 = ${DOMAIN_BY_TEN_GOD[x.tg][1]}`);

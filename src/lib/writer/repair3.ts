@@ -3,7 +3,7 @@
  * 지적된 문장만 고친다(문단 전체를 다시 쓰지 않는다). 정답지(엔진 사실)를 함께 준다.
  * 수리본은 다시 검사하고, 실패한 문장만 지운다. 지우면 문단이 깨지는 경우(앞말에 기대는 다음 문장, 소제목의 마지막 문단)는 원문을 두고 기록한다.
  */
-import { removeSentenceAt } from "./safety/orphan";
+import { dependsOnRemoved, removeSentenceAt } from "./safety/orphan";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
@@ -169,8 +169,6 @@ export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactS
 }
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
-/** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|그렇다면|그럼(?![가-힣])|그때마다|이 조합|이 두|이 |그 )/;
 /** W3 P3 6절(AM cut.ts ASKS 이식): 답이 뒤따라야 서는 수사 물음(「…낯설죠?」「…일까요?」). 답 문장을 지우면 물음도 함께 지운다. 물음표 없는 「…나요.」는 서술이다. */
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
 /**
@@ -307,7 +305,7 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
 export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 /** W6 S0-1: improve(rule, detail)가 참인 규칙(개선)은 지우고 난 문단이 3문장 이상 남을 때만 지운다(아니면 kept: "thin" 기록). */
-export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean): { chapters: FinalChapter[]; deleted: Deleted[] } {
+export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean, o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; deleted: Deleted[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const deleted: Deleted[] = [];
   for (const f of flags) {
@@ -319,10 +317,12 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     if (i < 0) continue;
     if (improve?.(f.rule, f.detail) && i === 0 && leadNamesSubject(ss[0].replace(/[⟪⟫]/g, ""), ss[1]?.replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "lead" }); continue; } // W6 S4: 개선 규칙은 다음 문장의 주어를 꺼낸 문단 첫 문장을 지우지 않는다(repairPlan.dropSentences와 같은 규칙)
     // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
-    const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
+    // W6.1 P2: 기대는 다음 문장 판정은 repairPlan.dropSentences와 같은 orphan.dependsOnRemoved(지시어·되받기·「~도 함께」·비교 꼬리·주어를 받는 문장). 개선 규칙이면 원문을 둔다.
+    const dep = dependsOnRemoved(ss[i], ss[i + 1], o), leans = dep !== null;
+    if (leans && improve?.(f.rule, f.detail)) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
     if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
     const { sentences: rest1, stripped } = removeSentenceAt(ss, i);
-    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:leans` });
+    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:${dep}` });
     const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
     // W6 S4 3판(2차 종합 4장): 지운 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」도 같은 고아다.

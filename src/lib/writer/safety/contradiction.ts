@@ -38,6 +38,8 @@ const HYPO = /라면|다면|이라면|흔히|보통은|일반적으로|처럼 �
 /** 조건문(「~하면」): 단서 자체에 든 「면」(「약속이 이어지면 지쳐」)은 빼고 본다. */
 const COND = /(?<=[가-힣])(?<!이)면[\s,]/;
 const NEG_AFTER = /^[가-힣]{0,3}(지 않|진 않|지 못|기보다|기 전에|는 대신|기는커녕|지는 않)/;
+/** 같은 절 안 대비 표지(「그런데·하지만·다만·반면·~지만」). */
+const CONTRAST = /^(?:그런데|하지만|다만|반면|그래도|한편)|지만[, ]/;
 const OTHERS = /상대|연인|배우자|남편|아내|애인|동료|친구|아이|자녀|부모|엄마|아빠|팀원|상사|주변 사람|사람들|그 사람|다른 사람/;
 const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** 차원 끝 단서: POLE_CUES + 궁합 성격표 단서(PROFILE_CUES — 에너지·나섬·다툼·표정·결정, pair_profile에서 다듬은 꼴). */
@@ -52,6 +54,10 @@ const EXTRA: readonly [string, RegExp][] = [["socialEnergy+", PROFILE_CUES.E], [
   ["conflictApproach-", /말을 고르는 데 시간이 (?:걸리|걸려|오래)/],
   // W6 S4 2판(2차 종합 3장 「뒤끝 없이 감정을 금방 털고, 부딪쳐도 회복이 빠릅니다」 ↔ 4장 「물이 부족하면 완충이 얇아서 부딪친 일이 마음에 오래 머물기 쉽습니다」 — 수 부족 재료 줄과 수 부족×INFJ 긴장 재료 줄).
   //  조건 「부족하면」을 단서 안에 넣어 조건문 제외에 걸리지 않게 한다. 곱씹기 일반(자기 실수·말 순서)은 넣지 않는다(위 주석 오탐 9건).
+  // W6.1 P5(2차 궁합 2장 「하린님은 괜찮다는 말보다 괜찮지 않은 표정을 먼저 믿는 사람」 ↔ 같은 장 「하린님은 말을 그대로 받아들이는 편」): 상대 말을 읽는 길.
+  ["cueReading+", /(?:말보다|말은 [^.?!]{0,8}보다) [^.?!]{0,16}표정을 (?:먼저 )?믿|말하지 않은 [^.?!]{0,12}기분(?:도|까지) 알아채/], ["cueReading-", /말을 (?:들은 )?그대로 받아들이|말한 그대로 (?:믿|받아들)/],
+  // W6.1 P5(2차 궁합 1장 「둘 다 … 말보다 속으로 깊이 생각하는 힘」 ↔ 6장 「하린님은 말로 풀어야 생각이 정리되는 사람」): 생각을 푸는 길.
+  ["verbalOutput+", /말로 풀어야 생각이 정리|말하면서 생각이 정리|말로 꺼내야 (?:생각|마음)이 정리/], ["verbalOutput-", /말보다 속으로 (?:깊이 )?생각|속으로 깊이 생각하는/],
   ["emotionalRecovery+", /뒤끝(?:이)? 없|감정을 (?:금방|빨리) 털|부딪쳐도 (?:금방|빨리) 회복|부딪쳐도 회복이 빠르/],
   ["emotionalRecovery-", /(?:(?:수|물)(?:가|이)? 부족하면 )?완충이 얇[^.?!]{0,30}(?:오래 머물|오래 남|그대로 (?:몸|마음)에 남)|부딪친 일이 [^.?!]{0,12}오래 머물/]];
 const CUES = [...Object.entries(POLE_CUES), ...EXTRA].map(([key, re]) => ({ dim: key.slice(0, -1), pole: (key.endsWith("+") ? 1 : -1) as 1 | -1, re: new RegExp(re.source, "g") }));
@@ -94,16 +100,20 @@ export function assertedPoles(s: string, ctx: ContradictionCtx): { who: number; 
 }
 
 /** 책 순서로 문장을 받아 같은 사람·같은 차원 반대 끝 단정을 찾는다(뒤 문장에 단다). 한 사람 책은 요약표 값을 먼저 둔다. */
+/** W6.1 P5: 궁합에서 이름 없는 문장이 같은 문단 바로 앞 「둘 다·두 사람 모두」 문장을 잇는 꼴(「둘 다 식상이 적고 …. 말보다 속으로 깊이 생각하는 힘이 있고, … 결이 같아요」). */
+const BOTH_LEAD = /^(?:둘 다|두 사람 모두|두 사람은 (?:둘 다|모두)) /;
+const SPLIT_SUBJECT = /한쪽|다른 쪽|한 사람은|다른 사람은|반면/;
 export function contradictionFlags(sentences: readonly SentenceAt[], ctx: ContradictionCtx): ContradictionHit[] {
   const first = new Map<string, { pole: 1 | -1; where: string; at: string; cue: string }>();
   ctx.people.forEach((p, i) => { for (const [d, s] of profilePoles(p.codes)) first.set(`${i}|${d}`, { pole: s, where: "성격 요약표", at: "profile", cue: `${p.label} ${d}${s > 0 ? "+" : "−"}` }); });
   const out: ContradictionHit[] = [];
-  for (const x of sentences) {
-    for (const a of assertedPoles(x.sentence, ctx)) {
+  for (const [xi, x] of sentences.entries()) {
+    const pv = sentences[xi - 1], carried = ctx.compat && pv && pv.chapter === x.chapter && pv.section === x.section && pv.paragraph === x.paragraph && BOTH_LEAD.test(pv.sentence.replace(/[⟪⟫]/g, "").trim()) && !SPLIT_SUBJECT.test(x.sentence) && !ctx.people.some(p => p.names.some(n => x.sentence.includes(n) || pv.sentence.includes(n)));
+    for (const a of carried ? assertedPoles(`둘 다 ${x.sentence.replace(/[⟪⟫]/g, "").trim()}`, ctx) : assertedPoles(x.sentence, ctx)) {
       const k = `${a.who}|${a.dim}`, was = first.get(k);
       if (!was) { first.set(k, { pole: a.pole, where: `${x.chapter}장`, at: `${x.chapter}.${x.section}`, cue: a.cue }); continue; }
       // 같은 절 안에서 바로 대비해 풀어 쓴 것(「그런데 ESTP의 결은 …」)은 모순이 아니라 설명된 긴장이다 — 장·절이 다를 때만.
-      if (was.pole !== a.pole && was.at !== `${x.chapter}.${x.section}`) { out.push({ ...x, detail: `${ctx.people[a.who]?.label ?? ""} ${a.dim}: ${was.where}에서 「${was.cue}」 쪽인데 「${a.cue}」(반대 끝)` }); break; }
+      if (was.pole !== a.pole && (was.at !== `${x.chapter}.${x.section}` || (a.dim === "cueReading" && !CONTRAST.test(x.sentence)))) { out.push({ ...x, detail: `${ctx.people[a.who]?.label ?? ""} ${a.dim}: ${was.where}에서 「${was.cue}」 쪽인데 「${a.cue}」(반대 끝)` }); break; }
     }
   }
   return out;
