@@ -7,6 +7,7 @@ import type { Knowledge } from "@/lib/brief/knowledge";
 import { hangulOf, type FactSheet, type Pos, type PersonFacts, type RelationFact, type Slot } from "./build";
 import { TEN_GOD_KO } from "@/lib/brief/labels";
 import { getTenGod } from "@/lib/saju/tenGods";
+import type { FiveElement } from "@/lib/saju/types";
 import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
@@ -214,6 +215,16 @@ function tenGodMix(sen: string, owners: readonly PersonFacts[]): FactHit | null 
   const m = sen.match(TG_MIX); if (!m) return null;
   const o = owners[0]; if (Object.values(o.tenGods).some(v => v?.includes(m[1]))) return null;
   return { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${m[1]}은 없다 — 「${m[0]}」` };
+}
+/** W6 S4 2판(1차 종합 2장): 「다만 나무 글자가 셋 이상이면 …」 — 겉 글자 수가 그보다 적은데 조건으로 쓰면 그 사람 이야기로 읽힌다(개수 = 겉 글자, elementCount 정의). */
+const EL_WORD: Readonly<Record<string, FiveElement>> = { 나무: "WOOD", 목: "WOOD", 불: "FIRE", 화: "FIRE", 흙: "EARTH", 토: "EARTH", 쇠: "METAL", 금: "METAL", 물: "WATER", 수: "WATER" };
+const N_WORD: Readonly<Record<string, number>> = { 둘: 2, 두: 2, 셋: 3, 세: 3, 넷: 4, 네: 4, 다섯: 5 };
+const EL_AT_LEAST = /(?<![가-힣])(나무|불|흙|쇠|물|[목화토금수])(?: 기운)? 글자(?:가|는)? (둘|셋|넷|다섯|[두세네] 개|[2-5] ?개?) 이상(?:이면|일 때|이라면|인 사람)/;
+function elementAtLeast(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1) return null;
+  const m = sen.match(EL_AT_LEAST); if (!m) return null;
+  const n = N_WORD[m[2].replace(/ ?개$/, "")] ?? Number(m[2].replace(/\D/g, "")), e = EL_WORD[m[1]], real = owners[0].elements.count[e];
+  return n && real < n ? { rule: "fact_count", detail: `${owners[0].name}님 ${m[1]} 글자는 ${real}개 — 「${m[0]}」는 이 사람 조건이 아니다` } : null;
 }
 function seasonClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
   if (owners.length !== 1 || SEASON_IF.test(sen)) return null;
@@ -639,7 +650,7 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
 
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

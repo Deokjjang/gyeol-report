@@ -15,7 +15,11 @@ export type MarkKind = "rel" | "cnt" | "in" | "star" | "at" | "un" | "ju" | "tg"
 /** short: 가까이(같은 문단·바로 앞 문단 끝 문장) 다시 나올 때의 짧은 꼴(W6 A1). codes: 자리 칸 이름(「일지」) — 바로 앞에 같은 자리 말이 있으면 겹치지 않게. list: 자리가 셋 이상일 때 책에서 한 번만 펼치는 목록. */
 export type Mark = { readonly key: string; readonly kind: MarkKind; readonly text: string; readonly flow?: string; readonly bare?: string; readonly owner?: string; readonly short?: string; readonly codes?: readonly string[]; readonly list?: string; readonly later?: string;
   /** W6: 관계 구절의 글자만 꼴(「신과 해 사이의 해(…)」) — 문장이 이미 자리를 말했을 때. */
-  readonly glyph?: string };
+  readonly glyph?: string;
+  /** W6 S4(발행 렌더 표만): 자리 표시(at)의 특성 이름 — 자리 표시를 주어·목적어로 쓰면(「도윤님의 세 자리(…)가 이때 작동해서」) 「자리의 편관이」로 이름을 붙인다. */
+  readonly name?: string };
+/** 자리 표시 뒤 말이 이미 간지·십성·신살 이름이면(「(일주)이 갑인이에요」) 특성 이름을 붙이지 않는다. */
+const NAMEY = /^(?:[갑을병정무기경신임계][자축인묘진사오미신유술해]|[갑을병정무기경신임계](?:목|화|토|금|수)|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|[가-힣]{1,4}살(?![가-힣])|[가-힣]{1,3}귀인)/;
 export type MarkTable = ReadonlyMap<string, Mark>;
 
 const HANGUL: Readonly<Record<string, string>> = { 甲: "갑", 乙: "을", 丙: "병", 丁: "정", 戊: "무", 己: "기", 庚: "경", 辛: "신", 壬: "임", 癸: "계", 子: "자", 丑: "축", 寅: "인", 卯: "묘", 辰: "진", 巳: "사", 午: "오", 未: "미", 申: "신", 酉: "유", 戌: "술", 亥: "해" };
@@ -89,8 +93,10 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
   });
   // ⓪‴ W6 S4(2차 궁합 6장): 작가가 두 사람 자리를 글로 쓰고 관계 표시를 붙인 꼴(「도윤님의 해와 하린님의 자 사이에는 ⟦rel:7⟧도」) — 작가 자리 말(틀릴 수 있음)을 표시의 자리 구절로 바꾸고 관계 이름만 남긴다.
   const src02 = src01.replace(new RegExp(`([가-힣]{1,6}님의 [^.?!,⟦]{1,24}(?:와|과) [가-힣]{1,6}님의 [^.?!,⟦]{1,24} 사이에(는)? )⟦rel:([0-9a-z]{1,12})⟧(${PARTICLE_ALT})?`, "g"), (all: string, _w: string, neun: string | undefined, id: string, p?: string) => {
-    const m = table.get(`rel:${id}`); const x = m?.text.match(/^(.+) 사이의 (.+)$/); if (!x) return all;
-    count.dropped++; return `${x[1]} 사이에${neun ?? ""} ${x[2]}${p ? fixParticle(x[2], p) : ""}`;
+    // 자르기는 끝 풀이 괄호 밖의 마지막 「 사이의 」에서(S4 2판: 풀이 「(가까운 사이의 작은 서운함)」 안에서 잘라 「사이에는 작은 서운함)이」가 됐다).
+    const t = table.get(`rel:${id}`)?.text ?? "", gl = t.match(/\([^()]*\)$/)?.[0] ?? "", base = t.slice(0, t.length - gl.length), k = base.lastIndexOf(" 사이의 "); if (k < 0) return all;
+    const loc = base.slice(0, k), name = base.slice(k + 5) + gl;
+    count.dropped++; return `${loc} 사이에${neun ?? ""} ${name}${p ? fixParticle(name, p) : ""}`;
   });
   const src = src02.replace(new RegExp(`([가-힣]{1,8})( 대운)?\\((${MARK_RE.source})\\)`, "g"), (all: string, w: string, dae: string | undefined, mk: string, kind: string, id: string) => {
     const m = table.get(`${kind}:${id}`); if (!m) return all;
@@ -118,8 +124,10 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     // 앞 문장의 다른 표시가 같은 구절로 바뀌는 경우(자리가 같은 두 특성)도 「같은 구절을 썼다」로 본다.
     const prevSentence = prev0.replace(new RegExp(MARK_RE.source, "g"), (x: string, k2: string, i2: string) => table.get(`${k2}:${i2}`)?.text ?? "");
     const tail30 = before.slice(-30);
+    // ⑪ W6 S4(2차 궁합·커리어): 자리 표시를 주어·목적어로 쓰면(「⟦at⟧가 이때 작동해서」「⟦at⟧를 떠올려 보세요」) 자리만 남아 무엇이 작동하는지 빠진다 → 「자리의 특성 이름」.
+    const named = (x: string) => (m.kind === "at" && m.name && p && /^(?:이|가|을|를)$/.test(p) && !before.slice(-24).includes(m.name) && !after.slice(0, 24).includes(m.name) && !NAMEY.test(after.trimStart()) ? `${x}의 ${m.name}` : x);
     // ④' 바로 앞 문장이 같은 구절을 글로 이미 썼으면(「지금은 을축 대운(정재의 10년)이 …. ⟦un:now⟧은 …」) 짧은 꼴.
-    if (m.short && m.kind !== "cnt" && !before.slice(-10).includes(m.short) && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = m.short; count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
+    if (m.short && m.kind !== "cnt" && !before.slice(-10).includes(m.short) && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = named(m.short); count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
     if (m.codes?.some(c => tail30.includes(c)) || (m.kind === "at" && tail30.includes(placeCore(m.text)))) {
       count.dropped++; used.push([key, si]); inPara.add(key);
       if (gen) return "";
@@ -142,6 +150,7 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     if (m.kind === "tg") { const x = t.match(/^(.+?)에게 (.+?)인 (.+)$/); if (x) { if (before.slice(-14).includes(`${x[1]}에게`)) t = x[3]; else if (after.includes(x[2])) t = `${x[1]}에게 ${x[3]}`; } }
     inPara.add(key); used.push([key, si]); state?.seen.add(key);
     if (m.short && t.length >= 8) rendered.push({ si, text: t, short: m.short });
+    t = named(t);
     return t + (p ? fixParticle(t, p) : gen ? "의 " : "");
   }).replace(/ {2,}/g, " ");
   // ⑩ 앞 문장에서 렌더한 구절을 작가가 다음 문장에서 글로 또 쓰면(1차 커리어 「…(연간)와 …(월지)에 걸친 정재는」) 뒤의 것을 짧은 꼴로.

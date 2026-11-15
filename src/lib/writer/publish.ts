@@ -248,7 +248,9 @@ function p6eContext(brief: Brief, k: Knowledge): Partial<LintCtx> {
   const table = materialTable(k);
   const fnNames = (type: string | undefined) => (type ? (k.mbti.get(type as never)?.cognitiveFunctions ?? []).map(f => table.plain.get(f.easy)).filter((x): x is string => Boolean(x)) : []);
   const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-  const person = (type: string | undefined, name?: string): E.MbtiPerson[] => type ? [{ type, anchors: new RegExp([type, ...fnNames(type).map(esc)].join("|")), ...(name ? { name } : {}) }] : [];
+  // W6 S4 2판(1차 연애 4장): 수리가 기능 쉬운 이름을 바꿔 쓰면(「내 감정을 안으로 곱씹는 성향(Fi)」) 이름으로는 못 찾는다 — 괄호 속 기능 부호도 닻으로.
+  const fnCodes = (type: string | undefined) => (type ? (k.mbti.get(type as never)?.cognitiveFunctions ?? []).map(f => `\\(${esc(f.code)}\\)`) : []);
+  const person = (type: string | undefined, name?: string): E.MbtiPerson[] => type ? [{ type, anchors: new RegExp([type, ...fnNames(type).map(esc), ...fnCodes(type)].join("|")), ...(name ? { name } : {}) }] : [];
   const pos = (ch: Brief["chart"]) => { const p = ch.positions; if (!p) return undefined; const { line: _l, ...rest } = p; void _l; return rest as E.PositionTenGods; };
   const terms = [...termDictionary(k).keys()].filter(x => x.length >= 2).sort((a, b) => b.length - a.length).map(esc);
   return {

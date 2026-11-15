@@ -49,7 +49,11 @@ const EXTRA: readonly [string, RegExp][] = [["socialEnergy+", PROFILE_CUES.E], [
   // W6 S4(2차 커리어 1장): 커리어 증거 「의사결정: 규정과 선례를 먼저 확인하고 정하는 절차형」이 성격표 「결정이 빠른 편」과 반대.
   ["decisionSpeed-", /(?:의사결정|결정)(?:은|이)? [^.?!]{0,10}(?:규정과 선례를|선례를) 먼저 확인하고 정하|확인하고 정하는 절차형/],
   // W6 S4(2차 궁합 2장): 「둘 다 … 서운해도 말을 고르는 데 시간이 걸려요」 ↔ 성격표 「그 자리에서 말하는 편」.
-  ["conflictApproach-", /말을 고르는 데 시간이 (?:걸리|걸려|오래)/]];
+  ["conflictApproach-", /말을 고르는 데 시간이 (?:걸리|걸려|오래)/],
+  // W6 S4 2판(2차 종합 3장 「뒤끝 없이 감정을 금방 털고, 부딪쳐도 회복이 빠릅니다」 ↔ 4장 「물이 부족하면 완충이 얇아서 부딪친 일이 마음에 오래 머물기 쉽습니다」 — 수 부족 재료 줄과 수 부족×INFJ 긴장 재료 줄).
+  //  조건 「부족하면」을 단서 안에 넣어 조건문 제외에 걸리지 않게 한다. 곱씹기 일반(자기 실수·말 순서)은 넣지 않는다(위 주석 오탐 9건).
+  ["emotionalRecovery+", /뒤끝(?:이)? 없|감정을 (?:금방|빨리) 털|부딪쳐도 (?:금방|빨리) 회복|부딪쳐도 회복이 빠르/],
+  ["emotionalRecovery-", /(?:(?:수|물)(?:가|이)? 부족하면 )?완충이 얇[^.?!]{0,30}(?:오래 머물|오래 남|그대로 (?:몸|마음)에 남)|부딪친 일이 [^.?!]{0,12}오래 머물/]];
 const CUES = [...Object.entries(POLE_CUES), ...EXTRA].map(([key, re]) => ({ dim: key.slice(0, -1), pole: (key.endsWith("+") ? 1 : -1) as 1 | -1, re: new RegExp(re.source, "g") }));
 
 function ownerOf(s: string, start: number, ctx: ContradictionCtx, end = start): number {
@@ -68,8 +72,10 @@ function ownerOf(s: string, start: number, ctx: ContradictionCtx, end = start): 
 
 /** 문장 속 단정된 차원 끝(주인별). 대비 문장(한 사람에게 두 끝)은 뺀다. */
 export function assertedPoles(s: string, ctx: ContradictionCtx): { who: number; dim: string; pole: 1 | -1; cue: string }[] {
-  const t = s.replace(/[⟪⟫]/g, "").trim();
-  if (QUESTION.test(t) || ADVICE.test(t) || HYPO.test(t)) return [];
+  let t = s.replace(/[⟪⟫]/g, "").trim();
+  // W6 S4 2판(2차 커리어 8장 「…확인하고 정하는 절차형이라, 큰 결정 앞에서는 … 쓰세요」): 조언 문장도 앞의 까닭 마디(「~형이라·~편이라,」)는 성향을 단정한다 → 그 마디만 본다.
+  if (ADVICE.test(t)) { const r = t.match(/^(.{4,}?(?:형|편|쪽|사람|유형)이라)[, ]/); if (!r) return []; t = r[1]; }
+  if (QUESTION.test(t) || HYPO.test(t)) return [];
   const spans: [number, number][] = []; for (const c of CUES) for (const m of t.matchAll(new RegExp(c.re.source, "g"))) spans.push([m.index!, m.index! + m[0].length]);
   for (const m of t.matchAll(new RegExp(COND.source, "g"))) if (!spans.some(([a, b]) => m.index! >= a && m.index! < b)) return [];
   const out: { who: number; dim: string; pole: 1 | -1; cue: string }[] = [];

@@ -15,7 +15,8 @@ import { splitSentences } from "@/lib/writer/safety/patterns";
 import { INTERNAL_LABEL } from "@/lib/writer/safety/sentences";
 import { careerGroupNames } from "@/lib/writer/safety/p6e";
 import { personNames } from "@/lib/writer/publish";
-import { dropSentences } from "@/lib/writer/repairPlan";
+import { dropSentences, leadNamesSubject } from "@/lib/writer/repairPlan";
+import { sentenceViolation } from "@/lib/writer/safety";
 import { deleteFlagged } from "@/lib/writer/repair3";
 import { HARD_RULES, type LintFlag } from "@/lib/writer/safety/p6c";
 import { improveOnly } from "@/lib/writer/repairPlan";
@@ -213,5 +214,51 @@ describe("S4 직접 읽기 결함 고침(측정 8권)", () => {
   it("커리어 묶음 이름은 괄호 풀이 안에 또 달지 않는다 · 관계 문장 뒤 「…과도 맞아요」 잇기", () => {
     expect(careerGroupNames("땅 글자 속에서 편관(나를 압박해 단단하게 만드는 규칙의 힘)이 일을 밀어붙여요.", new Set()).text).toBe("땅 글자 속에서 편관(나를 압박해 단단하게 만드는 규칙의 힘)이 일을 밀어붙여요.");
     expect(relationLinkAfter("누군가 나서지 않을 때 궂은일을 맡는 INFJ의 습관과도 맞아요.", "태어난 달과 날 사이에는 인신충이 있어요. 정체된 모임이 흐르기 시작해요.", /INFJ/)).not.toBeNull();
+  });
+});
+
+describe("S4 2판 직접 읽기 결함 고침(측정 8권 2판)", () => {
+  const mk = (key: string, text: string, extra: Partial<Mark> = {}): [string, Mark] => [key, { key, kind: key.split(":")[0] as Mark["kind"], text, ...extra }];
+  it("두 사람 자리 + 관계 표시: 풀이 괄호 안의 「사이의」에서 자르지 않는다(「사이에는 해(…)가」)", () => {
+    const t = new Map([mk("rel:8", "도윤님의 태어난 날 땅 글자 술과 하린님의 태어난 달 땅 글자 유 사이의 해(가까운 사이의 작은 서운함)", { short: "이 관계" })]);
+    expect(renderMarks("도윤님의 태어난 날 땅 글자와 하린님의 태어난 달 땅 글자 사이에는 ⟦rel:8⟧가 있어서 말이 상처가 돼요.", t))
+      .toBe("도윤님의 태어난 날 땅 글자 술과 하린님의 태어난 달 땅 글자 유 사이에는 해(가까운 사이의 작은 서운함)가 있어서 말이 상처가 돼요.");
+  });
+  it("자리 표시를 주어·목적어로 쓰면 특성 이름을 붙인다 · 자리(에)·주제(는)·이름이 이미 있으면 그대로", () => {
+    const t = new Map([mk("at:a3", "도윤님의 태어난 날 땅 글자(일지)", { short: "이 자리", codes: ["일지"], owner: "도윤님", name: "반안살" })]);
+    expect(renderMarks("하지만 ⟦at:a3⟧를 떠올려 보세요.", t)).toBe("하지만 도윤님의 태어난 날 땅 글자(일지)의 반안살을 떠올려 보세요.");
+    expect(renderMarks("⟦at:a3⟧가 이때 힘이 됩니다.", t)).toBe("도윤님의 태어난 날 땅 글자(일지)의 반안살이 이때 힘이 됩니다.");
+    expect(renderMarks("⟦at:a3⟧에 반안살이 있어요.", t)).toBe("도윤님의 태어난 날 땅 글자(일지)에 반안살이 있어요.");
+    expect(renderMarks("⟦at:a3⟧는 안정을 챙기는 자리예요.", t)).toBe("도윤님의 태어난 날 땅 글자(일지)는 안정을 챙기는 자리예요.");
+    expect(renderMarks("반안살은 ⟦at:a3⟧가 받쳐 줘요.", t)).toBe("반안살은 도윤님의 태어난 날 땅 글자(일지)가 받쳐 줘요.");
+  });
+  it("문단 첫 문장 지키기는 다음 문장의 주어(근거 이름)를 꺼낼 때만 — 틀 문장은 뗀다", () => {
+    expect(leadNamesSubject("태어난 달 땅 글자에 망신살이 있어요.", "속마음이 얼굴에 드러나는 힘이라 숨기기 어려워요.")).toBe(true);
+    expect(leadNamesSubject("이번 장의 행동은 이거예요.", "하루를 마칠 때 끝낸 일 세 가지를 적어 두세요.")).toBe(false);
+    expect(leadNamesSubject("망신살이 있어요.", "망신살은 기분이 말투에 묻어나는 힘이에요.")).toBe(false);
+    const p = "이번 장의 행동은 이거예요. 하루를 마칠 때 끝낸 일 세 가지를 적어 두세요. 적는 데 오 분이면 충분해요. 그 기록이 다음 날 첫 줄이 돼요.";
+    expect(dropSentences([ch(1, [[p]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "이번 장의 행동은 이거예요.", rule: "rule_leak", hard: HARD_RULES.has("rule_leak" as never) }]).dropped[0].kept).toBeUndefined();
+  });
+  it("같은 사람 감정 회복 모순(수 부족 「뒤끝 없음」 ↔ 「완충이 얇아 오래 머묾」) · 조언 앞 까닭 마디의 단정 · 자기 실수 곱씹기는 아니다", () => {
+    const one = { compat: false, people: [{ names: ["한결"], label: "한결님", codes: { decide: "fast" as const } }] };
+    const s = (chapter: number, section: number, sentence: string) => ({ chapter, section, paragraph: 0, sentence });
+    expect(contradictionFlags([s(3, 0, "뒤끝 없이 감정을 금방 털고, 부딪쳐도 회복이 빠릅니다."), s(4, 1, "물이 부족하면 완충이 얇아서 부딪친 일이 마음에 오래 머물기 쉽습니다.")], one)).toHaveLength(1);
+    expect(contradictionFlags([s(3, 0, "뒤끝 없이 감정을 금방 털고, 부딪쳐도 회복이 빠릅니다."), s(6, 0, "사소한 실수를 며칠씩 곱씹다가 몸부터 지칩니다.")], one)).toHaveLength(0);
+    expect(contradictionFlags([s(8, 2, "규정과 선례를 먼저 확인하고 정하는 절차형이라, 큰 결정 앞에서는 같은 확인 순서를 그대로 쓰세요.")], one)).toHaveLength(1);
+    expect(contradictionFlags([s(8, 2, "큰 결정은 하루를 묵힌 다음 다시 보세요.")], one)).toHaveLength(0);
+  });
+  it("「X 글자가 셋 이상이면」은 겉 글자가 그보다 적으면 fact_count · 건강 「신호가 오죠」", () => {
+    const ctx = factCtxOf(F.sheet, k, personNames(F.brief));
+    const count = F.sheet.people[0].elements.count, W: Record<number, string> = { 2: "둘", 3: "셋", 4: "넷", 5: "다섯" };
+    const KO: Record<string, string> = { WOOD: "나무", FIRE: "불", EARTH: "흙", METAL: "쇠", WATER: "물" };
+    const low = Object.entries(count).find(([, c]) => c <= 4)!, high = Object.entries(count).find(([, c]) => c >= 2);
+    expect(factCheck(`다만 ${KO[low[0]]} 글자가 ${W[Math.max(2, low[1] + 1)]} 이상이면 욕심이 체력을 앞지르기 쉽습니다.`, ctx)?.rule).toBe("fact_count");
+    if (high) expect(factCheck(`다만 ${KO[high[0]]} 글자가 ${W[high[1] >= 5 ? 5 : Math.max(2, high[1])]} 이상이면 욕심이 체력을 앞지르기 쉽습니다.`, ctx)).toBeNull();
+    const single = { birthTimeKnown: false, mbti: null, relationship: "single" as const, children: "unknown" as const, job: "none" as const };
+    expect(sentenceViolation("소화와 수면에서 먼저 신호가 오죠.", single)).toBe("health_claim");
+    expect(sentenceViolation("몸이 신호를 보내기 전에 쉬는 시간을 챙기세요.", single)).toBeNull();
+  });
+  it("관계 문장 두 문장 뒤에도 기능 부호(Fi)로 이은 MBTI 성향은 잇기", () => {
+    expect(relationLinkAfter("서운함을 속으로 오래 담아 두는 면은 내 감정을 안으로 곱씹는 성향(Fi)과 닮아 있어요.", "여기에는 원진살이라는 근거가 있어요. 태어난 해와 날 사이에 거슬리는 짝이 있어요.", /ENTJ|\(Fi\)/)).not.toBeNull();
   });
 });

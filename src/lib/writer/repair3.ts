@@ -15,7 +15,7 @@ import { factTokens, type FactKind } from "./chunked/accept";
 import { relationName } from "@/lib/compat/relations";
 import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
-import { modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
+import { leadNamesSubject, modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
 - 지적된 문장만 고친다. 고친 답도 한 문장이다(문장을 늘리거나 앞뒤 문장 내용을 끌어오지 않는다 — 늘린 답은 버려진다). 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓴다.
@@ -317,7 +317,7 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const ss = splitSentences(p), i = ss.findIndex(x => x.replace(/[⟪⟫]/g, "").includes(f.sentence) || f.sentence.includes(x.replace(/[⟪⟫]/g, "")));
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
-    if (improve?.(f.rule, f.detail) && i === 0) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "lead" }); continue; } // W6 S4: 개선 규칙은 문단 첫 문장(주어 자리)을 지우지 않는다(repairPlan.dropSentences와 같은 규칙)
+    if (improve?.(f.rule, f.detail) && i === 0 && leadNamesSubject(ss[0].replace(/[⟪⟫]/g, ""), ss[1]?.replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "lead" }); continue; } // W6 S4: 개선 규칙은 다음 문장의 주어를 꺼낸 문단 첫 문장을 지우지 않는다(repairPlan.dropSentences와 같은 규칙)
     // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
     const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
     if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }

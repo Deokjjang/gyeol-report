@@ -45,6 +45,13 @@ const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기�
 const BECAUSE = /^[^.?!]{0,60}때문(?:입니다|이에요|이죠)[.!]?$/;
 /** W6 S4(2차 커리어 8장): 문장 앞머리(20자 안)에서 앞 문장 내용을 「이 순서·이 방법」으로 받는 문장 — 개선 규칙으로 앞 문장을 떼면 가리킬 것이 없어진다(「셋째는 …」 원칙 내용이 빠지고 「이 순서가 방패가 됩니다」만 남음). */
 const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습관|규칙|원칙|장치|기준|패턴|방식|약속)/;
+/** 근거 이름(신살·십성·관계·자리) — 문단 첫 문장이 꺼낸 주어인지 본다. */
+const SUBJECT_TERM = /(?:[가-힣]{1,4}살|[가-힣]{1,3}귀인|천문성|금여록|암록|비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|비겁|식상|재성|관성|인성|원진|삼합|반합|육합|방합|[자축인묘진사오미신유술해]{2}\s?(?:충|합|형|파|해)|연간|월간|일간|연지|월지|일지|시지|일주|(?:하늘|땅) 글자|기둥)(?=[은는이가을를의과와도에]|[\s(),.·]|$)/;
+/**
+ * W6 S4 2판: 개선 규칙으로 문단 첫 문장을 떼지 않는 것은 그 문장이 다음 문장의 주어(근거 이름)를 꺼낼 때만이다(「망신살이 있어요. 속마음이 … 드러나는 힘이라」).
+ * 틀 문장(「이번 장의 행동은 이거예요」)·안내 문장은 지킬 주어가 없다 — 1판처럼 모두 지키면 1차 궁합에 「이번 장의 행동은 이거예요」가 6번 남았다.
+ */
+export const leadNamesSubject = (lead: string, next: string | undefined): boolean => next !== undefined && SUBJECT_TERM.test(lead) && !SUBJECT_TERM.test(next);
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
 export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" };
 export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean; readonly detail?: string };
@@ -67,7 +74,7 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     if (!t.hard && /⟪/.test(ss[i])) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "key" }); continue; }
     if (!t.hard && inSection <= 2) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "only_sentence" }); continue; }
     // W6 S4(2차 연애·종합): 문단 첫 문장은 주어(신살·십성 이름)를 꺼내는 자리라, 개선 규칙으로 떼면 다음 문장이 주어 없이 남는다(「속마음이 … 드러나는 힘이라」). 개선 규칙은 문단 첫 문장을 떼지 않는다.
-    if (improveOnly(t.rule, t.detail) && i === 0) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "lead" }); continue; }
+    if (improveOnly(t.rule, t.detail) && i === 0 && leadNamesSubject(norm(ss[0]), ss[1] !== undefined ? norm(ss[1]) : undefined)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "lead" }); continue; }
     const next = ss[i + 1] !== undefined ? norm(ss[i + 1]) : undefined;
     const leans = next !== undefined && (LEANS.test(next) || BECAUSE.test(next));
     if (improveOnly(t.rule, t.detail) && next !== undefined && POINTS_BACK.test(next)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }

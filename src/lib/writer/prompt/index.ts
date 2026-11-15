@@ -369,6 +369,8 @@ export function renderMarkTableFor(brief: Brief, facts: FactSheet | null | undef
     const short = tr.name.split(" ").pop() ?? tr.name, who = owner ? `${owner}의 ` : "";
     t.set(`at:${tr.id}`, { key: `at:${tr.id}`, kind: "at", text: `${who}${tr.where}의 ${short}`, short, codes: [short], ...(owner ? { owner } : {}) });
   }
+  // 자리 표시에 특성 이름을 단다(주어·목적어로 쓴 자리 표시에 렌더가 「자리의 이름」을 붙인다 — marks.ts ⑪).
+  for (const tr of brief.traits) { const k = `at:${tr.id}`, cur = t.get(k); if (cur && !cur.name) t.set(k, { ...cur, name: (tr.name.split(" ").pop() ?? tr.name).replace(/\s?\([^()]*\)$/, "") }); } // 한자 괄호는 뗀다(「경인(庚寅)」 — 뒤 말 「경인이에요」와 대조)
   return t;
 }
 /** 사실 표시를 작가 브리프에 넣는다: marks 칸(표시 → 구절), 특성 자리 칸은 「⟦at:id⟧ = 자리」, 궁합 관계 문장 칸(같은 11줄 두 벌 + 요약)은 marks.between이 대신한다. */
