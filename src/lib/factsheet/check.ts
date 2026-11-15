@@ -315,8 +315,22 @@ function annualNoTouch(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
   return null;
 }
 
+/** W6 S2-2(B2): 일간 세기를 분류 문구 없이 행동 한 줄로(작가 표 — writer/prompt). W6.1 1-3: 두 사람 공통 세기 검사(bothClaim)와 같은 출처. */
+export const STRENGTH_ACT: Readonly<Record<string, readonly string[]>> = {
+  VERY_STRONG: ["내 판을 직접 짜고 그 판을 끝까지 끌고 갈 때 힘이 제대로 쓰이는 편", "주도권을 쥐고 방향을 정할 때 가장 힘이 잘 나는 편"],
+  STRONG: ["맡은 일을 내 힘으로 끝까지 밀고 나가는 편", "남의 판을 따르기보다 내 방식으로 일을 끌고 갈 때 힘이 나는 편"],
+  BALANCED: ["상황을 봐서 밀 때와 물러설 때를 골라 쓰는 편", "판이 바뀌면 힘 쓰는 방향을 그에 맞춰 바꾸는 편", "필요한 만큼만 힘을 꺼내 쓰고 나머지는 아껴 두는 편"],
+  WEAK: ["받쳐 주는 사람과 정해진 순서가 있을 때 힘이 오래 가는 편", "혼자 짊어지기보다 함께 나눠 질 때 힘이 오래 가는 편"],
+  VERY_WEAK: ["도움과 순서를 빌릴 때 힘이 제대로 나는 편", "기댈 곳을 먼저 만들어 두면 일이 풀리는 편"],
+};
 /** 신강약 말 · 같은 문단의 신약 + 비겁·인성 강. */
 const STRENGTH_KO: Readonly<Record<string, string>> = { VERY_WEAK: "매우 신약", WEAK: "신약", BALANCED: "중화", STRONG: "신강", VERY_STRONG: "매우 신강" };
+/** 문장이 쓴 세기 행동 줄의 세기(쉼표는 빼고 앞 14자로 찾는다 — 「꺼내 쓰고, 나머지는」). 없으면 null. */
+function strengthActLevel(sen: string): string | null {
+  const flat = sen.replace(/,/g, "");
+  for (const [lv, acts] of Object.entries(STRENGTH_ACT)) if (acts.some(a => flat.includes(a.replace(/,/g, "").slice(0, 14)))) return lv;
+  return null;
+}
 function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: string): FactHit | null {
   if (owners.length !== 1) return null;
   const o = owners[0], real = STRENGTH_KO[o.strength.level];
@@ -326,6 +340,8 @@ function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: s
     const weakSaid = m[2] === "신약", weakReal = /WEAK/.test(o.strength.level);
     if (o.strength.level === "BALANCED" || weakSaid !== weakReal || (m[1] && !/VERY/.test(o.strength.level))) return { rule: "fact_strength", detail: `일간 강약은 ${real}(${said} 아님)` };
   }
+  // W6.1 1-3: 세기 행동 줄(STRENGTH_ACT)을 다른 세기의 사람에게.
+  { const lv = strengthActLevel(sen); if (lv && lv !== o.strength.level) return { rule: "fact_strength", detail: `일간 강약은 ${real} — 「${STRENGTH_KO[lv]}」 행동 줄을 씀` }; }
   // 같은 문단에 「신약」과 「비겁/인성 강」: 두 값은 다른 저울이라 한 숨에 쓰면 모순으로 읽힌다(정답지 자기검증 group_vs_strength).
   if (/WEAK/.test(o.strength.level) && /신약|힘이 (여린|약한)/.test(paragraph) && /(비겁|비견|겁재|인성|정인|편인|내 방식의 힘|배우는 힘)[^.]{0,12}(강해|강한|강합|많아|많은|넘치|세요|센 )/.test(sen)) {
     const g = /(인성|정인|편인|배우는 힘)/.test(sen) ? o.groups.RESOURCE : o.groups.PEER;
@@ -569,12 +585,15 @@ function countClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], p
   if (!between && owners.length !== 1) return null;
   const c = relCounts(rows), who = between ? "두 사람 사이" : `${owners[0].name} 원국`;
   const said = (re: RegExp) => { const m = sen.match(re); return m ? numOf(m[m.length - 1]) : NaN; };
-  const subset = SUBSET.test(sen);
+  // W6.1 1-3: 「그중 합이 다섯 가지고, 형·충·파·해가 여섯 가지」는 묶음별 개수(일부만 가리키는 말이 아니다).
+  const subset = SUBSET.test(sen.replace(new RegExp(`그중 (?=(?:합|형·충·파·해(?:·원진)?)(?:이|가|은|는|도)? ${NUM}${UNIT})`, "g"), ""));
   const checks: [number, number, string][] = subset ? [] : [
     [/관계|엮/.test(sen) ? said(new RegExp(`(?:모두|전부|총|통틀어|다 해서) ${NUM}${UNIT}`)) : NaN, c.total, "관계 모두"],
     [said(new RegExp(`관계(?:가|는|도)? ${NUM}${UNIT}(?:가|나|이나)? (?:있|엮|찾)`)), c.total, "관계 모두"],
     [said(new RegExp(`(?<![가-힣·])합(?:이|은|는|도)? ${NUM}${UNIT}`)), c.hap, "합"],
-    [said(new RegExp(`형·충·파·해(?:는|가|도)? ${NUM}${UNIT}`)), c.friction, "형·충·파·해"],
+    // W6.1 1-3: 원진은 형·충·파·해가 아니다 — 「형·충·파·해 n」은 원진을 뺀 수, 「형·충·파·해·원진 n」은 마찰 전부.
+    [said(new RegExp(`형·충·파·해(?:는|가|도)? ${NUM}${UNIT}`)), c.friction - (c.by.get("원진") ?? 0), "형·충·파·해"],
+    [said(new RegExp(`형·충·파·해·원진(?:은|이|도)? ${NUM}${UNIT}`)), c.friction, "형·충·파·해·원진"],
   ];
   if (!subset) for (const n of REL_NAMES) checks.push([said(new RegExp(`(?<![가-힣·])${n}(?:이|가|은|는|도)? ${NUM}${UNIT}`)), c.by.get(n) ?? 0, n]);
   for (const [s0, real, label] of checks) {
@@ -617,6 +636,9 @@ function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
     const has = ctx.people.map(p => Object.values(p.facts.tenGods).some(v => v?.includes(m[1])));
     if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${m[1]}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}의 원국에만 있다(두 사람 공통 아님)` };
   }
+  // W6.1 1-3(2차 궁합 9장): 「두 사람 모두 필요한 만큼만 힘을 꺼내 쓰고 …」 — 한 사람의 세기 행동 줄을 세기가 다른 두 사람 공통으로.
+  { const lv = strengthActLevel(sen);
+    if (lv && ctx.people.some(p => p.facts.strength.level !== lv)) return { rule: "fact_strength", detail: `「${STRENGTH_KO[lv]}」 행동 줄을 두 사람 공통으로 — ${ctx.people.map(p => `${p.facts.name} ${STRENGTH_KO[p.facts.strength.level]}`).join("·")}` }; }
   return null;
 }
 /** 배우자 별·자녀 별의 성별 기준(남 = 배우자 재성·자녀 관성, 여 = 배우자 관성·자녀 식상). 별 말과 같은 마디의 십성 묶음 이름이 반대면(W3 2차 연애 — 여성인데 재성). */

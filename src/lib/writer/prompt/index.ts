@@ -15,6 +15,7 @@ export { plainGrade } from "@/lib/brief/cards/features";
 import type { SectionCardBrief } from "@/lib/brief/schema";
 import { GROUP_EASY_BY_NAME } from "@/lib/brief/labels";
 import type { FactSheet } from "@/lib/factsheet/build";
+import { STRENGTH_ACT } from "@/lib/factsheet/check";
 import { buildMarks, writerMarks, type MarkTable } from "../marks";
 import { profileCodes, profileLine, type PairProfile } from "@/lib/brief/pairProfile";
 
@@ -85,15 +86,8 @@ const GROUP_TG: Readonly<Record<string, readonly string[]>> = { 비겁: ["비견
 const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
 /**
  * W6 S2-2(B2): 일간 세기는 분류 문구(「세지도 여리지도 않은 가운데」「여린 편」「내 힘의 세기와 … 다른 저울」) 없이 그 결과 행동 한 줄로만 준다.
- * 같은 세기도 사주(원국 글자 해시)마다 다른 꼴을 고른다 — W5 판독이 「가운데」를 판정 틀로 셌다.
+ * 같은 세기도 사주(원국 글자 해시)마다 다른 꼴을 고른다 — W5 판독이 「가운데」를 판정 틀로 셌다. 행동 줄 표(STRENGTH_ACT)는 정답지 검사와 한 출처(factsheet/check).
  */
-const STRENGTH_ACT: Readonly<Record<string, readonly string[]>> = {
-  VERY_STRONG: ["내 판을 직접 짜고 그 판을 끝까지 끌고 갈 때 힘이 제대로 쓰이는 편", "주도권을 쥐고 방향을 정할 때 가장 힘이 잘 나는 편"],
-  STRONG: ["맡은 일을 내 힘으로 끝까지 밀고 나가는 편", "남의 판을 따르기보다 내 방식으로 일을 끌고 갈 때 힘이 나는 편"],
-  BALANCED: ["상황을 봐서 밀 때와 물러설 때를 골라 쓰는 편", "판이 바뀌면 힘 쓰는 방향을 그에 맞춰 바꾸는 편", "필요한 만큼만 힘을 꺼내 쓰고 나머지는 아껴 두는 편"],
-  WEAK: ["받쳐 주는 사람과 정해진 순서가 있을 때 힘이 오래 가는 편", "혼자 짊어지기보다 함께 나눠 질 때 힘이 오래 가는 편"],
-  VERY_WEAK: ["도움과 순서를 빌릴 때 힘이 제대로 나는 편", "기댈 곳을 먼저 만들어 두면 일이 풀리는 편"],
-};
 function plainChart(c: Brief["chart"]) {
   const base = writerChart(c), st = c.strength;
   const counts = c.elements.presence ? Object.entries(c.elements.presence).map(([e, v]) => `${EL_KO[e] ?? e} ${v.surface}`).join("·") : "";

@@ -1,6 +1,7 @@
 // W6.1(외부 호출 0, 가상 이름 + 합성 문장만): 후처리 P1~P5 · 사실 D5·D7.
 import { describe, expect, it } from "vitest";
-import { brokenSentence, contrastSame, fixBareParenParticle, glossEchoes, stripGlossEcho } from "@/lib/writer/safety/broken";
+import { brokenSentence, contrastSame, fixBareParenParticle, fixEchoPhrase, glossEchoes, stripGlossEcho } from "@/lib/writer/safety/broken";
+import { sentenceViolation } from "@/lib/writer/safety/sentences";
 import { dependsOnRemoved } from "@/lib/writer/safety/orphan";
 import { relationLinkAfter, relationLinkFrame, reversalFlags } from "@/lib/writer/safety/contradiction";
 import { revertRepairRegressions } from "@/lib/writer/repair3";
@@ -14,9 +15,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { buildBrief, loadKnowledge, type BriefInput, type BriefPersonInput } from "@/lib/brief";
 import { buildFactSheet, type FactSheet, type PersonFacts } from "@/lib/factsheet/build";
-import { factCheck, factCtxOf } from "@/lib/factsheet/check";
+import { factCheck, factCtxOf, STRENGTH_ACT } from "@/lib/factsheet/check";
 import { personNames } from "@/lib/writer/publish";
-import { renderMarks, type Mark } from "@/lib/writer/marks";
+import { buildMarks, renderMarks, writerMarks, type Mark } from "@/lib/writer/marks";
 
 const ch = (paras: string[]): FinalChapter[] => [{ n: 3, id: "c3", title: "장", source: "writer", chars: 0, sections: [{ heading: "절", paragraphs: paras }] } as unknown as FinalChapter];
 
@@ -206,5 +207,49 @@ describe("W6.1 v8: 자리를 글로 말한 뒤 「이 자리는 ⟦at⟧입니�
     ]);
     expect(hits).toHaveLength(1);
     expect(reversalFlags([{ chapter: 9, section: 0, paragraph: 0, sentence: "앞서 본 부딪힘은 서로를 몰아붙이는 마찰이 아니라 속도의 어긋남에서 왔습니다." }])).toHaveLength(0);
+  });
+});
+
+describe("W6.1 1-3 전문 읽기에서 찾은 사실·깨진", () => {
+  const SF = { relationship: "single", children: "unknown", job: "business", birthTimeKnown: true, mbti: "ENTJ" } as never;
+  it("건강 단정 「소화와 수면 쪽으로 몸이 먼저 반응합니다」 · 작가 지시 말 「두세 줄 판정」「되돌리는 문장」", () => {
+    expect(sentenceViolation("피곤하면 말이 더 날카로워지고 소화와 수면 쪽으로 몸이 먼저 반응합니다.", SF)).toBe("health_claim");
+    expect(sentenceViolation("피곤하면 소화가 흔들리기 쉬우니 쉬는 날을 먼저 정해 두세요.", SF)).toBeNull();
+    expect(sentenceViolation("새 일을 벌일 때 두세 줄 판정은 이렇습니다.", SF)).toBe("internal_term");
+    expect(sentenceViolation("다만 이 실수에는 되돌리는 문장이 있어요.", SF)).toBe("internal_term");
+  });
+  it("겹친 구절: 「일주 갑자 일주는」 · 「모두에게 있는 X이 있어서」", () => {
+    expect(fixEchoPhrase("가람님의 일주 갑자(甲子) 일주는 나무가 물 위에 앉은 날이에요.").text).toBe("가람님의 갑자(甲子) 일주는 나무가 물 위에 앉은 날이에요.");
+    expect(fixEchoPhrase("또 두 사람 모두에게 있는 천을귀인이 있어서 막힐 때 길이 열려요.").text).toBe("또 두 사람 모두에게 천을귀인이 있어서 막힐 때 길이 열려요.");
+    expect(brokenSentence("가람님의 일주 갑자 일주는 나무가 물 위에 앉은 날이에요.")?.kind).toBe("dup_phrase");
+    const keep = "갑자 일주는 나무가 물 위에 앉은 날이고, 두 사람에게는 천을귀인이 있어요.";
+    expect(fixEchoPhrase(keep).text).toBe(keep);
+  });
+  const C = make({ product: "saju_mbti_compatibility", baseDate: "2026-11-14", person: person("doyun", "c2", "ISTJ"), partner: person("jiwoo", "c2", "ENFP"), relationshipType: "love" } as BriefInput);
+  it("세기 행동 줄: 두 사람 공통(세기가 다르면) · 한 사람 책에서 다른 세기 줄", () => {
+    const cctx = factCtxOf(C.sheet, k, personNames(C.brief));
+    const [a, b] = C.sheet.people.map(p => p.strength.level);
+    const other = Object.keys(STRENGTH_ACT).find(l => l !== a && l !== b)!;
+    expect(factCheck(`두 사람 모두 ${STRENGTH_ACT[other][0]}이에요.`, cctx)?.rule).toBe("fact_strength");
+    if (a === b) expect(factCheck(`두 사람 모두 ${STRENGTH_ACT[a][0]}이에요.`, cctx)).toBeNull();
+    const F = make({ product: "career_money_study", baseDate: "2026-11-14", person: person("minjun", "c3", "ESFJ") } as BriefInput);
+    const ctx = factCtxOf(F.sheet, k, personNames(F.brief)), lv = F.sheet.people[0].strength.level, wrong = Object.keys(STRENGTH_ACT).find(l => l !== lv)!;
+    expect(factCheck(`당신은 ${STRENGTH_ACT[wrong][1] ?? STRENGTH_ACT[wrong][0]}이에요.`, ctx)?.rule).toBe("fact_strength");
+    expect(factCheck(`당신은 ${STRENGTH_ACT[lv][0]}이에요.`, ctx)).toBeNull();
+  });
+  it("원진은 형·충·파·해가 아니다 — 개수 검사 · 브리프 요약 · 작가 표 이름", () => {
+    const pair = C.sheet.pair!, r0 = pair.relations[0];
+    const sheet: FactSheet = { ...C.sheet, pair: { ...pair, relations: [...pair.relations, { ...r0, kind: "WONJIN", completeness: "full", subtype: undefined } as typeof r0] } };
+    const cctx = factCtxOf(sheet, k, personNames(C.brief));
+    const rows = [...sheet.pair!.relations, ...sheet.pair!.stemClashes];
+    const hapN = rows.filter(r => ["YUKHAP", "SAMHAP", "BANGHAP", "STEM_HAP"].includes(r.kind)).length, fr = rows.length - hapN, wj = rows.filter(r => r.kind === "WONJIN").length;
+    expect(factCheck(`그중 합이 ${hapN}가지고, 형·충·파·해가 ${fr}가지입니다.`, cctx)?.rule).toBe("fact_count");
+    expect(factCheck(`그중 합이 ${hapN}가지고, 형·충·파·해·원진이 ${fr}가지입니다.`, cctx)).toBeNull();
+    expect(factCheck(`그중 합이 ${hapN}가지고, 형·충·파·해가 ${fr - wj}가지입니다.`, cctx)).toBeNull();
+    const line = C.brief.compatibility?.relationsSummary?.line ?? "";
+    const hasWj = C.sheet.pair!.relations.some(r => r.kind === "WONJIN");
+    expect(line.includes("형·충·파·해·원진")).toBe(hasWj);
+    const counts = (writerMarks(buildMarks(C.sheet, C.brief, new Map())) as { counts?: string[] } | null)?.counts ?? [];
+    expect(counts.some(x => x.includes(`그중 ${hasWj ? "형·충·파·해·원진" : "형·충·파·해"})`))).toBe(true);
   });
 });

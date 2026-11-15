@@ -21,7 +21,7 @@ import { exposureOf } from "./exposure";
 import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } from "./info";
 import { personaHit, type PersonaCtx } from "./persona";
 import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
-import { brokenSentence, fixBareParenParticle, stripGlossEcho, unbalancedAt } from "./broken";
+import { brokenSentence, fixBareParenParticle, fixEchoPhrase, stripGlossEcho, unbalancedAt } from "./broken";
 import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame, reversalFlags, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
@@ -398,7 +398,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
       // W6.1 P1(4종): 괄호 풀이를 본문이 바로 되풀이하면 풀이 괄호를 떼고, 괄호 이름 뒤 빠진 조사(「(식상) 적은」)를 넣는다.
-      if (ctx.broken) { const g = stripGlossEcho(q); words += g.count; q = g.text; const b = fixBareParenParticle(q); words += b.count; q = b.text; }
+      if (ctx.broken) { const g = stripGlossEcho(q); words += g.count; q = g.text; const b = fixBareParenParticle(q); words += b.count; q = b.text; const e = fixEchoPhrase(q); words += e.count; q = e.text; }
       // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
       // AM2-3 6-2: 글자까지 같지 않아도 거의 같은 문장(수리가 말만 조금 바꿔 다시 쓴 것)은 뒤 문장을 뺀다(E.nearDuplicate — 세운·대운과 같은 함수).
       { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || !E.nearDuplicate(ss[i - 1], x)); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }

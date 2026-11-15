@@ -79,6 +79,18 @@ export function fixBareParenParticle(text: string): { text: string; count: numbe
   const out = text.replace(BARE_PAREN, (_a, ch: string, inner: string, adj: string) => { count++; return `${ch}(${inner})${josaFor(ch, "이")} ${adj} `; });
   return { text: out, count };
 }
+/**
+ * W6.1 1-3 겹친 구절(호출 0): ① 렌더 겹침 「일주 갑자(甲子) 일주는」(작가 「일주 ⟦ju:b⟧」 + 표시 구절 「… 일주」) → 「갑자(甲子) 일주는」,
+ * ② 「두 사람 모두에게 있는 천을귀인이 있어서」(있다 두 번) → 「두 사람 모두에게 천을귀인이 있어서」.
+ */
+const PILLAR_ECHO = /(?<![가-힣])(일주|월주|연주|시주) ([가-힣]{2}(?:\([一-鿿]{2}\))? \1)(?=[은는이가을를의도와과로에]?(?:[\s,.!?]|$))/g;
+const HAVE_TWICE = /(에게|에는|에) 있는 ([^.?!,]{1,24}?)(이|가) 있(?=어서|고 |어요|습니다|으니|는데)/g;
+export function fixEchoPhrase(text: string): { text: string; count: number } {
+  let count = 0;
+  const out = text.replace(PILLAR_ECHO, (_a, _p: string, rest: string) => { count++; return rest; })
+    .replace(HAVE_TWICE, (_a, at: string, what: string, j: string) => { count++; return `${at} ${what}${j} 있`; });
+  return { text: out, count };
+}
 /** P3: 앞 문장과 같은 말을 「반면」으로 이음 — 조사 뗀 낱말 셋이 이어서 같으면(「마음 가는 쪽」). */
 const STRIP_P = /(으로서|으로써|에게서|으로|에서|에게|까지|부터|처럼|보다|이라|이나|은|는|이|가|을|를|와|과|도|만|의|에|로)$/;
 const GENERIC = new Set(["편", "쪽", "것", "수", "때", "더", "잘", "있어요", "있습니다", "편이에요", "쪽이에요", "해요", "합니다", "돼요", "됩니다", "같은", "하는", "한", "그", "이", "두", "사람"]);
@@ -122,6 +134,7 @@ export function brokenSentence(raw: string, o: BrokenOpts = {}): BrokenHit | nul
   }
   { const d = dupPhrase(sen, phrases); if (d) return { kind: "dup_phrase", detail: `같은 문장 안 되풀이 「${d}」` }; }
   { const g = glossEchoes(sen)[0]; if (g) return { kind: "dup_phrase", detail: `괄호 풀이를 본문이 되풀이 「${g.all.slice(0, 30)}」` }; }
+  { const m = sen.match(new RegExp(PILLAR_ECHO.source)) ?? sen.match(new RegExp(HAVE_TWICE.source)); if (m) return { kind: "dup_phrase", detail: `한 구절 겹침 「${m[0].slice(0, 30)}」` }; }
   // W6.1 P3(1차 궁합 2장 수리 뒤): 「그중 장덕민님이 더 그렇습니다」 — 앞 문장이 두 사람 공통을 말하지 않았는데 비교 꼬리만 남음.
   if (/^그중(?:에서도)? [가-힣]{1,6}님(?:이|은|께서) (?:더|특히|훨씬|조금 더) 그(?:렇|래)/.test(sen) && !BOTH_WORD.test(o.prev ?? "")) return { kind: "slot", detail: "앞 문장에 두 사람 공통 성향이 없는 비교 꼬리(「그중 ○○님이 더 그렇습니다」)" };
   // W6.1 P3(2차 커리어 8장 수리 뒤): 「…마음 가는 쪽을 먼저 보고 빠르게 정하는 직감형이고 …. 반면 … 마음 가는 쪽으로 정하는 방식으로」 — 같은 말을 「반면」으로 맞세움.

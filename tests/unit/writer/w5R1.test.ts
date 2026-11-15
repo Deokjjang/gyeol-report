@@ -77,7 +77,7 @@ describe("R1 작가 브리프 표시 칸 · 정답지 구절", () => {
     expect(w.marks.between.length).toBe(names.length);
     expect(w.marks.between.every(l => /^⟦rel:\d+⟧ = .+님의 태어난 .+ 사이의 /.test(l))).toBe(true);
     const hap = names.filter(n => /합/.test(n)).length;
-    expect(w.marks.counts).toEqual([`⟦cnt:all⟧ = ${names.length}가지(두 사람 사이 관계 모두)`, `⟦cnt:hap⟧ = ${hap}가지(그중 합)`, `⟦cnt:clash⟧ = ${names.length - hap}가지(그중 형·충·파·해)`]);
+    expect(w.marks.counts).toEqual([`⟦cnt:all⟧ = ${names.length}가지(두 사람 사이 관계 모두)`, `⟦cnt:hap⟧ = ${hap}가지(그중 합)`, `⟦cnt:clash⟧ = ${names.length - hap}가지(그중 ${names.includes("원진") ? "형·충·파·해·원진" : "형·충·파·해"})`]); // W6.1 1-3: 원진이 들면 이름에도
     for (const key of ["dayRelations", "relationsPlain", "relationsSummary"]) expect(w.compatibility[key]).toBeUndefined();
     expect(w.marks.inside.every(l => /^⟦in:[ab]\d+⟧ = .+님 사주 안의 /.test(l))).toBe(true);
     const [a, b] = C.sheet.people;

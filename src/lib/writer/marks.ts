@@ -288,6 +288,8 @@ export function writerMarks(t: MarkTable): Record<string, unknown> | null {
   if (!t.size) return null;
   const list = (kind: MarkKind) => [...t.values()].filter(m => m.kind === kind).map(m => `⟦${m.key}⟧ = ${m.text}${m.flow ? ` — ${m.flow}` : ""}`);
   const rel = list("rel"), cnt = list("cnt"), inside = list("in"), star = list("star"), un = list("un"), ju = list("ju"), tg = list("tg");
-  return { rule: MARK_RULE, ...(rel.length ? { between: rel } : {}), ...(cnt.length ? { counts: cnt.map(s => s.replace(/^(⟦cnt:all⟧ = [^—]+)$/, "$1(두 사람 사이 관계 모두)").replace(/^(⟦cnt:hap⟧ = .+)$/, "$1(그중 합)").replace(/^(⟦cnt:clash⟧ = .+)$/, "$1(그중 형·충·파·해)")) } : {}),
+  // W6.1 1-3(1차 궁합 6장 「형·충·파·해가 여섯 가지」 — 그중 둘은 원진): 마찰 개수에 원진이 들면 이름에도 원진을 넣는다.
+  const clash = [...t.values()].some(m => m.kind === "rel" && m.text.includes("원진(")) ? "형·충·파·해·원진" : "형·충·파·해";
+  return { rule: MARK_RULE, ...(rel.length ? { between: rel } : {}), ...(cnt.length ? { counts: cnt.map(s => s.replace(/^(⟦cnt:all⟧ = [^—]+)$/, "$1(두 사람 사이 관계 모두)").replace(/^(⟦cnt:hap⟧ = .+)$/, "$1(그중 합)").replace(/^(⟦cnt:clash⟧ = .+)$/, `$1(그중 ${clash})`)) } : {}),
     ...(inside.length ? { inside } : {}), ...(star.length ? { owners: star } : {}), ...(un.length ? { dayun: un } : {}), ...(ju.length ? { dayPillars: ju } : {}), ...(tg.length ? { views: tg } : {}) };
 }
