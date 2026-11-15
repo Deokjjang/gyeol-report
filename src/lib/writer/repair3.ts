@@ -304,7 +304,7 @@ export function revertRepairRegressions(chapters: readonly FinalChapter[], appli
   }
   return { chapters: out, reverted };
 }
-export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" | "thin"; readonly connectiveStripped?: boolean };
+export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
 /** W6 S0-1: improve(rule, detail)가 참인 규칙(개선)은 지우고 난 문단이 3문장 이상 남을 때만 지운다(아니면 kept: "thin" 기록). */
 export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean): { chapters: FinalChapter[]; deleted: Deleted[] } {
@@ -317,6 +317,7 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const ss = splitSentences(p), i = ss.findIndex(x => x.replace(/[⟪⟫]/g, "").includes(f.sentence) || f.sentence.includes(x.replace(/[⟪⟫]/g, "")));
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
+    if (improve?.(f.rule, f.detail) && i === 0) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "lead" }); continue; } // W6 S4: 개선 규칙은 문단 첫 문장(주어 자리)을 지우지 않는다(repairPlan.dropSentences와 같은 규칙)
     // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
     const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
     if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }

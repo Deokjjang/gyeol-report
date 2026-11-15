@@ -31,7 +31,8 @@ export function finalSound(phrase: string): "none" | "rieul" | "other" {
   return jong === 0 ? "none" : jong === 8 ? "rieul" : "other";
 }
 /** 받침에 맞는 조사(둘 중 하나로 쓴 것을 고친다). */
-const PARTICLES: readonly (readonly [string, string])[] = [["이에요", "예요"], ["이었", "였"], ["이라서", "라서"], ["이라는", "라는"], ["이라고", "라고"], ["이라", "라"], ["으로", "로"], ["은", "는"], ["이", "가"], ["을", "를"], ["과", "와"]];
+// W6 S4(1차 궁합 「합이 다섯 가지가고」): 서술격 「이고·이며·이지만·이나·이든·이자」도 받침으로 고른다(없으면 「이」만 「가」로 바뀌어 깨졌다).
+const PARTICLES: readonly (readonly [string, string])[] = [["이에요", "예요"], ["이었", "였"], ["이라서", "라서"], ["이라는", "라는"], ["이라고", "라고"], ["이지만", "지만"], ["이라", "라"], ["이고", "고"], ["이며", "며"], ["이나", "나"], ["이든", "든"], ["이자", "자"], ["으로", "로"], ["은", "는"], ["이", "가"], ["을", "를"], ["과", "와"]];
 export function fixParticle(phrase: string, p: string): string {
   const s = finalSound(phrase), pair = PARTICLES.find(x => x.includes(p));
   if (!pair) return p;
@@ -73,7 +74,25 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     }
     return out + text.slice(i);
   })();
-  const src = src0.replace(new RegExp(`([가-힣]{1,8})( 대운)?\\((${MARK_RE.source})\\)`, "g"), (all: string, w: string, dae: string | undefined, mk: string, kind: string, id: string) => {
+  // ⓪' 「…에 백호대살이 있는데, 이 자리는 ⟦at⟧입니다」처럼 문장 앞쪽이 이미 그 자리를 말했으면 뒤 마디(「이 자리는 ⟦at⟧입니다」)는 군말이다 — 마디를 떼고 앞 동사로 맺는다(W6 S4 1차 종합 「이 자리는 이 자리입니다」).
+  const src00 = src0.replace(new RegExp(`(있|앉아 있|자리하고 있|자리 잡고 있|들어 있)(?:고|는데|으며|으니),\\s*(?:이|그) 자리(?:는|가) (${MARK_RE.source})(?:이에요|예요|입니다)\\.`, "g"), (all: string, verb: string, _mk: string, kind: string, id: string, offset: number, whole: string) => {
+    const m = table.get(`${kind}:${id}`); if (!m) return all;
+    const start = Math.max(whole.lastIndexOf(".", offset), whole.lastIndexOf("?", offset), whole.lastIndexOf("!", offset)) + 1, before = whole.slice(start, offset).replace(MARK_RE, "");
+    if (!(m.codes?.some(c => before.includes(c)) || before.includes(placeCore(m.text)))) return all;
+    count.dropped++; return `${verb}어요.`;
+  });
+  // ⓪'' 작가가 자리를 글로 쓴 바로 뒤에 표시를 붙인 꼴(「태어난 해 하늘 글자와 달 땅 글자 ⟦at:t3⟧에 편관이」「태어난 달 땅 글자의 ⟦at:t5⟧에는」) — 표시를 떼고 작가 말에 조사를 맞춘다.
+  const src01 = src00.replace(new RegExp(`((?:태어난 )?(?:해|달|날|시각)[^.?!⟦]{0,30}?(?:(?:하늘|땅) 글자|기둥)(?:\\([^()]*\\))?)(의)?\\s+⟦at:([0-9a-z]{1,12})⟧(${PARTICLE_ALT})?`, "g"), (all: string, words: string, ui: string | undefined, id: string, p: string | undefined, offset: number, whole: string) => {
+    if (!table.get(`at:${id}`)) return all;
+    // 「…글자의 ⟦at⟧에는」처럼 표시 바로 뒤에 조사가 붙으면 「의」는 버린다(뒤가 띄어 쓴 이름이면 「의」를 둔다).
+    count.dropped++; return words + (p ? fixParticle(words, p) : ui && !/^[가-힣]/.test(whole.slice(offset + all.length)) ? ui : "");
+  });
+  // ⓪‴ W6 S4(2차 궁합 6장): 작가가 두 사람 자리를 글로 쓰고 관계 표시를 붙인 꼴(「도윤님의 해와 하린님의 자 사이에는 ⟦rel:7⟧도」) — 작가 자리 말(틀릴 수 있음)을 표시의 자리 구절로 바꾸고 관계 이름만 남긴다.
+  const src02 = src01.replace(new RegExp(`([가-힣]{1,6}님의 [^.?!,⟦]{1,24}(?:와|과) [가-힣]{1,6}님의 [^.?!,⟦]{1,24} 사이에(는)? )⟦rel:([0-9a-z]{1,12})⟧(${PARTICLE_ALT})?`, "g"), (all: string, _w: string, neun: string | undefined, id: string, p?: string) => {
+    const m = table.get(`rel:${id}`); const x = m?.text.match(/^(.+) 사이의 (.+)$/); if (!x) return all;
+    count.dropped++; return `${x[1]} 사이에${neun ?? ""} ${x[2]}${p ? fixParticle(x[2], p) : ""}`;
+  });
+  const src = src02.replace(new RegExp(`([가-힣]{1,8})( 대운)?\\((${MARK_RE.source})\\)`, "g"), (all: string, w: string, dae: string | undefined, mk: string, kind: string, id: string) => {
     const m = table.get(`${kind}:${id}`); if (!m) return all;
     count.paren++;
     return m.text.includes(w) || (m.bare ?? "").includes(w) ? mk : `${w}${dae ?? ""}`;
@@ -81,7 +100,7 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
   const ends: number[] = []; for (const x of src.matchAll(/[.?!]+["'”’)⟫]*(?=\s|$)/g)) ends.push(x.index! + x[0].length);
   const sentenceOf = (at: number) => ends.filter(e => e <= at).length;
   const sentenceStart = (si: number) => (si === 0 ? 0 : ends[si - 1]);
-  const inPara = new Set<string>(), used: [string, number][] = [];
+  const inPara = new Set<string>(), used: [string, number][] = [], rendered: { si: number; text: string; short: string }[] = [];
   const out = src.replace(new RegExp(`${MARK_RE.source}(?:(${PARTICLE_ALT})|(의 ))?`, "g"), (...g: unknown[]) => {
     const [all, kind, id, p, gen] = g as [string, string, string, string | undefined, string | undefined], at = g[g.length - 2] as number, whole = g[g.length - 1] as string;
     const key = `${kind}:${id}`, m = table.get(key);
@@ -95,25 +114,46 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     // ⑥ 구절 끝 괄호 뜻(「(정재의 10년)」「(가까운 사이의 작은 서운함)」)을 문장 뒤에서 또 말하면 괄호를 뗀다.
     { const pm = t.match(/\(([^()]+)\)$/); if (pm && pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
     // ② 바로 앞에 같은 자리 말.
-    const tail30 = before.slice(-30), prevSentence = si > 0 ? whole.slice(sentenceStart(si - 1), sentenceStart(si)).replace(MARK_RE, "") : "";
+    const prev0 = si > 0 ? whole.slice(sentenceStart(si - 1), sentenceStart(si)) : "";
+    // 앞 문장의 다른 표시가 같은 구절로 바뀌는 경우(자리가 같은 두 특성)도 「같은 구절을 썼다」로 본다.
+    const prevSentence = prev0.replace(new RegExp(MARK_RE.source, "g"), (x: string, k2: string, i2: string) => table.get(`${k2}:${i2}`)?.text ?? "");
+    const tail30 = before.slice(-30);
     // ④' 바로 앞 문장이 같은 구절을 글로 이미 썼으면(「지금은 을축 대운(정재의 10년)이 …. ⟦un:now⟧은 …」) 짧은 꼴.
-    if (m.short && m.kind !== "cnt" && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = m.short; count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
+    if (m.short && m.kind !== "cnt" && !before.slice(-10).includes(m.short) && (prevSentence.includes(m.text) || m.codes?.some(c => prevSentence.includes(c)))) { t = m.short; count.short++; inPara.add(key); used.push([key, si]); state?.seen.add(key); return t + (p ? fixParticle(t, p) : gen ? "의 " : ""); }
     if (m.codes?.some(c => tail30.includes(c)) || (m.kind === "at" && tail30.includes(placeCore(m.text)))) {
       count.dropped++; used.push([key, si]); inPara.add(key);
       if (gen) return "";
-      t = m.short ?? t;
-    } else if (near && m.short) { t = m.short; count.short++; }
+      // 짧은 꼴이 바로 앞 말과 같으면(「이 자리는 이 자리입니다」) 구절 그대로 둔다(깨진 문장 검사가 겹침을 본다).
+      if (m.short && !before.slice(-10).includes(m.short)) t = m.short;
+    } else if (near && m.short && !before.slice(-10).includes(m.short)) { t = m.short; count.short++; }
     else if (m.bare) {
       // R4 판독 책(1차 궁합): 신살 주인을 문장이 이미 말했으면(같은 문장에 「두 사람 모두·둘 다」, 바로 앞에 주인 이름) 이름만 넣는다.
       const endRel = whole.slice(at).search(/[.?!]/);
       const sentence = (before + whole.slice(at + all.length, endRel < 0 ? undefined : at + endRel)).replace(MARK_RE, "");
       if (/두 사람 모두|두 분 모두|둘 다|두 사람에게|두 사람의 사주/.test(sentence) || (m.owner && whole.slice(Math.max(0, at - 12), at).includes(m.owner))) t = m.bare;
     }
+    // ⑦ W6 S4(1차 궁합): 주인 이름을 문장이 이미 불렀으면 구절 앞 「○○님의 」를 뗀다(「장덕민님의 바탕은 장덕민님의 태어난 날 기둥…」).
+    if (m.owner && t.startsWith(`${m.owner}의 `) && before.includes(m.owner)) t = t.slice(m.owner.length + 2);
+    // ⑦' W6 S4(2차 궁합 6장): 「도윤님의 사주에는 ⟦rel⟧」 — 구절 앞 「도윤님 사주 안의 」가 앞말과 겹친다.
+    { const o = t.match(/^([가-힣]{1,6}님) 사주 안의 /); if (o && before.slice(-16).includes(o[1]) && /사주(?:에는|에|엔|의) ?$/.test(before)) t = t.slice(o[0].length); }
+    // ⑧ 일주 표시 바로 뒤에 작가가 간지를 또 썼으면(「⟦ju:a⟧ 갑신이에요」) 표시를 떼고 작가 말을 둔다.
+    if (m.kind === "ju") { const g = (m.bare ?? "").split(" ")[0]; if (g && whole.slice(at + all.length).trimStart().startsWith(g) && !p && !gen) { inPara.add(key); used.push([key, si]); state?.seen.add(key); return ""; } }
+    // ⑨ 서로 보는 십성: 앞에 「A님에게」가 있으면 받는 사람 이름만, 뒤에서 십성 이름을 또 말하면 「A님에게 B님」만(「장덕민님에게 정재인 최지우님은 정재의 자리예요」).
+    if (m.kind === "tg") { const x = t.match(/^(.+?)에게 (.+?)인 (.+)$/); if (x) { if (before.slice(-14).includes(`${x[1]}에게`)) t = x[3]; else if (after.includes(x[2])) t = `${x[1]}에게 ${x[3]}`; } }
     inPara.add(key); used.push([key, si]); state?.seen.add(key);
+    if (m.short && t.length >= 8) rendered.push({ si, text: t, short: m.short });
     return t + (p ? fixParticle(t, p) : gen ? "의 " : "");
-  });
+  }).replace(/ {2,}/g, " ");
+  // ⑩ 앞 문장에서 렌더한 구절을 작가가 다음 문장에서 글로 또 쓰면(1차 커리어 「…(연간)와 …(월지)에 걸친 정재는」) 뒤의 것을 짧은 꼴로.
+  const fixed = rendered.length ? (() => {
+    const sens = out.match(/[^.!?]+[.!?]+["'”’)⟫]*\s*|[^.!?]+$/g) ?? [out];
+    for (const r of rendered) { const j = r.si + 1; if (j >= sens.length) continue; const i = sens[j].indexOf(r.text); if (i < 0) continue;
+      const pm = sens[j].slice(i + r.text.length).match(new RegExp(`^(${PARTICLE_ALT})`)); const p2 = pm?.[1];
+      sens[j] = sens[j].slice(0, i) + r.short + (p2 ? fixParticle(r.short, p2) : "") + sens[j].slice(i + r.text.length + (p2?.length ?? 0)); count.short++; }
+    return sens.join("");
+  })() : out;
   if (state) { const last = ends.length && ends[ends.length - 1] >= src.trimEnd().length ? ends.length - 1 : ends.length; state.tail = new Set(used.filter(([, si]) => si === last).map(([k]) => k)); }
-  return out;
+  return fixed;
 }
 
 const relPlain = (r: Pick<RelationFact, "kind" | "completeness" | "subtype">) =>
@@ -219,7 +259,7 @@ export function buildMarks(sheet: FactSheet | null | undefined, brief: Brief, tr
   // R4(1차 종합): 자리가 없는 특성(빈 at)은 표에 넣지 않는다 — 작가가 지어 쓴 ⟦at:t12⟧가 빈칸으로 바뀌어 「의 지키는 힘이…」 조각이 됐다. 없는 번호는 fact_mark로 떼어진다.
   for (const [id, at] of traitAt) if (at.trim()) {
     const f = placeForms(at), who = compat && /^[ab]/.test(id) ? `${people[id.startsWith("a") ? 0 : 1].call}의 ` : "";
-    add("at", id, `${who}${f.text}`, undefined, { short: f.short, codes: f.codes, ...(f.list ? { list: `${who}${f.list}`, later: `${who}${f.later}` } : {}) });
+    add("at", id, `${who}${f.text}`, undefined, { short: f.short, codes: f.codes, ...(who ? { owner: who.replace(/의 $/, "") } : {}), ...(f.list ? { list: `${who}${f.list}`, later: `${who}${f.later}` } : {}) });
   }
   const cd = compat ? null : brief.chart.currentDayun;
   if (cd) {

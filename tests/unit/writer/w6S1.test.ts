@@ -1,5 +1,5 @@
 // W6 S0·S1(외부 호출 0, 가상 인물 + 합성 문장만): 차단/개선 분류 · 깨진 문장 · 표시 렌더 통합(A1) · 계절·궁합 십성·일주 대조(A2·A3) ·
-// 성격 요약표·모순(A4) · 합·충 × MBTI 연결(S1-5) · 개선 규칙 3문장 하한.
+// 성격 요약표·모순(A4) · 합·충 × MBTI 연결(S1-5) · 개선 규칙 3문장 하한 · S4 직접 읽기에서 찾은 결함 고침.
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -10,7 +10,10 @@ import { gateClassOf, gateKindOf } from "@/lib/writer/gate";
 import { markTableFor, personProfileOf, renderWriterBrief } from "@/lib/writer/prompt";
 import { newMarkState, placeForms, renderMarks, type Mark } from "@/lib/writer/marks";
 import { brokenSentence, dupPhrase, unbalancedAt } from "@/lib/writer/safety/broken";
-import { assertedPoles, contradictionFlags, inferiorAsStrength, relationLink } from "@/lib/writer/safety/contradiction";
+import { assertedPoles, contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter } from "@/lib/writer/safety/contradiction";
+import { splitSentences } from "@/lib/writer/safety/patterns";
+import { INTERNAL_LABEL } from "@/lib/writer/safety/sentences";
+import { careerGroupNames } from "@/lib/writer/safety/p6e";
 import { personNames } from "@/lib/writer/publish";
 import { dropSentences } from "@/lib/writer/repairPlan";
 import { deleteFlagged } from "@/lib/writer/repair3";
@@ -170,5 +173,45 @@ describe("S1 A4 성격 요약표 · 모순 · S1-5 잘못된 연결", () => {
     expect(relationLink("인오술 삼합이 있어 한 판에 힘이 모여요.", undefined, anchor)).toBeNull();
     expect(inferiorAsStrength("주변 마음 살피기(Fe)가 당신의 강점이에요.", "ISTP", { Fe: "주변 마음 살피기" })).not.toBeNull();
     expect(inferiorAsStrength("주변 마음 살피기(Fe)는 가장 늦게 자라는 힘이라 연습이 필요해요.", "ISTP", { Fe: "주변 마음 살피기" })).toBeNull();
+  });
+});
+
+describe("S4 직접 읽기 결함 고침(측정 8권)", () => {
+  it("마침표로 끝난 인용 뒤 인용 동사는 문장을 끊지 않는다 — 새 문장 머리(하지만)는 끊는다", () => {
+    expect(splitSentences('도윤님은 "이 부분은 내가 맡을게." 하고 알려 주고, 하린님은 웃어요.')).toHaveLength(1);
+    expect(splitSentences('"좋아요." 하지만 다음엔 달라요.')).toHaveLength(2);
+  });
+  it("처방 종류 이름·절 구조가 서술어로 나오면 내부 말 — 자연스러운 「하루 묵히기를 해 보세요」는 아님", () => {
+    expect(INTERNAL_LABEL.test("그래서 이 절의 한 가지는 끝까지 듣기예요.")).toBe(true);
+    expect(INTERNAL_LABEL.test("그래서 맞는 한 가지가 끝까지 듣기예요.")).toBe(true);
+    expect(INTERNAL_LABEL.test("이번 주에는 하루 묵히기를 해 보세요.")).toBe(false);
+  });
+  it("자리 표시를 서술어·동격·글자 자리에 씀 · 같은 사람을 「반면」으로 맞세움 · 주어를 서술어로 되풀이", () => {
+    expect(brokenSentence("유나님의 태어난 날 기둥(일주)은 이 자리예요.")?.kind).toBe("slot");
+    expect(brokenSentence("태어난 달 땅 글자의 겁재, 곧 이 자리는 이 엔진의 연료예요.")?.kind).toBe("slot");
+    expect(brokenSentence("땅 글자 자리에는 태어난 날 기둥(일주)이 놓여 있어요.")?.kind).toBe("slot");
+    expect(brokenSentence("반면 도윤님은 앞날을 천천히 재요.", { prev: "도윤님은 익숙한 길을 지켜요." })?.kind).toBe("slot");
+    expect(brokenSentence("반면 하린님은 앞날을 가볍게 말해요.", { prev: "도윤님은 익숙한 길을 지켜요." })).toBeNull();
+    expect(brokenSentence("반대로 하린님이 세부 없이 제안하면 도윤님은 불안해져요.", { prev: "하린님이 던진 제안을 도윤님이 따지면 하린님은 서운해요." })).toBeNull();
+    expect(brokenSentence("도윤님의 진술충은 진술충으로, 두 방향을 붙들어요.")?.kind).toBe("render_overlap");
+  });
+  it("개선 규칙은 문단 첫 문장(주어 자리)과 다음 문장이 「이 순서」로 가리키는 문장을 떼지 않는다", () => {
+    const p = "태어난 달 땅 글자에 망신살이 있어요. 속마음이 얼굴에 드러나는 힘이라 숨기기 어려워요. 솔직해서 믿음을 얻어요. 들킬 때도 있어요.";
+    expect(dropSentences([ch(1, [[p]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "태어난 달 땅 글자에 망신살이 있어요.", rule: "phrase_repeat", hard: HARD_RULES.has("phrase_repeat" as never) }]).dropped[0].kept).toBe("lead");
+    const q = "셋째는 결정 습관에서 나온 원칙입니다. 큰 결정 앞에서는 같은 확인 순서를 쓰세요. 마음이 가는 날일수록 이 순서가 방패가 됩니다. 세 원칙은 모두 규칙 지키기예요.";
+    expect(dropSentences([ch(1, [[q]])], [{ chapter: 1, section: 0, paragraph: 0, sentence: "큰 결정 앞에서는 같은 확인 순서를 쓰세요.", rule: "phrase_repeat", hard: HARD_RULES.has("phrase_repeat" as never) }]).dropped[0].kept).toBe("leans");
+  });
+  it("렌더: 「자리의 ⟦at⟧에는」 · 두 사람 자리 + 관계 표시 · 「○○님의 사주에는 ⟦rel⟧」", () => {
+    const mk = (key: string, text: string, extra: Partial<Mark> = {}): [string, Mark] => [key, { key, kind: key.split(":")[0] as Mark["kind"], text, ...extra }];
+    const t = new Map([mk("at:t5", "태어난 달 땅 글자(월지)", { short: "이 자리", codes: ["월지"] }),
+      mk("rel:7", "도윤님의 태어난 해 땅 글자 유와 하린님의 태어난 날 땅 글자 자 사이의 파(맞춰 둔 것에 금이 감)", { short: "이 관계" }),
+      mk("rel:5", "도윤님 사주 안의 태어난 달 땅 글자 진과 태어난 날 땅 글자 술 사이의 충(마주 서서 부딪침)", { short: "이 관계" })]);
+    expect(renderMarks("태어난 달 땅 글자의 ⟦at:t5⟧에는 고신살이 있어요.", t)).toBe("태어난 달 땅 글자에는 고신살이 있어요.");
+    expect(renderMarks("도윤님의 해와 하린님의 자 사이에는 ⟦rel:7⟧도 있어요.", t)).toBe("도윤님의 태어난 해 땅 글자 유와 하린님의 태어난 날 땅 글자 자 사이에는 파(맞춰 둔 것에 금이 감)도 있어요.");
+    expect(renderMarks("도윤님의 사주에는 ⟦rel:5⟧이 있어요.", t)).toBe("도윤님의 사주에는 태어난 달 땅 글자 진과 태어난 날 땅 글자 술 사이의 충(마주 서서 부딪침)이 있어요.");
+  });
+  it("커리어 묶음 이름은 괄호 풀이 안에 또 달지 않는다 · 관계 문장 뒤 「…과도 맞아요」 잇기", () => {
+    expect(careerGroupNames("땅 글자 속에서 편관(나를 압박해 단단하게 만드는 규칙의 힘)이 일을 밀어붙여요.", new Set()).text).toBe("땅 글자 속에서 편관(나를 압박해 단단하게 만드는 규칙의 힘)이 일을 밀어붙여요.");
+    expect(relationLinkAfter("누군가 나서지 않을 때 궂은일을 맡는 INFJ의 습관과도 맞아요.", "태어난 달과 날 사이에는 인신충이 있어요. 정체된 모임이 흐르기 시작해요.", /INFJ/)).not.toBeNull();
   });
 });

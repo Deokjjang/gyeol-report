@@ -306,6 +306,8 @@ const GROUP_CTX = /비겁|식상|재성|관성|인성|내 방식의 힘|만드�
  */
 export function careerGroupNames(text: string, defined: Set<string>, heading = false): { text: string; count: number } {
   let count = 0;
+  // W6 S4(1차 커리어 1장): 작가가 괄호 없이 「내 방식의 힘 비겁, 만드는 힘 식상, …」으로 쓰면 이름과 묶음을 두 번 바꿔 「내 방식의 힘(비겁) 내 방식의 힘」이 됐다 → 먼저 「이름(묶음)」으로 묶는다.
+  text = text.replace(/(내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘) (비겁|식상|재성|관성|인성)(?![가-힣(])/g, (all, easy: string, g: string) => (GROUP_EASY_NAME[g] === easy ? (count++, `${easy}(${g})`) : all));
   const sentences = text.split(/(?<=[.!?])\s/);
   const out = sentences.map(sen => {
     const others = (sen.match(GROUP_CTX) ?? []).length;
@@ -313,6 +315,8 @@ export function careerGroupNames(text: string, defined: Set<string>, heading = f
       if (easy) {
         const g = Object.keys(GROUP_EASY_NAME).find(x => GROUP_EASY_NAME[x] === easy)!;
         if (paren || defined.has(g) || heading) { defined.add(g); return all; }
+        // W6 S4(2차 커리어 1장): 이미 괄호 풀이 안이면(「편관(나를 압박해 단단하게 만드는 규칙의 힘)」) 묶음 이름을 또 달면 괄호가 겹친다 → 그대로 두고 정의도 미룬다.
+        { const pre = sen.slice(0, off); if ((pre.match(/\(/g) ?? []).length > (pre.match(/\)/g) ?? []).length) return all; }
         defined.add(g); count++; return `${easy}(${g})`;
       }
       if (!bare) return all;

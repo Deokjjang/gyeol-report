@@ -43,7 +43,13 @@ const esc = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 /** 차원 끝 단서: POLE_CUES + 궁합 성격표 단서(PROFILE_CUES — 에너지·나섬·다툼·표정·결정, pair_profile에서 다듬은 꼴). */
 // 다툼 때 반응 단서(곱씹·나중에 말하·그 자리에서 짚)는 자기 반성·말 순서·직설에도 쓰여 59권에서 오탐만 9건 — 넣지 않는다.
 const EXTRA: readonly [string, RegExp][] = [["socialEnergy+", PROFILE_CUES.E], ["socialEnergy-", PROFILE_CUES.I], ["attentionSeeking+", PROFILE_CUES.front], ["attentionSeeking-", PROFILE_CUES.back],
-  ["emotionalExpression+", new RegExp(`${PROFILE_CUES.face.source}|기분이 (?:표정에|얼굴에) (?:바로 |곧바로 )?(?:묻어|드러)`)], ["decisionSpeed+", PROFILE_CUES.fast], ["decisionSpeed-", PROFILE_CUES.slow]];
+  // W6 S4(1차 궁합 4장 「장덕민님은 새롭고 처음 접하는 것에 끌리는 편」 ↔ 8장 「늘 하던 방식을 바꾸지 않는 편은 두 사람 모두에게」).
+  ["noveltySeeking+", /새롭고 처음 접하는 것에|처음 접하는 것에 끌리|새로운 것에 (?:먼저 )?끌리/],
+  ["emotionalExpression+", new RegExp(`${PROFILE_CUES.face.source}|기분이 (?:표정에|얼굴에) (?:바로 |곧바로 )?(?:묻어|드러)`)], ["decisionSpeed+", PROFILE_CUES.fast], ["decisionSpeed-", PROFILE_CUES.slow],
+  // W6 S4(2차 커리어 1장): 커리어 증거 「의사결정: 규정과 선례를 먼저 확인하고 정하는 절차형」이 성격표 「결정이 빠른 편」과 반대.
+  ["decisionSpeed-", /(?:의사결정|결정)(?:은|이)? [^.?!]{0,10}(?:규정과 선례를|선례를) 먼저 확인하고 정하|확인하고 정하는 절차형/],
+  // W6 S4(2차 궁합 2장): 「둘 다 … 서운해도 말을 고르는 데 시간이 걸려요」 ↔ 성격표 「그 자리에서 말하는 편」.
+  ["conflictApproach-", /말을 고르는 데 시간이 (?:걸리|걸려|오래)/]];
 const CUES = [...Object.entries(POLE_CUES), ...EXTRA].map(([key, re]) => ({ dim: key.slice(0, -1), pole: (key.endsWith("+") ? 1 : -1) as 1 | -1, re: new RegExp(re.source, "g") }));
 
 function ownerOf(s: string, start: number, ctx: ContradictionCtx, end = start): number {
@@ -71,6 +77,9 @@ export function assertedPoles(s: string, ctx: ContradictionCtx): { who: number; 
     c.re.lastIndex = 0; let m: RegExpExecArray | null;
     while ((m = c.re.exec(t))) {
       if (NEG_AFTER.test(t.slice(m.index + m[0].length))) continue;
+      // 궁합: 「두 사람 모두에게·둘 다」가 단서를 받으면 두 사람 모두의 단정이다.
+      const mm = m;
+      if (ctx.compat && (/두 사람 모두|둘 다|두 사람 다/.test(t.slice(mm.index + mm[0].length, mm.index + mm[0].length + 24) + t.slice(Math.max(0, mm.index - 16), mm.index)) || (/^(?:두 사람(?:은|이|도| 모두)|둘 다) /.test(t) && !ctx.people.some(p => p.names.some(n => t.includes(n)))))) { ctx.people.forEach((_, i) => out.push({ who: i, dim: c.dim, pole: c.pole, cue: mm[0] })); continue; }
       const who = ownerOf(t, m.index, ctx, m.index + m[0].length); if (who < 0) continue;
       out.push({ who, dim: c.dim, pole: c.pole, cue: m[0] });
     }
@@ -96,7 +105,7 @@ export function contradictionFlags(sentences: readonly SentenceAt[], ctx: Contra
 
 /** S1-5: 관계(합·충·형·해·파·원진)를 MBTI 성격과 잇는 문장(한 사람 책). 같은 문장, 또는 「이 성향이 …」로 앞 문장의 MBTI 성향을 받는 문장. */
 // 「해진 형식」(정해진 형식) 오탐: 글자 짝 관계 말은 앞뒤가 낱말 경계일 때만.
-const RELATION_TERM = /(삼합|반합|육합|방합|천간합|천간충|원진|삼형|(?<![가-힣])[자축인묘진사오미신유술해]{2} ?(?:충|형|파|합)(?=[이가은는을를의과와도에]?(?:[\s,.(]|$)))/;
+const RELATION_TERM = /(삼합|반합|육합|방합|천간합|천간충|원진|삼형|(?<![가-힣])[자축인묘진사오미신유술해]{2} ?(?:충|형|파|합)(?=[이가은는을를의과와도에]?(?:[\s,.(]|$))|(?:^|[.!?] )(?:파|충|형)(?=[은는이가] ))/;
 const LEANS_TRAIT = /^(이 성향|이런 성향|그 성향|이 기질|이 유형의|이 힘이|이 판단)/;
 export function relationLink(sen: string, prev: string | undefined, mbtiAnchor: RegExp | null): string | null {
   if (!mbtiAnchor) return null;
@@ -104,6 +113,12 @@ export function relationLink(sen: string, prev: string | undefined, mbtiAnchor: 
   if (mbtiAnchor.test(sen)) return `「${rel[1]}」와 MBTI 성향을 한 문장에서 이음`;
   if (prev && LEANS_TRAIT.test(sen.trim()) && mbtiAnchor.test(prev)) return `「${rel[1]}」를 앞 문장의 MBTI 성향과 이음`;
   return null;
+}
+/** W6 S4(1차 종합 1장): 관계 문장 바로 뒤(2문장 안)에서 MBTI 성향과 「만나서·겹쳐·합쳐」 잇는 꼴 — 「현장에서 바로 시험하는 ISTP의 손과 한곳으로 몰리는 힘이 만나서」. */
+const COMBINE = /만나(?:서|면|니)|겹쳐|겹치|합쳐|합치|더해져|맞물려|같은 (?:방향|쪽)을 (?:가리|향)|닮아 있|닮았|방식이 비슷|결이 같|[과와]도 (?:잘 )?맞(?:아|습|는)|(?:이|그) 힘을 (?:더 )?(?:키우|키웁|키워)/;
+export function relationLinkAfter(sen: string, prev: string | undefined, mbtiAnchor: RegExp | null): string | null {
+  if (!mbtiAnchor || !prev || !mbtiAnchor.test(sen) || !COMBINE.test(sen) || RELATION_TERM.test(sen)) return null;
+  const rel = prev.match(RELATION_TERM); return rel ? `앞 문장의 「${rel[1]}」를 MBTI 성향과 이음` : null;
 }
 /** S1-5: MBTI 열등 기능을 강점으로(「주변 마음 살피기(Fe)가 강점」). */
 export function inferiorAsStrength(sen: string, type: string | null | undefined, plain: Readonly<Record<string, string>>): string | null {

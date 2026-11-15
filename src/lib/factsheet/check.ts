@@ -207,6 +207,14 @@ const NEXT_SEASON: Readonly<Record<string, string>> = { 봄: "여름", 여름: "
 const PREV_SEASON: Readonly<Record<string, string>> = { 봄: "겨울", 여름: "봄", 가을: "여름", 겨울: "가을" };
 const SEASON_IF = /(?:이)?거나|라면|다면|경우|이면|생이면/;
 const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
+/** W6 S4(2차 종합): 「편관이 둘이고 정관과 섞이면」 — 원국에 없는 십성을 함께 있는 조건으로 쓰면 있는 것처럼 읽힌다(지장간까지 없을 때만). */
+const TG_MIX = /(?<![가-힣])(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와|이|가) (?:함께 있으면|같이 있으면|섞이면|섞여|섞인)/;
+function tenGodMix(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1) return null;
+  const m = sen.match(TG_MIX); if (!m) return null;
+  const o = owners[0]; if (Object.values(o.tenGods).some(v => v?.includes(m[1]))) return null;
+  return { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${m[1]}은 없다 — 「${m[0]}」` };
+}
 function seasonClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
   if (owners.length !== 1 || SEASON_IF.test(sen)) return null;
   const o = owners[0], real = SEASON_KO[o.climate.season]; if (!real) return null;
@@ -552,7 +560,8 @@ const TEN_GODS = ["비견", "겁재", "식신", "상관", "편재", "정재", "�
 /** 십성 이름 뒤는 조사·띄어쓰기·문장부호만(「정관이」「편관의」는 잡고 「정관념」은 뺀다). */
 const TG_AFTER = "(?=[이가은는을를의도과와로으에만]|\\s|[,.?!)·(]|$)";
 const TG_RE = new RegExp(`(?<![가-힣])(${TEN_GODS.join("|")})${TG_AFTER}`, "g");
-const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|나란히 (가졌|있)|똑같이 (가졌|있)|두 사람의? (사주|원국|명식|여덟 글자)(에는|에|엔)/;
+// W6 S4(1차 궁합 9장 「두 사람에게는 천덕귀인과 월덕귀인이 힘이 되어 줘요」 — 천덕은 한 사람): 「두 사람에게(는)」도 공통 주장.
+const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|두 사람에게(?:는|엔|겐)? |나란히 (가졌|있)|똑같이 (가졌|있)|두 사람의? (사주|원국|명식|여덟 글자)(에는|에|엔)/;
 /** 문단이 두 사람 공통을 말하는 꼴(「두 사람에게 있는 귀인의 기운」 → 다음 문장 「천덕귀인과 월덕귀인은 …」). */
 const BOTH_CTX = /두 사람에게 (?:모두 |다 )?있는|두 사람 모두|두 사람 다|두 분 모두|둘 다/;
 /** 궁합 「두 사람 모두 천덕귀인」: 한 사람에게만 있는 신살·귀인·십성을 두 사람 공통으로 말함(W3 1차 궁합 A·A+연결). 이름이 없는 문장은 문단의 공통 말도 본다. */
@@ -563,7 +572,8 @@ function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
   for (const a of ctx.aliases) {
     if (!a.re.test(sen)) continue;
     // W6(59권 판정 오탐): 「천덕귀인은 장덕민님에게, 월덕귀인은 두 사람 모두에게」 — 신살 바로 뒤(14자)에 주인 이름을 밝혔으면 그 신살은 공통 주장이 아니다.
-    { const m = sen.match(a.re); const after = m ? sen.slice(m.index! + m[0].length, m.index! + m[0].length + 14) : ""; if (ctx.people.some(p => p.names?.test(after))) continue; }
+    { const m = sen.match(a.re); const after = m ? sen.slice(m.index! + m[0].length, m.index! + m[0].length + 14) : "", pre = m ? sen.slice(Math.max(0, m.index! - 12), m.index!) : "";
+      if (ctx.people.some(p => p.names?.test(after) || (p.names && new RegExp(`(?:${p.names.source})님?의 ?$`).test(pre)))) continue; }
     const has = ctx.people.map(p => p.facts.shinsal.some(x => x.name === a.name));
     if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${a.name}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}에게만 있다(두 사람 공통 아님)` };
   }
@@ -629,7 +639,7 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
 
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

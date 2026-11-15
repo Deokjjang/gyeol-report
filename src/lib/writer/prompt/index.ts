@@ -357,6 +357,20 @@ export function traitAtMap(brief: Brief): Map<string, string> {
 }
 /** W5 R1: 작가 브리프와 발행 렌더가 같은 사실 표시 표를 쓴다. */
 export const markTableFor = (brief: Brief, facts: FactSheet | null | undefined): MarkTable => buildMarks(facts, brief, traitAtMap(brief));
+/**
+ * W6 S4(2차 궁합 2·5·6장): 자리 칸 대신 where를 가진 관계 특성(파·충)은 at 표시가 없는데, 작가가 ⟦at:bt6⟧을 지어 써 fact_mark로 떼어지고 다음 문장이 주어 없이 남았다.
+ * 발행 렌더 표만 그 번호를 「where의 이름」(「하린님의 태어난 달과 날 사이의 자유파」)으로 채운다 — 작가 브리프 표(markTableFor)는 그대로.
+ */
+export function renderMarkTableFor(brief: Brief, facts: FactSheet | null | undefined): MarkTable {
+  const t = new Map(markTableFor(brief, facts));
+  if (!t.size) return t;
+  for (const tr of brief.traits) if (tr.where && !t.has(`at:${tr.id}`)) {
+    const c = brief.compatibility, owner = c && /^[ab]/.test(tr.id) ? (tr.id.startsWith("a") ? c.a.callName : c.b.callName) : null;
+    const short = tr.name.split(" ").pop() ?? tr.name, who = owner ? `${owner}의 ` : "";
+    t.set(`at:${tr.id}`, { key: `at:${tr.id}`, kind: "at", text: `${who}${tr.where}의 ${short}`, short, codes: [short], ...(owner ? { owner } : {}) });
+  }
+  return t;
+}
 /** 사실 표시를 작가 브리프에 넣는다: marks 칸(표시 → 구절), 특성 자리 칸은 「⟦at:id⟧ = 자리」, 궁합 관계 문장 칸(같은 11줄 두 벌 + 요약)은 marks.between이 대신한다. */
 function withMarks(out: Record<string, unknown>, brief: Brief, t: MarkTable): Record<string, unknown> {
   const view = writerMarks(t);

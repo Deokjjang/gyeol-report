@@ -22,7 +22,7 @@ import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } fro
 import { personaHit, type PersonaCtx } from "./persona";
 import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
 import { brokenSentence, unbalancedAt } from "./broken";
-import { contradictionFlags, inferiorAsStrength, relationLink, type ContradictionCtx } from "./contradiction";
+import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
   | "school_scene" | "presumed_partner" | "past_assertion" | "job_prop" | "yinyang_claim" | "element_claim" | "dayun_claim" | "star_claim" | "ten_god_direction"
@@ -475,6 +475,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
   // W6 S0-2: 이 책 사실 표시의 렌더 구절(같은 문장 되풀이 판정에서 구절 하나 안의 되풀이를 빼고, 이웃 문장 겹침을 본다).
   const markPhrases = ctx.broken && ctx.marks ? [...new Set([...ctx.marks.values()].flatMap(m => [m.text, m.bare, m.list, m.later].filter((x): x is string => Boolean(x))))] : [];
   const mbtiAnchor = !ctx.compat ? ctx.mbtiPeople?.[0]?.anchors ?? null : null;
+  // W6 S4(2차 궁합 2장 「각자의 바탕」): 한 사람의 원국 관계(파)를 그 사람 성격으로 쓰고 「ENTP의 … 이 힘을 키웁니다」로 이음 — 궁합도 각자의 바탕 장(2장)은 한 사람 글이라 같은 잇기 검사를 한다(두 사람 사이 관계를 다루는 다른 장은 보지 않는다).
+  const pairAnchor = ctx.compat && ctx.mbtiPeople?.length ? new RegExp(ctx.mbtiPeople.map(p => p.anchors.source).join("|")) : null;
   for (const c of chapters) {
     const writer = c.source !== "deterministic";
     let jobUses = 0;
@@ -511,7 +513,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // W4 Q2-4: 남의 성격 문장(차원 설명의 방향이 그 주인 값과 반대 = HARD, 그대로 복사 = 문체).
           { const ph = writer && ctx.persona ? personaHit(sen, ctx.persona) : null; if (ph?.rule === "persona_mismatch") { flag({ ...at, rule: ph.rule, detail: ph.detail }); continue; } if (ph) flag({ ...at, rule: ph.rule, detail: ph.detail }); }
           // W6 S1-5 잘못된 연결(한 사람 4종): 합·충을 MBTI 성격과 잇기, 열등 기능을 강점으로.
-          if (writer && ctx.linkCheck && !ctx.compat) { const lk = relationLink(sen, i > 0 ? sens.slice(Math.max(0, i - 2), i).map(stripMarks).join(" ") : undefined, mbtiAnchor) ?? inferiorAsStrength(sen, ctx.facts.mbti, ctx.mbtiPlain); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
+          if (writer && ctx.linkCheck && !ctx.compat) { const prev2 = i > 0 ? sens.slice(Math.max(0, i - 3), i).map(stripMarks).join(" ") : undefined; const lk = relationLink(sen, prev2, mbtiAnchor) ?? relationLinkAfter(sen, prev2, mbtiAnchor) ?? inferiorAsStrength(sen, ctx.facts.mbti, ctx.mbtiPlain); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
+          if (writer && ctx.linkCheck && pairAnchor && c.n === 2) { const prev2 = i > 0 ? sens.slice(Math.max(0, i - 3), i).map(stripMarks).join(" ") : pi > 0 ? splitSentences(s.paragraphs[pi - 1]).map(stripMarks).join(" ") : undefined; const lk = relationLink(sen, prev2, pairAnchor) ?? relationLinkAfter(sen, prev2, pairAnchor); if (lk) { flag({ ...at, rule: "link_relation", detail: lk }); continue; } }
           const r = sentenceRules(sen, c.n, sctx); if (r) { flag({ ...at, rule: r, ...(r === "pair_profile" ? { detail: F.pairProfileMismatch(sen, ctx.profilePeople!)! } : r === "glyph_list" ? { detail: F.glyphListMismatch(sen, ctx.glyphPeople!)! } : r === "grade_leak" || r === "rule_leak" ? { detail: exposureOf(sen)!.text } : {}) }); continue; }
           // 최종 A-8: 「X도 같은 편」이 앞 문장 성향을 성격표와 다른 사람에게 옮긴 꼴.
           if (ctx.profilePeople && i > 0) { const d = F.pairProfileSameSide(sen, stripMarks(sens[i - 1]), ctx.profilePeople); if (d) { flag({ ...at, rule: "pair_profile", detail: d }); continue; } }

@@ -7,7 +7,7 @@
  *  - particle: 조사 겹침(「…(일지)을를」「…현침살의의」) — 괄호·렌더 구절 바로 뒤에서만(낱말 속 「사과와」 같은 오탐을 피함).
  *  - orphan: 앞말 없는 조각 — 소제목 첫 문장이 지시어·접속어·「때문입니다」로만 기댐, 또는 조사로 시작(「에서 보듯 …」 — 빈 표시 흔적).
  */
-export type BrokenKind = "dup_phrase" | "render_overlap" | "bracket" | "particle" | "orphan";
+export type BrokenKind = "dup_phrase" | "render_overlap" | "bracket" | "particle" | "orphan" | "slot";
 export type BrokenHit = { readonly kind: BrokenKind; readonly detail: string };
 
 const nk = (s: string) => s.replace(/[⟪⟫]/g, "").replace(/[^가-힣0-9]/g, "");
@@ -56,6 +56,16 @@ export function brokenSentence(raw: string, o: BrokenOpts = {}): BrokenHit | nul
   const sen = raw.replace(/[⟪⟫]/g, "").trim(); if (!sen) return null;
   const phrases = o.phrases ?? [];
   { const m = sen.match(HANGUL_PAREN); if (m) return { kind: "render_overlap", detail: `「${m[1]}(${m[1]}…」 괄호 앞 말을 괄호 안에서 되풀이` }; }
+  // W6 S4(2차 궁합): 「진술충은 진술충으로」 — 주어 이름을 바로 서술어로 되풀이.
+  { const m = sen.match(/(?<![가-힣])([가-힣]{2,8})(?:은|는|이|가) \1(?:으로|로|이라|라|이에요|예요|입니다)(?![가-힣])/); if (m) return { kind: "render_overlap", detail: `「${m[1]}」을 주어와 서술어로 되풀이` }; }
+  // W6 S4(1차 커리어): 「내 방식의 힘(비겁) 내 방식의 힘」 — 괄호 뒤에 같은 이름을 바로 되풀이.
+  { const m = sen.match(/([가-힣][가-힣 ]{2,12}[가-힣])\([^()]{1,12}\) \1(?![가-힣])/); if (m) return { kind: "render_overlap", detail: `「${m[1]}(…) ${m[1]}」 이름 되풀이` }; }
+  // W6 S4(2차 커리어): 자리 표시를 서술어·동격으로 써서 「일주는 이 자리예요」「겁재, 곧 이 자리는」이 됨.
+  if (/(?:기둥|글자)(?:\([^()]*\))?(?:은|는) 이 (?:두 |세 )?자리(?:예요|이에요|입니다)[.!]?$/.test(sen) || /, 곧 이 (?:두 |세 )?자리(?:는|가|은|이) /.test(sen)) return { kind: "slot", detail: "자리 표시를 서술어·동격으로 씀(「이 자리예요」「곧 이 자리는」)" };
+  // W6 S4(2차 종합): 「땅 글자 자리에는 태어난 날 기둥(일주)이 놓여」 — 글자 한 칸 자리에 기둥(두 글자)을 넣은 꼴.
+  { const m = sen.match(/(?:하늘|땅) 글자 자리(?:에는|에|엔|는)? (태어난 (?:해|달|날|시각) 기둥)/); if (m) return { kind: "slot", detail: `글자 자리에 「${m[1]}」을 넣음` }; }
+  // W6 S4(2차 궁합 수리문): 「도윤님은 … 재고 싶어 해요. 반면 도윤님은 …」 — 같은 사람을 「반면」으로 맞세움.
+  if (o.prev) { const a = o.prev.replace(/[⟪⟫]/g, "").trim().match(/^([가-힣]{1,6})님(?:은|는) /), b = sen.match(/^반면(?:에)?,? ([가-힣]{1,6})님(?:은|는) /); if (a && b && a[1] === b[1]) return { kind: "slot", detail: `앞 문장과 같은 사람(${a[1]}님)을 「반면」으로 맞세움` }; }
   if (o.prev) {
     const pv = nk(o.prev), cur = nk(sen);
     const p = phrases.filter(x => nk(x).length >= 8).find(x => pv.includes(nk(x)) && cur.includes(nk(x)));

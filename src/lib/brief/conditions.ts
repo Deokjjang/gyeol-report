@@ -85,6 +85,8 @@ function atoms(text: string, ctx: ConditionCtx): boolean[] {
     const n = saju.tenGods.distribution[TEN_GOD_WORD[m[1]]] ?? 0;
     out.push(m[2] === "있" ? n > 0 : n === 0);
   }
+  // 십성 함께 있음: "정관과 함께 있으면", "정관이 섞이면"(W6 S4: 정관 없는 원국에 관살혼잡 팩폭)
+  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와) (?:함께|같이) 있|(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와|이|가) 섞이/g)) out.push((saju.tenGods.distribution[TEN_GOD_WORD[m[1] ?? m[2]]] ?? 0) > 0);
   // 천간 글자 있음·없음: "계수가 없으면", "갑목이 있으면"
   for (const m of text.matchAll(/(?<![가-힣])([갑을병정무기경신임계])(목|화|토|금|수)(?:이|가) (있|없)/g)) {
     const stem = STEM_WORD[m[1]]; if (ELEMENT_WORD[m[2]] !== STEM_ELEMENT[stem]) continue;
