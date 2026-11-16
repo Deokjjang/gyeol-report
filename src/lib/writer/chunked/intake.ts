@@ -564,7 +564,16 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const guarded = guardPairs(homeOnly(withCells, pairsFinal), pairsFinal, finalLines, mbti?.type).map(c => (c.keys ? { ...c, keys: assignForms(c.keys.map(k0 => withOwn(k0, brief, wishTopics, product)), pairsFinal) } : c));
   // 설계도 핵심 주장 · 되풀이 금지도 같은 뜻 말로(카드 줄과 같은 함수).
   const g = (t: string) => (/^이 해의 연애 신호: /.test(t) ? loveSignalMeaning(t, inputs.rel) : gradeToMeaning(t, inputs.rel));
-  const chaptersOut = sameClaims(guarded, finalLines).map(c => ({ ...c, claims: c.claims.map(g), avoid: c.avoid.map(g), ...(c.sections ? { sections: c.sections.map(s2 => ({ ...s2, claims: s2.claims.map(g) })) } : {}), ...(c.keys ? { keys: c.keys.map(k2 => ({ ...k2, claims: k2.claims.map(g) })) } : {}) }));
+  // AM2-10 3부 절 구성: MBTI 재료(B 줄 · 유형 장면)가 있는 소제목에는 그 짝의 명리 줄만 함께 둔다 — 짝이 없으면 MBTI 줄을 뺀다(설계도 마지막 단계에서 한 번 더).
+  const subjOf = new Map(finalLines.map(l => [l.id, l.subject] as const));
+  const sectionPairOnly = (n: number, ids: readonly string[]) => {
+    const bs = ids.filter(id => subjOf.get(id) === "mbti"), ms = ids.filter(id => /^(natal|dayun|year|month)$/.test(subjOf.get(id) ?? ""));
+    if (!bs.length || !ms.length) return ids;
+    const ok = new Set(pairsFinal.filter(p => bs.includes(p.mbti) && ms.includes(p.myeongri) && p.use.includes(n)).map(p => p.myeongri));
+    const kept = ok.size ? ids.filter(id => !ms.includes(id) || ok.has(id)) : ids.filter(id => !bs.includes(id));
+    return kept.length ? kept : ids;
+  };
+  const chaptersOut = sameClaims(guarded, finalLines).map(c => ({ ...c, claims: c.claims.map(g), avoid: c.avoid.map(g), ...(c.sections ? { sections: c.sections.map(s2 => ({ ...s2, lines: sectionPairOnly(c.n, s2.lines), claims: s2.claims.map(g) })) } : {}), ...(c.keys ? { keys: c.keys.map(k2 => ({ ...k2, claims: k2.claims.map(g) })) } : {}) }));
   return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: finalLines, pairs: pairsFinal, chapters: chaptersOut, ...(cardAlarms.length ? { cardAlarms } : {}), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
 }
 
