@@ -9,6 +9,8 @@ import { materialKey, materialTable } from "@/lib/writer/prompt/materials";
 import { featureLineDims, MAX_DROPS } from "@/lib/writer/prompt/pairTidy";
 import { cueKeys, profilePoles, type ContradictionCtx } from "@/lib/writer/safety/contradiction";
 import { revertRepairPoles, type AppliedRepair } from "@/lib/writer/repair3";
+import { renderMarks, type Mark } from "@/lib/writer/marks";
+import { inferiorAsStrength } from "@/lib/writer/safety/contradiction";
 
 const ROOT = join(__dirname, "../../..");
 const k = loadKnowledge(join(ROOT, "src/data/knowledge-v5"));
@@ -106,5 +108,23 @@ describe("W8.1 G6 수리 뒤 대조", () => {
     const a2 = rep("약속이 이어지면 혼자 있는 시간이 필요한 편이에요.", "당신은 혼자 있는 시간이 꼭 필요한 편이에요.");
     expect(cueKeys(a2.before).has("socialEnergy-")).toBe(true);
     expect(revertRepairPoles(book(a2.after), [a2], ctx).reverted).toEqual([]);
+  });
+});
+
+describe("W8.1 측정 중 고침(m2 — 직접 읽기에서 확인한 깨진 문장·잘못된 연결의 꼴)", () => {
+  it("⑦'' 자리 표시 구절의 주인을 성 뺀 이름으로 이미 불렀으면 「○○님의」를 뗀다", () => {
+    const m: Mark = { key: "at:at1", kind: "at", text: "장덕민님의 세 자리(연지·월간·일주)", owner: "장덕민님" } as Mark;
+    const r = renderMarks("현침살은 덕민님이 ⟦at:at1⟧에 두고 있는 기운이에요.", new Map([["at:at1", m]]));
+    expect(r).toBe("현침살은 덕민님이 세 자리(연지·월간·일주)에 두고 있는 기운이에요.");
+    expect(renderMarks("현침살은 ⟦at:at1⟧에 있어요.", new Map([["at:at1", m]]))).toContain("장덕민님의 세 자리");
+  });
+  it("⑫ 「사이의 X」 구절 뒤 작가의 「사이에는」 겹침을 뗀다", () => {
+    const m: Mark = { key: "at:t5", kind: "at", text: "태어난 해와 날 사이의 원진" } as Mark;
+    expect(renderMarks("⟦at:t5⟧ 사이에는 원진살이 있어요.", new Map([["at:t5", m]]))).toBe("태어난 해와 날 사이의 원진에는 원진살이 있어요.");
+  });
+  it("열등 기능 행동: Fi가 열등인 유형에 「감정도 분명하게 말함」을 그 유형 버릇으로 단정하면 걸고, 늦음·서툶을 말하면 두지 않는다", () => {
+    expect(inferiorAsStrength("ENTJ는 계획을 세워 곧게 다가가고 감정도 분명하게 말합니다.", "ENTJ", {})).not.toBeNull();
+    expect(inferiorAsStrength("ENTJ는 감정을 분명하게 말하는 데 서툴 수 있어요.", "ENTJ", {})).toBeNull();
+    expect(inferiorAsStrength("ENFP는 감정도 분명하게 말합니다.", "ENFP", {})).toBeNull();
   });
 });

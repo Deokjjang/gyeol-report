@@ -146,7 +146,8 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
       if (/두 사람 모두|두 분 모두|둘 다|두 사람에게|두 사람의 사주/.test(sentence) || (m.owner && whole.slice(Math.max(0, at - 12), at).includes(m.owner))) t = m.bare;
     }
     // ⑦ W6 S4(1차 궁합): 주인 이름을 문장이 이미 불렀으면 구절 앞 「○○님의 」를 뗀다(「장덕민님의 바탕은 장덕민님의 태어난 날 기둥…」).
-    if (m.owner && t.startsWith(`${m.owner}의 `) && before.includes(m.owner)) t = t.slice(m.owner.length + 2);
+    // ⑦'' W8.1 m2(1차 궁합 2장 「현침살은 덕민님이 ⟦at⟧에」 → 「덕민님이 장덕민님의 세 자리」): 성을 뗀 이름(「덕민님」)으로 불렀어도 같은 사람이다.
+    if (m.owner && t.startsWith(`${m.owner}의 `) && (before.includes(m.owner) || (m.owner.length >= 4 && new RegExp(`(?<![가-힣])${m.owner.slice(1)}`).test(before)))) t = t.slice(m.owner.length + 2);
     // ⑦' W6 S4(2차 궁합 6장): 「도윤님의 사주에는 ⟦rel⟧」 — 구절 앞 「도윤님 사주 안의 」가 앞말과 겹친다.
     { const o = t.match(/^([가-힣]{1,6}님) 사주 안의 /); if (o && before.slice(-16).includes(o[1]) && /사주(?:에는|에|엔|의) ?$/.test(before)) t = t.slice(o[0].length); }
     // ⑧ 일주 표시 바로 뒤에 작가가 간지를 또 썼으면(「⟦ju:a⟧ 갑신이에요」) 표시를 떼고 작가 말을 둔다.
@@ -161,7 +162,9 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     if (m.short && t.length >= 8) rendered.push({ si, text: t, short: m.short });
     t = named(t);
     return t + (p ? fixParticle(t, p) : gen ? "의 " : "");
-  }).replace(/ {2,}/g, " ");
+  }).replace(/ {2,}/g, " ")
+    // ⑫ W8.1 m2(1차 연애 4장 「⟦at:t5⟧ 사이에는 원진살이」 → 「태어난 해와 날 사이의 원진 사이에는」): 「사이의 X」 구절 바로 뒤에 작가가 「사이에(는)」를 또 쓰면 뒤 「사이」를 뗀다.
+    .replace(/(사이의 [가-힣]{1,8}(?:\([^()]*\))?) 사이(에는|에서|에|엔)(?=[\s,])/g, "$1$2");
   // ⑩ 앞 문장에서 렌더한 구절을 작가가 다음 문장에서 글로 또 쓰면(1차 커리어 「…(연간)와 …(월지)에 걸친 정재는」) 뒤의 것을 짧은 꼴로.
   const fixed = rendered.length ? (() => {
     const sens = out.match(/[^.!?]+[.!?]+["'”’)⟫]*\s*|[^.!?]+$/g) ?? [out];

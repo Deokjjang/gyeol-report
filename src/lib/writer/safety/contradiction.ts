@@ -168,9 +168,13 @@ export function relationLinkAfter(sen: string, prev: string | undefined, mbtiAnc
   const rel = prev.match(RELATION_TERM); return rel ? `앞 문장의 「${rel[1]}」를 MBTI 성향과 이음` : null;
 }
 /** S1-5: MBTI 열등 기능을 강점으로(「주변 마음 살피기(Fe)가 강점」). */
+/** W8.1 m2(1차 연애 4장 「ENTJ는 계획을 세워 곧게 다가가고 감정도 분명하게 말합니다」 — W8·W8.1 같은 DB 줄): 기능 이름 없이 열등 기능 영역의 행동을 그 유형의 버릇으로 단정한 꼴. */
+const INFERIOR_ACT: Readonly<Record<string, RegExp>> = { Fi: /감정(?:도|을|까지)? (?:분명하게|솔직하게|또렷하게|바로) (?:말|표현|드러)/ };
 export function inferiorAsStrength(sen: string, type: string | null | undefined, plain: Readonly<Record<string, string>>): string | null {
   const st = type ? fnStack(type) : null; if (!st) return null;
   const inf = st[3], name = plain[inf];
+  const act = INFERIOR_ACT[inf], ti = type ? sen.search(new RegExp(`(?<![A-Za-z])${type}(?![A-Za-z])`)) : -1;
+  if (act && ti >= 0 && act.test(sen.slice(ti)) && !/늦|서툴|약하|약한|어렵|부족|덜|막히|자라는|키우는|연습|익히|않/.test(sen)) return `${type} 열등 기능 ${inf}의 행동(감정 표현)을 그 유형의 버릇으로`;
   const at = sen.search(new RegExp(`\\(${inf}\\)|(?<![A-Za-z])${inf}(?![A-Za-z])${name ? `|${esc(name)}` : ""}`)); if (at < 0) return null;
   const rest = sen.slice(at, at + 40);
   if (/늦|서툴|약하|약한|어렵|부족|덜|막히|자라는|키우는|연습|익히/.test(sen)) return null;
