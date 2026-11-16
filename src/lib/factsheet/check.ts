@@ -562,6 +562,20 @@ function dayunSpan1(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): 
   }
   return null;
 }
+/** W8 m3(2차 커리어 9장 「2027년 정미는 …. 이 해의 후반에 대운도 편재 쪽으로 넘어가요」 — 교운 2027년 5월 무렵): 대운이 넘어가는 때를 해의 앞·가운데·뒤로 말하면 교운 달과 맞댄다. 해는 문장의 「N년」, 없으면 「올해」·「이 해/그해」(문단의 첫 「N년」). */
+const TURN_PART: readonly (readonly [RegExp, number, number])[] = [[/연초|초반에|상반기|전반에/, 1, 6], [/중반에|한가운데에/, 4, 8], [/후반에|하반기|연말/, 7, 12]];
+function dayunTurn(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph: string): FactHit | null {
+  if (!/대운|10년 흐름/.test(sen) || !/넘어가|바뀌|들어서|갈아타|접어들/.test(sen)) return null;
+  const part = TURN_PART.find(([re]) => re.test(sen)); if (!part) return null;
+  const ys = sen.match(/((?:19|20)\d{2})년/)?.[1] ?? (/올해/.test(sen) ? String(ctx.thisYear) : /이 해|그해/.test(sen) ? paragraph.match(/((?:19|20)\d{2})년/)?.[1] : undefined);
+  if (!ys) return null;
+  for (const p of owners) {
+    const turn = p.dayun.cycles.find(c => c.startSolarKst && c.startSolarKst.slice(0, 4) === ys); if (!turn) continue;
+    const mo = Number(turn.startSolarKst!.slice(5, 7));
+    if (mo && (mo < part[1] || mo > part[2])) return { rule: "fact_dayun", detail: `${turn.ganjiKo} 대운은 ${ys}년 ${mo}월 무렵에 들어온다 — 「${sen.match(part[0])![0]}」가 아니다` };
+  }
+  return null;
+}
 /**
  * W3 P3 5절 개수 말: 「관계는 모두 11가지」「합 4가지」「형·충·파·해 7가지」「충이 두 개」가 정답지 개수와 다르면 fact_count.
  * 셈은 compat/relations와 같은 관계 이름(relationName)으로 한다. 궁합은 두 사람 사이(이름이 하나만 나온 문장은 그 사람 원국), 한 사람 책은 원국.
@@ -740,7 +754,7 @@ const maskYang = (s: string) => s.replace(YANG_COPULA, (_m, a: string | undefine
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   sen = maskYang(sen); paragraph = maskYang(paragraph);
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? noneClaim(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? noneClaim(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? dayunTurn(sen, ctx, owners, paragraph) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

@@ -157,3 +157,16 @@ describe("W8 측정 중 고침(m2 — 3단계 직접 읽기에서 확인한 실�
     expect(gateClassOf("presumed_single")).toBe("block");
   });
 });
+
+describe("W8 측정 중 고침(m3 — m2 다시 발행 읽기에서 확인한 수리 답 결함의 꼴)", () => {
+  it("대운이 넘어가는 때를 해의 앞·가운데·뒤로 말하면 교운 달과 맞댄다(문단의 「N년」을 「이 해」로)", () => {
+    const ctx = factCtxOf(F.sheet, k, [[F.brief.person.callName]]);
+    const c = F.sheet.people[0].dayun.cycles.find(x => x.startSolarKst && x.startYear > 2026)!;
+    const y = c.startSolarKst!.slice(0, 4), mo = Number(c.startSolarKst!.slice(5, 7));
+    const wrong = mo <= 6 ? "후반에" : "초반에", right = mo >= 4 && mo <= 8 ? "중반에" : mo <= 6 ? "상반기에" : "하반기에";
+    const para = (w: string) => `${y}년은 정리의 해예요. 이 해의 ${w} 대운도 다음 흐름으로 넘어가요.`;
+    expect(factCheck(`이 해의 ${wrong} 대운도 다음 흐름으로 넘어가요.`, ctx, para(wrong))?.rule).toBe("fact_dayun");
+    expect(factCheck(`이 해의 ${right} 대운도 다음 흐름으로 넘어가요.`, ctx, para(right))).toBeNull();
+    expect(factCheck(`이 해의 ${wrong} 일이 많아져요.`, ctx, para(wrong))).toBeNull();
+  });
+});
