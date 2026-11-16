@@ -82,9 +82,10 @@ export function tidyPieces(o: Record<string, unknown>, table: MaterialTable, bri
   const tagged = (orig: string) => k.personaTags.get(materialKey(orig));
   top(c => orig => { const t = tagged(orig); if (t?.drop) return false; seen.push({ owner: c.owner, text: orig, w: c.w, place: c.place }); return t?.rw ?? true; });
   // 자리마다 조각 수(특성은 조각 수, 절은 재료 칸 수 — 절 재료가 하나뿐이면 그 재료의 글을 지킨다).
-  const traitPieces = new Map<string, Set<string>>();
-  for (const s of seen) if (s.place.startsWith("trait:")) { const m = traitPieces.get(s.place) ?? new Set<string>(); m.add(s.text); traitPieces.set(s.place, m); }
-  const soleAt = (place: string) => (place.startsWith("trait:") ? (traitPieces.get(place)?.size ?? 0) <= 1 : placeCount.has(place) ? (placeCount.get(place) ?? 0) <= 1 : false);
+  // 유일한 재료: 특성은 그 특성의 글 조각이 하나뿐일 때, 절은 재료 칸이 하나뿐이고 그 절의 글 조각도 하나뿐일 때(커리어 근거 칸처럼 한 칸에 줄 여럿이면 유일하지 않다).
+  const pieces = new Map<string, Set<string>>();
+  for (const s of seen) { const m = pieces.get(s.place) ?? new Set<string>(); m.add(s.text); pieces.set(s.place, m); }
+  const soleAt = (place: string) => (place.startsWith("trait:") ? (pieces.get(place)?.size ?? 0) <= 1 : placeCount.has(place) ? (placeCount.get(place) ?? 0) <= 1 && (pieces.get(place)?.size ?? 0) <= 1 : false);
   const uniq = new Map<string, PiecePlace>();
   seen.forEach((s, i) => { const key = `${s.owner}|${materialKey(s.text)}`; const was = uniq.get(key); uniq.set(key, was ? { ...was, w: Math.max(was.w, s.w), sole: was.sole || soleAt(s.place) } : { owner: s.owner, key: materialKey(s.text), text: s.text, w: s.w, order: i, sole: soleAt(s.place) }); });
   // 짝 찾기: 주인(모름 −1은 뺌) × 차원 × 조건 → 끝마다 조각(세기 2 이상, 성격·상황 줄만).
