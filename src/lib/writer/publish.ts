@@ -131,6 +131,8 @@ export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep"
   readonly reviewVersion?: import("./review").ReviewVersion; readonly reviewDesignSummary?: string;
   /** AM2-9 2부(세운·대운 장 묶음 작가만): 감독 2차 — 1차 원고에서 이어, 빠진 묶음만 부르고 차단이 남은 묶음만 새 호출 1회(걸린 문장 인용 + 이유). 4종은 쓰지 않는다. */
   readonly secondPass?: boolean;
+  /** AM2-9 3부(도구 전용 — 운영은 넘기지 않는다): 세운·대운 첫 원고 깃발 · 마지막 깃발을 본다(저장 기록 다시 대 보기). Book에는 남지 않는다. */
+  readonly onFlags?: (stage: "first" | "final", flags: readonly { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string }[], chapters: readonly { readonly n: number; readonly sections: readonly { readonly heading: string; readonly paragraphs: readonly string[] }[] }[]) => void;
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
   readonly replay?: boolean;
   /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
