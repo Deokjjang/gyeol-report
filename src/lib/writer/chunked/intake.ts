@@ -26,7 +26,7 @@ import { FLOW_DESC, FLOW_WORD, POSITION_KO } from "@/lib/brief/labels";
 import { JOB_ASSUME, type WriterChapter } from "../prompt";
 import { FARMING, presumedPartner } from "../safety/lint";
 import { RURAL_PROP } from "../safety/patterns";
-import { readWish } from "@/lib/brief/design/annual";
+import { meaningOf, readWish } from "@/lib/brief/design/annual";
 import { pairTextIssue } from "./card";
 import { dayunPositionKo } from "../safety/lint";
 import { cleanSeed, dedupeSentences, dropGeneral, plainCard, predicate, relCondition, seedAsCondition, seedTagsFit, seedTagsOf, SENIORITY_PROP, stripFnCodes, stripRx, unambiguous, unitFix } from "./card";
@@ -55,6 +55,7 @@ export type KeyPlan = { readonly key: string; readonly label: string; readonly h
   /** AM2-6 1부: 이 key의 영역(카드 줄·고리 자리) — 장면 씨앗은 이 영역 안에서만. */ readonly areas?: readonly string[];
   /** AM2-6 1부: 엔진이 고른 바람 고리(책에서 1~3 key만). */ readonly wishLink?: string;
   /** AM2-6 3부: 장면 씨앗의 영역(areas 안이어야 한다 — 2,010명 검사). */ readonly sceneArea?: string;
+  /** AM2-9 4부: 세운 장면이 MBTI 장면 씨앗에서 왔다(짝이 빠지면 장면도 뺀다). */ readonly sceneMbti?: true;
   /** AM2-6 4부: 이 key의 대운 안 위치 값(위치 말은 이 값으로만). */ readonly position?: string;
   /** AM2-7 3부 6: 설계도가 정한 첫머리 방식 · 고리 문장 꼴 · 짝 문장 꼴(장 안에서 같은 방식 셋째 없음 · 같은 꼴 둘까지). */ readonly opener?: string; readonly linkForm?: string; readonly pairForm?: string;
   /** AM2-8 2부 뿌리 3: 고리 · 짝이 없는 key의 이 사람 재료(고객이 적은 입력 사실 하나 × 그 key 영역). */ readonly own?: string };
@@ -330,7 +331,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
         const [head, ...rest] = m.facts.filter(x => !DIRECTIVE_FACT.test(x));
         const my = head ? add("year", split(head).value, split(head).meaning, n) : null;
         // AM2-6 2부: 지식 DB annual-mbti 줄은 「그 해 기운을 이 유형이 겪는 쪽」(반응 = 공통)과 「함정 → 쓰는 법」(긴장) — 잇는 이유가 있는 짝.
-        if (my && mbtiType) { use.get(mbtiType)!.add(n); for (const r of rest) pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType, why: pairWhy(r), reason: /→|쉬움|쉽다/.test(r) ? "긴장" : "공통" }); }
+        // AM2-9 4부: 짝 이유 글은 뜻만(「→ 처방」 뗌 — 처방은 사전 배분으로만). 잇는 이유(긴장 · 공통)는 뗀 앞 원문으로 가른다.
+        if (my && mbtiType) { use.get(mbtiType)!.add(n); for (const r of rest) pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType, why: pairWhy(meaningOf(r)), reason: /→|쉬움|쉽다/.test(r) ? "긴장" : "공통" }); }
         return [my, mbtiType].filter(Boolean) as string[];
       }
       if (m.key === "growthDayun") {
@@ -650,7 +652,9 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const areas = [...new Set(areas0.length ? areas0 : ["alone"])];
   let scene = scene0 && seedFits(scene0, brief) && !SCENE_COUNT.test(scene0) && areas.includes(seedDomainOf(scene0)) ? seed(scene0) : undefined, sceneArea = scene ? seedDomainOf(scene0!) : undefined;
   if (scene) scene = seedAsCondition(scene);
-  for (const d of areas) { if (scene) break; scene = x.mbtiSeed(d); if (scene) sceneArea = d; }
+  // AM2-9 4부: 세운 MBTI 장면 씨앗은 짝 있는 key에서만(짝 없는 key의 MBTI 장면은 짝 밖 잇기의 재료가 된다 — P7 F1 「모임 공지에 요일까지 정확히 적는 사람이라면」).
+  let sceneMbti = false;
+  for (const d of areas) { if (scene || (brief.product === "annual_fortune" && !x.pair)) break; scene = x.mbtiSeed(d); if (scene) { sceneArea = d; sceneMbti = brief.product === "annual_fortune"; } }
   // AM2-6 4부: 대운 해 key의 위치 값(엔진 yearIndex — 위치 말은 이 값으로만).
   const position = e.kind === "year" && e.dayun?.yearIndex ? `${e.dayun.ganji.replace(/[一-鿿]/g, ch => READING[ch] ?? ch)} ${e.dayun.yearIndex}번째 해(${phaseKo(e.dayun.yearIndex)})` : undefined;
   const todoRaw = e.todo && sceneFits(e.todo, brief) ? say(e.todo, year) : "";
@@ -676,7 +680,7 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   void rels;
   const links = keyLinks(e, x.link, label, x.others);
   return { key: e.key, label, head: say(e.head ?? "", year), when, lines: uniq, claims: [`${label}: ${core.map(c => c.name).join(" · ")}`], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}), ...(todoRaw && when !== "past" ? { todo: todoRaw } : {}), ...(range ? { range } : {}), must, core: core.map(c => c.name), screen,
-    ...(links.length ? { links } : {}), ...(pairId ? { pair: pairId } : {}), ...(pointer ? { pointer } : {}), ...(pairScope ? { pairScope } : {}), areas, ...(sceneArea && scene ? { sceneArea } : {}), ...(position ? { position } : {}) };
+    ...(links.length ? { links } : {}), ...(pairId ? { pair: pairId } : {}), ...(pointer ? { pointer } : {}), ...(pairScope ? { pairScope } : {}), areas, ...(sceneArea && scene ? { sceneArea } : {}), ...(sceneMbti && scene ? { sceneMbti: true as const } : {}), ...(position ? { position } : {}) };
 }
 
 /** 대운 안 위치 말(엔진과 같은 경계: 1 첫해 · 2~3 앞쪽 · 4~7 중간 · 8~9 끝 무렵 · 10 마지막 해). */
@@ -742,12 +746,24 @@ export function guardPairs(chapters: readonly ChapterPlan[], pairs: readonly Pai
   const isB = (id: string) => subj.get(id) === "mbti", isM = (id: string) => /^(natal|dayun|year|month)$/.test(subj.get(id) ?? "");
   return chapters.map(c => {
     if (c.keys) {
-      const keys = c.keys.map(k0 => { if (k0.pair && pairs.some(p0 => p0.id === k0.pair)) return k0; const { pairForm: _f, pairScope: _s, pair: _p, ...rest } = k0; void _f; void _s; void _p; return { ...rest, lines: k0.lines.filter(id => !isB(id)) }; });
+      // AM2-9 4부: 짝이 빠진 세운 key는 MBTI 장면 씨앗도 뺀다(짝 없는 key의 MBTI 장면 — 짝 밖 잇기 재료).
+      const keys = c.keys.map(k0 => { if (k0.pair && pairs.some(p0 => p0.id === k0.pair)) return k0; const { pairForm: _f, pairScope: _s, pair: _p, ...rest0 } = k0; void _f; void _s; void _p;
+        const rest = k0.sceneMbti ? (({ scene: _sc, sceneArea: _sa, sceneMbti: _sm, ...r2 }) => (void _sc, void _sa, void _sm, r2))(rest0) : rest0;
+        return { ...rest, lines: k0.lines.filter(id => !isB(id)) }; });
       return { ...c, keys, allowed: [...new Set(keys.flatMap(k0 => k0.lines))] };
     }
     const sections = (c.sections ?? []).map(sp => {
       const paired = pairs.some(p0 => sp.lines.includes(p0.myeongri) && sp.lines.includes(p0.mbti) && (!p0.use || p0.use.includes(c.n)));
-      if (paired) return sp;
+      if (paired) {
+        // AM2-9 4부(브리프 검사 무작위 2,000명 pair_section 6 — v5/main부터 있던 것): 짝 있는 절의 짝 밖 명리 줄(1장 「명리와 MBTI로 보면」의 일주 줄 N8 × B1)은 MBTI 줄과 한 절에 두지 않는다.
+        // 짝 밖 줄이 핵심 주장이 아니면 그 줄만 빼고, 핵심 주장이면 MBTI 줄을 빼서 나란히 꼴로 둔다(짝 밖 잇기 재료를 남기지 않는다).
+        const inPair = new Set(pairs.filter(p0 => sp.lines.includes(p0.mbti) && (p0.use ?? []).includes(c.n)).map(p0 => p0.myeongri));
+        const lone = sp.lines.filter(id => isM(id) && !inPair.has(id));
+        if (!lone.length || !sp.lines.some(isB)) return sp;
+        const claims = new Set(sp.claimIds ?? []);
+        if (!lone.some(id => claims.has(id))) return { ...sp, lines: sp.lines.filter(id => !lone.includes(id)), ...(sp.recapIds ? { recapIds: sp.recapIds.filter(id => !lone.includes(id)) } : {}) };
+        return { ...sp, lines: sp.lines.filter(id => !isB(id)), q: twoSystemQ(sp.q, mbti) ? PARALLEL_Q : sp.q };
+      }
       const lines2 = sp.lines.some(isB) && sp.lines.some(isM) ? sp.lines.filter(id => !isB(id)) : sp.lines;
       const q = twoSystemQ(sp.q, mbti) ? PARALLEL_Q : sp.q;
       return { ...sp, lines: lines2.length ? lines2 : sp.lines, q };

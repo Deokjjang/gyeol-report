@@ -5,6 +5,7 @@
  * - 삼재(띠 = 태어난 해 땅 글자 삼합 묶음), 나를 돕는 색·방향·숫자(가장 약한 기운 보완), 소망(자료일 뿐 지시가 아님).
  */
 import extra from "@/data/knowledge-v5/timeline/annual-extra.json";
+import ANNUAL_TAGS from "./annual-tags.json";
 import { analyzeIncoming } from "@/lib/saju/detections";
 import { HIDDEN_STEMS } from "@/lib/saju/constants";
 import { getTenGod } from "@/lib/saju/tenGods";
@@ -28,6 +29,53 @@ const ev = (key: string, facts: readonly (string | false | undefined | null)[], 
   const f = facts.filter((x): x is string => Boolean(x));
   return f.length ? { kind: "evidence", key, facts: f, ...(note ? { note } : {}) } : null;
 };
+// ---------- AM2-9 4부: 세운 카드 재료 정리(호출 0) ----------
+/** 세운 지식 DB 줄(annual-domain · annual-situation · annual-mbti · year-energy 478줄)의 꼬리표 — 뜻(「→ 처방」 앞) 글이 열쇠.
+ *  k · d = W7 성격 사전 20차원(덕짱님 답 11-16: 서브에이전트가 매김, persona-tags.json과 따로 — 4종 지식 버전 해시 밖). dir = 달 칸 방향(annual-domain만: up · down · any). */
+type AnnualTag = { readonly k: string; readonly d: readonly (readonly [string, 1 | -1, number])[]; readonly dir?: "up" | "down" | "any" };
+const TAGS = (ANNUAL_TAGS as unknown as { items: Readonly<Record<string, AnnualTag>> }).items;
+/** 카드에 주는 DB 줄은 뜻만 — 「→ 처방」 꼬리는 뗀다(처방은 사전 배분으로만, P8 12월 「새 자리 한 번」 ↔ 관계 늦출 달). */
+export const meaningOf = (s: string) => s.split(" → ")[0].trim();
+export const annualTagOf = (s: string): AnnualTag | undefined => TAGS[meaningOf(s)];
+/** 달 칸 방향과 뜻 방향: 오르는 칸에 살필 뜻(P8 5월 「무리한 일정」 ↔ 「무리할 달 없음」) · 살필 칸에 좋은 뜻을 주지 않는다. */
+export const dirFits = (s: string, arrow: Arrow) => { const d = annualTagOf(s)?.dir; return !(arrow === "↑" && d === "down") && !(arrow === "↓" && d === "up"); };
+/** 넓히기 줄(사람 · 인연을 늘리는 뜻) — 관계 속도를 늦출 달(사람 ↓) · 연애 속도를 늦출 달(연애 ↓)에는 주지 않는다(P8 12월 「새 자리」 ↔ 「관계 늦출 달」). */
+export const EXPAND_PEOPLE = /사람 만나는 자리가 늘|새 얼굴|인맥이 넓어|모임이 늘|모임·행사|새 무리를 찾|새 자리|새 인연/;
+const EXPAND_LOVE = /새 인연|먼저 다가가|빠르게 빠져들/;
+/** 성격 차원(성격 · 행동 경향 줄만). */
+export const personDims = (s: string) => { const t = annualTagOf(s); return t && (t.k === "trait" || t.k === "situ" || t.k === "flow") ? t.d : []; }; // 세운은 차원이 붙은 흐름 줄도(「또래 모임이 늘어」 ↔ 「소수와 깊게」)
+/** 정리 기록: 성격표(profilePoles) · 뺄 줄 남은 칸(권당 16 — W8.1 결정 4와 같은 상한) · 뺀 줄 · 상한으로 남긴 짝. */
+export type AnnualTidy = { readonly poles: ReadonlyMap<string, 1 | -1>; left: number; readonly drops: { at: string; text: string; why: string }[]; readonly over: { at: string; text: string; why: string }[]; readonly swaps: { at: string; text: string; why: string }[] };
+export const ANNUAL_MAX_DROPS = 16;
+export const annualTidy = (poles: ReadonlyMap<string, 1 | -1>): AnnualTidy => ({ poles, left: ANNUAL_MAX_DROPS, drops: [], over: [], swaps: [] });
+/** 고를 때 거름(뺄 줄을 만들지 않게): 이 줄이 성격표와 반대이거나, 같은 범위에 이미 고른 줄과 같은 차원 반대 끝이면 그 까닭. */
+export const clashWhy = (x: string, chosen: readonly string[], poles: ReadonlyMap<string, 1 | -1>): string | null => {
+  const ds = personDims(x); if (!ds.length) return null;
+  const p = opposesProfile(ds, poles); if (p) return `성격표 ${p} 반대`;
+  const y = chosen.find(y2 => y2 !== meaningOf(x) && clashDim(ds, personDims(y2), 1)); return y ? `${clashDim(ds, personDims(y), 1)} 반대 끝(「${y.slice(0, 24)}」)` : null;
+};
+/** 도구용(시험 · 보고): 마지막 세운 브리프의 정리 기록. */
+export const annualTidyLog: { last?: AnnualTidy } = {};
+const clashDim = (a: readonly (readonly [string, 1 | -1, number])[], b: readonly (readonly [string, 1 | -1, number])[], min: number) => a.find(([d, p, s]) => s >= min && b.some(([d2, p2, s2]) => d2 === d && p2 === -p && s2 >= min))?.[0];
+const opposesProfile = (ds: readonly (readonly [string, 1 | -1, number])[], poles: ReadonlyMap<string, 1 | -1>) => {
+  const opp = ds.filter(([d, p]) => poles.get(d) === -p).reduce((a, x) => a + x[2], 0), agree = ds.filter(([d, p]) => poles.get(d) === p).reduce((a, x) => a + x[2], 0);
+  return opp > 0 && opp > agree ? ds.find(([d, p]) => poles.get(d) === -p)![0] : undefined;
+};
+/**
+ * 한 범위(그 해 · 그 달) 줄의 성격 정리 — W8.1 짝 정리 차례 그대로: ① 같은 차원 반대 끝 · 둘 다 세기 2+ ② 성격표 대조(G3) ③ 세기 1이 낀 짝(G1).
+ * 약한 쪽 = 그 차원 세기가 작은 쪽, 같으면 뒤에 온 줄. 지킬 줄(MBTI 짝 이유)은 빼지 않는다. 그 근거 칸의 유일한 DB 줄은 빼지 않는다(남긴 짝으로 적는다).
+ */
+function tidyScope(at: string, items: readonly string[], keep: ReadonlySet<string>, canDrop: (text: string, gone: ReadonlySet<string>) => boolean, t: AnnualTidy): Set<string> {
+  const gone = new Set<string>(), live = () => items.filter(x => !gone.has(x));
+  const drop = (text: string, why: string) => { if (keep.has(text) || gone.has(text)) return; if (t.left > 0 && canDrop(text, gone)) { gone.add(text); t.left--; t.drops.push({ at, text, why }); } else if (!t.over.some(o => o.text === text && o.at === at)) t.over.push({ at, text, why }); };
+  const pairs = (min: number) => { for (let j = 1; j < items.length; j++) for (let i = 0; i < j; i++) { const a = items[i], b = items[j]; if (gone.has(a) || gone.has(b)) continue; const d = clashDim(personDims(a), personDims(b), min); if (!d) continue;
+    const sa = personDims(a).find(x => x[0] === d)![2], sb = personDims(b).find(x => x[0] === d)![2], lose = keep.has(b) ? a : keep.has(a) ? b : sa > sb ? b : sb > sa ? a : b; drop(lose, `${d} 반대 끝(「${(lose === a ? b : a).slice(0, 24)}」)`); } };
+  pairs(2);
+  for (const x of live()) { const d = opposesProfile(personDims(x), t.poles); if (d) drop(x, `성격표 ${d} 반대`); }
+  pairs(1);
+  return gone;
+}
+
 const GEN: Readonly<Record<FiveElement, FiveElement>> = { WOOD: "FIRE", FIRE: "EARTH", EARTH: "METAL", METAL: "WATER", WATER: "WOOD" };
 const groupOf = (tg: TenGod) => TEN_GOD_GROUP[tg] as Group;
 
@@ -107,6 +155,7 @@ export type AnnualCtx = {
   readonly mbti: string | null; readonly year: number; readonly yearPillar: Pillar; readonly dayunPillar?: Pillar;
   readonly yearEntry: TimelineEntry; readonly months: readonly TimelineEntry[]; readonly bridge?: TimelineEntry;
   readonly jobStatus: string; readonly relationshipStatus: string; readonly wish: WishRead; readonly rng: Rng;
+  /** AM2-9 4부: 성격 정리(그 해 범위). 없으면 정리하지 않는다(도구 · 옛 시험). */ readonly tidy?: AnnualTidy;
 };
 const WORK_KEY = (s: string) => ({ employee: "status:employee", job_seeker: "status:job_seeker", student: "status:student", self_employed: "status:business", business_owner: "status:business", freelancer: "status:freelancer", unemployed: "status:other", homemaker: "status:other", other: "status:other" } as Record<string, string>)[s];
 const LOVE_KEY = (s: string) => ({ single: "love:single", some: "love:single", dating: "love:dating", marriage_preparing: "love:dating", married: "love:married" } as Record<string, string>)[s];
@@ -130,14 +179,25 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const card = yearRelationCard(c.saju, c.k, c.year, c.dayunPillar);
   const stemTg = c.yearEntry.tenGod.stem.match(/\((.+)\)/)?.[1] as TenGod, branchTg = c.yearEntry.tenGod.branch.match(/\((.+)\)/)?.[1] as TenGod;
   const g1 = groupOf(stemTg), g2 = groupOf(branchTg);
-  const pick = (lines: readonly string[], n: number, label: string) => { const r = c.rng.fork(label); const pool = [...lines]; const out: string[] = []; while (pool.length && out.length < n) out.push(pool.splice(r.int(pool.length), 1)[0]); return out; };
+  // AM2-9 4부: 그 해 범위에서 고를 때 성격표 반대 · 이미 고른 줄과 반대 끝인 줄은 건너뛰고 다음 줄(뽑기 차례는 그대로 — 걸리지 않으면 예전과 같은 줄). MBTI 짝 이유 줄은 거르지 않고 지킨다.
+  const chosen: string[] = [];
+  /** 차례대로 첫 줄(쉬는 법 칸) — 정리하면 거름에 걸리지 않는 첫 줄. */
+  const firstFit = (xs: readonly string[]) => { if (!c.tidy) return xs.slice(0, 1); const got = xs.find(x => !clashWhy(x, chosen, c.tidy!.poles)); if (xs[0] && got !== xs[0]) c.tidy.swaps.push({ at: `${c.year}년`, text: meaningOf(xs[0]), why: clashWhy(xs[0], chosen, c.tidy.poles) ?? "" }); if (got && personDims(got).length && !chosen.includes(meaningOf(got))) chosen.push(meaningOf(got)); return got ? [got] : []; };
+  const pick = (lines: readonly string[], n: number, label: string, guard: boolean | "profile" = true) => { const r = c.rng.fork(label); const pool = [...lines]; const out: string[] = [];
+    while (pool.length && out.length < n) { const x = pool.splice(r.int(pool.length), 1)[0];
+      const why = c.tidy && guard ? clashWhy(x, guard === "profile" ? [] : chosen, c.tidy.poles) : null;
+      if (why) { if (!c.tidy!.swaps.some(s => s.text === meaningOf(x) && s.at === `${c.year}년`)) c.tidy!.swaps.push({ at: `${c.year}년`, text: meaningOf(x), why }); continue; }
+      out.push(x); if (c.tidy && personDims(x).length && !chosen.includes(meaningOf(x))) chosen.push(meaningOf(x)); }
+    return out; };
   const fit = (facet: string) => (l: string) => facet !== "love" || loveLineFits(l, c.relationshipStatus);
-  const domain = (facet: string, n = 2) => pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet).filter(fit(facet)), n, `dom:${facet}`);
-  const domainB = (facet: string) => stemTg === branchTg ? [] : pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet).filter(fit(facet)), 1, `domB:${facet}`);
+  // AM2-9 4부: 카드 DB 줄은 뜻만(「→ 처방」 뗌 — 처방은 사전 배분으로만). 뽑기(rng)는 그대로, 뗀 뒤에 준다.
+  const tip = (xs: readonly string[]) => (c.tidy ? xs.map(meaningOf) : [...xs]);
+  const domain = (facet: string, n = 2) => tip(pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet).filter(fit(facet)), n, `dom:${facet}`));
+  const domainB = (facet: string) => stemTg === branchTg ? [] : tip(pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet).filter(fit(facet)), 1, `domB:${facet}`));
   const wk = WORK_KEY(c.jobStatus), lk = LOVE_KEY(c.relationshipStatus);
-  const situ = (key: string | undefined, label: string) => key ? pick([...deepLines(c.k, "annual-situation", key, g1), ...(g2 !== g1 ? deepLines(c.k, "annual-situation", key, g2) : [])], 2, label) : [];
+  const situ = (key: string | undefined, label: string) => key ? tip(pick([...deepLines(c.k, "annual-situation", key, g1), ...(g2 !== g1 ? deepLines(c.k, "annual-situation", key, g2) : [])], 2, label)) : [];
   const ys = (c.yearEntry as TimelineEntry & { signals?: DomainSignals }).signals;
-  const energy = (facet: string, n = 2) => pick(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, facet), n, `en:${facet}`);
+  const energy = (facet: string, n = 2) => tip(pick(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, facet), n, `en:${facet}`));
   const rel = card.relations.slice(0, 3).map(r => relationLine(card, r));
   const lucky = luckyOf(c.st, c.chart.elements.strongest.element as FiveElement);
   const samjae = samjaeOf(c.saju.pillars.year.branch as EarthlyBranch, c.yearPillar.branch as EarthlyBranch);
@@ -149,7 +209,7 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const ends = (high: boolean) => { const v = high ? top[0]?.flow.score : top.at(-1)?.flow.score; return v === undefined ? [] : months.filter(m => m.flow.score === v).map(monthName); };
   const relSeat = (seat: "day" | "month" | "year") => card.relations.filter(r => r.seats.some(s => s.seat === seat)).slice(0, 1).map(r => relationLine(card, r, { picture: false }));
   const statusUnknownWork = !wk, statusUnknownLove = !lk;
-  const mbtiLines = c.mbti ? [...pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g1), 2, "mbti1"), ...(g2 !== g1 ? pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g2), 1, "mbti2") : [])] : [];
+  const mbtiLines = c.mbti ? [...pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g1), 2, "mbti1", "profile"), ...(g2 !== g1 ? pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g2), 1, "mbti2", "profile") : [])] : [];
   // AM2-4 2부 충돌 빌드 검사: 바람 달은 바람의 모든 영역 가운데 하나가 오르고, 어느 영역도 늦추지 않는 달만(바람 달 ↔ 늦출 달 겹침 0).
   const wishDomains = [...new Set(c.wish.topics.map(t => (t === "study" ? "work" : t) as DomainKey))];
   const wishDown = months.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↓")).map(monthName);
@@ -178,7 +238,7 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
     carePeople: ev("carePeople", [...domain("people", 3).slice(2), ...domainB("people"), `관계 속도를 늦출 달: ${monthsBy(months, "people", "↓").join(", ") || "없음"}`], "조심할 관계는 근거와 함께, 상대를 비하하지 않는다"),
     mindPush: ev("mindPush", [...domain("mind", 2), ...domainB("mind"), `무리하기 쉬운 달: ${monthsBy(months, "mind", "↓").join(", ") || "뚜렷한 달 없음"}`], "무리하기 쉬운 때와 신호. 건강 진단·병명 금지"),
     // AM2-5 2부 충돌 빌드 검사(P4 판독 세운 경계 #6 — 2월은 쉬어 가기 좋은 달이면서 연애·사람·바람이 오르는 달): 쉬는 달에서 연애·사람이 오르는 달과 바람 달은 뺀다.
-    mindRest: ev("mindRest", [`쉬어 가기 좋은 달: ${monthsBy(months, "mind", "↑").filter(m => !restClash.has(m)).join(", ") || "뚜렷한 달 없음"}`, `${ends(false).length > 1 ? "흐름이 가장 잔잔한 달(같은 세기)" : "가장 조용한 달"}: ${ends(false).join(", ")}`, ...deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, "mind").slice(0, 1)], "쉬는 법 하나를 이 사람 생활에 맞게"),
+    mindRest: ev("mindRest", [`쉬어 가기 좋은 달: ${monthsBy(months, "mind", "↑").filter(m => !restClash.has(m)).join(", ") || "뚜렷한 달 없음"}`, `${ends(false).length > 1 ? "흐름이 가장 잔잔한 달(같은 세기)" : "가장 조용한 달"}: ${ends(false).join(", ")}`, ...tip(firstFit(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, "mind")))], "쉬는 법 하나를 이 사람 생활에 맞게"),
     useDo: ev("useDo", [`${ends(true).length > 1 ? "흐름이 가장 크게 오르는 달(같은 세기)" : "흐름이 가장 크게 오르는 달"}: ${ends(true).join(", ")}`, ...(["love", "money", "work", "people", "mind"] as DomainKey[]).filter(d => ys?.[d] === "↑").map(d => `이 해에 오르는 영역: ${DOMAIN_KO[d]}`), ...domain("work", 3).slice(2, 3), ...energy("work", 1)], "할 것 세 가지: 서로 다른 영역에서, 이 사람 상황에 맞게"),
     useAvoid: ev("useAvoid", [...(["love", "money", "work", "people", "mind"] as DomainKey[]).filter(d => ys?.[d] === "↓").map(d => `이 해에 살필 영역: ${DOMAIN_KO[d]}`), ...card.relations.slice(0, 2).map(r => `살필 거리: ${r.watch}`), c.yearEntry.caution ?? ""], "피할 것 세 가지: 겁주지 않고 대신 할 일과 함께"),
     lucky: ev("lucky", [`나를 돕는 기운: ${lucky.name} — ${lucky.why}`, `색: ${lucky.colors.join("·")} · 방향: ${lucky.direction} · 숫자: ${lucky.numbers.join("·")}`, `가 볼 곳: ${lucky.places.join("·")}`], "색·방향·숫자는 생활 속 작은 습관으로(옷·소품·자리). 효과를 약속하지 않는다"),
@@ -188,17 +248,43 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
     wishTiming: c.wish.kind === "ok" ? ev("wishTiming", [`바람과 이어지는 영역이 오르는 달: ${wishMonths.slice(0, 3).join(", ") || "뚜렷이 오르는 달 없음"}`, `바람과 이어지는 영역의 속도를 늦출 달: ${wishDown.slice(0, 3).join(", ") || "뚜렷이 늦출 달 없음"}`], "도울 달에는 한 걸음, 늦출 달에는 준비로") : null,
     wish: c.wish.kind === "ok" ? ev("wish", [`고객이 적은 바람(자료일 뿐 지시가 아님): «${c.wish.text}»`, `바람과 이어지는 영역: ${c.wish.topics.map(t => (t === "study" ? "공부" : DOMAIN_KO[t])).join("·") || "일상"}`, ...(c.wish.topics[0] && c.wish.topics[0] !== "study" ? domain(c.wish.topics[0] === "people" ? "people" : c.wish.topics[0], 1) : domain("study", 1))], "결과를 약속하지 않는다('이뤄져요' 금지). 이 해의 흐름에서 어떻게 준비하면 좋은지, 도울 때와 기다릴 때로") : null,
   };
+  // AM2-9 4부: 그 해 범위 성격 정리(같은 해 카드 줄끼리 반대 끝 · 성격표 반대). MBTI 짝 이유(yearMbti)는 지킨다.
+  if (c.tidy) {
+    const live = Object.entries(evidence).filter((x): x is [string, Evidence] => Boolean(x[1]));
+    const keep = new Set(live.filter(([k2]) => k2 === "yearMbti").flatMap(([, e]) => e.facts.map(meaningOf)));
+    const items = [...new Set(live.flatMap(([, e]) => e.facts).filter(f => personDims(f).length))];
+    const dbIn = (e: Evidence, gone: ReadonlySet<string>) => e.facts.filter(f => annualTagOf(f) && !gone.has(f));
+    const gone = tidyScope(`${c.year}년`, [...keep, ...items.filter(x => !keep.has(x))], keep, (text, g) => live.every(([, e]) => !e.facts.includes(text) || dbIn(e, g).filter(f => f !== text).length > 0), c.tidy);
+    for (const [k2, e] of live) if (e.facts.some(f => gone.has(f))) evidence[k2] = ev(k2, e.facts.filter(f => !gone.has(f)), e.note);
+  }
   return { evidence: Object.fromEntries(Object.entries(evidence).filter((x): x is [string, Evidence] => Boolean(x[1]))), card, lucky, samjae };
 }
 const GROUP_KO: Readonly<Record<Group, string>> = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" };
 
 /** 달마다 작가 근거(key별): 영역 신호 + 그달 십성의 영역 장면(오르는·내리는 영역 둘까지). */
-export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng"> & { readonly relationshipStatus?: string }, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
+export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng" | "tidy"> & { readonly relationshipStatus?: string }, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
   if (!e.signals) return null;
   const tg = e.tenGod.stem.match(/\((.+)\)/)?.[1] ?? "";
   const notable = (Object.keys(DOMAIN_KO) as DomainKey[]).filter(d => e.signals![d] !== "→").slice(0, 2);
   const facet = (d: DomainKey) => (d === "people" ? "people" : d);
-  const lines = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)).filter(l => d !== "love" || loveLineFits(l, c.relationshipStatus ?? "")); return pool.length ? [`${DOMAIN_KO[d]} ${e.signals![d]}: ${pool[c.rng.fork(`m:${e.key}:${d}`).int(pool.length)]}`] : []; });
+  const month = e.label.split(" (")[0];
+  // AM2-9 4부: 칸 신호(↑ ↓)와 뜻 방향이 어긋나는 줄은 같은 묶음의 맞는 줄로(뽑기는 그대로 — 맞으면 그 줄), 맞는 줄이 없으면 그 영역 줄을 뺀다. 「→ 처방」 꼬리는 뗀다.
+  const picked: { d: DomainKey; line: string }[] = [];
+  const picks = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)).filter(l => d !== "love" || loveLineFits(l, c.relationshipStatus ?? "")); if (!pool.length) return [];
+    let line = pool[c.rng.fork(`m:${e.key}:${d}`).int(pool.length)];
+    if (c.tidy) { const t = c.tidy, prev = picked.map(x => x.line), sg = e.signals!;
+      const hard = (l: string) => (!dirFits(l, sg[d]) ? `칸 ${DOMAIN_KO[d]} ${sg[d]}과 뜻 방향 반대` : sg.people === "↓" && EXPAND_PEOPLE.test(meaningOf(l)) ? "관계 속도를 늦출 달에 넓히기 줄" : sg.love === "↓" && EXPAND_LOVE.test(meaningOf(l)) ? "연애 속도를 늦출 달에 다가가기 줄" : null);
+      const bad = (l: string) => hard(l) ?? clashWhy(l, prev, t.poles);
+      const why = bad(line);
+      if (why) { const ok = pool.filter(l => !bad(l)), was = line;
+        // 맞는 줄이 없으면: 사실 어긋남(방향 · 늦출 달)은 늘 빼고, 성격 거름은 상한 안에서 뺀다(그 key는 엔진 영역 줄로 채워진다). 상한이 차면 남긴다.
+        line = ok.length ? ok[c.rng.fork(`m9:${e.key}:${d}`).int(ok.length)] : hard(was) ? "" : t.left > 0 ? (t.left--, "") : was;
+        (line && line !== was ? t.swaps : line ? t.over : t.drops).push({ at: month, text: meaningOf(was), why: `${why}${line && line !== was ? " → 같은 묶음의 맞는 줄로" : line ? " → 상한(남김)" : " → 뺌"}` }); } }
+    if (line) picked.push({ d, line: c.tidy ? meaningOf(line) : line });
+    return line ? [{ d, line: c.tidy ? meaningOf(line) : line }] : []; });
+  // AM2-9 4부: 그 달 범위 성격 정리(두 영역 줄끼리 · 성격표). 그 달의 마지막 영역 줄은 빼지 않는다.
+  const gone = c.tidy ? tidyScope(month, picks.map(x => x.line), new Set(), (text, g) => picks.filter(x => x.line !== text && !g.has(x.line)).length > 0, c.tidy) : new Set<string>();
+  const lines = picks.filter(x => !gone.has(x.line)).map(x => `${DOMAIN_KO[x.d]} ${e.signals![x.d]}: ${x.line}`);
   return { kind: "evidence", key: `month:${e.key}`, facts: [`영역 신호(참고): ${signalsLine(e.signals)}`, ...lines], note: "카드 [좋은 것]·[살필 점]은 신호가 오르는·내리는 영역에서. 이웃 달과 같은 조언·표현 금지" };
 }
 

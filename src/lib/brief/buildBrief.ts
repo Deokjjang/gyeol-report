@@ -34,7 +34,9 @@ import { allocateTodos } from "./prescriptions";
 import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { CAUTION_LINE, familyDesign, goodLineOf, loveDesign, periodDomains } from "./productEvidence";
-import { annualEvidence, annualStatusQ, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict } from "./design/annual";
+import { annualEvidence, annualStatusQ, annualTidy, annualTidyLog, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict, type AnnualTidy } from "./design/annual";
+import { profileCodes } from "./pairProfile";
+import { profilePoles } from "@/lib/writer/safety/contradiction";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
@@ -333,6 +335,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 타임라인(대운 14년·세운 12개월)
   let timeline: Brief["timeline"];
   let timelineKeys: string[] = [];
+  let annualTidyState: AnnualTidy | undefined;
   const keyMaterials = new Map<string, Material[]>();
   let display: Brief["display"];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
@@ -359,9 +362,15 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       timeline = { entries: [yearEntry, bridge, ...months], tenGodNotes: { ...tenGodNotes([bridge, ...months], "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
       timelineKeys = [bridge.key, ...months.map(e => e.key)];
       const mrng = rng.fork("monthEvidence");
+      // AM2-9 4부: 세운 카드 재료 정리 — 성격표(4종 personProfileOf와 같은 계산: 특성 차원 × 점수 + MBTI 차원 × 1.5 × 가장 큰 점수) · 권당 뺄 줄 16.
+      annualTidyState = (() => { const v = new Map<string, number>(); const add = (tags: Readonly<Record<string, number>>, w: number) => { for (const [d, x] of Object.entries(tags)) v.set(d, (v.get(d) ?? 0) + x * w); };
+        for (const t of me.traits) { const f = k.features.get(t.featureId); if (f && f.family !== "relation") add(f.dimensionTags, t.score); }
+        const mp = me.facts.mbti ? k.mbti.get(me.facts.mbti as never) : undefined; if (mp) add(mp.dimensionTags, 1.5 * Math.max(1, ...me.traits.map(t => t.score)));
+        return annualTidy(profilePoles(profileCodes(me.facts.mbti ?? null, v, me.traits.map(t => t.featureId)))); })();
+      annualTidyLog.last = annualTidyState;
       const py = getAnnualPillar(year - 1), cy = getAnnualPillar(year);
       keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
-      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus }, m); if (e) keyMaterials.set(m.key, [e]); }
+      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus, tidy: annualTidyState }, m); if (e) keyMaterials.set(m.key, [e]); }
       // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
       // AM2-8 R-S3: 그 줄이 주의 쪽(「지출이 늘기 쉬움」 「대비가 필요함」)이면 다른 영역의 좋은 쪽 줄, 없으면(편관 달) 칸을 비운다. 입력에 맞출 수 없는 줄(기혼 「새 인연」)도 고르지 않는다.
       const gx = inputsOf(me.person.facts);
@@ -404,7 +413,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       const year = annualProductYear(), yp = getAnnualPillar(year), cyc = me.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
       const all = timeline!.entries, yearEntry = all.find(e => e.kind === "year")!, bridge = all.find(e => e.bridge), months = all.filter(e => e.kind === "month" && !e.bridge);
       const r = annualEvidence({ saju: me.saju, k, chart: me.chart, st: me.st, gender: me.person.gender, mbti: me.facts.mbti, year, yearPillar: yp, ...(cyc ? { dayunPillar: { stem: cyc.stem, branch: cyc.branch } } : {}),
-        yearEntry, months, ...(bridge ? { bridge } : {}), jobStatus: me.facts.jobStatus, relationshipStatus: me.facts.relationshipStatus, wish: readWish(input.wish), rng: rng.fork("annual") });
+        yearEntry, months, ...(bridge ? { bridge } : {}), jobStatus: me.facts.jobStatus, relationshipStatus: me.facts.relationshipStatus, wish: readWish(input.wish), rng: rng.fork("annual"), ...(annualTidyState ? { tidy: annualTidyState } : {}) });
       display = { year, keywords: [...yearEntry.keywords].slice(0, 3), verdict: yearVerdict(yearEntry.flow.score), lucky: { name: r.lucky.name, colors: [...r.lucky.colors], direction: r.lucky.direction, numbers: [...r.lucky.numbers], why: r.lucky.why }, ...(r.samjae ? { samjae: { zodiac: r.samjae.zodiac, phase: r.samjae.phase, line: r.samjae.line } } : {}) };
       return r.evidence;
     })()
