@@ -11,7 +11,7 @@ import type { FiveElement } from "@/lib/saju/types";
 import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
-export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside" | "fact_season" | "fact_direction";
+export type FactRule = "fact_none" | "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside" | "fact_season" | "fact_direction";
 export type FactHit = { readonly rule: FactRule; readonly detail: string };
 export type FactCtx = {
   readonly sheet: FactSheet; readonly aliases: readonly ShinsalAlias[];
@@ -428,6 +428,9 @@ function commonSplit(sen: string, ctx: FactCtx): FactHit | null {
   const common = [...pair.common.shinsal, ...(pair.common.dayStage ? [pair.common.dayStage] : [])];
   for (const name of pair.common.shinsal) {
     const a = ctx.aliases.find(x => x.name === name); if (!a?.re.test(sen)) continue;
+    // W8 m2(1차 궁합 9장 「천덕귀인과 월덕귀인은 장덕민님에게 있고, 천을귀인은 두 사람 모두에게」 — 월덕은 공통): 「두 사람 모두」가 다른 절에 있으면 그 신살 절만 본다.
+    { const cl = sen.split(/,\s|고,\s|(?<=고)\s(?=[가-힣]+(?:은|는)\s)/).find(c => a.re.test(c)); const cn = cl ? ctx.people.filter(p => p.names?.test(cl)) : [];
+      if (cl && cn.length === 1 && /두 사람|둘 다|모두|공통/.test(sen) && !/두 사람|둘 다|모두|공통|함께 가진|같이 가진/.test(cl) && /에게 (?:있|만)|의 (?:것|덕)|에게 있는/.test(cl)) return { rule: "common_split", detail: `${name}은 두 사람 모두에게 있다(공통) — 한 사람 것으로 쓰지 않는다(「${cl.slice(0, 30)}」)` }; }
     if (named.length === 1 && !/두 사람|둘 다|모두|공통|함께 가진|같이 가진/.test(sen)) return { rule: "common_split", detail: `${name}은 두 사람 모두에게 있다(공통) — 한 사람만의 특징으로 쓰지 않는다` };
     if (named.length === 2 && /반면|와 달리|과 달리|다르게|차이/.test(sen)) return { rule: "common_split", detail: `${name}은 두 사람 공통 — 차이의 근거로 쓰지 않는다` };
   }
@@ -720,13 +723,24 @@ function tenGodPosition(sen: string, owners: readonly PersonFacts[]): FactHit | 
   const truth = (tg: string) => (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.includes(tg)).map(([k]) => k);
   return { rule: "fact_term", detail: bad.map(tg => `${tg}은 ${truth(tg).length ? slotsKo(truth(tg)) : "원국(지장간 포함)에 없음"}에 있다(${label} 아님)`).join(" · ") };
 }
+/** W8 m2(1차 연애 2장 「만드는 힘(식상)은 사주 안에 하나도 자리 잡지 못해서」 — 월지 지장간 상관): 십성·묶음이 「하나도·전혀 없다」인데 원국(지장간 포함)에 있음. 겉 글자·하늘 글자만 말한 문장은 뺀다. */
+const GROUP_TG: Readonly<Record<string, readonly string[]>> = { 비겁: ["비견", "겁재"], 식상: ["식신", "상관"], 재성: ["편재", "정재"], 관성: ["편관", "정관"], 인성: ["편인", "정인"], "내 방식의 힘": ["비견", "겁재"], "만드는 힘": ["식신", "상관"], "값을 받는 힘": ["편재", "정재"], "규칙의 힘": ["편관", "정관"], "배우는 힘": ["편인", "정인"] };
+let noneRe0: RegExp | null = null;
+const noneRe = () => (noneRe0 ??= new RegExp(`(?<![가-힣])(${[...Object.keys(GROUP_TG), "비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"].join("|")})(?:\\([^()]*\\))?(?:은|는|이|가)? (?:사주 안에|원국에|여덟 글자에|사주에|사주 어디에도)? ?(?:하나도|전혀) (?:없|자리 잡지 못|보이지 않|들어 있지 않)`));
+function noneClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || HYPO.test(sen) || /겉|드러난|천간에|하늘 글자/.test(sen)) return null;
+  const m = sen.match(noneRe()); if (!m) return null;
+  const tgs = GROUP_TG[m[1]] ?? [m[1]], o = owners[0];
+  const at = (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.some(x => tgs.includes(x))).map(([k]) => k);
+  return at.length ? { rule: "fact_none", detail: `${m[1]}은 ${slotsKo(at)}(지장간 포함)에 있다 — 「하나도 없다」 아님` } : null;
+}
 /** W8(W7 6-3 오탐): 「음 하나 없이 모두 양인 속도」의 「양인」(양 + 이다)은 신살 양인살이 아니다 — 음양 문맥이면 가린다. */
 const YANG_COPULA = /((?:모두|전부|다|둘 다|셋 다|넷 다|여덟 글자 모두) )양인(?=\s)|(음[이은]?\s?(?:하나|글자)?[^.?!]{0,8}(?:없이|없고|없어)[^.?!]{0,8}?)양인(?=\s)/g;
 const maskYang = (s: string) => s.replace(YANG_COPULA, (_m, a: string | undefined, b: string | undefined) => `${a ?? b ?? ""}양(陽)인`);
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
   sen = maskYang(sen); paragraph = maskYang(paragraph);
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? noneClaim(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

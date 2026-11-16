@@ -331,7 +331,8 @@ export function careerGroupNames(text: string, defined: Set<string>, heading = f
     });
   });
   void GROUP_CTX.lastIndex;
-  return { text: out.join(" "), count };
+  // W8 m2(1차 커리어 9장 「식상의 힘이 남은」 → 「만드는 힘의 힘」): 쉬운 이름 뒤 「의 힘」은 겹침이라 뗀다.
+  return { text: out.join(" ").replace(/(내 방식의 힘|만드는 힘|값을 받는 힘|규칙의 힘|배우는 힘)(\((?:비겁|식상|재성|관성|인성)\))?의 힘(?=[이가은는을를도과와로만에]|\s|[,.]|$)/g, (_all: string, e: string, pr: string | undefined) => { count++; return `${e}${pr ?? ""}`; }), count };
 }
 /** 정한 쉬운 이름 말고 다른 이름으로 부른 다섯 힘("배움과 보호의 힘(인성)", "돈을 쫓는 힘"). */
 const VARIANT = /배움과 보호의 힘|배움의 힘|보호의 힘|돈을 (쫓|좇)는 힘|돈을 버는 힘|재물의 힘|표현(하는|의) 힘|혼자 서는 힘|규율의 힘/;

@@ -120,6 +120,8 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     // W6.1 P4(1차 종합 1장 「⟦in:1⟧가 있어서, 태어난 해·날·시각의 세 땅 글자가 …」): 사주 안 관계 구절 뒤(같은 문장 40자 안)에서 작가가 그 관계의 같은 자리(「태어난 해·날·시각」)를 또 말해도 글자만 꼴(다른 관계의 자리 말은 보지 않는다 — r4-1d 궁합 회귀).
     if (m.glyph && (/(?:하늘|땅) 글자|태어난 (?:해|달|날|시각)|[연월일시](?:간|지)|[가-힣]와 [가-힣] 사이|[가-힣]과 [가-힣] 사이/.test(before.slice(-30)) || (m.kind === "in" && (() => { const pl = m.text.match(/^태어난 ([가-힣·]+) (?:하늘|땅) 글자/)?.[1]; return Boolean(pl && after.slice(0, 40).includes(`태어난 ${pl}`)); })()))) t = m.glyph;
     // ⑥ 구절 끝 괄호 뜻(「(정재의 10년)」「(가까운 사이의 작은 서운함)」)을 문장 뒤에서 또 말하면 괄호를 뗀다.
+    // ⑤' W8 m2(1차 종합 1장 「술·인·오가 모여 불의 기운으로 쏠리는 구성인데, 이 모임은 ⟦in:1⟧으로」 → 「… 술·인·오가 모인 삼합」 겹침): 같은 문장 앞에서 작가가 그 관계의 글자 목록(「·」로 이은 셋 이상, 순서 무관)을 이미 썼으면 관계 이름 꼴만.
+    if (m.glyph && (m.kind === "in" || m.kind === "rel")) { const gl = t.match(/^(?:[^()]*?(?:하늘|땅) 글자 )?([가-힣](?:·[가-힣]){2,})(?:가|이)? (?:모인 )?/); if (gl) { const set = gl[1].split("·").sort().join(""); if ([...before.matchAll(/[가-힣](?:·[가-힣]){2,}/g)].some(x => x[0].split("·").sort().join("") === set)) { t = t.slice(gl[0].length); count.dropped++; } } }
     // ⑥' W8(W7 2차 커리어 「정유 대운(정인의 10년)은 정인이라」): 대운 구절 괄호의 십성을 바로 뒤(12자 안)에서 또 말하면 괄호를 뗀다.
     { const pm = t.match(/\(([^()]+)\)$/), tg10 = pm?.[1].match(/^([가-힣]{2})의 10년$/)?.[1]; if (pm && ((pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) || (m.kind === "un" && tg10 && after.slice(0, 12).includes(tg10)))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
     // ② 바로 앞에 같은 자리 말.

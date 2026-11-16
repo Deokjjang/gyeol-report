@@ -12,7 +12,7 @@ export type GateClass = "block" | "improve";
 
 const BLOCK: Readonly<Record<string, GateKind>> = {
   // 계산·사실(정답지·엔진 값과 다름, 입력과 다름)
-  fact_term: "fact", fact_relation: "fact", fact_strength: "fact", fact_ganji: "fact", fact_meaning: "fact", fact_mix: "fact", fact_dayun: "fact", fact_count: "fact", fact_season: "fact", fact_direction: "fact",
+  fact_none: "fact", presumed_single: "fact", fact_term: "fact", fact_relation: "fact", fact_strength: "fact", fact_ganji: "fact", fact_meaning: "fact", fact_mix: "fact", fact_dayun: "fact", fact_count: "fact", fact_season: "fact", fact_direction: "fact",
   common_split: "fact", yinyang_claim: "fact", element_claim: "fact", element_count: "fact", dayun_claim: "fact", dayun_year: "fact", star_claim: "fact", ten_god_direction: "fact",
   pillar_claim: "fact", group_claim: "fact", glyph_list: "fact", intensity_claim: "fact", pair_both: "fact", negative_claim: "fact", presumed_partner: "fact", school_scene: "fact",
   marriage_talk: "fact", input_outside: "fact", invest_directive: "fact",

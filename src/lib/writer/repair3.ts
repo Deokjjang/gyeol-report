@@ -150,6 +150,9 @@ export function applyRepair3(chapters: readonly FinalChapter[], items: readonly 
     if (!DELETE.test(v) && splitSentences(v.replace(/[⟪⟫]/g, "")).length > Math.max(1, splitSentences(it.original).length)) { rejected.push({ id: it.id, at, after: v }); continue; }
     const marked = p.includes(`⟪${it.original}⟫`);
     const after = DELETE.test(v) ? "" : v.replace(/[⟪⟫]/g, "");
+    // W8 m2(1차 궁합 1장 「최지우님의 태어난 날 기둥 … 흙이에요」 (삭제) → 다음 문장 「남의 사정을 … 손이 있어요」가 누구의 손인지 잃음): 이름으로 여는 문장을 지우면 다음 문장이 주어를 잃을 때 원문을 둔다.
+    if (!after) { const ss0 = splitSentences(p).map(x => x.replace(/[⟪⟫]/g, "")), i0 = ss0.findIndex(x => x === it.original.replace(/[⟪⟫]/g, "") || x.includes(it.original)), nx = i0 >= 0 ? ss0[i0 + 1] : undefined;
+      if (nx && /^[가-힣]{1,8}님(?:의|은|는|이|가|에게)\s/.test(it.original.trim()) && !/님|당신|두 사람|둘 다|우리|서로/.test(nx)) { rejected.push({ id: it.id, at, after: "(삭제 — 다음 문장 주어 잃음, 원문 둠)" }); continue; } }
     // 최종 A-9: (삭제)면 바로 뒤 문장이 접속어로 시작하는 고아 문장이 되지 않게 접속어를 뗀다.
     const ss = after ? [] : splitSentences(p), di = ss.findIndex(x => x.replace(/[⟪⟫]/g, "") === it.original.replace(/[⟪⟫]/g, "") || x.replace(/[⟪⟫]/g, "").includes(it.original));
     sec.paragraphs[it.paragraph] = (!after && di >= 0 ? removeSentenceAt(ss, di).sentences.join(" ") : (marked ? p.replace(`⟪${it.original}⟫`, after ? `⟪${after}⟫` : "") : p.replace(it.original, after))).replace(/\s{2,}/g, " ").trim();

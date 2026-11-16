@@ -16,7 +16,7 @@ import { SAME_MIN, sameSentence } from "./safety/info";
 
 export type RepairMode = "rewrite" | "drop" | "none";
 /** HARD 가운데 문장 떼기(다시 써도 같은 내부 말이 남거나 없는 사실을 새로 만든 규칙). */
-const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "rx_label", "negative_claim", "fact_mark", "label_leak", "broken_sentence"]);
+const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "rx_label", "fact_none", "presumed_single", "negative_claim", "fact_mark", "label_leak", "broken_sentence"]);
 /** SOFT 가운데 문장 떼기(재탕·물음 초과·씨앗 단정). */
 const DROP_SOFT: ReadonlySet<string> = new Set(["question_excess", "phrase_repeat", "notice_repeat", "scene_repeat", "prop_repeat", "advice_repeat", "seed_assert", "meaning_repeat", "closing_repeat"]);
 /** SOFT 가운데 다시 쓰기(R0 득: 근거 없는 장면 28/30 · 용어 풀이 22/26, 그 밖 표본 작지만 고침 1/1인 별명·다섯 힘 이름·피할 그림·같은 일주 구절·이전 책 겹침·필수 근거 덧붙임·비문 꼴). */
@@ -169,6 +169,8 @@ export type TidyRecord = { readonly at: string; readonly rule: "f1_neighbor" | "
  * W6 S4 3판(2차 커리어 8장): 수리가 차단 깃발(모순 「…절차형이라,」)을 고쳤는데 이웃과 뜻이 겹친다고(개선) 원문으로 되돌리면 차단 문장이 돌아와 지워지고 「이 순서가 방패가 됩니다」만 남았다.
  * blocked(원문) = 수리 전 차단 갈래 깃발이 있던 문장 — 뜻 겹침·수렴(개선)으로는 그 원문으로 되돌리지 않는다(끊긴 수리 답 f1_broken은 그대로 되돌린다).
  */
+/** 두 문장 머리가 같은 글자 수(공백·괄호 풀이 무시). */
+const headRun = (a: string, b: string) => { const x = a.replace(/\([^()]*\)/g, "").replace(/\s/g, ""), y = b.replace(/\([^()]*\)/g, "").replace(/\s/g, ""); let i = 0; while (i < x.length && i < y.length && x[i] === y[i]) i++; return i; };
 export function postRepairTidy(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], blocked: (before: string) => boolean = () => false): { chapters: FinalChapter[]; records: TidyRecord[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const records: TidyRecord[] = [];
@@ -182,6 +184,8 @@ export function postRepairTidy(chapters: readonly FinalChapter[], applied: reado
     const here = norm(ss[i]), nb = [ss[i - 1], ss[i + 1]].filter((x): x is string => x !== undefined).map(norm);
     let rule: TidyRecord["rule"] | null = null;
     if (nb.some(x => wordOverlap(here, x) >= 0.5 && wordOverlap(a.before, x) < 0.5)) rule = "f1_same_meaning";
+    // W8 m2(1차 커리어 2장): 수리 답이 이웃 문장과 같은 머리 14자 이상으로 시작하면(원문은 아님) 같은 말 되풀이.
+    else if (nb.some(x => headRun(here, x) >= 14 && headRun(a.before, x) < 14)) rule = "f1_same_meaning";
     else if (!/[.!?。」”"')…]$/.test(a.after.trim()) || BROKEN.test(a.after.trim().replace(/[.!?]+$/, ""))) rule = "f1_broken";
     else { const others = seenPhrase.get(a.at) ?? []; if (others.some(o => commonRun(o, here) >= 10)) rule = "f1_converge"; seenPhrase.set(a.at, [...others, here]); }
     if (!rule) continue;

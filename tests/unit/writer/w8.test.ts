@@ -13,6 +13,12 @@ import { rxLabel } from "@/lib/writer/safety/p6c";
 import { countMismatch } from "@/lib/writer/safety/p6d";
 import { dropBookTwins } from "@/lib/writer/repairPlan";
 import { gateClassOf } from "@/lib/writer/gate";
+import { careerGroupNames } from "@/lib/writer/safety/p6e";
+import { applyRepair3 } from "@/lib/writer/repair3";
+import { postRepairTidy } from "@/lib/writer/repairPlan";
+import { lintBook, type LintCtx } from "@/lib/writer/safety/p6c";
+import { personNames } from "@/lib/writer/publish";
+import type { Mark } from "@/lib/writer/marks";
 
 const ROOT = join(__dirname, "../../..");
 const k = loadKnowledge(join(ROOT, "src/data/knowledge-v5"));
@@ -94,5 +100,60 @@ describe("W8 검사(W7 9-2)", () => {
     const book = [ch(1, [["일이 쌓일 때가 있어요. " + s + " 그래서 오래 가요."]]), ch(2, [[s + " 아이를 돌보는 일에도 이 힘이 쓰여요."]])];
     const r = dropBookTwins(book);
     expect(r.chapters[1].sections[0].paragraphs[0].startsWith(s)).toBe(true);
+  });
+});
+
+describe("W8 측정 중 고침(m2 — 3단계 직접 읽기에서 확인한 실질 결함의 꼴)", () => {
+  it("① 관계 표시 앞 같은 문장에 그 관계의 글자 목록(순서 무관)이 있으면 관계 이름 꼴만", () => {
+    const m: Mark = { key: "in:1", kind: "in", text: "태어난 해·날·시각 땅 글자 술·인·오가 모인 삼합(세 글자가 한 기운으로 모임)", short: "이 관계", glyph: "술·인·오가 모인 삼합(세 글자가 한 기운으로 모임)" } as Mark;
+    const t = new Map([["in:1", m]]);
+    const r = renderMarks("술·인·오가 모여 불의 기운으로 쏠리는 구성인데, 이 모임은 ⟦in:1⟧으로 힘을 한쪽에 모아요.", t);
+    expect(r).toContain("이 모임은 삼합(세 글자가 한 기운으로 모임)으로");
+    expect(r.match(/술·인·오/g)?.length).toBe(1);
+    expect(renderMarks("인·오·술이 모여 불로 쏠려요. 그래서 ⟦in:1⟧이 힘을 모아요.", t)).toContain("술·인·오가 모인 삼합");
+  });
+  it("② 커리어 다섯 힘 쉬운 이름 뒤 「의 힘」 겹침을 뗀다", () => {
+    expect(careerGroupNames("식상의 힘이 남은 상태에서 다듬어 보세요.", new Set()).text).toBe("만드는 힘(식상)이 남은 상태에서 다듬어 보세요.");
+    expect(careerGroupNames("만드는 힘의 힘이 남은 상태예요.", new Set(["식상"])).text).not.toContain("힘의 힘");
+  });
+  it("③ 이름으로 여는 문장 (삭제)는 다음 문장이 주어를 잃으면 받지 않는다", () => {
+    const p = "가람님의 태어난 날 기둥은 기토예요. 남의 사정을 먼저 살피는 손이 있어요. 다음 문장이에요.";
+    const items = [{ id: 1, kind: "sentence" as const, chapter: 1, section: 0, paragraph: 0, original: "가람님의 태어난 날 기둥은 기토예요.", problems: ["x"], source: ["lint" as const] }];
+    const r = applyRepair3([ch(1, [[p]])], items, new Map([[1, "(삭제)"]]));
+    expect(r.applied).toEqual([]); expect(r.chapters[0].sections[0].paragraphs[0]).toBe(p);
+    const q = "가람님의 태어난 날 기둥은 기토예요. 가람님은 남의 사정을 먼저 살펴요.";
+    expect(applyRepair3([ch(1, [[q]])], items, new Map([[1, "(삭제)"]])).applied.length).toBe(1);
+  });
+  it("④ 수리 답이 이웃 문장과 같은 머리(괄호 풀이·공백 무시 14자+)로 시작하면 원문으로", () => {
+    const before = "확장형 기질은 고객 인터뷰에서도 드러나요.", after = "다만 편재가 이끄는 확장은 사람도 일도 한꺼번에 늘기 쉬우니, 새로 맡기 전에 역할부터 글로 정해 두세요.";
+    const p = `한 명의 이야기에서 가능성을 읽어요. 다만 편재(偏財)가 이끄는 확장은 사람도 일도 한꺼번에 늘어 관리가 느슨해지기 쉬워요. ${after}`;
+    const applied = [{ id: 1, kind: "sentence" as const, at: "1.0.0", before, after, source: ["lint"] }];
+    const r = postRepairTidy([ch(1, [[p]])], applied as never);
+    expect(r.chapters[0].sections[0].paragraphs[0]).toContain(before);
+    expect(r.chapters[0].sections[0].paragraphs[0]).not.toContain(after);
+  });
+  it("⑤ 「하나도 없다」인데 원국(지장간 포함)에 있으면 fact_none · 겉 글자만 말하면 통과", () => {
+    const ctx = factCtxOf(F.sheet, k, [[F.brief.person.callName]]);
+    const tg = Object.values(F.sheet.people[0].tenGods).flat();
+    const present = ["편재", "정재", "편관", "정관", "편인", "정인"].find(x => tg.includes(x))!, absent = ["식신", "상관"].find(x => !tg.includes(x));
+    expect(factCheck(`${present}은 사주 안에 하나도 자리 잡지 못했어요.`, ctx)?.rule).toBe("fact_none");
+    expect(factCheck(`${present}은 겉으로는 하나도 드러나지 않아요.`, ctx)).toBeNull();
+    if (absent) expect(factCheck(`${absent}은 사주 안에 하나도 없어요.`, ctx)).toBeNull();
+    expect(gateClassOf("fact_none")).toBe("block");
+  });
+  it("⑤ 공통 신살을 한 사람 절에 넣고 「두 사람 모두」는 다른 절이면 common_split", () => {
+    const cctx = factCtxOf(C.sheet, k, personNames(C.brief));
+    const common = C.sheet.pair!.common.shinsal, a = C.sheet.people[0] as unknown as { shinsal: { name: string }[] }, b = C.sheet.people[1] as unknown as { shinsal: { name: string }[] };
+    const aOnly = a.shinsal.map(x => x.name).find(x => !common.includes(x) && !b.shinsal.some(y => y.name === x))!, c0 = common.find(x => !/화개/.test(x))!, c1 = common.find(x => x !== c0 && !/화개/.test(x))!;
+    const call = C.brief.compatibility!.a.callName;
+    expect(factCheck(`${aOnly}과 ${c0}은 ${call}에게 있고, ${c1}은 두 사람 모두에게 있어요.`, cctx)?.rule).toBe("common_split");
+    expect(factCheck(`${aOnly}은 ${call}에게 있고, ${c1}은 두 사람 모두에게 있어요.`, cctx)).toBeNull();
+  });
+  it("⑤ 연애 중·기혼 입력에서 새 만남을 전제한 조언은 presumed_single(차단 · 떼기)", () => {
+    const ctx = (relationship: string) => ({ facts: { birthTimeKnown: true, mbti: "ENTJ", relationship, children: "unknown", job: "employee" }, jobDetail: "", schoolStage: "none", coreImage: "x", nicknames: [], corpus: new Set(), prior: [], jobProps: [], noJobChapters: new Set(), parentingChapters: new Set(), monthChapters: new Set(), compat: false, mbtiPlain: {} } as unknown as LintCtx);
+    const book = [{ ...ch(1, [["사랑을 시작한다면 처음 석 달은 천천히 만나 보세요. 대화가 길어지면 좋아요."]]), id: "c1", chars: 0 }];
+    expect(lintBook(book as never, ctx("dating")).map(f => f.rule)).toContain("presumed_single");
+    expect(lintBook(book as never, ctx("single")).map(f => f.rule)).not.toContain("presumed_single");
+    expect(gateClassOf("presumed_single")).toBe("block");
   });
 });
