@@ -246,7 +246,8 @@ async function call(s: Session, kind: "first" | "continuation" | "repair" | "rew
   const limit = extra.limit;
   const o = s.o, sleep = o.sleep ?? (ms => new Promise(r => setTimeout(r, ms)));
   const wanted = new Set((want ?? []).map(c => c.n));
-  let switched = false, thinking: "adaptive-low" | undefined = extra.thinking, hiddenRetried = false, announced = false;
+  const thinking: "adaptive-low" | undefined = extra.thinking;
+  let switched = false, hiddenRetried = false, announced = false;
   for (let attempt = 0; ; attempt++) {
     // 원문 저장소(0-2): 같은 입력이면 저장본을 흘려보낸다(호출 0). 상한(0-6): 넘었으면 부르지 않는다.
     const key = rawKey(s.target.model, system, user);

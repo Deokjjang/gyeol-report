@@ -14,7 +14,7 @@ import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import type { RawEntry, WriterCache } from "../../writer/runner";
 import { attemptBudgetMs, failClassOf, INTERIM_TARGET, judgeBuild, ladderOf, MAX_ATTEMPTS, nextAfterFailure, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict, type FailClass } from "./policy";
-import { failureLine, type GenerationAlerts } from "./alerts";
+import type { GenerationAlerts } from "./alerts";
 import type { LadderStage } from "../../writer/runner";
 import { chainCache, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
 import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
