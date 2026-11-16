@@ -1,8 +1,11 @@
 /**
  * AM2 — 세운·대운 발행(장 묶음 작가). 운영(⑦ 감독)과 개발 도구가 같은 함수(buildV5Snapshot → 여기)를 쓴다.
  *   입력 → 브리프(엔진·지식 DB 그대로) → 입력 정화(근거 카드·짝·설계도) → 브리프 검사(걸리면 작가를 부르지 않는다)
- *   → 묶음 병렬 작성(묶음마다 부분 저장) → 표면 정리 → 차단 검사 → 걸린 묶음 다시 쓰기(「걸린 문장 + 이유」, 최대 2회)
- *   → 장 사이 반복(뒤쪽 묶음 1회) → 그래도 걸린 문장 삭제(문단이 서는지 확인) → 서지 않으면 그 장(·key)만 결정론 대체 → 머리 문장·렌더 → Book.
+ *   → 묶음 병렬 작성(묶음마다 부분 저장) → 표면 정리 → 차단 검사 → 걸린 묶음 다시 쓰기(「걸린 문장 + 이유」, 1회)
+ *   → 그래도 걸린 문장 삭제(문단이 서는지 확인) → 머리 문장·렌더 → Book.
+ * AM2-9 2부(운영 30분 흐름 — 덕짱님 결정 2026-11-16): 1차 = 묶음 전체 생성 + 차단 다시 쓰기 1회. 남은 차단이 있으면 그 장을 four_block으로 표시하고
+ *   발행 관문(policy judgeBuild)이 내보내지 않는다 → 감독 2차(secondPass): 1차 원고(저장된 장 · 저장 원문)에서 이어, 빠진 묶음만 부르고
+ *   차단이 남은 묶음만 새 호출 1회(걸린 문장 인용 + 이유). 그래도 남으면 감독이 결론(25분 자동 환불 · 이용권 반환). 보류 · 임시본은 없다.
  * 문장 수리(repair3)·뜻을 바꾸는 정리(시점 말·해 이름 치환)·LLM 검수는 쓰지 않는다. 문체 깃발은 점수로만 남긴다(meta.review.style).
  */
 import type { Brief } from "@/lib/brief/schema";
@@ -15,7 +18,7 @@ import { keywordsOf, type BookChapter, type BookSection } from "../format";
 import { chapterPreview, type ChapterPreview } from "../preview";
 import { buildWriterPrompt } from "../prompt";
 import type { PriorBooks } from "../prior";
-import { chunkCall, mergeRuns, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "../runner";
+import { chunkBudget, chunkCall, mergeRuns, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "../runner";
 import { applySafetyNet, safetyFacts, sentenceViolation, writeKeyFill, type DraftChapter, type FinalChapter } from "../safety";
 import { HINT, lintBook, tidyBook, type LintCtx, type P6cRule } from "../safety/p6c";
 import { dayunPhase } from "../safety/lint";
@@ -27,7 +30,7 @@ import { relName } from "@/lib/brief/core";
 import { cutFlagged } from "./cut";
 import { splitSentences } from "../safety/patterns";
 import { buildIntake, KEY_TARGET, keyLabelOf, WISH_MARK, type Intake } from "./intake";
-import { chunkMaxTokens, chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, chunkUser, renderCard, ruleCtxOf, type Chunk, type ParaTarget } from "./prompt";
+import { CHUNK_THINKING_TOKENS, chunkMaxTokens, chunkPlan, chunkRules, CHUNK_PROMPT_VERSION, chunkUser, renderCard, ruleCtxOf, type Chunk, type ParaTarget } from "./prompt";
 import { concurrency, mergeParts, partsOf, replaceParagraphs, writeChunks, type ChunkLog, type ParaLock } from "./run";
 
 /** AM2-4 5부: 남아도 되는 깃발(허용 기록) — 경미·문체 상한·반복 신호(뜻 반복은 설계도 배분이 막는 몫, 글자 그대로 되풀이는 지운다). */
@@ -43,13 +46,14 @@ export function engineCoverOf(brief: Brief): string[] {
 }
 /** AM2-7 2부: 대략 시각(시간대 질문) 값 → 고객 말(「진시」). */
 export const slotKo = (v: string) => ({ JASI: "자시", CHUKSI: "축시", INSI: "인시", MYOSI: "묘시", JINSI: "진시", SASI: "사시", OSI: "오시", MISI: "미시", SINSI: "신시", YUSI: "유시", SULSI: "술시", HAESI: "해시" } as Record<string, string>)[v] ?? v;
-/** 다시 쓰기 최대 횟수(묶음마다). */
-export const CHUNK_REWRITE_ROUNDS = 2;
+/** 다시 쓰기 횟수(묶음마다) — AM2-9 2부: 1차의 차단 다시 쓰기는 1회. */
+export const CHUNK_REWRITE_ROUNDS = 1;
 /** 묶음 하나 다시 쓰기 어림 비용(주문 상한 안 다시 쓰기 수를 정한다). */
 export const REWRITE_EST_USD = 0.05;
-/** AM2-8 5부: 보류 다시 부름(묶음 하나 새 호출 1회) 권당 추가 상한. */
-export const HOLD_RETRY_USD = 0.15;
-export const HOLD_RETRY_NOTE = "(다시 부름: 앞 원고가 아래 문장 때문에 발행 보류가 됐다 — 이 묶음을 처음부터 새로 쓰되, 아래 문장 꼴은 쓰지 않는다.)";
+/** AM2-9 2부: 차단이 남은 장의 꼬리표(judgeBuild가 읽는다 — 그 시도는 발행하지 않는다). */
+export const FOUR_BLOCK_TAG = "four_block";
+/** AM2-9 2부: 감독 2차에서 차단이 남은 묶음을 새로 부를 때 지시 끝에 붙인다(같은 요청을 그대로 보내지 않는다 — 걸린 문장 인용 + 이유). */
+export const SECOND_PASS_NOTE = "(다시 부름: 앞 원고가 아래 문장 때문에 책이 되지 못했다 — 이 묶음을 처음부터 새로 쓰되, 아래 문장 꼴은 쓰지 않는다.)";
 /** 다시 쓰기 이유 한 줄: 검사가 단 힌트(대운·세운 시점 말은 「'지금'을 어떤 꼴로도 쓰지 않는다」 같은 고칠 말 포함) + 세부. */
 const reasonOf = (f: ChunkFlag) => `${f.hint ?? HINT[f.rule as P6cRule] ?? f.rule}${f.detail ? ` (${f.detail})` : ""}`;
 const chunkOf = (chunks: readonly Chunk[], f: { chapter: number }, heading: string) => chunks.find(c => c.parts.some(p => p.n === f.chapter && (!p.keys || p.keys.includes(heading))));
@@ -142,13 +146,17 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const runs: WriterRun[] = [];
   let drafts = new Map<number, DraftChapter>(), texts = new Map<string, string>(), log: ChunkLog[] = [];
   const briefOk = issues.length === 0;
+  // AM2-9 2부: second = 감독 2차(1차 원고에서 이어 쓴다). costPot = 이 시도의 묶음 호출이 함께 쓰는 비용 몫(주문 상한 − 앞 시도).
+  const second = Boolean(deps.secondPass), costPot = chunkBudget(deps.costCapUsd);
+  let fresh = new Set<string>();
   if (!a.recover && model && briefOk) {
-    try { const w = await writeChunks({ o: opts(), intake, chunks, plan, system, sink }); if (w.run) runs.push(w.run); drafts = w.drafts; texts = w.texts; log = w.log; }
+    try { const w = await writeChunks({ o: opts(), intake, chunks, plan, system, sink, budget: costPot, ...(second ? { retryTodo: true } : {}) }); if (w.run) runs.push(w.run); drafts = w.drafts; texts = w.texts; log = w.log; fresh = new Set(w.fresh); }
     catch { drafts = new Map(); }
   }
   if (a.recover || !runs.length) { try { for (const s of await a.sink.load()) if (!drafts.has(s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 결정론 작가로만 */ } }
   const run0 = runs.length ? mergeRuns(runs) : null;
-  const live = Boolean(run0?.writer && !run0.stale);
+  // AM2-9 2부: 2차는 1차 원고(저장된 장)만으로 시작할 수 있다(빠진 묶음 없음) — 그래도 차단이 남은 묶음을 부를 수 있어야 한다.
+  const live = Boolean(run0?.writer && !run0.stale) || (second && Boolean(model) && briefOk && !a.recover && !run0?.stale);
   const spent = () => runs.reduce((x, r) => x + r.costUsd, 0);
   const capLeft = () => (deps.costCapUsd === undefined ? Infinity : deps.costCapUsd - spent());
 
@@ -298,7 +306,8 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     const fit = Math.floor(capLeft() / REWRITE_EST_USD);
     // AM2-6 5부: 차단 → 경계 → 고객이 알아챌 경미 순(묶음 안에서도, 묶음 사이에서도).
     const minTier = (fs: readonly ChunkFlag[]) => Math.min(...fs.map(tierOf), 9);
-    const targets = new Map([...all].map(([c, fs]) => [c, [...fs].sort((p1, p2) => tierOf(p1) - tierOf(p2))] as const).sort((x, y) => minTier(x[1]) - minTier(y[1]) || y[1].length - x[1].length).slice(0, Math.max(0, fit)));
+    // AM2-9 2부: 다시 쓰기는 이번 시도에 처음 쓴 묶음만(1차에 다시 쓴 묶음을 2차가 또 다시 쓰지 않는다).
+    const targets = new Map([...all].filter(([c]) => fresh.has(c.id)).map(([c, fs]) => [c, [...fs].sort((p1, p2) => tierOf(p1) - tierOf(p2))] as const).sort((x, y) => minTier(x[1]) - minTier(y[1]) || y[1].length - x[1].length).slice(0, Math.max(0, fit)));
     if (!live || !targets.size) return false;
     const before = { chapters: cur.chapters, block: hardOf(seen.block) };
     const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [];
@@ -307,7 +316,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     const queue = [...plans];
     await Promise.all(Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let next = queue.shift(); next; next = queue.shift()) { const { c, ts } = next;
       const cov = withCover && c === chunk1 ? coverFlags()[0] : undefined;
-      const r = await replaceParagraphs({ o: opts(Math.max(0, capLeft())), intake, chunks, plan, system, sink, chunk: c, targets: ts, round, drafts, lock, ...(cov ? { cover: { line: cov.sentence.replace(/^\[표지\]\s*/, ""), reason: cov.hint ?? "" } } : {}) });
+      const r = await replaceParagraphs({ o: opts(Math.max(0, capLeft())), intake, chunks, plan, system, sink, budget: costPot, chunk: c, targets: ts, round, drafts, lock, ...(cov ? { cover: { line: cov.sentence.replace(/^\[표지\]\s*/, ""), reason: cov.hint ?? "" } } : {}) });
       runs.push(r.run); log.push(r.log); applied.push(...r.applied); locks.push(...r.locks.map(l2 => ({ ...l2, round })));
       if (r.cover) coverNew.push(r.cover.replace(/[*"“”]/g, "").trim());
       for (const n of r.changed) { const d = drafts.get(n)!; await sink.save({ n, chapter: d.chapter, source: d.source }); }
@@ -386,15 +395,10 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     const unsafe = hard.filter(f => f.paragraph >= 0 && (leanNew.has(`${f.chapter}.${f.section}.${f.paragraph}`) || factOnly.has(`${f.chapter}.${f.section}.${f.paragraph}`) ||lostMust.has(`${f.chapter}|${headingOf(cur.chapters, f)}`) || lostClaim.has(`${f.chapter}.${f.section}`) || leanAt.has(`${f.chapter}.${f.section}.${f.paragraph}`) || rxLost.has(f.chapter) || orphanNew.has(`${f.chapter}.${f.section}`) || anNew.has(`${f.chapter}.${f.section}`)));
     return { r, unsafe };
   };
-  /** 지우기 → 남은 차단 문단 빼기 → 빈 자리 채움 → 마지막 검사(보류 사유). AM2-8 5부: 보류 다시 부름 뒤 한 번 더 돈다. */
+  /** 지우기 → 남은 차단 문단 빼기 → 빈 자리 채움 → 마지막 검사(남은 차단). AM2-9 2부: 시도 안 다시 쓰기(지우기 대신 교체 · 빈 자리)는 없다 — 남으면 감독 2차. */
   const settle = async () => {
     kept.clear();
     let pass = cutPass();
-    const unsafeRound: string[] = [];
-    if (pass.unsafe.length && live) {
-      const t0 = byChunk(pass.unsafe);
-      if (await rewrite(t0, CHUNK_REWRITE_ROUNDS + 1)) { unsafeRound.push(...[...t0.keys()].map(c => c.id)); pass = cutPass(); }
-    }
     for (const f of pass.unsafe) kept.add(flagKey(f));
     if (pass.unsafe.length) pass = cutPass();
     // 지운 뒤에도 남은 차단 결함은 그 문단만 뺀다 — 단, 빼면 반드시 쓸 것·핵심 주장이 빠지는 문단은 남긴다(남은 차단).
@@ -409,7 +413,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
         if (!paragraphs.length && !c.keys?.includes(sec.heading)) return [];
         return [{ ...sec, paragraphs }];
       }) }));
-      // AM2-7 1부 7: 지우고도 남은 차단은 문단째 빼지 않는다(핵심 · 앞말을 잃는다) — 그 자리는 발행 보류(generation_hold)로 넘긴다.
+      // AM2-7 1부 7: 지우고도 남은 차단은 문단째 빼지 않는다(핵심 · 앞말을 잃는다) — 그 자리는 남은 차단(four_block — 감독 2차 또는 결론)으로 넘긴다.
       const chs = drop(new Set([...bad, ...[...badHead]]));
       const lostM = new Set([...mustMissing(chs)].filter(k2 => !mustMissing(r.chapters).has(k2))), lostC = new Set(claimLost(r.chapters, chs));
       const keepSet = new Set([...bad].filter(at => { const [n, si] = at.split(".").map(Number); return lostM.has(`${n}|${r.chapters.find(c => c.n === n)?.sections[si]?.heading ?? ""}`) || lostC.has(`${n}.${si}`); }));
@@ -419,13 +423,9 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
       const emptyChapters = chs.filter(c => !c.keys && !c.sections.length).map(c => c.n);
       return { chapters: chs, emptyKeys, emptyChapters };
     };
-    let cut0 = { r: pass.r, ...dropBad(pass.r) };
-    const emptyRetry: string[] = [];
-    if (cut0.emptyKeys.length || cut0.emptyChapters.length) {
-      const fs = [...cut0.emptyKeys.map(e => ({ chapter: e.chapter, section: cur.chapters.find(c => c.n === e.chapter)?.sections.findIndex(sec => sec.heading === e.key) ?? 0, paragraph: -3, rule: "emptied", sentence: `[${intake.chapters.flatMap(c => c.keys ?? []).find(k2 => k2.key === e.key)?.label ?? e.key}] 본문이 모두 빠짐`, hint: "걸린 문장을 지우다 이 자리가 비었다 — 아래 걸린 문장을 피해 카드 줄·연결 고리로 다시 쓴다" }) as ChunkFlag)];
-      const t0 = byChunk([...fs, ...seen.block.filter(f => cut0.emptyKeys.some(e => e.chapter === f.chapter && headingOf(cur.chapters, f) === e.key))]);
-      if (t0.size && await rewrite(t0, CHUNK_REWRITE_ROUNDS + 2)) { emptyRetry.push(...[...t0.keys()].map(c => c.id)); pass = cutPass(); cut0 = { r: pass.r, ...dropBad(pass.r) }; }
-    }
+    const cut0 = { r: pass.r, ...dropBad(pass.r) };
+    // 지우다 빈 key · 장의 차단 깃발(감독 2차가 그 묶음을 다시 부를 때 인용한다).
+    const emptied = hardOf(seen.block).filter(f => cut0.emptyKeys.some(e => e.chapter === f.chapter && headingOf(cur.chapters, f) === e.key) || cut0.emptyChapters.includes(f.chapter));
     const cutR = cut0.r;
     let chapters: FinalChapter[] = cut0.chapters;
     const replaced: { chapter: number; key?: string; why: string }[] = [...cut0.emptyKeys.map(e => ({ chapter: e.chapter, key: e.key, why: "emptied" })), ...cut0.emptyChapters.map(n => ({ chapter: n, why: "chapter_emptied" }))];
@@ -435,40 +435,39 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
     // P6 annual-1: 문단 하나로 온 달·해 key는 문장 경계에서 둘로(형식만, 글자 그대로).
     chapters = splitKeyParagraphs(chapters, plan, brief.mbti?.type ?? null);
     const final = inspect(chapters);
-    // AM2-7 1부 7: 고칠 수 없는 차단이 남으면 그 장을 발행 보류(generation_hold) — judgeBuild가 정식본으로 내보내지 않는다.
-    // 분량(key_len)은 참고 지표다(CLAUDE.md 품질 하한선) — 다시 쓰기는 부르되 보류 사유로 세지 않는다.
+    // AM2-7 1부 7 → AM2-9 2부: 고칠 수 없는 차단이 남으면 그 장에 four_block — judgeBuild가 그 시도를 발행하지 않는다(감독 2차 또는 결론).
+    // 분량(key_len)은 참고 지표다(CLAUDE.md 품질 하한선) — 다시 쓰기는 부르되 남은 차단으로 세지 않는다.
     const holdLeft = hardOf(final.block).filter(f => f.rule !== "key_len");
-    return { cutR, chapters, replaced, final, holdLeft, unsafeRound, emptyRetry, droppedLeft };
+    return { cutR, chapters, replaced, final, holdLeft, emptied, droppedLeft };
   };
   let st = await settle();
-  // AM2-8 5부(덕짱님 결정 5): 남은 차단이 있으면 그 차단이 가장 많이 든 장 묶음 하나만 새 호출로 1회 다시 부른다(권당 추가 상한 HOLD_RETRY_USD).
-  // 받는 조건: 그 묶음 몫이 다 오고, 다시 정리한 책의 보류 사유가 줄어든다. 아니면 앞 결과를 그대로 둔다(같은 입력이면 같은 보류 — 감독이 같은 빌드를 되풀이하지 않는다, supervisor.ts).
-  let holdRetry: { chunk: string; before: number; after: number | null; costUsd: number; kept: boolean } | undefined;
-  if (st.holdLeft.length && live && !a.recover && capLeft() > 0.01) {
-    const target = [...byChunk(st.holdLeft)].sort((x, y) => y[1].length - x[1].length)[0];
-    if (target) {
-      const [c, fs] = target, t0 = Date.now();
-      const user = `${chunkUser(intake, c)}\n\n${HOLD_RETRY_NOTE}\n${fs.slice(0, 8).map(f => `- «${f.sentence.slice(0, 140)}» — ${reasonOf(f)}`).join("\n")}`;
-      const r = await chunkCall(opts(Math.min(HOLD_RETRY_USD, Math.max(0, capLeft()))), undefined, { kind: "first", system: `${system.rules}\n\n${system.card}`, systemParts: [system.rules, system.card], user, maxTokens: chunkMaxTokens(c, c.parts.some(p => p.n === 1)) });
-      runs.push(r.run);
-      const got = r.text ? partsOf(r.text, c, plan) : new Map<number, BookSection[]>();
-      const complete = c.parts.every(p => { const g = got.get(p.n); return g && (!p.keys || p.keys.every(k2 => g.some(x2 => x2.heading === k2))); });
-      log.push({ id: c.id, kind: "first", round: 9, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, reason: complete ? "hold_retry" : "hold_retry_incomplete" });
-      holdRetry = { chunk: c.id, before: st.holdLeft.length, after: null, costUsd: r.run.costUsd, kept: false };
-      if (complete) {
-        const save = new Map(drafts);
-        mergeParts(drafts, got, plan, "writer"); cur = build(); seen = inspect(cur.chapters); detPass();
-        const st2 = await settle();
-        holdRetry = { ...holdRetry, after: st2.holdLeft.length };
-        if (st2.holdLeft.length < st.holdLeft.length) { st = st2; holdRetry = { ...holdRetry, kept: true }; texts.set(c.id, r.text); for (const n of [...got.keys()]) { const d = drafts.get(n); if (d) await sink.save({ n, chapter: d.chapter, source: d.source }); } }
-        else { drafts.clear(); for (const [n2, d2] of save) drafts.set(n2, d2); cur = build(); seen = inspect(cur.chapters); }
-      }
+  // AM2-9 2부(덕짱님 결정 2026-11-16 — 운영 30분 흐름): 감독 2차에서만, 1차에서 온 묶음 가운데 차단이 남은(또는 지우다 빈) 묶음을 새 호출로 1회씩 부른다.
+  // 같은 요청을 그대로 보내지 않는다 — 지시 끝에 걸린 문장 인용 + 이유. 몫이 다 온 묶음만 받고, 받은 뒤 책 전체를 다시 정리·검사한다(다시 쓰기는 하지 않는다).
+  let secondPass: { chunks: { chunk: string; flags: number; complete: boolean; costUsd: number }[]; before: number; after: number } | undefined;
+  if (second && live && !a.recover) {
+    const targets = [...byChunk([...st.holdLeft, ...st.emptied])].filter(([c]) => !fresh.has(c.id));
+    if (targets.length) {
+      const queue = [...targets], got: { c: Chunk; parts: Map<number, BookSection[]>; text: string; complete: boolean; flags: number; costUsd: number }[] = [];
+      await Promise.all(Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let next = queue.shift(); next; next = queue.shift()) {
+        const [c, fs] = next, t0 = Date.now(), isFirst = c.parts.some(p => p.n === 1), max = chunkMaxTokens(c, isFirst);
+        const user = `${chunkUser(intake, c)}\n\n${SECOND_PASS_NOTE}\n${fs.slice(0, 8).map(f => `- «${f.sentence.slice(0, 140)}» — ${reasonOf(f)}`).join("\n")}`;
+        const r = await chunkCall(opts(), undefined, { kind: "first", system: `${system.rules}\n\n${system.card}`, systemParts: [system.rules, system.card], user, maxTokens: max, body: Math.max(1, max - CHUNK_THINKING_TOKENS), budget: costPot, stage: 1 });
+        runs.push(r.run);
+        const parts = r.text ? partsOf(r.text, c, plan) : new Map<number, BookSection[]>();
+        const complete = c.parts.every(p => { const g = parts.get(p.n); return g && (!p.keys || p.keys.every(k2 => g.some(x2 => x2.heading === k2))); });
+        log.push({ id: c.id, kind: "first", round: 2, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, reason: complete ? "second_pass" : "second_pass_incomplete" });
+        got.push({ c, parts, text: r.text, complete, flags: fs.length, costUsd: r.run.costUsd });
+      } }));
+      const before = st.holdLeft.length + st.emptied.length;
+      for (const g of got.filter(x => x.complete)) { mergeParts(drafts, g.parts, plan, "writer"); texts.set(g.c.id, g.text); for (const n of [...g.parts.keys()]) { const d = drafts.get(n); if (d) await sink.save({ n, chapter: d.chapter, source: d.source }); } }
+      if (got.some(x => x.complete)) { cur = build(); seen = inspect(cur.chapters); note([...seen.block, ...seen.minor, ...fixOf(cur.chapters, seen), ...repeatsOf(cur.chapters)]); detPass(); st = await settle(); }
+      secondPass = { chunks: got.map(x => ({ chunk: x.c.id, flags: x.flags, complete: x.complete, costUsd: x.costUsd })), before, after: st.holdLeft.length + st.emptied.length };
     }
   }
-  const { cutR, final, holdLeft, unsafeRound, emptyRetry, droppedLeft } = st, replaced = st.replaced;
+  const { cutR, final, holdLeft, droppedLeft } = st, replaced = st.replaced;
   let chapters: FinalChapter[] = st.chapters;
   if (holdLeft.length) { const byCh = new Map<number, string[]>(); for (const f of holdLeft) byCh.set(f.chapter, [...new Set([...(byCh.get(f.chapter) ?? []), f.rule])]);
-    chapters = chapters.map(c => (byCh.has(c.n) ? { ...c, reason: `${c.reason ? `${c.reason};` : ""}generation_hold:${byCh.get(c.n)!.join(",")}` } : c)); }
+    chapters = chapters.map(c => (byCh.has(c.n) ? { ...c, reason: `${c.reason ? `${c.reason};` : ""}${FOUR_BLOCK_TAG}:${byCh.get(c.n)!.join(",")}` } : c)); }
   // AM2-5 2부: 남은 반복·끝말 집계는 시스템 머리 문장을 넣기 전 원고로(머리 문장은 heads로도 뺀다).
   const finalRepeats = repeatsOf(chapters);
   const finalFix = fixOf(chapters, final);
@@ -515,7 +514,7 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const review: Record<string, unknown> = {
     mode: "chunked", version: CHUNK_PROMPT_VERSION, model: null, calls: 0, skipped: "chunked_no_review",
     briefCheck: { ok: briefOk, issues: issues.slice(0, 40) }, chunks: chunks.map(c => ({ id: c.id, parts: c.parts, chars: c.chars })), log,
-    blockFirst: firstBlock, rounds, repeatFirst, reverted, unsafeRound, ...(holdRetry ? { holdRetry } : {}), deleted: cutR.cut, headingsReplaced: cutR.headings, droppedSections: [...cutR.droppedSections, ...droppedLeft], missed: cutR.missed.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.rule}`), replaced, emptyRetry,
+    blockFirst: firstBlock, rounds, repeatFirst, reverted, attempt: second ? 2 : 1, ...(secondPass ? { secondPass } : {}), deleted: cutR.cut, headingsReplaced: cutR.headings, droppedSections: [...cutR.droppedSections, ...droppedLeft], missed: cutR.missed.map(f => `${f.chapter}.${f.section}.${f.paragraph}:${f.rule}`), replaced,
     remainingMinor: final.minor.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, sentence: f.sentence.slice(0, 160) })),
     remainingHard: final.block.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 200) })),
     remainingRepeat: finalRepeats.map(f => ({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, detail: f.detail ?? "", sentence: f.sentence.slice(0, 160) })),

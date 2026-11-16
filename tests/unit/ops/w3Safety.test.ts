@@ -185,10 +185,10 @@ describe("자동 멈춤 판정(순수)", () => {
     expect(connectionRun({ ...r("a", 1), calls: [] })).toBe(false);
     expect(connectionRun(r("a", 1, "other"))).toBe(false);
   });
-  it("실패율 경보 문구: 이 경보로는 안 멈추고 [4종 멈춤]을 안내한다", () => {
+  it("실패율 경보 문구: 이 경보로는 안 멈추고 [판매 멈춤]을 안내한다", () => {
     const day = Date.parse("2026-11-13T15:00:00Z");
     const runs = [r("x", 30, "other", "deferred"), r("y", 20, "other", "deferred"), r("z", 1, "other", "deferred")];
-    expect(rateAlert(runs, runs[2], T, day)).toContain("이 경보로는 판매가 멈추지 않아요(연결 오류 연속만 자동 멈춤). 멈추려면 [4종 멈춤].");
+    expect(rateAlert(runs, runs[2], T, day)).toContain("이 경보로는 판매가 멈추지 않아요(연결 오류 연속만 자동 멈춤). 멈추려면 [판매 멈춤].");
   });
 });
 
@@ -280,5 +280,42 @@ describe("관리자 화면 거절도 감사에 남긴다", () => {
     (none.deps as { session: unknown }).session = async () => ({ status: "none", userId: null, finish: (x: Response) => x });
     expect((await handleAdminAction(req({}), "regenerate", none.deps)).status).toBe(403);
     expect(none.audits).toEqual([]);
+  });
+});
+
+// AM2-9 2부: 세운·대운도 같은 판매 멈춤 관문(결제 준비 · 주문 생성 · 승인 직전 · 화면)과 자동 멈춤을 따른다. 판매 닫힘(FORTUNE_SALES_OPEN 없음)이 먼저 이긴다.
+describe("AM2-9 2부 세운·대운 — 판매 닫힘이 이기고, 열면 판매 멈춤 관문을 그대로 탄다", () => {
+  const amReq = (productType: string) => new Request("https://gyeolreport.com/api/payment-checkout/prepare", {
+    method: "POST", headers: { origin: "https://gyeolreport.com", "content-type": "application/json" },
+    body: JSON.stringify({ consent: adultCheckoutConsent(), buyer: TEST_BUYER, provider: "toss", productType, inputSnapshot: { displayName: person.name, birthDate: person.birthDate, reportInputPayload: { ...payload, productKey: productType } } }) });
+  const open = () => { vi.stubEnv("FORTUNE_SALES_OPEN", "1"); vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2026-01-01T00:00:00+09:00"); vi.stubEnv("FORTUNE_PRICE_ANNUAL_KRW", "9900"); vi.stubEnv("FORTUNE_PRICE_MAJOR_KRW", "12900"); };
+  const toss = () => { vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key"); vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key"); };
+  it.each(["annual_fortune", "major_fortune"])("%s 결제 준비: 닫힘이면 멈춤이어도 PRODUCT_SALES_CLOSED, 열면 멈춤이 PRODUCT_SALES_PAUSED(주문 쓰기 전)", async product => {
+    toss(); pause.on = true;
+    const closed = await prepareCheckout(amReq(product));
+    expect(closed.status).toBe(409); expect((await closed.json()).error.code).toBe("PRODUCT_SALES_CLOSED");
+    open();
+    const paused = await prepareCheckout(amReq(product));
+    expect(paused.status).toBe(409); expect(await paused.json()).toMatchObject({ ok: false, error: { code: SALES_PAUSED_CODE, message: SALES_PAUSED_MESSAGE } });
+    expect(storage.create).not.toHaveBeenCalled();
+  });
+  it.each(["annual_fortune", "major_fortune"])("%s 주문 생성(create-ready): 닫힘 → CLOSED, 열고 멈춤 → PAUSED", async product => {
+    vi.stubEnv("PAYMENT_READY_ORDER_API_ENABLED", "1"); pause.on = true;
+    const mk = () => createReady(new Request("https://gyeolreport.com/api/payment-orders/create-ready", { method: "POST", body: JSON.stringify({ provider: "toss", productType: product, inputSnapshot: {} }) }));
+    expect((await (await mk()).json()).error.code).toBe("PRODUCT_SALES_CLOSED");
+    open();
+    expect((await (await mk()).json()).error.code).toBe(SALES_PAUSED_CODE);
+  });
+  it.each(["annual_fortune", "major_fortune"])("%s 승인 직전 ready 주문: 닫힘 → CLOSED, 열고 멈춤 → PAUSED, 열고 판매 중 → 통과", async product => {
+    const store = { call: vi.fn(async (a: string) => (a === "find_order" ? { ok: true, order: { provider_order_id: "o-am", status: "ready", product_type: product } } : { ok: true })) } as unknown as ReliabilityStore;
+    expect(await closedProductOrder(store, "o-am", async () => true)).toBe("PRODUCT_SALES_CLOSED");
+    open();
+    expect(await closedProductOrder(store, "o-am", async () => true)).toBe(SALES_PAUSED_CODE);
+    expect(await closedProductOrder(store, "o-am", async () => false)).toBeNull();
+  });
+  it("자동 멈춤: 세운·대운 주문의 연결 실패도 같은 선(10분 3건)으로 센다 · 상품 이름이 알림에 든다", () => {
+    const T = Date.parse("2026-11-14T05:00:00Z");
+    const r = (id: string, minAgo: number, cls = "connection", outcome = "deferred", product = "saju_mbti_full"): RunLite => ({ report_id: id, outcome, created_at: new Date(T - minAgo * 60_000).toISOString(), calls: [{ kind: "first", cls }], product });
+    expect(autoPauseCheck([r("a", 1, "connection", "gave_up", "annual_fortune"), r("b", 3, "connection", "gave_up", "major_fortune"), r("c", 9)], T)).toEqual({ pause: true, count: 3, products: ["세운", "대운", "종합"] });
   });
 });
