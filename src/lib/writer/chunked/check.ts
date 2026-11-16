@@ -87,8 +87,8 @@ export function briefCheck(x: Intake, nicknames: readonly string[] = [], bc: Bri
     if (l.subject === "month" && !MONTH_NAME_IN.test(both) && !/생활 결|같은 결|달 없음|\| 없음$/.test(both)) flag("month_label", l.id, both);
     if (noMbti && (l.subject === "mbti" || MBTI_WORD.test(both))) flag("mbti_absent", l.id, both);
     // 동률인데 「가장」 + 달 하나(P2 판독 annual-1 M14·M179).
-    if (bc.flowEnds && /가장 (조용|잔잔)/.test(both) && !/같은 세기/.test(both) && bc.flowEnds.low.length > 1) flag("tie", l.id, both);
-    if (bc.flowEnds && /가장 크게 오르/.test(both) && !/같은 세기/.test(both) && bc.flowEnds.high.length > 1) flag("tie", l.id, both);
+    if (bc.flowEnds && /가장 (조용|잔잔)/.test(both) && !/같은 세기|여러 달이 함께/.test(both) && bc.flowEnds.low.length > 1) flag("tie", l.id, both);
+    if (bc.flowEnds && /가장 크게 오르/.test(both) && !/같은 세기|여러 달이 함께/.test(both) && bc.flowEnds.high.length > 1) flag("tie", l.id, both);
     // 1-6 음양 문장은 실제 값에서만(음 우세인데 양의 문장 0건).
     if (/^음양/.test(l.value) && bc.yin !== undefined && bc.yang !== undefined && ((bc.yin >= bc.yang + 2 && YANG_TEXT.test(l.meaning)) || (bc.yang >= bc.yin + 2 && YIN_TEXT.test(l.meaning)))) flag("yinyang", l.id, both);
   }
@@ -784,7 +784,7 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
     const bs = sp.lines.filter(id => subj(id) === "mbti"), ms = sp.lines.filter(id => /^(natal|dayun|year|month)$/.test(subj(id) ?? ""));
     if (bs.length && ms.length) { const paired = new Set(x.pairs.filter(p2 => bs.includes(p2.mbti) && (p2.use ?? []).includes(c.n)).map(p2 => p2.myeongri)); const lone = ms.filter(id => !paired.has(id)); if (lone.length) out.push({ where: `${c.n}장 「${sp.q}」`, rule: "pair_section", text: `짝 없는 명리 줄 ${lone.join("·")} × MBTI ${bs.join("·")}` }); }
     // 「할 것·피할 것」에는 행동 줄만.
-    if (/할 것|피할 것/.test(sp.q)) for (const id of sp.lines) { const l = byId.get(id); if (l && /달(\(같은 세기\))?:|(오르는|살필) 영역|살필 거리|오르는 달|늦출 달|새기 쉬운 달/.test(`${l.value}: ${l.meaning}`)) out.push({ where: `${c.n}장 「${sp.q}」`, rule: "plan_advice_only", text: `${id} ${l.value}` }); }
+    if (/할 것|피할 것/.test(sp.q)) for (const id of sp.lines) { const l = byId.get(id); if (l && /달(\((?:같은 세기|여러 달이 함께)\))?:|(오르는|살필) 영역|살필 거리|오르는 달|늦출 달|새기 쉬운 달/.test(`${l.value}: ${l.meaning}`)) out.push({ where: `${c.n}장 「${sp.q}」`, rule: "plan_advice_only", text: `${id} ${l.value}` }); }
   }
   // 2부 충돌: 바람 달 ↔ 바람 영역을 늦출 달.
   const wishDomains = (x.lines.find(l => l.subject === "input" && /바람과 이어지는 영역$/.test(l.value))?.meaning ?? "").split("·").map(s2 => s2.trim());
