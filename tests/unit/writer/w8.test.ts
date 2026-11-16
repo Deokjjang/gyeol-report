@@ -48,7 +48,9 @@ describe("W8 작가 입력 재료 정리(4종)", () => {
     for (const X of [F, C]) {
       const a = pieceAudit(X.brief, { knowledge: k, facts: X.sheet })!;
       const view = strings(renderWriterBrief(X.brief, { knowledge: k, facts: X.sheet })).join("\n");
-      for (const d of a.drops) expect(view.includes(table.exact.get(d.dropped) ?? d.dropped)).toBe(false);
+      // W8.1: 궁합은 같은 DB 줄이 주인(0·1·−1)마다 따로 나오고 정리도 주인별이다 → 한 주인에만 나오는 줄만 글로 확인한다.
+      const owners = new Map<string, Set<number>>(); for (const p of a.pieces) owners.set(p.key, (owners.get(p.key) ?? new Set()).add(p.owner));
+      for (const d of a.drops) if ((owners.get(materialKey(d.dropped))?.size ?? 1) === 1) expect(view.includes(table.exact.get(d.dropped) ?? d.dropped)).toBe(false);
       const gone = new Set(a.drops.map(d => `${d.owner}|${materialKey(d.dropped)}`));
       const poles = new Map<string, Set<number>>();
       for (const p of a.pieces) {

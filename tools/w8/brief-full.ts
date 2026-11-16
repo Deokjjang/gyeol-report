@@ -1,6 +1,6 @@
 // W8 브리프 전수 시험(호출 0, 시드 고정 — W7 w7full.ts를 W8 작가 입력 재료 정리(pieceAudit)로): 가상 출생 N(1950~2010, 남녀 반반, 시간 미상 10%) × MBTI(16유형 고르게, 없음 5%) × 4종(궁합 7관계 고르게).
 // 잰다: 같은 사람·같은 차원 반대 재료 쌍(짝 정리 전·뒤, 세기 2+·같은 조건 정의 따로) · 사주 안 관계 줄의 성격 단정 · 건강 단정 · 성립 안 하는 개수 조건(D3) · 짝 정리로 뺀 줄 · rw 바꿔치기.
-// 사용: pnpm exec tsx tools/w8/brief-full.ts <N> <out.json>   (W8 보고 docs/v5/w8.md 2절)
+// 사용: pnpm exec tsx tools/w8/brief-full.ts <N> <out.json>   (W8 보고 docs/v5/w8.md 2절 · W8.1: 고침별 계획·뺀 줄(planW8/G3/G1·dropW8/G3/G1·dropDerived)·상한으로 남긴 줄(capped) 칸 — docs/v5/w8-1.md)
 import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 const TREE = process.cwd(), [NS, OUT] = process.argv.slice(2), NN = Number(NS);
@@ -64,7 +64,8 @@ void (async () => {
       try { const saju = calculateSaju({ birthDate: a.birthDate, birthTime: a.birthTime, birthTimeUnknown: a.birthTimeUnknown, approximateBirthTimeSlot: "", calendarType: "SOLAR", gender: a.gender }); const det = analyzeChartDetections(saju);
         const ctx = { saju, det, positions: [], hitIds: new Set<string>() };
         for (const s0 of strs) if (COUNT.test(s0) && product !== "saju_mbti_compatibility" && !conditionsHold(s0, ctx)) d3++; } catch { /* 엔진 거절 */ }
-      rows.push({ i, product, mbti: Boolean(a.mbtiType), seen: audit.pieces.length, kept: kept.length, dropped: audit.drops.length, rw: audit.rw, tagDrop: audit.tagDrop, protectedPairs: audit.protectedPairs, untagged, unowned, rawPairs: rawPairs.length, keptPairs: keptPairs.length, strictPairs: strict, relTrait, health, d3 });
+      const plan = [...audit.drops, ...(audit.left ?? [])], cnt = (xs: { by?: string; derived?: boolean }[], b: string) => xs.filter(x => (x.by ?? "w8") === b).length;
+      rows.push({ i, product, mbti: Boolean(a.mbtiType), seen: audit.pieces.length, kept: kept.length, dropped: audit.drops.length, capped: audit.capped ?? 0, planW8: cnt(plan, "w8"), planG3: cnt(plan, "g3"), planG1: cnt(plan, "g1"), dropW8: cnt(audit.drops, "w8"), dropG3: cnt(audit.drops, "g3"), dropG1: cnt(audit.drops, "g1"), dropDerived: audit.drops.filter((x: { derived?: boolean }) => x.derived).length, rw: audit.rw, tagDrop: audit.tagDrop, protectedPairs: audit.protectedPairs, untagged, unowned, rawPairs: rawPairs.length, keptPairs: keptPairs.length, strictPairs: strict, relTrait, health, d3 });
     }
   }
   writeFileSync(OUT, JSON.stringify({ n: NN, fail, ms: Date.now() - t0, rows }));

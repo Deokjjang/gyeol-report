@@ -62,6 +62,13 @@ const EXTRA: readonly [string, RegExp][] = [["socialEnergy+", PROFILE_CUES.E], [
   ["emotionalRecovery-", /(?:(?:수|물)(?:가|이)? 부족하면 )?완충이 얇[^.?!]{0,30}(?:오래 머물|오래 남|그대로 (?:몸|마음)에 남)|부딪친 일이 [^.?!]{0,12}오래 머물/]];
 const CUES = [...Object.entries(POLE_CUES), ...EXTRA].map(([key, re]) => ({ dim: key.slice(0, -1), pole: (key.endsWith("+") ? 1 : -1) as 1 | -1, re: new RegExp(re.source, "g") }));
 
+/** W8.1 G6: 문장에 든 차원 끝 단서(단정·주인 판정 없이 글만) — 수리 전 원문에 이미 있던 끝인지 볼 때. */
+export function cueKeys(s: string): Set<string> {
+  const t = s.replace(/[⟪⟫]/g, ""), out = new Set<string>();
+  for (const c of CUES) if (new RegExp(c.re.source).test(t)) out.add(`${c.dim}${c.pole > 0 ? "+" : "-"}`);
+  return out;
+}
+
 function ownerOf(s: string, start: number, ctx: ContradictionCtx, end = start): number {
   if (!ctx.compat) {
     const self = ctx.people[0]; if (!self) return -1;

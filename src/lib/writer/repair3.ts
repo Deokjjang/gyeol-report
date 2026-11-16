@@ -16,6 +16,7 @@ import { relationName } from "@/lib/compat/relations";
 import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
 import { ANAPHOR_SHORT, leadNamesSubject, modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
+import { assertedPoles, cueKeys, profilePoles, type ContradictionCtx } from "./safety/contradiction";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
 - 지적된 문장만 고친다. 고친 답도 한 문장이다(문장을 늘리거나 앞뒤 문장 내용을 끌어오지 않는다 — 늘린 답은 버려진다). 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓴다.
@@ -193,6 +194,36 @@ export function revertWorse(chapters: readonly FinalChapter[], applied: readonly
     if (i < 0) continue;
     ss[i] = a.before; (sec.paragraphs as string[])[f.paragraph] = ss.join(" ");
     reverted.push({ at: `${f.chapter}.${f.section}.${f.paragraph}`, after: a.after, before: a.before, rule: f.rule });
+  }
+  return { chapters: out, reverted };
+}
+/**
+ * W8.1 G6(T8 — W8 수리 답 3건이 다른 장과 새 모순: 「재성은 보통이라 … 다 쫓는 편은 아닙니다」 · 「두 사람 모두에게 겁살 … 장덕민님만의 것이 아니에요」 ·
+ * 「백호대살은 … 드러내기보다 안에서 세게 눌러 담는 쪽입니다」): 수리 문장이 ① 성격 요약표 값과 반대 끝을 단정하거나 ② 원문에 없던 차원 끝을 새로 단정하면 원문으로 되돌린다(호출 0).
+ * 차원 끝 = 모순 검사와 같은 단서(assertedPoles — 주인·단정 판정 그대로) · 원문에 없던 성향 단정 꼴(「~편은 아닙니다」「~만의 것이 아니」「~기보다 … 쪽입니다」 — 단서 사전 밖의 새 끝).
+ * 되돌린 원문에 차단 깃발이 남으면 뒤의 deleteFlagged가 지운다(다음 문장 주어 지키기 포함).
+ */
+const TREND_FRAME = /(?:편|쪽|사람|타입|성향)(?:은|이|도)? (?:아니에요|아니예요|아닙니다|아니랍니다|아니라)|만의 것이 아니|(?:기|는 것)보다(?:는)? [^.?!]{0,30}(?:쪽|편)(?:입니다|이에요|예요|이죠)/;
+export function revertRepairPoles(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: ContradictionCtx | undefined): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  if (!ctx) return { chapters: out, reverted };
+  const poles = ctx.people.map(p => profilePoles(p.codes));
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after || !a.before) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(x => norm(x).includes(key));
+    if (i < 0) continue;
+    // 원문 글에 같은 끝 단서가 이미 있으면(조건문·대비로 단정 판정만 빠졌던 것 — 90권 대조 오탐 5) 수리가 새로 단정한 끝이 아니다.
+    const was = new Set(assertedPoles(a.before, ctx).map(x => `${x.who}|${x.dim}|${x.pole}`)), had = cueKeys(a.before);
+    const now = assertedPoles(a.after, ctx).filter(x => !had.has(`${x.dim}${x.pole > 0 ? "+" : "-"}`));
+    const opp = now.find(x => poles[x.who]?.get(x.dim) === -x.pole), fresh = now.find(x => !was.has(`${x.who}|${x.dim}|${x.pole}`));
+    const frame = TREND_FRAME.test(a.after.replace(/[⟪⟫]/g, "")) && !TREND_FRAME.test(a.before.replace(/[⟪⟫]/g, ""));
+    if (!opp && !fresh && !frame) continue;
+    ss[i] = a.before; (sec.paragraphs as string[])[pn] = ss.join(" ");
+    reverted.push({ at: a.at, after: a.after, before: a.before, rule: opp ? `repair_pole_profile:${opp.dim}` : fresh ? `repair_pole_new:${fresh.dim}` : "repair_pole_frame" });
   }
   return { chapters: out, reverted };
 }

@@ -37,7 +37,7 @@ import { materialTable } from "./prompt/materials";
 import { completeText, runWriter, WRITER_TIME_BUDGET_MS, type ChapterSink, type WriterOptions, type WriterRun } from "./runner";
 import { chapterPreview, type ChapterPreview } from "./preview";
 import { REPAIR_SYSTEM, REWRITE_SYSTEM } from "./repair";
-import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
+import { deleteFlagged, factNamesOf, REPAIR3_MAX_ITEMS, repair3MaxTokens, repair3Pass, repair3Prompt, repairItems, revertRepairPoles, revertRepairRegressions, revertRepairSideEffects, revertWorse, type AppliedRepair, type Deleted } from "./repair3";
 import { gateClassOf, gateMetrics } from "./gate";
 import { splitSentences } from "./safety/patterns";
 import { dropBookTwins, dropOverflowParagraphs, dropSentences, improveOnly, modeOf, postRepairTidy, reviewModeOf, stripConnectiveFlags, type DropRecord, type DropTarget, type TidyRecord } from "./repairPlan";
@@ -590,7 +590,9 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   const side = revertRepairSideEffects(rv0.chapters, repair.applied, briefStrings(brief).filter(l => l.includes("월")));
   // W3 P3 6절: 수리가 책 안 다른 문장과 같은 말을 만들었거나, 원문의 근거 낱말(간지·십성·관계·신살)을 잃었거나, 예고만 남겼으면 되돌린다(호출 0).
   const regress = revertRepairRegressions(side.chapters, repair.applied, { flags: preRepairFlags, names: factNamesOf(sheet) });
-  const rv = { chapters: regress.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted] };
+  // W8.1 G6(4종): 수리 문장이 성격 요약표와 반대 끝이거나 원문에 없던 차원 끝을 새로 단정하면 원문으로(원문이 차단이면 뒤의 지우기가 뗀다, 호출 0).
+  const poleRv = brief.design ? revertRepairPoles(regress.chapters, repair.applied, lctx.contradiction) : { chapters: regress.chapters, reverted: [] };
+  const rv = { chapters: poleRv.chapters, reverted: [...rv0.reverted, ...side.reverted, ...regress.reverted, ...poleRv.reverted] };
   if (rv.reverted.length) { fixed = tidyBook(rv.chapters, lctx).chapters; remaining = lintBook(fixed, lctx); }
   // W5 R2 F1: 수리 뒤 결정론 정리 — 수리 문장이 이웃과 같은 뜻·끊긴 문장·같은 문단 수리끼리 같은 구절이면 원문으로, 이웃 문장 내용 낱말 70% 이상 같으면 뒤 문장을 뗀다.
   const f1: { chapters: FinalChapter[]; records: TidyRecord[] } = deps.replay ? { chapters: fixed, records: [] } : postRepairTidy(fixed, repair.applied, before => { const b = before.replace(/[^가-힣0-9]/g, ""); return preRepairFlags.some(f => f.sentence && gateClassOf(f.rule, f.detail) === "block" && b.includes(f.sentence.replace(/[^가-힣0-9]/g, "").slice(0, 24))); });

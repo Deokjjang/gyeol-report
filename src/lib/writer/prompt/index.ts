@@ -209,7 +209,7 @@ export function pieceAudit(brief: Brief, opts: WriterInputOptions & { knowledge:
   const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
   const self = personProfileOf(brief, opts.knowledge), claims = chapterClaims(brief, opts.knowledge, self);
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
-  return tidyPieces(out, materialTable(opts.knowledge), brief, opts.knowledge).audit;
+  return tidyPieces(out, materialTable(opts.knowledge), brief, opts.knowledge, self).audit;
 }
 function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
   const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
@@ -220,8 +220,8 @@ function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Reco
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
   // 지식 DB 원문을 재료로(P6c A1). MBTI 기능은 쉬운 이름을 먼저(P6c C5): "일 되게 하는 판단(Te) · 주기능: 방향".
   const table = materialTable(opts.knowledge);
-  // W8(4종만): 꼬리표 바꿔치기(결정 2 관계 줄·건강 줄 rw/drop) + 같은 사람·같은 차원 반대 끝 짝 정리(약하게). 세운·대운은 그대로.
-  const swapped = brief.design ? tidyPieces(out, table, brief, opts.knowledge).out : swapDeep(out, table);
+  // W8(4종만): 꼬리표 바꿔치기(결정 2 관계 줄·건강 줄 rw/drop) + 같은 사람·같은 차원 반대 끝 짝 정리. W8.1: 세기 1 짝(G1) · 성격 요약표 대조(G3) · 특징 벡터 꼬리표(G5). 세운·대운은 그대로.
+  const swapped = brief.design ? tidyPieces(out, table, brief, opts.knowledge, self).out : swapDeep(out, table);
   const fn = (b: Brief["mbti"]) => { const p = b && opts.knowledge!.mbti.get(b.type); return p && p.cognitiveFunctions.every(c => table.plain.has(c.easy)) ? p.cognitiveFunctions.map(c => `${table.plain.get(c.easy)}(${c.code}) · ${c.role}: ${table.exact.get(c.easy)}`) : null; };
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
   // W3 P3·W4 Q2: 4종(brief.design)은 처방 종류가 카드 배분(card.rx — 장마다 하나, 같은 종류 책 두 번까지)이고 renderRaw가 절 act로 준다. 그 밖(AM)은 act 슬롯 배분 그대로.
