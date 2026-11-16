@@ -483,6 +483,9 @@ export async function buildChunkedSnapshot(a: { payload: ReportInputPayload; rep
   const wishJosa = (w: string, rest: string) => fitJosa(w.replace(/[^가-힣]/g, "").slice(-1), rest);
   const wishOnce = (t: string) => t.split(WISH_MARK).reduce((acc, part, i) => { if (i === 0) return part; const raw = intake.wish && !wishSeen;
     // AM2-8(P7 annual-1 9.0 ¶1 「적어 준 바람 이 바람에는」 · Q7 annual-p6a 「적어 준 바람. 이 바람과」): 원문을 넣지 않는 자리에서 표시 뒤가 「(.) 이 · 그 바람」이면 둘을 「적어 준 바람」 하나로 합친다.
+    // AM2-10 4부(P9 annual-1 소망 장 「적어 준 바람 이 문장 안의 인정받는 일과…」 — 작가가 «바람»을 ⟪ ⟫로 감싸고 「이 문장 안의」로 받았다): 원문을 넣지 않는 자리에서는 표시 뒤 「이 · 그 문장 · 말 · 글」을 「적어 준 바람」에 합친다.
+    const merge2 = !raw ? /^(\s*⟫?)\s*(?:이|그) (?:문장|말|글)(?=\s*(?:안|속|에|의|은|는|이|을))/.exec(part) : null;
+    if (merge2) { wishSeen = true; const pre = /(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(acc) ? acc.replace(/\s*$/, " ") : `${acc}적어 준 `; return `${pre}바람${merge2[1]}${part.slice(merge2[0].length)}`; }
     const merge = !raw ? /^\s*\.?\s*(?:이|그) 바람/.exec(part) : null;
     if (merge) { wishSeen = true; const pre = /(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(acc) ? acc.replace(/\s*$/, " ") : `${acc}적어 준 `; return `${pre}바람${part.slice(merge[0].length)}`; } const w = raw ? `«${intake.wish}»` : /(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(acc) ? "바람" : "적어 준 바람"; wishSeen = true; return `${acc}${w}${raw ? wishJosa(intake.wish!, part) : part}`; }, "");
   chapters = chapters.map(c => ({ ...c, sections: c.sections.map(sec => ({ ...sec, heading: sec.heading.split(WISH_MARK).reduce((a2, part, i) => (i === 0 ? part : `${a2}${/(적어 ?(준|주신)|당신이 적은|직접 적은) ?$/.test(a2) ? "바람" : "적어 준 바람"}${part}`), ""), paragraphs: sec.paragraphs.map(p => wishOnce(p)) })) }));

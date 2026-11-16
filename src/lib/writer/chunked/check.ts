@@ -14,6 +14,7 @@ import { RURAL_PROP, splitSentences } from "../safety/patterns";
 import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
+import { am210Flags } from "./broken";
 import { am28Flags } from "./check8";
 import type { Intake, Line } from "./intake";
 import { KEY_TARGET, relationshipOf, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
@@ -440,6 +441,7 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   for (const f of am25Flags(chapters, b)) add(f);
   for (const f of am26Flags(chapters, b)) add(f);
   for (const f of am28Flags(chapters, b)) add(f);
+  for (const f of am210Flags(chapters, b)) add(f);
   return out;
 }
 
