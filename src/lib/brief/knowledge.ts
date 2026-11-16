@@ -7,8 +7,8 @@ import { join, resolve } from "node:path";
 import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema,
-  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema,
-  type BehaviorOntology, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema, PersonaTagsFileSchema,
+  type BehaviorOntology, type PersonaTag, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
 } from "@/data/knowledge-v5/schema";
 
 export type GanjiEnergy = z.infer<typeof GanjiEnergyFileSchema>["entries"][number];
@@ -46,6 +46,8 @@ export type Knowledge = {
   readonly compatScenes: CompatSceneFile;
   /** 작가 재료(P6c A1): 원문 sha1 앞 12자 → 상황 씨앗·적용 방향·핵심 뜻. 파일이 없으면 빈 표(작가는 원문을 받는다). */
   readonly materials: ReadonlyMap<string, string>;
+  /** W7-1: 재료 줄 꼬리표(재료 키 → 갈래·차원·조건). 파일이 없으면 빈 표(거르기 없음). */
+  readonly personaTags: ReadonlyMap<string, PersonaTag>;
   /** P6d G: 심화 상품 재료(topic → 항목). 파일이 없으면 빈 표. */
   readonly deep: ReadonlyMap<string, readonly DeepEntry[]>;
   /** P6d F: MBTI 장면 씨앗(유형 → 영역 → 씨앗). */
@@ -83,6 +85,7 @@ export function loadKnowledge(root: string = DEFAULT_KNOWLEDGE_ROOT): Knowledge 
     catalog: CareerCatalogSchema.parse(read("career", "catalog.json")),
     compatScenes: CompatSceneFileSchema.parse(read("compat", "scenes.json")),
     materials: new Map(existsSync(join(root, "materials.json")) ? Object.entries(MaterialsFileSchema.parse(read("materials.json")).items) : []),
+    personaTags: new Map(existsSync(join(root, "persona-tags.json")) ? Object.entries(PersonaTagsFileSchema.parse(read("persona-tags.json")).items) : []),
     deep: new Map(existsSync(join(root, "deep")) ? list("deep").map(f => { const d = DeepFileSchema.parse(read("deep", f)); return [d.topic, d.entries] as const; }) : []),
     mbtiSeeds: new Map(existsSync(join(root, "mbti-seeds")) ? list("mbti-seeds").map(f => { const d = SeedFileSchema.parse(read("mbti-seeds", f)); return [d.type, d.seeds] as const; }) : []),
   };

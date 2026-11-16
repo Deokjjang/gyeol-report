@@ -22,7 +22,7 @@ import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema, GanjiEnergySchema, IdMapSchema,
   MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, LOVE_SIGNAL_KEY,
-  CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema, CAREER_CLUSTERS, COMPATIBILITY_CATEGORIES,
+  CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema, PersonaTagsFileSchema, CAREER_CLUSTERS, COMPATIBILITY_CATEGORIES,
   DOMAINS, FEATURE_FAMILIES, MBTI_TYPES, TIMELINE_ACTION_DOMAINS, POSITIONAL_FAMILIES, STEMS, BRANCHES, TEN_GODS, ELEMENTS,
   type FusionRule, type MbtiProfile, type MyeongriFeature, type SceneItem,
 } from "../src/data/knowledge-v5/schema";
@@ -542,6 +542,36 @@ function lintMaterials(): void {
   stats.materials = { total, covered: total - missing, keys: keys.size };
 }
 
+// ---------- W7-1 성격 정답지 사전 · 재료 줄 꼬리표(persona-tags.json) ----------
+/** 사전 20 이하 · 옛 차원 이름이 dimensions에 있음 · 꼬리표 차원은 사전 안 · 사주 안 관계 줄은 성격 차원 없음(결정 2) · 바꾼 줄에 건강 단정 없음 · 원문 없는 키는 경고. */
+function lintPersona(): void {
+  const k = loadKnowledge(DATA), dict = k.ontology.persona?.dims ?? [];
+  if (!dict.length) { if (strict) fail("behavior-ontology.json", "persona", "W7 차원 사전 없음"); return; }
+  const oldIds = new Set(k.ontology.dimensions.map(d => d.id)), ids = new Set(dict.map(d => d.id));
+  for (const d of dict) for (const [o] of d.from) if (!oldIds.has(o)) fail("behavior-ontology.json", `persona.${d.id}`, "옛 차원 이름 없음", o);
+  const file = join(DATA, "persona-tags.json");
+  if (!existsSync(file)) { if (strict) fail("persona-tags.json", "file", "W7 꼬리표 파일 없음"); return; }
+  const r = PersonaTagsFileSchema.safeParse(readJson(file));
+  if (!r.success) { fail("persona-tags.json", "schema", "zod", zodMsg(r.error)); return; }
+  const known = new Set<string>(), rel = new Set<string>();
+  for (const text of dbTexts(k)) if (text && text.length >= 10) known.add(materialKey(text));
+  for (const f of k.features.values()) if (f.family === "relation" || /WONJIN/.test(f.id)) for (const t of [f.life, f.shadow, f.meaning, ...Object.values(f.forYou ?? {}), ...(f.strengths ?? []), ...(f.overuse ?? []), ...Object.values(f.positionNuance ?? {}), ...Object.values(f.scenes).flatMap(l => (l ?? []).map(x => x.text))]) if (typeof t === "string" && t.length >= 10) rel.add(materialKey(t));
+  for (const doms of k.mbtiSeeds.values()) for (const xs of Object.values(doms)) for (const x of xs) known.add(materialKey(x.text));
+  const leaves = (o: unknown): void => { if (typeof o === "string") { if (o.length >= 10) known.add(materialKey(o)); } else if (Array.isArray(o)) o.forEach(leaves); else if (o && typeof o === "object") for (const [kk, v] of Object.entries(o)) if (!["key", "facet", "level", "id", "sources", "when"].includes(kk)) leaves(v); };
+  for (const [topic, entries] of k.deep) if (!/^(annual-|major-|year-energy)/.test(topic)) entries.forEach(leaves);
+  // 병·몸 증상 단정만(생활 리듬 잠·끼니·운동 계획·피로는 아님 — W6.1·A 집계·전수 시험과 같은 기준).
+  const HEALTH = /소화(?:가 (?:안|잘 안)|불량|·수면|와 수면)|수면 (?:먼저|문제|장애)|불면|두통|위장|장 건강|피부 (?:트러블|질환)|혈압|면역|몸살|몸도 예민|몸이 예민|탈이 나|아프기 쉽/;
+  let unknown = 0;
+  for (const [key, t] of Object.entries(r.data.items)) {
+    if (!known.has(key)) { unknown++; if (unknown <= 10) warn("persona-tags.json", key, "원문 없는 꼬리표(원문이 바뀜)"); }
+    for (const [d] of t.d) if (!ids.has(d)) fail("persona-tags.json", key, "사전 밖 차원", d);
+    if (rel.has(key) && t.d.length) fail("persona-tags.json", key, "사주 안 관계 줄에 성격 차원(결정 2)");
+    if (t.rw && HEALTH.test(t.rw)) fail("persona-tags.json", key, "바꾼 줄에 건강 단정", t.rw);
+  }
+  if (unknown > 10) warn("persona-tags.json", "rest", "원문 없는 꼬리표", `외 ${unknown - 10}개`);
+  stats.personaTags = { total: Object.keys(r.data.items).length, dims: dict.length, unknown };
+}
+
 // ---------- 실행 ----------
 if (existsSync(join(DATA, "behavior-ontology.json"))) lintOntology(join(DATA, "behavior-ontology.json"));
 if (only) {
@@ -555,7 +585,7 @@ if (only) {
   for (const p of listJson(join(DATA, "myeongri"))) lintFeatureFile(p);
   for (const p of listJson(join(DATA, "mbti"))) lintMbtiFile(p);
   for (const p of listJson(join(DATA, "fusion"))) lintFusionFile(p);
-  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer(); lintCompatScenes(); lintCareerCatalog(); lintMaterials();
+  lintCompatSymmetry(); lintFusionRepetition(); lintTimeline(); lintNarratives(); lintIdMap(); lintImageSimilarity(); lintLoveSignals(); lintCareer(); lintCompatScenes(); lintCareerCatalog(); lintMaterials(); lintPersona();
   stats.features = featureIds.size; stats.byFamily = Object.fromEntries(Object.entries(featuresByFamily).map(([k, v]) => [k, v.length]));
   stats.scenes = Object.values(featuresByFamily).flat().reduce((n, f) => n + DOMAINS.reduce((m, d) => m + f.scenes[d].length, 0), 0);
   stats.mbtiProfiles = mbtiTypesSeen.size; stats.fusionRules = fusionRules.length; stats.fusionWithScene = fusionRules.filter(r => r.scene).length;

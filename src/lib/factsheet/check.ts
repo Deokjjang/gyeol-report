@@ -695,9 +695,38 @@ function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts
   return bad.length ? { rule: "fact_term", detail: `${tgs[0] ?? terms[0].name}은 ${slotsKo([...new Set(truth)])}에 있다(${bad.map(p => p.label).join("·")} 아님)` } : null;
 }
 
+/**
+ * W8(W7 9-2 · 2차 연애 「정관 … 과 편관 … 은 태어난 달과 태어난 시각 땅 글자에 두 번 드러나 있어요」 — 편관은 연지 지장간에만): 십성 자리 사실 검사.
+ * 한 사람 · 주어 자리에 든 십성 이름(「X은/는/이/가」, 「X과 Y는」) + 뒤에 자리 말(하나, 또는 「태어난 달과 태어난 시각 땅 글자」 꼴 둘) + 「에 있·드러나·자리·놓·깔·들어·두 번」.
+ * 십성마다 말한 자리 가운데 하나라도 그 십성이 있으면 통과(땅 글자는 지장간 전부 — 정답지 「십성 자리」 정의). 일간 자리·가정·부정·때 문장은 보지 않는다.
+ */
+const PAIR_POS = /태어난 (해|달|날|시각)(?:과|와|·|,) ?(?:태어난 )?(해|달|날|시각)의? (땅 글자|하늘 글자|지지|천간)/;
+const PERIOD_SLOT: Readonly<Record<string, "year" | "month" | "day" | "hour">> = { 해: "year", 달: "month", 날: "day", 시각: "hour" };
+function tenGodPosition(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+  const pair = sen.match(PAIR_POS);
+  let slots: Slot[] = [], at = -1, len = 0, label = "";
+  if (pair) { const kind = /땅|지지/.test(pair[3]) ? "Branch" : "Stem"; slots = [pair[1], pair[2]].map(x => `${PERIOD_SLOT[x]}${kind}` as Slot); at = pair.index!; len = pair[0].length; label = pair[0]; }
+  else { const poss = POSITION_WORDS.filter(p => p.re.test(sen)); if (poss.length !== 1) return null; const pm = sen.match(poss[0].re)!; slots = [...poss[0].slots]; at = pm.index!; len = pm[0].length; label = poss[0].label; }
+  if (slots.includes("dayStem")) return null;
+  if (!/^\s?(?:에|에서|에도)\s?(?:[가-힣]+\s){0,2}?(?:있|드러나|드러난|자리|놓|앉|깔|들어|두 번|함께 있)/.test(sen.slice(at + len))) return null;
+  // 주어: 자리 말 앞, 괄호 풀이를 뗀 뒤 「X(과 Y)은/는/이/가」로 끝나는 십성 이름들.
+  const head = sen.slice(0, at).replace(/\([^()]*\)/g, "");
+  const subj = head.match(new RegExp(`((?:${TEN_GODS.join("|")})(?:(?:과|와|·|, ?| 그리고 )(?:${TEN_GODS.join("|")}))*)(?:은|는|이|가) ?$`));
+  if (!subj) return null;
+  const o = owners[0], named = [...subj[1].matchAll(new RegExp(TEN_GODS.join("|"), "g"))].map(m => m[0]);
+  const bad = named.filter(tg => !slots.some(x => o.tenGods[x]?.includes(tg)));
+  if (!bad.length) return null;
+  const truth = (tg: string) => (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.includes(tg)).map(([k]) => k);
+  return { rule: "fact_term", detail: bad.map(tg => `${tg}은 ${truth(tg).length ? slotsKo(truth(tg)) : "원국(지장간 포함)에 없음"}에 있다(${label} 아님)`).join(" · ") };
+}
+/** W8(W7 6-3 오탐): 「음 하나 없이 모두 양인 속도」의 「양인」(양 + 이다)은 신살 양인살이 아니다 — 음양 문맥이면 가린다. */
+const YANG_COPULA = /((?:모두|전부|다|둘 다|셋 다|넷 다|여덟 글자 모두) )양인(?=\s)|(음[이은]?\s?(?:하나|글자)?[^.?!]{0,8}(?:없이|없고|없어)[^.?!]{0,8}?)양인(?=\s)/g;
+const maskYang = (s: string) => s.replace(YANG_COPULA, (_m, a: string | undefined, b: string | undefined) => `${a ?? b ?? ""}양(陽)인`);
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
+  sen = maskYang(sen); paragraph = maskYang(paragraph);
   const owners = ownersOf(sen, ctx);
-  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
     ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 

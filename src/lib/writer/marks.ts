@@ -120,7 +120,8 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     // W6.1 P4(1차 종합 1장 「⟦in:1⟧가 있어서, 태어난 해·날·시각의 세 땅 글자가 …」): 사주 안 관계 구절 뒤(같은 문장 40자 안)에서 작가가 그 관계의 같은 자리(「태어난 해·날·시각」)를 또 말해도 글자만 꼴(다른 관계의 자리 말은 보지 않는다 — r4-1d 궁합 회귀).
     if (m.glyph && (/(?:하늘|땅) 글자|태어난 (?:해|달|날|시각)|[연월일시](?:간|지)|[가-힣]와 [가-힣] 사이|[가-힣]과 [가-힣] 사이/.test(before.slice(-30)) || (m.kind === "in" && (() => { const pl = m.text.match(/^태어난 ([가-힣·]+) (?:하늘|땅) 글자/)?.[1]; return Boolean(pl && after.slice(0, 40).includes(`태어난 ${pl}`)); })()))) t = m.glyph;
     // ⑥ 구절 끝 괄호 뜻(「(정재의 10년)」「(가까운 사이의 작은 서운함)」)을 문장 뒤에서 또 말하면 괄호를 뗀다.
-    { const pm = t.match(/\(([^()]+)\)$/); if (pm && pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
+    // ⑥' W8(W7 2차 커리어 「정유 대운(정인의 10년)은 정인이라」): 대운 구절 괄호의 십성을 바로 뒤(12자 안)에서 또 말하면 괄호를 뗀다.
+    { const pm = t.match(/\(([^()]+)\)$/), tg10 = pm?.[1].match(/^([가-힣]{2})의 10년$/)?.[1]; if (pm && ((pm[1].length >= 4 && after.replace(/\s/g, "").includes(pm[1].replace(/\s/g, ""))) || (m.kind === "un" && tg10 && after.slice(0, 12).includes(tg10)))) { t = t.slice(0, -pm[0].length); count.dropped++; } }
     // ② 바로 앞에 같은 자리 말.
     const prev0 = si > 0 ? whole.slice(sentenceStart(si - 1), sentenceStart(si)) : "";
     // 앞 문장의 다른 표시가 같은 구절로 바뀌는 경우(자리가 같은 두 특성)도 「같은 구절을 썼다」로 본다.
@@ -149,7 +150,11 @@ export function renderMarks(text: string, table: MarkTable | null | undefined, s
     // ⑧ 일주 표시 바로 뒤에 작가가 간지를 또 썼으면(「⟦ju:a⟧ 갑신이에요」) 표시를 떼고 작가 말을 둔다.
     if (m.kind === "ju") { const g = (m.bare ?? "").split(" ")[0]; if (g && whole.slice(at + all.length).trimStart().startsWith(g) && !p && !gen) { inPara.add(key); used.push([key, si]); state?.seen.add(key); return ""; } }
     // ⑨ 서로 보는 십성: 앞에 「A님에게」가 있으면 받는 사람 이름만, 뒤에서 십성 이름을 또 말하면 「A님에게 B님」만(「장덕민님에게 정재인 최지우님은 정재의 자리예요」).
-    if (m.kind === "tg") { const x = t.match(/^(.+?)에게 (.+?)인 (.+)$/); if (x) { if (before.slice(-14).includes(`${x[1]}에게`)) t = x[3]; else if (after.includes(x[2])) t = `${x[1]}에게 ${x[3]}`; } }
+    // ⑨' W7 m3(새 궁합 4·5장 「보미님에게 강현님은 ⟦tg:ab⟧이에요」 → 「… 강현님에게 비견인 보미님이에요」): 작가가 「P님에게 Q님은」 틀을 이미 썼으면 그 방향(P가 보는 Q) 십성 이름만.
+    const frame = m.kind === "tg" ? before.match(/([가-힣]{1,6}님)에게 ([가-힣]{1,6}님)[은는] ?$/) : null;
+    const dirName = frame ? [...table.entries()].find(([k, v]) => k.startsWith("tg:") && v.text.startsWith(`${frame[1]}에게 `) && v.text.endsWith(`인 ${frame[2]}`))?.[1].text.match(/^.+?에게 (.+?)인 .+$/)?.[1] : undefined;
+    if (dirName) t = dirName;
+    else if (m.kind === "tg") { const x = t.match(/^(.+?)에게 (.+?)인 (.+)$/); if (x) { if (before.slice(-14).includes(`${x[1]}에게`)) t = x[3]; else if (after.includes(x[2])) t = `${x[1]}에게 ${x[3]}`; } }
     inPara.add(key); used.push([key, si]); state?.seen.add(key);
     if (m.short && t.length >= 8) rendered.push({ si, text: t, short: m.short });
     t = named(t);

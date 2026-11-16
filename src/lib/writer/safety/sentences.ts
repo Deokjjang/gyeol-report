@@ -50,6 +50,8 @@ const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
 export const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣])|(?:한|두|세|두세|서너) ?줄 판정|되돌리는 문장)/; // W6.1 1-3: 작가 지시 말(커리어 sideBiz 「세 줄 판정」, 지침 「warmTurn처럼 되돌리는 문장」)
 
 const HEALTH_CLAIM = /(소화|잠|수면|두통|위장|장 건강|피부|혈압|허리|어깨|목덜미|면역|생리)[^.?!]{0,14}(흔들립니다|흔들려요|탈이 납니다|탈이 나요|나빠집니다|나빠져요|상합니다|망가집니다|망가져요|아픕니다|아파요|약해집니다|약해져요|반응이 (?:먼저 )?(?:와요|옵니다|나타나요|나타납니다)|신호가 (?:먼저 )?(?:와요|옵니다|오죠|와)|(?:몸이 )?(?:먼저 )?반응(?:합니다|해요))[.!]?$/; // W6 S4 2판(2차 종합 6장): 「소화와 수면에서 먼저 신호가 오죠」 · W6.1 1-3(1차 궁합 6장): 「소화와 수면 쪽으로 몸이 먼저 반응합니다」
+/** W7 m1(1차 연애 8장 「지치고 상처받은 마음을 몸이 아프고 나서야 알아채기도 합니다」): 몸이 아픈 것을 성향의 결과로 단정. */
+const HEALTH_BODY = /몸이 (?:먼저 )?(?:아프고 나서야|아프고서야|아파야|아파진 뒤에야)/;
 const STAGE_GLYPH = /(땅 글자|일지|지지)(는|은|가|이) [가-힣]{1,2}(이라는|라는) (단계|운성)/;
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
@@ -163,7 +165,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
   if (INTERNAL.test(s)) return "internal_term";
   // AM 1부 판독(48 6장 「날이 선 날에는 소화와 잠부터 먼저 흔들립니다」): 몸 증상을 확정형으로 단정(건강 진단 금지). 「~하기 쉬워요」 경향은 통과.
-  if (HEALTH_CLAIM.test(s)) return "health_claim";
+  if (HEALTH_CLAIM.test(s) || HEALTH_BODY.test(s)) return "health_claim";
   // AM 1부 판독(47 1·2·4·7장): 땅 글자 자체를 십이운성 단계로 씀(「태어난 날 땅 글자는 묘라는 단계예요」).
   if (STAGE_GLYPH.test(s)) return "stage_glyph";
   if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";

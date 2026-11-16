@@ -40,6 +40,11 @@ function countsBefore(before: string, prevSentence: string): Set<number> {
   const ord = ORDINALS.filter(o => before.includes(o)).length; if (ord >= 2) out.add(ord);
   if (/하나는/.test(before) && /다른 하나는|또 하나는|나머지 하나는/.test(before)) out.add(2);
   const items = prevSentence.split(/,|그리고|와 |과 /).filter(x => x.trim().length >= 2).length; if (items >= 2) { out.add(items); out.add(items - 1); }
+  // W8(W7 6-3 오탐 「일에서는 … 일 하나를 … 돈에서는 … 이체 하나를 …. 이 두 가지가」): 바로 앞에 이어진 문장마다 「… 하나」를 하나씩 들면 그 문장 수가 항목 수.
+  const tail = before.split(/(?<=[.!?])\s+/).map(x => x.trim()).filter(Boolean); let par = 0;
+  // 가리키는 말이 든 지금 문장(끝맺기 전 조각)은 빼고 그 앞 문장부터.
+  for (let i = tail.length - (tail.length && !/[.!?]$/.test(tail[tail.length - 1]) ? 2 : 1); i >= 0 && /(?<![가-힣])하나(?:를|만|씩|는|가|쯤)?(?=\s|[,.!?]|$)/.test(tail[i]); i--) par++;
+  if (par >= 2) out.add(par);
   return out;
 }
 export function countMismatch(sectionText: string): string[] {

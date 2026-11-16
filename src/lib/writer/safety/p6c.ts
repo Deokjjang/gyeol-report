@@ -18,10 +18,15 @@ import { cueMisfits, POLE_CUES, poleFits } from "@/lib/brief/mbtiFn";
 import { collapseRenderDup, factCheck, fixParenParticles, tidyFixedTime, type FactCtx, type FactRule } from "@/lib/factsheet/check";
 import { fnRoleMismatch, STYLE_HINT, styleFlags, type StyleRule } from "./style";
 import { exposureOf } from "./exposure";
+import { RX } from "@/lib/brief/prescriptions";
+/** W8(0단계 집계: W6.1 8권 0 · W7 m3 9권 5): 처방 갈래 이름 노출 — 「처방」 낱말, 갈래 이름을 「」로 부르거나 「~ 쪽」「~을 처방」으로 쓴 꼴(「·」는 「과·와」로 풀어 쓴 꼴 포함). */
+const RX_NAME = RX.map(([kd]) => kd.split("·").map(x => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).join("(?:·|과 |와 )")).join("|");
+const RX_LABEL = new RegExp(`처방|「(?:${RX_NAME})」|(?:${RX_NAME})(?:을|를)? (?:쪽|처방|종류)`);
+export const rxLabel = (s: string): boolean => RX_LABEL.test(s.replace(/[⟪⟫]/g, ""));
 import { lifeScene, nounsBacked, sceneBacked, unbackedScene, type InfoCard } from "./info";
 import { personaHit, type PersonaCtx } from "./persona";
 import { MARK_LEFT, newMarkState, renderMarks, type MarkTable } from "../marks";
-import { brokenSentence, fixBareParenParticle, fixEchoPhrase, stripGlossEcho, unbalancedAt } from "./broken";
+import { brokenSentence, fixBareParenParticle, fixEchoPhrase, fixJudgeWords, stripGlossEcho, unbalancedAt } from "./broken";
 import { contradictionFlags, inferiorAsStrength, relationLink, relationLinkAfter, relationLinkFrame, reversalFlags, type ContradictionCtx } from "./contradiction";
 
 export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_excess" | "meaning_repeat" | "scene_repeat" | "nickname" | "farming" | "second_image"
@@ -40,6 +45,8 @@ export type P6cRule = "db_copy" | "prior_overlap" | "formula_excess" | "backref_
   | StyleRule | "fn_role"
   // W3 P3 4절: 판정 등급어·생성 규칙 문구 노출(exposure.ts) · 보강: 카드에 없는 구체 장면 단정(info.ts concreteScene, 문체 규칙 — 수리로만)
   | "grade_leak" | "rule_leak" | "scene_unbacked"
+  // W8: 처방 갈래 이름 노출(「연락과 안부를 처방으로 삼아 보세요」 — 개선 갈래, 문장 떼기)
+  | "rx_label"
   // W4 Q2-4: 물음 상한(장마다 1개, 같은 꼬리 책 6번 — 수리 → 남으면 그 문장만 뗀다) · 문체 예시 세 어절 복사(HARD, 수리) · 남의 성격 문장(차원 문구 방향 틀림 HARD / 그대로 복사 SOFT)
   | "question_excess" | "example_words" | "persona_mismatch" | "persona_copy"
   // W5 R1: 사실 표시(⟦…⟧)가 남았거나 모르는·깨진 표시(HARD, 문장 떼기) · R3 F4: 씨앗으로만 받쳐진 장면을 이 사람의 버릇으로 단정(문체, 문장 떼기)
@@ -57,7 +64,7 @@ export const HARD_RULES: ReadonlySet<P6cRule> = new Set<P6cRule>(["safety", "sch
   "group_claim", "fragment", "empty_preview", "count_mismatch", "dayun_year", "pair_both", "self_correction", "chapter_ref", "time_deictic", "calendar_month", "negative_claim", "invest_directive", "intensity_claim",
   "guide_copy", "orphan_start", "feature_owner", "mbti_misattr", "pillar_claim", "element_count", "scene_owner", "pair_profile", "glyph_list", "ilju_phrase", "avoid_image",
   "fact_term", "fact_relation", "fact_strength", "fact_ganji", "fact_meaning", "fact_mix", "fact_dayun", "common_split", "render_dup", "label_leak", "time_fixed", "input_outside", "fn_role",
-  "grade_leak", "rule_leak", "fact_count", "example_words", "persona_mismatch", "fact_mark",
+  "grade_leak", "rule_leak", "rx_label", "fact_count", "example_words", "persona_mismatch", "fact_mark",
   "broken_sentence", "self_contradiction", "link_relation", "fact_season", "fact_direction"]);
 /** 안전망 문장 규칙 가운데 문체(삭제·문단 빼기 대상이 아닌 것). */
 const SOFT_SAFETY: ReadonlySet<SentenceRule> = new Set<SentenceRule>(["example_copy", "duplicate_sentence", "nickname", "rural_prop"]);
@@ -166,6 +173,7 @@ export const HINT: Readonly<Record<P6cRule, string>> = {
   persona_mismatch: "이 사람의 성향과 반대 방향의 성격 문장을 썼다(detail) → 그 성향 쪽(브리프 traits·mbti 근거) 문장으로 고치거나 뺀다",
   persona_copy: "성격 차원 설명 문구를 그대로 옮겼다(detail) → 이 사람 근거(이름·자리)와 묶어 새 문장으로 쓴다",
   scene_unbacked: "브리프 근거·입력에 없는 구체 장면(장소·물건·앱·사건: detail)을 이 사람의 버릇·겪음으로 말했다(단정이든 물음이든) → 구체 소품을 빼고 그 소제목 근거(이름·자리)에서 나온 성향만 단정으로 쓴다. 물음은 장마다 하나까지",
+  rx_label: "행동 조언의 종류 이름(처방·「연락·안부」 같은 갈래 이름)을 본문에 그대로 썼다 → 종류 이름 없이 그 행동 자체만 쓴다",
   rule_leak: "책을 만든 규칙·입력 상태·날짜 기준을 독자에게 말했다('시간 미상', '입력된 게 없으니', '가정으로만', '…를 기준으로 썼어요') → 그 말을 빼고 이 사람 이야기만 쓴다(가정이 필요하면 '~하게 된다면' 한 마디로)",
   fact_count: "합·충·형·해·관계의 개수를 정답지와 다르게 말했다 → detail의 개수로 고치거나 개수 말을 뺀다",
   phrase_repeat: "다른 장에서 쓴 구절을 되풀이했다 → 이 장의 새 정보·새 장면으로 바꿔 쓴다(같은 처방·같은 장면 금지)",
@@ -356,10 +364,13 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     fnJoin++; introduced.add(a); introduced.add(b);
     return `${pa}(${a})${hasBatchim(`${pa}(${a})`) ? "과" : "와"} ${pb}(${b})`;
   }).replace(/([가-힣]{2,4})(\((?:Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\))? \1(?=[과와은는이가을를의에도]|\s|$|[,.])/g, "$1$2");
+  // 이름의 말이 앞에 있는지: 낱말 머리에서만 · 흔한 용언 꼴은 빼고(W7 m3 1차 연애 「의견을 구하는 … 일 되게 하는 판단(Te)」 → 「성향(Te)」 — 「구하는」 안의 「하는」을 되풀이로 봤다).
+  const ECHO_GENERIC = /^(?:하는|되는|되게|하게|있는|없는|주는|보는)$/;
+  const echoed = (plain: string, before: string) => plain.split(/\s+/).some(w => w.length >= 2 && !ECHO_GENERIC.test(w) && new RegExp(`(?:^|[^가-힣])${w.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}`).test(before));
   // 작가가 쓴 "쉬운 이름(약어)"도 바로 앞(24자)에 그 이름의 말이 있으면 "성향(약어)"로("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)", 최종판 1-14).
   const fixEcho = (p: string) => p.replace(new RegExp(`(${plains.length ? plains.join("|") : "(?!)"})\\((Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\\)`, "g"), (all, plain: string, code: string, offset: number, whole: string) => {
     const before = whole.slice(Math.max(0, offset - 24), offset);
-    if (!plain.split(/\s+/).some(w => w.length >= 2 && before.includes(w))) return all;
+    if (!echoed(plain, before)) return all;
     mbtiCode++; introduced.add(code); return `성향(${code})`;
   });
   const fixCodes = (p: string) => p.replace(/(?<![A-Za-z(])(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)(?![A-Za-z)])(\(([^()]{2,24})\))?(은|는|이|가|을|를|과|와)?/g, (all, code: string, _g: string, inner: string | undefined, particle: string | undefined, offset: number, whole: string) => {
@@ -370,9 +381,9 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
     mbtiCode++;
     // 바로 앞(24자)에 쉬운 이름의 말(두 글자 이상)이 이미 있으면 이름을 되풀이하지 않는다("지난 경험을 기준점으로 삼는 지난 경험 기억(Si)").
     const before = whole.slice(Math.max(0, offset - 24), offset);
-    const echoed = plain.split(/\s+/).some(w => w.length >= 2 && before.includes(w));
-    const name = echoed ? "성향" : plain;
-    const word = introduced.has(code) && !echoed ? name : `${name}(${code})`;
+    const echo = echoed(plain, before);
+    const name = echo ? "성향" : plain;
+    const word = introduced.has(code) && !echo ? name : `${name}(${code})`;
     introduced.add(code);
     return particle ? withJosa(word, particle) : word;
   });
@@ -398,7 +409,7 @@ export function tidyBook(chapters: readonly FinalChapter[], ctx: Pick<LintCtx, "
       // 최종판3 12: 쉬운 이름 치환 겹침(「배우는 힘인 배우는 힘은」→「배우는 힘은」).
       { const c = collapseRenderDup(q); if (c !== q) { words++; q = c; } }
       // W6.1 P1(4종): 괄호 풀이를 본문이 바로 되풀이하면 풀이 괄호를 떼고, 괄호 이름 뒤 빠진 조사(「(식상) 적은」)를 넣는다.
-      if (ctx.broken) { const g = stripGlossEcho(q); words += g.count; q = g.text; const b = fixBareParenParticle(q); words += b.count; q = b.text; const e = fixEchoPhrase(q); words += e.count; q = e.text; }
+      if (ctx.broken) { const g = stripGlossEcho(q); words += g.count; q = g.text; const b = fixBareParenParticle(q); words += b.count; q = b.text; const e = fixEchoPhrase(q); words += e.count; q = e.text; const j = fixJudgeWords(q); words += j.count; q = j.text; }
       // AM 1부 판독(45 2·8장, 48 8장): 같은 문장이 연달아 두 번(수리 흔적) → 하나로.
       // AM2-3 6-2: 글자까지 같지 않아도 거의 같은 문장(수리가 말만 조금 바꿔 다시 쓴 것)은 뒤 문장을 뺀다(E.nearDuplicate — 세운·대운과 같은 함수).
       { const ss = splitSentences(q), keep = ss.filter((x, i) => i === 0 || !E.nearDuplicate(ss[i - 1], x)); if (keep.length < ss.length) { words += ss.length - keep.length; q = keep.join(" "); } }
@@ -527,6 +538,8 @@ export function lintBook(chapters: readonly FinalChapter[], ctx: LintCtx): LintF
           // 안전망 문장 규칙(P6d B): 예전에는 지웠다. 이제 수리로 보내고, 수리 뒤에도 걸리면 문단째 뺀다(문체 규칙은 그대로 둔다).
           const sv = sentenceViolation(sen, ctx.facts, ctx.allowed, Boolean(ctx.conditionalChapters?.has(c.n)), Boolean(ctx.childChapters?.has(c.n)));
           if (sv && !SOFT_SAFETY.has(sv)) { flag({ ...at, rule: "safety", detail: sv }); continue; }
+          // W8: 처방 갈래 이름 노출(개선) — 안전망이 이미 차단으로 잡는 꼴(「…처방이에요」 내부 말)은 위에서 먼저.
+          if (writer && rxLabel(sen)) { flag({ ...at, rule: "rx_label" }); continue; }
           if (L.pastAssertion(sen) === null && isPastAssertion(sen)) { flag({ ...at, rule: "past_assertion", detail: "experience_assert" }); continue; }
           if (D.fragmentSentence(raw, i === sens.length - 1)) { flag({ ...at, rule: "fragment" }); continue; }
           if (D.emptyPreview(sen, sens[i + 1])) { flag({ ...at, rule: "empty_preview" }); continue; }

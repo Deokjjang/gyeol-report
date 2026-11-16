@@ -12,10 +12,11 @@ import { ANAPHOR_SHORT, dependsOnRemoved, listItemIn, removeSentenceAt, stripCon
 import { HARD_RULES, type LintFlag, type P6cRule } from "./safety/p6c";
 import type { AppliedRepair } from "./repair3";
 import { gateClassOf, IMPROVE_DROP_MIN_LEFT } from "./gate";
+import { SAME_MIN, sameSentence } from "./safety/info";
 
 export type RepairMode = "rewrite" | "drop" | "none";
 /** HARD 가운데 문장 떼기(다시 써도 같은 내부 말이 남거나 없는 사실을 새로 만든 규칙). */
-const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "negative_claim", "fact_mark", "label_leak", "broken_sentence"]);
+const DROP_HARD: ReadonlySet<string> = new Set(["safety", "rule_leak", "rx_label", "negative_claim", "fact_mark", "label_leak", "broken_sentence"]);
 /** SOFT 가운데 문장 떼기(재탕·물음 초과·씨앗 단정). */
 const DROP_SOFT: ReadonlySet<string> = new Set(["question_excess", "phrase_repeat", "notice_repeat", "scene_repeat", "prop_repeat", "advice_repeat", "seed_assert", "meaning_repeat", "closing_repeat"]);
 /** SOFT 가운데 다시 쓰기(R0 득: 근거 없는 장면 28/30 · 용어 풀이 22/26, 그 밖 표본 작지만 고침 1/1인 별명·다섯 힘 이름·피할 그림·같은 일주 구절·이전 책 겹침·필수 근거 덧붙임·비문 꼴). */
@@ -50,10 +51,12 @@ const POINTS_BACK = /^[^.?!]{0,20}(?:이|그|이런|그런) (?:순서|방법|습
  */
 export const leadNamesSubject = (lead: string, next: string | undefined): boolean => next !== undefined && SUBJECT_TERM.test(lead) && !SUBJECT_TERM.test(next);
 const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
-export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" | "list" };
+export type DropRecord = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "only_sentence" | "key" | "thin" | "lead" | "list" | "mid" };
 export type DropTarget = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly sentence: string; readonly rule: string; readonly hard: boolean; readonly detail?: string };
 /** W6 S0-1: 개선 규칙은 떼고 난 문단이 IMPROVE_DROP_MIN_LEFT(3)문장 이상일 때만 뗀다(차단 규칙은 그대로). */
 export const improveOnly = (rule: string, detail?: string) => gateClassOf(rule, detail) === "improve";
+/** W7 m1: 내용 반복 규칙(뒤 문장이 기대는 내용 문장을 뗀다) — 문단 끝 문장만 뗀다. */
+export const REPEAT_DROP = /^(?:phrase|scene|prop|advice)_repeat$|^review_R$/;
 /**
  * 그 문장만 뗀다(호출 0). 앞뒤 이음 확인: ① 다음 문장이 앞말에 기대면(지시어·「때문입니다」) SOFT는 남기고, HARD는 기대는 문장까지 함께 뗀다
  * ② 뗀 문장이 바로 앞 물음의 답이면 물음도 뗀다 ③ 다음 문장 머리 접속어는 뗀다 ④ 소제목에 문장이 하나만 남으면 SOFT는 떼지 않는다 ⑤ ⟪핵심 문장⟫은 SOFT면 떼지 않는다.
@@ -80,6 +83,8 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     if (improveOnly(t.rule, t.detail) && next !== undefined && POINTS_BACK.test(next)) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
     if (improveOnly(t.rule, t.detail) && ss.length - 1 - (leans && t.hard ? 1 : 0) < IMPROVE_DROP_MIN_LEFT) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "thin" }); continue; }
     if (leans && !t.hard) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "leans" }); continue; }
+    // W7 m1(1차 궁합 9장 「두 사람에게는 귀한 기운도 함께 있어요」 뒤 · 1차 커리어 8장 「한가한 평일 하루를 정해 두면」): 반복 규칙으로 문단 가운데 문장을 떼면 뒤 문장이 기대던 앞말(무엇을·누구의)이 빠진다 → 반복 규칙은 문단 끝 문장만 뗀다(노출·금지 규칙은 그대로).
+    if (REPEAT_DROP.test(t.rule) && i < ss.length - 1) { dropped.push({ at, sentence: t.sentence, rule: t.rule, kept: "mid" }); continue; }
     let rest = removeSentenceAt(ss, i).sentences;
     if (leans) { let prevGone = t.sentence; for (let n = 0; n < 3 && i < rest.length; n++) { const d = n === 0 ? dep : dependsOnRemoved(prevGone, norm(rest[i]), o); if (!d) break; dropped.push({ at, sentence: norm(rest[i]), rule: `${t.rule}:${d}` }); prevGone = norm(rest[i]); rest = rest.filter((_, j) => j !== i); } }
     if (i > 0 && ASKS.test(norm(ss[i - 1]).trim()) && !/⟪/.test(ss[i - 1]) && !ASKS.test(t.sentence.trim()) && (rest.length > 1 || sec.paragraphs.filter(Boolean).length > 1)) { dropped.push({ at, sentence: norm(ss[i - 1]), rule: `${t.rule}:question` }); rest = rest.filter((_, j) => j !== i - 1); }
@@ -87,6 +92,34 @@ export function dropSentences(chapters: readonly FinalChapter[], targets: readon
     dropped.push({ at, sentence: t.sentence, rule: t.rule });
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(x => x.trim()) })) })), dropped };
+}
+/** W7 m3 같은 문장 둘 — 글자 2-gram 85% 이상(어미만 다른 꼴 포함). */
+export const TWIN_JACCARD = 0.85;
+/**
+ * W7 m3(1차 궁합 m2: 반복 규칙 「문단 끝만 떼기」로 「…쪽은 두 사람 중 최지우님이 더 강합니다/강해요」가 두 장에 모두 남음): 수리 뒤 책 안에 거의 같은 문장이
+ * 다시 나오면 하나를 뗀다(W8: 문단 첫 문장은 떼지 않음) — 뒤 것을 떼되 다음 문장이 그 문장에 기대거나 접속어로 이으면(「그래서 …」) 앞 것을, 둘 다 기대거나 문단에 한 문장뿐이면 그대로 둔다. 표시(⟪⟫)·결정론 장은 건드리지 않는다. 호출 0.
+ */
+export function dropBookTwins(chapters: readonly FinalChapter[], o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; dropped: DropRecord[] } {
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const dropped: DropRecord[] = [];
+  type Pos = { ci: number; si: number; pi: number; ti: number; ss: string[] };
+  const list = (): Pos[] => out.flatMap((c, ci) => c.source === "deterministic" ? [] : c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => { const ss = splitSentences(p); return ss.map((_, ti) => ({ ci, si, pi, ti, ss })); })));
+  // W8: 문단 첫 문장은 떼지 않는다(W7 m3 새 연애 8장 — 정의 문장이 문단 머리라 떼자 뒤 문장 「이 힘이」가 앞말을 잃음).
+  const removable = (x: Pos) => { const next = x.ss[x.ti + 1] !== undefined ? norm(x.ss[x.ti + 1]) : undefined; return x.ti > 0 && x.ss.length >= 2 && !/⟪/.test(x.ss[x.ti]) && dependsOnRemoved(norm(x.ss[x.ti]), next, o) === null && !(next && stripConnective(next)); };
+  for (let guard = 0; guard < 20; guard++) {
+    const L = list(); let hit: Pos | undefined;
+    outer: for (let j = 1; j < L.length; j++) for (let i = 0; i < j; i++) {
+      const a = L[i], b = L[j];
+      if (!sameSentence(norm(a.ss[a.ti]), norm(b.ss[b.ti]), SAME_MIN, TWIN_JACCARD)) continue;
+      hit = removable(b) ? b : removable(a) ? a : undefined;
+      if (hit) break outer;
+    }
+    if (!hit) break;
+    const c = out[hit.ci], sec = c.sections[hit.si];
+    (sec.paragraphs as string[])[hit.pi] = removeSentenceAt(hit.ss, hit.ti).sentences.join(" ");
+    dropped.push({ at: `${c.n}.${hit.si}.${hit.pi}`, sentence: norm(hit.ss[hit.ti]), rule: "book_twin" });
+  }
+  return { chapters: out, dropped };
 }
 /** 접속어 과다(connective_excess): 걸린 문장의 앞 접속어만 뗀다(호출 0). */
 export function stripConnectiveFlags(chapters: readonly FinalChapter[], flags: readonly LintFlag[]): { chapters: FinalChapter[]; count: number } {

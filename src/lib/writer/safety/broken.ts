@@ -51,13 +51,16 @@ function commonRun(a: string, b: string): number {
 }
 const GLOSS = /([가-힣]{2,8})\(([^()]{8,60})\)((?:은|는|이|가|을|를|과|와|의|도|에는|에|으로|로)(?![가-힣]))?/g;
 export const GLOSS_ECHO_MIN = 8;
+/** W7 m1(1차 커리어 2·4장 「식신(만들고 다듬는 재능)은 만들고 다듬는 일에」「장성살(앞에 서면 힘이 실리는 기운)이 더해져 앞에 서면 무게가」): 풀이와 본문이 6자 이상 겹치거나, 풀이의 이어진 두 낱말(4자 이상)을 본문이 그대로 되풀이해도 되풀이다. */
+export const GLOSS_ECHO_RUN = 6;
+const glossPairs = (gloss: string): string[] => { const w = gloss.match(/[가-힣0-9]+/g) ?? [], out: string[] = []; for (let i = 0; i + 1 < w.length; i++) if (w[i].length >= 2 && w[i + 1].length >= 2) out.push(`${w[i]} ${w[i + 1]}`); return out; };
 /** W6.1 P1: 괄호 풀이 바로 뒤(같은 문장 60자 안)에서 본문이 풀이의 8자 이상(한글·숫자)을 되풀이한 곳 — 「정관(평가와 기준이 또렷한 자리에서 인정받는 힘)이 있어서 평가와 기준이 또렷한 자리에서」(1차 커리어 수리 답 ×3). */
 export function glossEchoes(sen: string): { readonly all: string; readonly base: string; readonly particle: string; readonly at: number }[] {
   const out: { all: string; base: string; particle: string; at: number }[] = [];
   for (const m of sen.matchAll(GLOSS)) {
     const g = nk(m[2]); if (g.length < GLOSS_ECHO_MIN) continue;
-    const rest = sen.slice(m.index! + m[0].length), end = rest.search(/[.?!]/), after = nk((end < 0 ? rest : rest.slice(0, end)).slice(0, 60));
-    if (commonRun(g, after) >= GLOSS_ECHO_MIN) out.push({ all: m[0], base: m[1], particle: m[3] ?? "", at: m.index! });
+    const rest = sen.slice(m.index! + m[0].length), end = rest.search(/[.?!]/), afterRaw = (end < 0 ? rest : rest.slice(0, end)).slice(0, 60), after = nk(afterRaw);
+    if (commonRun(g, after) >= GLOSS_ECHO_RUN || glossPairs(m[2]).some(p => afterRaw.includes(p))) out.push({ all: m[0], base: m[1], particle: m[3] ?? "", at: m.index! });
   }
   return out;
 }
@@ -70,6 +73,16 @@ const josaFor = (word: string, p: string): string => {
 export function stripGlossEcho(text: string): { text: string; count: number } {
   let count = 0, out = text;
   for (const sen of out.match(/[^.?!]+[.?!]*/g) ?? []) for (const e of glossEchoes(sen)) { const fixed = e.base + josaFor(e.base, e.particle); const next = sen.replace(e.all, fixed); if (next !== sen) { out = out.replace(sen, next); count++; } }
+  // W7 m1(1차 종합 2장 「편재(움직이는 돈과 큰 판을 다루는 힘)가 있어요. 편재(偏財)는 움직이는 돈과 큰 판을 다루는 감각이라」): 다음 문장이 같은 이름으로 시작해 풀이를 되풀이하면 앞 문장의 풀이 괄호를 뗀다.
+  const sens = out.match(/[^.?!]+[.?!]*/g) ?? [];
+  for (let i = 0; i + 1 < sens.length; i++) {
+    const nextHead = sens[i + 1].trimStart();
+    for (const m of [...sens[i].matchAll(GLOSS)]) {
+      if (!nextHead.startsWith(m[1]) || commonRun(nk(m[2]), nk(nextHead.slice(0, 80))) < GLOSS_ECHO_MIN) continue;
+      const fixed = sens[i].replace(m[0], m[1] + josaFor(m[1], m[3] ?? "")); if (fixed === sens[i]) continue;
+      out = out.replace(sens[i], fixed); sens[i] = fixed; count++;
+    }
+  }
   return { text: out, count };
 }
 /** W6.1(1차 커리어 6장): 「만드는 힘(식상) 적은 쪽이라」 — 괄호 이름 뒤 조사 없이 꾸밈말. 정리는 받침에 맞춘 「이·가」를 넣는다. */
@@ -85,10 +98,21 @@ export function fixBareParenParticle(text: string): { text: string; count: numbe
  */
 const PILLAR_ECHO = /(?<![가-힣])(일주|월주|연주|시주) ([가-힣]{2}(?:\([一-鿿]{2}\))? \1)(?=[은는이가을를의도와과로에]?(?:[\s,.!?]|$))/g;
 const HAVE_TWICE = /(에게|에는|에) 있는 ([^.?!,]{1,24}?)(이|가) 있(?=어서|고 |어요|습니다|으니|는데)/g;
+/** W7 m1(1차 궁합 1장 「태어난 날 기둥이 태어난 날 기둥(일주) 갑신이에요」): 작가 자리 말 바로 뒤에 같은 자리 구절이 렌더된 꼴 → 구절 하나로. */
+const PLACE_ECHO = /(태어난 (?:해|달|날|시각) (?:기둥|하늘 글자|땅 글자))(?:이|가|은|는|의)? \1(?=\()/g;
 export function fixEchoPhrase(text: string): { text: string; count: number } {
   let count = 0;
   const out = text.replace(PILLAR_ECHO, (_a, _p: string, rest: string) => { count++; return rest; })
-    .replace(HAVE_TWICE, (_a, at: string, what: string, j: string) => { count++; return `${at} ${what}${j} 있`; });
+    .replace(HAVE_TWICE, (_a, at: string, what: string, j: string) => { count++; return `${at} ${what}${j} 있`; })
+    .replace(PLACE_ECHO, (_a, place: string) => { count++; return place; });
+  return { text: out, count };
+}
+/** W7 m1(1차 종합 3장 「오행으로 보면 흙이 많음이고 물이 부족이에요」): 판정 낱말(많음·부족)을 서술어처럼 쓴 꼴 → 용언으로. */
+const JUDGE_WORD = /([가-힣](?:이|가) )(많음|적음|부족|없음|강함|약함)(이고|이에요|입니다|이라서|이라)(?=[\s,.!?]|$)/g;
+const JUDGE_STEM: Readonly<Record<string, readonly [string, string, string, string]>> = { 많음: ["많고", "많아요", "많습니다", "많아서"], 적음: ["적고", "적어요", "적습니다", "적어서"], 부족: ["부족하고", "부족해요", "부족합니다", "부족해서"], 없음: ["없고", "없어요", "없습니다", "없어서"], 강함: ["강하고", "강해요", "강합니다", "강해서"], 약함: ["약하고", "약해요", "약합니다", "약해서"] };
+export function fixJudgeWords(text: string): { text: string; count: number } {
+  let count = 0;
+  const out = text.replace(JUDGE_WORD, (_a, lead: string, w: string, tail: string) => { count++; const f = JUDGE_STEM[w]; return lead + f[tail === "이고" ? 0 : tail === "이에요" ? 1 : tail === "입니다" ? 2 : 3]; });
   return { text: out, count };
 }
 /** P3: 앞 문장과 같은 말을 「반면」으로 이음 — 조사 뗀 낱말 셋이 이어서 같으면(「마음 가는 쪽」). */
