@@ -22,8 +22,9 @@ for (const f of k.features.values()) for (const list of Object.values(f.scenes))
 for (const p of k.mbti.values()) for (const list of Object.values(p.signals)) for (const s of list) sceneIndex.set(s.text, s.requires);
 // P6d F: MBTI 장면 씨앗(rel·job 전제 → 같은 조건 꼴).
 const partnerSeeds = new Set<string>();
-for (const seeds of k.mbtiSeeds.values()) for (const list of Object.values(seeds)) for (const s of list) { sceneIndex.set(s.text, { relationship: "any", children: "any", job: !s.job || s.job === "any" ? "any" : s.job } as SceneRequires); if (s.rel === "partner") partnerSeeds.add(s.text); }
-for (const rules of k.fusionByFeature.values()) for (const r of rules) if (r.scene) sceneIndex.set(r.scene.text, r.scene.requires);
+// W6 S2-1: 4종 브리프는 씨앗·연결 장면의 넓은 꼴(broad)을 싣는다 — 같은 조건으로 색인.
+for (const seeds of k.mbtiSeeds.values()) for (const list of Object.values(seeds)) for (const s of list) { const req = { relationship: "any", children: "any", job: !s.job || s.job === "any" ? "any" : s.job } as SceneRequires; for (const t of [s.text, s.broad]) if (t) { sceneIndex.set(t, req); if (s.rel === "partner") partnerSeeds.add(t); } }
+for (const rules of k.fusionByFeature.values()) for (const r of rules) if (r.scene) for (const t of [r.scene.text, r.scene.broad]) if (t) sceneIndex.set(t, r.scene.requires);
 for (const e of k.tenGodPeriod.values()) for (const s of [...e.year.scenes, ...e.month.scenes]) sceneIndex.set(s.text, s.requires);
 
 function scenesOf(b: Brief): string[] {

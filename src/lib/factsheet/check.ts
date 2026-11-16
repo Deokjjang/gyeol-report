@@ -4,10 +4,14 @@
  * detail에는 맞는 사실을 적는다(수리 지시에 그대로 간다).
  */
 import type { Knowledge } from "@/lib/brief/knowledge";
-import type { FactSheet, PersonFacts, RelationFact, Slot } from "./build";
+import { hangulOf, type FactSheet, type Pos, type PersonFacts, type RelationFact, type Slot } from "./build";
+import { TEN_GOD_KO } from "@/lib/brief/labels";
+import { getTenGod } from "@/lib/saju/tenGods";
+import type { FiveElement } from "@/lib/saju/types";
+import { isHapKind, relationName } from "@/lib/compat/relations";
 import { BRANCH_REL, branchChars, ELEMENT_OF, POSITION_WORDS, REL_KIND, shinsalAliases, STAGE_HAN, STAGE_ONE, STAGE_TWO, STEM_REL, stemChars, stemHan, type ShinsalAlias } from "./aliases";
 
-export type FactRule = "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside";
+export type FactRule = "fact_none" | "fact_term" | "fact_relation" | "fact_strength" | "fact_ganji" | "fact_meaning" | "fact_mix" | "fact_dayun" | "fact_count" | "common_split" | "render_dup" | "label_leak" | "time_fixed" | "input_outside" | "fact_season" | "fact_direction";
 export type FactHit = { readonly rule: FactRule; readonly detail: string };
 export type FactCtx = {
   readonly sheet: FactSheet; readonly aliases: readonly ShinsalAlias[];
@@ -62,6 +66,12 @@ function termPosition(sen: string, ctx: FactCtx, owners: readonly PersonFacts[])
 
 /** 정답지에 없는 신살·귀인·십이운성을 그 사람 것으로 말함(부정·가정·유입 문맥 제외). */
 function termAbsent(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  // W6.1 D7: 같은 신살의 다른 이름(년살 = 도화살)은 sameAs 이름 하나로만 쓴다(「도화살과 년살 두 힘」 방지) — 원국 신살 이름이라 때 낱말 문단도 본다. 둘이 같다고 풀어 말한 문장은 뺀다.
+  if (!NEG.test(sen) && !HYPO.test(sen)) for (const a of ctx.aliases) {
+    if (!a.re.test(sen)) continue;
+    const same = owners.flatMap(o => o.shinsal.filter(s => s.name === a.name && s.sameAs)), holders = owners.filter(o => o.shinsal.some(s => s.name === a.name)).length;
+    if (same.length && same.length === holders && !(sen.includes(same[0].sameAs!.replace(/살$/, "")) && /같은|달리 부른|다른 이름|곧 /.test(sen))) return { rule: "fact_term", detail: `${a.name}은 ${same[0].sameAs}과 같은 자리의 같은 신살이다(${same[0].sameAs} 하나로 쓴다 — 두 힘으로 나누지 않음)` };
+  }
   // AM 7부(annual-2·3 판독): 세운 달 카드의 「원진이 함께 걸려」「이 달은 공망에 들어서」는 그 달 기둥과 원국 사이 일이다 — 해·달 카드, 때 낱말이 든 문단은 유입 문맥으로 본다.
   if (NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen) || inKey || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
   for (const a of ctx.aliases) {
@@ -128,6 +138,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     if (!x.stem && x.chars.some(c => !/[子丑寅卯辰巳午未申酉戌亥]/.test(c))) continue;
     const found = pool.filter(r => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars));
     if (found.length) continue;
+    // W3 P3 5절: 궁합 정답지가 삼형을 한 줄(세 글자)로 묶는다 — 그 안의 두 글자 형(「축술형」)은 맞는 말.
+    if (x.chars.length === 2 && x.kinds.includes("HYEONG") && pool.some(r => r.kind === "HYEONG" && r.subtype === "삼형" && x.chars.every(c => r.members.some(m => m.char === c)))) continue;
     // AM 7부(annual-3 판독): 「사유축 반합」은 무리 이름 + 반합(세 글자 중 두 글자만)이다 — 그 무리의 반합(두 글자)이 있으면 맞는 말.
     if (/반합$/.test(x.text) && x.chars.length === 3 && pool.some(r => r.kind === "SAMHAP" && r.completeness !== "full" && r.members.every(m => x.chars.includes(m.char)))) continue;
     // AM 7부(annual-2 판독): 세 글자 형·합(축술미형·인사신형)이 원국 두 글자 + 그 해·달·대운 한 글자로 다 모이면 엔진 카드와 같이 본다.
@@ -136,7 +148,8 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
     const partial = x.chars.length === 3 ? pool.filter(r => x.kinds.includes(r.kind) && r.members.every(m => x.chars.includes(m.char))) : [];
     const have = new Set(owners.flatMap(o => Object.values(o.pillars).flatMap(p => (p ? [p.stem, p.branch] : []))));
     const missing = x.chars.filter(c => !have.has(c as never) && !ctx.sheet.pair);
-    if (negOrHypo(sen)) continue;
+    // W5 R1-3: 부정은 그 관계 말 바로 뒤(두 어절 안)에 붙은 것만 본다 — 「갑기합이 아니라 병신합이 걸려 있어」의 「아니」가 뒤의 병신합 주장까지 덮었다(W4 1차 궁합).
+    if (negatedAt(sen, x.text) || /라면|다면/.test(sen)) continue;
     return { rule: "fact_relation", detail: partial.length ? `「${x.text}」: 세 글자가 다 있지 않다(${partial.map(r => `${[...new Set(r.members.map(m => m.char))].join("")} 두 글자 형`).join("·")}만 있다)` : missing.length ? `「${x.text}」: ${missing.join("·")} 글자가 원국에 없다` : `「${x.text}」 관계는 정답지에 없다` };
   }
   // 글자 수·완성도: 관계 말이 하나일 때.
@@ -152,7 +165,143 @@ function relationClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
   }
   return null;
 }
-const negOrHypo = (s: string) => /없(어|는|고|다|습니다)|아니|않|라면|다면/.test(s);
+/** 관계 말(text) 바로 뒤 두 어절 안에 부정(아니·없·않)이 붙었는가. */
+const negatedAt = (sen: string, text: string) => { const i = sen.indexOf(text); return i >= 0 && /^(이|가|은|는|도|과|와)?(\s[가-힣]{1,6}){0,2}\s?(아니(다|라|에요|고|야|죠)|없(다|어|습니다|고|는|으니|지만|을)|않(아|고|는|습니다|지만|다|을))/.test(sen.slice(i + text.length, i + text.length + 18)); };
+/**
+ * W5 R1-3 궁합: 한 사람 사주 안의 관계를 두 사람 사이 일처럼 씀(W4 1차 궁합 6장 「장덕민님의 연지 묘와 일지 신은 서로 원진이라 … 최지우님의 정재 일지와 만나면」).
+ * 관계 말(「묘신 원진」·「연지 묘와 일지 신은 서로 원진」)의 글자 짝이 두 사람 사이 관계에는 없고 한 사람 원국에만 있는데, 문장이 다른 사람 이름이나 「두 사람」을 부르면 잡는다.
+ * 표시 구절(「○○님 사주 안의 …」)을 그대로 쓴 문장은 주인을 밝혔으므로 보지 않는다.
+ */
+const POS_GLYPH = "(?:연지|월지|일지|시지|년지|태어난 (?:해|달|날|시각) 땅 글자) ?([자축인묘진사오미신유술해])";
+const POS_REL = new RegExp(`${POS_GLYPH}(?:과|와) (?:[^,.?!]{0,16}?)${POS_GLYPH}(?:은|는|이|가|의)? ?(?:서로 |사이의? |사이에는? |끼리 )?(육합|삼합|반합|합|충|형|파|해|원진)(?=[이가은는을를의와과도에로만]|[^가-힣]|$)`, "g");
+/**
+ * W5 R1-3: 자리 글자와 관계 글자가 다름(W4 1차 궁합 1장 「장덕민님의 월간 신금과 최지우님의 일간 기토 사이에는 … 병신합이 걸려 있어」 — 병신합은 있지만 그 두 자리 글자의 관계가 아니다).
+ * 한 문장에 자리+글자(「월간 신」「태어난 날 땅 글자 해」)가 둘 이상 있고, 부정되지 않은 글자 짝 관계 말의 글자가 그 자리 글자 안에 다 들지 않으면 잡는다.
+ */
+const POS_TOKEN = /(?:연간|월간|일간|시간|연지|월지|일지|시지|년간|년지|태어난 (?:해|달|날|시각) (?:하늘|땅) 글자) ?([갑을병정무기경신임계자축인묘진사오미유술해])[목화토금수]?(?=[과와은는이가의을를,\s]|$)/g;
+function relationGlyphMismatch(sen: string): FactHit | null {
+  const pos = [...sen.matchAll(POS_TOKEN)].map(m => m[1]);
+  if (pos.length < 2 || HYPO.test(sen)) return null;
+  const glyphs = new Set(pos);
+  for (const m of [...sen.matchAll(STEM_REL), ...sen.matchAll(BRANCH_REL)]) {
+    if (negatedAt(sen, m[0])) continue;
+    const chars = [...m[1]];
+    if (chars.some(c => !glyphs.has(c))) return { rule: "fact_relation", detail: `「${m[0]}」의 글자(${chars.join("·")})가 문장의 자리 글자(${[...glyphs].join("·")})와 다르다 — 그 두 자리의 관계가 아니다` };
+  }
+  return null;
+}
+/** W5 R1-3: 땅 글자 자리(일지 등)를 기둥 이름(간지 두 글자)으로 부름(W4 1차 궁합 「장덕민님의 일지는 갑신입니다」 — 일지는 申 한 글자, 갑신은 일주). */
+const BRANCH_AS_PILLAR = /(연지|월지|일지|시지|년지)(?:는|은|가|이|의)? ([가-힣]{2})(?=[이가은는의으로입예에과와을를도만,\s]|$)/;
+function branchAsPillar(sen: string, owners: readonly PersonFacts[], ctx?: FactCtx): FactHit | null {
+  const m = sen.match(BRANCH_AS_PILLAR); if (!m || !isGanjiKo(m[2])) return null;
+  // W6 A3(W5 1차 궁합 「장덕민님의 일지 갑신에는」 — 두 이름이 든 문장이라 사람을 못 정했다): 자리 말 앞 가장 가까운 이름의 사람.
+  if (owners.length !== 1 && ctx && ctx.people.length > 1) { const who = nearestOwner(sen, m.index ?? 0, ctx); if (who < 0) return null; owners = [ctx.people[who].facts]; }
+  if (owners.length !== 1) return null;
+  const pos = ({ 연지: "year", 년지: "year", 월지: "month", 일지: "day", 시지: "hour" } as Record<string, Pos>)[m[1]], pl = owners[0].pillars[pos];
+  const nun = (w: string) => `${w}${(w.charCodeAt(w.length - 1) - 0xac00) % 28 ? "은" : "는"}`;
+  return pl ? { rule: "fact_ganji", detail: `${m[1]}는 땅 글자 하나(${hangulOf(pl.branch)})다 — ${nun(m[2])} ${pl.ganjiKo === m[2] ? `${m[1][0]}주(기둥) 이름` : "이 사람 기둥에 없다"}` } : null;
+}
+/** 위치 앞에서 마지막으로 불린 사람(없으면 뒤에서 처음 불린 사람, 그것도 없으면 -1). */
+function nearestOwner(sen: string, at: number, ctx: FactCtx): number {
+  let best = -1, pos = -1, next = -1, npos = Infinity;
+  ctx.people.forEach((p, i) => { if (!p.names) return; for (const m of sen.matchAll(new RegExp(p.names.source, "g"))) { if (m.index! < at && m.index! >= pos) { pos = m.index!; best = i; } if (m.index! >= at && m.index! < npos) { npos = m.index!; next = i; } } });
+  return best >= 0 ? best : next;
+}
+
+/** W6 A2: 태어난 계절(월지 계절) 주장 — W5 1차 종합 수리 답 「겨울을 앞둔 봄의 경금」(봄 태생). 가정·조건 문장은 보지 않는다. */
+const SEASON_KO: Readonly<Record<string, string>> = { spring: "봄", summer: "여름", autumn: "가을", winter: "겨울" };
+const NEXT_SEASON: Readonly<Record<string, string>> = { 봄: "여름", 여름: "가을", 가을: "겨울", 겨울: "봄" };
+const PREV_SEASON: Readonly<Record<string, string>> = { 봄: "겨울", 여름: "봄", 가을: "여름", 겨울: "가을" };
+const SEASON_IF = /(?:이)?거나|라면|다면|경우|이면|생이면/;
+const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
+/** W6 S4(2차 종합): 「편관이 둘이고 정관과 섞이면」 — 원국에 없는 십성을 함께 있는 조건으로 쓰면 있는 것처럼 읽힌다(지장간까지 없을 때만). */
+const TG_MIX = /(?<![가-힣])(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와|이|가) (?:함께 있으면|같이 있으면|섞이면|섞여|섞인)/;
+function tenGodMix(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1) return null;
+  const m = sen.match(TG_MIX); if (!m) return null;
+  const o = owners[0]; if (Object.values(o.tenGods).some(v => v?.includes(m[1]))) return null;
+  return { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${m[1]}은 없다 — 「${m[0]}」` };
+}
+/**
+ * W6.1 D5(2차 커리어 7장 「편재나 겁재나 상관 쪽이 더 크기 때문인데」 — 원국·지장간에 편재 없음): 없는 십성을 까닭·있음으로 단정.
+ * 까닭 틀(「X 쪽이 더 크기 때문」「X이 있어서·많아서·강해서」「X 덕분」)에 든 십성 이름(「A나 B나 C」「A·B」 나열 포함) 가운데 원국·지장간에 없는 것.
+ */
+const TG_NAME = "(?:비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)";
+const TG_CAUSE = new RegExp(`(?<![가-힣])(${TG_NAME}(?:\\([^()]*\\))?(?:(?:이나 |나 |과 |와 |·|, ?)${TG_NAME}(?:\\([^()]*\\))?){0,3})(?: 쪽)?(?:이|가)? (?:더 크기 때문|더 커서|더 큰 덕분|있어서|있기 때문|많아서|강해서|넉넉해서|커서|덕분에|덕분이)`);
+function tenGodCause(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen)) return null;
+  const m = sen.match(TG_CAUSE); if (!m) return null;
+  const o = owners[0], have = new Set(Object.values(o.tenGods).flatMap(v => v ?? []));
+  const missing = [...m[1].matchAll(new RegExp(TG_NAME, "g"))].map(x => x[0]).filter(t => !have.has(t));
+  return missing.length ? { rule: "fact_term", detail: `${o.name}님 원국(지장간 포함)에 ${missing.join("·")}은 없다 — 없는 십성을 근거로 단정(「${m[0]}」)` } : null;
+}
+/** W6 S4 2판(1차 종합 2장): 「다만 나무 글자가 셋 이상이면 …」 — 겉 글자 수가 그보다 적은데 조건으로 쓰면 그 사람 이야기로 읽힌다(개수 = 겉 글자, elementCount 정의). */
+const EL_WORD: Readonly<Record<string, FiveElement>> = { 나무: "WOOD", 목: "WOOD", 불: "FIRE", 화: "FIRE", 흙: "EARTH", 토: "EARTH", 쇠: "METAL", 금: "METAL", 물: "WATER", 수: "WATER" };
+const N_WORD: Readonly<Record<string, number>> = { 둘: 2, 두: 2, 셋: 3, 세: 3, 넷: 4, 네: 4, 다섯: 5 };
+const EL_AT_LEAST = /(?<![가-힣])(나무|불|흙|쇠|물|[목화토금수])(?: 기운)? 글자(?:가|는)? (둘|셋|넷|다섯|[두세네] 개|[2-5] ?개?) 이상(?:이면|일 때|이라면|인 사람)/;
+function elementAtLeast(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1) return null;
+  const m = sen.match(EL_AT_LEAST); if (!m) return null;
+  const n = N_WORD[m[2].replace(/ ?개$/, "")] ?? Number(m[2].replace(/\D/g, "")), e = EL_WORD[m[1]], real = owners[0].elements.count[e];
+  return n && real < n ? { rule: "fact_count", detail: `${owners[0].name}님 ${m[1]} 글자는 ${real}개 — 「${m[0]}」는 이 사람 조건이 아니다` } : null;
+}
+function seasonClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || SEASON_IF.test(sen)) return null;
+  const o = owners[0], real = SEASON_KO[o.climate.season]; if (!real) return null;
+  const S = "(봄|여름|가을|겨울)";
+  const before = sen.match(new RegExp(`${S}(?:을|를|이|가)? (?:앞둔|앞에 둔|코앞에 둔|오기 전의?|다가오는) (?:늦|이른 |초)?${S}`));
+  if (before && (before[2] !== real || before[1] !== NEXT_SEASON[before[2]])) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다 — 「${before[0]}」(${real} 다음은 ${NEXT_SEASON[real]})` };
+  const after = sen.match(new RegExp(`${S}(?:을|를|이|가)? (?:지난|막 지난|끝난|건너온) (?:늦|이른 |초)?${S}`));
+  if (after && (after[2] !== real || after[1] !== PREV_SEASON[after[2]])) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다 — 「${after[0]}」(${real} 앞은 ${PREV_SEASON[real]})` };
+  const dm = `${o.dayMaster.ko}${EL_KO[o.dayMaster.element] ?? ""}`;
+  const born = sen.match(new RegExp(`(?:늦|초|이른 )?${S}(?:에 태어난|에 난|생(?![가-힣])|생이라|생인| 태생|의 ${dm})`));
+  if (born && born[1] !== real) return { rule: "fact_season", detail: `${o.name}님은 ${real}에 태어났다(${born[1]} 아님)` };
+  return null;
+}
+
+/** W6 A3: 두 사람이 서로 보는 십성(A가 보는 B = A 일간 기준 B 일간의 십성). 「A님에게 B님은 X」「A님이 보는 B님은 X」「A님 눈에 B님은 X」 · 「X의 눈으로」(십성은 보는 눈이 아니다). */
+const TG_NAMES = "비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인";
+function tenGodView(sen: string, ctx: FactCtx): FactHit | null {
+  if (ctx.people.length !== 2) return null;
+  const eye = sen.match(new RegExp(`(${TG_NAMES})의 (?:눈|시선)(?:으로|에|에는|에서)`));
+  if (eye) return { rule: "fact_direction", detail: `「${eye[0]}」 — 십성은 보는 눈이 아니라 보이는 쪽이다(「A님에게 B님은 ${eye[1]}」 꼴)` };
+  const [a, b] = ctx.people;
+  if (!a.names || !b.names) return null;
+  const truth = (viewer: number) => { const x = ctx.people[viewer].facts.dayMaster.stem, y = ctx.people[1 - viewer].facts.dayMaster.stem; return TEN_GOD_KO[getTenGod(x, y) as keyof typeof TEN_GOD_KO] as string | undefined; };
+  for (const [vi, v, w] of [[0, a, b], [1, b, a]] as const) {
+    const re = new RegExp(`(?:${v.names!.source})님?(?:에게는|에게|이 보는|가 보는|의 눈에는|의 눈에|눈에)? (?:[^.?!]{0,6})?(?:${w.names!.source})님?(?:은|는|이|가|의)? (?:[^.?!]{0,12}?)(${TG_NAMES})`);
+    const m = sen.match(re); if (!m) continue;
+    const t = truth(vi); if (t && m[1] !== t) return { rule: "fact_direction", detail: `${v.facts.name}님에게 ${w.facts.name}님은 ${t}다(${m[1]} 아님 — ${m[1]}는 반대 방향이거나 없는 십성)` };
+  }
+  return null;
+}
+
+function insideAsPair(sen: string, ctx: FactCtx): FactHit | null {
+  const pair = ctx.sheet.pair;
+  if (!pair || ctx.people.length < 2 || /사주 안/.test(sen) || HYPO.test(sen)) return null;
+  const both = /두 사람|둘 사이|두 분/.test(sen);
+  /** 그 자리 앞에서 마지막으로 불린 사람(없으면 -1). */
+  const ownerBefore = (end: number) => { let best = -1, at = -1; ctx.people.forEach((p, i) => { if (!p.names) return; for (const m of sen.slice(0, end).matchAll(new RegExp(p.names.source, "g"))) if (m.index! >= at) { at = m.index!; best = i; } }); return best; };
+  const mentions: { chars: string[]; kinds: readonly string[]; text: string; owner: number }[] = [];
+  for (const m of sen.matchAll(BRANCH_REL)) mentions.push({ chars: branchChars(m[1]), kinds: REL_KIND[m[2]] ?? [], text: m[0], owner: -2 });
+  for (const m of sen.matchAll(POS_REL)) {
+    // 두 자리가 한 사람 것인가: 첫 자리 앞 마지막 이름 = 주인, 두 자리 사이에 다른 이름이 없으면 같은 주인.
+    const second = m.index! + m[0].indexOf(m[2], m[0].indexOf("과 ") >= 0 || m[0].indexOf("와 ") >= 0 ? Math.max(m[0].indexOf("과 "), m[0].indexOf("와 ")) : 0);
+    const o1 = ownerBefore(m.index!), o2 = ownerBefore(second);
+    mentions.push({ chars: branchChars(`${m[1]}${m[2]}`), kinds: REL_KIND[m[3]] ?? [], text: m[0], owner: o1 >= 0 && o1 === o2 ? o1 : -2 });
+  }
+  for (const x of mentions) {
+    if (x.chars.length < 2 || negatedAt(sen, x.text)) continue;
+    const fits = (r: RelationFact) => x.kinds.includes(r.kind) && sameSet(r.members.map(m => m.char), x.chars);
+    // 자리 주인이 한 사람으로 정해졌으면(「장덕민님의 연지 묘와 일지 신은 서로 원진」) 두 사람 사이에 같은 글자 짝이 있어도 사주 안 관계다.
+    if (x.owner === -2 && [...pair.relations, ...pair.stemClashes].some(fits)) continue;
+    const owner = x.owner >= 0 ? x.owner : ctx.people.findIndex(p => [...p.facts.relations, ...p.facts.stemClashes].some(fits));
+    if (owner < 0 || ![...ctx.people[owner].facts.relations, ...ctx.people[owner].facts.stemClashes].some(fits)) continue;
+    const other = ctx.people[1 - owner];
+    if (both || other.names?.test(sen)) return { rule: "fact_relation", detail: `「${x.text}」는 ${ctx.people[owner].facts.name}님 사주 안의 관계다(두 사람 사이 관계가 아니다)` };
+  }
+  return null;
+}
 
 /** 세운이 원국과 관계가 있는데 「건드리지 않는 해」. */
 function annualNoTouch(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen): FactHit | null {
@@ -166,8 +315,22 @@ function annualNoTouch(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]
   return null;
 }
 
+/** W6 S2-2(B2): 일간 세기를 분류 문구 없이 행동 한 줄로(작가 표 — writer/prompt). W6.1 1-3: 두 사람 공통 세기 검사(bothClaim)와 같은 출처. */
+export const STRENGTH_ACT: Readonly<Record<string, readonly string[]>> = {
+  VERY_STRONG: ["내 판을 직접 짜고 그 판을 끝까지 끌고 갈 때 힘이 제대로 쓰이는 편", "주도권을 쥐고 방향을 정할 때 가장 힘이 잘 나는 편"],
+  STRONG: ["맡은 일을 내 힘으로 끝까지 밀고 나가는 편", "남의 판을 따르기보다 내 방식으로 일을 끌고 갈 때 힘이 나는 편"],
+  BALANCED: ["상황을 봐서 밀 때와 물러설 때를 골라 쓰는 편", "판이 바뀌면 힘 쓰는 방향을 그에 맞춰 바꾸는 편", "필요한 만큼만 힘을 꺼내 쓰고 나머지는 아껴 두는 편"],
+  WEAK: ["받쳐 주는 사람과 정해진 순서가 있을 때 힘이 오래 가는 편", "혼자 짊어지기보다 함께 나눠 질 때 힘이 오래 가는 편"],
+  VERY_WEAK: ["도움과 순서를 빌릴 때 힘이 제대로 나는 편", "기댈 곳을 먼저 만들어 두면 일이 풀리는 편"],
+};
 /** 신강약 말 · 같은 문단의 신약 + 비겁·인성 강. */
 const STRENGTH_KO: Readonly<Record<string, string>> = { VERY_WEAK: "매우 신약", WEAK: "신약", BALANCED: "중화", STRONG: "신강", VERY_STRONG: "매우 신강" };
+/** 문장이 쓴 세기 행동 줄의 세기(쉼표는 빼고 앞 14자로 찾는다 — 「꺼내 쓰고, 나머지는」). 없으면 null. */
+function strengthActLevel(sen: string): string | null {
+  const flat = sen.replace(/,/g, "");
+  for (const [lv, acts] of Object.entries(STRENGTH_ACT)) if (acts.some(a => flat.includes(a.replace(/,/g, "").slice(0, 14)))) return lv;
+  return null;
+}
 function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: string): FactHit | null {
   if (owners.length !== 1) return null;
   const o = owners[0], real = STRENGTH_KO[o.strength.level];
@@ -177,6 +340,8 @@ function strengthClaim(sen: string, owners: readonly PersonFacts[], paragraph: s
     const weakSaid = m[2] === "신약", weakReal = /WEAK/.test(o.strength.level);
     if (o.strength.level === "BALANCED" || weakSaid !== weakReal || (m[1] && !/VERY/.test(o.strength.level))) return { rule: "fact_strength", detail: `일간 강약은 ${real}(${said} 아님)` };
   }
+  // W6.1 1-3: 세기 행동 줄(STRENGTH_ACT)을 다른 세기의 사람에게.
+  { const lv = strengthActLevel(sen); if (lv && lv !== o.strength.level) return { rule: "fact_strength", detail: `일간 강약은 ${real} — 「${STRENGTH_KO[lv]}」 행동 줄을 씀` }; }
   // 같은 문단에 「신약」과 「비겁/인성 강」: 두 값은 다른 저울이라 한 숨에 쓰면 모순으로 읽힌다(정답지 자기검증 group_vs_strength).
   if (/WEAK/.test(o.strength.level) && /신약|힘이 (여린|약한)/.test(paragraph) && /(비겁|비견|겁재|인성|정인|편인|내 방식의 힘|배우는 힘)[^.]{0,12}(강해|강한|강합|많아|많은|넘치|세요|센 )/.test(sen)) {
     const g = /(인성|정인|편인|배우는 힘)/.test(sen) ? o.groups.RESOURCE : o.groups.PEER;
@@ -263,6 +428,9 @@ function commonSplit(sen: string, ctx: FactCtx): FactHit | null {
   const common = [...pair.common.shinsal, ...(pair.common.dayStage ? [pair.common.dayStage] : [])];
   for (const name of pair.common.shinsal) {
     const a = ctx.aliases.find(x => x.name === name); if (!a?.re.test(sen)) continue;
+    // W8 m2(1차 궁합 9장 「천덕귀인과 월덕귀인은 장덕민님에게 있고, 천을귀인은 두 사람 모두에게」 — 월덕은 공통): 「두 사람 모두」가 다른 절에 있으면 그 신살 절만 본다.
+    { const cl = sen.split(/,\s|고,\s|(?<=고)\s(?=[가-힣]+(?:은|는)\s)/).find(c => a.re.test(c)); const cn = cl ? ctx.people.filter(p => p.names?.test(cl)) : [];
+      if (cl && cn.length === 1 && /두 사람|둘 다|모두|공통/.test(sen) && !/두 사람|둘 다|모두|공통|함께 가진|같이 가진/.test(cl) && /에게 (?:있|만)|의 (?:것|덕)|에게 있는/.test(cl)) return { rule: "common_split", detail: `${name}은 두 사람 모두에게 있다(공통) — 한 사람 것으로 쓰지 않는다(「${cl.slice(0, 30)}」)` }; }
     if (named.length === 1 && !/두 사람|둘 다|모두|공통|함께 가진|같이 가진/.test(sen)) return { rule: "common_split", detail: `${name}은 두 사람 모두에게 있다(공통) — 한 사람만의 특징으로 쓰지 않는다` };
     if (named.length === 2 && /반면|와 달리|과 달리|다르게|차이/.test(sen)) return { rule: "common_split", detail: `${name}은 두 사람 공통 — 차이의 근거로 쓰지 않는다` };
   }
@@ -394,11 +562,200 @@ function dayunSpan1(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): 
   }
   return null;
 }
+/** W8 m3(2차 커리어 9장 「2027년 정미는 …. 이 해의 후반에 대운도 편재 쪽으로 넘어가요」 — 교운 2027년 5월 무렵): 대운이 넘어가는 때를 해의 앞·가운데·뒤로 말하면 교운 달과 맞댄다. 해는 문장의 「N년」, 없으면 「올해」·「이 해/그해」(문단의 첫 「N년」). */
+const TURN_PART: readonly (readonly [RegExp, number, number])[] = [[/연초|초반에|상반기|전반에/, 1, 6], [/중반에|한가운데에/, 4, 8], [/후반에|하반기|연말/, 7, 12]];
+function dayunTurn(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph: string): FactHit | null {
+  if (!/대운|10년 흐름/.test(sen) || !/넘어가|바뀌|들어서|갈아타|접어들/.test(sen)) return null;
+  const part = TURN_PART.find(([re]) => re.test(sen)); if (!part) return null;
+  const ys = sen.match(/((?:19|20)\d{2})년/)?.[1] ?? (/올해/.test(sen) ? String(ctx.thisYear) : /이 해|그해/.test(sen) ? paragraph.match(/((?:19|20)\d{2})년/)?.[1] : undefined);
+  if (!ys) return null;
+  for (const p of owners) {
+    const turn = p.dayun.cycles.find(c => c.startSolarKst && c.startSolarKst.slice(0, 4) === ys); if (!turn) continue;
+    const mo = Number(turn.startSolarKst!.slice(5, 7));
+    if (mo && (mo < part[1] || mo > part[2])) return { rule: "fact_dayun", detail: `${turn.ganjiKo} 대운은 ${ys}년 ${mo}월 무렵에 들어온다 — 「${sen.match(part[0])![0]}」가 아니다` };
+  }
+  return null;
+}
+/**
+ * W3 P3 5절 개수 말: 「관계는 모두 11가지」「합 4가지」「형·충·파·해 7가지」「충이 두 개」가 정답지 개수와 다르면 fact_count.
+ * 셈은 compat/relations와 같은 관계 이름(relationName)으로 한다. 궁합은 두 사람 사이(이름이 하나만 나온 문장은 그 사람 원국), 한 사람 책은 원국.
+ * 때 낱말(세운·대운·올해)이 든 문장·문단, 해·달 카드, 세운·대운 책은 유입 관계와 섞이므로 보지 않는다. 「번」(횟수)은 개수로 보지 않는다.
+ */
+const NUM_KO: Readonly<Record<string, number>> = { 하나: 1, 한: 1, 둘: 2, 두: 2, 셋: 3, 세: 3, 넷: 4, 네: 4, 다섯: 5, 여섯: 6, 일곱: 7, 여덟: 8, 아홉: 9, 열: 10, 열한: 11, 열하나: 11, 열두: 12, 열둘: 12, 열세: 13, 열셋: 13, 열네: 14, 열넷: 14, 열다섯: 15, 열여섯: 16, 열일곱: 17, 열여덟: 18, 열아홉: 19, 스무: 20, 스물: 20 };
+const NUM = "(\\d{1,2}|열하나|열한|열둘|열두|열셋|열세|열넷|열네|열다섯|열여섯|열일곱|열여덟|열아홉|스무|스물|하나|한|둘|두|셋|세|넷|네|다섯|여섯|일곱|여덟|아홉|열)";
+const UNIT = " ?(?:가지|개|곳|군데|쌍)";
+/** 일부만 가리키는 말(「영향 큰 관계 세 가지」「그중 두 가지」)이면 전체 개수 주장이 아니다. */
+const SUBSET = /큰|중요한|대표|주요|그중|가운데|눈에 띄는|굵직한|핵심|먼저 볼|골라/;
+const numOf = (w: string) => /^\d+$/.test(w) ? Number(w) : NUM_KO[w] ?? NaN;
+const REL_NAMES = ["천간합", "천간충", "육합", "삼합", "반합", "방합", "삼형", "원진", "충", "파", "형"] as const;
+function relCounts(rows: readonly RelationFact[]): { total: number; hap: number; friction: number; by: Map<string, number> } {
+  const by = new Map<string, number>(); let hap = 0;
+  for (const r of rows) { const n = relationName(r.kind as never, r.completeness as never, r.subtype); by.set(n, (by.get(n) ?? 0) + 1); if (isHapKind(r.kind as never)) hap++; }
+  return { total: rows.length, hap, friction: rows.length - hap, by };
+}
+function countClaim(sen: string, ctx: FactCtx, owners: readonly PersonFacts[], paragraph = sen, inKey = false): FactHit | null {
+  if (inKey || ctx.product === "annual_fortune" || ctx.product === "major_fortune" || TEMPORAL.test(sen) || TEMPORAL.test(paragraph) || GANJI_MONTH.test(paragraph)) return null;
+  if (!/(관계|합|충|형|파|해|원진)/.test(sen)) return null;
+  const pair = ctx.sheet.pair, named = ctx.people.filter(p => p.names?.test(sen));
+  const between = Boolean(pair) && (named.length !== 1 || /두 사람|둘 사이|사이에서|사이에는|사이의|서로/.test(sen));
+  const rows: RelationFact[] = between && pair ? [...pair.relations, ...pair.stemClashes] : owners.length === 1 ? [...owners[0].relations, ...owners[0].stemClashes] : [];
+  if (!between && owners.length !== 1) return null;
+  const c = relCounts(rows), who = between ? "두 사람 사이" : `${owners[0].name} 원국`;
+  const said = (re: RegExp) => { const m = sen.match(re); return m ? numOf(m[m.length - 1]) : NaN; };
+  // W6.1 1-3: 「그중 합이 다섯 가지고, 형·충·파·해가 여섯 가지」는 묶음별 개수(일부만 가리키는 말이 아니다).
+  const subset = SUBSET.test(sen.replace(new RegExp(`그중 (?=(?:합|형·충·파·해(?:·원진)?)(?:이|가|은|는|도)? ${NUM}${UNIT})`, "g"), ""));
+  const checks: [number, number, string][] = subset ? [] : [
+    [/관계|엮/.test(sen) ? said(new RegExp(`(?:모두|전부|총|통틀어|다 해서) ${NUM}${UNIT}`)) : NaN, c.total, "관계 모두"],
+    [said(new RegExp(`관계(?:가|는|도)? ${NUM}${UNIT}(?:가|나|이나)? (?:있|엮|찾)`)), c.total, "관계 모두"],
+    [said(new RegExp(`(?<![가-힣·])합(?:이|은|는|도)? ${NUM}${UNIT}`)), c.hap, "합"],
+    // W6.1 1-3: 원진은 형·충·파·해가 아니다 — 「형·충·파·해 n」은 원진을 뺀 수, 「형·충·파·해·원진 n」은 마찰 전부.
+    [said(new RegExp(`형·충·파·해(?:는|가|도)? ${NUM}${UNIT}`)), c.friction - (c.by.get("원진") ?? 0), "형·충·파·해"],
+    [said(new RegExp(`형·충·파·해·원진(?:은|이|도)? ${NUM}${UNIT}`)), c.friction, "형·충·파·해·원진"],
+  ];
+  if (!subset) for (const n of REL_NAMES) checks.push([said(new RegExp(`(?<![가-힣·])${n}(?:이|가|은|는|도)? ${NUM}${UNIT}`)), c.by.get(n) ?? 0, n]);
+  for (const [s0, real, label] of checks) {
+    if (!Number.isFinite(s0) || s0 === real) continue;
+    return { rule: "fact_count", detail: `${who} ${label} ${real}${label === "관계 모두" ? "가지" : "개"}(${s0} 아님) — 합 ${c.hap}·형·충·파·해 ${c.friction}${[...c.by].length ? `(${[...c.by].map(([k, v]) => `${k} ${v}`).join("·")})` : ""}` };
+  }
+  return null;
+}
+
 /** 한 문장 검사. paragraph = 그 문장이 든 문단(같은 문단 대조용), chapter = 장 번호(0 = 표지), inKey = 대운 연도·세운 달 카드 소제목 안(유입 문맥, AM 7부). */
+// ── W4 Q2-6 사실 대조 보강(W3 P4 판독이 찾은 꼴, 정답지만 씀) ─────────────────────────────
+const TEN_GODS = ["비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"] as const;
+/** 십성 이름 뒤는 조사·띄어쓰기·문장부호만(「정관이」「편관의」는 잡고 「정관념」은 뺀다). */
+const TG_AFTER = "(?=[이가은는을를의도과와로으에만]|\\s|[,.?!)·(]|$)";
+const TG_RE = new RegExp(`(?<![가-힣])(${TEN_GODS.join("|")})${TG_AFTER}`, "g");
+// W6 S4(1차 궁합 9장 「두 사람에게는 천덕귀인과 월덕귀인이 힘이 되어 줘요」 — 천덕은 한 사람): 「두 사람에게(는)」도 공통 주장.
+const BOTH = /두 사람 모두|두 사람 다|두 분 모두|두 분 다|둘 다|둘 모두|두 사람에게 모두|두 사람에게(?:는|엔|겐)? |나란히 (가졌|있)|똑같이 (가졌|있)|두 사람의? (사주|원국|명식|여덟 글자)(에는|에|엔)/;
+/** 문단이 두 사람 공통을 말하는 꼴(「두 사람에게 있는 귀인의 기운」 → 다음 문장 「천덕귀인과 월덕귀인은 …」). */
+const BOTH_CTX = /두 사람에게 (?:모두 |다 )?있는|두 사람 모두|두 사람 다|두 분 모두|둘 다/;
+/** 궁합 「두 사람 모두 천덕귀인」: 한 사람에게만 있는 신살·귀인·십성을 두 사람 공통으로 말함(W3 1차 궁합 A·A+연결). 이름이 없는 문장은 문단의 공통 말도 본다. */
+function bothClaim(sen: string, ctx: FactCtx, paragraph = sen): FactHit | null {
+  if (ctx.people.length < 2 || NEG.test(sen) || HYPO.test(sen)) return null;
+  const named = ctx.people.filter(p => p.names?.test(sen)).length;
+  if (!BOTH.test(sen) && !(named === 0 && BOTH_CTX.test(paragraph))) return null;
+  // W6.1 P4(1차 궁합 1장): 「장덕민님의 세 자리(…)에 걸린 현침살이 두 사람 모두에게」 — 한 사람의 자리에 걸린 신살을 두 사람 공통으로 말함(공통이면 한 사람 자리로 매지 않는다).
+  for (const p of ctx.people) {
+    if (!p.names) continue;
+    const m = sen.match(new RegExp(`(?:${p.names.source})님?의 [^.?!]{0,60}?(?:자리|글자|기둥)(?:\\([^()]*\\))?(?:에 걸린|에 있는|에 자리한|에 놓인|의) ([가-힣]{1,6}(?:살|귀인|성|록))(?:\\([^()]*\\))?(?:은|는|이|가)? [^.?!]{0,16}(?:두 사람 모두|두 사람 다|둘 다|두 사람에게)`));
+    if (m) return { rule: "fact_term", detail: `${p.facts.name}님 자리에 걸린 ${m[1]}을 두 사람 공통으로 말함(주인 자리 + 공통)` };
+  }
+  for (const a of ctx.aliases) {
+    if (!a.re.test(sen)) continue;
+    // W6(59권 판정 오탐): 「천덕귀인은 장덕민님에게, 월덕귀인은 두 사람 모두에게」 — 신살 바로 뒤(14자)에 주인 이름을 밝혔으면 그 신살은 공통 주장이 아니다.
+    { const m = sen.match(a.re); const after = m ? sen.slice(m.index! + m[0].length, m.index! + m[0].length + 14) : "", pre = m ? sen.slice(Math.max(0, m.index! - 12), m.index!) : "";
+      if (ctx.people.some(p => p.names?.test(after) || (p.names && new RegExp(`(?:${p.names.source})님?의 ?$`).test(pre)))) continue; }
+    const has = ctx.people.map(p => p.facts.shinsal.some(x => x.name === a.name));
+    if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${a.name}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}에게만 있다(두 사람 공통 아님)` };
+  }
+  for (const m of sen.matchAll(TG_RE)) {
+    const has = ctx.people.map(p => Object.values(p.facts.tenGods).some(v => v?.includes(m[1])));
+    if (has.some(Boolean) && !has.every(Boolean)) return { rule: "fact_term", detail: `${m[1]}은 ${ctx.people.filter((_, i) => has[i]).map(p => p.facts.name).join("")}의 원국에만 있다(두 사람 공통 아님)` };
+  }
+  // W6.1 1-3(2차 궁합 9장): 「두 사람 모두 필요한 만큼만 힘을 꺼내 쓰고 …」 — 한 사람의 세기 행동 줄을 세기가 다른 두 사람 공통으로.
+  { const lv = strengthActLevel(sen);
+    if (lv && ctx.people.some(p => p.facts.strength.level !== lv)) return { rule: "fact_strength", detail: `「${STRENGTH_KO[lv]}」 행동 줄을 두 사람 공통으로 — ${ctx.people.map(p => `${p.facts.name} ${STRENGTH_KO[p.facts.strength.level]}`).join("·")}` }; }
+  return null;
+}
+/** 배우자 별·자녀 별의 성별 기준(남 = 배우자 재성·자녀 관성, 여 = 배우자 관성·자녀 식상). 별 말과 같은 마디의 십성 묶음 이름이 반대면(W3 2차 연애 — 여성인데 재성). */
+const STAR_OF: Readonly<Record<"MALE" | "FEMALE", { spouse: RegExp; child: RegExp; name: { spouse: string; child: string } }>> = {
+  MALE: { spouse: /재성|편재|정재/, child: /관성|편관|정관/, name: { spouse: "재성(편재·정재)", child: "관성(편관·정관)" } },
+  FEMALE: { spouse: /관성|편관|정관/, child: /식상|식신|상관/, name: { spouse: "관성(편관·정관)", child: "식상(식신·상관)" } },
+};
+const GROUP_ANY = new RegExp(`(?<![가-힣])(재성|관성|식상|인성|비겁|편재|정재|편관|정관|식신|상관|편인|정인|비견|겁재)${TG_AFTER}`);
+function starGender(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || !owners[0].gender || HYPO.test(sen)) return null;
+  const o = owners[0], want = STAR_OF[o.gender as "MALE" | "FEMALE"];
+  for (const [kind, re] of [["spouse", /(?:배우자|남편|아내)(?:의)? ?별/], ["child", /자녀(?:의)? ?별/]] as const) {
+    const m = sen.match(re); if (!m) continue;
+    // 십성 이름은 별 말 뒤쪽(같은 마디)에서만 — 앞 마디의 다른 십성(「마음 자리에는 정재가, 배우자 별로 …」)을 집지 않는다.
+    const clause = clauseAt(sen, m.index!), g = clause.slice(Math.max(0, clause.indexOf(m[0]))).match(GROUP_ANY)?.[1];
+    const who = `${o.name}(${o.gender === "MALE" ? "남" : "여"})의 ${kind === "spouse" ? "배우자" : "자녀"} 별은 ${want.name[kind]}`;
+    if (g && !want[kind].test(g)) return { rule: "fact_term", detail: `${who} — ${g} 아님` };
+    // 십성 이름 없이 자리로만 말한 꼴(W3 2차 연애 — 여성인데 재성 자리를 배우자 별로): 말한 자리(배우자·자녀 자리 말 빼고) 어디에도 그 별이 없으면.
+    if (!g) {
+      const poss = POSITION_WORDS.filter(p => p.re.test(sen.replace(/(?:배우자|자녀) ?(?:자리|궁)/g, "")));
+      const truth = (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.some(t => want[kind].test(t))).map(([sl]) => sl);
+      if (poss.length && truth.length && !poss.some(p => p.slots.some(sl => truth.includes(sl)))) return { rule: "fact_term", detail: `${who} — ${slotsKo(truth)}에 있다(${poss.map(p => p.label).join("·")} 아님)` };
+    }
+  }
+  return null;
+}
+/** 해마다 십성(W3 2차 연애 A — 2032·2033년 편관·정관 뒤바꿈): 「2032년은 정관의 해」「2033년에 편관이 들어오는」 꼴에서 그 해의 하늘·땅 십성과 견준다. */
+function annualTenGod(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen)) return null;
+  // 「…의 해」「…이 들어오는」처럼 그 해에 들어오는 기운을 말하는 문장만(「2030년에는 당신의 정재가 힘을 받아요」는 원국 십성이라 뺀다).
+  if (!/의 해|(?:이|가) (?:들어오|들어와|오는|찾아오|들어서)|들어오는 해|해예요|해입니다/.test(sen)) return null;
+  // 해마다 그 해와 다음 해 말 사이의 십성 하나(「2032년 임자년은 편관, 2033년 계축년은 정관이 들어오는 해예요」).
+  const marks = [...sen.matchAll(/(20\d\d)년/g)];
+  for (let i = 0; i < marks.length; i++) {
+    const y = Number(marks[i][1]), seg = sen.slice(marks[i].index! + 5, i + 1 < marks.length ? marks[i + 1].index! : sen.length);
+    const tgs = [...new Set([...seg.matchAll(TG_RE)].map(m => m[1]))];
+    if (tgs.length !== 1) continue;
+    const a = owners[0].annual.find(x => x.year === y); if (!a) continue;
+    if (a.stemTenGod !== tgs[0] && a.branchTenGod !== tgs[0]) return { rule: "fact_dayun", detail: `${y}년(${a.ganjiKo})은 하늘 글자 ${a.stemTenGod}·땅 글자 ${a.branchTenGod} — ${tgs[0]} 아님` };
+  }
+  return null;
+}
+/** 한 특성 + 자리 여럿 나열(「편인은 연지·월지·월간에」): 나열한 자리가 모두 정답지 자리 안에 있어야 한다(W3 1차 종합 — 같은 책 안에서 편인 자리가 둘로 갈림). */
+function listedPositions(sen: string, ctx: FactCtx, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+  const poss = POSITION_WORDS.filter(p => p.re.test(sen));
+  if (poss.length < 2) return null;
+  const o = owners[0];
+  const tgs = [...new Set([...sen.matchAll(TG_RE)].map(m => m[1]))], terms = ctx.aliases.filter(a => a.re.test(sen));
+  if (tgs.length + terms.length !== 1) return null;
+  const truth = tgs.length ? (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.[0] === tgs[0]).map(([k]) => k) : o.shinsal.filter(x => x.name === terms[0].name).flatMap(x => x.slots);
+  if (!truth.length) return null;
+  const bad = poss.filter(p => !p.slots.some(x => truth.includes(x)));
+  return bad.length ? { rule: "fact_term", detail: `${tgs[0] ?? terms[0].name}은 ${slotsKo([...new Set(truth)])}에 있다(${bad.map(p => p.label).join("·")} 아님)` } : null;
+}
+
+/**
+ * W8(W7 9-2 · 2차 연애 「정관 … 과 편관 … 은 태어난 달과 태어난 시각 땅 글자에 두 번 드러나 있어요」 — 편관은 연지 지장간에만): 십성 자리 사실 검사.
+ * 한 사람 · 주어 자리에 든 십성 이름(「X은/는/이/가」, 「X과 Y는」) + 뒤에 자리 말(하나, 또는 「태어난 달과 태어난 시각 땅 글자」 꼴 둘) + 「에 있·드러나·자리·놓·깔·들어·두 번」.
+ * 십성마다 말한 자리 가운데 하나라도 그 십성이 있으면 통과(땅 글자는 지장간 전부 — 정답지 「십성 자리」 정의). 일간 자리·가정·부정·때 문장은 보지 않는다.
+ */
+const PAIR_POS = /태어난 (해|달|날|시각)(?:과|와|·|,) ?(?:태어난 )?(해|달|날|시각)의? (땅 글자|하늘 글자|지지|천간)/;
+const PERIOD_SLOT: Readonly<Record<string, "year" | "month" | "day" | "hour">> = { 해: "year", 달: "month", 날: "day", 시각: "hour" };
+function tenGodPosition(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || NEG.test(sen) || HYPO.test(sen) || TEMPORAL.test(sen)) return null;
+  const pair = sen.match(PAIR_POS);
+  let slots: Slot[] = [], at = -1, len = 0, label = "";
+  if (pair) { const kind = /땅|지지/.test(pair[3]) ? "Branch" : "Stem"; slots = [pair[1], pair[2]].map(x => `${PERIOD_SLOT[x]}${kind}` as Slot); at = pair.index!; len = pair[0].length; label = pair[0]; }
+  else { const poss = POSITION_WORDS.filter(p => p.re.test(sen)); if (poss.length !== 1) return null; const pm = sen.match(poss[0].re)!; slots = [...poss[0].slots]; at = pm.index!; len = pm[0].length; label = poss[0].label; }
+  if (slots.includes("dayStem")) return null;
+  if (!/^\s?(?:에|에서|에도)\s?(?:[가-힣]+\s){0,2}?(?:있|드러나|드러난|자리|놓|앉|깔|들어|두 번|함께 있)/.test(sen.slice(at + len))) return null;
+  // 주어: 자리 말 앞, 괄호 풀이를 뗀 뒤 「X(과 Y)은/는/이/가」로 끝나는 십성 이름들.
+  const head = sen.slice(0, at).replace(/\([^()]*\)/g, "");
+  const subj = head.match(new RegExp(`((?:${TEN_GODS.join("|")})(?:(?:과|와|·|, ?| 그리고 )(?:${TEN_GODS.join("|")}))*)(?:은|는|이|가) ?$`));
+  if (!subj) return null;
+  const o = owners[0], named = [...subj[1].matchAll(new RegExp(TEN_GODS.join("|"), "g"))].map(m => m[0]);
+  const bad = named.filter(tg => !slots.some(x => o.tenGods[x]?.includes(tg)));
+  if (!bad.length) return null;
+  const truth = (tg: string) => (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.includes(tg)).map(([k]) => k);
+  return { rule: "fact_term", detail: bad.map(tg => `${tg}은 ${truth(tg).length ? slotsKo(truth(tg)) : "원국(지장간 포함)에 없음"}에 있다(${label} 아님)`).join(" · ") };
+}
+/** W8 m2(1차 연애 2장 「만드는 힘(식상)은 사주 안에 하나도 자리 잡지 못해서」 — 월지 지장간 상관): 십성·묶음이 「하나도·전혀 없다」인데 원국(지장간 포함)에 있음. 겉 글자·하늘 글자만 말한 문장은 뺀다. */
+const GROUP_TG: Readonly<Record<string, readonly string[]>> = { 비겁: ["비견", "겁재"], 식상: ["식신", "상관"], 재성: ["편재", "정재"], 관성: ["편관", "정관"], 인성: ["편인", "정인"], "내 방식의 힘": ["비견", "겁재"], "만드는 힘": ["식신", "상관"], "값을 받는 힘": ["편재", "정재"], "규칙의 힘": ["편관", "정관"], "배우는 힘": ["편인", "정인"] };
+let noneRe0: RegExp | null = null;
+const noneRe = () => (noneRe0 ??= new RegExp(`(?<![가-힣])(${[...Object.keys(GROUP_TG), "비견", "겁재", "식신", "상관", "편재", "정재", "편관", "정관", "편인", "정인"].join("|")})(?:\\([^()]*\\))?(?:은|는|이|가)? (?:사주 안에|원국에|여덟 글자에|사주에|사주 어디에도)? ?(?:하나도|전혀) (?:없|자리 잡지 못|보이지 않|들어 있지 않)`));
+function noneClaim(sen: string, owners: readonly PersonFacts[]): FactHit | null {
+  if (owners.length !== 1 || HYPO.test(sen) || /겉|드러난|천간에|하늘 글자/.test(sen)) return null;
+  const m = sen.match(noneRe()); if (!m) return null;
+  const tgs = GROUP_TG[m[1]] ?? [m[1]], o = owners[0];
+  const at = (Object.entries(o.tenGods) as [Slot, readonly string[] | undefined][]).filter(([, v]) => v?.some(x => tgs.includes(x))).map(([k]) => k);
+  return at.length ? { rule: "fact_none", detail: `${m[1]}은 ${slotsKo(at)}(지장간 포함)에 있다 — 「하나도 없다」 아님` } : null;
+}
+/** W8(W7 6-3 오탐): 「음 하나 없이 모두 양인 속도」의 「양인」(양 + 이다)은 신살 양인살이 아니다 — 음양 문맥이면 가린다. */
+const YANG_COPULA = /((?:모두|전부|다|둘 다|셋 다|넷 다|여덟 글자 모두) )양인(?=\s)|(음[이은]?\s?(?:하나|글자)?[^.?!]{0,8}(?:없이|없고|없어)[^.?!]{0,8}?)양인(?=\s)/g;
+const maskYang = (s: string) => s.replace(YANG_COPULA, (_m, a: string | undefined, b: string | undefined) => `${a ?? b ?? ""}양(陽)인`);
 export function factCheck(sen: string, ctx: FactCtx, paragraph = sen, chapter?: number, inKey = false): FactHit | null {
+  sen = maskYang(sen); paragraph = maskYang(paragraph);
   const owners = ownersOf(sen, ctx);
-  return renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
-    ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
+  return bothClaim(sen, ctx, paragraph) ?? insideAsPair(sen, ctx) ?? relationGlyphMismatch(sen) ?? branchAsPillar(sen, owners, ctx) ?? seasonClaim(sen, owners) ?? tenGodMix(sen, owners) ?? tenGodCause(sen, owners) ?? elementAtLeast(sen, owners) ?? tenGodView(sen, ctx) ?? starGender(sen, owners) ?? annualTenGod(sen, owners) ?? listedPositions(sen, ctx, owners) ?? tenGodPosition(sen, owners) ?? noneClaim(sen, owners) ?? renderCheck(sen) ?? dayunSpan(sen, ctx, owners) ?? dayunTurn(sen, ctx, owners, paragraph) ?? yinYangSide(sen, owners) ?? leakCheck(sen) ?? statusCheck(sen, ctx) ?? jobScene(sen, ctx, chapter) ?? timeFixed(sen, ctx) ?? termPosition(sen, ctx, owners) ?? stageClaim(sen, owners) ?? relationClaim(sen, ctx, owners, paragraph, inKey) ?? annualNoTouch(sen, ctx, owners, paragraph)
+    ?? countClaim(sen, ctx, owners, paragraph, inKey) ?? strengthClaim(sen, owners, paragraph) ?? ganjiClaim(sen, owners) ?? countStrengthMix(sen, owners) ?? meaningMisattr(sen, owners) ?? commonSplit(sen, ctx) ?? termAbsent(sen, ctx, owners, paragraph, inKey) ?? inputOutside(sen, ctx);
 }
 
 /** 괄호 약어·한자 뒤 조사를 앞 한글 받침에 맞춘다(「눈(Ni)는」→「눈(Ni)은」). 결정론 정리(호출 0). */

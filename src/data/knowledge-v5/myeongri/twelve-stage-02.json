@@ -540,7 +540,7 @@
         "clash": "병 자리가 충을 받으면 쉬던 몸이 갑자기 일으켜지는 모양입니다. 생활 리듬이 흔들리는 구조로 읽고 건강 사건을 정하지 않습니다.",
         "rule": "양간 순행: 甲→巳 丙戊→申 庚→亥 壬→寅. 음간 역행: 乙→子 丁己→卯 辛→午 癸→酉. 음양동생동사 학파는 음간도 양간 자리. 실제 질병 해석 금지. 엔진 미구현(P2)"
       },
-      "dimensionTags": { "empathyResponse": 0.8, "introspection": 0.7, "caretaking": 0.6, "reactivity": 0.5, "socialEnergy": -0.4, "riskTaking": -0.4 },
+      "dimensionTags": { "empathyResponse": 0.8, "introspection": 0.7, "caretaking": 0.6, "socialEnergy": -0.4, "riskTaking": -0.4 },
       "mbtiLinks": [
         { "target": "INFP", "kind": "resonance", "why": "남의 힘듦을 제 일처럼 느끼는 Fi가 병이 가진 섬세하게 듣는 귀와 같은 결입니다" },
         { "target": "INFJ", "kind": "resonance", "why": "말 뒤의 속을 읽는 Ni-Fe가 병의 섬세함과 맞물립니다" },
@@ -995,7 +995,7 @@
         "clash": "양 자리가 충을 받으면 둥지가 흔들리는 모양입니다. 기대던 환경이 바뀌는 구조로 읽되 가족 사건으로 풀지 않습니다.",
         "rule": "양간 순행: 甲→戌 丙戊→丑 庚→辰 壬→未. 음간 역행: 乙→未 丁己→戌 辛→丑 癸→辰. 음양동생동사 학파는 음간도 양간 자리. 양자설 단정 금지. 엔진 미구현(P2)"
       },
-      "dimensionTags": { "caretaking": 0.6, "independence": -0.6, "learningDrive": 0.5, "trustThreshold": -0.4, "dutifulness": 0.4, "conflictApproach": -0.4 },
+      "dimensionTags": { "independence": -0.6, "learningDrive": 0.5, "trustThreshold": -0.4, "dutifulness": 0.4, "conflictApproach": -0.4 },
       "mbtiLinks": [
         { "target": "ESFJ", "kind": "resonance", "why": "돌봄을 주고받으며 자라는 Fe-Si가 양의 둥지와 같습니다" },
         { "target": "ISFJ", "kind": "resonance", "why": "받은 정성을 기억해 그대로 돌려주는 Si-Fe와 겹칩니다" },

@@ -24,9 +24,9 @@ const inputs: [string, BriefInput][] = [
 ];
 
 describe("작가 지침(B)", () => {
-  it("시스템 지침 2,200토큰 이하(P6c: 재료·사실·카드·표지·강조), 출력 형식·금지·브리프 읽는 법 포함", () => {
-    expect(estimateTokens(WRITER_SYSTEM)).toBeLessThanOrEqual(2200);
-    for (const s of ["## N. 장 제목", "### 소제목", "### {key}", "15자 이상", "forbiddenFacts", "materials"]) expect(WRITER_SYSTEM).toContain(s);
+  it("시스템 지침은 v5-28(2,070토큰)보다 짧게(W6 결정 3), 출력 형식·금지·브리프 읽는 법 포함", () => {
+    expect(estimateTokens(WRITER_SYSTEM)).toBeLessThan(2070);
+    for (const s of ["## N. 장 제목", "### 소제목", "15자 넘게", "forbiddenFacts", "materials"]) expect(WRITER_SYSTEM).toContain(s);
     expect(WRITER_PREFIX.startsWith(WRITER_SYSTEM)).toBe(true);
   });
   it("문체 예시 3개는 A-3·P6c 규칙을 지킨다(옛 부정 낱말·과거 단정·명리학에서 없음, 뜻 공식 예시마다 1번 이하, 소제목마다 핵심 문장 하나)", () => {

@@ -3,11 +3,12 @@
  * 사실의 닻(누구에게·무엇이·어디에·얼마나)만 담는다. 해석·비유·장면은 담지 않는다.
  * 학파가 갈리는 항목은 엔진이 쓰는 기준을 standards에 적는다(docs/manseryeok-policy.md §5, docs/v5/shinsal-rules.md). 본문·부록·점수가 같은 기준을 쓴다.
  */
+import { amBrief } from "@/lib/brief/chapters";
 import { calculateSaju } from "@/lib/saju/calculateSaju";
 import { calculateCustomerDayun } from "@/lib/saju/customerDayun";
 import { currentDayunAt, personDaeunsu } from "@/lib/brief/labels";
 import { BRANCH_MAIN_ELEMENT, HIDDEN_STEMS, STEM_ELEMENT } from "@/lib/saju/constants";
-import { analyzeChartDetections, analyzeIncoming, detectRelations, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
+import { analyzeChartDetections, analyzeIncoming, detectStemClashes, getAnnualPillar, getMonthlyPillars, getTwelveStage } from "@/lib/saju/detections";
 import type { ChartPosition, RelationHit, TemporalPosition } from "@/lib/saju/detections/types";
 import { CHEONMUN_BRANCHES, HYEONCHIM_CHARS } from "@/lib/saju/detections/tables";
 import { groupStrength, GROUP_NAME_KO, GROUP_STRONG, GROUP_WEAK, TEN_GOD_GROUP_KEYS, type TenGodGroupKey } from "@/lib/saju/groupStrength";
@@ -19,6 +20,7 @@ import type { Brief } from "@/lib/brief/schema";
 import type { BriefInput, BriefPersonInput } from "@/lib/brief/buildBrief";
 import { TEN_GOD_KO } from "@/lib/brief/labels";
 import { BASE_POINTS } from "@/lib/compat/display";
+import { pairRelations as compatPairRelations, type PairRelation } from "@/lib/compat/relations";
 
 export const FACTSHEET_VERSION = "factsheet-v1" as const;
 export type Pos = ChartPosition;
@@ -44,7 +46,9 @@ export const STANDARDS = {
   age: "나이는 만 나이(그해 생일 지난 뒤 기준). 대운수는 한 사람에 한 숫자 = 첫 대운이 시작되는 때의 만 나이",
 } as const;
 
-export type ShinsalFact = { readonly id: string; readonly code: string; readonly family: "shinsal" | "gwiin"; readonly name: string; readonly positions: readonly Pos[]; readonly slots: readonly Slot[]; readonly glyphs: readonly string[]; readonly count: number; readonly twelve: boolean };
+export type ShinsalFact = { readonly id: string; readonly code: string; readonly family: "shinsal" | "gwiin"; readonly name: string; readonly positions: readonly Pos[]; readonly slots: readonly Slot[]; readonly glyphs: readonly string[]; readonly count: number; readonly twelve: boolean;
+  /** W6.1 D7: 같은 자리의 같은 신살(12신살 년살 = 도화살)이면 본문에서 쓸 이름(sameAs). 표시 번호가 밀리지 않게 칸은 지우지 않는다 — 본문은 sameAs 이름 하나로만 쓴다. */
+  readonly sameAs?: string };
 export type RelationFact = { readonly kind: RelationHit["kind"]; readonly key: string; readonly keyKo: string; readonly members: readonly { readonly where: string; readonly char: string }[]; readonly completeness: RelationHit["completeness"]; readonly subtype?: string; readonly element?: FiveElement; readonly glyphCount: number };
 export type IncomingFact = { readonly ganji: string; readonly ganjiKo: string; readonly stemTenGod: string; readonly branchTenGod: string; readonly twelveStage: string; readonly gongmang: boolean; readonly relations: readonly RelationFact[]; readonly stemClashes: readonly RelationFact[] };
 /** manStartAge(운영 Q 8-1): 그 대운 줄 「만 X~Y세」의 X = 대운수 + 10 × (순서 − 1)(labels.dayunLabel과 같은 값). startAge는 엔진 값(세는 나이) 그대로. */
@@ -110,9 +114,9 @@ function slotsOf(code: string, positions: readonly Pos[], saju: SajuCalcResult, 
 }
 
 const PILLAR_BASED = new Set(["GOEGANG", "EUMCHAK_YANGCHA", "BAEKHODAESAL"]);
-function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner", baseAt?: string): PersonFacts {
-  const gender = input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null;
-  const saju = sajuOf(input, gender);
+const genderOf = (input: BriefPersonInput) => (input.gender === "MALE" || input.gender === "FEMALE" ? input.gender : null);
+function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, brief: Brief | null, side: "person" | "partner", baseAt?: string, saju: SajuCalcResult = sajuOf(input, genderOf(input))): PersonFacts {
+  const gender = genderOf(input);
   const det = analyzeChartDetections(saju);
   const dm = saju.dayMaster;
   const P = saju.pillars as Record<Pos, Pillar | undefined>;
@@ -189,27 +193,32 @@ function personFacts(input: BriefPersonInput, k: Knowledge, baseDate: string, br
   };
 }
 
-/** 두 사람 기둥끼리 관계(A 자리 × B 자리). 원국 감지와 같은 함수(라벨은 계산에 쓰이지 않는다). */
-function pairRelations(a: PersonFacts, b: PersonFacts): { relations: RelationFact[]; stemClashes: RelationFact[] } {
+/**
+ * 두 사람 기둥끼리 관계(A 자리 × B 자리). W3 P3 5절: 브리프 요약·화면과 같은 한 구현(compat/relations.pairRelations — 같은 관계는 한 줄, 삼형 한 줄)을 쓴다.
+ * 예전에는 자리 쌍마다 한 줄을 따로 만들어 정답지 15개 대 요약 11가지로 셈이 갈렸다(research-w2 CO5).
+ */
+function pairRelationFacts(rows: readonly PairRelation[], a: PersonFacts, b: PersonFacts): { relations: RelationFact[]; stemClashes: RelationFact[] } {
   const relations: RelationFact[] = [], stemClashes: RelationFact[] = [];
-  for (const pa of POSITIONS) for (const pb of POSITIONS) {
-    const x = a.pillars[pa], y = b.pillars[pb]; if (!x || !y) continue;
-    const label = (pos: string) => pos === "year" ? `${a.name} ${whereKo(pa)}` : `${b.name} ${whereKo(pb)}`;
-    const entries = [{ position: "year" as const, pillar: { stem: x.stem, branch: x.branch } }, { position: "month" as const, pillar: { stem: y.stem, branch: y.branch } }];
-    for (const r of detectRelations(entries)) relations.push(relFact(r, label));
-    for (const r of detectStemClashes(entries)) stemClashes.push(relFact(r, label));
+  for (const r of rows) {
+    const part = r.sky ? "stem" : "branch";
+    const side = (p: PersonFacts, ps: readonly Pos[]) => ps.flatMap(pos => { const pl = p.pillars[pos]; return pl ? [{ where: `${p.name} ${whereKo(pos)}`, char: pl[part] as string }] : []; });
+    const fact: RelationFact = { kind: r.kind, key: r.key, keyKo: hangulOf(r.key), members: [...side(a, r.a), ...side(b, r.b)], completeness: r.completeness, ...(r.subtype ? { subtype: r.subtype } : {}), glyphCount: new Set(r.chars).size };
+    (r.kind === "STEM_CHUNG" ? stemClashes : relations).push(fact);
   }
   return { relations, stemClashes };
 }
 
 export function buildFactSheet(input: BriefInput, brief: Brief | null, k: Knowledge): FactSheet {
-  const a = personFacts(input.person, k, input.baseDate, brief, "person", input.baseAt);
+  const sajuA = sajuOf(input.person, genderOf(input.person));
+  const four = !amBrief(input.product), merge = (x: PersonFacts) => (four ? tagDohwaAlias(x) : x);
+  const a = merge(personFacts(input.person, k, input.baseDate, brief, "person", input.baseAt, sajuA));
   const people: PersonFacts[] = [a];
   let pair: PairFacts | undefined;
   if (input.partner) {
-    const b = personFacts(input.partner, k, input.baseDate, brief, "partner", input.baseAt);
+    const sajuB = sajuOf(input.partner, genderOf(input.partner));
+    const b = merge(personFacts(input.partner, k, input.baseDate, brief, "partner", input.baseAt, sajuB));
     people.push(b);
-    const rel = pairRelations(a, b);
+    const rel = pairRelationFacts(compatPairRelations(sajuA, sajuB), a, b);
     const bIds = new Set(b.shinsal.map(s => s.id));
     const dayStage = (p: PersonFacts) => p.twelveStages.find(t => t.position === "day")?.ko ?? null;
     const sc = brief?.compatibility?.score;
@@ -226,6 +235,15 @@ export function buildFactSheet(input: BriefInput, brief: Brief | null, k: Knowle
   return { version: FACTSHEET_VERSION, product: input.product, baseDate: input.baseDate, standards: STANDARDS, people, ...(pair ? { pair } : {}), mbtiIds };
 }
 
+/**
+ * W6.1 D7(2차 연애: 일지 도화살과 12신살 년살을 두 힘으로 씀, 4종만 — 세운·대운 정답지는 그대로): 12신살 년살은 도화살과 같은 신살이다.
+ * 자리가 겹치면 년살 칸에 sameAs = 도화살을 단다(칸을 지우면 궁합 신살 표시 번호·특성 자리 번호가 밀려 같은 작가 원문을 다시 발행할 때 표시가 다른 신살로 바뀐다).
+ */
+function tagDohwaAlias(p: PersonFacts): PersonFacts {
+  const dh = p.shinsal.find(x => x.code === "DOHWASAL"), ny = p.shinsal.find(x => x.code === "TWELVE_NYEONSAL");
+  if (!dh || !ny || !ny.slots.some(x => dh.slots.includes(x))) return p;
+  return { ...p, shinsal: p.shinsal.map(x => (x === ny ? { ...x, sameAs: dh.name } : x)) };
+}
 /** 한 사람의 정답지에서 이름(부를 이름)·그 사람 신살 이름 묶음. */
 export const shinsalNames = (p: PersonFacts) => new Set(p.shinsal.map(s => s.name));
 export const groupLevelOf = (p: PersonFacts, g: TenGodGroupKey) => p.groups[g].level;

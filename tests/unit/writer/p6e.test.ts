@@ -113,7 +113,10 @@ describe("P6e 출시 차단 1~10", () => {
   });
   // 최종판: 핵심 이미지는 P6e 결정론 조립(옮기지 않음) 대신 작가가 [표지]에서 짓고 이미지 대장으로 같은 일주 명사를 피한다(tests/unit/writer/final.test.ts).
   it("10 종합: 씨앗 꼬리표 그대로는 seed_copy, 앞 장 주장·반대 주장 짝(INTP 열등 기능)", () => {
-    expect(one(B.sodam, "정화의 소수 앞 밝음과 INTP의 한두 명에게만 말하는 습관이 겹쳐요.", { paragraph: 1 })).toContain("seed_copy");
+    // W8.1 G3: 이 융합 줄(정화 × INTP 「좁은 자리에서는 말이 쏟아지고」)은 INTP 성격 요약표 「마음을 말보다 행동으로」와 반대 끝이라 작가 입력에서 빠졌다 →
+    // 작가가 받지 않은 줄이니 「브리프 글 그대로 옮김」(seed_copy)도 아니다(옛 P6d 책 문장).
+    expect(JSON.stringify(renderWriterBrief(B.sodam, { knowledge: k }))).not.toContain("소수 앞");
+    expect(one(B.sodam, "정화의 소수 앞 밝음과 INTP의 한두 명에게만 말하는 습관이 겹쳐요.", { paragraph: 1 })).not.toContain("seed_copy");
     const cl = chapterClaims(B.sodam, k);
     expect([...cl.values()].flatMap(x => x.tension).join(" ")).toMatch(/INTP 열등 기능/);
     const hc = P6B_CASES.find(c => c.id === "c1-full")!, hn = normalizeReportInputPayload(hc.payload as never, { now: () => new Date("2026-11-04T05:00:00Z") });
@@ -233,7 +236,8 @@ describe("P6e H 저장된 P6d 최종 4권을 새 검사로 다시 읽으면 인�
     expect(hit(flagsOf("chaerin-love", B.chaerin), "orphan_start", "여기에 식신(食神)의 다정함이 더해집니다")).toBe(true);
     expect(hit(flagsOf("pair-business", B.pair), "feature_owner", "백은솔님에게는 겁살(劫煞)")).toBe(true);
     const s = flagsOf("sodam-full", B.sodam);
-    expect(hit(s, "seed_copy", "정화의 소수 앞 밝음과")).toBe(true);
+    // W8.1 G3로 그 융합 줄이 작가 입력에서 빠져 seed_copy 대상이 아니다(위 10 참고).
+    expect(hit(s, "seed_copy", "정화의 소수 앞 밝음과")).toBe(false);
     expect(hit(s, "awkward", "커피를 챙기는 점심 같은")).toBe(true);
   });
 });

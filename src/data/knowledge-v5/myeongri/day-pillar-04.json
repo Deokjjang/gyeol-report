@@ -749,7 +749,6 @@
         "controlNeed": 0.7,
         "planning": 0.7,
         "statusDrive": 0.6,
-        "conflictApproach": 0.5,
         "independence": 0.5,
         "riskTaking": 0.4,
         "emotionalExpression": -0.5,

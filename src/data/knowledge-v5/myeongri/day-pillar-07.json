@@ -594,7 +594,6 @@
         "ruleAdherence": 0.5,
         "conflictApproach": 0.5,
         "controlNeed": 0.5,
-        "riskTaking": -0.3,
         "emotionalExpression": -0.5
       },
       "mbtiLinks": [

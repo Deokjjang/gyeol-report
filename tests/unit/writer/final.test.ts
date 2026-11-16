@@ -227,8 +227,9 @@ describe("1-7 핵심 이미지", () => {
     expect(coverProblem("빗속에서도 꺼지지 않는 캠핑 랜턴", B.sodam, B.sodam.chart.avoidImages ?? [])).toMatch(/피할 이미지/);
   });
   it("작가 지침 v5-23은 P6d 지침에서 1-1·1-6·1-7 세 곳만 바꿨다", () => {
-    expect(WRITER_SYSTEM).toContain("rule은 너에게 주는 쓰기 규칙이다"); expect(WRITER_SYSTEM).toContain("한자는 쓰지 않는다"); expect(WRITER_SYSTEM).toContain("chart.avoidImages");
-    expect(WRITER_SYSTEM).toContain("MBTI 기능은 처음 한 번 \"쉬운 이름(Te)\""); // ③ 약어 금지를 옮기지 않았다
+    // W6 v5-29: 줄인 지침에서도 세 곳(rule 옮기지 않기·한자 쓰지 않기·피할 이미지)과 기능 쉬운 이름은 남긴다.
+    expect(WRITER_SYSTEM).toContain("rule은 쓰는 법이라 본문에 옮기지 않는다"); expect(WRITER_SYSTEM).toContain("한자는 쓰지 않는다"); expect(WRITER_SYSTEM).toContain("chart.avoidImages");
+    expect(WRITER_SYSTEM).toContain("처음 한 번 \"쉬운 이름(Te)\""); // ③ 약어 금지를 옮기지 않았다
     expect(WRITER_SYSTEM).not.toMatch(/문단 정확히 3개\(문단마다 4문장/); // ① 분량 강제를 옮기지 않았다
   });
 });

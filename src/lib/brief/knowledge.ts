@@ -7,8 +7,8 @@ import { join, resolve } from "node:path";
 import { z } from "zod";
 import {
   ActionTemplateFileSchema, BadgeFileSchema, BehaviorOntologySchema, FlowRuleSchema, FusionFileSchema, GanjiEnergyFileSchema,
-  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema,
-  type BehaviorOntology, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
+  MbtiFileSchema, MyeongriFileSchema, ProductNarrativesSchema, TenGodPeriodFileSchema, LoveSignalFileSchema, CareerFileSchema, CompatSceneFileSchema, CareerCatalogSchema, MaterialsFileSchema, PersonaTagsFileSchema,
+  type BehaviorOntology, type PersonaTag, type CareerCatalog, type CareerFile, type CompatSceneFile, type LoveSignal, type FlowRule, type FusionRule, type MbtiProfile, type MbtiType, type MyeongriFeature, type ProductNarratives,
 } from "@/data/knowledge-v5/schema";
 
 export type GanjiEnergy = z.infer<typeof GanjiEnergyFileSchema>["entries"][number];
@@ -20,7 +20,7 @@ export type ProductNarrative = ProductNarratives["products"][number];
 const DeepFileSchema = z.object({ version: z.string(), topic: z.string(), note: z.string().optional(), entries: z.array(z.object({ key: z.string(), when: z.enum(["strong", "weak", "any"]).optional(), items: z.record(z.string(), z.array(z.string())) })) });
 export type DeepEntry = z.infer<typeof DeepFileSchema>["entries"][number];
 /** P6d F: MBTI 장면 씨앗(유형 × 영역 30개 이상, 6~24자 명사구). rel: partner = 연인·배우자 전제, job: 직업 형태 전제. */
-const SeedFileSchema = z.object({ version: z.string(), type: z.string(), seeds: z.record(z.string(), z.array(z.object({ id: z.string(), text: z.string(), rel: z.enum(["any", "partner"]).optional(), job: z.enum(["any", "employed", "business", "student"]).optional(),
+const SeedFileSchema = z.object({ version: z.string(), type: z.string(), seeds: z.record(z.string(), z.array(z.object({ id: z.string(), text: z.string(), broad: z.string().optional(), rel: z.enum(["any", "partner"]).optional(), job: z.enum(["any", "employed", "business", "student"]).optional(),
   // P6e 16: 직업군·상태 태그(필수, 빈 배열 = 누구에게나). tools/p6e/tag-seeds.ts가 facts.SCENE_TAGS 규칙으로 단다.
   ctx: z.array(z.enum(["office", "code", "team", "shop", "care", "freelance"])) }))) });
 export type MbtiSeed = z.infer<typeof SeedFileSchema>["seeds"][string][number];
@@ -46,6 +46,8 @@ export type Knowledge = {
   readonly compatScenes: CompatSceneFile;
   /** 작가 재료(P6c A1): 원문 sha1 앞 12자 → 상황 씨앗·적용 방향·핵심 뜻. 파일이 없으면 빈 표(작가는 원문을 받는다). */
   readonly materials: ReadonlyMap<string, string>;
+  /** W7-1: 재료 줄 꼬리표(재료 키 → 갈래·차원·조건). 파일이 없으면 빈 표(거르기 없음). */
+  readonly personaTags: ReadonlyMap<string, PersonaTag>;
   /** P6d G: 심화 상품 재료(topic → 항목). 파일이 없으면 빈 표. */
   readonly deep: ReadonlyMap<string, readonly DeepEntry[]>;
   /** P6d F: MBTI 장면 씨앗(유형 → 영역 → 씨앗). */
@@ -83,6 +85,7 @@ export function loadKnowledge(root: string = DEFAULT_KNOWLEDGE_ROOT): Knowledge 
     catalog: CareerCatalogSchema.parse(read("career", "catalog.json")),
     compatScenes: CompatSceneFileSchema.parse(read("compat", "scenes.json")),
     materials: new Map(existsSync(join(root, "materials.json")) ? Object.entries(MaterialsFileSchema.parse(read("materials.json")).items) : []),
+    personaTags: new Map(existsSync(join(root, "persona-tags.json")) ? Object.entries(PersonaTagsFileSchema.parse(read("persona-tags.json")).items) : []),
     deep: new Map(existsSync(join(root, "deep")) ? list("deep").map(f => { const d = DeepFileSchema.parse(read("deep", f)); return [d.topic, d.entries] as const; }) : []),
     mbtiSeeds: new Map(existsSync(join(root, "mbti-seeds")) ? list("mbti-seeds").map(f => { const d = SeedFileSchema.parse(read("mbti-seeds", f)); return [d.type, d.seeds] as const; }) : []),
   };

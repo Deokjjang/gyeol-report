@@ -10,7 +10,7 @@ import { GROUP_LEVEL_KO, GROUP_NAME_KO, groupStrength, type TenGodGroupKey } fro
 import { getTenGod } from "@/lib/saju/tenGods";
 import type { SajuCalcResult, TenGod } from "@/lib/saju/types";
 import { deepLines, type Knowledge } from "../knowledge";
-import { ELEMENT_KO, ganjiOf, josa, tenGodLabel, TEN_GOD_GROUP } from "../labels";
+import { branchKo, ELEMENT_KO, ganjiOf, josa, tenGodLabel, TEN_GOD_GROUP } from "../labels";
 import type { ChartBrief, Material } from "../schema";
 import type { FactProfile } from "../facts";
 
@@ -73,7 +73,9 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
   const stageF = dayStage ? k.features.get(`twelveStage:${dayStage.stage}`) : undefined;
   // 일지 관계: 형·충·파·해·원진(태어난 날 땅 글자가 낀 것).
   const dayRel = det.relations.filter(r => ["CHUNG", "HYEONG", "PA", "HAE", "WONJIN"].includes(r.kind) && r.members.some(m => m.position === "day" && !/^[甲乙丙丁戊己庚辛壬癸]$/.test(m.char)));
-  const relName = (r: (typeof dayRel)[number]) => `${r.key}${({ CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진" } as Record<string, string>)[r.kind]}(${r.members.filter(m => m.position !== "day").map(m => POS[m.position] ?? m.position).join("·")}과)`;
+  // W3 P3 보강: 간지 짝은 한글로, 조사는 받침대로(「卯申원진(태어난 해과)」 → 「묘신 원진(태어난 해와)」), 관계 이름이 없는 원진은 신살 이름으로(내부 코드 「WONJIN」이 사실 줄에 나가지 않게).
+  const REL_KIND_KO: Record<string, string> = { CHUNG: "충", HYEONG: "형", PA: "파", HAE: "해", WONJIN: "원진" };
+  const relName = (r: (typeof dayRel)[number]) => `${[...r.key].map(branchKo).join("")} ${REL_KIND_KO[r.kind]}(${josa(r.members.filter(m => m.position !== "day").map(m => POS[m.position] ?? m.position).join("·"), "과와")})`;
   const solitary = (["GOSINSAL", "GWASUKSAL", "WONJIN"] as const).filter(x => shin(x)).map(x => k.features.get(`shinsal:${x}`)?.name ?? x);
   // 피해야 할 신호: 강한·약한 오행과 묶음.
   const ranked = (Object.keys(gs) as TenGodGroupKey[]).sort((a, b) => gs[b].value - gs[a].value);
@@ -121,7 +123,7 @@ export function loveDesign2(c: LoveCtx): Record<string, Evidence> {
     talkRhythm: ev("talkRhythm", [statusTag, ...la("contact", 2), ...seeds("l4", 2)], unknownNote ?? (status === "single" || status === "some" ? "연락 리듬·고백 성향, 문장 예시 하나(따옴표 한 줄)" : "대화 리듬, 문장 예시 하나")),
     express: ev("express", [...la("attachment", 2), ...la("date", 1)]),
     jealousy: ev("jealousy", [...(solitary.length ? [`관계 신살: ${solitary.join("·")} → 혼자 정리하는 시간이 필요한 쪽`] : []), ...la("conflict", 2)], "서운함은 한 문장만: 같은 말을 장마다 되풀이하지 않는다"),
-    dayRelations: ev("dayRelations", dayRel.length ? dayRel.slice(0, 3).map(r => `태어난 날 땅 글자의 ${relName(r)}: ${k.features.get(`relation:${r.kind}`)?.name ?? r.kind}`) : ["태어난 날 땅 글자에 형·충·파·해가 없음 → 다툼은 밖에서 오는 일정·속도 차이에서"], "관계 이름은 엔진 값 그대로. 없으면 '없다'고만"),
+    dayRelations: ev("dayRelations", dayRel.length ? dayRel.slice(0, 3).map(r => `태어난 날 땅 글자의 ${relName(r)}: ${(k.features.get(`relation:${r.kind}`) ?? k.features.get(`shinsal:${r.kind}`))?.name ?? REL_KIND_KO[r.kind] ?? r.kind}`) : ["태어난 날 땅 글자에 형·충·파·해가 없음 → 다툼은 밖에서 오는 일정·속도 차이에서"], "관계 이름은 엔진 값 그대로. 없으면 '없다'고만"),
     dangerSigns: ev("dangerSigns", [...pick(fresh(deepLines(k, "red-flags", `group:${ranked[ranked.length - 1]}`, "flag", "weak")).filter(firstMeet), seed, 1).map(x => `관계가 위험할 때의 신호: ${x}`), ...pick(deepLines(k, "red-flags", `group:${ranked[0]}`, "check", gs[ranked[0]].level === "strong" ? "strong" : "weak").filter(firstMeet), seed, 1).map(x => `점검: ${x}`)]),
     marriageView: ev("marriageView", marriageView, "성향만 쓴다. 시기 이야기는 꺼내지 않는다('시기는 말하지 않아요' 같은 안내 문장도 쓰지 않는다)"),
     homeState: ev("homeState", [statusTag, ...seeds("l7", 2), status === "married" ? "기혼: 지금 생활 점검 — 돈·역할·양가·집 중 하나씩" : "조건형: '함께 살게 된다면'"], unknownNote),

@@ -153,7 +153,7 @@
     },
     "minus": {
      "label": "흐름에 맡김",
-     "description": "누가 이끌든 상관없고 정해진 대로 따라가는 편입니다."
+     "description": "누가 이끌든 상관없고 흐름에 맞춰 움직이는 편입니다."
     }
    },
    "domains": [
@@ -214,7 +214,7 @@
    "poles": {
     "plus": {
      "label": "사람 속에서 충전",
-     "description": "모임이 끝나면 오히려 기운이 나는 편입니다."
+     "description": "사람들과 어울리고 나면 오히려 기운이 나는 편입니다."
     },
     "minus": {
      "label": "혼자서 충전",
@@ -347,7 +347,7 @@
     },
     "minus": {
      "label": "함께 해결",
-     "description": "처음부터 사람을 모아 같이 푸는 편입니다."
+     "description": "혼자 붙들기보다 처음부터 도움을 구하고 같이 푸는 편입니다."
     }
    },
    "domains": [
@@ -639,7 +639,7 @@
     },
     "minus": {
      "label": "뒤가 편함",
-     "description": "앞에 나서기보다 뒤에서 챙기는 자리가 편한 편입니다."
+     "description": "앞에 나서기보다 뒤에서 조용히 제 몫을 하는 자리가 편한 편입니다."
     }
    },
    "domains": [
@@ -763,7 +763,7 @@
    "poles": {
     "plus": {
      "label": "바로 반응",
-     "description": "거슬리는 말에 그 자리에서 받아치는 편입니다."
+     "description": "거슬리는 말이나 일에 그 자리에서 바로 반응이 나오는 편입니다."
     },
     "minus": {
      "label": "한 박자 늦게",
@@ -1015,5 +1015,31 @@
     }
    ]
   }
- ]
+ ],
+ "persona": {
+  "version": "persona-v1",
+  "note": "W7 성격 정답지 차원 사전(닫힌 목록 20). from = 옛 차원(dimensions·mbtiFn POLE_CUES·특징 dimensionTags) 이름과 방향(1 같음, -1 뒤집음). from에 없는 옛 차원(controlNeed·possessiveness·empathyResponse·competitiveness·mobility·caretaking·statusDrive·introspection·inquiry·learningDrive)은 정답지 밖 — W6.1·A 전문 읽기 모순 0.",
+  "dims": [
+   {"id": "directness", "name": "직설성", "plus": "틀린 것·하고 싶은 말을 그 자리에서 바로 짚는다", "minus": "상대 기분을 살펴 말을 고르고 돌려 말한다", "from": [["directness", 1]]},
+   {"id": "decisionSpeed", "name": "결정·착수 속도", "plus": "몇 가지만 보고 바로 정하고 움직인다", "minus": "오래 비교하고 준비한 뒤에 움직인다", "from": [["decisionSpeed", 1]]},
+   {"id": "riskTaking", "name": "벌이기", "plus": "해 본 적 없는 일도 일단 벌이고 가면서 고친다", "minus": "감당할 범위와 검증된 길을 먼저 확인한다", "from": [["riskTaking", 1]]},
+   {"id": "emotionalExpression", "name": "감정 드러냄", "plus": "기분이 표정·말에 바로 드러난다", "minus": "속상해도 겉으로 티 내지 않고 속에 담아 둔다", "from": [["emotionalExpression", 1]]},
+   {"id": "persistence", "name": "끝맺음", "plus": "맡은 일·정한 일을 끝까지 붙든다", "minus": "흥미가 식으면 다른 일로 옮기고 마무리를 넘기기 쉽다", "from": [["persistence", 1], ["dutifulness", 1]]},
+   {"id": "socialEnergy", "name": "기운 채우는 곳", "plus": "사람 속에 있을 때 기운이 찬다", "minus": "혼자 있는 시간에 기운이 찬다", "from": [["socialEnergy", 1]]},
+   {"id": "ruleAdherence", "name": "틀 선호", "plus": "정해진 절차·틀 위에서 편하다", "minus": "틀보다 내 판단으로 판을 새로 짠다", "from": [["ruleAdherence", 1]]},
+   {"id": "independence", "name": "혼자·함께", "plus": "도움 없이 혼자 풀어낸다", "minus": "처음부터 함께 나누고 기대어 푼다", "from": [["independence", 1]]},
+   {"id": "noveltySeeking", "name": "새것·바꿈", "plus": "새것을 찾고 방식을 자주 바꾼다", "minus": "익숙한 방식을 오래 지킨다", "from": [["noveltySeeking", 1]]},
+   {"id": "planning", "name": "계획", "plus": "일정·준비를 미리 짜 둔다", "minus": "계획 없이 그때그때 맞춘다", "from": [["planning", 1]]},
+   {"id": "verbalOutput", "name": "말로 풀기", "plus": "말이 많고 말하면서 생각을 정리한다", "minus": "말이 적고 속으로 생각을 정리한다", "from": [["verbalOutput", 1]]},
+   {"id": "detailFocus", "name": "세부", "plus": "숫자·순서·빈틈을 하나하나 맞춘다", "minus": "세부보다 큰 방향을 먼저 잡는다", "from": [["detailFocus", 1], ["perfectionism", 1]]},
+   {"id": "attentionSeeking", "name": "나섬", "plus": "앞에 나서 이끌고 눈에 띄는 자리가 편하다", "minus": "뒤에서 조용히 제 몫을 하는 자리가 편하다", "from": [["attentionSeeking", 1]]},
+   {"id": "spendingControl", "name": "돈 쓰는 법", "plus": "따져 보고 아끼며 모은다", "minus": "경험·기분에 시원하게 쓴다", "from": [["spendingControl", 1]]},
+   {"id": "reactivity", "name": "반응 속도", "plus": "자극에 바로 반응한다", "minus": "한 박자 늦게 반응한다", "from": [["reactivity", 1]]},
+   {"id": "conflictApproach", "name": "다툼 때", "plus": "불편한 일을 그 자리에서 꺼내 맞선다", "minus": "시간을 두고 정리하거나 부딪힘을 피한다", "from": [["conflictApproach", 1]]},
+   {"id": "intimacyPace", "name": "다가가는 속도", "plus": "처음 본 사람과도 먼저 빨리 가까워진다", "minus": "오래 지켜보고 확인한 뒤에야 마음을 연다", "from": [["intimacyPace", 1], ["trustThreshold", -1]]},
+   {"id": "boundarySetting", "name": "내 몫", "plus": "선을 분명히 긋고 내 몫을 지킨다", "minus": "부탁을 들어주느라 내 몫을 뒤로 미룬다", "from": [["boundarySetting", 1]]},
+   {"id": "emotionalRecovery", "name": "감정 회복", "plus": "서운함·다툼을 금방 털고 회복한다", "minus": "지난 일을 오래 곱씹고 마음에 남긴다", "from": []},
+   {"id": "cueReading", "name": "신호 읽기", "plus": "말보다 표정·분위기를 먼저 믿는다", "minus": "들은 말을 그대로 받아들인다", "from": []}
+  ]
+ }
 }

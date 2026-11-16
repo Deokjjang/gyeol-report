@@ -37,14 +37,15 @@ export function shinsalAliases(k: Pick<Knowledge, "features">): ShinsalAlias[] {
 
 /** 자리 말 → 칸. 짧은 한자어(일지·월간 등)와 풀어 쓴 말. 「시간」은 일상어라 한자·풀어 쓴 말만. */
 export const POSITION_WORDS: readonly { readonly re: RegExp; readonly slots: readonly Slot[]; readonly label: string }[] = [
-  { re: /일간|태어난 날의? (하늘 글자|천간|윗글자)|나 자신을 뜻하는 글자|일간 자리/, slots: ["dayStem"], label: "일간" },
-  { re: /일지|태어난 날의? (땅 글자|지지|아랫글자)|배우자 ?(자리|궁)|배우자궁|일지 자리/, slots: ["dayBranch"], label: "일지" },
-  { re: /월간|태어난 달의? (하늘 글자|천간)/, slots: ["monthStem"], label: "월간" },
-  { re: /월지|태어난 달의? (땅 글자|지지)|계절 자리/, slots: ["monthBranch"], label: "월지" },
-  { re: /[연년]간|태어난 해의? (하늘 글자|천간)/, slots: ["yearStem"], label: "연간" },
-  { re: /[연년]지|태어난 해의? (땅 글자|지지)/, slots: ["yearBranch"], label: "연지" },
-  { re: /시간\(時干\)|태어난 시(각)?의? (하늘 글자|천간)/, slots: ["hourStem"], label: "시간" },
-  { re: /시지|태어난 시(각)?의? (땅 글자|지지)|자녀 ?(자리|궁)|자녀궁/, slots: ["hourBranch"], label: "시지" },
+  // W4 Q2-6: 「태어난 날 아래 글자」「태어난 해의 위 글자」(띄어 쓴 위·아래 글자)도 자리 말이다(W3 2차 연애 배우자 별 자리).
+  { re: /일간|태어난 날의? (하늘 글자|천간|윗글자|위 글자)|나 자신을 뜻하는 글자|일간 자리/, slots: ["dayStem"], label: "일간" },
+  { re: /일지|태어난 날의? (땅 글자|지지|아랫글자|아래 글자)|배우자 ?(자리|궁)|배우자궁|일지 자리/, slots: ["dayBranch"], label: "일지" },
+  { re: /월간|태어난 달의? (하늘 글자|천간|윗글자|위 글자)/, slots: ["monthStem"], label: "월간" },
+  { re: /월지|태어난 달의? (땅 글자|지지|아랫글자|아래 글자)|계절 자리/, slots: ["monthBranch"], label: "월지" },
+  { re: /[연년]간|태어난 해의? (하늘 글자|천간|윗글자|위 글자)/, slots: ["yearStem"], label: "연간" },
+  { re: /[연년]지|태어난 해의? (땅 글자|지지|아랫글자|아래 글자)/, slots: ["yearBranch"], label: "연지" },
+  { re: /시간\(時干\)|태어난 시(각)?의? (하늘 글자|천간|윗글자|위 글자)/, slots: ["hourStem"], label: "시간" },
+  { re: /시지|태어난 시(각)?의? (땅 글자|지지|아랫글자|아래 글자)|자녀 ?(자리|궁)|자녀궁/, slots: ["hourBranch"], label: "시지" },
 ];
 
 /** 십이운성(두 글자 이름은 그대로, 한 글자는 한자·「운성」 문맥일 때만). */

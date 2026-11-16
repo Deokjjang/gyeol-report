@@ -102,8 +102,10 @@ const PARTNER_PRESUME = /좋아하는 (사람|상대|그 사람)(에게|한테|�
 // AM 7부 annual-1 재생성: 고객이 적은 소망 인용 「좋아하는 사람도 생겼으면 좋겠다」는 바람(가정)이다.
 const PARTNER_COND = /(생겼으면|생기길|생기기를|만났으면|만나길|생기면|생긴다면|생겼을 때|생길 때|생기는 날|생긴 뒤|만나면|만난다면|만날 때|만나게 되면|된다면|되면|이라면|라면|있다면|언젠가|만약|혹시|함께 살게|결혼한다면|결혼하면)/;
 /** 기혼이 아닌데 결혼 생활을, 솔로·미입력인데 연인을 전제하는가(규칙 이름, 없으면 null). */
+/** W4 Q2-2: 기혼에게 연애 호칭(연인·애인·남자친구·여자친구·썸·소개팅)을 쓰지 않는다(W3 P4 원인 3 — 기혼 종합의 연애 장 「연인과…」). */
+const DATING_TERM = /(?<![가-힣])(연인|애인|남자친구|여자친구|남친|여친)|썸(?:을| 타| 단계)|소개팅/;
 export function presumedPartner(sentence: string, relationship: "single" | "dating" | "married" | "unknown"): string | null {
-  if (relationship === "married") return null;
+  if (relationship === "married") return sentence.match(DATING_TERM)?.[0] ?? null;
   const m = sentence.match(PARTNER_PRESUME); if (!m) return null;
   if (PARTNER_COND.test(sentence) || /\?["'”’)⟫]*$/.test(sentence.trim())) return null;
   // 연애 중이면 연인·좋아하는 사람은 사실이다(결혼 생활만 전제 금지).
@@ -260,7 +262,7 @@ const TEN_GOD_TO_GROUP: Readonly<Record<string, string>> = { 비견: "비겁", �
 const EASY_GROUP: Readonly<Record<string, string>> = { "내 방식의 힘": "비겁", "만드는 힘": "식상", "값을 받는 힘": "재성", "규칙의 힘": "관성", "배우는 힘": "인성" };
 const easyGroupOf = (name: string): string | undefined => EASY_GROUP[name] ?? (/^내 방식/.test(name) ? "비겁" : /^만[들드]/.test(name) ? "식상" : /^값을 받/.test(name) ? "재성" : /^규칙/.test(name) ? "관성" : /^배우/.test(name) ? "인성" : undefined);
 // "많이 쓴다"는 쓰임(일이 그 힘을 많이 쓴다)이지 세기가 아니다(r2 커리어: 문단을 잘못 뺐다).
-const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리|큰 (편|쪽|확장형|사람|구조|사주)|크고|큽니|커서|커요|크다)/;
+const LV_STRONG = /^(강하|강한|강해|강합|강하게|강함|많(?!이)|두껍|두텁|두꺼|넘치|넘쳐|세고|센 편|센 쪽|힘이 세|가장 세|크게 자리|큰 (편|쪽|확장형|사람|구조|사주)|크고|큽니|커서|커요|크다|크기 때문|크니)/; // W7 m1(1차 커리어 2장 「만들고 넓히는 힘이 크기 때문에」, 식상 약)
 const LV_MEDIUM = /^(보통|중간 정도|적당|평균)/;
 const LV_WEAK = /^(약하|약한|약해|약합|약함|옅|부족|모자라|모자란|적은 편|적어|적고|없어|없는|없고|없으|빈약|얇)/;
 export function groupClaims(sentence: string): { group: keyof GroupLevels; level: GroupLevelKo }[] {

@@ -174,6 +174,13 @@ describe("P6d D 카드(대운·세운)", () => {
 });
 
 describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·씨앗을 쓰지 않는다)", () => {
+  // W6 S2-1: 4종 브리프의 씨앗·연결 장면은 넓은 꼴이다 — 원문(지식 DB text)으로 되돌려 본다.
+  const seedTexts = (b: Brief) => {
+    const seeds = [...k.mbtiSeeds.values()].flatMap(x => Object.values(x).flat()), rules = [...k.fusionByFeature.values()].flat();
+    const fromSeeds = b.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)]).flatMap(m => (m.kind === "mbti" && m.seedId ? [seeds.find(x => x.id === m.seedId)?.text ?? ""] : []));
+    const fromFusion = b.traits.flatMap(t => (t.fusion?.scene ? [rules.find(r => r.scene?.broad === t.fusion!.scene || r.scene?.text === t.fusion!.scene)?.scene?.text ?? ""] : []));
+    return [...fromSeeds, ...fromFusion].join(" ");
+  };
   const full = brief("saju_mbti_full", PEOPLE.c1);
   const l1 = ledgerOf(full);
   const nextOpts = (ls: ReturnType<typeof ledgerOf>[], prev: Brief[]) => ({ excludeAngles: ls.flatMap(l => l.angles), excludeSeeds: ls.flatMap(l => l.seeds), priorEvidence: ls.flatMap(l => l.evidence), excludeScenes: prev.flatMap(usedScenesOf) });
@@ -186,10 +193,11 @@ describe("P6d F 아이디어 원장(같은 고객의 다음 책은 쓴 각도·�
     for (const b of [career, pair]) {
       const w = JSON.stringify(renderWriterBrief(b));
       for (const t of b.traits.filter(t => t.id.startsWith("a") || !t.id.startsWith("b"))) if (t.fusion) expect(l1.angles, `${b.product} ${t.featureId}`).not.toContain(`${t.featureId}:fusion:${t.fusion.target}`);
-      expect(w, b.product).not.toMatch(/설거지/);
+      // W6 S2-1: 작가 브리프의 씨앗은 넓은 꼴이라 원문 낱말(설거지)은 씨앗 원문으로 본다.
+      expect(w + seedTexts(b), b.product).not.toMatch(/설거지/);
       expect(w, b.product).not.toMatch(/정해진 대로 따라가는 (편|쪽)/);
     }
-    expect(JSON.stringify(renderWriterBrief(full))).toMatch(/설거지|정해진 대로 따라가는/); // 종합(첫 책)에는 있었다
+    expect(JSON.stringify(renderWriterBrief(full)) + seedTexts(full)).toMatch(/설거지|정해진 대로 따라가는/); // 종합(첫 책)에는 있었다
   });
   it("심화 상품 근거 항목의 60% 이상은 종합에서 쓰지 않은 것, MBTI 씨앗은 겹치지 않는다", () => {
     expect(newEvidenceShare(l2, l1)).toBeGreaterThanOrEqual(0.6);

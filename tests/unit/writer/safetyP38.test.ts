@@ -115,7 +115,8 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
 
   it("3: 궁합 장면은 그 관계 유형의 주제에서만, 부모·자녀는 자녀 나이대, 다른 관계 낱말 없음", () => {
     for (const [rt, b] of pairs) {
-      const own = new Set(k.compatScenes.types.find(t => t.type === rt)!.topics.flatMap(t => t.scenes.map(s => s.text)));
+      // W6 S2-1: 4종 궁합은 관계 장면의 넓은 꼴(broad)을 싣는다.
+      const own = new Set(k.compatScenes.types.find(t => t.type === rt)!.topics.flatMap(t => t.scenes.flatMap(s => [s.text, ...(s.broad ? [s.broad] : [])])));
       const rel = b.chapters.flatMap(c => c.materials).filter(m => m.kind === "rel") as { scene: string; topic: string }[];
       expect(rel.length, rt).toBeGreaterThanOrEqual(8); // P6b C-1: 절 2~3개라 관계 장면 절은 9개
       for (const r of rel) expect(own.has(r.scene), `${rt} ${r.scene}`).toBe(true);
@@ -123,7 +124,7 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
     }
     const pc = pairs.find(([rt]) => rt === "parentChild")![1];
     const scenes = k.compatScenes.types.find(t => t.type === "parentChild")!.topics.flatMap(t => t.scenes);
-    for (const m of pc.chapters.flatMap(c => c.materials)) if (m.kind === "rel") expect(scenes.find(s => s.text === m.scene)!.ages ?? "any").not.toBe("minor");
+    for (const m of pc.chapters.flatMap(c => c.materials)) if (m.kind === "rel") expect(scenes.find(s => s.text === m.scene || s.broad === m.scene)!.ages ?? "any").not.toBe("minor");
     expect(pc.compatibility!.lens.tone).not.toContain("학교");
   });
 

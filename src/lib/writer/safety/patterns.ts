@@ -84,12 +84,15 @@ export function jobFieldList(text: string): string | null {
 export function splitSentences(text: string): string[] {
   // 닫는 핵심 문장 기호(⟫, P6c H)는 마침표 뒤에 와도 그 문장에 붙인다.
   // 따옴표 안 물음·느낌표 뒤에 조사가 바로 붙으면("'그래서 결론은?'이 상대에게는") 문장 끝이 아니다(P6c I: 결정론 문장이 반으로 잘렸다).
-  const QQ = "\uE000", QE = "\uE001";
+  const QQ = "\uE000", QE = "\uE001", QD = "\uE002";
+  // W6 S4(2차 궁합): 마침표로 끝난 인용 뒤에 인용을 받는 말("「이 부분은 내가 맡을게." 하고 알려 주고」")도 문장 끝이 아니다 — 잘린 「하고 …」가 조각으로 지워져 인용만 남았다. 마침표는 「하지만」 같은 새 문장 머리와 헷갈리지 않게 인용 동사 꼴만 본다.
+  const QUOTE_TAIL_DOT = /(?=(?:하고|하는|하며|하면|하니|하자|하던|하곤|하기|한 |할 |라고|라는|라며|이라고|이라는))/.source;
   // 따옴표 뒤 한 칸 띄고 인용을 받는 말("'이게 맞나?' 하는 물음")도 문장 끝이 아니다(P6d B: 앞 인용이 지워져 "하는 물음이 자주 올라와요"만 남았다).
   const QUOTE_TAIL = /(?=(하|라|이라|이란|란|싶|같|묻|물|되묻|말하|말할|외치|다짐|생각|고민|속으로|혼잣말|되뇌)|(는|은|을|를|에|의|와|과|로|으로|며|고) )/.source;
   const masked = text.replace(/\?(["'”’])(?=[가-힣])/g, `${QQ}$1`).replace(/!(["'”’])(?=[가-힣])/g, `${QE}$1`)
-    .replace(new RegExp(`\\?(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QQ}$1$2`).replace(new RegExp(`!(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QE}$1$2`);
-  return masked.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim().replaceAll(QQ, "?").replaceAll(QE, "!")).filter(Boolean) ?? [];
+    .replace(new RegExp(`\\?(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QQ}$1$2`).replace(new RegExp(`!(["'”’])(\\s+)${QUOTE_TAIL}`, "g"), `${QE}$1$2`)
+    .replace(new RegExp(`\\.(["”])(\\s+)${QUOTE_TAIL_DOT}`, "g"), `${QD}$1$2`);
+  return masked.match(/[^.!?\n]+[.!?]+["'”’)⟫]*|[^.!?\n]+$/gm)?.map(s => s.trim().replaceAll(QQ, "?").replaceAll(QE, "!").replaceAll(QD, ".")).filter(Boolean) ?? [];
 }
 
 /** 과거·경험 단정: 물음표로 끝나는 문장(질문형)과 따옴표 안 대사는 허용. */

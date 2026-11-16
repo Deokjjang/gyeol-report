@@ -7,7 +7,7 @@
  * 경고(지우지 않음): 용어가 쉬운 말 없이 먼저 나옴, 같은 소품이 책에서 2회 초과.
  */
 import { ORPHAN_CONNECTIVE, stripConnective } from "./orphan";
-import { STYLE_EXAMPLES } from "../prompt/examples";
+import { AM_STYLE_EXAMPLES, STYLE_EXAMPLES } from "../prompt/examples";
 import ontology from "@/data/knowledge-v5/behavior-ontology.json";
 import { AWKWARD_PHRASE, FAMILY_MEMBER, LOVE_TIMING, OLD_NEGATIVE, RURAL_PROP, SOURCE_MENTION, isPastAssertion, softenExperience, splitSentences, tidyText } from "./patterns";
 
@@ -47,9 +47,11 @@ const JOB_BUSINESS = /(당신의 가게|가게 손님|매출|단골손님)/;
 const JOB_STUDENT = /(담임|수업 시간|학교 숙제|시험 기간|반 친구)/;
 const HOUR = /((?<![가-힣])시주|(?<![가-힣])시지|시간 기둥|태어난 시(간|각)?의? ?(기둥|자리|글자)|자녀 ?자리|자녀궁|말년의? ?자리)/;
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI|\b(Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/;
-export const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣]))/;
+export const INTERNAL = /(브리프|팩폭|Fusion|퓨전|명식|조건형|상황 씨앗|장면 씨앗|입력(에 없|되지 않|하지 않|이 없|된 게 없)|trait|featureId|warmTurn|oneLiner|positionNote|strengthNote|shadows?\.|\bref\b|\bt\d{1,2}\b|\bs\d\b|[a-z][A-Za-z]+:[A-Z가-힣一-鿿_]|계산 연결|재료 ?목록|\{key\}|\[이름\]|\{이름\}|상태가 [가-힣·]{1,8}(이)?라면|입력 직업|성격표|(이 장의|이번 장의) (행동|한 가지|할 일|숙제)(은|는|이에요|입니다)|해 볼 (것|일)은 (하나|한 가지)|(이 장의|이번 장의|오늘의|한 가지|하나의|당신의|첫|마지막) 처방|(?<![가-힣])처방(은|이에요|입니다|이죠|은 간단|은 하나|하나|이 필요|을 (드릴|하나|정리))(?![가-힣])|(?:한|두|세|두세|서너) ?줄 판정|되돌리는 문장)/; // W6.1 1-3: 작가 지시 말(커리어 sideBiz 「세 줄 판정」, 지침 「warmTurn처럼 되돌리는 문장」)
 
-const HEALTH_CLAIM = /(소화|잠|수면|두통|위장|장 건강|피부|혈압|허리|어깨|목덜미|면역|생리)[^.?!]{0,14}(흔들립니다|흔들려요|탈이 납니다|탈이 나요|나빠집니다|나빠져요|상합니다|망가집니다|망가져요|아픕니다|아파요|약해집니다|약해져요)[.!]?$/;
+const HEALTH_CLAIM = /(소화|잠|수면|두통|위장|장 건강|피부|혈압|허리|어깨|목덜미|면역|생리)[^.?!]{0,14}(흔들립니다|흔들려요|탈이 납니다|탈이 나요|나빠집니다|나빠져요|상합니다|망가집니다|망가져요|아픕니다|아파요|약해집니다|약해져요|반응이 (?:먼저 )?(?:와요|옵니다|나타나요|나타납니다)|신호가 (?:먼저 )?(?:와요|옵니다|오죠|와)|(?:몸이 )?(?:먼저 )?반응(?:합니다|해요))[.!]?$/; // W6 S4 2판(2차 종합 6장): 「소화와 수면에서 먼저 신호가 오죠」 · W6.1 1-3(1차 궁합 6장): 「소화와 수면 쪽으로 몸이 먼저 반응합니다」
+/** W7 m1(1차 연애 8장 「지치고 상처받은 마음을 몸이 아프고 나서야 알아채기도 합니다」): 몸이 아픈 것을 성향의 결과로 단정. */
+const HEALTH_BODY = /몸이 (?:먼저 )?(?:아프고 나서야|아프고서야|아파야|아파진 뒤에야)/;
 const STAGE_GLYPH = /(땅 글자|일지|지지)(는|은|가|이) [가-힣]{1,2}(이라는|라는) (단계|운성)/;
 /** 스스로 김빼는 말(P3.5 A6): 해석·점수를 스스로 깎아내린다. */
 const DEFLATING = /(궁합|점수|풀이|해석|사주|MBTI|이 책|리포트|명리|이 이야기)[^.?!]{0,20}(근거(가|는)? (없|부족)|재미로|참고(용|로만))|과학적(인)? 근거|재미로 (보는|만 보|봐 주|읽어 주|즐겨 주)|재미 삼아|믿거나 말거나|그냥 재미로/;
@@ -75,6 +77,9 @@ export const INTERNAL_LABEL = new RegExp([
   // AM 1부 판독(45·47·49): 설계기 라벨이 본문에 — 「정재형·편재형·회전형」, 「부업·창업 적합 체크」, 판정 「'잘 맞음'」, 「"함께 살게 된다면"이라는 조건으로 이야기하는 건」.
   "(?<![가-힣])(정재|편재|비겁|식상|재성|관성|인성)형(이에요|입니다|이라|이고|이|은|의|으로|에|인)?(?![가-힣])", "회전형|장기 분산형|적합 체크", "['‘\"“](잘 맞음|보통에서 잘 맞음 사이|덜 맞음|맞음|보통)['’\"”]",
   "(이라는|라는) (조건|가정)으로 (이야기|말|풀어|살펴)",
+  // W6 S4(2차 궁합): 처방 종류 이름·절 구조가 본문에 — 「이 절의 한 가지는 끝까지 듣기예요」「한마디 건네기를 해 보세요」.
+  "(?<![가-힣])(이|그) 절(의|에서|마다)(?![가-힣])",
+  "(?<![가-힣])(끝까지 듣기|하루 묵히기|한마디 건네기|사람 고르기|쉬기·잠|보내기 전 다시 읽기|월급날·먼저 떼어 두기|말 다듬기·한 박자|연락·안부|몸 움직이기|적기·목록|값 매기기)(예요|이에요|입니다)",
   `['‘"“](${POLE_LABELS.map(esc).join("|")})['’"”]`, `(${POLE_LABELS.map(esc).join("|")}) 쪽(이|으로|에|인데)`,
 ].join("|"));
 /** 가운뎃점 목록에 행동 축 이름(또는 그 첫 낱말)이 둘 이상이면 축 이름 나열이다("사교 에너지·규칙·끈기"). */
@@ -89,7 +94,8 @@ export const norm = (t: string) => t.replace(/[\s\p{P}\p{S}]/gu, "");
 const EXAMPLE_WINDOW = 15;
 const exampleWindows = (() => {
   const set = new Set<string>();
-  for (const e of STYLE_EXAMPLES) for (const line of e.text.split("\n")) {
+  // W4 Q2-3: 4종 예시 + 세운·대운 예시(운영 그대로) 둘 다.
+  for (const e of [...STYLE_EXAMPLES, ...AM_STYLE_EXAMPLES]) for (const line of e.text.split("\n")) {
     if (line.startsWith("#")) continue;
     const n = norm(line); for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) set.add(n.slice(i, i + EXAMPLE_WINDOW));
   }
@@ -100,6 +106,41 @@ export function copiesExample(sentence: string, allowed?: ReadonlySet<string>): 
   const n = norm(sentence);
   for (let i = 0; i + EXAMPLE_WINDOW <= n.length; i++) { const w = n.slice(i, i + EXAMPLE_WINDOW); if (exampleWindows.has(w) && !allowed?.has(w)) return true; }
   return false;
+}
+/**
+ * W4 Q2-3 복사 검사(4종): 본문이 4종 문체 예시 문장과 세 어절 이상 이어서 같으면(조사까지 같은 낱말 셋) 예시 복사로 본다(HARD → 수리).
+ * 세 어절 모두가 흔한 말(당신·그래서·있어요…)이면 세지 않는다 — 내용 낱말(두 글자 이상, 흔한 말 아님)이 하나 이상 있어야 한다.
+ */
+const WORD_STOP = /^(당신|그래서|하지만|그리고|그런데|다만|이|그|저|이런|그런|더|잘|좀|또|한|두|세|수|것|거|때|번|있어요|있습니다|있는|있고|있을|있어|없어요|없는|해요|합니다|하는|하고|하면|해서|해도|돼요|됩니다|이에요|예요|입니다|편이에요|쪽이에요|사람|마음|먼저|조금|정말|가장|자주|오늘|하루|지금|그때|이때|이렇게|그렇게|아니라|함께|오래|다시|바로|모두|서로|둘|힘|속|곁|쪽|편|날|말|일|라고|이라고|처럼|주면|주세요|줘요|두면|두세요|보면|보세요|하면|되면|싶어요|같아요|글자|자리|기둥|하늘|땅|태어난|기운)$/;
+/** 낱말 뒤 조사를 뗀 꼴(내용 낱말 세기용). */
+const bareWord = (w: string) => w.replace(/(에서는|에서도|에게는|에서|에게|으로는|으로|에는|에도|까지|부터|처럼|마다|이랑|하고|이나|의|을|를|이|가|은|는|도|만|과|와|로|에)$/, "");
+const content = (w: string) => { const b = bareWord(w); return b.length >= 2 && !WORD_STOP.test(b) && !WORD_STOP.test(w); };
+// 괄호 속(한자·기능 약어·자리 약어 「(월지)」「(Fe)」)은 떼고 앞 낱말에 조사를 붙여 둔다(「살피기(Fe)가」 → 「살피기가」).
+const words = (t: string) => t.replace(/\([^)]*\)/g, "").replace(/[⟪⟫"'“”‘’「」]/g, " ").split(/\s+/).map(w => w.replace(/[.,!?…·:;]+$/g, "")).filter(Boolean);
+/** 예시 세 어절 가운데 예시가 생기기 전에 쓴 책(운영 v5 24권 + 시험 책 19권, 2026-11-14)에도 나온 흔한 말 — 복사로 보지 않는다(그 책들이 예시를 볼 수 없었다). */
+const EXAMPLE_COMMON: ReadonlySet<string> = new Set(["혼자 있는 시간에", "서운한 일이 생기면", "주변 마음 살피기가", "쌓이기 전에 풀립니다", "이유가 여기에 있습니다", "이름을 붙여 보세요", "고정 지출 하나를", "다툼은 큰 사건보다", "이미 끝난 일로", "새로 벌이기보다 이미"]);
+const exampleTrigrams = (() => {
+  const set = new Set<string>();
+  for (const e of STYLE_EXAMPLES) for (const line of e.text.split("\n")) {
+    // 머리글·카드 줄([표지]·[그림]…)만 뺀다(「[이름]님의 …」 문단은 본문이다).
+    if (line.startsWith("#") || /^\[(표지|그림|해 볼 것|살필 점|돌아보기|키워드)\]/.test(line)) continue;
+    // 내용 낱말이 둘 이상인 세 어절만(「있을 수 있어요」「그래서 두 사람의」 같은 이음말은 우연히 같다 — 시험 책 19권 오탐).
+    const w = words(line); for (let i = 0; i + 3 <= w.length; i++) { const g = w.slice(i, i + 3); if (g.filter(content).length >= 2 && !EXAMPLE_COMMON.has(g.join(" "))) set.add(g.join(" ")); }
+  }
+  return set;
+})();
+/**
+ * 예시와 이어서 같은 세 어절(없으면 null). 고객 브리프에도 있는 세 어절은 복사가 아니다 — allowed에는 조사 뗀 낱말을 이어 붙이고 공백·문장부호를 뺀 열쇠를 준다
+ * (브리프 쪽도 normWords(괄호 뗌)로 만들어 견준다).
+ */
+export const normWords = (t: string) => t.replace(/\([^)]*\)/g, "").replace(/[\s\p{P}\p{S}]/gu, "");
+export function exampleTrigram(sentence: string, allowed?: (key: string) => boolean): string | null {
+  const w = words(sentence);
+  for (let i = 0; i + 3 <= w.length; i++) {
+    const gw = w.slice(i, i + 3), g = gw.join(" ");
+    if (exampleTrigrams.has(g) && !allowed?.(normWords(gw.map(bareWord).join("")))) return g;
+  }
+  return null;
 }
 /** 브리프 글에서 예시와 겹치는 15자 창만 모은다(예외 목록). */
 export function allowedWindows(briefText: string): Set<string> {
@@ -124,7 +165,7 @@ export function sentenceViolation(s: string, f: SafetyFacts, allowed?: ReadonlyS
   if (!f.mbti && MBTI_WORD.test(s)) return "mbti_absent";
   if (INTERNAL.test(s)) return "internal_term";
   // AM 1부 판독(48 6장 「날이 선 날에는 소화와 잠부터 먼저 흔들립니다」): 몸 증상을 확정형으로 단정(건강 진단 금지). 「~하기 쉬워요」 경향은 통과.
-  if (HEALTH_CLAIM.test(s)) return "health_claim";
+  if (HEALTH_CLAIM.test(s) || HEALTH_BODY.test(s)) return "health_claim";
   // AM 1부 판독(47 1·2·4·7장): 땅 글자 자체를 십이운성 단계로 씀(「태어난 날 땅 글자는 묘라는 단계예요」).
   if (STAGE_GLYPH.test(s)) return "stage_glyph";
   if (INTERNAL_LABEL.test(s) || axisList(s)) return "internal_label";

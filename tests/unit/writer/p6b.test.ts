@@ -53,8 +53,10 @@ describe("P6b 핵심 이미지·판 정보·작가 입력", () => {
   });
   it("작가 입력에 그림 별명·이미지·한 줄이 없다(뜻·나에게만)", () => {
     for (const product of ["saju_mbti_full", "major_fortune"] as const) {
-      const w = renderWriterBrief(book(product).brief) as { traits: Record<string, unknown>[]; chart: Record<string, unknown> };
-      for (const t of w.traits) { expect(t).not.toHaveProperty("easyName"); expect(t).not.toHaveProperty("image"); expect(t).not.toHaveProperty("oneLiner"); expect(t.meaning).toBeTruthy(); expect(t.forYou).toBeTruthy(); }
+      const w = renderWriterBrief(book(product).brief) as { traits: Record<string, unknown>[]; chart: Record<string, unknown>; chapters: { sections?: { card?: { evidence?: { id?: string; meaning?: string }[] } }[] }[] };
+      // W3 P3: 4종 카드 책은 특성 뜻(meaning)을 traits[]가 아니라 절 card.evidence의 첫 등장에 싣는다(바꿔치기).
+      const cardMeaning = new Map(w.chapters.flatMap(c => c.sections ?? []).flatMap(s => s.card?.evidence ?? []).flatMap(e => (e.id && e.meaning && !e.meaning.startsWith("이번 장에서") ? [[e.id, e.meaning] as const] : [])));
+      for (const t of w.traits) { expect(t).not.toHaveProperty("easyName"); expect(t).not.toHaveProperty("image"); expect(t).not.toHaveProperty("oneLiner"); expect(t.meaning ?? cardMeaning.get(t.id as string)).toBeTruthy(); expect(t.forYou).toBeTruthy(); }
       expect(typeof w.chart.coreImage).toBe("string");
     }
   });

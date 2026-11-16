@@ -19,7 +19,7 @@ import type { Knowledge } from "./knowledge";
 import { createRng, fnv1a, stableStringify, type Rng } from "./seed";
 import { BRIEF_VERSION, BriefSchema, type Brief, type ChartBrief, type Material, type PersonBrief, type Trait } from "./schema";
 import { sectionBudget, TOKEN_METHOD } from "./size";
-import { fitSegments, fitTimelineTexts, inputsOf, needMet, neutralize, type Inputs } from "./premise";
+import { fitSegments, fitTimelineTexts, inputsOf, itemFits, needMet, neutralize, type Inputs } from "./premise";
 import { TEN_GOD_ROW } from "./core";
 import { buildAnnualEntries, buildYearEntries, cycleSummary, type TimelineCtx } from "./timeline";
 import { buildFortunes, buildShadows, buildTrait, buildUnused, enforceMbtiLinks, GROUPS as TRAIT_GROUPS, scoreHits, selectTraits, type ProductKey } from "./traits";
@@ -41,6 +41,12 @@ import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
 import { LOVE_STATUS_Q, LOVE_STATUS_TITLE, loveDesign2, loveStatusOf } from "./design/love";
 import { pairYearRelationEvidence, yearRelationEvidence } from "./yearRelation";
+import { designCards, type BookDesign, type CardPerson } from "./cards/design";
+import { buildFactSheet } from "@/lib/factsheet/build";
+import { factCheck, factCtxOf } from "@/lib/factsheet/check";
+import { cleanSeed, SENIORITY_PROP, WORKPLACE } from "@/lib/writer/chunked/card";
+import { seedFits } from "@/lib/writer/chunked/intake";
+import type { RxKind } from "./prescriptions";
 
 /** 세운 × 원국 관계 근거를 흐름·시기 장에 넣는 상품(AM 1-1 ①). 대운·세운은 자기 카드(2·3부)를 쓴다. */
 const LAUNCH_YEAR_RELATION: ReadonlySet<string> = new Set(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility"]);
@@ -213,7 +219,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   selected.forEach((s, i) => {
     const sc = replacedScenes.has(traits[i].id) ? replacedScenes.get(traits[i].id) : s.fusion?.source === "fusion" && s.fusion.target === traits[i].fusion?.target ? s.fusion.scene : undefined;
     // 결혼·자녀 언젠가형 장면은 연애 상품에서만(P3.5 A5, 종합 '사람' 장 배정은 장 단계에서 본다).
-    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile, sc.text) && !usedScenes.has(sc.text) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: sc.text }; usedScenes.add(sc.text); }
+    if (sc && traits[i].fusion?.source === "fusion" && sceneFits(sc.requires, profile, sc.text) && !usedScenes.has(sc.text) && !(sc.broad && usedScenes.has(sc.broad)) && (product === "love_marriage_child" || !conditionalFamily(sc))) { traits[i].fusion = { ...traits[i].fusion!, scene: !amBrief(product) && sc.broad ? sc.broad : sc.text }; usedScenes.add(sc.text); if (sc.broad) usedScenes.add(sc.broad); }
   });
   const age = ageAt(input.birthDate, baseDate);
   const person: PersonBrief = {
@@ -229,6 +235,8 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
   return { saju, facts, profile, person, chart, traits, sources, hitIds: hits.map(h => h.id), scored, selected, det, dayun, st: st0, bc, clashes };
 }
 
+/** W3 P3: 직업 소품 낱말(연애·가족 장 소품 힌트에서 뺀다 — 사업자 통장·대금 받는 날·견적 문의 연락). */
+const JOB_PROP = /사업자|대금|견적|정산|단가|의뢰|매출|손님|거래처|납품|클라이언트|외주|발주|계약서|업무|출근|퇴근|사무실|마감|작업/;
 /** 생활 단계 이름(P6c C1): 작가가 장면을 이 고객의 삶에 맞추게 한다. */
 const LIFE_STAGE_KO = (stage: string, age: number) => ({
   student: age < 19 ? "초·중·고 학생" : "대학생 이상 학생(초·중·고 장면 금지: 모의고사·학원·급식·담임 등)",
@@ -442,17 +450,29 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) }
     : input.product === "major_fortune" && !mbti ? { ...narrative, chapters: narrative.chapters.map(c => (c.id === "growth" ? { ...c, ...growthAlt } as typeof c : c)) } : narrative;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
+  // AM 1-1 ③ 장면 분산 = 고객 해시(이름·생일·시각·성별, 주문 시각 제외) + 상품 id. W3 P3: 4종도(소품 시작 자리·처방 시작 자리).
+  const spread = fnv1a(`${input.person.name.replace(/\s+/g, "")}|${input.person.birthDate}|${input.person.birthTimeUnknown ? "" : input.person.birthTime.slice(0, 5)}|${input.person.gender}|${input.product}`);
+  const am = amBrief(input.product);
+  // W3 P3 장면 씨앗(설계 3, 4종): 씨앗 거름 = 뜻 거름(sceneFits) + 씨앗 꼬리표 + 입력 조건표(itemFits) + cleanSeed(바뀌어야 쓸 수 있는 씨앗은 쓰지 않는다 — 원문 id·재료 표 키 유지).
+  const factsLike = { person: { facts: me.person.facts, age: me.person.age } } as unknown as Brief;
+  const seedInputs = inputsOf(me.person.facts);
+  const seedOk = (sd: { text: string; rel?: string; job?: string; ctx?: readonly string[] }) => itemFits("seed", sd.text, seedInputs) && seedFits(sd.text, factsLike, { rel: sd.rel, job: sd.job, ctx: sd.ctx }) && cleanSeed(sd.text, { brief: factsLike, workplaceOk: true }) === sd.text.trim();
+  // 소품: 연차·직급 소품(막내 업무·연차 눈치·사수 질문 노트)은 입력 직업 글에 그 말이 있을 때만, 연애·가족 장에는 직업 소품을 주지 않는다(4종).
+  const props0 = isPair ? undefined : customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile);
+  const seniorOk = (x: string) => !SENIORITY_PROP.test(x) || SENIORITY_PROP.test(me.facts.detailJob);
+  const props = props0 && !am ? { job: { ...props0.job, props: props0.job.props.filter(seniorOk) }, relationship: props0.relationship.filter(seniorOk), stage: { ...props0.stage, props: props0.stage.props.filter(seniorOk) } } : props0;
+  const jobProps = new Set(props0?.job.props ?? []);
+  const propSkip = (x: string, d: string) => (d === "love" || d === "marriage") && (jobProps.has(x) || WORKPLACE.test(x) || JOB_PROP.test(x));
   const { chapters, plan } = planChapters({
     product: input.product, narrative: narrativeUsed, traits: [...me.sources, ...(other?.sources ?? [])], facts: profile, rng: rng.fork("chapters"), usedScenes,
     ...(keyMaterials.size ? { keyMaterials } : {}),
     ...(input.knownTraits?.length ? { known: new Set(input.knownTraits) } : {}),
     mbtiSeeds: k.mbtiSeeds, ...(input.excludeSeeds?.length ? { excludeSeeds: new Set(input.excludeSeeds) } : {}),
     mbti: mbti ? k.mbti.get(mbti.type)! : null, has, evidence, shadows, timelineKeys,
-    // AM 1-1 ③: 장면 분산 = 고객 해시(이름·생일·시각·성별, 주문 시각 제외) + 상품 id. 같은 사람의 다른 상품, 다른 사람의 같은 상품이 서로 다른 소품 자리에서 시작한다.
-    // W3 P1: amBrief 상품만(4종은 운영 그대로 0부터).
-    ...(amBrief(input.product) ? { spread: fnv1a(`${input.person.name.replace(/\s+/g, "")}|${input.person.birthDate}|${input.person.birthTimeUnknown ? "" : input.person.birthTime.slice(0, 5)}|${input.person.gender}|${input.product}`) } : {}),
+    // 같은 사람의 다른 상품, 다른 사람의 같은 상품이 서로 다른 소품 자리에서 시작한다(W3 P3부터 4종도).
+    spread, ...(am ? {} : { seedOk, propSkip }),
     ...(isPair && other ? { mbtiPair: ([[me, me.facts.mbti], [other, other.facts.mbti]] as const).flatMap(([p, t]) => t && k.mbti.get(t) ? [{ who: p.person.callName, profile: k.mbti.get(t)! }] : []) } : {}),
-    ...(isPair ? {} : { props: customerProps({ detailJob: me.facts.detailJob, jobStatus: me.facts.jobStatus, age: me.person.age }, profile) }),
+    ...(props ? { props } : {}),
     ...(timeline ? { touched: new Map(timeline.entries.map(e => [e.key, (e.touched ?? []).map(t => t.traitId)])), transitionTouched } : {}),
     ...(mbtiTop ? { mbtiAxes: [mbtiTop] } : {}),
     // 궁합 장면은 그 관계 유형의 생활 주제에서만(P3.8 3: 부모·자녀 책에 친구 보온병·동창 회비). 부모·자녀는 자녀 나이대로 거른다.
@@ -490,13 +510,40 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const sub = (s: string) => s.replace(/(?<![A-Za-z])([AB])(가|는|와|를|의)?(?![A-Za-z])/g, (_, x: string, p?: keyof typeof PAIR | "의") => !p ? name[x] : p === "의" ? `${name[x]}의` : josa(name[x], PAIR[p]));
     for (const c of chapters) { c.title = sub(c.title); c.question = sub(c.question); for (const x of c.sections ?? []) x.q = sub(x.q); }
   }
+  // W3 P3 절 설계 카드(4종): 특징 카드 · 장마다 연결 하나 · 장면 · 팩폭 · 처방 종류 · 카드 단계 사실 대조(정답지). 세운·대운은 intake가 따로 짠다(카드 없음).
+  let design: BookDesign | undefined;
+  if (!am) {
+    const sheet = buildFactSheet(input, null, k);
+    const ruleOkOf = (p: PersonPack, inp: BriefPersonInput) => { const bt = !p.facts.birthTimeUnknown, gk = p.person.gender !== null, ck = Boolean(inp.context?.jobStatus || inp.context?.relationshipStatus);
+      return (r: { factBoundary: { requires: readonly string[] } }) => r.factBoundary.requires.every(q => q === "mbtiKnown" || (q === "exactTime" || q === "approximateTime" ? bt : q === "genderKnown" ? gk : ck)); };
+    const personOf = (p: PersonPack, inp: BriefPersonInput, i: number, owner?: "a" | "b"): CardPerson => ({ ...(owner ? { owner } : {}), callName: p.person.callName, traits: p.traits, hits: new Map(p.selected.map(x => [x.hit.id, x.hit])), facts: sheet.people[i], mbti: p.facts.mbti ? k.mbti.get(p.facts.mbti) ?? null : null, ruleOk: ruleOkOf(p, inp) });
+    const job = me.person.facts.job;
+    const rxFits = (kd: RxKind) => kd === "월급날·먼저 떼어 두기" ? job.class === "employed" : kd === "값 매기기" ? job.class === "business" || job.status === "freelancer" : true;
+    design = designCards({ product: input.product, chapters, people: [personOf(me, input.person, 0, isPair ? "a" : undefined), ...(other && input.partner ? [personOf(other, input.partner, 1, "b")] : [])],
+      brief: { chart: me.chart, mbti, shadows, ...(compatibility ? { compatibility } : {}), ...(ledgerNotes ? { ledgerNotes } : {}) }, k, spread, rxFits });
+    // W4 Q2-6 쓰기 전 대조: 원재료(특성 글·연결 이유·팩폭 재료) 문장을 정답지(factCheck — 쓴 뒤 검사와 같은 함수)로 보고, 틀린 문장은 작가에게 보내기 전에 뺀다.
+    // 칸이 다 빠지면 원문을 둔다(쓴 뒤 검사가 잡는다). 뺀 것은 design.card_fact_drop에 chapter "materials"로 남긴다.
+    const nm = (full: string, call: string) => [...new Set([full, call.replace(/님$/, ""), full.length >= 3 ? full.slice(1) : ""].filter(x => x.length >= 2))];
+    const fctx = factCtxOf(sheet, k, compatibility && other ? [nm(me.person.name, compatibility.a.callName), nm(other.person.name, compatibility.b.callName)] : [nm(me.person.name, me.person.callName)]);
+    const scrub = (text: string, label: string): string => { const kept = splitSentences(text).filter(x => { const h = factCheck(x, fctx, x); if (h) design!.card_fact_drop.push({ chapter: "materials", section: -1, name: label, where: "", reason: `${h.rule}: ${h.detail}`.slice(0, 160) }); return !h; }); return kept.join(" ") || text; };
+    for (const t of traitsAll) {
+      t.forYou = scrub(t.forYou, `${t.id}.forYou`); t.meaning = scrub(t.meaning, `${t.id}.meaning`);
+      if (t.positionNote) t.positionNote = scrub(t.positionNote, `${t.id}.positionNote`);
+      if (t.strengthNote) t.strengthNote = scrub(t.strengthNote, `${t.id}.strengthNote`);
+      if (t.overuse) t.overuse = scrub(t.overuse, `${t.id}.overuse`);
+      if (t.fusion) t.fusion = { ...t.fusion, why: scrub(t.fusion.why, `${t.id}.fusion`) };
+      const good = t.good.filter(g => { const h = splitSentences(g).map(x => factCheck(x, fctx, x)).find(Boolean); if (h) design!.card_fact_drop.push({ chapter: "materials", section: -1, name: `${t.id}.good`, where: "", reason: `${h.rule}: ${h.detail}`.slice(0, 160) }); return !h; });
+      if (good.length) t.good = good;
+    }
+    for (const sh of shadows) { sh.text = scrub(sh.text, `${sh.id}.text`); sh.basis = scrub(sh.basis, `${sh.id}.basis`); sh.warmTurn = scrub(sh.warmTurn, `${sh.id}.warmTurn`); }
+  }
   const chars = PRODUCT_CHARS[input.product];
   // 책 단위 소품 사용 기록(P3.6 A1): 안전망이 본문에서 같은 소품이 2회를 넘는지 센다.
   const usedProps: Record<string, number> = {};
   for (const c of chapters) for (const x of c.sceneHint ?? []) usedProps[x] = (usedProps[x] ?? 0) + 1;
   const draft = {
     version: BRIEF_VERSION, product: input.product, productTitle: narrative.title, seed: seed.toString(16), baseDate: input.baseDate,
-    person: me.person, mbti, chart: me.chart, traits: traitsAll, fortunes, shadows, unused, chapters, plan,
+    person: me.person, mbti, chart: me.chart, traits: traitsAll, fortunes, shadows, unused, chapters, plan, ...(design ? { design } : {}),
     ...(timeline ? { timeline } : {}),
     ...(other ? { partner: { person: other.person, mbti: mbtiBrief(k, other.facts.mbti), chart: other.chart } } : {}),
     ...(compatibility ? { compatibility } : {}),

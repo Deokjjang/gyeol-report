@@ -78,7 +78,9 @@ export function pairRelationLines(a: PairSide, b: PairSide, k: Knowledge): { row
 function relationSummary(rows: readonly PairRelation[]): NonNullable<CompatibilityBrief["relationsSummary"]> {
   if (!rows.length) return { line: "두 사람 글자 사이에 합이나 형·충·파·해로 엮인 관계가 따로 없어요.", names: [] };
   const c = pairRelationCounts(rows), part = (g: "hap" | "friction") => c.byName.filter(([n]) => rows.some(r => r.name === n && r.group === g)).map(([n, x]) => `${n} ${x}`).join("·");
-  const hap = c.hap ? `합 ${c.hap}가지(${part("hap")})` : "합 0가지", fr = c.friction ? `형·충·파·해 ${c.friction}가지(${part("friction")})` : "형·충·파·해 0가지";
+  // W6.1 1-3: 마찰 묶음에 원진이 들면 이름도 「형·충·파·해·원진」(원진은 형·충·파·해가 아니다 — 1차 궁합 「형·충·파·해가 여섯 가지」, 그중 둘이 원진).
+  const frName = rows.some(r => r.group === "friction" && r.kind === "WONJIN") ? "형·충·파·해·원진" : "형·충·파·해";
+  const hap = c.hap ? `합 ${c.hap}가지(${part("hap")})` : "합 0가지", fr = c.friction ? `${frName} ${c.friction}가지(${part("friction")})` : "형·충·파·해 0가지";
   return { line: `두 사람 사이에서 찾은 관계는 모두 ${rows.length}가지예요. ${hap} · ${fr}.`, names: rows.map(r => r.name) };
 }
 

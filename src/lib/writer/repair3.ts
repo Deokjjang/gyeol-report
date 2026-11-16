@@ -3,17 +3,23 @@
  * 지적된 문장만 고친다(문단 전체를 다시 쓰지 않는다). 정답지(엔진 사실)를 함께 준다.
  * 수리본은 다시 검사하고, 실패한 문장만 지운다. 지우면 문단이 깨지는 경우(앞말에 기대는 다음 문장, 소제목의 마지막 문단)는 원문을 두고 기록한다.
  */
-import { removeSentenceAt } from "./safety/orphan";
+import { dependsOnRemoved, listItemIn, removeSentenceAt } from "./safety/orphan";
 import type { Brief } from "@/lib/brief/schema";
 import type { FactSheet, PersonFacts } from "@/lib/factsheet/build";
 import { completeText, MODEL_TOKENS_PER_CHAR, type WriterOptions, type WriterRun } from "./runner";
 import type { FinalChapter } from "./safety";
 import { RURAL_PROP, splitSentences } from "./safety/patterns";
 import { HARD_RULES, type LintFlag } from "./safety/p6c";
+import { emptyPreview } from "./safety/p6d";
+import { factTokens, type FactKind } from "./chunked/accept";
+import { relationName } from "@/lib/compat/relations";
+import { sameSentence } from "./safety/info";
 import type { Numbered, ReviewIssue } from "./review";
+import { ANAPHOR_SHORT, leadNamesSubject, modeOf, priorityOf, reviewModeOf, reviewPriorityOf } from "./repairPlan";
+import { assertedPoles, cueKeys, profilePoles, type ContradictionCtx } from "./safety/contradiction";
 
 export const REPAIR3_SYSTEM = `너는 결리포트 원고의 교정 작가다. [R번호] 항목마다 적힌 문제를 고쳐 그 문장 하나만 다시 쓴다.
-- 지적된 문장만 고친다. 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓰고 돌려주지 않는다. 문단 흐름이 이어지게 쓴다.
+- 지적된 문장만 고친다. 고친 답도 한 문장이다(문장을 늘리거나 앞뒤 문장 내용을 끌어오지 않는다 — 늘린 답은 버려진다). 앞뒤 문장(문맥)은 흐름을 맞추는 데만 쓴다.
 - 정답지(facts)와 맞게 쓴다. 새 사실·새 사람·새 사건·입력에 없는 상황을 만들지 않는다. 같은 장면·같은 처방을 다른 말로 되풀이하지 않는다.
 - 고칠 수 없거나 빼는 게 맞으면 "[R번호] (삭제)"라고만 쓴다.
 - 쉬운 존댓말(~입니다/~예요), 원문과 비슷한 길이. 한자·"명리학에서"·그림 별명·안내·면책 문장 금지. 행동 시점은 연·월 숫자 대신 "앞으로 한 달".
@@ -36,48 +42,54 @@ const locate = (chapters: readonly FinalChapter[], chapter: number, section: num
   return splitSentences(p.replace(/[⟪⟫]/g, "")).find(s => s === sentence || s.includes(sentence) || sentence.includes(s)) ?? null;
 };
 
-/** 깃발·지적·표지 문제 → 항목(같은 문장은 한 항목, 문제는 모은다). */
-export function repairItems(a: { chapters: readonly FinalChapter[]; flags: readonly LintFlag[]; issues: readonly ReviewIssue[]; numbered: readonly Numbered[]; cover?: { line: string; problem: string } | null; byN?: ReadonlyMap<number, Numbered> }): RepairItem[] {
+/**
+ * 깃발·지적·표지 문제 → 항목(같은 문장은 한 항목, 문제는 모은다).
+ * W5 R2: 다시 쓰기 규칙만(repairPlan.modeOf = rewrite, 검수는 I·T만) · 칸 순서 = 표지 → 사실 HARD → 노출 → 근거 없는 장면·입력 밖 → 그 밖.
+ * overflow: 칸이 모자라 못 든 HARD 깃발(「장.절.문단|규칙」) — 발행이 그 문단을 지운다(장이 비지 않게).
+ */
+export function repairItems(a: { chapters: readonly FinalChapter[]; flags: readonly LintFlag[]; issues: readonly ReviewIssue[]; numbered: readonly Numbered[]; cover?: { line: string; problem: string } | null; byN?: ReadonlyMap<number, Numbered>; overflow?: Set<string> }): RepairItem[] {
   const out: RepairItem[] = [], key = new Map<string, RepairItem>();
-  const add = (k: string, base: Omit<RepairItem, "id" | "problems" | "source">, problem: string, src: RepairItem["source"][number]) => {
+  const add = (k: string, base: Omit<RepairItem, "id" | "problems" | "source">, problem: string, src: RepairItem["source"][number]): boolean => {
     const had = key.get(k);
-    if (had) { if (!had.problems.includes(problem)) had.problems.push(problem); if (!had.source.includes(src)) had.source.push(src); return; }
-    if (out.length >= REPAIR3_MAX_ITEMS) return;
-    const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it);
+    if (had) { if (!had.problems.includes(problem)) had.problems.push(problem); if (!had.source.includes(src)) had.source.push(src); return true; }
+    if (out.length >= REPAIR3_MAX_ITEMS) return false;
+    const it: RepairItem = { ...base, id: out.length + 1, problems: [problem], source: [src] }; out.push(it); key.set(k, it); return true;
   };
   if (a.cover) add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: a.cover.line }, `표지: ${a.cover.problem}`, "cover");
-  // AM 재생성 판독(major-1·annual-1): 수리 40칸이 모두 lint(대부분 문체 깃발)로 차서 검수가 맞게 짚은 사실·면책 지적이 고쳐지지 않았고, 8칸은 조립이 어차피 떼는 머리 문장 베낌에 쓰였다.
-  // → 칸 순서: 사실·금지 깃발(안 고치면 지워진다) → 검수 지적 → 문체 깃발. 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)에는 칸을 주지 않는다.
+  // AM 재생성 판독(major-1·annual-1): 머리 문장 베낌(「YYYY년 간지는 …이 하늘에, …이 땅에」)·대운 시작 되풀이에는 칸을 주지 않는다. 검수 지적에도 같은 거르기.
   const HEAD_COPY = /^(\d{4}년 )?[가-힣]{2}(\([一-鿿]{2}\))?(월)?(\([一-鿿]{2}月?\))?(은|는) [^.?!]{0,40}(하늘에|천간에)[^.?!]{0,40}(땅에|지지에)/;
-  // AM 재생성 2 판독(major-1 2030): 머리 둘째 문장(「이 해 5월 무렵부터 병인 대운이 시작되고」)의 사본이 칸을 받아 조립이 못 떼는 꼴로 바뀌었다 → 달·해 key 소제목 첫 문단의 대운 시작 되풀이도 칸을 주지 않는다. 검수 지적에도 같은 거르기.
   const DAYUN_HEAD = /무렵(?:부터|에)[^.?!]{0,24}대운(?:이|은)? (?:시작|열리)/;
   const headCopy = (chapter: number, section: number, paragraph: number, sentence: string | undefined) => {
     if (!sentence) return false; if (HEAD_COPY.test(sentence)) return true;
     const h = a.chapters.find(c => c.n === chapter)?.sections[section]?.heading ?? "";
     return paragraph === 0 && /^\d{4}(-M\d{2})?$/.test(h) && DAYUN_HEAD.test(sentence);
   };
-  const flagsOf = (hard: boolean) => a.flags.filter(f => HARD_RULES.has(f.rule as never) === hard && !headCopy(f.chapter, f.section, f.paragraph, f.sentence));
-  const addFlags = (list: readonly LintFlag[]) => { for (const f of list) {
-    const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) continue;
+  const addFlag = (f: LintFlag) => {
+    const ch = a.chapters.find(c => c.n === f.chapter); if (!ch || ch.source === "deterministic" || f.card) return;
     const problem = `${f.hint}${f.detail ? ` [${f.detail}]` : ""}`;
-    if (f.paragraph < 0) { add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint"); continue; }
-    if (!f.sentence) { add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint"); continue; }
-    const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) continue;
-    add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint");
-  } };
-  addFlags(flagsOf(true));
+    let ok = true;
+    if (f.paragraph < 0) ok = add(`h:${f.chapter}.${f.section}`, { kind: "heading", chapter: f.chapter, section: f.section, paragraph: -1, original: ch.sections[f.section]?.heading ?? "" }, problem, "lint");
+    else if (!f.sentence) ok = add(`a:${f.chapter}.${f.section}.${f.paragraph}`, { kind: "append", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: ch.sections[f.section]?.paragraphs[f.paragraph] ?? "" }, problem, "lint");
+    else { const s = locate(a.chapters, f.chapter, f.section, f.paragraph, f.sentence); if (!s) return; ok = add(`s:${f.chapter}.${f.section}.${f.paragraph}:${s}`, { kind: "sentence", chapter: f.chapter, section: f.section, paragraph: f.paragraph, original: s }, problem, "lint"); }
+    if (!ok && HARD_RULES.has(f.rule as never)) a.overflow?.add(`${f.chapter}.${f.section}.${f.paragraph}|${f.rule}`);
+  };
   const byN = a.byN ?? new Map(a.numbered.map(x => [x.n, x]));
-  for (const i of a.issues) {
-    const x = byN.get(i.s); if (!x) continue;
-    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) continue;
+  const addIssue = (i: ReviewIssue) => {
+    const x = byN.get(i.s); if (!x) return;
+    if (x.paragraph >= 0 && headCopy(x.chapter, x.section, x.paragraph, x.text)) return;
     const other = i.s2 ? byN.get(i.s2)?.text : undefined;
     const problem = `${CAT_KO[i.cat] ?? i.cat}: ${i.why}${i.ref ? ` (근거 ${i.ref})` : ""}${i.field ? ` (입력 칸 ${i.field})` : ""}${other ? ` — 비교 문장: "${other.slice(0, 120)}"` : ""}`;
-    if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); continue; }
-    if (x.paragraph < 0) { add(`h:${x.chapter}.${x.section}`, { kind: "heading", chapter: x.chapter, section: x.section, paragraph: -1, original: x.text }, problem, "review"); continue; }
-    const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text) ?? x.text;
+    if (x.n === 0) { add("cover", { kind: "cover", chapter: 0, section: 0, paragraph: -1, original: x.text }, problem, "review"); return; }
+    if (x.paragraph < 0) { add(`h:${x.chapter}.${x.section}`, { kind: "heading", chapter: x.chapter, section: x.section, paragraph: -1, original: x.text }, problem, "review"); return; }
+    const s = locate(a.chapters, x.chapter, x.section, x.paragraph, x.text); if (!s) return;
     add(`s:${x.chapter}.${x.section}.${x.paragraph}:${s}`, { kind: "sentence", chapter: x.chapter, section: x.section, paragraph: x.paragraph, original: s }, problem, "review");
-  }
-  addFlags(flagsOf(false));
+  };
+  type Cand = { p: number; run: () => void };
+  const cands: Cand[] = [
+    ...a.flags.filter(f => modeOf(f.rule) === "rewrite" && !headCopy(f.chapter, f.section, f.paragraph, f.sentence)).map(f => ({ p: priorityOf(f.rule), run: () => addFlag(f) })),
+    ...a.issues.filter(i => reviewModeOf(i.cat) === "rewrite").map(i => ({ p: reviewPriorityOf(i.cat), run: () => addIssue(i) })),
+  ];
+  for (const c of cands.map((c, i) => ({ ...c, i })).sort((x, y) => x.p - y.p || x.i - y.i)) c.run();
   return out;
 }
 
@@ -123,8 +135,8 @@ export function parseRepair3(text: string): Map<number, string> {
 export type AppliedRepair = { readonly id: number; readonly kind: RepairItem["kind"]; readonly at: string; readonly before: string; readonly after: string; readonly source: readonly string[] };
 const DELETE = /^\(?삭제\)?\.?$/;
 /** 고친 문장을 제자리에 넣는다. (삭제)는 지운 것으로 기록. 표지는 cover로 돌려준다. */
-export function applyRepair3(chapters: readonly FinalChapter[], items: readonly RepairItem[], fixes: ReadonlyMap<number, string>): { chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[] } {
-  const applied: AppliedRepair[] = [];
+export function applyRepair3(chapters: readonly FinalChapter[], items: readonly RepairItem[], fixes: ReadonlyMap<number, string>): { chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; rejected: { id: number; at: string; after: string }[] } {
+  const applied: AppliedRepair[] = [], rejected: { id: number; at: string; after: string }[] = [];
   let cover: string | null = null;
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   for (const it of items) {
@@ -135,29 +147,34 @@ export function applyRepair3(chapters: readonly FinalChapter[], items: readonly 
     if (it.kind === "heading") { if (!DELETE.test(v)) { sec.heading = v.replace(/^#+\s*/, ""); applied.push({ id: it.id, kind: it.kind, at, before: it.original, after: sec.heading, source: it.source }); } continue; }
     if (it.kind === "append") { if (!DELETE.test(v)) { sec.paragraphs[it.paragraph] = `${sec.paragraphs[it.paragraph]} ${v}`.trim(); applied.push({ id: it.id, kind: it.kind, at, before: "", after: v, source: it.source }); } continue; }
     const p = sec.paragraphs[it.paragraph] ?? ""; if (!p.includes(it.original) && !p.replace(/[⟪⟫]/g, "").includes(it.original)) continue;
+    // W5 R2(R0 늘림 13건 → 겹침·반쪽 되돌림): 원문보다 문장이 많은 답은 받지 않는다(원문 그대로 — HARD면 뒤에서 뗀다).
+    if (!DELETE.test(v) && splitSentences(v.replace(/[⟪⟫]/g, "")).length > Math.max(1, splitSentences(it.original).length)) { rejected.push({ id: it.id, at, after: v }); continue; }
     const marked = p.includes(`⟪${it.original}⟫`);
     const after = DELETE.test(v) ? "" : v.replace(/[⟪⟫]/g, "");
+    // W8 m2(1차 궁합 1장 「최지우님의 태어난 날 기둥 … 흙이에요」 (삭제) → 다음 문장 「남의 사정을 … 손이 있어요」가 누구의 손인지 잃음): 이름으로 여는 문장을 지우면 다음 문장이 주어를 잃을 때 원문을 둔다.
+    if (!after) { const ss0 = splitSentences(p).map(x => x.replace(/[⟪⟫]/g, "")), i0 = ss0.findIndex(x => x === it.original.replace(/[⟪⟫]/g, "") || x.includes(it.original)), nx = i0 >= 0 ? ss0[i0 + 1] : undefined;
+      if (nx && /^[가-힣]{1,8}님(?:의|은|는|이|가|에게)\s/.test(it.original.trim()) && !/님|당신|두 사람|둘 다|우리|서로/.test(nx)) { rejected.push({ id: it.id, at, after: "(삭제 — 다음 문장 주어 잃음, 원문 둠)" }); continue; } }
     // 최종 A-9: (삭제)면 바로 뒤 문장이 접속어로 시작하는 고아 문장이 되지 않게 접속어를 뗀다.
     const ss = after ? [] : splitSentences(p), di = ss.findIndex(x => x.replace(/[⟪⟫]/g, "") === it.original.replace(/[⟪⟫]/g, "") || x.replace(/[⟪⟫]/g, "").includes(it.original));
     sec.paragraphs[it.paragraph] = (!after && di >= 0 ? removeSentenceAt(ss, di).sentences.join(" ") : (marked ? p.replace(`⟪${it.original}⟫`, after ? `⟪${after}⟫` : "") : p.replace(it.original, after))).replace(/\s{2,}/g, " ").trim();
     applied.push({ id: it.id, kind: it.kind, at, before: it.original, after, source: it.source });
   }
-  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), cover, applied };
+  return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), cover, applied, rejected };
 }
 
 /** 수리 호출 1회(작가 모델). 항목이 없거나 작가가 없으면 그대로. */
-export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactSheet, brief: Brief, chapters: readonly FinalChapter[], items: readonly RepairItem[]): Promise<{ run: WriterRun; chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; text: string }> {
-  if (!items.length || !run.writer) return { run, chapters: [...chapters], cover: null, applied: [], text: "" };
+export async function repair3Pass(o: WriterOptions, run: WriterRun, sheet: FactSheet, brief: Brief, chapters: readonly FinalChapter[], items: readonly RepairItem[]): Promise<{ run: WriterRun; chapters: FinalChapter[]; cover: string | null; applied: AppliedRepair[]; rejected: { id: number; at: string; after: string }[]; text: string }> {
+  if (!items.length || !run.writer) return { run, chapters: [...chapters], cover: null, applied: [], rejected: [], text: "" };
   const p = repair3Prompt(sheet, brief, chapters, items);
   const maxTokens = repair3MaxTokens(p.chars, items.length, run.writer.model);
   const r = await completeText(o, run, p.system, p.user, maxTokens, "repair");
   const a = applyRepair3(chapters, items, parseRepair3(r.text));
-  return { run: r.run, chapters: a.chapters, cover: a.cover, applied: a.applied, text: r.text };
+  return { run: r.run, chapters: a.chapters, cover: a.cover, applied: a.applied, rejected: a.rejected, text: r.text };
 }
 export const repair3MaxTokens = (chars: number, items: number, model: string) => Math.min(REPAIR3_MAX_TOKENS, Math.ceil(chars * (MODEL_TOKENS_PER_CHAR[model] ?? 1) * 1.6) + 40 * items + 400);
 
-/** 다음 문장이 앞말(내용)을 가리킨다(지우면 문단이 깨진다). 최종 A-9: 접속어(그래서·하지만 등)는 여기서 빼고, 지운 뒤 접속어만 뗀다(orphan.ts). */
-const LEANS = /^(이처럼|이렇게|이런|그런|그 덕분|그만큼|여기에|그 결과|그러다(?! 보니)|그때|이때|그다음은|그다음엔|이 |그 )/;
+/** W3 P3 6절(AM cut.ts ASKS 이식): 답이 뒤따라야 서는 수사 물음(「…낯설죠?」「…일까요?」). 답 문장을 지우면 물음도 함께 지운다. 물음표 없는 「…나요.」는 서술이다. */
+const ASKS = /([?？]|죠|지요|까요|ㄹ까|을까)[.!]?$/;
 /**
  * 최종판3 12: 수리 문장이 재검사(정답지 대조 포함)에 새로 걸리면 그 문장을 수리 전 원문으로 되돌린다(호출 0).
  * 판독: 검수가 음양 2:6을 거꾸로 읽고(오탐) 수리가 맞는 문장을 틀리게 고쳤다. 원문도 걸리는 경우(원래 검사 깃발)는 뒤의 지우기가 처리한다.
@@ -177,6 +194,36 @@ export function revertWorse(chapters: readonly FinalChapter[], applied: readonly
     if (i < 0) continue;
     ss[i] = a.before; (sec.paragraphs as string[])[f.paragraph] = ss.join(" ");
     reverted.push({ at: `${f.chapter}.${f.section}.${f.paragraph}`, after: a.after, before: a.before, rule: f.rule });
+  }
+  return { chapters: out, reverted };
+}
+/**
+ * W8.1 G6(T8 — W8 수리 답 3건이 다른 장과 새 모순: 「재성은 보통이라 … 다 쫓는 편은 아닙니다」 · 「두 사람 모두에게 겁살 … 장덕민님만의 것이 아니에요」 ·
+ * 「백호대살은 … 드러내기보다 안에서 세게 눌러 담는 쪽입니다」): 수리 문장이 ① 성격 요약표 값과 반대 끝을 단정하거나 ② 원문에 없던 차원 끝을 새로 단정하면 원문으로 되돌린다(호출 0).
+ * 차원 끝 = 모순 검사와 같은 단서(assertedPoles — 주인·단정 판정 그대로) · 원문에 없던 성향 단정 꼴(「~편은 아닙니다」「~만의 것이 아니」「~기보다 … 쪽입니다」 — 단서 사전 밖의 새 끝).
+ * 되돌린 원문에 차단 깃발이 남으면 뒤의 deleteFlagged가 지운다(다음 문장 주어 지키기 포함).
+ */
+const TREND_FRAME = /(?:편|쪽|사람|타입|성향)(?:은|이|도)? (?:아니에요|아니예요|아닙니다|아니랍니다|아니라)|만의 것이 아니|(?:기|는 것)보다(?:는)? [^.?!]{0,30}(?:쪽|편)(?:입니다|이에요|예요|이죠)/;
+export function revertRepairPoles(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: ContradictionCtx | undefined): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  if (!ctx) return { chapters: out, reverted };
+  const poles = ctx.people.map(p => profilePoles(p.codes));
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after || !a.before) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(x => norm(x).includes(key));
+    if (i < 0) continue;
+    // 원문 글에 같은 끝 단서가 이미 있으면(조건문·대비로 단정 판정만 빠졌던 것 — 90권 대조 오탐 5) 수리가 새로 단정한 끝이 아니다.
+    const was = new Set(assertedPoles(a.before, ctx).map(x => `${x.who}|${x.dim}|${x.pole}`)), had = cueKeys(a.before);
+    const now = assertedPoles(a.after, ctx).filter(x => !had.has(`${x.dim}${x.pole > 0 ? "+" : "-"}`));
+    const opp = now.find(x => poles[x.who]?.get(x.dim) === -x.pole), fresh = now.find(x => !was.has(`${x.who}|${x.dim}|${x.pole}`));
+    const frame = TREND_FRAME.test(a.after.replace(/[⟪⟫]/g, "")) && !TREND_FRAME.test(a.before.replace(/[⟪⟫]/g, ""));
+    if (!opp && !fresh && !frame) continue;
+    ss[i] = a.before; (sec.paragraphs as string[])[pn] = ss.join(" ");
+    reverted.push({ at: a.at, after: a.after, before: a.before, rule: opp ? `repair_pole_profile:${opp.dim}` : fresh ? `repair_pole_new:${fresh.dim}` : "repair_pole_frame" });
   }
   return { chapters: out, reverted };
 }
@@ -221,9 +268,83 @@ export function revertRepairSideEffects(chapters: readonly FinalChapter[], appli
   }
   return { chapters: out.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: s.paragraphs.filter(Boolean) })) })), reverted };
 }
-export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "leans" | "last_paragraph"; readonly connectiveStripped?: boolean };
+/**
+ * W3 P3 6절 — 수리 뒤 결정론 재검(호출 0). revertWorse·revertRepairSideEffects 다음에 돈다. 수리 문장이
+ *  ① 책 안 다른 문장(이웃 문단·다른 소제목·다른 장)과 같거나 거의 같으면(정규화 같음 또는 두 글자 묶음 자카드 ≥ 0.8, 14자 이상) 원문으로 되돌린다(같은 문단은 위 repair_duplicate).
+ *  ② 원문의 근거 낱말(간지·십성·관계·신살 이름·대운·숫자, AM accept.ts factTokens)을 잃었으면 되돌린다. 그 문장의 깃발 규칙이 바로 그 사실을 고치라는 것이면 그 종류는 봐준다.
+ *  ③ 예고만 남았으면(받는 내용이 없는 「이런 변화가 있을 거예요」「다음 두 가지를 볼게요」) 되돌린다.
+ * 되돌린 원문에 HARD 깃발이 남아 있으면 뒤의 deleteFlagged가 지운다.
+ */
+/** 깃발 규칙 → 수리가 바꿔도 되는 사실 종류(그 깃발이 바로 그 사실을 고치라는 것일 때만). all = 모든 종류(안전망 금지 규칙: 시주·내부 용어 등은 그 낱말을 빼는 게 수리다). */
+const REPAIR_FACT_EXEMPT: Readonly<Record<string, readonly FactKind[] | "all">> = {
+  safety: "all", label_leak: "all", rule_leak: "all", input_outside: "all", guide_copy: "all", glyph_list: ["ganji", "rel"], pillar_claim: ["tg", "ganji", "rel"],
+  fact_relation: ["rel"], fact_term: ["rel", "tg"], fact_ganji: ["ganji", "dayun", "num", "month"], fact_dayun: ["dayun", "num", "ganji"], dayun_claim: ["dayun", "num", "ganji"], dayun_year: ["dayun", "num", "ganji"],
+  fact_meaning: ["tg"], fact_count: ["num", "rel"], fact_mix: ["num"], count_mismatch: ["num"], ten_god_direction: ["tg"], feature_owner: ["rel"], common_split: ["rel"], group_claim: ["tg"], element_count: ["num"],
+  time_fixed: ["num", "month", "ganji"], time_deictic: ["num", "month"], calendar_month: ["month"], intensity_claim: ["num"], negative_claim: ["rel"], mbti_misattr: [], fn_role: [],
+  // W3 P3 보강: 구체 장면을 성향 물음으로 바꾸면 장면 속 숫자(「두세 시간」「택배 3개」)는 빠져도 된다. 간지·십성·관계 이름은 지킨다.
+  scene_unbacked: ["num"],
+};
+/** 원문이 잃은 근거 낱말(봐줄 종류 빼고). names: 관계 이름·신살 이름·기둥 간지(한글)처럼 2글자 이상 낱말. */
+export function lostFactTokens(before: string, after: string, names: readonly string[], exempt: ReadonlySet<FactKind> | "all" = new Set()): string[] {
+  if (exempt === "all" || !after) return [];
+  const a = factTokens(before, names), b = factTokens(after, names), out: string[] = [];
+  for (const k of Object.keys(a) as FactKind[]) if (!exempt.has(k)) for (const v of a[k]) if (!b[k].has(v) && !after.includes(v)) out.push(`${k}:${v}`);
+  return out;
+}
+const PREVIEW_ONLY = /(다음|아래|이런|이렇게|몇 가지|두 가지|세 가지|네 가지|한 가지)[^.?!]{0,18}(살펴볼게요|볼게요|정리해 볼게요|말씀드릴게요|이야기해 볼게요|짚어 볼게요|알려 드릴게요|소개할게요)[.!]?$|[:：]$/;
+const isEmptyPreview = (sen: string, next: string | undefined) => emptyPreview(sen, next) || (PREVIEW_ONLY.test(sen.trim()) && !next);
+/** flags: 수리 전 검사 깃발(봐줄 사실 종류를 정한다), names: 근거 낱말(관계·신살 이름·기둥 간지). */
+export type RecheckCtx = { readonly flags: readonly LintFlag[]; readonly names: readonly string[] };
+/** 정답지의 근거 낱말(관계 「축미충」「자축 육합」·관계 이름·신살 이름·기둥 간지 한글). */
+export function factNamesOf(sheet: FactSheet): string[] {
+  const out = new Set<string>();
+  const rels = [...sheet.people.flatMap(p => [...p.relations, ...p.stemClashes]), ...(sheet.pair ? [...sheet.pair.relations, ...sheet.pair.stemClashes] : [])];
+  for (const r of rels) { const n = relationName(r.kind as never, r.completeness as never, r.subtype); out.add(`${r.keyKo}${n}`); out.add(`${r.keyKo} ${n}`); if (n.length >= 2) out.add(n); }
+  for (const p of sheet.people) { for (const x of p.shinsal) { out.add(x.name); if (/살$/.test(x.name) && x.name.length >= 3) out.add(x.name.slice(0, -1)); } for (const pl of Object.values(p.pillars)) if (pl) out.add(pl.ganjiKo); }
+  return [...out].filter(x => x.length >= 2);
+}
+export function revertRepairRegressions(chapters: readonly FinalChapter[], applied: readonly AppliedRepair[], ctx: RecheckCtx): { chapters: FinalChapter[]; reverted: Reverted[] } {
+  const norm = (s: string) => s.replace(/[^가-힣0-9]/g, "");
+  const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
+  const reverted: Reverted[] = [];
+  const all = () => out.flatMap(c => c.sections.flatMap((s, si) => s.paragraphs.flatMap((p, pi) => splitSentences(p).map((t, ti) => ({ at: `${c.n}.${si}.${pi}`, ti, t: t.replace(/[⟪⟫]/g, "") })))));
+  for (const a of applied) {
+    if (a.kind !== "sentence" || !a.after || !a.before) continue;
+    const [cn, sn, pn] = a.at.split(".").map(Number);
+    const sec = out.find(c => c.n === cn)?.sections[sn]; const p = sec?.paragraphs[pn]; if (!sec || p === undefined) continue;
+    const ss = splitSentences(p), key = norm(a.after).slice(0, 24), i = ss.findIndex(x => norm(x).includes(key));
+    if (i < 0) continue;
+    const here = ss[i].replace(/[⟪⟫]/g, "");
+    let rule = "", detail = "";
+    // ① 책 안 같은 문장(같은 문단은 revertRepairSideEffects가 이미 본다).
+    const dup = all().find(x => !(x.at === a.at) && sameSentence(here, x.t));
+    if (dup) { rule = "repair_duplicate_book"; detail = dup.at; }
+    // ② 근거 낱말 손실.
+    if (!rule) {
+      const rules = [...new Set(ctx.flags.filter(f => f.sentence && `${f.chapter}.${f.section}.${f.paragraph}` === a.at && (norm(f.sentence) === norm(a.before) || norm(a.before).includes(norm(f.sentence).slice(0, 24)) || norm(f.sentence).includes(norm(a.before).slice(0, 24)))).map(f => f.rule as string))];
+      const ex = rules.some(r => REPAIR_FACT_EXEMPT[r] === "all") ? "all" as const : new Set<FactKind>([...rules.flatMap(r => { const e = REPAIR_FACT_EXEMPT[r]; return e && e !== "all" ? e : []; }), ...(a.source.includes("review") ? ["num", "month"] as FactKind[] : [])]);
+      const lost = lostFactTokens(a.before, here, ctx.names, ex);
+      if (lost.length) { rule = "repair_fact_lost"; detail = lost.join(","); }
+    }
+    // ④ W6.1 다시 발행(2차 커리어 1장): 수리가 유형 이름(「규칙형」)을 다른 이름(「즉흥형」)으로 바꿨는데 같은 문단 다른 문장은 옛 이름(「규칙형 몰입」)을 그대로 쓰면 같은 문단 안 모순이 된다 → 원문으로.
+    if (!rule) { const L = (x: string) => new Set([...x.matchAll(/([가-힣]{2,3}형)(?=이에요|이고|입니다|이라|이며|으로|의|[,\s])/g)].map(m => m[1]));
+      const lb = L(a.before), la = L(here), gone = [...lb].filter(x => !la.has(x)), added = [...la].filter(x => !lb.has(x));
+      const others = ss.filter((_, j) => j !== i).join(" ");
+      if (gone.length && added.length) { const kept = gone.find(x => others.includes(x)); if (kept) { rule = "repair_label_flip"; detail = `${kept}→${added.join("·")}`; } } }
+    // ③ 예고만 남음.
+    if (!rule && isEmptyPreview(here, ss[i + 1]?.replace(/[⟪⟫]/g, "")) && !isEmptyPreview(a.before, ss[i + 1]?.replace(/[⟪⟫]/g, ""))) rule = "repair_empty_preview";
+    if (!rule) continue;
+    const marked = /⟪/.test(ss[i]);
+    ss[i] = marked ? `⟪${a.before.replace(/[⟪⟫]/g, "")}⟫` : a.before;
+    (sec.paragraphs as string[])[pn] = ss.join(" ");
+    reverted.push({ at: a.at, after: a.after, before: a.before, rule: detail ? `${rule}:${detail}` : rule });
+  }
+  return { chapters: out, reverted };
+}
+export type Deleted = { readonly at: string; readonly sentence: string; readonly rule: string; readonly kept?: "list" | "leans" | "last_paragraph" | "thin" | "lead"; readonly connectiveStripped?: boolean };
 /** 남은 사실·금지 깃발 문장을 지운다. 지우면 문단이 깨지면 원문을 두고 kept로 기록한다. */
-export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>): { chapters: FinalChapter[]; deleted: Deleted[] } {
+/** W6 S0-1: improve(rule, detail)가 참인 규칙(개선)은 지우고 난 문단이 3문장 이상 남을 때만 지운다(아니면 kept: "thin" 기록). */
+export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly LintFlag[], hard: ReadonlySet<string>, improve?: (rule: string, detail?: string) => boolean, o: { readonly names?: readonly (readonly string[])[] } = {}): { chapters: FinalChapter[]; deleted: Deleted[] } {
   const out = chapters.map(c => ({ ...c, sections: c.sections.map(s => ({ ...s, paragraphs: [...s.paragraphs] })) }));
   const deleted: Deleted[] = [];
   for (const f of flags) {
@@ -233,17 +354,28 @@ export function deleteFlagged(chapters: readonly FinalChapter[], flags: readonly
     const ss = splitSentences(p), i = ss.findIndex(x => x.replace(/[⟪⟫]/g, "").includes(f.sentence) || f.sentence.includes(x.replace(/[⟪⟫]/g, "")));
     const at = `${f.chapter}.${f.section}.${f.paragraph}`;
     if (i < 0) continue;
+    if (improve?.(f.rule, f.detail) && i === 0 && leadNamesSubject(ss[0].replace(/[⟪⟫]/g, ""), ss[1]?.replace(/[⟪⟫]/g, ""))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "lead" }); continue; } // W6 S4: 개선 규칙은 다음 문장의 주어를 꺼낸 문단 첫 문장을 지우지 않는다(repairPlan.dropSentences와 같은 규칙)
     // AM2-3 6-2(AM-01 4종 판독 커리어 9장 「그다음은 계유 대운입니다.」 고아): 다음 문장이 지운 문장에 기대면 함께 지운다(문단에 다른 문장이 남거나 다른 문단이 있을 때). 그럴 수 없으면 예전처럼 남긴다.
-    const leans = i + 1 < ss.length && LEANS.test(ss[i + 1].replace(/[⟪⟫]/g, ""));
+    // W6.1 P2: 기대는 다음 문장 판정은 repairPlan.dropSentences와 같은 orphan.dependsOnRemoved(지시어·되받기·「~도 함께」·비교 꼬리·주어를 받는 문장). 개선 규칙이면 원문을 둔다.
+    const dep = dependsOnRemoved(ss[i], ss[i + 1], o), leans = dep !== null;
+    if (leans && improve?.(f.rule, f.detail)) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
+    if (improve?.(f.rule, f.detail) && listItemIn(ss[i], ch.sections.flatMap(x => x.paragraphs).join("\n"))) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "list" }); continue; }
     if (leans && ss.length <= 2 && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "leans" }); continue; }
     const { sentences: rest1, stripped } = removeSentenceAt(ss, i);
-    if (leans) deleted.push({ at, sentence: rest1[i], rule: `${f.rule}:leans` });
-    const rest0 = leans ? rest1.filter((_, j) => j !== i) : rest1;
+    // 기대는 문장을 지우면 그다음 문장이 또 그것에 기댈 수 있다(「…덕이라, …」 → 「이 덕은 …」) — 3문장까지 따라 지운다.
+    let rest0 = rest1;
+    if (leans) { let prevGone = f.sentence; for (let n = 0; n < 3 && i < rest0.length; n++) { const d = n === 0 ? dep : dependsOnRemoved(prevGone, rest0[i], o); if (!d) break; deleted.push({ at, sentence: rest0[i].replace(/[⟪⟫]/g, ""), rule: `${f.rule}:${d}` }); prevGone = rest0[i]; rest0 = rest0.filter((_, j) => j !== i); } }
     // AM 재생성 2 판독(annual-1 5.1.1, 두 판째): 지운 문장 바로 뒤의 짧은 요약 「몸은 쉬자고 하는데 마음은 더 놀자고 하는 셈이에요.」가 기댈 곳 없이 남았다 → 함께 뺀다.
-    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && /셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
-    const rest = orphan ? rest0.filter((_, j) => j !== i) : rest0;
+    // W6 S4 3판(2차 종합 4장): 지운 문장을 받는 짧은 「INFJ가 겹치면 더 그래요.」도 같은 고아다.
+    const orphan = i < rest0.length && rest0[i].replace(/[⟪⟫]/g, "").length <= 60 && (/셈(?:이에요|이죠|입니다)[.!]?$/.test(rest0[i].replace(/[⟪⟫]/g, "").trim()) || ANAPHOR_SHORT.test(rest0[i].replace(/[⟪⟫]/g, "").trim())) && (rest0.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const rest1b = orphan ? rest0.filter((_, j) => j !== i) : rest0;
     if (orphan) deleted.push({ at, sentence: rest0[i], rule: `${f.rule}:orphan_summary` });
+    // W3 P3 6절(AM cut.ts ASKS): 지운 문장이 바로 앞 수사 물음의 답이었으면 물음도 뺀다(예고만 남은 물음). 문단이나 소제목에 다른 문장이 남을 때만.
+    const asks = i > 0 && ASKS.test(ss[i - 1].replace(/[⟪⟫]/g, "").trim()) && !/[⟪⟫]/.test(ss[i - 1]) && (rest1b.length > 1 || sec.paragraphs.filter(Boolean).length > 1);
+    const rest = asks ? rest1b.filter((_, j) => j !== i - 1) : rest1b;
+    if (asks) deleted.push({ at, sentence: ss[i - 1].replace(/[⟪⟫]/g, ""), rule: `${f.rule}:question` });
     if (!rest.length && sec.paragraphs.filter(Boolean).length <= 1) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "last_paragraph" }); continue; }
+    if (improve?.(f.rule, f.detail) && rest.length < 3) { deleted.push({ at, sentence: f.sentence, rule: f.rule, kept: "thin" }); continue; }
     sec.paragraphs[f.paragraph] = rest.join(" ");
     deleted.push({ at, sentence: f.sentence, rule: f.rule, ...(stripped ? { connectiveStripped: true } : {}) });
   }

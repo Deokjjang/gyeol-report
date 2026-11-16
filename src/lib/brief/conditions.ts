@@ -80,11 +80,28 @@ function atoms(text: string, ctx: ConditionCtx): boolean[] {
     const e = ELEMENT_WORD[m[1]]; const st = bal.status[e];
     out.push(/많|여럿|넘치/.test(m[2]) ? st === "많음" || bal.parts[e].visible >= 3 : st === "부족" || st === "없음");
   }
+  // W7-3 D3 개수 조건: 「나무 글자 셋 이상」「갑·신·오 글자가 셋 이상 겹치면」「편관 둘 이상이면」 — 겉 글자(천간·지지 본기) 수로 판정한다(시간 미상이면 시주 빼고).
+  const NUM_W: Record<string, number> = { 하나: 1, 한: 1, 둘: 2, 두: 2, 셋: 3, 세: 3, 넷: 4, 네: 4, 다섯: 5 };
+  const numOf = (w: string) => (/^\d+$/.test(w) ? Number(w) : NUM_W[w] ?? NaN);
+  for (const m of text.matchAll(/(나무|불|흙|쇠|물|[목화토금수]) 글자(?:가|는)? (하나|둘|셋|넷|다섯|한|두|세|네|\d)(?: ?개)? 이상/g)) {
+    const e = ELEMENT_WORD[m[1]]; const n = numOf(m[2]); if (!Number.isFinite(n)) continue;
+    out.push(all.filter(x => x.element === e).length >= n);
+  }
+  for (const m of text.matchAll(/((?:[갑을병정무기경신임계자축인묘진사오미유술해]·){1,5}[갑을병정무기경신임계자축인묘진사오미유술해]) 글자(?:가|는)? (?:여러 개|(둘|셋|넷|다섯|두|세|네|\d)(?: ?개)? 이상)/g)) {
+    const gs = m[1].split("·").flatMap(c => [STEM_WORD[c], BRANCH_WORD[c]].filter(Boolean) as string[]); const n = m[2] ? numOf(m[2]) : 2; if (!Number.isFinite(n)) continue;
+    out.push(all.filter(x => gs.includes(x.glyph)).length >= n);
+  }
+  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인) (둘|셋|넷|두|세|네|\d)(?: ?개)? 이상/g)) {
+    const tg = TEN_GOD_WORD[m[1]]; const n = numOf(m[2]); if (!Number.isFinite(n)) continue;
+    out.push(all.filter(x => x.tenGod === tg).length >= n);
+  }
   // 십성 있음·없음: "정관이 없으면", "편인이 있으면"
   for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:이|가|까지|도) (있|없)으면/g)) {
     const n = saju.tenGods.distribution[TEN_GOD_WORD[m[1]]] ?? 0;
     out.push(m[2] === "있" ? n > 0 : n === 0);
   }
+  // 십성 함께 있음: "정관과 함께 있으면", "정관이 섞이면"(W6 S4: 정관 없는 원국에 관살혼잡 팩폭)
+  for (const m of text.matchAll(/(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와) (?:함께|같이) 있|(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인)(?:과|와|이|가) 섞이/g)) out.push((saju.tenGods.distribution[TEN_GOD_WORD[m[1] ?? m[2]]] ?? 0) > 0);
   // 천간 글자 있음·없음: "계수가 없으면", "갑목이 있으면"
   for (const m of text.matchAll(/(?<![가-힣])([갑을병정무기경신임계])(목|화|토|금|수)(?:이|가) (있|없)/g)) {
     const stem = STEM_WORD[m[1]]; if (ELEMENT_WORD[m[2]] !== STEM_ELEMENT[stem]) continue;

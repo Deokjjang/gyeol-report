@@ -8,11 +8,21 @@ import type { Brief, ChapterBrief, Material } from "@/lib/brief/schema";
 import { amBrief } from "@/lib/brief/chapters";
 import { STYLE_EXAMPLES } from "./examples";
 import { materialTable, swapDeep } from "./materials";
+import { tidyPieces, type PieceAudit } from "./pairTidy";
 import { WRITER_PROMPT_VERSION, WRITER_SYSTEM } from "./system";
 import { matchJob } from "@/lib/brief/props";
+import { GROUP_LEVEL_PLAIN, plainGrade } from "@/lib/brief/cards/features";
+export { plainGrade } from "@/lib/brief/cards/features";
+import type { SectionCardBrief } from "@/lib/brief/schema";
+import { GROUP_EASY_BY_NAME } from "@/lib/brief/labels";
+import type { FactSheet } from "@/lib/factsheet/build";
+import { STRENGTH_ACT } from "@/lib/factsheet/check";
+import { buildMarks, writerMarks, type MarkTable } from "../marks";
+import { profileCodes, profileLine, type PairProfile } from "@/lib/brief/pairProfile";
 
 /** 작가 입력 옵션(P6c A1): 지식 DB가 있으면 원문 문장을 재료(씨앗·방향·핵심 뜻)로 바꿔 보낸다. 없으면(단위 시험) 브리프 그대로. */
-export type WriterInputOptions = { readonly knowledge?: Knowledge };
+/** W5 R1: facts(정답지)가 있으면 4종 브리프에 사실 표시(marks)를 넣는다 — 발행 렌더가 같은 표로 바꿔 넣는다(markTableFor). */
+export type WriterInputOptions = { readonly knowledge?: Knowledge; readonly facts?: FactSheet | null };
 
 export { WRITER_PROMPT_VERSION } from "./system";
 
@@ -22,7 +32,7 @@ export type WriterChapter = {
   readonly targetChars: readonly [number, number]; readonly subheadings: readonly [number, number]; readonly useName: boolean;
   readonly materials: readonly Material[];
   /** 절 계획(P3.8 1): 절 하나 = 소제목 하나. 있으면 작가에게는 materials 대신 이것만 간다. */
-  readonly sections?: readonly { readonly q: string; readonly domain: string; readonly materials: readonly Material[] }[];
+  readonly sections?: readonly { readonly q: string; readonly domain: string; readonly materials: readonly Material[]; readonly card?: SectionCardBrief }[];
   readonly keys?: readonly string[];
   readonly perKey?: Readonly<Record<string, readonly Material[]>>;
   readonly note?: string;
@@ -69,10 +79,51 @@ export function writerFacing(brief: Pick<Brief, "traits" | "shadows" | "chapters
 /** 최종 A-4: 지금 대운은 연도 구간(years: 엔진 endYear) 대신 교운 연·월 기간(period)만 준다 — 「2028년까지」처럼 연도로 끊지 않게. */
 const writerDayun = (d: Brief["chart"]["currentDayun"]) => d && (d.period ? omit(d, "years") : d);
 const writerChart = (c: Brief["chart"]) => ({ ...omit(c, "dayMaster", "coreImage", "currentDayun"), currentDayun: writerDayun(c.currentDayun), dayMaster: omit(c.dayMaster, "easyName", "metaphor"), coreImage: c.coreImage.meaning ?? c.coreImage.line });
+/**
+ * W3 P3(설계 0.3, 4종 카드 책): 판정 이름·등급 말(신강·신약·중화·과다, 묶음 단계 강·보통·약)은 작가에게 보내지 않고 뜻 문장 + 근거 수로 준다.
+ * 엔진·정답지·화면 라벨은 그대로(작가용 칸에서만). strength = 뜻(reading) + 쏠림 한 줄(note, 판정 이름 뺌) + 오행 겉 글자 수, groups = 묶음마다 뜻 말 + 그 묶음이 놓인 자리 수.
+ */
+const GROUP_TG: Readonly<Record<string, readonly string[]>> = { 비겁: ["비견", "겁재"], 식상: ["식신", "상관"], 재성: ["편재", "정재"], 관성: ["편관", "정관"], 인성: ["편인", "정인"] };
+const EL_KO: Readonly<Record<string, string>> = { WOOD: "목", FIRE: "화", EARTH: "토", METAL: "금", WATER: "수" };
+/**
+ * W6 S2-2(B2): 일간 세기는 분류 문구(「세지도 여리지도 않은 가운데」「여린 편」「내 힘의 세기와 … 다른 저울」) 없이 그 결과 행동 한 줄로만 준다.
+ * 같은 세기도 사주(원국 글자 해시)마다 다른 꼴을 고른다 — W5 판독이 「가운데」를 판정 틀로 셌다. 행동 줄 표(STRENGTH_ACT)는 정답지 검사와 한 출처(factsheet/check).
+ */
+function plainChart(c: Brief["chart"]) {
+  const base = writerChart(c), st = c.strength;
+  const counts = c.elements.presence ? Object.entries(c.elements.presence).map(([e, v]) => `${EL_KO[e] ?? e} ${v.surface}`).join("·") : "";
+  const acts = STRENGTH_ACT[st.level] ?? STRENGTH_ACT.BALANCED, act = acts[fnv1a(Object.values(c.pillars).map(p => p?.hanja ?? "").join("")) % acts.length];
+  const pos = c.positions, mains = pos ? [pos.yearStem, pos.monthStem, pos.hourStem, pos.yearBranch, pos.monthBranch, pos.dayBranch, pos.hourBranch].flatMap(x => (x?.[0] ? [x[0]] : [])) : [];
+  // W5 R3 F3: 묶음 세기 「보통」은 작가에게 주지 않는다(「있는 만큼 쓰는 쪽」「보통 세기」가 판정 틀로 읽혔다 — W4 판독). 넉넉·적음만 뜻으로.
+  // R4 관문(1차 커리어 분량 73%): 보통 묶음을 줄째 빼니 다섯 힘이 재료인 커리어 장이 짧아졌다 → 묶음 이름·자리 수는 남기고 세기 말만 뺀다.
+  const groups = c.groups ? Object.entries(c.groups.levels).map(([g, lv]) => `${GROUP_EASY_BY_NAME[g] ?? g}(${g})${lv === "보통" ? "" : ` ${GROUP_LEVEL_PLAIN[lv] ?? lv}`}(자리 ${mains.filter(t => GROUP_TG[g]?.includes(t)).length}곳)`).join(" · ") : "";
+  return {
+    ...base,
+    strength: { meaning: act, ...(counts ? { basis: `오행 겉 글자 수 ${counts}` } : {}) },
+    ...(groups ? { groups: { line: `${groups} — 만세력 오행 칸(겉 글자 + 지장간) 기준. 묶음 세기는 이 뜻으로만 쓴다. 처음 나올 때 "내 방식의 힘(비겁)"처럼 쉬운 이름과 함께` } } : {}),
+  };
+}
+
 /** 궁합(최종판2 1-1·1-3): 관계 이미지·인물 줄은 그림 없는 뜻으로, 성격표는 브리프 맨 앞(profiles)에 따로. */
 /** 최종판3 2b: 공통 특징 규칙(두 사람 모두 가진 것은 「공통」으로만, 차이의 근거·한 사람만의 특징으로 쓰지 않는다). */
 export const COMMON_RULE = "commonTraits는 두 사람이 모두 가진 것이다. '두 사람 모두'로만 쓰고, 차이의 근거나 한 사람만의 특징('○○님의 반안살')으로 쓰지 않는다";
 const writerCompat = (c: NonNullable<Brief["compatibility"]>) => ({ ...omit(c, "profiles", "pairImage", "commonIds", "commonNames"), pairImage: c.pairImage.meaning ?? c.pairImage.line });
+/**
+ * W6 A4 성격 요약표(한 사람 4종): 궁합 성격표와 같은 계산(MBTI 글자 + 특성·MBTI 행동 차원 벡터)으로 차원마다 값 하나.
+ * 작가 브리프 맨 앞(profile)에 한 줄로 두고, 장마다 앞 장 주장(before)·검사(self_contradiction)가 같은 값을 쓴다.
+ */
+export function personProfileOf(brief: Brief, k: Knowledge): PairProfile | null {
+  if (brief.compatibility || !brief.design) return null;
+  const v = new Map<string, number>();
+  const add = (tags: Readonly<Record<string, number>>, w: number) => { for (const [d, x] of Object.entries(tags)) v.set(d, (v.get(d) ?? 0) + x * w); };
+  for (const t of brief.traits) { const f = k.features.get(t.featureId); if (f && f.family !== "relation") add(f.dimensionTags, t.score); }
+  const mp = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
+  if (mp) add(mp.dimensionTags, 1.5 * Math.max(1, ...brief.traits.map(t => t.score)));
+  const codes = profileCodes(brief.mbti?.type ?? null, v, brief.traits.map(t => t.featureId));
+  const line = profileLine(brief.person.callName, codes, brief.mbti?.type ?? null);
+  return line.includes(":") && line.split(":")[1].trim() ? { name: brief.person.callName, ...codes, line } : null;
+}
+const SELF_PROFILE_RULE = "이 사람의 바뀌지 않는 성향이다. 모든 장의 성향 설명·장면은 이 줄과 같은 쪽으로 쓴다(반대 성향을 단정하지 않는다)";
 const PROFILE_RULE = "두 사람의 바뀌지 않는 성향(에너지·앞에 나서는지·다툼 때 반응·표현 방식·결정 속도)이다. 모든 장의 장면과 설명은 이 줄을 따른다. 두 사람을 묶어 말할 때(두 사람은·둘 다)는 두 사람 칸이 같을 때만 묶는다";
 
 /**
@@ -84,7 +135,20 @@ const INFERIOR_DIMS: Readonly<Record<string, readonly [string, number][]>> = {
   Fe: [["empathyResponse", 1], ["caretaking", 1], ["directness", -1]], Fi: [["introspection", 1], ["emotionalExpression", -1]], Te: [["planning", 1], ["decisionSpeed", 1], ["controlNeed", 1]], Ti: [["inquiry", 1], ["perfectionism", 1]],
   Se: [["riskTaking", 1], ["mobility", 1]], Si: [["detailFocus", 1], ["ruleAdherence", 1]], Ne: [["noveltySeeking", 1], ["learningDrive", 1]], Ni: [["detailFocus", -1], ["persistence", 1]],
 };
-export function chapterClaims(brief: Brief, k: Knowledge): Map<number, { before: string[]; tension: string[] }> {
+const PROFILE_DIMS = (c: PairProfile | null): Map<string, number> => {
+  const out = new Map<string, number>(); if (!c) return out;
+  if (c.energy) out.set("socialEnergy", c.energy === "E" ? 1 : -1);
+  if (c.lead) out.set("attentionSeeking", c.lead === "front" ? 1 : -1);
+  if (c.conflict) { out.set("reactivity", c.conflict === "now" ? 1 : -1); out.set("conflictApproach", c.conflict === "now" ? 1 : -1); }
+  if (c.express === "행동") { out.set("verbalOutput", -1); out.set("emotionalExpression", -1); }
+  if (c.express === "말" || c.express === "말·표정") out.set("verbalOutput", 1);
+  if (c.decide === "fast") out.set("decisionSpeed", 1); if (c.decide === "slow") out.set("decisionSpeed", -1);
+  if (c.offer) { out.set("riskTaking", c.offer === "open" ? 1 : -1); out.set("noveltySeeking", c.offer === "open" ? 1 : -1); }
+  if (c.money === "plan") out.set("spendingControl", 1); if (c.money === "now") out.set("spendingControl", -1);
+  return out;
+};
+export function chapterClaims(brief: Brief, k: Knowledge, self: PairProfile | null = null): Map<number, { before: string[]; tension: string[] }> {
+  const fixed = PROFILE_DIMS(self);
   const chapters = writerChapters(brief);
   const say = (d: string, v: number) => { const o = k.ontology.dimensions.find(x => x.id === d); return o ? (v > 0 ? o.poles.plus : o.poles.minus).description.replace(/\s*편입니다\.?$/, " 편").replace(/입니다\.?$/, "") : d; };
   const prof = brief.mbti ? k.mbti.get(brief.mbti.type) : undefined;
@@ -99,7 +163,8 @@ export function chapterClaims(brief: Brief, k: Knowledge): Map<number, { before:
     for (const m of mats) {
       if (m.kind === "trait" && m.angle === "first") {
         const t = brief.traits.find(x => x.id === m.traitId), f = t ? k.features.get(t.featureId) : undefined;
-        if (t && f) { const top = Object.entries(f.dimensionTags).filter(([, v]) => Math.abs(v) >= 0.6).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 2) as [string, number][];
+        // W4 Q2-5·W6 S1-5: 합·충·형·해·파(relation)는 성격 주장을 싣지 않는다(W5 1차 종합 「삼합 인오술(정한 일은 끝을 보는 편)」). W6 A4: 요약표와 반대 끝인 차원은 뺀다.
+        if (t && f && f.family !== "relation") { const top = Object.entries(f.dimensionTags).filter(([d, v]) => Math.abs(v) >= 0.6 && !(fixed.has(d) && Math.sign(fixed.get(d)!) !== Math.sign(v))).sort((a, b) => Math.abs(b[1]) - Math.abs(a[1])).slice(0, 2) as [string, number][];
           mine.push({ n: c.n, text: `${t.name.replace(/\(.*?\)/g, "").trim()}${top[0] ? `(${say(top[0][0], top[0][1])})` : ""}`, dims: top }); }
       }
       if ((m.kind === "mbti" || (m.kind === "ref" && m.ref.startsWith("mbti"))) && prof && inferior && !seen.concat(mine).some(x => x.inferior))
@@ -128,29 +193,40 @@ const noHanja = (t: string) => t.replace(/\s?\(([^()]*[一-鿿][^()]*)\)/g, (_a,
  */
 /** 최종판3 3: 지식 DB 이름에 붙은 분류 라벨(「망신살(亡身殺)·십이신살」)은 작가에게 보내지 않는다(본문 「망신살·십이신살」 노출 원인). */
 const noLabel = (t: string) => t.replace(/·십이신살/g, "");
-function writerFacingText(x: unknown): unknown {
-  if (typeof x === "string") return noLabel(noHanja(x));
-  if (Array.isArray(x)) return x.map(writerFacingText);
-  if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).filter(([k]) => k !== "hanja").map(([k, v]) => [k === "note" ? "rule" : k, writerFacingText(v)]));
+function writerFacingText(x: unknown, grade = false): unknown {
+  if (typeof x === "string") { const t = noLabel(noHanja(x)); return grade ? plainGrade(t) : t; }
+  if (Array.isArray(x)) return x.map(y => writerFacingText(y, grade));
+  if (x && typeof x === "object") return Object.fromEntries(Object.entries(x).filter(([k]) => k !== "hanja").map(([k, v]) => [k === "note" ? "rule" : k, writerFacingText(v, grade)]));
   return x;
 }
 
 export function renderWriterBrief(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
-  return writerFacingText(renderWriterBriefRaw(brief, opts)) as Record<string, unknown>;
+  return writerFacingText(renderWriterBriefRaw(brief, opts), Boolean(brief.design)) as Record<string, unknown>;
+}
+/** W8 전수 시험·덤프 기록용: 작가 입력 재료 정리(바꿔치기·짝 정리) 결과 — renderWriterBriefRaw와 같은 길. 4종이 아니면 null. */
+export function pieceAudit(brief: Brief, opts: WriterInputOptions & { knowledge: Knowledge }): PieceAudit | null {
+  if (!brief.design) return null;
+  const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
+  const self = personProfileOf(brief, opts.knowledge), claims = chapterClaims(brief, opts.knowledge, self);
+  out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
+  return tidyPieces(out, materialTable(opts.knowledge), brief, opts.knowledge, self).audit;
 }
 function renderWriterBriefRaw(brief: Brief, opts: WriterInputOptions = {}): Record<string, unknown> {
-  const out = renderRaw(brief);
+  const out = withMarks(renderRaw(brief), brief, markTableFor(brief, opts.facts));
   if (!opts.knowledge) return out;
-  // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims).
-  const claims = chapterClaims(brief, opts.knowledge);
+  // 최종판 1-16: 장마다 앞 장 주장·반대로 들리는 짝(P6e chapterClaims). W6 A4: 성격 요약표와 반대인 차원은 주장에 쓰지 않는다.
+  const self = personProfileOf(brief, opts.knowledge);
+  const claims = chapterClaims(brief, opts.knowledge, self);
   out.chapters = (out.chapters as { n: number }[]).map(c => { const x = claims.get(c.n); return x ? { ...c, ...(x.before.length ? { before: x.before } : {}), ...(x.tension.length ? { tension: x.tension } : {}) } : c; });
   // 지식 DB 원문을 재료로(P6c A1). MBTI 기능은 쉬운 이름을 먼저(P6c C5): "일 되게 하는 판단(Te) · 주기능: 방향".
   const table = materialTable(opts.knowledge);
-  const swapped = swapDeep(out, table);
+  // W8(4종만): 꼬리표 바꿔치기(결정 2 관계 줄·건강 줄 rw/drop) + 같은 사람·같은 차원 반대 끝 짝 정리. W8.1: 세기 1 짝(G1) · 성격 요약표 대조(G3) · 특징 벡터 꼬리표(G5). 세운·대운은 그대로.
+  const swapped = brief.design ? tidyPieces(out, table, brief, opts.knowledge, self).out : swapDeep(out, table);
   const fn = (b: Brief["mbti"]) => { const p = b && opts.knowledge!.mbti.get(b.type); return p && p.cognitiveFunctions.every(c => table.plain.has(c.easy)) ? p.cognitiveFunctions.map(c => `${table.plain.get(c.easy)}(${c.code}) · ${c.role}: ${table.exact.get(c.easy)}`) : null; };
   const withFn = (m: unknown, b: Brief["mbti"]) => { const f = fn(b); return m && f ? { ...(m as object), functions: f } : m; };
-  assignActions(swapped, brief);
-  return ownGlyphsOnly({ ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
+  // W3 P3·W4 Q2: 4종(brief.design)은 처방 종류가 카드 배분(card.rx — 장마다 하나, 같은 종류 책 두 번까지)이고 renderRaw가 절 act로 준다. 그 밖(AM)은 act 슬롯 배분 그대로.
+  if (!brief.design) assignActions(swapped, brief);
+  return ownGlyphsOnly({ ...(self ? { profile: { rule: SELF_PROFILE_RULE, line: self.line } } : {}), ...swapped, mbti: withFn(swapped.mbti, brief.mbti), ...(brief.partner && swapped.partner ? { partner: { ...(swapped.partner as object), mbti: withFn((swapped.partner as { mbti: unknown }).mbti, brief.partner.mbti) } } : {}) }, brief);
 }
 
 /**
@@ -192,6 +268,24 @@ const ACTIONS_BY_DOMAIN: Readonly<Record<string, readonly string[]>> = {
   marriage: ["목록 만들기", "고마움 말하기", "먼저 묻기", "지출 한도", "시간 정하기"], relationships: ["먼저 묻기", "고마움 말하기", "거절 연습", "한 줄 말하기", "시간 정하기"],
   alone: ["쉬는 시간", "걷기", "적어 두기", "시간 정하기"],
 };
+/** 자리 칸 이름 → 쉬운 이름(「월지」→「태어난 달 땅 글자(월지)」). 「원국 전체」 등 자리가 아닌 말은 뺀다. */
+const SLOT_PILLAR: Readonly<Record<string, string>> = { 연: "태어난 해", 월: "태어난 달", 일: "태어난 날", 시: "태어난 시각" };
+export const easySlot = (w: string): string => { const m = w.match(/^([연월일시])(간|지|주)$/); return m ? `${SLOT_PILLAR[m[1]]} ${m[2] === "간" ? "하늘 글자" : m[2] === "지" ? "땅 글자" : "기둥"}(${w})` : ""; };
+/** 절 act 한 줄(처방 종류는 작가용 표시 — 글에 쓰지 않는다). */
+const actLine = (pick: string, am: boolean) => `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」${am ? "" : "·「처방」"} 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`;
+/** W4 Q2-1: 특성 세기(strong·medium·weak)는 등급 말로 새지 않게 드러나는 정도 말로. */
+const STRENGTH_PLAIN: Readonly<Record<string, string>> = { strong: "뚜렷하게 드러남", medium: "드러남", weak: "옅게 있음" };
+/**
+ * W4 Q2-1 원재료 정제(4종): 특성의 지식 DB 장면(trait 재료의 scene — 「줄 서는 맛집…」처럼 이 고객이 겪었다는 입력이 없다)은 보내지 않는다(W3 6-6 ②, 바넘 결정).
+ * 입력 조건으로 거른 씨앗(mbti 재료)·입력 소품(sceneHint)·궁합 관계 장면(rel — 입력한 관계 유형의 생활 주제로 고른 상황)은 그대로 둔다.
+ */
+function writerMaterial(m: Material, brief?: Pick<Brief, "traits">): unknown[] {
+  if (m.kind === "trait" && "scene" in m && m.scene) return [omit(m as Material & { scene: string }, "scene") as Material];
+  // W6 S2-3(B3): 명리×MBTI 연결(긴장·공명 설명)은 배정된 절에만 싣는다 — 특성 목록(traits[].fusion)에 두면 그 특성이 나오는 장마다 같은 논지를 다시 풀었다.
+  const fx = m.kind === "ref" ? m.ref.match(/^traits\.([a-z0-9]+)\.fusion$/) : null;
+  if (fx && brief) { const t = brief.traits.find(x => x.id === fx[1]); if (t?.fusion) return [{ kind: "fusion", traitId: t.id, target: t.fusion.target, why: t.fusion.why, ...(t.fusion.scene ? { scene: t.fusion.scene } : {}) }]; }
+  return [m];
+}
 function assignActions(out: Record<string, unknown>, brief: Brief): void {
   const used = new Set<string>((brief.ledgerNotes?.avoidActions ?? []).map(actionFamily));
   const plan = writerChapters(brief);
@@ -206,7 +300,7 @@ function assignActions(out: Record<string, unknown>, brief: Brief): void {
     const list = ACTIONS_BY_DOMAIN[domain] ?? ACTIONS_BY_DOMAIN.alone, off = am ? (spread + ci * 7) % list.length : 0;
     const pick = [...list.slice(off), ...list.slice(0, off)].find(f => !used.has(f)) ?? Object.values(ACTIONS_BY_DOMAIN).flat().find(f => !used.has(f));
     // 최종판3 12: 종류 이름을 그대로 쓴 「처방은 지출 한도입니다.」가 나왔다(판독) — 이름은 작가용 표시일 뿐 글에 쓰지 않는다고 함께 적는다.
-    if (pick) { ss[si].act = `행동 조언 하나(${pick} 쪽) — 이 장의 행동 조언은 이 절에만. 「${pick}」${am ? "" : "·「처방」"} 같은 종류 이름은 글에 쓰지 않고 행동 자체를 쓴다`; used.add(pick); }
+    if (pick) { ss[si].act = actLine(pick, am); used.add(pick); }
   });
 }
 
@@ -222,13 +316,16 @@ export function bookRules(brief: Brief): string[] {
     "입력에 없는 직업 상황(투자자·투자 유치·직원·팀원·면접·평가 시즌·실적표·'처음 만든 ~')은 쓰지 않는다",
     // AM 판독(sodam 재생성 8장): 옛 「올해(병오)」 지시가 남아 작가가 「올해(병오)는…」을 썼다 → 1-1 ① 결정대로 해 이름.
     // W3 P1: 4종 종합은 운영 문구 그대로(AM 「해 이름」 문구는 amBrief 상품에서 P3에 판단).
-    amBrief(p) ? `달·날짜 숫자를 쓰지 않는다. 운 설명은 '${year.year}년 ${year.ganji.hangul}년'처럼 해 이름으로 한 번만(「올해」 대신), 행동 제안은 '앞으로 한 달'로` : `본문에 연·월 숫자를 쓰지 않는다. 운 설명은 '올해(${year.ganji.hangul})'를 한 번만, 행동 제안은 '앞으로 한 달'로`,
+    // W3 P3(설계 2): 카드 책은 처방 틀 낱말(「앞으로 한 달」)을 주지 않는다.
+    amBrief(p) ? `달·날짜 숫자를 쓰지 않는다. 운 설명은 '${year.year}년 ${year.ganji.hangul}년'처럼 해 이름으로 한 번만(「올해」 대신), 행동 제안은 '앞으로 한 달'로` : brief.design ? `본문에 연·월 숫자를 쓰지 않는다. 운 설명은 '올해(${year.ganji.hangul})'를 한 번만` : `본문에 연·월 숫자를 쓰지 않는다. 운 설명은 '올해(${year.ganji.hangul})'를 한 번만, 행동 제안은 '앞으로 한 달'로`,
     "[표지]에는 직업·나이를 쓰지 않는다");
   if (p === "love_marriage_child") rules.push("[표지]에 직업 장소(가게·카페·사무실·작업실 등)를 쓰지 않는다");
   if (p === "love_marriage_child" || p === "saju_mbti_compatibility") {
     if (rel === "dating" || rel === "married") rules.push("지금 만나는 사이다. 처음 만남을 검증하는 질문·'초반부터' 위험 신호 장면은 쓰지 않고, 지금 관계를 점검하는 말로 쓴다");
     if (rel === "single") rules.push("솔로다. 지금 만나는 상대가 있다고 가정하지 않는다");
   }
+  // W4 Q2-2: 기혼 호칭(4종 모두 — 종합의 연애·가족 장 포함).
+  if (rel === "married" && !amBrief(p)) rules.push("기혼이다. 상대는 '배우자'(또는 남편·아내)로 부른다. '연인'·'애인'·'남자친구'·'여자친구'·'썸'으로 부르지 않는다");
   // AM 2부 세운 신년판·3부 대운: 상품 전용 규칙(공통 지침은 그대로 — 캐시 접두부 유지).
   if (p === "annual_fortune") rules.push(
     "[표지] 줄 바로 다음에 [키워드] 줄 하나: 이 사람의 그 해를 나타내는 낱말 세 개를 ' · '로(낱말마다 2~8자 한글, 사건·결과 낱말 금지). 키워드 공유 카드에 그대로 실린다",
@@ -256,25 +353,72 @@ function jobFilter(brief: Brief): { hint: (h: string, chapterId: string) => bool
   return { scene: s => !assumed(s), hint: (h, id) => !assumed(h) && !(full && !/^(work|money)$/.test(id) && jobWords.has(h)) };
 }
 
+/** W4 Q2-1 특성 자리(정답지로 맞춘 카드 자리의 쉬운 이름). 합충형해처럼 where(짝 자리 문장)가 있는 특성은 뺀다. W5 R1: 사실 표시 ⟦at:id⟧도 같은 값. */
+export function traitAtMap(brief: Brief): Map<string, string> {
+  const at = new Map((brief.design?.cards ?? []).flatMap(c => (c.system === "myeongri" && c.traitId && c.where.length ? [[c.traitId, c.where.map(easySlot).filter(Boolean).join(" · ")] as const] : [])));
+  for (const t of brief.traits) if (t.where) at.delete(t.id);
+  return at;
+}
+/** W5 R1: 작가 브리프와 발행 렌더가 같은 사실 표시 표를 쓴다. */
+export const markTableFor = (brief: Brief, facts: FactSheet | null | undefined): MarkTable => buildMarks(facts, brief, traitAtMap(brief));
+/**
+ * W6 S4(2차 궁합 2·5·6장): 자리 칸 대신 where를 가진 관계 특성(파·충)은 at 표시가 없는데, 작가가 ⟦at:bt6⟧을 지어 써 fact_mark로 떼어지고 다음 문장이 주어 없이 남았다.
+ * 발행 렌더 표만 그 번호를 「where의 이름」(「하린님의 태어난 달과 날 사이의 자유파」)으로 채운다 — 작가 브리프 표(markTableFor)는 그대로.
+ */
+export function renderMarkTableFor(brief: Brief, facts: FactSheet | null | undefined): MarkTable {
+  const t = new Map(markTableFor(brief, facts));
+  if (!t.size) return t;
+  for (const tr of brief.traits) if (tr.where && !t.has(`at:${tr.id}`)) {
+    const c = brief.compatibility, owner = c && /^[ab]/.test(tr.id) ? (tr.id.startsWith("a") ? c.a.callName : c.b.callName) : null;
+    const short = tr.name.split(" ").pop() ?? tr.name, who = owner ? `${owner}의 ` : "";
+    t.set(`at:${tr.id}`, { key: `at:${tr.id}`, kind: "at", text: `${who}${tr.where}의 ${short}`, short, codes: [short], ...(owner ? { owner } : {}) });
+  }
+  // 자리 표시에 특성 이름을 단다(주어·목적어로 쓴 자리 표시에 렌더가 「자리의 이름」을 붙인다 — marks.ts ⑪).
+  for (const tr of brief.traits) { const k = `at:${tr.id}`, cur = t.get(k); if (cur && !cur.name && !tr.where) t.set(k, { ...cur, name: (tr.name.split(" ").pop() ?? tr.name).replace(/\s?\([^()]*\)$/, "") }); } // 한자 괄호는 뗀다(「경인(庚寅)」 — 뒤 말 「경인이에요」와 대조)
+  return t;
+}
+/** 사실 표시를 작가 브리프에 넣는다: marks 칸(표시 → 구절), 특성 자리 칸은 「⟦at:id⟧ = 자리」, 궁합 관계 문장 칸(같은 11줄 두 벌 + 요약)은 marks.between이 대신한다. */
+function withMarks(out: Record<string, unknown>, brief: Brief, t: MarkTable): Record<string, unknown> {
+  const view = writerMarks(t);
+  if (!view) return out;
+  const { chapters, ...head } = out;
+  const traits = (head.traits as { id: string; at?: string }[] | undefined)?.map(x => (x.at && t.has(`at:${x.id}`) ? { ...x, at: `⟦at:${x.id}⟧ = ${x.at}` } : x));
+  const compat = head.compatibility && view.between ? omit(head.compatibility as Record<string, unknown>, "dayRelations", "relationsPlain", "relationsSummary") : head.compatibility;
+  // R4 관문(1차 궁합 분량 88%): 장 재료가 지운 관계 칸(compatibility.dayRelations·relationsPlain)을 가리키면 끊긴 참조가 된다 → 표시 칸(marks.between)을 가리키게.
+  const REL_REF = /^compatibility\.(dayRelations|relationsPlain|relationsSummary)$/;
+  const fixRefs = (x: unknown): unknown => Array.isArray(x) ? x.map(fixRefs) : x && typeof x === "object" ? Object.fromEntries(Object.entries(x).map(([k, v]) => [k, k === "ref" && typeof v === "string" && REL_REF.test(v) ? "marks.between" : fixRefs(v)])) : x;
+  return { ...head, ...(compat ? { compatibility: compat } : {}), ...(traits ? { traits } : {}), marks: view, chapters: view.between ? fixRefs(chapters) : chapters };
+}
+
 function renderRaw(brief: Brief): Record<string, unknown> {
   const { style, timeline, fortunes } = brief;
   const jf = jobFilter(brief);
   const { traits, shadows } = writerFacing(brief);
+  // W4 Q2-1(카드 바꿔치기 철회, 덕짱님 결정): 4종(brief.design이 있는 책)도 작가에게 절 원재료(materials)·특성 뜻·연결(fusion)·팩폭(shadows)·장 소품 힌트를 그대로 보낸다.
+  // 특징 카드·연결(brief.design)은 지우지 않고 브리프에 둔다(자미두수·Q4 덧붙이기용 — 작가에게는 안 감). 바꾸는 것은 정제뿐:
+  // 판정어 → 뜻(plainChart·plainGrade, W3 P3 그대로), 처방 종류 = 카드 배분(card.rx)을 절 act로, 지식 DB 장면은 보내지 않는다(writerMaterial).
+  const refined = Boolean(brief.design);
+  const chartOf = refined ? plainChart : writerChart;
+  // W4 Q2-1(Q1 표 2 R2): 특성 자리를 쉬운 이름으로(정답지로 맞춘 카드 자리 — 「태어난 달 땅 글자(월지)」). 합충형해는 where(짝 자리 문장)가 이미 있다.
+  const atOf = traitAtMap(brief);
+  const fusionRefs = new Set(brief.chapters.flatMap(c => [...c.materials, ...(c.sections ?? []).flatMap(x => x.materials)]).flatMap(m => { const x = m.kind === "ref" ? m.ref.match(/^traits\.([a-z0-9]+)\.fusion$/) : null; return x ? [x[1]] : []; }));
   return {
     // 최종판2 1-3: 궁합은 사람별 고정 성격표를 브리프 맨 앞에 한 줄씩.
     ...(brief.compatibility?.profiles?.length ? { profiles: { rule: PROFILE_RULE, people: brief.compatibility.profiles.map(p => p.line) } } : {}),
-    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView", "ledgerNotes", "display"),
+    // 새 최상위 칸은 여기서 빼지 않으면 작가에게 간다(design = 특징 카드·연결 기록, 작가는 절 card만).
+    ...omit(brief, "version", "seed", "budget", "chapters", "style", "traits", "shadows", "timeline", "fortunes", "usedProps", "plan", "chart", "mbti", "unused", "partner", "appendix", "glossary", "ledgerView", "ledgerNotes", "display", "design"),
     ...(brief.compatibility ? { compatibility: writerCompat(brief.compatibility) } : {}),
     ...(brief.compatibility?.commonIds?.length ? { commonTraits: { rule: COMMON_RULE, items: brief.compatibility.commonNames ?? [] } } : {}),
-    chart: writerChart(brief.chart),
+    chart: chartOf(brief.chart),
     mbti: brief.mbti ? omit(brief.mbti, "image") : null,
     // 그림 별명·이미지·한 줄은 내부 별칭(P6b B-2): 작가는 이름(한자)·뜻(meaning)·나에게(forYou)만 받는다.
     unused: brief.unused.map(u => omit(u, "easyName", "oneLiner")),
-    ...(brief.partner ? { partner: { ...brief.partner, chart: writerChart(brief.partner.chart), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
+    ...(brief.partner ? { partner: { ...brief.partner, chart: chartOf(brief.partner.chart), mbti: brief.partner.mbti ? omit(brief.partner.mbti, "image") : null } } : {}),
     // 좋은 기운이 trait와 같으면 뜻·나에게는 trait 쪽에만 둔다.
     fortunes: fortunes.map(f => f.traitId ? omit(f, "featureId", "easyName", "image", "oneLiner", "meaning", "forYou") : omit(f, "featureId", "easyName", "image", "oneLiner")),
     // 최종판 1-5(P6e 3): 궁합은 특성마다 주인(그 기운을 가진 사람 이름)을 붙인다.
-    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs"), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: brief.compatibility.commonIds?.includes(t.featureId) ? "두 사람 모두(공통)" : t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
+    // W6 S2-3: 절에 배정된 연결(traits.X.fusion 참조)은 그 절 재료로만 싣고 특성 목록에서는 뺀다. 배정이 없는 연결(궁합 등)은 예전처럼 특성에 둔다.
+    traits: traits.map(t => ({ ...omit(t, "score", "family", "featureId", "chapters", "image", "easyName", "oneLiner", "sameImageAs", ...(refined ? (["strength"] as const) : []), ...(refined && fusionRefs.has(t.id) ? (["fusion"] as const) : [])), ...(refined ? { show: STRENGTH_PLAIN[t.strength] ?? t.strength, ...(!t.where && atOf.get(t.id) ? { at: atOf.get(t.id) } : {}) } : {}), ...(brief.compatibility && /^[ab]/.test(t.id) ? { owner: brief.compatibility.commonIds?.includes(t.featureId) ? "두 사람 모두(공통)" : t.id.startsWith("a") ? brief.compatibility.a.callName : brief.compatibility.b.callName } : {}) })),
     shadows,
     // 카드 전용 필드(그림 줄·기간·할 일·돌아보기)는 material·when·action과 같은 값이라 보내지 않는다.
     // "badges"라는 키 이름이 본문 낱말 "배지"로 새어 나갔다(P6b E-6): 작가에게는 marks로 준다.
@@ -284,7 +428,8 @@ function renderRaw(brief: Brief): Record<string, unknown> {
     bookRules: bookRules(brief),
     ...(brief.ledgerNotes?.avoidActions?.length ? { avoidActions: brief.ledgerNotes.avoidActions } : {}),
     // 절이 있는 장은 절(질문·재료)만 보낸다(장 재료 전체는 절 재료의 사본이라 두 번 보내면 같은 재료를 두 번 쓴다).
-    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => ({ q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars),
+    // W4 Q2-2: 장 소품 힌트(sceneHint — 입력에서 나온 부부 일정표·회계 결산 등)는 4종도 장 칸에 남긴다(W3 P4 원인 3).
+    chapters: writerChapters(brief).map(c => ({ ...(c.sections ? { ...omit(c, "materials", "sections"), sections: c.sections.map(x => (refined ? { q: x.q, materials: x.materials.flatMap(m => writerMaterial(m, brief)), ...(x.card?.rx ? { act: actLine(x.card.rx, false) } : {}) } : { q: x.q, materials: x.materials })) } : c), targetChars: shownTarget(c.targetChars),
       ...(c.sceneHint ? { sceneHint: c.sceneHint.filter(h => jf.hint(h, c.id)) } : {}) })),
     // 최종판3 2c: 종합은 업무 씨앗을 주지 않는다(직업 장면은 일·돈 장의 장면 힌트로만). 다른 상품은 입력 밖 가정 씨앗만 뺀다.
     person: brief.product === "saju_mbti_full" ? omit(brief.person, "workScenes") : brief.person.workScenes ? { ...brief.person, workScenes: Object.fromEntries(Object.entries(brief.person.workScenes).map(([k2, v]) => [k2, v.filter(jf.scene)])) } : brief.person,

@@ -484,7 +484,8 @@ describe("AM 재생성 2 판독 후속(호출 0): 검수 정답지 · 수리 되
     const sen = "이 해 5월 무렵에 병인 대운이 열리고, 앞으로 10년의 중심 기운은 식신이에요.";
     const ch = [{ n: 5, id: "years", title: "앞으로 10년", source: "writer", chars: 0, keys: ["2030"], sections: [{ heading: "2030", paragraphs: [`${sen} 마감이 몰려요.`] }] }];
     const numbered = [{ n: 1, chapter: 5, section: 0, paragraph: 0, text: sen }, { n: 2, chapter: 5, section: 0, paragraph: 0, text: "마감이 몰려요." }];
-    const items = repairItems({ chapters: ch as never, flags: [], issues: [{ s: 1, cat: "R", why: "되풀이", fix: "" }, { s: 2, cat: "R", why: "되풀이", fix: "" }] as never, numbered: numbered as never });
+    // W5 R2: 검수 R(반복)은 문장 떼기라 칸을 받지 않는다 — 다시 쓰기 범주(I)로 같은 거르기를 본다.
+    const items = repairItems({ chapters: ch as never, flags: [], issues: [{ s: 1, cat: "I", why: "입력 밖", fix: "" }, { s: 2, cat: "I", why: "입력 밖", fix: "" }] as never, numbered: numbered as never });
     expect(items.map(i => i.original)).toEqual(["마감이 몰려요."]);
   });
   it("머리 문장 꼴 더: 「무렵에 … 열리고」 · 「2028년 1월(계축월)에 해당하는 이 달은」", () => {
