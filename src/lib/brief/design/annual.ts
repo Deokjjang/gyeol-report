@@ -204,6 +204,9 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const cd = c.chart.currentDayun;
   const flow = c.yearEntry.flow;
   const months = c.months;
+  // AM2-9 P9 측정 중 고침: 영역 달 목록에 1월 다리 달도 넣는다 — 흐름표 · 1월 카드는 그 달 영역 신호를 보여 주는데 장 목록만 빠져 모순(판독 8권 공통).
+  const listMonths = c.bridge ? [c.bridge, ...months] : months;
+  const flowOf = new Map(listMonths.map(m => [monthName(m), m.flow.score] as const));
   const top = [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key));
   // AM2-3 1-2(P2 판독 annual-1 M179·M14): 흐름 끝값이 여럿이면(동률) 「가장」 달을 하나만 고르지 않고 모두 적는다.
   const ends = (high: boolean) => { const v = high ? top[0]?.flow.score : top.at(-1)?.flow.score; return v === undefined ? [] : months.filter(m => m.flow.score === v).map(monthName); };
@@ -212,9 +215,9 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const mbtiLines = c.mbti ? [...pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g1), 2, "mbti1", "profile"), ...(g2 !== g1 ? pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g2), 1, "mbti2", "profile") : [])] : [];
   // AM2-4 2부 충돌 빌드 검사: 바람 달은 바람의 모든 영역 가운데 하나가 오르고, 어느 영역도 늦추지 않는 달만(바람 달 ↔ 늦출 달 겹침 0).
   const wishDomains = [...new Set(c.wish.topics.map(t => (t === "study" ? "work" : t) as DomainKey))];
-  const wishDown = months.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↓")).map(monthName);
-  const wishMonths = months.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↑")).map(monthName).filter(x => !wishDown.includes(x));
-  const restClash = new Set([...monthsBy(months, "love", "↑"), ...monthsBy(months, "people", "↑"), ...wishMonths.slice(0, 3)]);
+  const wishDown = listMonths.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↓")).map(monthName);
+  const wishMonths = listMonths.filter(m => wishDomains.some(d => (m as TimelineEntry & { signals?: DomainSignals }).signals?.[d] === "↑")).map(monthName).filter(x => !wishDown.includes(x));
+  const restClash = new Set([...monthsBy(listMonths, "love", "↑"), ...monthsBy(listMonths, "people", "↑"), ...wishMonths.slice(0, 3)]);
   const evidence: Record<string, Evidence | null> = {
     yearCard: ev("yearCard", [
       `${card.name}: 하늘 글자 ${c.yearEntry.tenGod.stem}, 땅 글자 ${c.yearEntry.tenGod.branch}`,
@@ -228,17 +231,17 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
       : c.wish.kind === "risk" ? ev("wishLink", ["고객이 마음이 많이 힘든 시기일 수 있다(적은 글은 옮기지 않는다)"], "적은 글을 인용·요약하지 않는다. 따뜻한 일반 문장 두세 개로 마음을 돌보는 쪽을 짚고, 혼자 버티지 말고 가까운 사람·전문가와 이야기하는 것도 방법이라고만 쓴다")
       : c.wish.kind === "inject" ? ev("wishLink", [`고객이 바람을 적었다(주제: ${c.wish.topics.map(t => t === "study" ? "공부" : DOMAIN_KO[t]).join("·") || "일상"})`], "적은 글을 인용하지 않는다. 주제 영역의 흐름만 짧게") : null,
     loveYear: ev("loveYear", [statusUnknownLove ? "연애 상태 미입력: 솔로·연애 중·기혼을 단정하지 않는다" : `적어 준 연애 상태: ${LOVE_KO(c.relationshipStatus)}`, ...domain("love", 2), ...domainB("love"), ...situ(lk, "situLove"), ...relSeat("day"), ys ? `이 해의 연애 신호: ${ys.love === "↑" ? "오름" : ys.love === "↓" ? "내림" : "보통"}` : ""], statusUnknownLove ? "상태를 단정하지 않고 '만나는 사람이 있다면·없다면'으로 나눠" : "이 상황에 맞는 장면만. 만남·결혼·이별의 시기를 단정하지 않는다"),
-    loveMonths: ev("loveMonths", [`연애 쪽 기운이 오르는 달: ${monthsBy(months, "love", "↑").join(", ") || "뚜렷이 오르는 달 없음"}`, `연애에서 속도를 늦출 달: ${monthsBy(months, "love", "↓").join(", ") || "없음"}`], "「~하기 쉬운 달」까지만. 확정하지 않는다"),
-    moneyIn: ev("moneyIn", [...domain("money", 2), ...domainB("money"), ...situ(wk, "situMoney").slice(0, 1), `돈이 오르는 달: ${monthsBy(months, "money", "↑").join(", ") || "뚜렷한 달 없음"}`, `재성(재물 기운) ${c.chart.groups?.levels.재성 ?? ""}`], "들어오는 흐름. 투자 종목·시점·수익률을 말하지 않는다"),
-    moneyHole: ev("moneyHole", [`돈이 새기 쉬운 달: ${monthsBy(months, "money", "↓").join(", ") || "뚜렷한 달 없음"}`, ...domain("money", 3).slice(2), ...(g1 === "PEER" || g2 === "PEER" ? ["나눠 갖는 기운(비겁)이 들어와 같이 쓰는 돈·빌려주기에서 새기 쉬운 해"] : [])], "새는 구멍과 막는 방법 하나. 투자 권유 금지"),
+    loveMonths: ev("loveMonths", [`연애 쪽 기운이 오르는 달: ${monthsBy(listMonths, "love", "↑").join(", ") || "뚜렷이 오르는 달 없음"}`, `연애에서 속도를 늦출 달: ${monthsBy(listMonths, "love", "↓").join(", ") || "없음"}`], "「~하기 쉬운 달」까지만. 확정하지 않는다"),
+    moneyIn: ev("moneyIn", [...domain("money", 2), ...domainB("money"), ...situ(wk, "situMoney").slice(0, 1), `돈이 오르는 달: ${monthsBy(listMonths, "money", "↑").join(", ") || "뚜렷한 달 없음"}`, `재성(재물 기운) ${c.chart.groups?.levels.재성 ?? ""}`], "들어오는 흐름. 투자 종목·시점·수익률을 말하지 않는다"),
+    moneyHole: ev("moneyHole", [`돈이 새기 쉬운 달: ${monthsBy(listMonths, "money", "↓").join(", ") || "뚜렷한 달 없음"}`, ...domain("money", 3).slice(2), ...(g1 === "PEER" || g2 === "PEER" ? ["나눠 갖는 기운(비겁)이 들어와 같이 쓰는 돈·빌려주기에서 새기 쉬운 해"] : [])], "새는 구멍과 막는 방법 하나. 투자 권유 금지"),
     workYear: ev("workYear", [statusUnknownWork ? "일 상황 미입력: 직장·구직·사업을 단정하지 않는다" : `적어 준 일 상황: ${WORK_KO(c.jobStatus)}`, ...domain("work", 2), ...domainB("work"), ...situ(wk, "situWork"), ...relSeat("month")], statusUnknownWork ? "상황을 단정하지 않고 갈래별 조건형으로" : "이 상황에 맞는 판단 기준을 준다. 이직·합격을 확정하지 않는다"),
-    workCriteria: ev("workCriteria", [`일이 오르는 달: ${monthsBy(months, "work", "↑").join(", ") || "뚜렷한 달 없음"}`, `일터 흔들림을 살필 달: ${monthsBy(months, "work", "↓").join(", ") || "없음"}`, ...deepLines(c.k, "documents", `group:${g1 === "OFFICER" || g1 === "RESOURCE" ? g1 : "OFFICER"}`, "yearTrend", "strong").slice(0, 1)], "판단이 필요할 때의 기준을 두세 가지로"),
+    workCriteria: ev("workCriteria", [`일이 오르는 달: ${monthsBy(listMonths, "work", "↑").join(", ") || "뚜렷한 달 없음"}`, `일터 흔들림을 살필 달: ${monthsBy(listMonths, "work", "↓").join(", ") || "없음"}`, ...deepLines(c.k, "documents", `group:${g1 === "OFFICER" || g1 === "RESOURCE" ? g1 : "OFFICER"}`, "yearTrend", "strong").slice(0, 1)], "판단이 필요할 때의 기준을 두세 가지로"),
     studyYear: ev("studyYear", [...domain("study", 2), ...domainB("study")], "공부·시험·자격 준비의 방식. 합격·불합격을 말하지 않는다"),
-    helpers: ev("helpers", [...domain("people", 2), `사람 쪽이 오르는 달: ${monthsBy(months, "people", "↑").join(", ") || "뚜렷한 달 없음"}`, ...relSeat("year")], "돕는 사람은 '이런 사람이 곁에 오면'으로. 실제 인물을 지어내지 않는다"),
-    carePeople: ev("carePeople", [...domain("people", 3).slice(2), ...domainB("people"), `관계 속도를 늦출 달: ${monthsBy(months, "people", "↓").join(", ") || "없음"}`], "조심할 관계는 근거와 함께, 상대를 비하하지 않는다"),
-    mindPush: ev("mindPush", [...domain("mind", 2), ...domainB("mind"), `무리하기 쉬운 달: ${monthsBy(months, "mind", "↓").join(", ") || "뚜렷한 달 없음"}`], "무리하기 쉬운 때와 신호. 건강 진단·병명 금지"),
+    helpers: ev("helpers", [...domain("people", 2), `사람 쪽이 오르는 달: ${monthsBy(listMonths, "people", "↑").join(", ") || "뚜렷한 달 없음"}`, ...relSeat("year")], "돕는 사람은 '이런 사람이 곁에 오면'으로. 실제 인물을 지어내지 않는다"),
+    carePeople: ev("carePeople", [...domain("people", 3).slice(2), ...domainB("people"), `관계 속도를 늦출 달: ${monthsBy(listMonths, "people", "↓").join(", ") || "없음"}`], "조심할 관계는 근거와 함께, 상대를 비하하지 않는다"),
+    mindPush: ev("mindPush", [...domain("mind", 2), ...domainB("mind"), `무리하기 쉬운 달: ${monthsBy(listMonths, "mind", "↓").join(", ") || "뚜렷한 달 없음"}`], "무리하기 쉬운 때와 신호. 건강 진단·병명 금지"),
     // AM2-5 2부 충돌 빌드 검사(P4 판독 세운 경계 #6 — 2월은 쉬어 가기 좋은 달이면서 연애·사람·바람이 오르는 달): 쉬는 달에서 연애·사람이 오르는 달과 바람 달은 뺀다.
-    mindRest: ev("mindRest", [`쉬어 가기 좋은 달: ${monthsBy(months, "mind", "↑").filter(m => !restClash.has(m)).join(", ") || "뚜렷한 달 없음"}`, `${ends(false).length > 1 ? "흐름이 가장 잔잔한 달(같은 세기)" : "가장 조용한 달"}: ${ends(false).join(", ")}`, ...tip(firstFit(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, "mind")))], "쉬는 법 하나를 이 사람 생활에 맞게"),
+    mindRest: ev("mindRest", [`쉬어 가기 좋은 달: ${monthsBy(listMonths, "mind", "↑").filter(m => !restClash.has(m) && (flowOf.get(m) ?? 0) < 4).join(", ") || "뚜렷한 달 없음"}`, `${ends(false).length > 1 ? "흐름이 가장 잔잔한 달(같은 세기)" : "가장 조용한 달"}: ${ends(false).join(", ")}`, ...tip(firstFit(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, "mind")))], "쉬는 법 하나를 이 사람 생활에 맞게"),
     useDo: ev("useDo", [`${ends(true).length > 1 ? "흐름이 가장 크게 오르는 달(같은 세기)" : "흐름이 가장 크게 오르는 달"}: ${ends(true).join(", ")}`, ...(["love", "money", "work", "people", "mind"] as DomainKey[]).filter(d => ys?.[d] === "↑").map(d => `이 해에 오르는 영역: ${DOMAIN_KO[d]}`), ...domain("work", 3).slice(2, 3), ...energy("work", 1)], "할 것 세 가지: 서로 다른 영역에서, 이 사람 상황에 맞게"),
     useAvoid: ev("useAvoid", [...(["love", "money", "work", "people", "mind"] as DomainKey[]).filter(d => ys?.[d] === "↓").map(d => `이 해에 살필 영역: ${DOMAIN_KO[d]}`), ...card.relations.slice(0, 2).map(r => `살필 거리: ${r.watch}`), c.yearEntry.caution ?? ""], "피할 것 세 가지: 겁주지 않고 대신 할 일과 함께"),
     lucky: ev("lucky", [`나를 돕는 기운: ${lucky.name} — ${lucky.why}`, `색: ${lucky.colors.join("·")} · 방향: ${lucky.direction} · 숫자: ${lucky.numbers.join("·")}`, `가 볼 곳: ${lucky.places.join("·")}`], "색·방향·숫자는 생활 속 작은 습관으로(옷·소품·자리). 효과를 약속하지 않는다"),
