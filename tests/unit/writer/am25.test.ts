@@ -69,14 +69,15 @@ describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
     const k = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
     const seat = k.links!.find(l => l.kind === "seat")!;
     // 이 달 오미합 배지는 섞인 결(plus 아님) — 연애 오름 신호가 있어도 방향은 「섞임」으로 둔다(오름이 배지 결을 덮지 않게).
-    expect(seat.text).toMatch(/〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 앞과 다름 · 입력 한 마디: 솔로 · 섞임 · 이 달 오름: 연애/);
+    expect(seat.text).toMatch(/7월 · 정미월 태어난 날 자리의 〔오미합 = 맺힘\(열기가 오래 가는\)〕 · 앞과 다름 · 입력 한 마디: 솔로 · 섞임 · 7월 · 정미월 오름: 연애/);
     // AM2-7 3부 5: 둘째부터 「앞 key(그때 같은 자리 관계 전부) + 이번 관계 뜻 + 입력 한 마디」(틀 문구 없음).
-    expect(seat.text).toMatch(/〕 앞: 6월 · 병오월\(그때 같은 자리: /); expect(seat.text).not.toMatch(/이 책|번째/); expect(seat.nth).toBeGreaterThanOrEqual(2);
+    expect(seat.text).toMatch(/〕 앞: 6월 · 병오월 태어난 날 자리의 /); expect(seat.text).not.toMatch(/이 책|번째/); expect(seat.nth).toBeGreaterThanOrEqual(2);
     expect(seat.text).toMatch(/입력 한 마디: 솔로/);
     expect(seat.input).toEqual(["relationship=single"]);
-    expect(k.links!.find(l => l.kind === "echo")?.text).toMatch(/정미년 한 해에도 같은 태어난 날 자리에 오미합/);
+    expect(k.links!.find(l => l.kind === "echo")?.text).toMatch(/2027년 정미년 한 해에도 태어난 날 자리에 오미합/);
     // 바람 고리는 책에서 1~3개만 — 7월은 같은 자리가 그 해와 바람 달에 함께 걸려 1순위.
-    expect(k.wishLink).toMatch(/그 해에도 같은 자리에 걸림/);
+    // AM2-11 1부 1 · 3: 바람 고리는 그 달 오르는 영역 · 이름으로(「그 해에도 같은 자리에 걸림」 없음).
+    expect(k.wishLink).toMatch(/7월 · 정미월 연애 오름 · 2027년 정미년 한 해에도 태어난 날 자리에 오미합/); expect(k.wishLink).not.toMatch(/그 해|같은 자리/);
     expect(keysOf(intake).filter(x => x.wishLink).length).toBeLessThanOrEqual(3);
     expect(keysOf(intake).filter(x => !x.wishLink).every(x => !(x.links ?? []).some(l => /바람/.test(l.text)))).toBe(true);
   });
@@ -108,7 +109,8 @@ describe("AM2-5 2부 고치기 단계 구조", () => {
     const { intake } = setup("annual-1");
     const s92 = intake.chapters.find(c => c.n === 9)!.sections![1];
     // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다.
-    expect(s92.pointer).toBe("앞에서 본 2월 · 임인월, 7월 · 정미월, 10월 · 경술월");
+    // AM2-11 1부 1: 바람 달은 영역마다(옛 「영역 하나만 올라도」 2 · 7 · 10월 한 줄).
+    expect(s92.pointer).toBe("앞에서 본 연애 쪽(2월 · 임인월, 7월 · 정미월, 8월 · 무신월) · 일 쪽(8월 · 무신월, 9월 · 기유월, 12월 · 임자월) · 사람 쪽(2월 · 임인월, 12월 · 임자월)");
     expect(keysOf(intake).find(k => k.label === "2028년 1월 · 계축월")!.pointer).toBe("3월 · 계묘월처럼 대운과 같은 정인 기운이 겹치는 달");
   });
   it("문단 교체 원고 읽기: 번호 줄 · key 전체(*) · 표지", () => {

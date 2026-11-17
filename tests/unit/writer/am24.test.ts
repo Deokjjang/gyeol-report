@@ -32,7 +32,8 @@ describe("AM2-4 3부 카드", () => {
     const a = setup("annual-1"), m = setup("major-1");
     const all = [...a.intake.lines, ...m.intake.lines].map(l => `${l.value} | ${l.meaning}`);
     expect(all.filter(t => /\(반쯤\)|\(태어난 (해|달|날|시각)|생활 결|기준 해|가장 센 쪽|두 번째로 쓰는 쪽|성격 쪽에서는/.test(t))).toEqual([]);
-    expect(a.intake.lines.some(l => l.value === "태어난 달 자리의 쇠(衰)")).toBe(true);
+    // AM2-11 1부 3: 십이운성 · 신살 줄 이름에는 종류를 붙인다.
+    expect(a.intake.lines.some(l => l.value === "태어난 달 자리의 십이운성 쇠(衰)")).toBe(true);
   });
   it("카드 ≡ 엔진 불변식: 일부러 자리를 틀면(예전 unitFix 버그) 잡는다", () => {
     const { brief, intake } = setup("annual-1");

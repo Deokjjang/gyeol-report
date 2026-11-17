@@ -156,7 +156,7 @@ const WHEN_KO: Readonly<Record<KeyPlan["when"], string>> = { past: "지남", cur
 const SEED_FRAME: Readonly<Record<KeyPlan["when"], string>> = { past: "지난 때", current: "그 무렵", future: "앞날" };
 
 /** AM2-10 3부: 고리 재료 글에서 방향 · 칩 꼬리(「좋은 쪽 · 이 달 오름: 연애」 — 기조 한 줄이 맡는다)를 뗀다. */
-const linkCore = (t: string) => t.replace(/ · (?:좋은 쪽|살필 쪽|섞임)(?: · .*)?$/, "").replace(/이번: 〔([^=〕]+) = [^〕]+〕/, "이번: $1").replace(/ × 〔([^=〕]+) = [^〕]+〕/, " × $1");
+const linkCore = (t: string) => t.replace(/ · (?:좋은 쪽|살필 쪽|섞임)(?: · .*)?$/, "").replace(/이번: 〔([^=〕]+) = [^〕]+〕/, "이번: $1").replace(/ × 〔([^=〕]+) = [^〕]+〕/, " × $1").replace(/ 자리의 〔([^=〕]+) = [^〕]+〕/, " 자리의 $1");
 /** 핵심 관계의 뜻 한 마디: 고리 재료의 〔이름 = 뜻(그림)〕. 없으면 이름만. */
 const coreWord = (k: KeyPlan, name: string) => { for (const l of k.links ?? []) { const m = l.text.match(new RegExp(`〔${name.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")} = ([^〕]+)〕`)); if (m) return m[1]; } return ""; };
 /** AM2-10 3부 key 지시: ① 핵심 ② 재료 하나(바람 고리 > 자리 고리 > 이 사람 입력 재료) ③ 짝 또는 장면 · 기조(지킬 것). */
@@ -170,7 +170,8 @@ function keyText(k: KeyPlan, mbtiOn: boolean): string {
     `    - 핵심: ${core || "없음"}${k.range ? `(카드 줄 ${k.range})` : ""}`,
     ...(own ? [`    - 재료: ${own}`] : []),
     ...(third ? [`    - ${third}`] : []),
-    ...(k.tone ? [`    - 이 ${/년 /.test(k.label) ? "해" : "달"} 기조: ${k.tone}`] : [])].join("\n");
+    // AM2-11 1부 3: 칸 이름에도 지시어(이 달 · 이 해)를 두지 않는다.
+    ...(k.tone ? [`    - 기조: ${k.tone}`] : [])].join("\n");
 }
 void OPENER_KO; void linkText;
 

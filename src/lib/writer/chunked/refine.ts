@@ -17,6 +17,7 @@ import { profileCodes } from "@/lib/brief/pairProfile";
 import { profilePoles } from "../safety/contradiction";
 import { materialKey } from "../prompt/materials";
 import CARD_TAGS from "./card-tags.json";
+import W7_TAGS from "./w7-tags.json";
 
 // ---------- 1. 원자 문장 · 종류 ----------
 export type AtomKind = "trait" | "scene" | "rx" | "rule" | "disclaimer" | "meta" | "cond";
@@ -206,13 +207,28 @@ export function gradeToMeaning(t: string, rel: string): string {
 export const GRADE_WORD = /(?:\)|:|신호|흐름) ?(?:강|보통|약|오름|내림)(?![가-힣])|\((?:강|보통|약|매우 강|매우 약)\)|같은 세기\)|보통 세기|다섯 힘의 세기|내 힘의 세기|세기:/;
 
 // ---------- 6. 성향 반대 정리(카드 원국 · MBTI 줄) ----------
-type Dim = readonly [string, 1 | -1, number];
+export type Dim = readonly [string, 1 | -1, number];
 const CARD_TAG_ITEMS = (CARD_TAGS as unknown as { items: Readonly<Record<string, { k: string; d: readonly Dim[] }>> }).items;
 /** 문장의 성향 차원: W7 꼬리표(persona-tags — 원문 sha1 열쇠) 먼저, 없으면 이 판 꼬리표(card-tags.json — W7이 덮지 못한 문장만). */
 export function dimsOf(s: string, k: Knowledge, field?: string): readonly Dim[] {
   const t = k.personaTags.get(materialKey(s)) ?? (field ? k.personaTags.get(materialKey(field)) : undefined) ?? CARD_TAG_ITEMS[materialKey(s)];
-  return t && (t.k === "trait" || t.k === "situ") ? (t.d as readonly Dim[]) : [];
+  const base = t && (t.k === "trait" || t.k === "situ") ? (t.d as readonly Dim[]) : [];
+  // AM2-11 1부 4: card-tags의 20차원 밖 이름(dutifulness · caretaking …)만 붙은 문장은 W7 20차원 꼬리표를 더한다(세운 · Fusion 꼬리표와 같은 말로 맞댄다 — P10 annual-1 「끝맺음이 깔끔」 ↔ 「흥미가 식으면 접기」).
+  const extra = W7_CARD[materialKey(s)]?.d ?? [];
+  return extra.length ? [...base, ...extra.filter(([d]) => !base.some(([d2]) => d2 === d))] : base;
 }
+const W7_CARD = (W7_TAGS as unknown as { card: Readonly<Record<string, { d: readonly Dim[] }>> }).card;
+const W7_FUSION = (W7_TAGS as unknown as { fusion: Readonly<Record<string, { s: string; d: readonly Dim[] }>> }).fusion;
+const fusionSents = new Map<string, { n: string; d: readonly Dim[] }[]>();
+for (const [key, v] of Object.entries(W7_FUSION)) { const id = key.replace(/#\d+$/, ""); fusionSents.set(id, [...(fusionSents.get(id) ?? []), { n: v.s.replace(/\b(?:Ni|Ne|Si|Se|Ti|Te|Fi|Fe)\b/g, "").replace(/[^가-힣]/g, ""), d: v.d }]); }
+/** AM2-11 1부 4: Fusion 짝 이유 글(가공된 why)의 성향 차원 — 그 규칙 문장 가운데 글에 든 것(한글만 앞 12자)의 꼬리표. */
+export function fusionDims(ruleId: string, text: string): readonly Dim[] {
+  const n = text.replace(/[^가-힣]/g, ""), out: Dim[] = [];
+  for (const x of fusionSents.get(ruleId) ?? []) if (x.n.length >= 6 && n.includes(x.n.slice(0, 12))) for (const d of x.d) if (!out.some(o => o[0] === d[0])) out.push(d);
+  return out;
+}
+/** 한 Fusion 문장(원문 그대로 가른 것)의 차원 — 짝 이유 문장 하나를 뺄 때 쓴다. */
+export function fusionSentenceDims(ruleId: string, sentence: string): readonly Dim[] { return fusionDims(ruleId, sentence); }
 export const hasTag = (s: string, k: Knowledge, field?: string) => Boolean(k.personaTags.get(materialKey(s)) ?? (field ? k.personaTags.get(materialKey(field)) : undefined) ?? CARD_TAG_ITEMS[materialKey(s)]);
 /** 성격표(4종 personProfileOf · AM2-9 annualTidy와 같은 계산): 특성 차원 × 점수 + MBTI 차원 × 1.5 × 가장 큰 점수. */
 export function cardPoles(brief: Brief, k: Knowledge): ReadonlyMap<string, 1 | -1> {
@@ -232,7 +248,9 @@ export type TidyItem = { readonly text: string; readonly owner: string; readonly
 export function tidyCard(items: readonly TidyItem[], k: Knowledge, poles: ReadonlyMap<string, 1 | -1>, log: RefineLog, cap = CARD_MAX_DROPS): Set<string> {
   const gone = new Set<string>(); let left = cap;
   const dims = new Map(items.map(i => [i.text, dimsOf(i.text, k, i.field)] as const));
-  const drop = (it: TidyItem, why: string) => { if (gone.has(it.text)) return; if (left > 0) { gone.add(it.text); left--; log.tidy.push({ text: it.text, why }); } else if (!log.tidyOver.some(o => o.text === it.text)) log.tidyOver.push({ text: it.text, why }); };
+  // AM2-11 1부 4: 한 출처(특성 · MBTI 줄)의 마지막 남은 문장은 빼지 않는다(줄째 사라지면 그 근거를 쓰는 장 · 동음 표시가 빈다 — 남긴 짝으로 기록).
+  const liveOf = (owner: string) => items.filter(i => i.owner === owner && !gone.has(i.text)).length;
+  const drop = (it: TidyItem, why: string) => { if (gone.has(it.text)) return; if (left > 0 && liveOf(it.owner) > 1) { gone.add(it.text); left--; log.tidy.push({ text: it.text, why }); } else if (!log.tidyOver.some(o => o.text === it.text)) log.tidyOver.push({ text: it.text, why }); };
   const clash = (a: readonly Dim[], b: readonly Dim[], min: number) => a.find(([d, p, s]) => s >= min && b.some(([d2, p2, s2]) => d2 === d && p2 === -p && s2 >= min))?.[0];
   const pairs = (min: number) => { for (let j = 1; j < items.length; j++) for (let i = 0; i < j; i++) { const a = items[i], b = items[j]; if (a.owner === b.owner || gone.has(a.text) || gone.has(b.text)) continue;
     const d = clash(dims.get(a.text)!, dims.get(b.text)!, min); if (!d) continue;

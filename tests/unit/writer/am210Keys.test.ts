@@ -18,7 +18,8 @@ describe("AM2-10 key 지시(3부)", () => {
     for (const b of bs) {
       const items = b.slice(1);
       expect(items.length).toBeLessThanOrEqual(4);
-      expect(items.filter(l => /^ {4}- 이 (달|해) 기조: /.test(l))).toHaveLength(1);
+      // AM2-11 1부 3: 칸 이름 「이 달 기조」 → 「기조」(지시어를 두지 않는다).
+      expect(items.filter(l => /^ {4}- 기조: /.test(l))).toHaveLength(1);
       expect(items.filter(l => !/기조: /.test(l)).length).toBeLessThanOrEqual(3);
       expect(b.join("\n")).not.toMatch(FORM);
       expect(b.join("\n")).not.toMatch(/좋은 쪽 · 이 달 오름|이 달 살핌:/);
@@ -31,8 +32,9 @@ describe("AM2-10 key 지시(3부)", () => {
     const b = blocksOf(renderCard(intake)).find(x => /3월 · 계묘월/.test(x[0]))!.join("\n");
     expect(b).toContain("- 핵심: 목국 반합 — 모임");
     expect(b).toContain("- 재료: 〔태어난 날 자리 · 가까운 사람〕 앞: 1월 · 신축월");
-    expect(b).toContain("- 짝 P8 — MBTI 문장은 짝의 명리 줄하고만 잇는다");
-    expect(b).toContain("- 이 달 기조: 크게 출렁이지 않는 달 · 기운이 오르는 쪽은 연애·돈·일·마음 · 조심할 쪽 없음 → 좋은 쪽으로 맺는다(지킬 것, 본문에 옮기지 않음)");
+    // AM2-11 1부 5: 계산 짝을 빼서 짝 번호가 바뀐다 — 번호가 아니라 꼴을 본다.
+    expect(b).toMatch(/- 짝 P\d+ — MBTI 문장은 짝의 명리 줄하고만 잇는다/);
+    expect(b).toContain("- 기조: 크게 출렁이지 않는 달 · 기운이 오르는 쪽은 연애·돈·일·마음 · 조심할 쪽 없음 → 좋은 쪽으로 맺는다(지킬 것, 본문에 옮기지 않음)");
   });
 });
 

@@ -26,7 +26,7 @@ import { FLOW_DESC, FLOW_WORD, POSITION_KO } from "@/lib/brief/labels";
 import { JOB_ASSUME, type WriterChapter } from "../prompt";
 import { FARMING, presumedPartner } from "../safety/lint";
 import { RURAL_PROP } from "../safety/patterns";
-import { meaningOf, readWish } from "@/lib/brief/design/annual";
+import { meaningOf, readWish, WISH_UP_LINE, wishDomainsOf } from "@/lib/brief/design/annual";
 import { pairTextIssue } from "./card";
 import { dayunPositionKo } from "../safety/lint";
 import { cleanSeed, dedupeSentences, dropGeneral, plainCard, predicate, relCondition, seedAsCondition, seedTagsFit, seedTagsOf, SENIORITY_PROP, stripFnCodes, stripRx, unambiguous, unitFix } from "./card";
@@ -35,15 +35,22 @@ import { keyLinks, keyPairWhy, rankWishLinks, REASON_OF, type Link, type LinkCtx
 import { allocateChapters, rxKindsOf, type RxKind } from "@/lib/brief/prescriptions";
 import { josa, TEN_GOD_GROUP } from "@/lib/brief/labels";
 import { toneOf } from "./tone";
+import { nameDeictics, type NameCtx } from "./names";
+/** 줄 값 앞의 key 이름(「7월 · 정미월 …」 「2030년 경술년 …」). */
+const LABEL_OF = (v: string) => /^(20\d\d년 [가-힣]{2}년|(?:20\d\d년 )?(?:1[0-2]|[1-9])월 · [가-힣]{2}월)/.exec(v)?.[1];
+import { tidyBookPass } from "./tidyBook";
 import { atomsOf, CARD_MAX_DROPS, cardPoles, chartFacts, clashesCard, gradeToMeaning, inputClash, loveSignalMeaning, newRefineLog, refineAtom, refineLog, refineText, specificity, tidyCard, type AtomCtx, type TidyItem } from "./refine";
 
 export type Subject = "natal" | "dayun" | "year" | "month" | "mbti" | "input";
-export const SUBJECT_KO: Readonly<Record<Subject, string>> = { natal: "원국(타고난 사주)", dayun: "대운", year: "세운(그 해)", month: "월운(그 달)", mbti: "MBTI", input: "고객 입력" };
+/** AM2-11 1부 5: 원국 짝 기록(도구 · verdict) — Fusion 규칙 id · 뺀 계산 짝 · 계산 짝 대신 규칙으로 만든 짝. */
+export type PairLog = { fusion: string[]; removedComputed: string[]; fromRule: string[] };
+export const pairLog: { last?: PairLog } = {};
+export const SUBJECT_KO: Readonly<Record<Subject, string>> = { natal: "원국(타고난 사주)", dayun: "대운", year: "세운(해 줄)", month: "월운(달 줄)", mbti: "MBTI", input: "고객 입력" };
 const PREFIX: Readonly<Record<Subject, string>> = { natal: "N", dayun: "D", year: "Y", month: "M", mbti: "B", input: "I" };
 /** 근거 한 줄: 엔진 값 + 쉬운 뜻 + 쓸 수 있는 장(장 번호). */
 export type Line = { readonly id: string; readonly subject: Subject; readonly value: string; readonly meaning: string; readonly use: readonly number[] };
 /** 명리 × MBTI 짝. 이 짝만 한 문장 안에서 잇는다. use = 두 줄 모두 허용된 장. */
-export type Pair = { readonly id: string; readonly myeongri: string; readonly mbti: string; readonly why: string; readonly use?: readonly number[]; /** AM2-5 1부 key 짝: 이 key에서만. */ readonly key?: string;
+export type Pair = { readonly id: string; readonly myeongri: string; readonly mbti: string; readonly why: string; readonly use?: readonly number[]; /** AM2-5 1부 key 짝: 이 key에서만. */ readonly key?: string; /** AM2-11: Fusion DB 규칙 id(있으면). */ readonly fusionId?: string; /** AM2-11: 세운 MBTI 줄 짝의 원문(꼬리표 열쇠). */ readonly srcText?: string;
   /** AM2-6 2부: 잇는 이유(공통·보완·긴장). 이유가 없는 짝(「같은 때」만)은 만들지 않는다. */ readonly reason: PairReason };
 /** key에서 반드시 쓸 것(2-4): 이름과 본문에서 찾을 꼴(정규식 원문). */
 /** re = 이름·국 별칭·뜻 그림 말(어디서든), weak = 「자리 + 그 관계 종류 말」(그 마디에 다른 관계 이름이 없을 때만 — 오탐 검토 2차: 「태어난 날과 육합」이 겨울 방합을 지우던 것). */
@@ -85,7 +92,7 @@ export type ChapterPlan = {
   /** AM2-7 3부 9: 처방을 둘 소제목(없으면 마지막 소제목). */
   readonly rxAt?: number;
 };
-export type Intake = { readonly product: "annual_fortune" | "major_fortune"; readonly person: readonly string[]; readonly lines: readonly Line[]; readonly pairs: readonly Pair[]; readonly chapters: readonly ChapterPlan[]; readonly wish?: string;
+export type Intake = { readonly product: "annual_fortune" | "major_fortune"; readonly person: readonly string[]; readonly lines: readonly Line[]; readonly pairs: readonly Pair[]; readonly chapters: readonly ChapterPlan[]; readonly wish?: string; /** AM2-11: 상한으로 남긴 성향 반대 쌍(기록). */ readonly tidyOver?: readonly string[];
   /** 2-1 근거가 없어 뺀 절(기록). */ readonly droppedPlan?: readonly string[];
   /** 엔진이 대운을 계산하지 못한 대운 책(출생 시각 미상 일부 — 계산은 보호 대상, 결정 필요로 보고). */ readonly noDayun?: boolean;
   /** AM2-6 4부: 대운 안 위치 값(해마다 「2027년: 무진 대운 3번째 해(앞쪽)」). 본문의 위치 말은 이 값으로만. */ readonly positions?: readonly string[];
@@ -212,6 +219,8 @@ const ANNUAL_SUBJECT: Readonly<Record<string, Subject>> = { yearCard: "year", ye
 const MAJOR_SUBJECT: Readonly<Record<string, Subject>> = { dayunHow: "dayun", lifetime: "dayun", pastSummary: "year", pastDayun: "dayun", nowTheme: "dayun", nowRelation: "dayun", nowCards: "dayun", turnWhen: "dayun", turnMind: "dayun", mapWorkMoney: "dayun", mapLovePeople: "dayun", mapMindMove: "dayun", growthCurve: "mbti", growthDayun: "dayun", ageGrowth: "dayun", ageNext: "dayun", planNear: "year", planFar: "year" };
 const MONTH_IN = /(1[0-2]|[1-9])월 · [갑을병정무기경신임계][자축인묘진사오미신유술해]월|[갑을병정무기경신임계][자축인묘진사오미신유술해]월/;
 const subjectOfFact = (key: string, fact: string, product: Intake["product"]): Subject => {
+  // AM2-11 1부 1: 바람 영역별 달 줄(「바람의 일 쪽이 오르는 달: …」)은 월운 줄(옛 「그 바람과 이어지는 영역이 오르는 달」과 같은 칸).
+  if (/^바람의 [가-힣·]+ 쪽(?:이 오르는| 속도를 늦출) 달: /.test(fact)) return "month";
   if (/^(적어 준|연애 상태|일 상황|고객이|바람)/.test(fact)) return "input";
   if (/달: |달은 /.test(fact) && !/대운/.test(fact)) return "month";
   if (/^\d{4}년 [가-힣]{2}년의/.test(fact)) return "year";
@@ -314,7 +323,14 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     void ganji;
     const baseName = t.name.replace(/\(.*\)$/, "").trim();
     const nm = /^twelveStage/.test(t.featureId) && STAGE_HANJA[baseName] ? `${baseName}${STAGE_MARK}` : t.name;
-    const id = add("natal", `${seat ? `${seat} 자리의 ` : ""}${nm}`, partsOf(t).map(p => refineText(p, tctx(t), rlog, tidyGone)).filter(Boolean).join(" · "));
+    // AM2-11 1부 3(P10 annual-1 「태어난 날 땅 글자는 사(死)로」 — 줄 이름 「태어난 날 자리의 사(死)」를 땅 글자로 읽음): 십이운성 · 신살 줄 이름에는 종류를 붙인다.
+    const kind = /^twelveStage/.test(t.featureId) ? "십이운성 " : /^shinsal/.test(t.featureId) ? "신살 " : "";
+    // AM2-11 1부 4: 성향 정리 뒤 특성 줄이 비면(줄째 사라짐) 정리가 뺀 첫 문장 하나를 되살린다 — 그 근거를 쓰는 장 · 동음 표시가 비지 않게(정리 기록에서는 뺀다).
+    const vName = `${seat ? `${seat} 자리의 ` : ""}${kind}${nm}`;
+    const parts = partsOf(t).map(p => refineText(p, tctx(t), rlog, tidyGone)).filter(Boolean);
+    let id = add("natal", vName, parts.join(" · "));
+    if (!id) { const scratch = newRefineLog(), back = partsOf(t).map(p => refineText(p, tctx(t), scratch)).filter(Boolean).flatMap(b2 => atomsOf(b2)).find(a => tidyGone.has(a));
+      if (back) { id = add("natal", vName, [...parts, back].join(" · ")); const i = rlog.tidy.findIndex(x2 => x2.text === back); if (id && i >= 0) { rlog.tidyOver.push({ ...rlog.tidy[i], why: `${rlog.tidy[i].why} → 특성 줄 마지막 문장이라 남김` }); rlog.tidy.splice(i, 1); } } }
     if (id) traitId.set(t.id, id);
   }
   const weak = /WEAK/.test(c.strength.level);
@@ -335,7 +351,21 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   /** AM2-7 3부 7: 짝을 만들지 못한 대운 성장 곡선 장(소제목을 나란히 꼴로). */
   const growthParallel = new Set<number>();
   // AM2-6 2부: 짝은 잇는 이유(Fusion DB 규칙 종류 — 공통·보완·긴장)가 있을 때만.
-  for (const t of brief.traits) { const reason = t.fusion ? REASON_OF[t.fusion.kind] : undefined; if (t.fusion && reason && mbtiType && traitId.get(t.id)) pairs.push({ id: `P${pairs.length + 1}`, myeongri: traitId.get(t.id)!, mbti: mbtiType, why: pairWhy(t.fusion.why), reason }); }
+  // AM2-11 1부 5(덕짱님 결정 2026-11-17 2번): 원국 짝은 Fusion DB 규칙(원국 id × 그 사람 MBTI)만 — 계산 짝(computed · mbtiLink)은 짝 카드로 만들지 않는다.
+  //  특성이 계산 짝을 골랐어도 Fusion 규칙이 있으면 그 규칙으로 짝을 만든다. 기록은 pairLog(verdict 「계산 짝 뺀 수 · 남은 수」).
+  const plog: PairLog = { fusion: [], removedComputed: [], fromRule: [] }; pairLog.last = plog;
+  for (const t of brief.traits) {
+    if (!mbtiType || !mbti || !traitId.get(t.id)) continue;
+    // Fusion 규칙 대상은 유형(720) 또는 유형 글자(「E」 1 — 도화살 × E): 그 사람 유형에 대상 글자가 모두 들면 그 사람 규칙이다.
+    const fits = (target: string) => target === mbti.type || (target.length < 4 && [...target].every(ch => mbti.type.includes(ch)));
+    const rule = (k.fusionByFeature.get(t.featureId) ?? []).find(r => r.mbtiTarget === mbti.type) ?? (k.fusionByFeature.get(t.featureId) ?? []).find(r => fits(r.mbtiTarget));
+    const src = t.fusion?.source === "fusion" && fits(t.fusion.target) ? { kind: t.fusion.kind, why: t.fusion.why } : rule ? { kind: rule.kind, why: rule.why } : null;
+    if (t.fusion && t.fusion.source !== "fusion" && t.chapters.length) plog.removedComputed.push(`${t.name}:${t.fusion.source}`);
+    const reason = src ? REASON_OF[src.kind] : undefined; if (!src || !reason) continue;
+    if (t.fusion?.source !== "fusion") plog.fromRule.push(t.name);
+    plog.fusion.push(rule?.id ?? `${t.featureId}:${mbti.type}`);
+    pairs.push({ id: `P${pairs.length + 1}`, myeongri: traitId.get(t.id)!, mbti: mbtiType, why: pairWhy(src.why), reason, ...(rule ? { fusionId: rule.id } : {}) });
+  }
   // 장 재료 → 줄.
   const built: ChapterPlan[] = [];
   const droppedPlan: string[] = [];
@@ -361,7 +391,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
         const my = head ? add("year", split(head).value, split(head).meaning, n) : null;
         // AM2-6 2부: 지식 DB annual-mbti 줄은 「그 해 기운을 이 유형이 겪는 쪽」(반응 = 공통)과 「함정 → 쓰는 법」(긴장) — 잇는 이유가 있는 짝.
         // AM2-9 4부: 짝 이유 글은 뜻만(「→ 처방」 뗌 — 처방은 사전 배분으로만). 잇는 이유(긴장 · 공통)는 뗀 앞 원문으로 가른다.
-        if (my && mbtiType) { use.get(mbtiType)!.add(n); for (const r of rest) pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType, why: pairWhy(meaningOf(r)), reason: /→|쉬움|쉽다/.test(r) ? "긴장" : "공통" }); }
+        if (my && mbtiType) { use.get(mbtiType)!.add(n); for (const r of rest) pairs.push({ id: `P${pairs.length + 1}`, myeongri: my, mbti: mbtiType, why: pairWhy(meaningOf(r)), reason: /→|쉬움|쉽다/.test(r) ? "긴장" : "공통", srcText: meaningOf(r) }); }
         return [my, mbtiType].filter(Boolean) as string[];
       }
       if (m.key === "growthDayun") {
@@ -399,10 +429,10 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // AM2-5 1부 연결 고리 문맥: 적은 바람 주제(세운, 바람이 ok일 때) · 바람 달(설계도 wishMonths와 같은 셈 — 바람 영역 가운데 하나가 오르고 어느 영역도 늦추지 않는 달, 앞 셋).
   const wishRead = product === "annual_fortune" ? readWish(wishRaw) : null;
   const wishTopics = wishRead?.kind === "ok" ? wishRead.topics : [];
-  const wishDomains = [...new Set(wishTopics.map(t => (t === "study" ? "work" : t)))] as ("love" | "money" | "work" | "people" | "mind")[];
-  const realMonths = (brief.timeline?.entries ?? []).filter(e => e.kind === "month" && !e.bridge);
-  const wishMonthNames = realMonths.filter(m => wishDomains.some(d => m.signals?.[d] === "↑") && !wishDomains.some(d => m.signals?.[d] === "↓")).map(keyLabelOf).slice(0, 3);
-  const linkCtx: LinkCtx = { brief, k, wishTopics, wishMonths: new Set(wishMonthNames), ...(annualDayunTg ? { dayunTenGod: annualDayunTg } : {}), echoed: new Set(), seatUsed: new Map() };
+  // AM2-11 1부 1: 바람 달은 바람 영역마다(그 영역 칩이 오르는 달, 앞 셋 — 설계도 wishLink 줄과 같은 셈 · 1월 다리 포함).
+  const listEntries = (brief.timeline?.entries ?? []).filter(e => e.kind === "month");
+  const wishMonthsBy = new Map(wishDomainsOf(wishTopics as readonly ("love" | "money" | "work" | "people" | "mind" | "study")[]).map(w => [w.d, new Set(listEntries.filter(m => m.signals?.[w.d] === "↑").map(keyLabelOf).slice(0, 3))] as const));
+  const linkCtx: LinkCtx = { brief, k, wishTopics, wishMonths: new Set([...wishMonthsBy.values()].flatMap(s => [...s])), wishMonthsBy, ...(annualDayunTg ? { dayunTenGod: annualDayunTg } : {}), echoed: new Set(), seatUsed: new Map() };
   for (const ch of plan) built.push((() => {
     const cb = brief.chapters.find(x => x.id === ch.id) ?? brief.chapters.find(x => x.id.startsWith(`${ch.id}:`));
     const sc = seedCtx(ch.id);
@@ -423,7 +453,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
         for (const sd of pool) { const got = seedOnce(cleanSeed(sd.text, sc)); if (got) return seedAsCondition(got); } return undefined; };
       const keys: KeyPlan[] = ch.keys.map(key => {
         const e = entries.get(key)!, kb = brief.chapters.find(x => x.id === `${ch.id}:${key}`);
-        return keyPlan(e, kb?.materials ?? [], ch.n, add, brief, year, seen, s => seedOnce(cleanSeed(s, sc)), annualDayunTg, { link: linkCtx, others, pair: pairPick.get(key), mbtiType, addPair: (my, why, reason) => { const id = `P${pairs.length + 1}`; pairs.push({ id, myeongri: my, mbti: mbtiType!, why: pairWhy(why), key, reason }); return id; }, mbtiSeed: d => mbtiSeedFor(d) });
+        return keyPlan(e, kb?.materials ?? [], ch.n, add, brief, year, seen, s => seedOnce(cleanSeed(s, sc)), annualDayunTg, { link: linkCtx, others, pair: pairPick.get(key), mbtiType, addPair: (my, why, reason, fid) => { const id = `P${pairs.length + 1}`; pairs.push({ id, myeongri: my, mbti: mbtiType!, why: pairWhy(why), key, reason, ...(fid ? { fusionId: fid } : {}) }); return id; }, mbtiSeed: d => mbtiSeedFor(d) });
       });
       return { n: ch.n, id: ch.id, title: say(ch.title, year), question: say(ch.question, year), target: product === "annual_fortune" ? KEY_TARGET.month : ch.targetChars, useName: ch.n === 1 || ch.n === plan.length /* AM2-6 4부: 이름 부르기는 첫 장 · 끝 장(세운 1·10장, 대운 1·9장) 첫 문단만 */, keys, claims: [], avoid: [] };
     }
@@ -434,6 +464,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       const ev = s.materials.find((m): m is Extract<Material, { kind: "evidence" }> => m.kind === "evidence");
       const claim = ev ? ev.facts.filter(x => !DIRECTIVE_FACT.test(x) && !/^(적어 준|연애 상태|일 상황|고객이)/.test(x) && /: |달: | — /.test(x) && sceneFits(x, brief))[0] : undefined;
       const claimId = ev && claim ? add(subjectOfFact(ev.key, claim, product), split(claim).value, split(claim).meaning) : null;
+      // AM2-11 1부 1: 바람 달 소제목의 핵심 주장은 바람 영역마다 한 줄씩(영역별 달 — 한 줄로 묶지 않는다).
+      const wishClaims = ev && (ev.key === "wishLink" || ev.key === "wishTiming") ? ev.facts.filter(x => WISH_UP_LINE.test(split(x).value)) : [];
+      const wishClaimIds = wishClaims.length > 1 ? wishClaims.map(x => add(subjectOfFact(ev!.key, x, product), split(x).value, split(x).meaning)).filter((x): x is string => Boolean(x)) : [];
       const sc2 = scene(s.materials.flatMap(m => (m.kind === "trait" && m.scene ? [m.scene] : [])));
       const lineOf = (id: string) => lines.find(l => l.id === id);
       // AM2-4 2부(P3 판독 annual-1 차단 #7 · 경미 #34): 「할 것·피할 것」 소제목에는 행동 줄만 — 달 목록·「살필 거리」·영역 이름 줄은 주지 않는다.
@@ -442,10 +475,13 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       if (advice && !use0.length) use0 = ids.filter(id => { const l = lineOf(id); return l && !NOT_ACTION.test(`${l.value} ${l.meaning}`); });
       // AM2-4 2부(P3 판독 major-1 C2·B19, annual-1 경계 #2): 짝이 없는 명리 줄과 MBTI 줄은 같은 절에 두지 않는다 — 짝이 있으면 짝 아닌 명리 줄을, 없으면 MBTI 줄을 뺀다.
       const isB = (id: string) => lineOf(id)?.subject === "mbti", isM = (id: string) => /^(natal|dayun|year|month)$/.test(lineOf(id)?.subject ?? "");
-      if (use0.some(isB) && use0.some(isM)) { const pm = new Set(pairs.filter(pp => use0.includes(pp.myeongri) && use0.includes(pp.mbti)).map(pp => pp.myeongri)); use0 = pm.size ? use0.filter(id => !isM(id) || pm.has(id)) : use0.filter(id => !isB(id)); }
+      // AM2-11 1부 5(결정 2): 짝 없는 원국 줄은 MBTI 절에서 뺀다(MBTI 줄은 남긴다) — 원국 밖 줄(세운 · 대운)은 예전 그대로.
+      if (use0.some(isB) && use0.some(isM)) { const pm = new Set(pairs.filter(pp => use0.includes(pp.myeongri) && use0.includes(pp.mbti)).map(pp => pp.myeongri));
+        const natalLone = use0.filter(id => lineOf(id)?.subject === "natal" && !pm.has(id)); if (natalLone.length && use0.some(id => !natalLone.includes(id))) use0 = use0.filter(id => !natalLone.includes(id));
+        if (use0.some(isM)) use0 = pm.size ? use0.filter(id => !isM(id) || pm.has(id)) : use0.filter(id => !isB(id)); }
       const firstAction = advice ? lineOf(use0[0] ?? "") : undefined;
-      const claims2 = advice ? (firstAction ? [say(`${firstAction.value}${firstAction.meaning ? `: ${firstAction.meaning}` : ""}`, year)] : []) : claim ? [say(claim, year)] : [];
-      const claimIds2 = advice ? (firstAction ? [firstAction.id] : []) : claimId ? [claimId] : [];
+      const claims2 = advice ? (firstAction ? [say(`${firstAction.value}${firstAction.meaning ? `: ${firstAction.meaning}` : ""}`, year)] : []) : wishClaimIds.length ? wishClaims.map(x => say(x, year)) : claim ? [say(claim, year)] : [];
+      const claimIds2 = advice ? (firstAction ? [firstAction.id] : []) : wishClaimIds.length ? wishClaimIds : claimId ? [claimId] : [];
       // 개수 말은 카드 값으로만(4부): 행동 줄이 셋보다 적으면 「세 가지」를 뗀다.
       const q2 = advice && use0.length < 3 ? s.q.replace(/ 세 가지(는|은)\?/, "은?").replace(/ 세 가지/, "") : s.q;
       // AM2-7 3부 7: 두 체계를 함께 묻는 소제목(「대운과 성장 곡선이 만나는 곳은?」)에 짝이 없으면 잇지 않는 나란히 꼴로 묻는다.
@@ -468,7 +504,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // 2-3 핵심 주장과 되풀이 금지가 같은 근거를 동시에 가리키면(P2 판독 major-1 D25: 3장 주장인데 6장 근거) 그 근거를 금지 쪽 장의 절에서 뺀다(절에 다른 근거가 남을 때만).
   const claimOwner = new Map<string, number>();
   for (const p of chapters) for (const s of p.sections ?? []) for (const id of s.claimIds ?? []) if (!claimOwner.has(id)) claimOwner.set(id, p.n);
-  const resolved = chapters.map(p => (p.sections ? { ...p, sections: p.sections.map(s => { const keep = s.lines.filter(id => { const o = claimOwner.get(id); return o === undefined || o === p.n || s.recapIds?.includes(id); }); return keep.length ? { ...s, lines: keep } : s; }) } : p));
+  // AM2-11 1부 1: 바람 영역별 달 줄은 1장(바람과 이 해) · 소망 장(도울 때와 기다릴 때)이 함께 쓴다 — 옛 꼴은 두 장이 글이 다른 두 줄이었다.
+  const wishLineIds = new Set(lines.filter(l => WISH_UP_LINE.test(l.value.trim())).map(l => l.id));
+  const resolved = chapters.map(p => (p.sections ? { ...p, sections: p.sections.map(s => { const keep = s.lines.filter(id => { const o = claimOwner.get(id); return o === undefined || o === p.n || s.recapIds?.includes(id) || wishLineIds.has(id); }); return keep.length ? { ...s, lines: keep } : s; }) } : p));
   // AM2-6 3부 카드 같은 글(P5 Y11=M35=I4 · Y23=M36 · Y13=M44 · Y20=M45): 주체가 다른 줄의 뜻 글이 같으면 집 장(먼저 쓰는 장) 한 곳만 남긴다. 다른 곳은 뺀다(절에 줄이 하나도 안 남거나 핵심 주장 줄이면 둔다).
   const resolved2 = dedupeCardText(resolved, lines);
   // 쓰는 장 = 최종 설계도에서 그 줄을 쓰는 장(뺀 근거·솎은 근거는 그 장에서 쓰지 않는다). AM2-4: 처음부터 다시 센다.
@@ -510,11 +548,16 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const postItems: TidyItem[] = finalLines0.filter(l => (l.subject === "natal" || l.subject === "mbti") && l.use.length).flatMap((l, li) => atomsOf(l.meaning).map((a, ai) => {
     const t = traitOfLine.get(l.id); return { text: a, owner: l.id, rank: l.subject === "mbti" ? specificity(null, 0) : t ? specificity(t.featureId, t.positions.length) : 2, order: li * 100 + ai }; }));
   const postGone = tidyCard(postItems, k, cardPoleMap, rlog, Math.max(0, CARD_MAX_DROPS - rlog.tidy.length));
-  const finalLines = postGone.size ? finalLines0.map(l => ((l.subject === "natal" || l.subject === "mbti") && atomsOf(l.meaning).some(a => postGone.has(a)) ? { ...l, meaning: atomsOf(l.meaning).filter(a => !postGone.has(a)).join(" · ") } : l)) : finalLines0;
+  let finalLines = postGone.size ? finalLines0.map(l => ((l.subject === "natal" || l.subject === "mbti") && atomsOf(l.meaning).some(a => postGone.has(a)) ? { ...l, meaning: atomsOf(l.meaning).filter(a => !postGone.has(a)).join(" · ") } : l)) : finalLines0;
   // 2-2 짝은 두 줄이 모두 허용된 장에만. 겹치는 장이 없으면 짝을 뺀다(P2 판독 major-1 P1: N7은 1·2·3장, B1은 7·9장 → 작가가 2장·9장에 나눠 씀).
   const useOf = new Map(finalLines.map(l => [l.id, new Set(l.use)]));
   // AM2-7 3부 1 짝 글 빌드 검사: 유형 이름 뒤 빈 자리 · 너무 짧은 글은 짝을 뺀다(작가가 그대로 옮겼다 — P6 annual-p6b 「ISTJ의 도」), 이유 이름과 글 방향이 어긋나면 글 쪽(긴장)으로 맞춘다.
-  const pairsOut = pairs.map(p => ({ ...p, why: predicate(stripRx(p.why)) })).filter(p => p.why && !/빈 자리|짧다/.test(pairTextIssue(p.why, mbti?.type ?? "§", p.reason) ?? "")).map(p => (pairTextIssue(p.why, mbti?.type ?? "§", p.reason) ? { ...p, reason: "긴장" as PairReason } : p)).map(p => ({ ...p, use: [...(useOf.get(p.myeongri) ?? [])].filter(n => useOf.get(p.mbti)?.has(n)) })).filter(p => p.use.length);
+  let pairsOut = pairs.map(p => ({ ...p, why: predicate(stripRx(p.why)) })).filter(p => p.why && !/빈 자리|짧다/.test(pairTextIssue(p.why, mbti?.type ?? "§", p.reason) ?? "")).map(p => (pairTextIssue(p.why, mbti?.type ?? "§", p.reason) ? { ...p, reason: "긴장" as PairReason } : p)).map(p => ({ ...p, use: [...(useOf.get(p.myeongri) ?? [])].filter(n => useOf.get(p.mbti)?.has(n)) })).filter(p => p.use.length);
+  // AM2-11 1부 4: 책 전체 성향 반대 정리 — 원국 · MBTI 줄 · 세운 Y · M 줄 · 짝 이유(Fusion · 세운 MBTI)를 한 번에 맞댄다(범위마다 따로 하던 정리가 놓친 몫, P10 annual-1 끝맺음 · 돈 습관 쌍).
+  //  원국 ↔ MBTI 쪽이 반대이고 Fusion DB에 (원국 id × 유형)이 있으면 지우지 않고 짝(긴장)으로 묶는다(덕짱님 고침 4). 없으면 덜 구체적인 쪽을 뺀다. 상한은 권당 16(카드 정제와 함께).
+  const bookDrop = new Set<string>();
+  { const res = tidyBookPass({ lines: finalLines, pairs: pairsOut, k, traitOf: id => traitOfLine.get(id), mbtiType, mbti: mbti?.type ?? null, cap: Math.max(0, CARD_MAX_DROPS - rlog.tidy.length), log: rlog, pairWhy });
+    finalLines = res.lines.map(l => ({ ...l, use: [...l.use] })); pairsOut = res.pairs.map(p => ({ ...p, use: p.use ?? [...(useOf.get(p.myeongri) ?? [])].filter(n => useOf.get(p.mbti)?.has(n)) })).filter(p => p.use.length) as typeof pairsOut; for (const id of res.dropLines) bookDrop.add(id); }
   // 짝 번호를 다시 매기면 key가 가진 짝 id도 같이 바꾼다.
   const renum = new Map(pairsOut.map((p, i) => [p.id, `P${i + 1}`] as const));
   const pairsFinal = pairsOut.map(p => ({ ...p, id: renum.get(p.id)! }));
@@ -526,14 +569,19 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const keyRows = outFinal.flatMap(c => c.keys ?? []);
   // AM2-7 3부 8: 바람 고리는 책에서 한 번(고리 key 하나 + 소망 장).
   const wishPick = rankWishLinks(keyRows, linkCtx, product === "annual_fortune" ? yearEntry : undefined, 1);
-  const wishText = (w: (typeof wishPick)[number]) => `${w.label}: 적어 준 바람의 ${w.topics.map(t => ({ love: "연애", money: "돈", work: "일", study: "공부", people: "사람", mind: "마음" } as Record<string, string>)[t] ?? t).join("·")} 쪽과 같은 ${({ day: "태어난 날", month: "태어난 달", year: "태어난 해", hour: "태어난 시각" } as Record<string, string>)[w.seat]} 자리에 ${w.rel}${w.tier === 1 ? " · 그 해에도 같은 자리에 걸림" : w.tier === 2 ? " · 바람 영역이 오르는 달" : ""}`;
+  // AM2-11 1부 1 · 3: 바람 고리 글은 바람 영역마다(그 달 오르는 영역만) · 지시어 대신 이름(「그 해에도 같은 자리에 걸림」 → 「2027년 정미년 한 해에도 태어난 날 자리에 오미합」).
+  const TOPIC_KO2: Readonly<Record<string, string>> = { love: "연애", money: "돈", work: "일", study: "공부", people: "사람", mind: "마음" };
+  const SEAT_NAME: Readonly<Record<string, string>> = { day: "태어난 날", month: "태어난 달", year: "태어난 해", hour: "태어난 시각" };
+  const yearName = yearEntry ? keyLabelOf(yearEntry) : `${year}년`;
+  const wishText = (w: (typeof wishPick)[number]) => { const ts = w.up.length ? w.up : w.topics, seat = SEAT_NAME[w.seat];
+    return `${w.label}: 적어 준 바람의 ${ts.map(t => TOPIC_KO2[t] ?? t).join("·")} 쪽과 같은 ${seat} 자리에 ${w.rel}${w.up.length ? ` · ${w.label} ${w.up.map(t => TOPIC_KO2[t] ?? t).join("·")} 오름` : ""}${w.tier === 1 ? ` · ${yearName} 한 해에도 ${seat} 자리에 ${w.rel}` : ""}`; };
   // 바람만이 입력인 자리 재료(연애 상태 미입력 + 바람의 연애 쪽 등 — 입력 wish:*)는 바람 고리로 뽑힌 key에서만 둔다(다른 key에는 바람을 넣지 않는다).
   const isWishSeat = (l: Link) => (l.kind === "seat" || l.kind === "echo") && l.input.some(x => x.startsWith("wish:"));
   const withWish = outFinal.map(c => {
     if (c.keys) return { ...c, keys: c.keys.map(k0 => { const w = wishPick.find(x => x.key === k0.key);
       const k2: KeyPlan = w ? k0 : (() => { const rest = ((k0 as KeyPlan).links ?? []).filter(l => !isWishSeat(l)); const { links: _l, ...o } = k0 as KeyPlan; void _l; return rest.length ? { ...o, links: rest } : o; })();
       if (!w) return k2;
-      const link: Link = { kind: "wish", seat: w.seat, engine: [`${k2.key}:${(k2.links ?? []).find(l => l.kind === "seat")?.engine[0]?.split(":").slice(1).join(":") ?? ""}`].filter(x => /@/.test(x)), input: w.topics.map(t => `wish:${t}`), rel: w.rel, text: `바람 고리 〔${wishText(w).replace(/^[^:]+: /, "")}〕 — 이 ${product === "annual_fortune" ? "달" : "해"}에서 한 번, «바람» 원문 없이 「적어 준 바람」으로` };
+      const link: Link = { kind: "wish", seat: w.seat, engine: [`${k2.key}:${(k2.links ?? []).find(l => l.kind === "seat")?.engine[0]?.split(":").slice(1).join(":") ?? ""}`].filter(x => /@/.test(x)), input: w.topics.map(t => `wish:${t}`), rel: w.rel, text: `바람 고리 〔${wishText(w).replace(/^[^:]+: /, "")}〕 — ${k2.label}에서 한 번, «바람» 원문 없이 「적어 준 바람」으로` };
       return { ...k2, links: [...(k2.links ?? []), link], wishLink: wishText(w) }; }) };
     return wishPick.length && c.id === "wish" ? { ...c, wishLinks: wishPick.map(wishText) } : c;
   });
@@ -549,7 +597,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const GOOD_ONLY = (t: string) => /좋|열리|깊어|쌓이|살아나|풀리|기회|빛나|편안|든든|가벼워/.test(t) && !/조심|살피|흔들|새|무리|부딪|어긋|막히|지치|줄이|늦추|아끼|서운|버거/.test(t);
   const CAUTION_ONLY = (t: string) => /조심|살피|흔들|새기|무리|부딪|어긋|막히|지치|버거|서운/.test(t) && !/좋|열리|깊어|쌓이|살아나|풀리|기회|빛나/.test(t);
   const offCell = (l: Line) => (CELL_CAUTION.test(l.value) && GOOD_ONLY(l.meaning)) || (CELL_UP.test(l.value) && CAUTION_ONLY(l.meaning));
-  const dropIds = new Set(finalLines.filter(l => l.subject !== "mbti" && (offCell(l) || sameAsScreen(l))).map(l => l.id));
+  const dropIds = new Set([...finalLines.filter(l => l.subject !== "mbti" && (offCell(l) || sameAsScreen(l))).map(l => l.id), ...bookDrop]);
   const cardAlarms: string[] = finalLines.filter(offCell).map(l => `칸과 줄 방향: ${l.id} 「${l.value}」 ← ${l.meaning.slice(0, 40)}`);
   { const monthsOf = (re: RegExp) => new Set(finalLines.filter(l => re.test(l.value)).flatMap(l => [...l.meaning.matchAll(/(?:1[0-2]|[1-9])월 · [가-힣]{2}월/g)].map(m => m[0])));
     const up = monthsOf(/오르는 달/), rest = monthsOf(/쉬어 갈 달|쉴 달|무리하기 쉬운 달|조용한 달/); for (const m of up) if (rest.has(m)) cardAlarms.push(`오르는 달과 쉴 달이 같다: ${m}`);
@@ -566,15 +614,35 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const g = (t: string) => (/^이 해의 연애 신호: /.test(t) ? loveSignalMeaning(t, inputs.rel) : gradeToMeaning(t, inputs.rel));
   // AM2-10 3부 절 구성: MBTI 재료(B 줄 · 유형 장면)가 있는 소제목에는 그 짝의 명리 줄만 함께 둔다 — 짝이 없으면 MBTI 줄을 뺀다(설계도 마지막 단계에서 한 번 더).
   const subjOf = new Map(finalLines.map(l => [l.id, l.subject] as const));
-  const sectionPairOnly = (n: number, ids: readonly string[]) => {
-    const bs = ids.filter(id => subjOf.get(id) === "mbti"), ms = ids.filter(id => /^(natal|dayun|year|month)$/.test(subjOf.get(id) ?? ""));
-    if (!bs.length || !ms.length) return ids;
-    const ok = new Set(pairsFinal.filter(p => bs.includes(p.mbti) && ms.includes(p.myeongri) && p.use.includes(n)).map(p => p.myeongri));
+  // AM2-11 1부 5(결정 2): MBTI 절의 원국 줄은 짝(Fusion DB)이 있을 때만 — 없으면 그 원국 줄을 절에서 뺀다(MBTI 줄은 남긴다). 원국 밖 줄(세운 · 대운)은 예전 그대로.
+  const sectionPairOnly = (n: number, ids0: readonly string[]) => {
+    const bs = ids0.filter(id => subjOf.get(id) === "mbti"), ms0 = ids0.filter(id => /^(natal|dayun|year|month)$/.test(subjOf.get(id) ?? ""));
+    if (!bs.length || !ms0.length) return ids0;
+    const paired = new Set(pairsFinal.filter(p => bs.includes(p.mbti) && p.use.includes(n)).map(p => p.myeongri));
+    const ids = ids0.filter(id => subjOf.get(id) !== "natal" || paired.has(id));
+    const ms = ms0.filter(id => ids.includes(id));
+    if (!ms.length) return ids.length ? ids : ids0;
+    const ok = new Set(ms.filter(id => paired.has(id)));
     const kept = ok.size ? ids.filter(id => !ms.includes(id) || ok.has(id)) : ids.filter(id => !bs.includes(id));
-    return kept.length ? kept : ids;
+    return kept.length ? kept : ids0;
   };
   const chaptersOut = sameClaims(guarded, finalLines).map(c => ({ ...c, claims: c.claims.map(g), avoid: c.avoid.map(g), ...(c.sections ? { sections: c.sections.map(s2 => ({ ...s2, lines: sectionPairOnly(c.n, s2.lines), claims: s2.claims.map(g) })) } : {}), ...(c.keys ? { keys: c.keys.map(k2 => ({ ...k2, claims: k2.claims.map(g) })) } : {}) }));
-  return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: finalLines, pairs: pairsFinal, chapters: chaptersOut, ...(cardAlarms.length ? { cardAlarms } : {}), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
+  // AM2-11 1부 3: 카드 줄 · 설계(소제목 물음 · 핵심 주장 · 되풀이 금지 · 바람 고리) · key 재료의 지시어를 이름으로(머리 문장 · 할 일 · 장면 씨앗은 그대로).
+  const nm: NameCtx = { year: `${year}년`, ...(c.currentDayun ? { dayun: `${c.currentDayun.ganji.hangul} 대운` } : {}) };
+  const N = (t: string, own?: string) => nameDeictics(t, nm, own, /MBTI [EI][NS][TF][JP]/.test(t) ? { mbti: true } : {});
+  const SEAT_HEAD = /^(태어난 (?:해|달|날|시각)(?:·(?:태어난 )?(?:해|달|날|시각))*) 자리의 /;
+  const linesNamed = finalLines.map(l => { const seatH = SEAT_HEAD.exec(l.value)?.[1], o = { ...(seatH ? { seat: seatH } : {}), mbti: l.subject === "mbti", ...(l.subject === "natal" && !seatH ? { name: l.value.length <= 14 && !/[.!?]|니다|어요|에요/.test(l.value) ? l.value : "이 기운" } : {}) };
+    // 숙제 줄(값이 문장, 뜻이 「태어난 달·날 자리의 사 — …」)은 뜻 머리의 자리로 값의 「이 자리」를 받는다.
+    const seatM = SEAT_HEAD.exec(l.meaning)?.[1];
+    return { ...l, value: nameDeictics(l.value, nm, undefined, { mbti: o.mbti, ...(seatM ? { seat: seatM } : l.subject === "natal" ? { name: "이 기운" } : {}) }), meaning: nameDeictics(l.meaning, nm, LABEL_OF(l.value), o) }; });
+  const chaptersNamed = chaptersOut.map(ch => ({ ...ch, question: N(ch.question), claims: ch.claims.map(t => N(t)), avoid: ch.avoid.map(t => N(t)),
+    ...(ch.wishLinks ? { wishLinks: ch.wishLinks.map(t => N(t)) } : {}),
+    ...(ch.sections ? { sections: ch.sections.map(sp => ({ ...sp, q: N(sp.q), claims: sp.claims.map(t => N(t)), ...(sp.pointer ? { pointer: N(sp.pointer) } : {}) })) } : {}),
+    ...(ch.keys ? { keys: ch.keys.map(k2 => ({ ...k2, claims: k2.claims.map(t => N(t, k2.label)), ...(k2.own ? { own: N(k2.own, k2.label) } : {}), ...(k2.wishLink ? { wishLink: N(k2.wishLink, k2.label) } : {}),
+      ...(k2.links ? { links: k2.links.map(l => ({ ...l, text: N(l.text, k2.label) })) } : {}) })) } : {}) }));
+  // AM2-11 1부 4: 상한(권당 16)으로 남긴 성향 반대 쌍(카드 정제 · 책 전체 정리) — 브리프 검사 trait_clash(기록)가 센다.
+  const tidyOver = [...new Set(rlog.tidyOver.map(o => `${o.text.slice(0, 40)} — ${o.why.slice(0, 60)}`))];
+  return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: linesNamed, pairs: pairsFinal, chapters: chaptersNamed, ...(tidyOver.length ? { tidyOver } : {}), ...(cardAlarms.length ? { cardAlarms } : {}), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
 }
 
 /** AM2-6 3부: 주체가 다른 줄의 뜻 글이 같으면(공백·부호 뺀 한글 12자 이상) 집 장(그 줄들을 쓰는 가장 앞 장) 한 곳만 남긴다. 핵심 주장 줄 · 절의 마지막 줄은 두고, key는 그 줄을 뺀다. */
@@ -620,9 +688,13 @@ export function sameClaims(chapters: readonly ChapterPlan[], lines: readonly Lin
       // AM2-6 4부: 가리키기 말에도 달 이름은 넣는다(P5 세운 9.2 「세 달」은 9장 안에서 몇 월인지 몰랐다).
       // P6 annual-1: 장 번호(「1장에서」 → chapter_ref)와 맨 달 이름(「2월·7월」 → calendar_month)은 검사에 걸린다 — 번호 없이, 달은 간지 이름 그대로.
       const ms = g.n ? [...new Set([...`${byId.get(id!)?.value ?? ""} ${byId.get(id!)?.meaning ?? ""}`.matchAll(MONTH_G)].map(m => m[0]))] : [];
-      const pointer = g.n ? `앞에서 본 ${ms.length ? ms.join(", ") : `${COUNT_KO[g.n] ?? g.n} 달`}` : `앞에서 본 그 흐름`;
-      const rest = sp.lines.filter(x2 => x2 !== id);
-      return { ...sp, pointer, pointerIds: [id!], claims: [`가리키기: 「${pointer}」`], claimIds: [], lines: rest.length ? rest : sp.lines };
+      // AM2-11 1부 1: 바람 영역별 달 주장이 여럿이면 영역마다(「앞에서 본 연애 쪽(2월 · 임인월, …) · 일 쪽(…)」) — 첫 줄만 가리키면 나머지 영역이 빠진다.
+      const wishIds = (sp.claimIds ?? []).filter(x2 => WISH_UP_LINE.test(byId.get(x2)?.value.trim() ?? "") && seen.has(sigOf(x2)?.sig ?? "§"));
+      const wishPtr = wishIds.length > 1 ? `앞에서 본 ${wishIds.map(x2 => { const l = byId.get(x2)!; const nm = WISH_UP_LINE.exec(l.value.trim())![1]; return `${nm} 쪽(${[...new Set([...l.meaning.matchAll(MONTH_G)].map(m => m[0]))].join(", ")})`; }).join(" · ")}` : null;
+      const pointer = wishPtr ?? (g.n ? `앞에서 본 ${ms.length ? ms.join(", ") : `${COUNT_KO[g.n] ?? g.n} 달`}` : `앞에서 본 그 흐름`);
+      const ptrIds = wishPtr ? wishIds : [id!];
+      const rest = sp.lines.filter(x2 => !ptrIds.includes(x2));
+      return { ...sp, pointer, pointerIds: ptrIds, claims: [`가리키기: 「${pointer}」`], claimIds: [], lines: rest.length ? rest : sp.lines };
     });
     return { ...c, sections, claims: [...new Set(sections.flatMap(s2 => s2.claims))] };
   });
@@ -638,7 +710,7 @@ const GROUP_DOMAIN: Readonly<Record<string, string>> = { WEALTH: "돈", OFFICER:
  * - 관계 배지 전부·흐름·오행 채움·할 일·그림은 화면 카드가 보여 준다(screen) — 본문은 되풀이하지 않는다. 할 일(todo)은 엔진 문형(처방 배분), 작가는 쓰지 않는다.
  * - 반드시 쓸 것 = 핵심 관계 이름(1~2). 장면 씨앗은 묶음당 하나까지(intake 끝에서 솎는다).
  */
-type KeyExtra = { readonly link: LinkCtx; readonly others: readonly { readonly e: TimelineEntry; readonly label: string }[]; readonly pair?: { readonly id: string; readonly why: string; readonly reason: PairReason }; readonly mbtiType: string | null; readonly addPair: (myeongri: string, why: string, reason: PairReason) => string; readonly mbtiSeed: (domain: string) => string | undefined };
+type KeyExtra = { readonly link: LinkCtx; readonly others: readonly { readonly e: TimelineEntry; readonly label: string }[]; readonly pair?: { readonly id: string; readonly why: string; readonly reason: PairReason }; readonly mbtiType: string | null; readonly addPair: (myeongri: string, why: string, reason: PairReason, fusionId?: string) => string; readonly mbtiSeed: (domain: string) => string | undefined };
 /** AM2-5 1부: 화면이 보여 주는 뜻 줄은 작가에게 표시와 핵심어만(풀어 쓰지 않는다). */
 // AM2-8 4부 뿌리 4: 설계도는 본문용 말만 — 「화면에 있음」 같은 화면 쪽 말을 주지 않는다(P7 major-p6a 5 · 2032 「…화면에 이미 있는 줄이라」가 이 표시에서 샜다).
 export const SCREEN_MARK = "이름과 핵심어만";
@@ -690,12 +762,12 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   // AM2-5 1부 key 짝: 하늘 십성 줄(화면 표시) × MBTI — 이 key에서만.
   // AM2-6 2부 짝 범위(명리 쪽) = 하늘 십성 줄 + 그 십성에서 나온 영역 줄(세운 달 annual-domain tenGod:하늘 · 대운 해 periodDomains(하늘 십성)).
   let pairId: string | undefined, pairScope: string[] | undefined;
-  if (x.pair && x.mbtiType) { const sky = push(`하늘 글자 ${stem}`, `${SCREEN_MARK} · 핵심어: ${tgShort(stem)}`); if (sky) { pairId = x.addPair(sky, x.pair.why, x.pair.reason); ids.push(x.mbtiType); pairScope = [sky, ...pickedIds]; } }
+  if (x.pair && x.mbtiType) { const sky = push(`하늘 글자 ${stem}`, `${SCREEN_MARK} · 핵심어: ${tgShort(stem)}`); if (sky) { pairId = x.addPair(sky, x.pair.why, x.pair.reason, x.pair.id); ids.push(x.mbtiType); pairScope = [sky, ...pickedIds]; } }
   // AM2-5 1부: 장면은 문장 안에 넣는 재료라 첫 문장만, 건수·숫자가 든 장면은 주지 않는다(「한 달 동안 스무 개가 넘게」 — 개수 말·사건 단정이 된다).
   const scene0 = e.material?.scene ? say(e.material.scene, year).split(/(?<=[.!?])\s+/)[0] : undefined;
   // 엔진 장면이 맞지 않으면 MBTI 장면 씨앗(유형 × 영역 명사구 — 연애·직업 꼬리표로 거름)에서 그 key의 영역으로 하나.
   // AM2-6 3부: 장면 씨앗은 그 key의 영역(고리 자리의 영역 + 카드 영역 줄) 안에서만(P5 세운 4월 더치페이 · 2028년 1월 연락처 · 11월 회의 — 영역이 다른 씨앗).
-  const seatLink = keyLinks(e, { ...x.link, echoed: new Set(), seatUsed: new Map() }, label, x.others).find(l => l.kind === "seat");
+  const seatLink = keyLinks(e, { ...x.link, echoed: new Set(), seatUsed: new Map() }, label, x.others, { short: depth === "short" }).find(l => l.kind === "seat");
   const AREA_OF: Readonly<Record<string, string>> = { 연애: "love", 돈: "money", 일: "work", 사람: "relationships", 관계: "relationships", 마음: "alone", 컨디션: "alone" };
   const areas0 = [...(seatLink?.areas ?? []), ...picked.map(pk => AREA_OF[pk.v.split(/[ 이가을를]/)[0]]).filter((d): d is string => Boolean(d))];
   const areas = [...new Set(areas0.length ? areas0 : ["alone"])];
@@ -727,7 +799,7 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
     return [];
   });
   void rels;
-  const links = keyLinks(e, x.link, label, x.others);
+  const links = keyLinks(e, x.link, label, x.others, { short: depth === "short" });
   return { key: e.key, label, head: say(e.head ?? "", year), when, tone: toneOf(e).line, lines: uniq, claims: [`${label}: ${core.map(c => c.name).join(" · ")}`], ...(depth ? { depth } : {}), ...(scene ? { scene } : {}), ...(todoRaw && when !== "past" ? { todo: todoRaw } : {}), ...(range ? { range } : {}), must, core: core.map(c => c.name), screen,
     ...(links.length ? { links } : {}), ...(pairId ? { pair: pairId } : {}), ...(pointer ? { pointer } : {}), ...(pairScope ? { pairScope } : {}), areas, ...(sceneArea && scene ? { sceneArea } : {}), ...(sceneMbti && scene ? { sceneMbti: true as const } : {}), ...(position ? { position } : {}) };
 }
@@ -813,7 +885,10 @@ export function guardPairs(chapters: readonly ChapterPlan[], pairs: readonly Pai
         if (!lone.some(id => claims.has(id))) return { ...sp, lines: sp.lines.filter(id => !lone.includes(id)), ...(sp.recapIds ? { recapIds: sp.recapIds.filter(id => !lone.includes(id)) } : {}) };
         return { ...sp, lines: sp.lines.filter(id => !isB(id)), q: twoSystemQ(sp.q, mbti) ? PARALLEL_Q : sp.q };
       }
-      const lines2 = sp.lines.some(isB) && sp.lines.some(isM) ? sp.lines.filter(id => !isB(id)) : sp.lines;
+      // AM2-11 1부 5(결정 2): 짝 없는 MBTI 절의 원국 줄(핵심 주장 줄은 빼고)은 그 절에서 뺀다 — MBTI 줄은 남긴다(P10 annual-p6b 2장 「사랑에서 지킬 한 가지」 화개 줄 — Fusion DB에 화개 × ISTJ 없음).
+      const natalLone = sp.lines.some(isB) ? sp.lines.filter(id => subj.get(id) === "natal" && !(sp.claimIds ?? []).includes(id)) : [];
+      const ls = natalLone.length && sp.lines.some(id => !natalLone.includes(id)) ? sp.lines.filter(id => !natalLone.includes(id)) : sp.lines;
+      const lines2 = ls.some(isB) && ls.some(isM) ? ls.filter(id => !isB(id)) : ls;
       const q = twoSystemQ(sp.q, mbti) ? PARALLEL_Q : sp.q;
       return { ...sp, lines: lines2.length ? lines2 : sp.lines, q };
     });
@@ -836,7 +911,8 @@ export function withOwn(k0: KeyPlan, brief: Brief, wishTopics: readonly string[]
   const wish = product === "annual_fortune" ? wishTopics.find(t => wishArea(t).some(a => areas.includes(a))) : undefined;
   const area = areas[0];
   const fact = areas.some(a => a === "love" || a === "relationships") && rel ? `연애: ${rel}` : areas.some(a => a === "work" || a === "money") && job ? `일: ${job}` : wish ? `적어 준 바람의 ${({ love: "연애", money: "돈", work: "일", study: "공부", people: "사람", mind: "마음" } as Record<string, string>)[wish] ?? wish} 쪽` : rel ? `연애: ${rel}` : job ? `일: ${job}` : `나이: ${brief.person.ageBand}`;
-  return { ...k0, own: `〔${fact}〕 × 〔이 ${product === "annual_fortune" ? "달" : "해"}의 ${AREA_KO[area] ?? "마음"} 쪽 근거〕` };
+  // AM2-11 1부 3: 지시어(이 달 · 이 해) 대신 key 이름.
+  return { ...k0, own: `〔${fact}〕 × 〔${k0.label}의 ${AREA_KO[area] ?? "마음"} 쪽 근거〕` };
 }
 /** 이 사람 재료 수(고리 · 짝 · 인물 사실) — 빌드 시험이 0인 key를 찾는다. */
 export const ownCount = (k0: KeyPlan) => (k0.links ?? []).filter(l => l.kind === "seat").length + (k0.pair ? 1 : 0) + (k0.own ? 1 : 0);

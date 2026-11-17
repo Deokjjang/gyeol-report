@@ -75,6 +75,7 @@ export type LinkCtx = {
   readonly brief: Brief; readonly k: Pick<Knowledge, "deep">;
   /** 적은 바람 주제(세운만, 바람이 「ok」일 때). */ readonly wishTopics: readonly string[];
   /** 바람과 이어지는 영역이 오르는 달(이름 「7월 · 정미월」). */ readonly wishMonths: ReadonlySet<string>;
+  /** AM2-11 1부 1: 바람 영역(칩) → 그 영역이 오르는 달. 있으면 바람 고리 강도 · 글은 이 값으로(영역 하나만 올라도 바람 달인 꼴을 쓰지 않는다). */ readonly wishMonthsBy?: ReadonlyMap<string, ReadonlySet<string>>;
   /** 그 시기가 속한 대운 십성(세운 달은 책의 해 대운). */ readonly dayunTenGod?: string;
   /** 같은 겹침 재료를 책에서 한 번만(관계 이름|자리). */ readonly echoed: Set<string>;
   /** 자리를 처음 쓴 key(자리 → 이름 · 관계 뜻 · 몇 번째 · 쪽). 같은 자리가 다시 나오면 앞 key와 무엇이 다른지만 준다. */ readonly seatUsed?: Map<string, { label: string; word: string; n: number; short: string; key?: string; rel?: string }>;
@@ -125,15 +126,19 @@ const monthFacet = (fc: Facet, e: Pick<TimelineEntry, "signals">) => (fc.facet =
 const DIR_KO: Readonly<Record<Dir, string>> = { plus: "좋은 쪽", minus: "살필 쪽", none: "섞임" };
 
 /** key 하나의 고리 재료 0~3줄(자리 재료 · 겹침 · 둘째 핵심). 엔진 값(핵심 관계의 자리)과 입력이 다 있을 때만. */
-export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: readonly { readonly e: TimelineEntry; readonly label: string }[]): Link[] {
-  const core = coreOf(e, { ...(c.dayunTenGod ? { dayunTenGod: c.dayunTenGod } : {}) });
+export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: readonly { readonly e: TimelineEntry; readonly label: string }[], o: { readonly short?: boolean } = {}): Link[] {
+  // AM2-11 1부 2: 핵심은 key 지시와 같은 값(대운 「짧게」 key는 핵심 하나) — 핵심에 없는 관계에 고리를 달지 않는다.
+  const core = coreOf(e, { ...(c.dayunTenGod ? { dayunTenGod: c.dayunTenGod } : {}), ...(o.short ? { short: true } : {}) });
   const unit = e.kind === "month" ? "달" : "해";
   const gender = c.brief.person.gender;
   const out: Link[] = [];
   let seatDone = false;
+  // AM2-11 1부 2(P10 ③ annual-p6a 2028년 1월 「…같은 자리에 있었지만」): 자리 고리는 첫 핵심 관계(공망 뺌)의 자리에서만 — 첫 관계 자리에 쓸 입력이 없으면 둘째 관계로 넘어가지 않고 고리를 주지 않는다(그 key는 인물 사실 · 짝으로 채운다).
+  let firstRelSeen = false;
   core.forEach((it, ci) => {
     if (it.kind !== "rel") return;
     const word = REL_WORD[it.badge.kind] ?? "걸림", image = relImageOf(it.badge.line), dir0 = dirOfBadge(it.badge);
+    if (it.badge.kind !== "GONGMANG") { if (firstRelSeen) seatDone = true; firstRelSeen = true; }
     if (seatDone || it.badge.kind === "GONGMANG") {
       // 둘째 핵심(또는 공망): 자리 없이 관계 뜻 한 마디만(이름과 함께 이 사람 상황에 맞춘 한 마디로 — 이름만 부르고 끝내지 않게).
       if (ci > 0) out.push({ kind: "second", engine: [`${e.key}:${it.badge.kind}:${it.name}`], input: ["engine-only"], rel: it.name, word, dir: dir0,
@@ -159,26 +164,27 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
       const usedKey = seat, prev = c.seatUsed?.get(usedKey), nth = (prev?.n ?? 0) + 1;
       const shortNow = seatText(c.k, seat, seat === "day" ? (side === "life" ? "short:life" : "short:close") : seat === "hour" && fc0.facet === "children" ? "short:children" : "short") || "자리";
       c.seatUsed?.set(usedKey, { label, word, n: nth, short: shortNow, key: e.key, rel: it.name });
-      const sigText = [sig.length ? `이 ${unit} 오름: ${sig.map(d => SIGNAL_KO[d]).join("·")}` : "", down.length ? `이 ${unit} 살핌: ${down.map(d => SIGNAL_KO[d]).join("·")}` : ""].filter(Boolean).join(" · ");
+      // AM2-11 1부 3: 재료 글에 지시어(이 달 · 그때 · 이번 · 같은 자리)를 두지 않는다 — key 이름 · 자리 이름으로.
+      const sigText = [sig.length ? `${label} 오름: ${sig.map(d => SIGNAL_KO[d]).join("·")}` : "", down.length ? `${label} 살핌: ${down.map(d => SIGNAL_KO[d]).join("·")}` : ""].filter(Boolean).join(" · ");
       // AM2-7 2부 4: 지금 상태 말은 이 책을 쓴 날 + 2년 안의 해 · 달에만 사실 꼴로 — 그 뒤 해는 조건 꼴로.
       const far = e.kind === "year" && Number(e.key) > Number(c.brief.baseDate.slice(0, 4)) + 2;
-      const who = far ? `${fc0.who}(그때도 그렇다면 — 조건 꼴로)` : fc0.who;
+      const who = far ? `${fc0.who}(${label}에도 그렇다면 — 조건 꼴로)` : fc0.who;
       // AM2-7 3부 5 · 4부 1: 같은 자리 둘째부터는 「앞 key(간지 달 · 해) + 그때 같은 자리 관계 전부 + 이번 관계 뜻 + 입력 한 마디」만. 뜻이 같으면 「이번에도」. 글자째 옮길 틀은 주지 않는다.
       const prevE = prev?.key ? others.find(o => o.e.key === prev.key)?.e : undefined;
       const prevRels = prevE ? [...new Set(prevE.badges.filter(b2 => seatsOfWith(b2.with).includes(seat)).map(b2 => relName(b2.label)))] : prev?.rel ? [prev.rel] : [];
       const text = !prev
         ? `〔${SEAT_KO[seat]} 자리 = ${base}(${who}: ${mine})〕 × 〔${it.name} = ${word}(${image})〕 · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`
-        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 앞: ${prev.label}(그때 같은 자리: ${prevRels.join(" · ") || prev.rel} — ${prev.word}) · 이번: 〔${it.name} = ${word}(${image})〕${prev.word === word ? " · 앞과 같음" : " · 앞과 다름"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
+        : `〔${SEAT_KO[seat]} 자리 · ${shortNow}〕 앞: ${prev.label} ${SEAT_KO[seat]} 자리의 ${prevRels.join(" · ") || prev.rel}(${prev.word}) · ${label} ${SEAT_KO[seat]} 자리의 〔${it.name} = ${word}(${image})〕${prev.word === word ? " · 앞과 같음" : " · 앞과 다름"} · 입력 한 마디: ${who} · ${DIR_KO[dir]}${sigText ? ` · ${sigText}` : ""}`;
       out.push({ kind: "seat", seat, engine, input: [fc0.input], text, rel: it.name, word, dir, seatMeaning: mine, nth, topics: SEAT_TOPICS[seat], areas: AREA_DOMAIN(area, c.brief.person.facts.relationship) });
       // 겹침: 같은 관계 이름이 같은 자리에 책 안 다른 곳(세운은 그 해, 그다음 다른 key)에도 걸리면 재료 한 줄. 같은 겹침은 책에서 한 번.
       const echoKey = `${it.name}|${seat}`;
       const same = (x: TimelineEntry) => x.badges.some(b2 => relName(b2.label) === it.name && seatsOfWith(b2.with).includes(seat));
       const yearE = e.kind === "month" ? others.find(o => o.e.kind === "year") : undefined;
-      const echoAt = yearE && same(yearE.e) ? { where: `${yearE.e.ganji.hangul}년 한 해`, key: yearE.e.key, year: true } : (() => { const o = others.find(x => x.e.key !== e.key && x.e.kind === e.kind && same(x.e)); return o ? { where: o.label, key: o.e.key, year: false } : null; })();
+      const echoAt = yearE && same(yearE.e) ? { where: `${yearE.e.key}년 ${yearE.e.ganji.hangul}년 한 해`, key: yearE.e.key, year: true } : (() => { const o = others.find(x => x.e.key !== e.key && x.e.kind === e.kind && same(x.e)); return o ? { where: o.label, key: o.e.key, year: false } : null; })();
       if (echoAt && !c.echoed.has(echoKey)) {
         c.echoed.add(echoKey);
         out.push({ kind: "echo", seat, engine: [`${echoAt.key}:${it.badge.kind}:${it.name}@${SEAT_KO[seat]}`], input: [fc0.input], rel: it.name, word,
-          text: `겹침 〔${echoAt.where}에도 같은 ${SEAT_KO[seat]} 자리에 ${it.name}〕 — 한 마디로만` });
+          text: `겹침 〔${echoAt.where}에도 ${SEAT_KO[seat]} 자리에 ${it.name}〕 — 한 마디로만` });
       }
       seatDone = true;
       return;
@@ -187,16 +193,19 @@ export function keyLinks(e: TimelineEntry, c: LinkCtx, label: string, others: re
   return out;
 }
 
-/** 바람 고리 후보(책 전체): 바람 영역과 같은 자리의 고리 재료가 있는 key. 강도: 같은 자리가 그 해와 바람 달에 함께 걸림(1) > 바람 달(2) > 그 밖(3). */
-export function rankWishLinks(keys: readonly { readonly key: string; readonly label: string; readonly links?: readonly Link[] }[], c: Pick<LinkCtx, "wishTopics" | "wishMonths">, yearEntry: TimelineEntry | undefined, max = 3): { key: string; label: string; tier: 1 | 2 | 3; topics: string[]; seat: Seat; rel: string }[] {
+/** 바람 고리 후보(책 전체): 바람 영역과 같은 자리의 고리 재료가 있는 key. 강도: 같은 자리가 그 해와 바람 달에 함께 걸림(1) > 바람 달(2) > 그 밖(3).
+ *  AM2-11 1부 1: 바람 달은 그 고리 영역(주제) 칩이 오르는 달만 — 오르는 영역이 있으면 그 영역만 주제로 둔다(up). */
+export function rankWishLinks(keys: readonly { readonly key: string; readonly label: string; readonly links?: readonly Link[] }[], c: Pick<LinkCtx, "wishTopics" | "wishMonths" | "wishMonthsBy">, yearEntry: TimelineEntry | undefined, max = 3): { key: string; label: string; tier: 1 | 2 | 3; topics: string[]; up: string[]; seat: Seat; rel: string; inYear: boolean }[] {
   if (!c.wishTopics.length) return [];
+  const domOf = (t: string) => (t === "study" ? "work" : t);
   const cands = keys.flatMap((k, idx) => {
     const l = (k.links ?? []).find(x => x.kind === "seat" && x.seat); if (!l?.seat) return [];
     const topics = c.wishTopics.filter(t => SEAT_TOPICS[l.seat!].includes(t)); if (!topics.length) return [];
     const inYear = Boolean(yearEntry?.badges.some(b => relName(b.label) === l.rel && seatsOfWith(b.with).includes(l.seat!)));
-    const wm = c.wishMonths.has(k.label);
+    const up = c.wishMonthsBy ? topics.filter(t => c.wishMonthsBy!.get(domOf(t))?.has(k.label)) : c.wishMonths.has(k.label) ? topics : [];
+    const wm = up.length > 0;
     const tier: 1 | 2 | 3 = inYear && wm ? 1 : wm ? 2 : 3;
-    return [{ key: k.key, label: k.label, tier, topics, seat: l.seat, rel: l.rel ?? "", idx }];
+    return [{ key: k.key, label: k.label, tier, topics, up, seat: l.seat, rel: l.rel ?? "", inYear, idx }];
   });
   return cands.sort((a, b) => a.tier - b.tier || a.idx - b.idx).slice(0, max).map(({ idx: _i, ...rest }) => (void _i, rest));
 }
