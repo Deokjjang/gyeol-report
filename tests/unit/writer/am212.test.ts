@@ -7,10 +7,12 @@
 import { describe, expect, it } from "vitest";
 import { intakeOf, randomPayload } from "../../../tools/annual-major/am2-brief";
 import { payloadFor } from "../../../tools/annual-major/am2-6-books";
-import { cardEngineIssues } from "@/lib/writer/chunked/check";
+import { cardEngineIssues, type BlockCtx } from "@/lib/writer/chunked/check";
+import { am211Flags } from "@/lib/writer/chunked/claims";
+import type { FinalChapter } from "@/lib/writer/safety";
 import { chunkPlan, chunkUser, renderCard } from "@/lib/writer/chunked/prompt";
 import { premiseHits, type Inputs } from "@/lib/brief/premise";
-import { annualTagOf, dropSelfCompare, YEAR_PACE } from "@/lib/brief/design/annual";
+import { annualTagOf, dropSelfCompare, workLineFits, YEAR_PACE } from "@/lib/brief/design/annual";
 import { atomsOf, dimsOf, refineLog } from "@/lib/writer/chunked/refine";
 import { writerKnowledge } from "@/lib/writer/publish";
 import type { Intake } from "@/lib/writer/chunked/intake";
@@ -139,5 +141,53 @@ describe("AM2-12 1부 6 영역 달 목록 = 엔진 칩(list_chip)", () => {
     expect(cardEngineIssues(cut, brief).filter(i => i.rule === "list_chip").map(i => i.text)).toEqual(["「연애 쪽 기운이 오르는 달」 빠짐 신해월"]);
     const add = { ...intake, lines: intake.lines.map(l => (l.value === "무리하기 쉬운 달" ? { ...l, meaning: `${l.meaning}, 5월 · 을사월` } : l)) };
     expect(cardEngineIssues(add, brief).filter(i => i.rule === "list_chip").map(i => i.text)).toEqual(["「무리하기 쉬운 달」 엔진 밖 을사월"]);
+  });
+});
+
+describe("AM2-12 2부 엔진 주장 — P9~P11 판독이 찾은 틀림 가운데 놓친 꼴(걸림) · 맞는 꼴(통과)", () => {
+  const ctx = (x: X): BlockCtx => ({ intake: x.intake, brief: x.brief, ...(x.brief.mbti ? { mbtiType: x.brief.mbti.type } : {}) });
+  const ch = (n: number, heading: string, paragraphs: string[], keys?: string[]): FinalChapter => ({ n, id: "x", title: "x", source: "writer", chars: 0, sections: [{ heading, paragraphs }], ...(keys ? { keys } : {}) });
+  const rules = (x: X, c: FinalChapter) => am211Flags([c], ctx(x)).map(f => f.rule);
+  it("month_dir: P9 기준 annual-1 「연애와 일, 사람 쪽 기운이 이 세 달에 맞닿아」 · P9 annual-p5 3월 「연애에서는 살필 쪽」 「연애 중인 당신에게는 살필 쪽」(연애 →) 걸림", () => {
+    expect(rules(books["annual-1"], ch(1, "적어 준 바람은 이 해와 어떻게 만날까?", ["이 바람과 이어지는 영역이 오르는 달은 2월 · 임인월, 7월 · 정미월, 10월 · 경술월입니다. 연애와 일, 사람 쪽 기운이 이 세 달에 맞닿아 있어요."]))).toContain("month_dir");
+    for (const s of ["눌러 다듬을 일이 생깁니다. 연애에서는 살필 쪽이에요.", "연애 중인 당신에게는 살필 쪽이에요."]) expect(rules(books["annual-p5"], ch(7, "2027-M02", [s], ["2027-M02"]))).toContain("month_dir");
+    expect(rules(books["annual-p5"], ch(7, "2027-M02", ["일은 살필 쪽이에요."], ["2027-M02"]))).not.toContain("month_dir");
+  });
+  it("year_dir: P9 기준 annual-p5 「재물 기운이 약한 해라서」(2027 돈 →) 걸림 / 원국 말 「재물 기운이 약한 사주」 통과", () => {
+    expect(rules(books["annual-p5"], ch(3, "2027년 돈은 어디서 들어올까?", ["재물 기운이 약한 해라서 들어오는 돈의 크기보다 나가는 돈의 모양을 먼저 보는 쪽이 이 해의 돈 관리입니다."]))).toContain("year_dir");
+    expect(rules(books["annual-p5"], ch(3, "2027년 돈은 어디서 들어올까?", ["재물 기운이 약한 사주라서 나가는 돈의 모양을 먼저 봅니다."]))).not.toContain("year_dir");
+  });
+  it("list_full: P11 annual-1 「사람 쪽은 1월 · 5월 · 8월에 속도를 늦추면」(9월 빠짐) · annual-p6a 「공부 쪽이 오르는 달은 4 · 7 · 8월」 걸림 / 전부 통과", () => {
+    const a1 = (m: string) => rules(books["annual-1"], ch(9, "흐름이 도울 때와 기다릴 때", [`일 쪽은 4월 · 갑진월, 사람 쪽은 1월 · 신축월, 5월 · 을사월, 8월 · 무신월${m}에 속도를 늦추면 좋아요.`]));
+    expect(a1("")).toContain("list_full");
+    expect(a1(", 9월 · 기유월")).not.toContain("list_full");
+    expect(rules(books["annual-p6a"], ch(1, "적어 준 바람은 2027년과 어떻게 만날까?", ["공부 쪽이 오르는 달은 4월 · 갑진월, 7월 · 정미월, 8월 · 무신월이에요."]))).toContain("list_full");
+    expect(rules(books["annual-p6a"], ch(1, "적어 준 바람은 2027년과 어떻게 만날까?", ["공부 쪽이 오르는 달은 4월 · 갑진월, 7월 · 정미월, 8월 · 무신월, 9월 · 기유월, 10월 · 경술월이에요."]))).not.toContain("list_full");
+  });
+  it("prev_month: P11 무작위 9월 「앞달에 손본 자리가」(8월은 신해해 · 공망뿐) 걸림 / 앞 달에 형이 있으면 통과", () => {
+    expect(rules(P1117, ch(7, "2027-M08", ["앞달에 손본 자리가 이번에는 맺는 쪽으로 옮겨 가요."], ["2027-M08"]))).toContain("prev_month");
+    expect(rules(P1117, ch(7, "2027-M07", ["앞달에 손본 자리가 이번에는 다른 쪽으로 옮겨 가요."], ["2027-M07"]))).not.toContain("prev_month");
+  });
+  it("list_shape: P9 annual-p6b 「네 달은 서로 떨어져」(2 · 3월 이웃) · P9 기준 annual-p6a 「세 달 사이에는 흐름이 잔잔한 시기도」(사이 3월 흐름 5) 걸림", () => {
+    expect(rules(books["annual-p6b"], ch(2, "연애 쪽 기운이 오르는 달은 언제일까?", ["연애 쪽 기운이 오르는 달은 2월 · 임인월, 3월 · 계묘월, 6월 · 병오월, 11월 · 신해월입니다. 네 달은 서로 떨어져 있어서, 한 해 사이사이에 고르게 숨을 틔워 주는 셈이에요."]))).toContain("list_shape");
+    expect(rules(books["annual-p6b"], ch(2, "연애 쪽 기운이 오르는 달은 언제일까?", ["연애 쪽 기운이 오르는 달은 2월 · 임인월, 6월 · 병오월, 11월 · 신해월입니다. 세 달은 서로 떨어져 있어요."]))).not.toContain("list_shape");
+    expect(rules(books["annual-p6a"], ch(1, "적어 준 바람은 이 해와 어떻게 만날까?", ["이 영역이 오르는 달은 2월 · 임인월, 4월 · 갑진월, 5월 · 을사월입니다.", "세 달 사이에는 흐름이 잔잔한 시기도 끼어 있어요."]))).toContain("list_shape");
+  });
+  it("status_claim: P11 무작위(썸) 「연애 중인 당신은 연인과」 걸림 / 「썸 타는 당신」 · 조건 꼴 통과", () => {
+    expect(rules(P1117, ch(7, "2027-M03", ["연애 중인 당신은 연인과 작은 일로 양보 없이 맞설 수 있어요."], ["2027-M03"]))).toContain("status_claim");
+    expect(rules(P1117, ch(7, "2027-M03", ["썸 타는 당신에게는 마음을 천천히 보여 주는 달이에요.", "연애 중인 당신이라면 말보다 행동이 먼저예요."], ["2027-M03"]))).not.toContain("status_claim");
+  });
+  it("verdict_dir: P11 annual-p5 「2027년 정미년은 확장보다 정비가」 · 무작위 「2027년은 밀어붙이기보다 다듬고 쌓는 쪽」(판정 밀고 갈 해) 걸림 / 영역 문장 통과", () => {
+    expect(rules(books["annual-p5"], ch(4, "사업하는 2027년, 넓힐 쪽과 다질 쪽은?", ["2027년 정미년은 확장보다 정비가 어울리는 흐름이에요."]))).toContain("verdict_dir");
+    expect(rules(P1117, ch(1, "2027년은 밀고 갈 해일까, 다질 해일까?", ["그래서 정유진님의 2027년은 밀어붙이기보다 다듬고 쌓는 쪽에 힘이 실립니다."]))).toContain("verdict_dir");
+    expect(rules(books["annual-p5"], ch(3, "2027년 돈은 어디서 들어올까?", ["돈은 확장보다 정비가 어울리는 쪽이에요."]))).not.toContain("verdict_dir");
+  });
+});
+
+describe("AM2-12 2부 재료 — 낱말표 밖 일터 전제 줄(「보상 이야기」)은 돈을 버는 일이 있을 때만", () => {
+  it("workLineFits · seed 1117(학생) 카드에 「보상 이야기」 0", () => {
+    expect(workLineFits("한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때", "student")).toBe(false);
+    expect(workLineFits("한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때", "employee")).toBe(true);
+    expect(texts(P1117.intake)).not.toMatch(/보상 이야기|보상도 부담도/);
   });
 });

@@ -10,7 +10,15 @@
  *  seat_ref    받는 자리를 같은 절(section) 안 가장 가까운 앞 문장까지 되짚는다(P11 annual-1 10월 「태어난 날 자리에서 화국이 모입니다. … 같은 자리에 진술충도 겹쳐」 — 진술충은 달·시각, 세 문장 앞).
  *  prev_month  달 key의 「앞 달 · 지난달 + 관계 이름」이 바로 앞 달 엔진 관계에 있는가(P11 annual-p5 8월 「앞 달 자오충이」 — 자오충은 6월, 7월은 자미해 · 원진 …).
  *  list_full   「영역(쪽)이 오르는 · 늦출 · 살필 · 새기 쉬운 달은 …」 목록이 그 영역 칩 달을 다 담는가(P11 annual-1 바람 장 「연애 쪽이 오르는 달은 2 · 7 · 8월」 — 칩은 2 · 7 · 8 · 9 · 10 · 11월).
- * 저장 책 전수(AM-01 · P~P10 세운·대운)에서 오탐 0인 검사만 차단(four.ts)에 둔다 — 나머지는 기록. 판정 기록: am2.md 21절 · rubric.md.
+ *  AM2-12 2부(P9~P11 판독 엔진 틀림 가운데 위 검사가 놓친 꼴만):
+ *  month_dir  「영역 … 쪽 기운이 이 세 달에 맞닿아」(P9 기준 annual-1) · key 안 「연애에서는 살필 쪽이에요」 · 「연애 중인 당신에게는 살필 쪽」(P9 annual-p5 3월 연애 →)
+ *  year_dir   해 영역 방향: 「재물 기운이 약한 해」(P9 기준 annual-p5 — 2027 돈 →)
+ *  list_full  「사람 쪽은 1월 · …, 8월 · 무신월에 속도를 늦추면」(P11 annual-1 — 9월 빠짐) · 공부 = 일 칩(P11 annual-p6a 「공부 쪽이 오르는 달은 4 · 7 · 8월」)
+ *  prev_month 「앞달에 손본 자리」(관계 뜻 말 — P11 무작위 9월, 8월은 신해해 · 공망뿐)
+ *  list_shape 목록 모양: 「네 달은 서로 떨어져」(이웃 달이 있음 — P9 annual-p6b) · 「이 두 달은 오르는 달보다 앞에」(P9 annual-1) · 「세 달 사이에는 흐름이 잔잔한 시기도」(사이 달 흐름 — P9 기준 annual-p6a)
+ *  status_claim 입력 상태 말: 「연애 중인 당신」(썸 — P11 무작위 R1-1)
+ *  verdict_dir 해 판정 반대: 「2027년은 밀어붙이기보다 다듬고 쌓는 쪽」(판정 밀고 갈 해 — P11 무작위 R1-5) · 「2027년 정미년은 확장보다 정비가」(P11 annual-p5 B6-2)
+ * 저장 책 전수(AM-01 · P~P11 세운·대운)에서 오탐 0인 검사만 차단(four.ts)에 둔다 — 나머지는 기록. 판정 기록: am2.md 21 · 22절 · rubric.md.
  */
 import type { FinalChapter } from "../safety";
 import type { TimelineEntry } from "@/lib/brief/schema";
@@ -33,17 +41,35 @@ type Dom = "love" | "money" | "work" | "people" | "mind";
 /** 「같은 자리」가 든 절(쉼표 · 「지만 · 는데 · 고」로 가른 마디). */
 function clauseAt(sen: string, at: number): string { const cuts = [...sen.matchAll(/, |지만 |는데 |(?<=[가-힣])고 /g)].map(m => m.index! + m[0].length); const a = Math.max(0, ...cuts.filter(c => c <= at)), b = Math.min(sen.length, ...cuts.filter(c => c > at)); return sen.slice(a, b); }
 /** 영역 말(마음은 뺀다 — 마음 칩 오름은 「쉬어 가기 좋은」 쪽이라 방향 말과 뜻이 다르다). */
-const DOM_OF: Readonly<Record<string, Dom>> = { 연애: "love", 돈: "money", 일: "work", 사람: "people", 관계: "people" };
-const DOM_G = /(?<![가-힣])(연애|돈|일|사람|관계)(?=[과와이가은는도의에,·\s]|쪽|$)/g;
-const DOMS = "(?<![가-힣])(?:연애|돈|일|사람|관계)(?:[,·] ?(?:연애|돈|일|사람|관계)|과,? (?:연애|돈|일|사람|관계)|와,? (?:연애|돈|일|사람|관계))*";
+// AM2-12 2부: 공부 = 일 칩(바람의 공부 쪽 — AM2-11 1부 1과 같은 칩).
+const DOM_OF: Readonly<Record<string, Dom>> = { 연애: "love", 돈: "money", 일: "work", 공부: "work", 사람: "people", 관계: "people" };
+const DOM_G = /(?<![가-힣])(연애|돈|일|공부|사람|관계)(?=[과와이가은는도의에,·\s]|쪽|$)/g;
+const DOMS = "(?<![가-힣])(?:연애|돈|일|공부|사람|관계)(?:[,·] ?(?:연애|돈|일|공부|사람|관계)|과,? (?:연애|돈|일|공부|사람|관계)|와,? (?:연애|돈|일|공부|사람|관계))*";
 const CLAIM_LIST = new RegExp(`${DOMS}(?: 쪽)?(?: 기운)?(?:이|가|은|는|도|에서)? (?:기운이 )?(?:오르는|올라가는|속도를 늦출|늦출|살필|새기 쉬운) 달(?:은|이|로는)? `);
-const CLAIM_DEM = new RegExp(`${DOMS}(?:,? ?[가-힣]+)? 쪽 (?:소망|기운|바람)(?:이|은|도)? (?:이|그) (?:두|세|네|다섯) 달에 (?:모이|오르|몰리)`);
+const CLAIM_DEM = new RegExp(`${DOMS}(?:,? ?[가-힣]+)? 쪽 (?:소망|기운|바람)(?:이|은|도)? (?:이|그) (?:두|세|네|다섯) 달에 (?:모이|오르|몰리|맞닿|겹치)`);
 /** 목록 주장(빠짐 검사): 조사로 끝난 「…달은 · 달이 · 달로는 」 꼴만(「달이에요」 같은 key 안 한 달 주장은 뺀다). */
 const CLAIM_FULL = new RegExp(`${DOMS}(?: 쪽)?(?: 기운)?(?:이|가|은|는|도|에서)? (?:기운이 )?(?:오르는|올라가는|속도를 늦출|늦출|살필|새기 쉬운) 달(?:은|이|로는) `);
 const MONTH_LOOSE = `(?:(?:20\\d\\d년 )?(?:1[0-2]|[1-9])월 ?(?:· ?)?)?(${GJ})(?:\\([一-鿿]+\\))?월`;
 const RANGE_RE = new RegExp(`${MONTH_LOOSE}부터 ${MONTH_LOOSE}까지`, "g");
 const PREV_REL = /(?<![가-힣])(?:앞 ?달|지난 ?달|전달)(?:의|에는|엔|에|은|는)? ?([가-힣]+)/;
 const CLAIM_KEY = new RegExp(`${DOMS}(?: 쪽)?(?:이|가|은|는|도) (?:오르는|살필|새기 쉬운) 달(?:이에요|입니다|이기도|이라)`);
+/** AM2-12 2부: key 안 「연애에서는 살필 쪽이에요」 · 「연애 중인 당신에게는 살필 쪽」(상태 말 주어 = 연애). */
+const CLAIM_SIDE = new RegExp(`(?:${DOMS})(?:에서는|에서도| 쪽은| 쪽에서는| 쪽도|은|는|도) (?:살필|조심할|늦출|오르는) 쪽(?:이에요|입니다|이라|이고|이니)`);
+const CLAIM_SIDE_ME = /(?<![가-힣])(?:연애 중인|솔로인|기혼인|썸 타는) 당신(?:에게는|에게도|은|는) (?:살필|조심할|늦출|오르는) 쪽(?:이에요|입니다|이라|이고|이니)/;
+/** 해 영역 방향 말: 「재물 기운이 약한 해」. */
+const YEAR_DIR = /(?<![가-힣])(재물|돈|연애|일|사람|관계)(?: 쪽)? 기운이 (약한|강한|센|오르는|내리는|가라앉는) 해/;
+/** 「사람 쪽은 1월 · 신축월, …에 속도를 늦추면」 — 쪽은 + 달 목록 + 동사. */
+const CLAIM_FULL2 = new RegExp(`(${DOMS}) 쪽은 ((?:(?!쪽은)[^.!?])*?월)에 (속도를 늦추|늦추|살피|오르)`);
+/** 앞 달 관계 뜻 말(이름 대신): 손본 · 다듬은 = 형 · 파, 부딪친 = 충, 맺힌 = 합 — 바로 앞 달에 그 무리 관계가 있어야 한다. */
+const PREV_MEAN = /(?<![가-힣])(?:앞 ?달|지난 ?달|전달)(?:에|의|에는)? ?(손본|손봤던|다듬(?:은|던|어 둔)|부딪(?:친|힌|쳤던)|맺(?:은|힌|혔던))/;
+const MEAN_KINDS: readonly [RegExp, readonly string[]][] = [[/^손|^다듬/, ["HYEONG", "PA"]], [/^부딪/, ["CHUNG"]], [/^맺/, ["STEM_HAP", "YUKHAP"]]];
+/** 입력 상태 말(조건 꼴 「…이라면」은 뺀다). */
+const STATUS_SAY = /(?<![가-힣])(연애 중인|솔로인|기혼인|결혼한|썸 타는|썸 중인) 당신(?!이라면|이라도)/;
+const STATUS_OF: Readonly<Record<string, string>> = { "연애 중인": "dating", 솔로인: "single", 기혼인: "married", 결혼한: "married", "썸 타는": "some", "썸 중인": "some" };
+/** 해 판정 방향 말(해가 주어인 문장 — 달 key 밖). */
+const YEAR_SUBJ = /(?<![가-힣])(?:20\d\d년|[갑을병정무기경신임계][자축인묘진사오미신유술해]년|이 해|올해|한 해)/;
+const VERDICT_SETTLE = /밀어붙이기보다 (?:다듬|쌓|다지|정비)|확장보다 정비|벌이기보다 (?:다듬|정비|효율)|다질 해(?:예요|입니다|에요|라|로)|다지는 해(?:예요|입니다|에요)/;
+const VERDICT_PUSH = /밀고 갈 해(?:예요|입니다|에요|라|로)|밀어붙일 해|확장할 해/;
 
 export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
   const out: ChunkFlag[] = [];
@@ -83,11 +109,11 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
           }
         }
         // ---- month_dir ---- 정해진 주장 꼴만: 「영역(쪽)이 오르는 · 늦출 · 살필 · 새기 쉬운 달(은) …달들」 · 「영역 … 쪽 소망 · 기운이 이 세 달에 모이 · 오르」 · key 안 「영역 쪽이 오르는 달이에요」.
-        { const m1 = CLAIM_LIST.exec(sen), m2 = CLAIM_DEM.exec(sen), m3 = isKey ? CLAIM_KEY.exec(sen) : null;
+        { const m1 = CLAIM_LIST.exec(sen), m2 = CLAIM_DEM.exec(sen), m3 = isKey ? CLAIM_KEY.exec(sen) ?? CLAIM_SIDE.exec(sen) ?? CLAIM_SIDE_ME.exec(sen) : null;
           const hit = m1 ?? m2 ?? m3;
           if (hit) {
-            const dir = /오르|올라|모이/.test(hit[0]) ? "↑" : "↓";
-            const doms = [...hit[0].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean) as Dom[];
+            const dir = /오르|올라|모이|맞닿|겹치|몰리/.test(hit[0]) ? "↑" : "↓";
+            const doms = (hit === m3 && CLAIM_SIDE_ME.test(hit[0]) ? ["love"] : [...hit[0].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean)) as Dom[];
             const ms = m1 ? monthsOf(sen.slice(m1.index)) : m2 ? monthsOf(prev) : [cur!.ganji.hangul];
             const bad: string[] = [];
             for (const g of ms) { const e = byGanji.get(g); if (!e?.signals) continue; for (const d of doms) if (e.signals[d] !== dir) bad.push(`${e.label.split(" (")[0]} ${d} ${e.signals[d]}`); }
@@ -97,7 +123,10 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
         if (isKey && cur) { const pm = PREV_REL.exec(sen), nm = pm ? relNames.find(n => pm[1].startsWith(n)) : undefined;
           if (nm) { const k = allMonths.findIndex(e => e.key === cur.key), pv = k > 0 ? allMonths[k - 1] : undefined;
             if (pv && !pv.badges.some(bd => relName(bd.label) === nm)) { const where = allMonths.slice(0, k).reverse().find(e => e.badges.some(bd => relName(bd.label) === nm));
-              out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${nm}」 — ${pv.label.split(" (")[0]}에는 ${nm} 없음${where ? `(${where.label.split(" (")[0]})` : ""}`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); } } }
+              out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${nm}」 — ${pv.label.split(" (")[0]}에는 ${nm} 없음${where ? `(${where.label.split(" (")[0]})` : ""}`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); } }
+          const mm = !nm ? PREV_MEAN.exec(sen) : null, fam = mm ? MEAN_KINDS.find(([re]) => re.test(mm[1]))?.[1] : undefined;
+          if (fam) { const k = allMonths.findIndex(e => e.key === cur.key), pv = k > 0 ? allMonths[k - 1] : undefined;
+            if (pv && !pv.badges.some(bd => fam.includes(bd.kind))) out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${mm![1]}」 — ${pv.label.split(" (")[0]}에는 ${fam.join("·")} 관계 없음`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); } }
         // ---- list_full ---- 목록 주장은 그 영역(여럿이면 모두 같은 방향인 달) 칩 달을 다 담는다.
         { const mf = CLAIM_FULL.exec(sen);
           if (mf) { const dir = /오르|올라/.test(mf[0]) ? "↑" : "↓", doms = [...mf[0].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean) as Dom[];
@@ -107,6 +136,41 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
             const want = allMonths.filter(e => doms.length && doms.every(d => e.signals?.[d] === dir));
             const miss = want.filter(e => !said.has(e.ganji.hangul));
             if (said.size && miss.length) out.push({ ...at, rule: "list_full", detail: `${doms.join("·")} ${dir === "↑" ? "오름" : "살핌"} 목록에서 빠짐: ${miss.map(e => e.label.split(" (")[0]).join(" · ")}`, hint: "목록은 카드 줄 그대로 전부(앞 몇 달만 고르지 않는다)" }); } }
+        // AM2-12 2부: 「사람 쪽은 …월에 속도를 늦추면」 꼴도 목록 주장.
+        { const m4 = CLAIM_FULL2.exec(sen);
+          if (m4) { const dir = /오르/.test(m4[3]) ? "↑" : "↓", doms = [...m4[1].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean) as Dom[], said = new Set(monthsOf(m4[2]));
+            const miss = allMonths.filter(e => doms.length && doms.every(d => e.signals?.[d] === dir) && !said.has(e.ganji.hangul));
+            const extra = [...said].map(g => byGanji.get(g)).filter((e): e is NonNullable<typeof e> => Boolean(e) && doms.some(d => e!.signals?.[d] !== dir));
+            if (said.size && (miss.length || extra.length)) out.push({ ...at, rule: "list_full", detail: `${doms.join("·")} ${dir === "↑" ? "오름" : "살핌"} 목록${miss.length ? ` 빠짐: ${miss.map(e => e.label.split(" (")[0]).join(" · ")}` : ""}${extra.length ? ` 칩 밖: ${extra.map(e => e.label.split(" (")[0]).join(" · ")}` : ""}`, hint: "목록은 카드 줄 그대로 전부(앞 몇 달만 고르지 않는다)" }); } }
+        // ---- year_dir ---- 해 영역 방향 말 = 그 해 칩.
+        { const yd = YEAR_DIR.exec(sen), ye = entries.find(e => e.kind === "year" && e.signals);
+          if (yd && ye && !isKey) { const d = (yd[1] === "재물" ? "money" : DOM_OF[yd[1]]) as Dom | undefined, want = /약한|내리는|가라앉는/.test(yd[2]) ? "↓" : "↑";
+            if (d && ye.signals![d] !== want) out.push({ ...at, rule: "year_dir", detail: `「${yd[0]}」 — ${ye.label.split(" (")[0]} ${d} ${ye.signals![d]}`, hint: "해 영역 방향은 흐름표 해 칩과 같게" }); } }
+        // ---- list_shape ---- 목록 모양(이웃 · 앞뒤 · 사이 달 흐름): 받는 목록 = 같은 문장 앞 또는 바로 앞 문장의 달들.
+        { const idx = (g: string) => allMonths.findIndex(e => e.ganji.hangul === g);
+          // 받는 목록: 같은 문장 앞 → 같은 절 안 가장 가까운 앞 문장(달 이름 둘 이상).
+          const listSrc = (upto: string) => (monthsOf(upto).length >= 2 ? upto : [...secSents.slice(0, pi).flat(), ...sents.slice(0, i)].reverse().find(x2 => monthsOf(x2).length >= 2) ?? "");
+          const ref = (upto: string) => monthsOf(listSrc(upto)).map(idx).filter(n => n >= 0).sort((a, c) => a - c);
+          const ap = /(?:두|세|네|다섯|여섯) 달은 서로 (?:떨어져|멀리)/.exec(sen);
+          if (ap) { const xs = ref(sen.slice(0, ap.index)); const nb = xs.find((v, j) => j > 0 && v - xs[j - 1] === 1);
+            if (xs.length >= 2 && nb !== undefined) out.push({ ...at, rule: "list_shape", detail: `「서로 떨어져」 — ${allMonths[nb - 1].label.split(" (")[0]} · ${allMonths[nb].label.split(" (")[0]}은 이웃 달`, hint: "목록 달의 모양은 말하지 않거나 카드 그대로" }); }
+          const od = /(?:이|그) (?:두|세|네) 달은 (오르는|늦출|살필|새기 쉬운) 달보다 (앞|뒤)에/.exec(sen);
+          if (od) { const xs = ref(sen.slice(0, od.index)), dm = [...listSrc(sen.slice(0, od.index)).matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean)[0] as Dom | undefined;
+            const other = dm ? allMonths.map((e, j) => (e.signals?.[dm] === (od[1] === "오르는" ? "↑" : "↓") ? j : -1)).filter(j => j >= 0) : [];
+            const ok = od[2] === "앞" ? xs.every(v => other.every(o => v < o)) : xs.every(v => other.every(o => v > o));
+            if (xs.length && other.length && !ok) out.push({ ...at, rule: "list_shape", detail: `「${od[1]} 달보다 ${od[2]}」 — ${dm} ${od[1]} 달 ${other.map(j => allMonths[j].label.split(" (")[0]).join(" · ")}`, hint: "목록 달의 앞뒤는 말하지 않거나 카드 그대로" }); }
+          const bt = /(?:두|세|네) 달 사이(?:에는|의 달에는|의 달은|에도)?[^.!?]*흐름이 (잔잔|조용|순한|거센|거세)/.exec(sen);
+          if (bt) { const xs = ref(sen.slice(0, bt.index)); if (xs.length >= 2) { const lo2 = xs[0], hi2 = xs[xs.length - 1], mid = allMonths.slice(lo2 + 1, hi2).filter((_e, j) => !xs.includes(lo2 + 1 + j));
+            const calm = /잔잔|조용|순한/.test(bt[1]), okB = mid.some(e => (calm ? e.flow.score <= 2 : e.flow.score >= 4));
+            if (mid.length && !okB) out.push({ ...at, rule: "list_shape", detail: `「사이 달 흐름 ${bt[1]}」 — 사이 달 ${mid.map(e => `${e.label.split(" (")[0]} ${e.flow.score}`).join(" · ")}`, hint: "사이 달 흐름은 카드 흐름 그대로" }); } } }
+        // ---- status_claim ---- 입력 상태 말 = 고객이 적은 연애 상태.
+        { const st = STATUS_SAY.exec(sen), f = b.brief?.person.facts;
+          if (st && f) { const mine = f.relationshipNote === "some" ? "some" : f.relationship;
+            if (STATUS_OF[st[1]] !== mine) out.push({ ...at, rule: "status_claim", detail: `「${st[0]}」 — 입력 연애 상태 ${mine}`, hint: "연애 상태 말은 인물 카드 「연애:」 그대로" }); } }
+        // ---- verdict_dir ---- 해가 주어인 문장의 방향 말 = 해 판정(흐름표 · 키워드).
+        { const ye = entries.find(e => e.kind === "year"), push = ye ? ye.flow.score >= 4 : null;
+          if (!isKey && push !== null && YEAR_SUBJ.test(sen)) { const bad = push ? VERDICT_SETTLE.exec(sen) : VERDICT_PUSH.exec(sen);
+            if (bad) out.push({ ...at, rule: "verdict_dir", detail: `「${bad[0]}」 — 해 판정 ${push ? "밀고 갈 해" : "다질 해"}`, hint: "해를 쓰는 방향은 1장 판정 한 줄과 같게" }); } }
         // ---- flow_claim ----
         if (isKey && cur) {
           const f = cur.flow.score;

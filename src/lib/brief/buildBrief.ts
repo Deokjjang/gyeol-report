@@ -373,7 +373,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       annualTidyLog.last = annualTidyState;
       const py = getAnnualPillar(year - 1), cy = getAnnualPillar(year);
       keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
-      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus, tidy: annualTidyState }, m); if (e) keyMaterials.set(m.key, [e]); }
+      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus, jobStatus: me.facts.jobStatus, tidy: annualTidyState }, m); if (e) keyMaterials.set(m.key, [e]); }
       // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
       // AM2-8 R-S3: 그 줄이 주의 쪽(「지출이 늘기 쉬움」 「대비가 필요함」)이면 다른 영역의 좋은 쪽 줄, 없으면(편관 달) 칸을 비운다. 입력에 맞출 수 없는 줄(기혼 「새 인연」)도 고르지 않는다.
       const gx = inputsOf(me.person.facts);

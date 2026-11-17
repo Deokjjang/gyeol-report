@@ -176,6 +176,9 @@ export function loveLineFits(line: string, status: string): boolean {
   return !(solo && /^만나는 사람이 있다면/.test(line)) && !(paired && /새 인연/.test(line));
 }
 const SOME_INPUTS: Inputs = { job: "none", rel: "some", children: "none", residence: "none", shop: false };
+/** AM2-12 2부(P11 무작위 학생 R1-2 「한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때」): 낱말표 밖 일터 전제 줄 — 돈을 버는 일(직장인 · 자영업 · 사업 · 프리랜서)이 있을 때만. 세운 DB 전수 2줄. */
+const WORK_PREMISE = /보상 이야기|보상도 부담도/;
+export const workLineFits = (line: string, jobStatus: string): boolean => !WORK_PREMISE.test(line) || /^(employee|self_employed|business_owner|freelancer)$/.test(jobStatus);
 const LOVE_KO = (s: string) => ({ single: "솔로", some: "썸", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼" } as Record<string, string>)[s];
 /** 흐름 세기 판정(참고): 4~5 밀고 갈 해, 3 고르게 다질 해, 1~2 버티며 다질 해. */
 export const yearVerdict = (score: number) => (score >= 4 ? "밀고 갈 해" : score === 3 ? "고르게 다질 해" : "버티며 다질 해");
@@ -229,7 +232,7 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
       if (why) { if (!c.tidy!.swaps.some(s => s.text === meaningOf(x) && s.at === `${c.year}년`)) c.tidy!.swaps.push({ at: `${c.year}년`, text: meaningOf(x), why }); continue; }
       out.push(x); if (c.tidy && personDims(x).length && !chosen.includes(meaningOf(x))) chosen.push(meaningOf(x)); }
     return out; };
-  const fit = (facet: string) => (l: string) => facet !== "love" || loveLineFits(l, c.relationshipStatus);
+  const fit = (facet: string) => (l: string) => (facet !== "love" || loveLineFits(l, c.relationshipStatus)) && workLineFits(l, c.jobStatus);
   // AM2-9 4부: 카드 DB 줄은 뜻만(「→ 처방」 뗌 — 처방은 사전 배분으로만). 뽑기(rng)는 그대로, 뗀 뒤에 준다.
   const tip = (xs: readonly string[]) => (c.tidy ? xs.map(meaningOf) : [...xs]);
   const areaKo = (facet: string) => (facet === "study" ? "공부" : DOMAIN_KO[facet as DomainKey] ?? facet);
@@ -316,7 +319,7 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
 const GROUP_KO: Readonly<Record<Group, string>> = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" };
 
 /** 달마다 작가 근거(key별): 영역 신호 + 그달 십성의 영역 장면(오르는·내리는 영역 둘까지). */
-export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng" | "tidy"> & { readonly relationshipStatus?: string }, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
+export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng" | "tidy"> & { readonly relationshipStatus?: string; readonly jobStatus?: string }, e: TimelineEntry & { signals?: DomainSignals }): Evidence | null {
   if (!e.signals) return null;
   const tg = e.tenGod.stem.match(/\((.+)\)/)?.[1] ?? "";
   const notable = (Object.keys(DOMAIN_KO) as DomainKey[]).filter(d => e.signals![d] !== "→").slice(0, 2);
@@ -324,7 +327,7 @@ export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng" | "tidy"> & { reado
   const month = e.label.split(" (")[0];
   // AM2-9 4부: 칸 신호(↑ ↓)와 뜻 방향이 어긋나는 줄은 같은 묶음의 맞는 줄로(뽑기는 그대로 — 맞으면 그 줄), 맞는 줄이 없으면 그 영역 줄을 뺀다. 「→ 처방」 꼬리는 뗀다.
   const picked: { d: DomainKey; line: string }[] = [];
-  const picks = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)).filter(l => d !== "love" || loveLineFits(l, c.relationshipStatus ?? "")); if (!pool.length) return [];
+  const picks = notable.flatMap(d => { const pool = deepLines(c.k, "annual-domain", `tenGod:${tg}`, facet(d)).filter(l => (d !== "love" || loveLineFits(l, c.relationshipStatus ?? "")) && workLineFits(l, c.jobStatus ?? "")); if (!pool.length) return [];
     let line = pool[c.rng.fork(`m:${e.key}:${d}`).int(pool.length)];
     if (c.tidy) { const t = c.tidy, prev = picked.map(x => x.line), sg = e.signals!;
       const hard = (l: string) => (!dirFits(l, sg[d]) ? `칸 ${DOMAIN_KO[d]} ${sg[d]}과 뜻 방향 반대` : sg.people === "↓" && EXPAND_PEOPLE.test(meaningOf(l)) ? "관계 속도를 늦출 달에 넓히기 줄" : sg.love === "↓" && EXPAND_LOVE.test(meaningOf(l)) ? "연애 속도를 늦출 달에 다가가기 줄" : null);
