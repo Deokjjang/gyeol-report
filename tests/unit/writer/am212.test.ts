@@ -4,7 +4,7 @@
  *  4 절에서 뺀 줄의 카드 잔류 · 5 깨진 DB 조각(영역 자기 비교) · 6 영역 달 목록 = 엔진 칩.
  * 2,010명 전수는 verdict · am2.md 22절(무료 검증 도구). 여기서는 고정 인물 + 선택지마다 무작위 표본.
  */
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { intakeOf, randomPayload } from "../../../tools/annual-major/am2-brief";
 import { payloadFor } from "../../../tools/annual-major/am2-6-books";
 import { cardEngineIssues, type BlockCtx } from "@/lib/writer/chunked/check";
@@ -17,6 +17,8 @@ import { atomsOf, dimsOf, refineLog } from "@/lib/writer/chunked/refine";
 import { writerKnowledge } from "@/lib/writer/publish";
 import type { Intake } from "@/lib/writer/chunked/intake";
 
+// 무작위 표본 브리프를 여러 번 만든다 — 전체 시험(병렬 부하)에서 기본 5초를 넘는다.
+vi.setConfig({ testTimeout: 120_000 });
 type X = ReturnType<typeof intakeOf>;
 const texts = (x: Intake) => [renderCard(x), ...chunkPlan(x).map(ch => chunkUser(x, ch))].join("\n");
 const withRel = (seed: number, i: number, rel: string, product: "annual_fortune" | "major_fortune" = "annual_fortune") => { const p = randomPayload(i, product, seed) as { userContext: { relationshipStatus: string } }; p.userContext.relationshipStatus = rel; return p; };
