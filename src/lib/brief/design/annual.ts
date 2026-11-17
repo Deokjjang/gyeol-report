@@ -13,6 +13,7 @@ import type { EarthlyBranch, Pillar, SajuCalcResult, TenGod } from "@/lib/saju/t
 import type { ChartBrief, Material, TimelineEntry } from "../schema";
 import type { ElementState } from "../chart";
 import { deepLines, type Knowledge } from "../knowledge";
+import { premiseHits, type Inputs } from "../premise";
 import { ELEMENT_KO, FLOW_WORD, josa, TEN_GOD_GROUP } from "../labels";
 import { relationLine, yearRelationCard, type YearRelationCard } from "../yearRelation";
 import type { Rng } from "../seed";
@@ -36,7 +37,14 @@ type AnnualTag = { readonly k: string; readonly d: readonly (readonly [string, 1
 const TAGS = (ANNUAL_TAGS as unknown as { items: Readonly<Record<string, AnnualTag>> }).items;
 /** 카드에 주는 DB 줄은 뜻만 — 「→ 처방」 꼬리는 뗀다(처방은 사전 배분으로만, P8 12월 「새 자리 한 번」 ↔ 관계 늦출 달). */
 export const meaningOf = (s: string) => s.split(" → ")[0].trim();
-export const annualTagOf = (s: string): AnnualTag | undefined => TAGS[meaningOf(s)];
+export const annualTagOf = (s: string): AnnualTag | undefined => TAGS[meaningOf(s)] ?? SELF_WORDS.map(w => TAGS[`${w}보다 ${meaningOf(s)}`]).find(Boolean);
+/**
+ * AM2-12 1부 5(P11 annual-1 2월 · annual-p6a 11월 「돈보다 관심 분야에 쓰는 지출이 늘기 쉬운 쪽」 — 깨진 문장 2): 영역 줄 머리가 그 영역 이름 + 「보다」면
+ * 견줄 말이 없는 조각이다(카드에서 「돈 ↓: 돈보다 …」). 지식 DB 원문은 그대로 두고 렌더에서 그 머리 말만 뗀다 — 뽑기 · 꼬리표는 원문 그대로(꼬리표는 위 별칭으로 찾는다).
+ */
+const SELF_WORDS = ["돈", "연애", "일", "공부", "사람", "마음"] as const;
+export const SELF_COMPARE = new RegExp(`^(${SELF_WORDS.join("|")})보다 `);
+export const dropSelfCompare = (line: string, areaKo: string): string => (line.startsWith(`${areaKo}보다 `) ? line.slice(areaKo.length + 3) : line);
 /** 달 칸 방향과 뜻 방향: 오르는 칸에 살필 뜻(P8 5월 「무리한 일정」 ↔ 「무리할 달 없음」) · 살필 칸에 좋은 뜻을 주지 않는다. */
 export const dirFits = (s: string, arrow: Arrow) => { const d = annualTagOf(s)?.dir; return !(arrow === "↑" && d === "down") && !(arrow === "↓" && d === "up"); };
 /** 넓히기 줄(사람 · 인연을 늘리는 뜻) — 관계 속도를 늦출 달(사람 ↓) · 연애 속도를 늦출 달(연애 ↓)에는 주지 않는다(P8 12월 「새 자리」 ↔ 「관계 늦출 달」). */
@@ -163,11 +171,32 @@ const WORK_KO = (s: string) => ({ employee: "직장인", job_seeker: "취업 준
 /** AM 7부 판독(annual-4 솔로에게 「만나는 사람이 있다면 …」 줄을 주자 작가가 조건을 떼어 씀 3곳): 연애 DB 줄은 적어 준 상태에 맞는 것만. 미입력이면 모두(있다면·없다면으로 나눠 쓰라는 지시). */
 export function loveLineFits(line: string, status: string): boolean {
   const solo = status === "single" || status === "some", paired = status === "dating" || status === "marriage_preparing" || status === "married";
+  // AM2-12 1부 1: 썸은 「연인 있음」(연인 · 데이트)도 「만나는 사람 없음」(새 인연 · 소개팅 · 만남 기회)도 전제하지 않는 줄만(premise.ts 필요 입력).
+  if (status === "some" && premiseHits(line.split(" → ")[0], SOME_INPUTS).some(h => h.need.startsWith("rel:"))) return false;
   return !(solo && /^만나는 사람이 있다면/.test(line)) && !(paired && /새 인연/.test(line));
 }
-const LOVE_KO = (s: string) => ({ single: "솔로", some: "솔로(썸)", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼" } as Record<string, string>)[s];
+const SOME_INPUTS: Inputs = { job: "none", rel: "some", children: "none", residence: "none", shop: false };
+const LOVE_KO = (s: string) => ({ single: "솔로", some: "썸", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼" } as Record<string, string>)[s];
 /** 흐름 세기 판정(참고): 4~5 밀고 갈 해, 3 고르게 다질 해, 1~2 버티며 다질 해. */
 export const yearVerdict = (score: number) => (score >= 4 ? "밀고 갈 해" : score === 3 ? "고르게 다질 해" : "버티며 다질 해");
+/** 판정 방향: 밀고 갈 해 = push, 두 다질 해 = settle. */
+export const verdictPace = (score: number): "push" | "settle" => (score >= 4 ? "push" : "settle");
+/**
+ * AM2-12 1부 2(덕짱님 답 (A) 2026-11-17): 해를 쓰는 방향을 말하는 해 범위 줄(뜻 글 그대로 — 닫힌 표).
+ * 판정과 방향이 반대인 줄은 카드에서 뺀다(P11 annual-p5 Y25 「확장보다 정비」 ↔ 「밀고 갈 해」 · seed 1117 Y8 「다듬고 차곡차곡 쌓아 두기」 ↔ 「밀고 갈 해」).
+ * 영역 하나의 속도(「둘 사이에서 속도를 늦추고」 · 「쉼과 여유로 물기를」 — 연애 · 마음 칸)와 해의 그림(「등불로 잦아들어」 — 비유)은 해 방향이 아니다.
+ * 2,010명 무작위에서 나오는 해 범위 줄 가운데 방향 낱말이 든 줄은 모두 이 표 또는 시험의 「방향 아님」 표에 있다(시험 am212).
+ */
+export const YEAR_PACE: Readonly<Record<string, "push" | "settle">> = {
+  "드러낸 것을 정성껏 다듬고 차곡차곡 쌓아 두기 좋은 해": "settle",
+  "새 일을 벌이기보다 지금 자리의 효율을 다듬는 쪽이 이득인 흐름": "settle",
+  "확장보다 정비가 어울리는 흐름": "settle",
+  "배우고 채우며 쉬어 가기 좋은 흐름": "settle",
+  "밀어붙이는 추진력이 커지는 흐름": "push",
+  "혼자 다시 시작해 보려는 힘이 붙는 흐름": "push",
+  "혼자 꾸리는 작은 프로젝트나 독립 작업을 시작해 보기 좋은 흐름": "push",
+  "매출·거래처·활동 반경이 넓어지기 쉬운 해": "push",
+};
 const monthName = (e: TimelineEntry) => e.label.split(" (")[0];
 
 /** AM2-11 1부 1: 바람 주제 → 영역 칩(공부는 일 칩) · 줄 이름 말. 같은 칩이면 한 줄(「일·공부」). 주제 차례 그대로. */
@@ -203,10 +232,13 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const fit = (facet: string) => (l: string) => facet !== "love" || loveLineFits(l, c.relationshipStatus);
   // AM2-9 4부: 카드 DB 줄은 뜻만(「→ 처방」 뗌 — 처방은 사전 배분으로만). 뽑기(rng)는 그대로, 뗀 뒤에 준다.
   const tip = (xs: readonly string[]) => (c.tidy ? xs.map(meaningOf) : [...xs]);
-  const domain = (facet: string, n = 2) => tip(pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet).filter(fit(facet)), n, `dom:${facet}`));
-  const domainB = (facet: string) => stemTg === branchTg ? [] : tip(pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet).filter(fit(facet)), 1, `domB:${facet}`));
+  const areaKo = (facet: string) => (facet === "study" ? "공부" : DOMAIN_KO[facet as DomainKey] ?? facet);
+  const domain = (facet: string, n = 2) => tip(pick(deepLines(c.k, "annual-domain", `tenGod:${stemTg}`, facet).filter(fit(facet)), n, `dom:${facet}`)).map(l => dropSelfCompare(l, areaKo(facet)));
+  const domainB = (facet: string) => stemTg === branchTg ? [] : tip(pick(deepLines(c.k, "annual-domain", `tenGod:${branchTg}`, facet).filter(fit(facet)), 1, `domB:${facet}`)).map(l => dropSelfCompare(l, areaKo(facet)));
   const wk = WORK_KEY(c.jobStatus), lk = LOVE_KEY(c.relationshipStatus);
-  const situ = (key: string | undefined, label: string) => key ? tip(pick([...deepLines(c.k, "annual-situation", key, g1), ...(g2 !== g1 ? deepLines(c.k, "annual-situation", key, g2) : [])], 2, label)) : [];
+  // AM2-12 1부 1: 썸의 연애 상황 줄(솔로 묶음)은 썸에 맞는 줄만 뽑는다(그 밖 입력은 예전과 같은 뽑기).
+  const situFit = (key: string) => (l: string) => !(key.startsWith("love:") && c.relationshipStatus === "some") || loveLineFits(l, "some");
+  const situ = (key: string | undefined, label: string) => key ? tip(pick([...deepLines(c.k, "annual-situation", key, g1), ...(g2 !== g1 ? deepLines(c.k, "annual-situation", key, g2) : [])].filter(situFit(key)), 2, label)) : [];
   const ys = (c.yearEntry as TimelineEntry & { signals?: DomainSignals }).signals;
   const energy = (facet: string, n = 2) => tip(pick(deepLines(c.k, "year-energy", `ganji:${c.yearPillar.stem}${c.yearPillar.branch}`, facet), n, `en:${facet}`));
   const rel = card.relations.slice(0, 3).map(r => relationLine(card, r));
@@ -271,6 +303,14 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
     const gone = tidyScope(`${c.year}년`, [...keep, ...items.filter(x => !keep.has(x))], keep, (text, g) => live.every(([, e]) => !e.facts.includes(text) || dbIn(e, g).filter(f => f !== text).length > 0), c.tidy);
     for (const [k2, e] of live) if (e.facts.some(f => gone.has(f))) evidence[k2] = ev(k2, e.facts.filter(f => !gone.has(f)), e.note);
   }
+  // AM2-12 1부 2(덕짱님 답 (A)): 해 판정 한 줄(yearVerdict)이 기준 — 판정과 방향이 반대인 해 범위 줄은 뺀다(정리 상한 안, 차면 기록).
+  { const want = verdictPace(flow.score);
+    for (const [k2, e] of Object.entries(evidence)) { if (!e) continue;
+      const bad = e.facts.filter(f => { const d = YEAR_PACE[meaningOf(f)]; return Boolean(d) && d !== want; }); if (!bad.length) continue;
+      const out = bad.filter(f => { if (!c.tidy) return true; const why = `해 판정 「${yearVerdict(flow.score)}」과 방향 반대`;
+        if (c.tidy.left > 0) { c.tidy.left--; c.tidy.drops.push({ at: `${c.year}년`, text: meaningOf(f), why }); return true; }
+        c.tidy.over.push({ at: `${c.year}년`, text: meaningOf(f), why: `${why} → 상한(남김)` }); return false; });
+      if (out.length) evidence[k2] = ev(k2, e.facts.filter(f => !out.includes(f)), e.note); } }
   return { evidence: Object.fromEntries(Object.entries(evidence).filter((x): x is [string, Evidence] => Boolean(x[1]))), card, lucky, samjae };
 }
 const GROUP_KO: Readonly<Record<Group, string>> = { PEER: "나와 같은 기운(비겁)", OUTPUT: "표현하는 기운(식상)", WEALTH: "재물 기운(재성)", OFFICER: "책임의 기운(관성)", RESOURCE: "받쳐 주는 기운(인성)" };
@@ -298,7 +338,7 @@ export function monthEvidence(c: Pick<AnnualCtx, "k" | "rng" | "tidy"> & { reado
     return line ? [{ d, line: c.tidy ? meaningOf(line) : line }] : []; });
   // AM2-9 4부: 그 달 범위 성격 정리(두 영역 줄끼리 · 성격표). 그 달의 마지막 영역 줄은 빼지 않는다.
   const gone = c.tidy ? tidyScope(month, picks.map(x => x.line), new Set(), (text, g) => picks.filter(x => x.line !== text && !g.has(x.line)).length > 0, c.tidy) : new Set<string>();
-  const lines = picks.filter(x => !gone.has(x.line)).map(x => `${DOMAIN_KO[x.d]} ${e.signals![x.d]}: ${x.line}`);
+  const lines = picks.filter(x => !gone.has(x.line)).map(x => `${DOMAIN_KO[x.d]} ${e.signals![x.d]}: ${dropSelfCompare(x.line, DOMAIN_KO[x.d])}`);
   return { kind: "evidence", key: `month:${e.key}`, facts: [`영역 신호(참고): ${signalsLine(e.signals)}`, ...lines], note: "카드 [좋은 것]·[살필 점]은 신호가 오르는·내리는 영역에서. 이웃 달과 같은 조언·표현 금지" };
 }
 
@@ -309,7 +349,7 @@ export function bridgeEvidence(e: TimelineEntry, prevName: string, nextName: str
 
 /** 상태별 절 질문(AM 2부, love1·work1). 미입력이면 단정하지 않는 질문. */
 export function annualStatusQ(key: string, jobStatus: string, relationshipStatus: string, year: string): string | undefined {
-  if (key === "love1") return ({ single: `솔로로 맞는 ${year}년, 인연은 어디서 올까?`, some: `솔로로 맞는 ${year}년, 인연은 어디서 올까?`, dating: `연애 중인 ${year}년, 둘의 관계는 어떻게 자랄까?`, marriage_preparing: `연애 중인 ${year}년, 둘의 관계는 어떻게 자랄까?`, married: `기혼으로 맞는 ${year}년, 함께 사는 리듬은?` } as Record<string, string>)[relationshipStatus] ?? `${year}년 연애·관계는 어떻게 흐를까?`;
+  if (key === "love1") return ({ single: `솔로로 맞는 ${year}년, 인연은 어디서 올까?`, some: `썸으로 맞는 ${year}년, 이 인연은 어떻게 이어질까?`, dating: `연애 중인 ${year}년, 둘의 관계는 어떻게 자랄까?`, marriage_preparing: `연애 중인 ${year}년, 둘의 관계는 어떻게 자랄까?`, married: `기혼으로 맞는 ${year}년, 함께 사는 리듬은?` } as Record<string, string>)[relationshipStatus] ?? `${year}년 연애·관계는 어떻게 흐를까?`;
   if (key === "work1") return ({ employee: `직장인의 ${year}년, 일은 어느 쪽으로 힘이 붙을까?`, job_seeker: `취업 준비의 ${year}년, 어떤 순서로 움직일까?`, student: `학생의 ${year}년, 공부와 진로는?`, self_employed: `사업하는 ${year}년, 넓힐 쪽과 다질 쪽은?`, business_owner: `사업하는 ${year}년, 넓힐 쪽과 다질 쪽은?`, freelancer: `프리랜서의 ${year}년, 일감과 단가는?`, unemployed: `쉬어 가는 ${year}년, 다시 시작할 때는?`, other: `쉬어 가는 ${year}년, 다시 시작할 때는?` } as Record<string, string>)[jobStatus] ?? `${year}년 일과 진로는 어떻게 흐를까?`;
   return undefined;
 }

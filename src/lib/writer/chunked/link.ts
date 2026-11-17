@@ -86,7 +86,7 @@ const JOB_FACET = (job: string): { facet: string; who: string } | null => job ==
   : job === "self_employed" ? { facet: "business", who: "자영업" } : job === "business_owner" ? { facet: "business", who: "사업" } : job === "job_seeker" ? { facet: "seek", who: "취업 준비" } : null;
 /** 그 자리에 쓸 입력(없으면 null — 고리를 만들지 않는다). side: 일 자리의 쪽(가까운 사람 · 내 생활). */
 function facetOf(seat: Seat, b: Brief, wishTopics: readonly string[], side: "close" | "life"): Facet | null {
-  const f = b.person.facts, rel = f.relationship, job = f.job.status;
+  const f = b.person.facts, rel = f.relationship, job = f.job.status, some = f.relationshipNote === "some";
   const wish = wishTopics.filter(t => SEAT_TOPICS[seat].includes(t));
   if (seat === "day") {
     if (side === "life") {
@@ -95,13 +95,13 @@ function facetOf(seat: Seat, b: Brief, wishTopics: readonly string[], side: "clo
       if (job === "freelancer" || job === "self_employed" || job === "business_owner") return { facet: "life:work", who: JOB_FACET(job)!.who, input: `job=${job}` };
       if (job === "student") return { facet: "life:student", who: "학생", input: "job=student" };
       if (job === "job_seeker") return { facet: "life:seek", who: "취업 준비", input: "job=job_seeker" };
-      if (rel === "single") return { facet: "life:solo", who: "솔로", input: "relationship=single" };
+      if (rel === "single") return { facet: "life:solo", who: some ? "썸" : "솔로", input: some ? "relationship=some" : "relationship=single" };
       if (rel === "dating") return { facet: "life:dating", who: "연애 중", input: "relationship=dating" };
       if (rel === "married") return { facet: "life:married", who: "기혼", input: "relationship=married" };
       return null;
     }
     // 브리프의 연애 상태는 넷(single · dating · married · unknown — 썸은 솔로, 결혼 준비는 연애 중으로 접힌다).
-    if (rel === "single") return { facet: "solo", who: "솔로", input: "relationship=single" };
+    if (rel === "single") return { facet: "solo", who: some ? "썸" : "솔로", input: some ? "relationship=some" : "relationship=single" };
     if (rel === "dating") return { facet: "dating", who: "연애 중", input: "relationship=dating" };
     if (rel === "married") return { facet: "married", who: "기혼", input: "relationship=married" };
     return wish.length ? { facet: "base", who: `바람에 ${wish.map(t => TOPIC_KO[t]).join("·")} 쪽을 적음`, input: `wish:${wish.join(",")}` } : null;
@@ -228,7 +228,7 @@ export function verifyLinks(b: Brief, keys: readonly { readonly key: string; rea
     }
     for (const src of l.input) {
       const [kk, v] = src.split(/[=:]/);
-      if (kk === "relationship" && f.relationship !== v) out.push(`${at}: 입력 ${src} ≠ ${f.relationship}`);
+      if (kk === "relationship" && (f.relationshipNote === "some" ? "some" : f.relationship) !== v) out.push(`${at}: 입력 ${src} ≠ ${f.relationshipNote === "some" ? "some" : f.relationship}`);
       else if (kk === "job" && f.job.status !== v) out.push(`${at}: 입력 ${src} ≠ ${f.job.status}`);
       else if (kk === "children" && f.children !== "has") out.push(`${at}: 자녀 입력 없음`);
       else if (kk === "wish" && b.product !== "annual_fortune") out.push(`${at}: 세운 밖 바람`);

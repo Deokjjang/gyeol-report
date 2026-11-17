@@ -51,9 +51,10 @@ describe("AM2-11 1부 재료 고침", () => {
   });
   it("십이운성 · 신살 줄 이름에는 종류를 붙인다", () => {
     const vs = books["annual-1"].intake.lines.map(l => l.value);
-    expect(vs).toContain("태어난 날 자리의 십이운성 사(死)");
+    // AM2-12 1부 3: annual-1의 사(死) · 쇠(衰) 줄은 뜻 문장이 정리로 다 빠져 카드에서 빠진다(숙제 조각 · 이름만 남기지 않음) — 남는 운성 · 신살 줄은 종류 이름이 붙는다.
     expect(vs).toContain("태어난 날 자리의 신살 홍염살");
-    expect(vs).toContain("태어난 달 자리의 십이운성 쇠(衰)");
+    expect(vs.filter(v => /자리의 (?:십이운성 )?(?:장생|목욕|관대|건록|제왕|쇠|병|사|묘|절|태|양)(?:\(|$)/.test(v)).every(v => /자리의 십이운성 /.test(v))).toBe(true);
+    expect(vs.some(v => /십이운성 (?:사|쇠)/.test(v))).toBe(false);
   });
   it("짝은 Fusion DB 규칙만(결정 2) — 계산 짝은 빼고, 짝 없는 MBTI 절의 원국 줄은 그 절에서 뺀다", () => {
     const p6b = books["annual-p6b"].intake;

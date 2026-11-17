@@ -140,7 +140,10 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     name: input.name, gender, birthDate: input.birthDate, birthTimeUnknown: input.birthTimeUnknown || !det.hourIncluded, mbti: input.mbtiType || null,
     relationshipStatus: input.context?.relationshipStatus ?? "", jobStatus: input.context?.jobStatus ?? "", detailJob: input.context?.detailJob ?? "", children: input.context?.children,
   };
-  const base = { ...toFactProfile(facts), ...override };
+  // AM2-12 1부 1(P11 무작위 썸 — 인물 카드 「연애 중」 · 소제목 「솔로로 맞는」): 세운·대운에서 썸은 연인 없음(single)으로 두고 원문은 relationshipNote로 — 4종은 그대로(dating으로 접힘).
+  const amSome = amBrief(product) && !override && facts.relationshipStatus === "some";
+  const base = { ...toFactProfile(facts), ...override, ...(amSome ? { relationship: "single" as const } : {}) };
+  const relNote = amBrief(product) && !override && (facts.relationshipStatus === "some" || facts.relationshipStatus === "marriage_preparing") ? facts.relationshipStatus : undefined;
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
   const sceneCtx = sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false, freelancer: !override && facts.jobStatus === "freelancer" });
   // 최종판2 1-2: 종합은 P6d(d9985cda) 장면 고르기 — 직업 꼬리표(코드·팀·가게·돌봄·외주)로 거르지 않는다(직업과 무관한 보편 성향 장면, 직업은 작가에게 맡김).
@@ -229,7 +232,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     nameUse: ["제목", "1장 첫 문단", "가운데 장 전환 문장", "마지막 장 마무리", "그 밖에는 '당신'"],
     gender, age, ageBand: ageBand(age),
     // 궁합은 관계 유형이 정한 사실만 쓴다: 입력에 직업이 있어도 넘기지 않는다(P3.7 r1: "대학생"과 "학생 전제 금지"가 함께 나갔다).
-    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
+    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, ...(relNote ? { relationshipNote: relNote } : {}), children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
     ...(override ? {} : (() => { const stage = lifeStage({ jobStatus: facts.jobStatus, age }, profile), job = matchJob(facts.detailJob);
       return { lifeStage: LIFE_STAGE_KO(stage, age), ...(job?.stages ? { workScenes: job.stages } : {}) }; })()),

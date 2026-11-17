@@ -327,9 +327,20 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const kind = /^twelveStage/.test(t.featureId) ? "십이운성 " : /^shinsal/.test(t.featureId) ? "신살 " : "";
     // AM2-11 1부 4: 성향 정리 뒤 특성 줄이 비면(줄째 사라짐) 정리가 뺀 첫 문장 하나를 되살린다 — 그 근거를 쓰는 장 · 동음 표시가 비지 않게(정리 기록에서는 뺀다).
     const vName = `${seat ? `${seat} 자리의 ` : ""}${kind}${nm}`;
-    const parts = partsOf(t).map(p => refineText(p, tctx(t), rlog, tidyGone)).filter(Boolean);
-    let id = add("natal", vName, parts.join(" · "));
-    if (!id) { const scratch = newRefineLog(), back = partsOf(t).map(p => refineText(p, tctx(t), scratch)).filter(Boolean).flatMap(b2 => atomsOf(b2)).find(a => tidyGone.has(a));
+    // AM2-12 1부 3(P11 annual-1 「태어난 날 자리의 십이운성 사(死) | 너무 빨리 끝냅니다.」 — 뜻 문장은 정리로 다 빠지고 숙제(overuse) 첫 조각만 남아 근거 뜻이 바뀜):
+    //  뜻 문장(뜻 · 너에게 · 좋은 점)이 하나도 남지 않으면 숙제 조각만으로 줄을 만들지 않는다 — 줄이 빈 것으로 보고 아래 되살림으로 간다.
+    const refined = (xs: readonly (string | undefined)[]) => xs.filter(Boolean).map(x => general(x!)).filter(Boolean).map(p => refineText(p, tctx(t), rlog, tidyGone)).filter(Boolean);
+    const core = refined([t.meaning, t.forYou, ...t.good]), over = refined([t.overuse]);
+    // 카드 줄 뜻으로 남는지는 add와 같은 거름(일반론 · 입력 전제)으로 본다(「…에 있을 때 붙는 이름입니다」 같은 일반론은 add에서 빠진다).
+    const coreLeft = core.length > 0 && dropGeneral(fits(say(refineText(core.join(" · "), genCtx, newRefineLog()), year)), { weak: /WEAK/.test(brief.chart.strength.level) }).trim().length > 0;
+    const parts = coreLeft ? [...core, ...over] : [];
+
+    // 뜻 문장이 있던 줄이 다 걸러졌으면(일반론 · 조건 · 정리) 이름만 남기지도 않는다 — 이름만 주면 작가가 뜻을 지어 쓴다(P11 annual-1 쇠 「속도를 낮추고」 ↔ 1장).
+    const emptied = !coreLeft && (core.length > 0 || over.length > 0);
+    if (emptied) rlog.dropped.push({ kind: "trait", text: `${vName} | ${over.join(" · ")}`, why: over.length ? "뜻 문장 없이 숙제 조각만 남음(AM2-12 1부 3)" : "뜻 문장이 다 걸러짐(AM2-12 1부 3)" });
+    let id = emptied ? null : add("natal", vName, parts.join(" · "));
+    // AM2-12 1부 3: 줄이 비면 남은 카드와 반대가 아닌 원자만 되살린다(씨앗 거름과 같은 판정 — 정리가 뺀 원자는 대개 반대라 되살리지 않는다). 없으면 줄을 뺀다.
+    if (!id) { const scratch = newRefineLog(), back = partsOf(t).map(p => refineText(p, tctx(t), scratch)).filter(Boolean).flatMap(b2 => atomsOf(b2)).find(a => tidyGone.has(a) && !seedClash(a));
       if (back) { id = add("natal", vName, [...parts, back].join(" · ")); const i = rlog.tidy.findIndex(x2 => x2.text === back); if (id && i >= 0) { rlog.tidyOver.push({ ...rlog.tidy[i], why: `${rlog.tidy[i].why} → 특성 줄 마지막 문장이라 남김` }); rlog.tidy.splice(i, 1); } } }
     if (id) traitId.set(t.id, id);
   }
@@ -537,7 +548,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   // AM2-5 1부 카드 값은 고객 말로: 명사형 끝 → 서술형 · 중의 값 · 처방 꼬리(「할 것·피할 것」 절이 쓰는 행동 줄만 남긴다 — 덕짱님 결정 14-7 3번).
   const adviceIds = new Set(out.flatMap(c => (c.sections ?? []).filter(s2 => /할 것|피할 것/.test(s2.q)).flatMap(s2 => s2.lines)));
   // AM2-6 3부: 카드 줄의 연애 조건 꼴을 입력에 맞추고(「만나는 사람이 있다면」 → 「연인과는」 …), 「-던」 전제 · 풀이 없는 용어(일지 · 일간)를 고객 말로.
-  const rel = brief.person.facts.relationship;
+  const rel = brief.person.facts.relationshipNote === "some" ? "some" : brief.person.facts.relationship;
   const custom = (id: string, t: string) => plainCard(relCondition(predicate(unambiguous(adviceIds.has(id) ? t : stripRx(t))), rel));
   // 뜻 칸이 빈 줄(「기분 따라 지르는 소비가 늘기 쉬운 쪽 · 장바구니는 하루 묵혀 두기」)은 값 칸에 꼬리가 있다.
   // AM2-10 2부 4: 등급 낱말(보통 · 약 · 강 · 오름 · 내림 · 세기)은 뜻 말로 — 등급은 화면에만.
@@ -597,7 +608,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const GOOD_ONLY = (t: string) => /좋|열리|깊어|쌓이|살아나|풀리|기회|빛나|편안|든든|가벼워/.test(t) && !/조심|살피|흔들|새|무리|부딪|어긋|막히|지치|줄이|늦추|아끼|서운|버거/.test(t);
   const CAUTION_ONLY = (t: string) => /조심|살피|흔들|새기|무리|부딪|어긋|막히|지치|버거|서운/.test(t) && !/좋|열리|깊어|쌓이|살아나|풀리|기회|빛나/.test(t);
   const offCell = (l: Line) => (CELL_CAUTION.test(l.value) && GOOD_ONLY(l.meaning)) || (CELL_UP.test(l.value) && CAUTION_ONLY(l.meaning));
-  const dropIds = new Set([...finalLines.filter(l => l.subject !== "mbti" && (offCell(l) || sameAsScreen(l))).map(l => l.id), ...bookDrop]);
+  // AM2-12 1부 2: 해 판정 줄(「밀고 갈 해 | …」)은 기준 한 줄이라 화면과 같은 글이어도 절에 둔다(빠지면 작가가 1장 「밀고 갈 해일까, 다질 해일까?」를 판정 없이 쓴다 — 세운 306명 중 4명).
+  const verdictLine = (l: Line) => l.subject === "year" && /^(밀고 갈 해|고르게 다질 해|버티며 다질 해)$/.test(l.value);
+  const dropIds = new Set([...finalLines.filter(l => l.subject !== "mbti" && !verdictLine(l) && (offCell(l) || sameAsScreen(l))).map(l => l.id), ...bookDrop]);
   const cardAlarms: string[] = finalLines.filter(offCell).map(l => `칸과 줄 방향: ${l.id} 「${l.value}」 ← ${l.meaning.slice(0, 40)}`);
   { const monthsOf = (re: RegExp) => new Set(finalLines.filter(l => re.test(l.value)).flatMap(l => [...l.meaning.matchAll(/(?:1[0-2]|[1-9])월 · [가-힣]{2}월/g)].map(m => m[0])));
     const up = monthsOf(/오르는 달/), rest = monthsOf(/쉬어 갈 달|쉴 달|무리하기 쉬운 달|조용한 달/); for (const m of up) if (rest.has(m)) cardAlarms.push(`오르는 달과 쉴 달이 같다: ${m}`);
@@ -642,7 +655,12 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       ...(k2.links ? { links: k2.links.map(l => ({ ...l, text: N(l.text, k2.label) })) } : {}) })) } : {}) }));
   // AM2-11 1부 4: 상한(권당 16)으로 남긴 성향 반대 쌍(카드 정제 · 책 전체 정리) — 브리프 검사 trait_clash(기록)가 센다.
   const tidyOver = [...new Set(rlog.tidyOver.map(o => `${o.text.slice(0, 40)} — ${o.why.slice(0, 60)}`))];
-  return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: linesNamed, pairs: pairsFinal, chapters: chaptersNamed, ...(tidyOver.length ? { tidyOver } : {}), ...(cardAlarms.length ? { cardAlarms } : {}), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
+  // AM2-12 1부 4(P11 annual-1 Y20 「꼭 필요한 지출까지 미루기」 — 절에서는 뺐는데 카드에 「쓰는 장: 3」으로 남음): 쓰는 장 = 최종 설계도에서 그 줄이 실제로 든 장(절 · key).
+  //  절 · key에서 뺀 줄(책 전체 정리 · 칸 방향 · 화면 같은 글 · 집 장 · 짝 지킴)은 그 장을 쓰는 장에서 지운다 — 어디에도 없으면 카드에 보이지 않는다(짝 줄은 짝으로 보인다).
+  const usedAt = new Map<string, Set<number>>();
+  for (const ch of chaptersNamed) for (const id of [...(ch.sections ?? []).flatMap(sp => [...sp.lines, ...(sp.claimIds ?? [])]), ...(ch.keys ?? []).flatMap(k2 => k2.lines)]) { const st = usedAt.get(id) ?? new Set<number>(); st.add(ch.n); usedAt.set(id, st); }
+  const linesUsed = linesNamed.map(l => { const use = l.use.filter(n => usedAt.get(l.id)?.has(n)); return use.length === l.use.length ? l : { ...l, use }; });
+  return { product, person: personCard(brief, year, wish, opts.timeSlot), lines: linesUsed, pairs: pairsFinal, chapters: chaptersNamed, ...(tidyOver.length ? { tidyOver } : {}), ...(cardAlarms.length ? { cardAlarms } : {}), ...(wish?.kind === "ok" && wish.text ? { wish: wish.text } : {}), ...(droppedPlan.length ? { droppedPlan } : {}), ...(!brief.chart.currentDayun ? { noDayun: true } : {}), ...(positions.length ? { positions } : {}), inputs, jobDetail: Boolean(brief.person.facts.job.detail) };
 }
 
 /** AM2-6 3부: 주체가 다른 줄의 뜻 글이 같으면(공백·부호 뺀 한글 12자 이상) 집 장(그 줄들을 쓰는 가장 앞 장) 한 곳만 남긴다. 핵심 주장 줄 · 절의 마지막 줄은 두고, key는 그 줄을 뺀다. */
@@ -821,7 +839,8 @@ export const relationshipOf = (person: readonly string[]) => `연애: ${person.f
 function personCard(brief: Brief, year: number, wish: { kind: string; text?: string; topics?: readonly string[] } | null, slot?: string): string[] {
   const p = brief.person, f = p.facts;
   const JOB: Record<string, string> = { employee: "직장인", job_seeker: "취업 준비 중", student: "학생", self_employed: "자영업", business_owner: "사업", freelancer: "프리랜서", unemployed: "쉬는 중", homemaker: "살림", other: "기타" };
-  const REL: Record<string, string> = { single: "솔로", some: "솔로(썸)", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼", unknown: "미입력" };
+  // AM2-12 1부 1: 썸은 「썸」 한 말(소제목 · 해 재료 · 고리 한 마디와 같은 말), 결혼 준비는 「연애 중(결혼 준비)」(해 재료와 같은 말).
+  const REL: Record<string, string> = { single: "솔로", some: "썸", dating: "연애 중", marriage_preparing: "연애 중(결혼 준비)", married: "기혼", unknown: "미입력" };
   const book = brief.product === "annual_fortune" ? `「나의 ${year}」(${year}년 ${brief.timeline?.entries.find(e => e.kind === "year")?.ganji.hangul ?? ""}년 신년판)` : "「앞으로의 나」(대운 10년)";
   const base = brief.baseDate.split("-").map(Number);
   return [
@@ -832,7 +851,7 @@ function personCard(brief: Brief, year: number, wish: { kind: string; text?: str
     // 시각을 모르면 시주가 없다는 사실만, 대략 시각(시간대)은 「대략(진시)」로.
     ...(!f.birthTimeKnown ? ["태어난 시각: 시주 없음"] : slot ? [`태어난 시각: 대략(${slot})`] : []),
     `일: ${JOB[f.job.status] ?? "적지 않음"}${f.job.detail ? `(${say(f.job.detail)})` : ""}`,
-    `연애: ${REL[f.relationship] ?? "미입력"}${f.children === "has" ? " · 자녀: 있음" : ""}`,
+    `연애: ${REL[f.relationshipNote ?? f.relationship] ?? "미입력"}${f.children === "has" ? " · 자녀: 있음" : ""}`,
     ...(wish?.kind === "ok" && wish.text ? [`적어 준 바람: «${wish.text}»`] : wish?.kind === "inject" ? [`적어 준 바람의 주제: ${(wish.topics ?? []).map(t => ({ love: "연애", money: "돈", work: "일", study: "공부", people: "사람", mind: "마음" } as Record<string, string>)[t] ?? t).join("·") || "일상"}`] : wish?.kind === "risk" ? ["적어 준 바람: 마음이 많이 지친 시기일 수 있음"] : []),
     `책: ${book} · 이 책을 쓴 날 ${base[0]}년 ${base[1]}월 ${base[2]}일`,
   ];
@@ -897,7 +916,7 @@ export function guardPairs(chapters: readonly ChapterPlan[], pairs: readonly Pai
 }
 /** 뿌리 3 입력 사실 이름(고객이 적은 것만). */
 const OWN_JOB: Readonly<Record<string, string>> = { employee: "직장인", job_seeker: "취업 준비 중", student: "학생", self_employed: "자영업", business_owner: "사업", freelancer: "프리랜서", unemployed: "쉬는 중", homemaker: "살림" };
-const OWN_REL: Readonly<Record<string, string>> = { single: "솔로", dating: "연애 중", married: "기혼" };
+const OWN_REL: Readonly<Record<string, string>> = { single: "솔로", some: "썸", dating: "연애 중", married: "기혼" };
 const AREA_KO: Readonly<Record<string, string>> = { love: "연애", relationships: "사람 사이", work: "일", money: "돈", alone: "마음" };
 /**
  * AM2-8 2부 뿌리 3: 모든 key에 이 사람 재료 하나 이상. 고리(자리 뜻 × 입력 × 관계 뜻) → 짝 → 인물 사실(그 key 영역과 맞는 것, 고객이 적은 것만) 차례.
@@ -906,7 +925,7 @@ const AREA_KO: Readonly<Record<string, string>> = { love: "연애", relationship
 export function withOwn(k0: KeyPlan, brief: Brief, wishTopics: readonly string[], product: Intake["product"]): KeyPlan {
   if ((k0.links ?? []).some(l => l.kind === "seat") || k0.pair) return k0;
   const f = brief.person.facts, areas = k0.areas?.length ? k0.areas : ["alone"];
-  const rel = OWN_REL[f.relationship], job = OWN_JOB[f.job.status];
+  const rel = OWN_REL[f.relationshipNote === "some" ? "some" : f.relationship], job = OWN_JOB[f.job.status];
   const wishArea = (t: string) => (t === "love" ? ["love"] : t === "people" ? ["relationships"] : t === "mind" ? ["alone"] : t === "study" ? ["work"] : [t]);
   const wish = product === "annual_fortune" ? wishTopics.find(t => wishArea(t).some(a => areas.includes(a))) : undefined;
   const area = areas[0];

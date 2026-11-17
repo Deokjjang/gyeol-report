@@ -35,7 +35,9 @@ export type BriefIssue = { readonly where: string; readonly text: string; readon
   // AM2-4 3부·2부: 카드 ≡ 엔진 · 짝 없는 절 · 할 것·피할 것 행동 줄 · 바람 달 충돌 · 동음 · 화면 「뜻」 길이.
   | "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "homonym" | "screen_len"
   // AM2-11 1부: 바람 달 줄 ↔ 영역 칩 · 고리 자리 ↔ 핵심 자리 · 재료 지시어 · 성향 반대 쌍(책 전체).
-  | "wish_chip" | "link_seat" | "deictic" | "trait_clash" };
+  | "wish_chip" | "link_seat" | "deictic" | "trait_clash"
+  // AM2-12 1부 6: 영역 달 목록 ↔ 엔진 칩 달 집합.
+  | "list_chip" };
 /** 브리프 검사 문맥(엔진 값): 음양 수 · 흐름 끝값 달(동률 판정) · 화면 카드 글(배지·카드 줄·꼬리표). */
 export type BriefCtx = { readonly yin?: number; readonly yang?: number; readonly flowEnds?: { readonly high: readonly string[]; readonly low: readonly string[] }; readonly screen?: readonly { readonly where: string; readonly text: string }[]; readonly brief?: Brief };
 const TIME_WORD = /(?<![가-힣])(지금|올해|요즘|최근|당장)|이번 (달|해|한 달)/;
@@ -737,7 +739,7 @@ export const styleScoreOf = (lint: readonly LintFlag[]) => lint.filter(f => !BLO
 // AM2-4(덕짱님 지시 2026-11-12) — 카드 불변식 · 설계도 빌드 검사 · P3 판독 두 건의 「결정론 검사로 잡을 수 있었던 꼴」 · 처방 사전 · 끝말 상한
 // ======================================================================
 
-export type CardIssue = { readonly where: string; readonly rule: "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "rest_conflict" | "homonym" | "screen_len" | "wish_chip" | "link_seat" | "deictic" | "trait_clash"; readonly text: string };
+export type CardIssue = { readonly where: string; readonly rule: "card_engine" | "pair_section" | "plan_advice_only" | "wish_conflict" | "rest_conflict" | "homonym" | "screen_len" | "wish_chip" | "link_seat" | "deictic" | "trait_clash" | "list_chip"; readonly text: string };
 const SEAT_LIST = (w: string) => w.split("·").map(x => x.trim()).filter(Boolean).map(x => (/^태어난 /.test(x) ? x : `태어난 ${x}`));
 const tgOf = (label: string) => label.replace(/\(.*\)$/, "").trim();
 /**
@@ -805,7 +807,8 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
   }
   // 십이운성 쇠(衰)와 오행 쇠(금)가 한 책에 함께 있으면 운성 쪽은 한자 꼴로(동음 구분).
   const allText = x.lines.map(l => `${l.value} ${l.meaning}`).join(" ");
-  if (/쇠\(금\)/.test(allText)) for (const t of brief.traits.filter(t2 => /^twelveStage/.test(t2.featureId) && t2.name.replace(/\(.*\)$/, "") === "쇠" && t2.chapters.length)) if (!x.lines.some(l => /쇠\(衰\)/.test(l.value))) out.push({ where: t.id, rule: "homonym", text: "십이운성 쇠가 오행 쇠(금)와 같은 꼴" });
+  // AM2-12 1부 3: 뜻이 다 걸러진 운성 줄은 카드에서 빠진다 — 카드에 있는 쇠 운성 줄만 본다(줄이 없으면 동음이 생기지 않는다).
+  if (/쇠\(금\)/.test(allText)) for (const t of brief.traits.filter(t2 => /^twelveStage/.test(t2.featureId) && t2.name.replace(/\(.*\)$/, "") === "쇠" && t2.chapters.length)) if (x.lines.some(l => /^(?:태어난 [^ ]+ 자리의 )?(?:십이운성 )?쇠(?!\(衰\))/.test(l.value)) && !x.lines.some(l => /쇠\(衰\)/.test(l.value))) out.push({ where: t.id, rule: "homonym", text: "십이운성 쇠가 오행 쇠(금)와 같은 꼴" });
   // 2부 짝 없는 명리 줄 × MBTI 줄이 한 절에.
   for (const c of x.chapters) for (const sp of c.sections ?? []) {
     const subj = (id: string) => byId.get(id)?.subject;
@@ -829,6 +832,32 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
       const d = DOM[mm[1].split("·")[0]]; if (!d) continue; const said = new Set(monthsIn(l.meaning)), want = mu ? "↑" : "↓";
       const miss = [...ents.values()].filter(e => e.signals?.[d as "love"] === want && !said.has(e.ganji.hangul)).map(e => e.ganji.hangul);
       if (miss.length) out.push({ where: l.id, rule: "wish_chip", text: `${miss.join("·")}월 빠짐(${mm[1]} 칩 ${want}) — 「${l.value}」` }); } }
+  // AM2-12 1부 6: 카드 줄 · 장 재료(핵심 주장 · 되풀이 금지 · 소제목 주장 · key 주장)의 영역 달 목록 = 엔진 칩 달 집합(세운).
+  //  오름 · 늦출 · 새는 · 흔들림 · 무리 = 그 영역 칩(1월 다리 달 포함) · 쉬어 가기 = 마음 ↑ − 연애 ↑ − 사람 ↑ − 바람 달 − 흐름 4 이상 · 가장 잔잔 / 크게 오르는 = 흐름 끝값 달(다리 달 뺌).
+  { const ms = (brief.timeline?.entries ?? []).filter(e => e.kind === "month" && e.signals);
+    if (x.product === "annual_fortune" && ms.length) {
+      const main = ms.filter(e => !e.bridge);
+      const sig = (d: string, a: string) => new Set(ms.filter(e => e.signals![d as "love"] === a).map(e => e.ganji.hangul));
+      const lo = Math.min(...main.map(e => e.flow.score)), hi = Math.max(...main.map(e => e.flow.score));
+      const rest = new Set([...sig("mind", "↑")].filter(g => !sig("love", "↑").has(g) && !sig("people", "↑").has(g) && !wishMonths.has(g) && (ms.find(e => e.ganji.hangul === g)?.flow.score ?? 0) < 4));
+      const LISTS: readonly [RegExp, () => ReadonlySet<string>][] = [
+        [/^연애 쪽 기운이 오르는 달$/, () => sig("love", "↑")], [/^연애에서 속도를 늦출 달$/, () => sig("love", "↓")],
+        [/^돈이 오르는 달$/, () => sig("money", "↑")], [/^돈이 새기 쉬운 달$/, () => sig("money", "↓")],
+        [/^일이 오르는 달$/, () => sig("work", "↑")], [/^(?:일터|사회생활) 흔들림을 살필 달$/, () => sig("work", "↓")],
+        [/^사람 쪽이 오르는 달$/, () => sig("people", "↑")], [/^관계 속도를 늦출 달$/, () => sig("people", "↓")],
+        [/^무리하기 쉬운 달$/, () => sig("mind", "↓")], [/^쉬어 가기 좋은 달$/, () => rest],
+        [/^(?:흐름이 가장 잔잔한 달|가장 조용한 달)(?:\((?:같은 세기|여러 달이 함께)\))?$/, () => new Set(main.filter(e => e.flow.score === lo).map(e => e.ganji.hangul))],
+        [/^흐름이 가장 크게 오르는 달(?:\((?:같은 세기|여러 달이 함께)\))?$/, () => new Set(main.filter(e => e.flow.score === hi).map(e => e.ganji.hangul))],
+      ];
+      const see = (where: string, label: string, list: string) => { const hitL = LISTS.find(([re]) => re.test(label.trim())); if (!hitL) return;
+        const said = monthsIn(list), want = hitL[1]();
+        const miss = [...want].filter(g => !said.has(g)), extra = [...said].filter(g => !want.has(g));
+        if (miss.length || extra.length) out.push({ where, rule: "list_chip", text: `「${label.trim()}」 ${miss.length ? `빠짐 ${miss.join("·")}월` : ""}${miss.length && extra.length ? " · " : ""}${extra.length ? `엔진 밖 ${extra.join("·")}월` : ""}` }); };
+      for (const l of x.lines) see(l.id, l.value, l.meaning);
+      const seeText = (where: string, t: string) => { const m = /^(?:\d+장: )?([^:]+): (.*)$/.exec(t); if (m) see(where, m[1], m[2]); };
+      for (const c of x.chapters) { for (const t of [...c.claims, ...c.avoid]) seeText(`${c.n}장`, t);
+        for (const sp of c.sections ?? []) for (const t of sp.claims) seeText(`${c.n}장 「${sp.q}」`, t);
+        for (const k of c.keys ?? []) for (const t of k.claims) seeText(k.key, t); } } }
   // AM2-5 2부 충돌: 쉬어 가기 좋은 달 ↔ 연애·사람이 오르는 달 · 바람 달(P4 판독 세운 경계 #6).
   const upMonths = new Set([...wishMonths, ...x.lines.filter(l => /(연애|사람)[^|·]{0,8}오르는 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)])]);
   for (const l of x.lines.filter(l2 => /쉬어 가기 좋은 달/.test(l2.value))) { const clash = [...monthsIn(l.meaning)].filter(m => upMonths.has(m)); if (clash.length) out.push({ where: l.id, rule: "rest_conflict", text: `쉬는 달 ${clash.join("·")}월이 연애·사람·바람이 오르는 달과 겹침` }); }

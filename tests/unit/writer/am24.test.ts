@@ -32,8 +32,9 @@ describe("AM2-4 3부 카드", () => {
     const a = setup("annual-1"), m = setup("major-1");
     const all = [...a.intake.lines, ...m.intake.lines].map(l => `${l.value} | ${l.meaning}`);
     expect(all.filter(t => /\(반쯤\)|\(태어난 (해|달|날|시각)|생활 결|기준 해|가장 센 쪽|두 번째로 쓰는 쪽|성격 쪽에서는/.test(t))).toEqual([]);
-    // AM2-11 1부 3: 십이운성 · 신살 줄 이름에는 종류를 붙인다.
-    expect(a.intake.lines.some(l => l.value === "태어난 달 자리의 십이운성 쇠(衰)")).toBe(true);
+    // AM2-11 1부 3: 십이운성 · 신살 줄 이름에는 종류를 붙인다. AM2-12 1부 3: annual-1의 쇠(衰) 줄은 뜻 문장이 정리로 다 빠져 카드에서 빠진다(이름만 남기지 않음).
+    expect(a.intake.lines.some(l => /십이운성 쇠/.test(l.value))).toBe(false);
+    expect(all.filter(t => /자리의 (?:장생|목욕|관대|건록|제왕|쇠|병|사|묘|절|태|양)(?:\(|\s\|)/.test(t))).toEqual([]);
   });
   it("카드 ≡ 엔진 불변식: 일부러 자리를 틀면(예전 unitFix 버그) 잡는다", () => {
     const { brief, intake } = setup("annual-1");
@@ -114,8 +115,12 @@ describe("AM2-4 5부 결정론 검사(P3 판독 꼴)", () => {
     expect(key("화국이 태어난 해·태어난 날 자리와 맞물려 표현과 열정이 모여요.")).not.toContain("seat_badge");
     const any = (sen: string, x = a) => am24Flags([ch(2, "love", [sen])], x.b).map(f => f.rule);
     expect(any("한 해의 절반이 넘는 달에 연애 기운이 오릅니다.")).toContain("count_claim");
-    expect(any("쇠에 해당하는 기운은 속도를 낮추고 경험으로 판을 읽는 성질이에요.")).toContain("homonym");
-    expect(any("반대로 쇠(금)는 겉으로 드러난 쇠 글자가 없어 가장 약합니다.")).not.toContain("homonym");
+    // AM2-12 1부 3: annual-1 카드에는 쇠(衰) 운성 줄이 없다(뜻 문장이 다 걸러져 뺌) — 쇠(衰) 운성 줄이 있는 카드로 본다.
+    const soeIntake = { ...a.intake, lines: [...a.intake.lines, { id: "N99", subject: "natal" as const, value: "태어난 달 자리의 십이운성 쇠(衰)", meaning: "한발 물러서서 판을 읽는 성질을 뜻합니다.", use: [2] }] };
+    const soe = { ...a, b: blockCtxFor(a.brief, a.k, soeIntake) };
+    expect(any("쇠에 해당하는 기운은 속도를 낮추고 경험으로 판을 읽는 성질이에요.", soe)).toContain("homonym");
+    expect(any("쇠에 해당하는 기운은 속도를 낮추고 경험으로 판을 읽는 성질이에요.")).not.toContain("homonym");
+    expect(any("반대로 쇠(금)는 겉으로 드러난 쇠 글자가 없어 가장 약합니다.", soe)).not.toContain("homonym");
     expect(any("한편 축오해(태어난 날 자리와)는 언 땅과 불이 서로 방해하는 흐름이에요.")).toContain("label_leak");
     expect(any("답해야 할 메일을 열어 둔 채 세 번 말하는 장면이 떠오르죠.")).toContain("habit_assert");
     expect(any("답답함이 말로 터져 나오기 쉬운 때도 있어요.")).not.toContain("habit_assert");

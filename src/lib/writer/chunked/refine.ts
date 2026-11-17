@@ -124,8 +124,10 @@ export function asReason(clause: string): string | null {
 
 // ---------- 5. 입력 적용(세운·대운만 — 4종 낱말표 premise.ts는 그대로) ----------
 /** 문장이 전제하는 연애 상태. single = 상대를 고르는 꼴(솔로 · 미입력만) · partner = 지금 상대가 있다는 꼴(연애 중 · 기혼) · married = 부부 꼴 · notMarried = 결혼을 앞에 둔 꼴. */
-const NEED_REL: readonly [RegExp, "single" | "partner" | "married" | "notMarried"][] = [
-  [/끌리기 쉬운|끌리는 (?:흐름|때|쪽|경향)|에게 끌리|마음이 가기 쉬운 (?:사람|상대)|새 인연|소개팅|썸|호감 가는 사람|가벼운 만남보다|좋아하는 사람이 생기|연인이 생기면|인연이 (?:다가|찾아)|끌리는 사람이 나타나|첫 만남|새로운 사람을 만나/, "single"],
+/** AM2-12 1부 1: solo = 만나는 사람이 없다는 꼴(솔로 · 미입력만 — 썸 아님) · single = 연인이 없는 마음 꼴(솔로 · 썸 · 미입력). */
+const NEED_REL: readonly [RegExp, "single" | "solo" | "partner" | "married" | "notMarried"][] = [
+  [/끌리기 쉬운|끌리는 (?:흐름|때|쪽|경향)|에게 끌리|마음이 가기 쉬운 (?:사람|상대)|썸|호감 가는 사람|가벼운 만남보다/, "single"],
+  [/새 인연|소개팅|좋아하는 사람이 생기|연인이 생기면|인연이 (?:다가|찾아)|끌리는 사람이 나타나|첫 만남|새로운 사람을 만나|새 만남|새로운 만남|만남 기회|인연이 닿기|주변의 소개/, "solo"],
   [/결혼을 생각한다면|결혼 준비|연애나 결혼을 생각/, "notMarried"],
   [/배우자와|부부 사이|결혼 생활|함께 사는 집/, "married"],
   [/연인과는|연인과의|둘의 관계가|상대와의 약속/, "partner"],
@@ -133,7 +135,7 @@ const NEED_REL: readonly [RegExp, "single" | "partner" | "married" | "notMarried
 const NEED_CHILD = /자녀를|아이를 (?:키우|돌보)|육아/;
 export function inputClash(s: string, x: Inputs): string | null {
   for (const [re, need] of NEED_REL) if (re.test(s)) {
-    const ok = need === "single" ? x.rel === "single" || x.rel === "none" : need === "notMarried" ? x.rel !== "married" : need === "married" ? x.rel === "married" : x.rel === "dating" || x.rel === "married";
+    const ok = need === "single" ? x.rel === "single" || x.rel === "none" || x.rel === "some" : need === "solo" ? x.rel === "single" || x.rel === "none" : need === "notMarried" ? x.rel !== "married" : need === "married" ? x.rel === "married" : x.rel === "dating" || x.rel === "married";
     if (!ok) return `연애 입력(${x.rel})과 맞지 않는 전제(${need})`;
   }
   if (NEED_CHILD.test(s) && x.children !== "has") return "자녀 입력 없음";

@@ -10,18 +10,19 @@ import NEEDS_TABLE from "@/data/knowledge-v5/input-needs.json";
 
 /** 입력 축(덕짱님 지시 2부 1): 일 · 관계 · 자녀 · 사는 곳. */
 export type InputJob = "employee" | "business" | "freelancer" | "student" | "seeker" | "resting" | "none";
-export type InputRel = "single" | "dating" | "married" | "none";
+/** AM2-12 1부 1: some = 썸(세운·대운만 — 연인도 없고 「만나는 사람 없음」도 아님). 4종은 이 파일을 쓰지 않는다. */
+export type InputRel = "single" | "some" | "dating" | "married" | "none";
 export type Inputs = { readonly job: InputJob; readonly rel: InputRel; readonly children: "has" | "none"; readonly residence: "none"; readonly shop: boolean };
-/** 필요한 입력. work = 돈을 버는 일이 있음(직장인 · 자영업 · 프리랜서). partner = 연애 중 · 기혼. */
-export type Need = "job:employee" | "job:work" | "job:active" | "job:earn" | "job:business" | "job:shop" | "job:freelancer" | "job:student" | "job:study" | "rel:single" | "rel:dating" | "rel:married" | "rel:partner" | "children" | "residence" | "other";
-export const NEEDS: readonly Need[] = ["job:employee", "job:work", "job:active", "job:earn", "job:business", "job:shop", "job:freelancer", "job:student", "job:study", "rel:single", "rel:dating", "rel:married", "rel:partner", "children", "residence", "other"];
+/** 필요한 입력. work = 돈을 버는 일이 있음(직장인 · 자영업 · 프리랜서). partner = 연애 중 · 기혼. single = 연인 없음(솔로 · 썸). solo = 만나는 사람 없음(솔로만 — 새 인연 찾기 · 소개팅). */
+export type Need = "job:employee" | "job:work" | "job:active" | "job:earn" | "job:business" | "job:shop" | "job:freelancer" | "job:student" | "job:study" | "rel:single" | "rel:solo" | "rel:dating" | "rel:married" | "rel:partner" | "children" | "residence" | "other";
+export const NEEDS: readonly Need[] = ["job:employee", "job:work", "job:active", "job:earn", "job:business", "job:shop", "job:freelancer", "job:student", "job:study", "rel:single", "rel:solo", "rel:dating", "rel:married", "rel:partner", "children", "residence", "other"];
 
-type FactsLike = { readonly relationship: string; readonly children: string; readonly job: { readonly status: string; readonly class?: string; readonly detail?: string } };
+type FactsLike = { readonly relationship: string; readonly relationshipNote?: string; readonly children: string; readonly job: { readonly status: string; readonly class?: string; readonly detail?: string } };
 const SHOP_DETAIL = /가게|매장|카페|식당|숍|샵|점포|장사|요식|판매|쇼핑몰/;
 export function inputsOf(f: FactsLike): Inputs {
   const s = f.job.status;
   const job: InputJob = s === "employee" ? "employee" : /^(self_employed|business_owner)$/.test(s) ? "business" : s === "freelancer" ? "freelancer" : s === "student" || f.job.class === "student" ? "student" : s === "job_seeker" ? "seeker" : /^(unemployed|homemaker)$/.test(s) ? "resting" : "none";
-  const rel: InputRel = f.relationship === "single" ? "single" : f.relationship === "dating" ? "dating" : f.relationship === "married" ? "married" : "none";
+  const rel: InputRel = f.relationship === "single" ? (f.relationshipNote === "some" ? "some" : "single") : f.relationship === "dating" ? "dating" : f.relationship === "married" ? "married" : "none";
   return { job, rel, children: f.children === "has" ? "has" : "none", residence: "none", shop: job === "business" && SHOP_DETAIL.test(f.job.detail ?? "") };
 }
 export function needMet(n: Need, x: Inputs): boolean {
@@ -35,7 +36,8 @@ export function needMet(n: Need, x: Inputs): boolean {
     case "job:freelancer": return x.job === "freelancer";
     case "job:student": return x.job === "student";
     case "job:study": return x.job === "student" || x.job === "seeker";
-    case "rel:single": return x.rel === "single";
+    case "rel:single": return x.rel === "single" || x.rel === "some";
+    case "rel:solo": return x.rel === "single";
     case "rel:dating": return x.rel === "dating";
     case "rel:married": return x.rel === "married";
     case "rel:partner": return x.rel === "dating" || x.rel === "married";
@@ -45,7 +47,7 @@ export function needMet(n: Need, x: Inputs): boolean {
 }
 
 /** 중립 꼴: 입력 무리별 바꿀 말. null = 이 무리에서는 그 마디를 뺀다. */
-type Neutral = { readonly work?: string | null; readonly other?: string | null; readonly dating?: string | null; readonly married?: string | null; readonly single?: string | null };
+type Neutral = { readonly work?: string | null; readonly other?: string | null; readonly dating?: string | null; readonly married?: string | null; readonly single?: string | null; readonly some?: string | null };
 /** list: 가운뎃점 목록(「동료·친구·경쟁자」) 안에서도 본다 — 목록 마디는 보통 주제 이름(장 제목)이라 건너뛰지만, 문장 속 목록은 전제다(AM2-8 화면 판독 「소속·직함·역할이 분명해지고」). */
 type Row = { readonly word: string; readonly re: RegExp; readonly need: Need; readonly neutral?: Neutral; readonly list?: true };
 const r = (word: string, re: RegExp, need: Need, neutral?: Neutral): Row => ({ word, re, need, ...(neutral ? { neutral } : {}) });
@@ -121,22 +123,34 @@ export const PREMISE: readonly Row[] = [
   r("운전", /운전|드라이브|세차(?!게|다|고|지|며|던)|차량|자동차|(?<![가-힣])차 안에서|차를 몰|주차장|(?<![가-힣])자차|정비소/, "other"), r("대출", /대출|학자금/, "other"), r("주식", /주식/, "other"), r("반려동물", /반려견|반려묘|강아지 산책|고양이 밥|고양이나 식물/, "other"),
   r("직군 장면", /촬영 ?(현장|장)|코드 리뷰|버그|에러 로그|공사 현장|(?<![가-힣])도면|배송 동선|장애 (연락|호출)|연습실|수강생|시청자|투자자 앞|설치 기사|미용실 의자|팝업스토어 진열|전시회 부스|슬랙 채널|영상 편집 마감/, "other"),
 ];
+/**
+ * AM2-12 1부 1(덕짱님 답 1): 썸(some)에게만 보는 「만나는 사람 없음」 전제 말(새 인연 찾기 · 소개팅 · 만남 기회 …) — rel:solo(솔로만).
+ * PREMISE 밖에 따로 둔다: 낱말표 버전(PREMISE_VERSION) · 정적 꼬리표 표(input-needs.json, 지식 DB 버전 해시 안)는 그대로이고, 솔로 · 연애 중 · 기혼 · 미입력의 결과도 그대로다.
+ * 고백 · 사귀기 전 · 짝사랑 · 호감처럼 연인이 없는 마음만 전제하는 말은 PREMISE의 rel:single(솔로 · 썸)로 둔다.
+ */
+const SOME_ROWS: readonly Row[] = [
+  r("새 인연보다", /새 (인연|만남)보다 /, "rel:solo", { some: "" }),
+  r("소개팅", /소개팅(?! 주선)|소개받|소개 자리|맞선|연애 앱|데이트 앱|데이팅|앱 프로필|연애 상대|이상형/, "rel:solo"),
+  r("새 인연", /새 인연|새로운 인연|새 만남|새로운 만남|인연이 생기|인연이 닿기|첫 만남|처음 만난 날|첫 연락|프로필 사진|만남 기회|주변의 소개|이별 ?(후|뒤)|헤어진 이유/, "rel:solo"),
+];
 export const PREMISE_VERSION = `premise-${PREMISE.length}-${PREMISE.reduce((h, x) => (h * 31 + [...`${x.word}|${x.re.source}|${x.need}`].reduce((a, ch) => (a * 33 + ch.charCodeAt(0)) >>> 0, 7)) >>> 0, 17).toString(36)}`;
 
 /** 글에 든 전제 말과 그 필요 입력(조건 꼴 「…이라면」도 전제다 — 쓸 수 없는 말이면 조건으로도 쓰지 않는다). */
-export function needsOf(text: string): { word: string; need: Need; at: number; len: number }[] {
+export function needsOf(text: string, x?: Inputs): { word: string; need: Need; at: number; len: number }[] {
   const out: { word: string; need: Need; at: number; len: number }[] = [], taken: [number, number][] = [];
   // 가운뎃점으로 이은 주제 이름 목록(장 제목 「일·취업·공부」 · 소제목 틀 「공부·시험·자격」)은 전제가 아니다(그 말이 든 목록 마디 전체가 명사 나열일 때).
   const lists: [number, number][] = [...text.matchAll(/[가-힣]{1,6}(?:·[가-힣]{1,6}){2,}/g)].map(m => [m.index!, m.index! + m[0].length]);
-  for (const row of PREMISE) { const re = new RegExp(row.re.source, "g"); for (const m of text.matchAll(re)) { const a = m.index!, b = a + m[0].length; if (taken.some(([x, y]) => a < y && b > x)) continue; if (!row.list && lists.some(([x, y]) => a >= x && b <= y)) continue; taken.push([a, b]); out.push({ word: row.word, need: row.need, at: a, len: m[0].length }); } }
+  for (const row of x?.rel === "some" ? [...SOME_ROWS, ...PREMISE] : PREMISE) { const re = new RegExp(row.re.source, "g"); for (const m of text.matchAll(re)) { const a = m.index!, b = a + m[0].length; if (taken.some(([x, y]) => a < y && b > x)) continue; if (!row.list && lists.some(([x, y]) => a >= x && b <= y)) continue; taken.push([a, b]); out.push({ word: row.word, need: row.need, at: a, len: m[0].length }); } }
   return out.sort((p, q) => p.at - q.at);
 }
 /** 입력과 맞지 않는 전제 말(검사 · 행렬 시험). 고객이 적은 바람 원문(«…»)과 따옴표 대사 안은 보지 않는다. */
 export function premiseHits(text: string, x: Inputs): { word: string; need: Need }[] {
   const t = text.replace(/«[^»]*»/g, " ");
-  return needsOf(t).filter(h => !needMet(h.need, x)).map(h => ({ word: h.word, need: h.need }));
+  return needsOf(t, x).filter(h => !needMet(h.need, x)).map(h => ({ word: h.word, need: h.need }));
 }
-const groupOf = (x: Inputs, need: Need): keyof Neutral => (need.startsWith("rel:") ? (x.rel === "dating" ? "dating" : x.rel === "married" ? "married" : "single") : needMet("job:work", x) ? "work" : "other");
+const groupOf = (x: Inputs, need: Need): keyof Neutral => (need.startsWith("rel:") ? (x.rel === "dating" ? "dating" : x.rel === "married" ? "married" : x.rel === "some" ? "some" : "single") : needMet("job:work", x) ? "work" : "other");
+/** 전제 말의 줄(썸 전용 줄 rel:solo가 먼저). */
+const rowOf = (h: { word: string; need: Need }): Row => (h.need === "rel:solo" ? SOME_ROWS : PREMISE).find(rw => rw.word === h.word)!;
 /** 받침에 맞춘 조사(바꾼 말 뒤). */
 function josaAfter(word: string, rest: string): string {
   const last = word.replace(/[^가-힣]/g, "").slice(-1); if (!last) return rest;
@@ -151,11 +165,11 @@ function josaAfter(word: string, rest: string): string {
  * 같은 말이 중립 꼴과 겹치면(「업무」 → 직장인 「업무」) 그대로.
  */
 export function neutralize(text: string, x: Inputs): string | null {
-  const hits = needsOf(text.replace(/«[^»]*»/g, m => "\u0000".repeat(m.length))).filter(h => !needMet(h.need, x));
+  const hits = needsOf(text.replace(/«[^»]*»/g, m => "\u0000".repeat(m.length)), x).filter(h => !needMet(h.need, x));
   if (!hits.length) return text;
   let out = text;
   for (const h of [...hits].reverse()) {
-    const row = PREMISE.find(rw => rw.word === h.word)!, to = row.neutral?.[groupOf(x, h.need)];
+    const row = rowOf(h), to = row.neutral?.[groupOf(x, h.need)];
     if (to === undefined || to === null) return null;
     const after = out.slice(h.at + h.len);
     out = `${out.slice(0, h.at)}${to}${josaAfter(to, after)}`;
@@ -181,7 +195,9 @@ export function needsKey(source: string, text: string): string {
 /** 표의 꼬리표. 표에 없으면 null(쓰지 않는다). */
 export function needsFor(source: string, text: string): readonly Need[] | null { return TABLE.items[needsKey(source, text)] ?? null; }
 /** 정적 항목을 써도 되는가: 표에 있고, 필요 입력이 모두 맞는다. */
-export function itemFits(source: string, text: string, x: Inputs): boolean { const n = needsFor(source, text); return Boolean(n) && n!.every(nd => needMet(nd, x)); }
+export function itemFits(source: string, text: string, x: Inputs): boolean { const n = needsFor(source, text);
+  // AM2-12 1부 1: 표는 썸을 모른다(rel:single = 솔로 · 썸) — 썸이면 글의 연애 축 전제 말을 낱말표(썸 전용 줄 포함)로 한 번 더 본다.
+  return Boolean(n) && n!.every(nd => needMet(nd, x)) && (x.rel !== "some" || !premiseHits(text, x).some(h => h.need.startsWith("rel:"))); }
 export const needsTableInfo = () => ({ version: TABLE.version, premise: TABLE.premise, size: Object.keys(TABLE.items).length });
 
 /**
@@ -209,8 +225,8 @@ export function fitTimelineTexts(t: TimelineLike, x: Inputs, pad?: (e: EntryLike
 export function soften(text: string, x: Inputs): string {
   const masked = text.replace(/«[^»]*»/g, m => "\u0000".repeat(m.length));
   let out = text;
-  for (const h of needsOf(masked).filter(h2 => !needMet(h2.need, x)).reverse()) {
-    const to = PREMISE.find(rw => rw.word === h.word)?.neutral?.[groupOf(x, h.need)];
+  for (const h of needsOf(masked, x).filter(h2 => !needMet(h2.need, x)).reverse()) {
+    const to = rowOf(h).neutral?.[groupOf(x, h.need)];
     if (to === undefined || to === null) continue;
     out = `${out.slice(0, h.at)}${to}${josaAfter(to, out.slice(h.at + h.len))}`;
   }

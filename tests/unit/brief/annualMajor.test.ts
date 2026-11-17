@@ -217,9 +217,10 @@ describe("AM 7부: 달 카드 관계 — 엔진 배지와 사실 검사가 같�
 });
 
 describe("AM 7부: 연애 DB 줄은 적어 준 상태에 맞는 것만(annual-4 솔로에게 「만나는 사람이 있다면」)", () => {
-  it("솔로·썸은 「만나는 사람이 있다면」 줄을, 연애 중·결혼 준비·기혼은 「새 인연」 줄을 뺀다 · 미입력은 모두", () => {
+  it("솔로는 「만나는 사람이 있다면」 줄을, 연애 중·결혼 준비·기혼은 「새 인연」 줄을, 썸은 둘 다 뺀다(AM2-12 1부 1) · 미입력은 모두", () => {
     const has = "만나는 사람이 있다면 친구처럼 나란히 노는 시간이 관계를 살리는 흐름", fresh = "새 인연은 취미 모임·동기처럼 비슷한 또래 사이에서 닿기 쉬운 때", plain = "혼자 있는 시간이 좋아져 연락 빈도를 내 속도로 맞추고 싶어지는 쪽";
-    for (const s of ["single", "some"]) expect([has, fresh, plain].filter(l => loveLineFits(l, s))).toEqual([fresh, plain]);
+    expect([has, fresh, plain].filter(l => loveLineFits(l, "single"))).toEqual([fresh, plain]);
+    expect([has, fresh, plain].filter(l => loveLineFits(l, "some"))).toEqual([plain]);
     for (const s of ["dating", "marriage_preparing", "married"]) expect([has, fresh, plain].filter(l => loveLineFits(l, s))).toEqual([has, plain]);
     expect([has, fresh, plain].filter(l => loveLineFits(l, ""))).toEqual([has, fresh, plain]);
   });
