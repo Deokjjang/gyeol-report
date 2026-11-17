@@ -21,7 +21,7 @@ import type { Intake, Line } from "./intake";
 import { KEY_TARGET, relationshipOf, RESIDENCE_PREMISE, STAGE_RE, WISH_MARK } from "./intake";
 import { WORKPLACE } from "./card";
 import { FLOW_TALK, FLOW_WORD, josa } from "@/lib/brief/labels";
-import { WISH_UP_LINE } from "@/lib/brief/design/annual";
+import { WISH_UP_LINE, WISH_DOWN_LINE } from "@/lib/brief/design/annual";
 import { deicticsIn } from "./names";
 import type { Brief } from "@/lib/brief/schema";
 import { coreOf, coreRowLine, relName, seatShort } from "@/lib/brief/core";
@@ -823,7 +823,12 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
   // AM2-11 1부 1: 바람 달 줄 ↔ 그 달 영역 칩(엔진) — 줄에 적힌 달마다 그 영역 칩이 오름이어야 한다(P10 annual-1 「일과 연애, 사람 쪽 소망이 이 세 달에」).
   { const DOM: Readonly<Record<string, string>> = { 연애: "love", 돈: "money", 일: "work", 공부: "work", 사람: "people", 마음: "mind" };
     const ents = new Map((brief.timeline?.entries ?? []).filter(e => e.kind === "month").map(e => [e.ganji.hangul, e] as const));
-    if (ents.size) for (const { l, m } of wishUp) for (const mm of monthsIn(l.meaning)) { const e = ents.get(mm); if (!e) continue; const bad = m[1].split("·").filter(d => DOM[d] && e.signals?.[DOM[d] as "love"] !== "↑"); if (bad.length) out.push({ where: l.id, rule: "wish_chip", text: `${mm} ${bad.join("·")} 칩 ${bad.map(d => e.signals?.[DOM[d] as "love"]).join("·")} — 「${l.value}」` }); } }
+    if (ents.size) for (const { l, m } of wishUp) for (const mm of monthsIn(l.meaning)) { const e = ents.get(mm); if (!e) continue; const bad = m[1].split("·").filter(d => DOM[d] && e.signals?.[DOM[d] as "love"] !== "↑"); if (bad.length) out.push({ where: l.id, rule: "wish_chip", text: `${mm} ${bad.join("·")} 칩 ${bad.map(d => e.signals?.[DOM[d] as "love"]).join("·")} — 「${l.value}」` }); }
+    // AM2-11 측정 중 고침: 바람 달 줄은 그 영역 칩 달을 다 담는다(오름 · 늦출 모두 — P11 annual-1 「연애 쪽이 오르는 달은 2 · 7 · 8월」, 칩은 2 · 7 · 8 · 9 · 10 · 11월).
+    if (ents.size) for (const l of x.lines) { const mu = WISH_UP_LINE.exec(l.value.trim()), md = mu ? null : WISH_DOWN_LINE.exec(l.value.trim()); const mm = mu ?? md; if (!mm) continue;
+      const d = DOM[mm[1].split("·")[0]]; if (!d) continue; const said = new Set(monthsIn(l.meaning)), want = mu ? "↑" : "↓";
+      const miss = [...ents.values()].filter(e => e.signals?.[d as "love"] === want && !said.has(e.ganji.hangul)).map(e => e.ganji.hangul);
+      if (miss.length) out.push({ where: l.id, rule: "wish_chip", text: `${miss.join("·")}월 빠짐(${mm[1]} 칩 ${want}) — 「${l.value}」` }); } }
   // AM2-5 2부 충돌: 쉬어 가기 좋은 달 ↔ 연애·사람이 오르는 달 · 바람 달(P4 판독 세운 경계 #6).
   const upMonths = new Set([...wishMonths, ...x.lines.filter(l => /(연애|사람)[^|·]{0,8}오르는 달/.test(l.value)).flatMap(l => [...monthsIn(l.meaning)])]);
   for (const l of x.lines.filter(l2 => /쉬어 가기 좋은 달/.test(l2.value))) { const clash = [...monthsIn(l.meaning)].filter(m => upMonths.has(m)); if (clash.length) out.push({ where: l.id, rule: "rest_conflict", text: `쉬는 달 ${clash.join("·")}월이 연애·사람·바람이 오르는 달과 겹침` }); }

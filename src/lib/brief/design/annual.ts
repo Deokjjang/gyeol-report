@@ -225,7 +225,8 @@ export function annualEvidence(c: AnnualCtx): { evidence: Record<string, Evidenc
   const statusUnknownWork = !wk, statusUnknownLove = !lk;
   const mbtiLines = c.mbti ? [...pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g1), 2, "mbti1", "profile"), ...(g2 !== g1 ? pick(deepLines(c.k, "annual-mbti", `mbti:${c.mbti}`, g2), 1, "mbti2", "profile") : [])] : [];
   // AM2-11 1부 1(P10 ③ annual-1 「일과 연애, 사람 쪽 소망이 이 세 달에」 — 바람 달 2·7·10월은 일 칩 →): 바람 달은 바람 영역마다 따로 — 그 영역 칩이 오르는 달만 그 영역 줄에(「영역 하나만 올라도 바람 달」 꼴을 없앤다).
-  const wishBy = wishDomainsOf(c.wish.topics).map(w => ({ ...w, up: monthsBy(listMonths, w.d, "↑").slice(0, 3), down: monthsBy(listMonths, w.d, "↓").slice(0, 3) }));
+  // AM2-11 측정 중 고침: 바람 영역 달 목록은 그 영역 칩 달 전부(앞 세 달만 자르면 「연애 쪽이 오르는 달은 …」이 영역 장 목록보다 짧아 사실 결함 — P11 annual-1).
+  const wishBy = wishDomainsOf(c.wish.topics).map(w => ({ ...w, up: monthsBy(listMonths, w.d, "↑"), down: monthsBy(listMonths, w.d, "↓") }));
   const wishMonths = [...new Set(wishBy.flatMap(w => w.up))];
   const restClash = new Set([...monthsBy(listMonths, "love", "↑"), ...monthsBy(listMonths, "people", "↑"), ...wishMonths]);
   const evidence: Record<string, Evidence | null> = {
