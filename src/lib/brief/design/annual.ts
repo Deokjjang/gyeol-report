@@ -173,7 +173,8 @@ export function loveLineFits(line: string, status: string): boolean {
   const solo = status === "single" || status === "some", paired = status === "dating" || status === "marriage_preparing" || status === "married";
   // AM2-12 1부 1: 썸은 「연인 있음」(연인 · 데이트)도 「만나는 사람 없음」(새 인연 · 소개팅 · 만남 기회)도 전제하지 않는 줄만(premise.ts 필요 입력).
   if (status === "some" && premiseHits(line.split(" → ")[0], SOME_INPUTS).some(h => h.need.startsWith("rel:"))) return false;
-  return !(solo && /^만나는 사람이 있다면/.test(line)) && !(paired && /새 인연/.test(line));
+  // AM2-12 4부(P12 annual-p5 연애 중 Y12 「아껴 주고 챙겨 주는 사람에게 마음이 열리기 쉬운 때」 — 짝 없음 전제): 짝이 있으면 「사람에게 마음이 열리기 쉬운」 줄은 뺀다.
+  return !(solo && /^만나는 사람이 있다면/.test(line)) && !(paired && /새 인연|(?:사람|상대)에게 마음이 열리기 쉬운/.test(line));
 }
 const SOME_INPUTS: Inputs = { job: "none", rel: "some", children: "none", residence: "none", shop: false };
 /** AM2-12 2부(P11 무작위 학생 R1-2 「한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때」): 낱말표 밖 일터 전제 줄 — 돈을 버는 일(직장인 · 자영업 · 사업 · 프리랜서)이 있을 때만. 세운 DB 전수 2줄. */
@@ -195,6 +196,8 @@ export const YEAR_PACE: Readonly<Record<string, "push" | "settle">> = {
   "새 일을 벌이기보다 지금 자리의 효율을 다듬는 쪽이 이득인 흐름": "settle",
   "확장보다 정비가 어울리는 흐름": "settle",
   "배우고 채우며 쉬어 가기 좋은 흐름": "settle",
+  // AM2-12 4부(P12 판독 — 측정 중 고침): 정미 해 그림 줄의 속도 말 「느긋하게」 ↔ 흐름 4 이상(밀고 갈 해) — annual-p6a · 무작위 1117 1장 「순한 양 같은 해」, 무작위 1118 표지 「느긋한 한 해」.
+  "늦여름 저녁 언덕에서 느긋하게 풀을 뜯는 순한 양": "settle",
   "밀어붙이는 추진력이 커지는 흐름": "push",
   "혼자 다시 시작해 보려는 힘이 붙는 흐름": "push",
   "혼자 꾸리는 작은 프로젝트나 독립 작업을 시작해 보기 좋은 흐름": "push",

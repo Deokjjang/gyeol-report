@@ -70,6 +70,19 @@ const STATUS_OF: Readonly<Record<string, string>> = { "연애 중인": "dating",
 const YEAR_SUBJ = /(?<![가-힣])(?:20\d\d년|[갑을병정무기경신임계][자축인묘진사오미신유술해]년|이 해|올해|한 해)/;
 const VERDICT_SETTLE = /밀어붙이기보다 (?:다듬|쌓|다지|정비)|확장보다 정비|벌이기보다 (?:다듬|정비|효율)|다질 해(?:예요|입니다|에요|라|로)|다지는 해(?:예요|입니다|에요)/;
 const VERDICT_PUSH = /밀고 갈 해(?:예요|입니다|에요|라|로)|밀어붙일 해|확장할 해/;
+/** AM2-12 4부(P12 판독 — 측정 중 고침): 「밀어붙이는 해라기보다」(해 말이 스스로 주어) · 반대 짝. */
+const NOT_PUSH = /(?<![가-힣])(?:밀어붙이는|밀고 가는|밀고 갈) 해(?:라기보다|가 아니)/;
+const NOT_SETTLE = /(?<![가-힣])(?:다지는|다질|버티는|버틸) 해(?:라기보다|가 아니)/;
+/** 해 그림 말의 속도: 「정미년은 … 느긋하게 풀을 뜯는 순한 양 같은 해입니다」(흐름 4 이상 · 밀고 갈 해 — P12 annual-p6a · 무작위 1117). */
+const YEAR_CALM = new RegExp(`(?<![가-힣])(?:20\\d\\d년|${GJ}년)은 [^.!?]*(?:느긋|한가로|잔잔|고요)[^.!?]*해(?:입니다|예요|이에요|라)`);
+/** 앞 달 이름 지시: 「앞 달인 6월 · 병오월」 — 바로 앞 달(다리 달 포함)이어야 한다(「같은 자리의 앞 달인」은 같은 자리 앞선 달 — 뺀다). */
+const PREV_NAMED = new RegExp(`(?<![가-힣])(?<!같은 자리의 )(?:앞 ?달|지난 ?달|전달)(?:인|이던|이었던) ${MONTH_LOOSE}`);
+/** key 안 영역 풀림 말: 「관계 쪽은 말투가 부드러워져 사이가 편해지는 흐름」 — 그 영역 칩이 살핌(↓)이면 반대. */
+const CLAIM_EASE = new RegExp(`(${DOMS})(?: 쪽)?(?:은|는) (?:(?![은는] )[^.!?])*?(?:편해지는|부드러워지는|풀리는|가까워지는) (?:흐름|달|때|쪽)`);
+/** 목록 뒤 달: 「두 달이 지나면 오르는 달이 이어서 오니」 — 목록 마지막 달 다음 달이 그 영역 그 방향. */
+const NEXT_RUN = /(?:두|세|네) 달이 지나면 (오르는|늦출|살필|새기 쉬운) 달이 (?:이어서|바로|곧)/;
+/** 해 문단 「가까운 데서 마찰」 — 2027 해가 태어난 날 자리와 충 · 형 · 파 · 해 · 원진으로 걸려야 한다. */
+const NEAR_RUB = /(?<![가-힣])가까운 (?:데|사이|자리)(?:에서|서|와|과)? ?(?:마찰|부딪)/;
 
 export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
   const out: ChunkFlag[] = [];
@@ -126,7 +139,15 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
               out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${nm}」 — ${pv.label.split(" (")[0]}에는 ${nm} 없음${where ? `(${where.label.split(" (")[0]})` : ""}`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); } }
           const mm = !nm ? PREV_MEAN.exec(sen) : null, fam = mm ? MEAN_KINDS.find(([re]) => re.test(mm[1]))?.[1] : undefined;
           if (fam) { const k = allMonths.findIndex(e => e.key === cur.key), pv = k > 0 ? allMonths[k - 1] : undefined;
-            if (pv && !pv.badges.some(bd => fam.includes(bd.kind))) out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${mm![1]}」 — ${pv.label.split(" (")[0]}에는 ${fam.join("·")} 관계 없음`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); } }
+            if (pv && !pv.badges.some(bd => fam.includes(bd.kind))) out.push({ ...at, rule: "prev_month", detail: `「앞 달 ${mm![1]}」 — ${pv.label.split(" (")[0]}에는 ${fam.join("·")} 관계 없음`, hint: "앞 달이라고 하지 말고 그 관계가 있는 달 이름을 그대로(카드 「앞:」 줄)" }); }
+          // AM2-12 4부: 「앞 달인 6월 · 병오월」(8월 key — 앞 달은 7월).
+          const pn = PREV_NAMED.exec(sen);
+          if (pn) { const k = allMonths.findIndex(e => e.key === cur.key), pv = k > 0 ? allMonths[k - 1] : undefined;
+            if (pv && pv.ganji.hangul !== pn[1]) out.push({ ...at, rule: "prev_month", detail: `「앞 달인 ${pn[1]}월」 — 앞 달은 ${pv.label.split(" (")[0]}`, hint: "앞 달이라고 하지 말고 그 달 이름만 그대로(카드 「앞:」 줄)" }); } }
+        // AM2-12 4부: key 안 「관계 쪽은 … 편해지는 흐름」 — 그 영역 칩이 살핌이면 반대.
+        if (isKey && cur?.signals) { const me = CLAIM_EASE.exec(sen);
+          if (me) { const bad = [...me[1].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter((d): d is Dom => Boolean(d) && cur.signals![d as Dom] === "↓");
+            if (bad.length) out.push({ ...at, rule: "month_dir", detail: `풀림 주장 ≠ 칩: ${cur.label.split(" (")[0]} ${bad.map(d => `${d} ↓`).join(" · ")}`, hint: "그 달 칩(화면 조심할 쪽)과 반대로 쓰지 않는다" }); } }
         // ---- list_full ---- 목록 주장은 그 영역(여럿이면 모두 같은 방향인 달) 칩 달을 다 담는다.
         { const mf = CLAIM_FULL.exec(sen);
           if (mf) { const dir = /오르|올라/.test(mf[0]) ? "↑" : "↓", doms = [...mf[0].matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean) as Dom[];
@@ -162,7 +183,12 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
           const bt = /(?:두|세|네) 달 사이(?:에는|의 달에는|의 달은|에도)?[^.!?]*흐름이 (잔잔|조용|순한|거센|거세)/.exec(sen);
           if (bt) { const xs = ref(sen.slice(0, bt.index)); if (xs.length >= 2) { const lo2 = xs[0], hi2 = xs[xs.length - 1], mid = allMonths.slice(lo2 + 1, hi2).filter((_e, j) => !xs.includes(lo2 + 1 + j));
             const calm = /잔잔|조용|순한/.test(bt[1]), okB = mid.some(e => (calm ? e.flow.score <= 2 : e.flow.score >= 4));
-            if (mid.length && !okB) out.push({ ...at, rule: "list_shape", detail: `「사이 달 흐름 ${bt[1]}」 — 사이 달 ${mid.map(e => `${e.label.split(" (")[0]} ${e.flow.score}`).join(" · ")}`, hint: "사이 달 흐름은 카드 흐름 그대로" }); } } }
+            if (mid.length && !okB) out.push({ ...at, rule: "list_shape", detail: `「사이 달 흐름 ${bt[1]}」 — 사이 달 ${mid.map(e => `${e.label.split(" (")[0]} ${e.flow.score}`).join(" · ")}`, hint: "사이 달 흐름은 카드 흐름 그대로" }); } }
+          // AM2-12 4부: 「두 달이 지나면 오르는 달이 이어서」 — 목록 마지막 달 다음 달이 그 영역 그 방향.
+          const nr = NEXT_RUN.exec(sen);
+          if (nr) { const src = listSrc(sen.slice(0, nr.index)), xs = ref(sen.slice(0, nr.index)), dm = [...src.matchAll(DOM_G)].map(x2 => DOM_OF[x2[1]]).filter(Boolean)[0] as Dom | undefined;
+            const nx = xs.length ? allMonths[xs[xs.length - 1] + 1] : undefined, want = nr[1] === "오르는" ? "↑" : "↓";
+            if (dm && nx?.signals && nx.signals[dm] !== want) out.push({ ...at, rule: "list_shape", detail: `「달이 지나면 ${nr[1]} 달이 이어서」 — ${nx.label.split(" (")[0]} ${dm} ${nx.signals[dm]}`, hint: "목록 뒤 달은 말하지 않거나 카드 그대로" }); } }
         // ---- status_claim ---- 입력 상태 말 = 고객이 적은 연애 상태.
         { const st = STATUS_SAY.exec(sen), f = b.brief?.person.facts;
           if (st && f) { const mine = f.relationshipNote === "some" ? "some" : f.relationship;
@@ -170,7 +196,15 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
         // ---- verdict_dir ---- 해가 주어인 문장의 방향 말 = 해 판정(흐름표 · 키워드).
         { const ye = entries.find(e => e.kind === "year"), push = ye ? ye.flow.score >= 4 : null;
           if (!isKey && push !== null && YEAR_SUBJ.test(sen)) { const bad = push ? VERDICT_SETTLE.exec(sen) : VERDICT_PUSH.exec(sen);
-            if (bad) out.push({ ...at, rule: "verdict_dir", detail: `「${bad[0]}」 — 해 판정 ${push ? "밀고 갈 해" : "다질 해"}`, hint: "해를 쓰는 방향은 1장 판정 한 줄과 같게" }); } }
+            if (bad) out.push({ ...at, rule: "verdict_dir", detail: `「${bad[0]}」 — 해 판정 ${push ? "밀고 갈 해" : "다질 해"}`, hint: "해를 쓰는 방향은 1장 판정 한 줄과 같게" }); }
+          // AM2-12 4부: 「밀어붙이는 해라기보다」 — 해 말이 스스로 주어(앞 문장의 2027년).
+          const self = !isKey && push !== null ? (push ? NOT_PUSH.exec(sen) : NOT_SETTLE.exec(sen)) : null;
+          if (self && !(YEAR_SUBJ.test(sen) && (push ? VERDICT_SETTLE : VERDICT_PUSH).test(sen))) out.push({ ...at, rule: "verdict_dir", detail: `「${self[0]}」 — 해 판정 ${push ? "밀고 갈 해" : "다질 해"}`, hint: "해를 쓰는 방향은 1장 판정 한 줄과 같게" });
+          const calm = !isKey && push && !self ? YEAR_CALM.exec(sen) : null;
+          if (calm) out.push({ ...at, rule: "verdict_dir", detail: `해 그림 속도 말 「${calm[0].match(/느긋|한가로|잔잔|고요/)![0]}」 — 해 흐름 ${ye!.flow.score}/5 · 밀고 갈 해`, hint: "해 그림의 속도 말은 흐름표 해 판정과 같은 쪽(느긋 · 잔잔은 다질 해에만)" }); }
+        // AM2-12 4부: 해 문단 「가까운 데서 마찰」 — 2027 해가 태어난 날 자리와 부딪치는 관계로 걸려야 한다.
+        { const nb = !isKey && NEAR_RUB.test(sen) && !monthsOf(p).length ? entries.find(e => e.kind === "year") : undefined;
+          if (nb && !nb.badges.some(bd => ["CHUNG", "HYEONG", "PA", "HAE", "WONJIN"].includes(bd.kind) && badgeSeats(bd.with).has("날"))) out.push({ ...at, rule: "seat_ref", detail: `「가까운 데서 마찰」 — ${nb.label.split(" (")[0]}의 태어난 날 자리 관계: ${nb.badges.filter(bd => badgeSeats(bd.with).has("날")).map(bd => relName(bd.label)).join(" · ") || "없음"}`, hint: "가까운 자리 마찰은 그 해가 태어난 날 자리와 충 · 형 · 파 · 해로 걸릴 때만" }); }
         // ---- flow_claim ----
         if (isKey && cur) {
           const f = cur.flow.score;

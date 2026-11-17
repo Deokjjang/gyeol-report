@@ -12,9 +12,9 @@ import { am211Flags } from "@/lib/writer/chunked/claims";
 import type { FinalChapter } from "@/lib/writer/safety";
 import { chunkPlan, chunkUser, renderCard } from "@/lib/writer/chunked/prompt";
 import { premiseHits, type Inputs } from "@/lib/brief/premise";
-import { annualTagOf, dropSelfCompare, workLineFits, YEAR_PACE } from "@/lib/brief/design/annual";
+import { annualTagOf, dropSelfCompare, loveLineFits, workLineFits, YEAR_PACE } from "@/lib/brief/design/annual";
 import { atomsOf, dimsOf, refineLog } from "@/lib/writer/chunked/refine";
-import { writerKnowledge } from "@/lib/writer/publish";
+import { coverIssue, writerKnowledge } from "@/lib/writer/publish";
 import type { Intake } from "@/lib/writer/chunked/intake";
 
 // 무작위 표본 브리프를 여러 번 만든다 — 전체 시험(병렬 부하)에서 기본 5초를 넘는다.
@@ -76,8 +76,9 @@ describe("AM2-12 1부 2 해 판정 ↔ 해 범위 줄(덕짱님 답 (A) — 반�
   const norm = (t: string) => t.replace(/지금 /g, "");
   const PACE = new Map(Object.entries(YEAR_PACE).map(([a, b]) => [norm(a), b] as const));
   /** 방향 낱말이 들었지만 해의 방향이 아닌 줄(영역 하나의 속도 · 비유 · 영역 일 꼴) — 2,010명 전수에서 모은 목록. 새 줄이 나오면 이 표나 YEAR_PACE에 넣는다. */
-  const NOT_PACE = /^(땅이 뜨겁고 말라 있어 쉼과 여유로 물기를 채워야 하는 해|크게 타오르던 불이 등불로 잦아들어|둘 사이|연애 쪽|자격·교육 이수로|계약·증명처럼|한 가지 기술을 깊게|나를 돌보고 마음을 정리|돈이 크게 들어오고|둘만의 시간을|들어오는 돈과 고정 지출|맡은 일을 빈틈없이|예의와 약속을|마감과 압박이|친구·(주변 사람|동료)과 나눠 내는|정해진 절차를 지킬수록|고정 수입과 고정 지출|혼자 있는 시간이 좋아져|모임·행사에서 새 얼굴|시간표를 지키는|정해진 일과를 지키며|연인과는|배우자와는|계획표대로|서로 내 방식이|공모전·대외활동으로|활동 반경이 넓어지고|각자 바깥 일정과|외부 미팅·출장으로|새 툴·자격·강의로|규칙과 평가가 또렷해지는|새 인연은|쌓인 말이|난도 높은 시험|사람 만나는 자리가|나를 편하게 여기는 사람이|평판을 신경 쓰다)/;
-  const PACE_WORD = /밀어|밀고|추진|확장|넓히|벌이|시작|도전|정비|다듬|다지|쌓|실속|효율|쉬어 가|굳히/;
+  const NOT_PACE = /^(땅이 뜨겁고 말라 있어 쉼과 여유로 물기를 채워야 하는 해|편안하고 느긋한 분위기가 매력이 되는 흐름|크게 타오르던 불이 등불로 잦아들어|둘 사이|연애 쪽|자격·교육 이수로|계약·증명처럼|한 가지 기술을 깊게|나를 돌보고 마음을 정리|돈이 크게 들어오고|둘만의 시간을|들어오는 돈과 고정 지출|맡은 일을 빈틈없이|예의와 약속을|마감과 압박이|친구·(주변 사람|동료)과 나눠 내는|정해진 절차를 지킬수록|고정 수입과 고정 지출|혼자 있는 시간이 좋아져|모임·행사에서 새 얼굴|시간표를 지키는|정해진 일과를 지키며|연인과는|배우자와는|계획표대로|서로 내 방식이|공모전·대외활동으로|활동 반경이 넓어지고|각자 바깥 일정과|외부 미팅·출장으로|새 툴·자격·강의로|규칙과 평가가 또렷해지는|새 인연은|쌓인 말이|난도 높은 시험|사람 만나는 자리가|나를 편하게 여기는 사람이|평판을 신경 쓰다)/;
+  // AM2-12 4부: 속도 말에 「느긋 · 잔잔 · 고요 · 한가」(해 그림 줄 「느긋하게 풀을 뜯는 순한 양」을 1부 표가 놓쳤다).
+  const PACE_WORD = /밀어|밀고|추진|확장|넓히|벌이|시작|도전|정비|다듬|다지|쌓|실속|효율|쉬어 가|굳히|느긋|잔잔|고요|한가/;
   it("seed 1117: 「밀고 갈 해」 — Y 「드러낸 것을 정성껏 다듬고 차곡차곡 쌓아 두기 좋은 해」를 카드에서 뺀다", () => {
     expect(verdictOf(P1117)).toBe("밀고 갈 해");
     expect(yearLines(P1117).map(l => l.value)).not.toContain("드러낸 것을 정성껏 다듬고 차곡차곡 쌓아 두기 좋은 해");
@@ -191,5 +192,53 @@ describe("AM2-12 2부 재료 — 낱말표 밖 일터 전제 줄(「보상 이�
     expect(workLineFits("한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때", "student")).toBe(false);
     expect(workLineFits("한 일을 숫자와 기록으로 남겨 보상 이야기를 꺼내기 좋은 때", "employee")).toBe(true);
     expect(texts(P1117.intake)).not.toMatch(/보상 이야기|보상도 부담도/);
+  });
+});
+
+describe("AM2-12 4부 측정 중 고침 — P12 판독이 찾은 엔진 틀림 가운데 놓친 꼴(걸림) · 맞는 꼴(통과)", () => {
+  const ctx = (x: X): BlockCtx => ({ intake: x.intake, brief: x.brief, ...(x.brief.mbti ? { mbtiType: x.brief.mbti.type } : {}) });
+  const ch = (n: number, heading: string, paragraphs: string[], keys?: string[]): FinalChapter => ({ n, id: "x", title: "x", source: "writer", chars: 0, sections: [{ heading, paragraphs }], ...(keys ? { keys } : {}) });
+  const rules = (x: X, c: FinalChapter) => am211Flags([c], ctx(x)).map(f => f.rule);
+  it("prev_month: P12 annual-p5 8월 「연인과는 앞 달인 6월 · 병오월의 부딪침과 달리」(앞 달은 7월) 걸림 / 바로 앞 달 · 「같은 자리의 앞 달인」 통과", () => {
+    const m08 = (s: string) => rules(books["annual-p5"], ch(7, "2027-M07", [s], ["2027-M07"]));
+    expect(m08("연인과는 앞 달인 6월 · 병오월의 부딪침과 달리 서로의 생각이 한곳으로 모입니다.")).toContain("prev_month");
+    expect(m08("앞 달인 7월 · 정미월과 달리 서로의 생각이 한곳으로 모입니다.")).not.toContain("prev_month");
+    expect(m08("같은 자리의 앞 달인 6월 · 병오월과 달리 서로의 생각이 한곳으로 모입니다.")).not.toContain("prev_month");
+  });
+  it("verdict_dir: P12 annual-p5(밀고 갈 해) 1장 「밀어붙이는 해라기보다 맡은 일을 반듯하게 받쳐 가는 해로 읽힙니다」 걸림 / annual-p6b(버티며 다질 해) 통과", () => {
+    const s = "밀어붙이는 해라기보다 맡은 일을 반듯하게 받쳐 가는 해로 읽힙니다.";
+    expect(rules(books["annual-p5"], ch(1, "2027년은 밀고 갈 해일까, 다질 해일까?", [s]))).toContain("verdict_dir");
+    expect(rules(books["annual-p6b"], ch(1, "2027년은 밀고 갈 해일까, 다질 해일까?", [s]))).not.toContain("verdict_dir");
+  });
+  it("month_dir: P12 annual-p6b 1월 「관계 쪽은 말투가 부드러워져 사이가 편해지는 흐름이에요」(사람 ↓) 걸림 / 2월(사람 →) 통과", () => {
+    const s = "관계 쪽은 말투가 부드러워져 사이가 편해지는 흐름이에요.";
+    expect(rules(books["annual-p6b"], ch(7, "2026-M12", [s], ["2026-M12"]))).toContain("month_dir");
+    expect(rules(books["annual-p6b"], ch(7, "2027-M01", [s], ["2027-M01"]))).not.toContain("month_dir");
+  });
+  it("list_shape: P12 annual-1 돈 장 「돈이 새기 쉬운 달은 2 · 3월 … 두 달이 지나면 오르는 달이 이어서 오니」(4월 돈 →) 걸림 / 다음 달이 오르면 통과", () => {
+    const s = (a: string) => rules(books["annual-1"], ch(3, "돈이 새기 쉬운 구멍은 어디일까?", [a, "두 달이 지나면 오르는 달이 이어서 오니, 그때 쓸 여유를 지금부터 만들어 두는 셈입니다."]));
+    expect(s("돈이 새기 쉬운 달은 2월 · 임인(壬寅)월과 3월 · 계묘(癸卯)월이에요.")).toContain("list_shape");
+    expect(s("돈을 아껴 둘 달은 5월 · 을사월과 6월 · 병오월이에요.")).not.toContain("list_shape");
+  });
+  it("seat_ref: P12 annual-1 큰 그림 「가까운 데서 마찰이 생기기 쉬운 만큼」(2027은 태어난 날 자리와 오미합뿐) 걸림 / seed 1117(술미형 — 태어난 날 자리) 통과", () => {
+    const s = "가까운 데서 마찰이 생기기 쉬운 만큼 손볼 일이 드러나면 그때 다듬으면 돼요.";
+    expect(rules(books["annual-1"], ch(1, "2027년은 밀고 갈 해일까, 다질 해일까?", [s]))).toContain("seat_ref");
+    expect(rules(P1117, ch(1, "2027년은 밀고 갈 해일까, 다질 해일까?", [s]))).not.toContain("seat_ref");
+  });
+  it("cover: P12 seed 1118(2027 흐름 5) 표지 「등불처럼 오래 비추는 느긋한 한 해」 걸림(엔진 표지로) / annual-p6b(흐름 2) 통과 · 4종은 이 검사 밖", () => {
+    const r1118 = intakeOf(randomPayload(2, "annual_fortune", 1118));
+    expect(coverIssue("등불처럼 오래 비추는 느긋한 한 해", r1118.brief, [])?.reason).toMatch(/속도 말\(느긋\)/);
+    expect(coverIssue("늦여름 마른 흙 위에서 등불이 오래 타는 해", r1118.brief, [])).toBeNull();
+    expect(coverIssue("등불처럼 오래 비추는 느긋한 한 해", books["annual-p6b"].brief, [])?.reason ?? "").not.toMatch(/속도 말/);
+  });
+  it("입력 상태: P12 annual-p5(연애 중) 카드 Y12 「아껴 주고 챙겨 주는 사람에게 마음이 열리기 쉬운 때」 — 짝 있음이면 빼고 솔로 · 썸은 그대로", () => {
+    const l = "아껴 주고 챙겨 주는 사람에게 마음이 열리기 쉬운 때";
+    for (const st of ["dating", "marriage_preparing", "married"]) expect(loveLineFits(l, st)).toBe(false);
+    for (const st of ["single", "some"]) expect(loveLineFits(l, st)).toBe(true);
+    expect(texts(books["annual-p5"].intake)).not.toMatch(/사람에게 마음이 열리기 쉬운/);
+  });
+  it("해 그림 줄: 밀고 갈 해(annual-p5 · p6a)는 카드에서 「느긋하게 풀을 뜯는 순한 양」을 빼고, 다질 해(annual-p6b)는 남긴다", () => {
+    expect(YEAR_PACE["늦여름 저녁 언덕에서 느긋하게 풀을 뜯는 순한 양"]).toBe("settle");
+    for (const id of ["annual-p5", "annual-p6a"] as const) expect(renderCard(books[id].intake)).not.toMatch(/느긋하게 풀을 뜯는 순한 양/);
   });
 });

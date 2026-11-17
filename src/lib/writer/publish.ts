@@ -408,6 +408,10 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
   { const clash = imageClash(v); if (clash) return { reason: `그림 안 시간·계절 모순(${clash}) — 한 시간·한 계절의 그림으로`, level: "hard" }; }
+  // AM2-12 4부(P12 세운 표지 「등불처럼 오래 비추는 느긋한 한 해」 — 2027 흐름 5 거셈 · 밀고 갈 해): 세운 표지의 속도 말은 그 해 흐름과 같은 쪽.
+  if (brief.product === "annual_fortune") { const f = brief.timeline?.entries.find(e => e.kind === "year")?.flow.score;
+    const w = f === undefined ? undefined : f >= 4 ? v.match(/느긋|잔잔|고요|한가|쉬어 가|숨 고르/)?.[0] : f <= 2 ? v.match(/거센|거세|세차|몰아치|질주|폭발/)?.[0] : undefined;
+    if (w) return { reason: `해 흐름 ${f}/5와 반대인 속도 말(${w}) — 표지는 흐름표 해 판정과 같은 쪽`, level: "hard" }; }
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
     const words = jobWordsOf(brief.person.facts.job.detail);
