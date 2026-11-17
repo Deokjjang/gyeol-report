@@ -40,7 +40,7 @@ describe("AM2-5 1부 카드 값은 고객 말로", () => {
   it("작가 카드: 핵심 관계 뜻은 「화면에 있음 · 풀어 쓰지 않음」, 대운 key의 「대운 안의 위치」 줄 없음, 각도 없음", () => {
     const a = setup("annual-1"), m = setup("major-1");
     const card = renderCard(a.intake), mcard = renderCard(m.intake);
-    expect(card).toMatch(/오미합 \| 이름과 핵심어만 · 핵심어: 맞물려 묶이는 힘/);
+    expect(card).toMatch(/오미합 \| ▸ 맞물려 묶이는 힘/);
     // 해 key 줄(Y)에는 위치 줄이 없다(3장 서 있는 대운 D1의 위치는 그 장 근거라 남는다).
     expect(mcard.split("\n").filter(l => /^- Y\d+ \|/.test(l) && /대운 안의 위치/.test(l))).toEqual([]);
     expect(card).not.toMatch(/ · 각도: /);

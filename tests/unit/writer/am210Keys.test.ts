@@ -41,7 +41,7 @@ describe("AM2-10 key 지시(3부)", () => {
 describe("AM2-10 작가 규칙 · 묶음 지시(3부)", () => {
   const { intake } = intakeOf(payloadFor("annual-p6b"));
   it("지침 판 · 빠진 꼴 규칙 줄", () => {
-    expect(CHUNK_PROMPT_VERSION).toBe("chunk-prompt-am2-12");
+    expect(CHUNK_PROMPT_VERSION).toBe("chunk-prompt-am2-13");
     const r = chunkRules(ruleCtxOf(intake));
     expect(r).not.toMatch(/「여는 방식」|「짝 꼴」|짝은 둘째 문단의 마지막 문장|이웃 달과 같은 꼴 금지/);
     expect(r).toContain("「기조」는 지킬 것이다");

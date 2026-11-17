@@ -667,7 +667,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
 function dedupeCardText(chapters: readonly ChapterPlan[], lines: readonly Line[]): ChapterPlan[] {
   const groups = new Map<string, string[]>(), byId = new Map(lines.map(l => [l.id, l] as const));
   // 그 해 · 그 달 · 고객 입력 줄(Y · M · I)만 — 시스템 표시 줄(「화면에 있음 …」 「가리키기」 「머리 문장에 있음」)은 key마다 같은 꼴이 정상이다.
-  for (const l of lines) { if (!/^(year|month|input)$/.test(l.subject) || /이름과 핵심어만|화면에 있음|머리 문장에 있음|가리키기|이 시기가 속한 대운/.test(l.meaning)) continue; const nm = (l.meaning || l.value).replace(/[^가-힣]/g, ""); if (nm.length >= 12) groups.set(nm, [...(groups.get(nm) ?? []), l.id]); }
+  for (const l of lines) { if (!/^(year|month|input)$/.test(l.subject) || /^▸|화면에 있음|머리 문장에 있음|가리키기|이 시기가 속한 대운/.test(l.meaning)) continue; const nm = (l.meaning || l.value).replace(/[^가-힣]/g, ""); if (nm.length >= 12) groups.set(nm, [...(groups.get(nm) ?? []), l.id]); }
   // 자리(장 · key/절)마다: 절의 줄이 그 절 질문의 근거(달 목록 · 핵심 주장)이거나 빼면 절에 줄이 하나 남으면 「지켜야 할 자리」다.
   const isList = (id: string) => /(1[0-2]|[1-9])월 · /.test(`${byId.get(id)?.value ?? ""} ${byId.get(id)?.meaning ?? ""}`);
   type Place = { n: number; id: string; key?: string; sec?: number; keep: boolean };
@@ -731,7 +731,8 @@ const GROUP_DOMAIN: Readonly<Record<string, string>> = { WEALTH: "돈", OFFICER:
 type KeyExtra = { readonly link: LinkCtx; readonly others: readonly { readonly e: TimelineEntry; readonly label: string }[]; readonly pair?: { readonly id: string; readonly why: string; readonly reason: PairReason }; readonly mbtiType: string | null; readonly addPair: (myeongri: string, why: string, reason: PairReason, fusionId?: string) => string; readonly mbtiSeed: (domain: string) => string | undefined };
 /** AM2-5 1부: 화면이 보여 주는 뜻 줄은 작가에게 표시와 핵심어만(풀어 쓰지 않는다). */
 // AM2-8 4부 뿌리 4: 설계도는 본문용 말만 — 「화면에 있음」 같은 화면 쪽 말을 주지 않는다(P7 major-p6a 5 · 2032 「…화면에 이미 있는 줄이라」가 이 표시에서 샜다).
-export const SCREEN_MARK = "이름과 핵심어만";
+// AM2-13 1부(P12 r1117 「이름과 핵심어만 쓰면 되니 … 두겠습니다」 · 「…라는 이름으로만 두고 … 읽겠습니다」): 뜻 칸에 지시 말을 두지 않는다 — 표시 기호 + 핵심어만(덕짱님 답 1: 「머리 문장에 있음」 · 가리키기 줄도 같은 꼴).
+export const SCREEN_MARK = "▸";
 const SCENE_COUNT = /\d|수십|수백|여러 명|(?<![가-힣])(두|세|네|다섯|여섯|일곱|여덟|아홉|열|스무|서른|몇)(\s?)(개|번|명|군데|건|통|시간|가지|사람|달|줄|장|권|곳|일|주|잔|판|층)|(?<![가-힣])(둘|셋|넷)(이|과|와|을|를|은|도)?(?![가-힣])|줄줄이|쏟아|두세|서너/;
 function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s: Subject, v: string, m?: string, n?: number) => string | null, brief: Brief, year: number, seen: Seen, seed: (s: string) => string | undefined, dayunTenGod: string | undefined, x: KeyExtra): KeyPlan {
   const month = e.kind === "month", subj: Subject = month ? "month" : "year", unit = month ? "달" : "해";
@@ -747,15 +748,15 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const tgShort = (tg: string) => TEN_GOD_SHORT[tg.replace(/\(.*$/, "")] ?? "";
   let pointer: string | undefined;
   for (const c of core) {
-    if (c.kind === "rel") push(c.badge.kind === "GONGMANG" ? "공망" : `${c.badge.with ? `${seatShort(c.badge.with)} 자리와 ` : ""}${c.name}`, `${SCREEN_MARK} · 핵심어: ${REL_SHORT[c.badge.kind] ?? "걸리는 관계"}`);
-    else if (c.kind === "transition") push(`새 대운 시작: ${e.dayun?.ganji ?? ""}`, `머리 문장에 있음 · 풀어 쓰지 않음 · 핵심어: ${c.tenGod}의 10년`);
+    if (c.kind === "rel") push(c.badge.kind === "GONGMANG" ? "공망" : `${c.badge.with ? `${seatShort(c.badge.with)} 자리와 ` : ""}${c.name}`, `${SCREEN_MARK} ${REL_SHORT[c.badge.kind] ?? "걸리는 관계"}`);
+    else if (c.kind === "transition") push(`새 대운 시작: ${e.dayun?.ganji ?? ""}`, `${SCREEN_MARK} ${c.tenGod}의 10년`);
     else {
       const tg = c.side === "sky" ? stem : branch;
-      push(`${c.side === "sky" ? "하늘" : "땅"} 글자 ${tg}`, `${SCREEN_MARK} · 핵심어: ${tgShort(tg)}`);
+      push(`${c.side === "sky" ? "하늘" : "땅"} 글자 ${tg}`, `${SCREEN_MARK} ${tgShort(tg)}`);
       if (c.overlap) {
         // AM2-5 2부 같은 주장 두 곳(P4 세운 M22 = M55): 같은 대운 겹침이 앞 key에 이미 있으면 이 key는 엔진 가리키기 말로만.
         const prev = seen.overlap.get(c.name);
-        if (prev) { pointer = `${prev}처럼 대운과 같은 ${c.name} 기운이 겹치는 ${unit}`; push("대운과 겹침", `가리키기: 「${pointer}」 — 겹침의 뜻은 다시 풀지 않음`); }
+        if (prev) { pointer = `${prev}처럼 대운과 같은 ${c.name} 기운이 겹치는 ${unit}`; push("대운과 겹침", `${SCREEN_MARK} ${pointer}`); }
         else { seen.overlap.set(c.name, label); push("대운과 겹침", `이 시기가 속한 대운도 ${c.name}의 10년이라 같은 기운이 겹침`); }
       }
     }
@@ -780,7 +781,7 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   // AM2-5 1부 key 짝: 하늘 십성 줄(화면 표시) × MBTI — 이 key에서만.
   // AM2-6 2부 짝 범위(명리 쪽) = 하늘 십성 줄 + 그 십성에서 나온 영역 줄(세운 달 annual-domain tenGod:하늘 · 대운 해 periodDomains(하늘 십성)).
   let pairId: string | undefined, pairScope: string[] | undefined;
-  if (x.pair && x.mbtiType) { const sky = push(`하늘 글자 ${stem}`, `${SCREEN_MARK} · 핵심어: ${tgShort(stem)}`); if (sky) { pairId = x.addPair(sky, x.pair.why, x.pair.reason, x.pair.id); ids.push(x.mbtiType); pairScope = [sky, ...pickedIds]; } }
+  if (x.pair && x.mbtiType) { const sky = push(`하늘 글자 ${stem}`, `${SCREEN_MARK} ${tgShort(stem)}`); if (sky) { pairId = x.addPair(sky, x.pair.why, x.pair.reason, x.pair.id); ids.push(x.mbtiType); pairScope = [sky, ...pickedIds]; } }
   // AM2-5 1부: 장면은 문장 안에 넣는 재료라 첫 문장만, 건수·숫자가 든 장면은 주지 않는다(「한 달 동안 스무 개가 넘게」 — 개수 말·사건 단정이 된다).
   const scene0 = e.material?.scene ? say(e.material.scene, year).split(/(?<=[.!?])\s+/)[0] : undefined;
   // 엔진 장면이 맞지 않으면 MBTI 장면 씨앗(유형 × 영역 명사구 — 연애·직업 꼬리표로 거름)에서 그 key의 영역으로 하나.
