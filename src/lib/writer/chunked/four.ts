@@ -29,7 +29,7 @@ const WHOLE: Readonly<Record<string, Branch>> = {
   // fragment · orphan_ref · orphan_deictic · rel_subject_time은 전수 대조 오탐(주제 생략 · 앞앞 문장 지시 · 안긴 절 주어)으로 기록(rubric.md 2-3).
   orphan_start: "broken", empty_preview: "broken", noun_predicate: "broken", subject_unit: "broken", relation_frame: "broken", grammar: "broken", pair_text: "broken",
   // AM2-10 4부(broken.ts): 깨진 갈래 좁힌 꼴 넷 + 짝 key 백업 연결 검사 — 저장 책 48권 전수 대조 걸림 19곳 모두 참 · 오탐 0(rubric.md 2-6).
-  dayun_orphan: "broken", mbti_do_orphan: "broken", cut_clause: "broken", dup_phrase: "broken", pair_outside: "link",
+  dayun_orphan: "broken", mbti_do_orphan: "broken", cut_clause: "broken", dup_phrase: "broken", bad_char: "broken", pair_outside: "link",
 };
 /** 인과 · 변화 꼴(성향을 그 시기 운의 결과로 쓰는 말). 장면(「…할 때」 「…라면」)은 들지 않는다. */
 /** 명리 말(십성 · 신살 · 일주 · 간지 · 합충 · 대운 · 기운) — 짝 없는 절이 이것과 한 문장에 묶일 때만 잘못된 연결(성향만 말하고 조언하는 절은 아니다). */

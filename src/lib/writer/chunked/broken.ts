@@ -4,6 +4,7 @@
  *  mbti_do_orphan 받을 앞말 없는 「유형이름 + 도」(P8 · P9 annual-p6b 7월 「ISTJ도 검증된 것만 믿는 쪽입니다」 — 바로 앞 문장과 뜻 낱말이 하나도 겹치지 않음).
  *  cut_clause     「…는지,」가 받을 말 없이 조건 꼴로 넘어간 끊긴 절(P9 annual-p5 6월 「얼마나 가까워졌는지, … 오르내린다면」).
  *  dup_phrase     한 문장 안에 같은 두 어절 말이 되풀이된 겹친 구절(P9 annual-p6a 4월 「상관 기운은 … 같은 상관 기운이 겹치는 달이에요」).
+ *  bad_char       깨진 글자(U+FFFD)가 작가 원문에 그대로 남음(P10 annual-p6a 「뚜렷하게 �잡히지 않아요」 — 첫 원고에 있음, 스트림 해독은 정상).
  *  pair_outside   (잘못된 연결 백업) 짝이 있는 key에서 MBTI 문장이 짝 밖 명리(핵심 관계 · 관계 말)와 인과 · 채움으로 이어짐(P9 annual-p6b 9월 「이 달의 부딪침이 그 빈 곳을 채웁니다」).
  * 각 검사는 저장 책 전수(AM-01 · P~P9 세운·대운)에서 오탐 0일 때만 차단(four.ts)에 둔다. 판정 기록: docs/v5/annual-major/rubric.md 2-6.
  */
@@ -59,6 +60,7 @@ export function am210Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
           }
           if (/(?:얼마나|어떻게|어디까지|왜|누가|무엇이|언제)[^,.?!]{0,30}(?:는지|은지|인지|던지), [^.?!]*(?:다면|라면)/.test(sen)) out.push({ ...at, rule: "cut_clause", detail: "「…는지,」가 받을 말 없이 끊김" });
           const d = dupPhrase(sen); if (d) out.push({ ...at, rule: "dup_phrase", detail: `「${d}」 되풀이` });
+          if (sen.includes("\uFFFD")) out.push({ ...at, rule: "bad_char", detail: "깨진 글자(U+FFFD)" });
           if (kp?.pair && type && sen.includes(type) && ((kp.core ?? []).some(n => sen.includes(n)) || REL_TERM.test(sen)) && CAUSAL_FILL.test(sen)) out.push({ ...at, rule: "pair_outside", detail: "짝 key의 MBTI 문장이 핵심 관계 · 관계 말과 이어짐" });
         });
       });

@@ -35,9 +35,13 @@ describe("AM2-10 깨진 문장 안전망", () => {
     const kp = keyed.keys!.find(k => k.pair)!;
     expect(flagsOf(keyed.n, [sec(kp.key, "하던 방식을 끝까지 밀고 가는 ISTJ의 편은 바뀌어야 할 때 유연함이 모자라기 쉬운데, 이 달의 부딪침이 그 빈 곳을 채웁니다.")])).toContain("pair_outside");
   });
-  it("네 갈래: 깨진 넷은 깨진 문장 · 짝 밖 이음은 잘못된 연결", () => {
+  it("깨진 글자(U+FFFD)가 남은 문장(P10 annual-p6a 원문)", () => {
+    expect(flagsOf(keyed.n, [sec("x", "쉬어 가기 좋은 달은 뚜렷하게 �잡히지 않아요.")])).toContain("bad_char");
+    expect(flagsOf(keyed.n, [sec("x", "쉬어 가기 좋은 달은 뚜렷하게 잡히지 않아요.")])).not.toContain("bad_char");
+  });
+  it("네 갈래: 깨진 다섯은 깨진 문장 · 짝 밖 이음은 잘못된 연결", () => {
     const c = { entered: { job: false, rel: true, children: false }, relationship: "married", inputs: {} as never, mbtiType: "ISTJ", pairedAt: () => true };
-    for (const r of ["dayun_orphan", "mbti_do_orphan", "cut_clause", "dup_phrase"]) expect(branchOf({ chapter: 1, section: 0, rule: r, sentence: "x" }, c)).toBe("broken");
+    for (const r of ["dayun_orphan", "mbti_do_orphan", "cut_clause", "dup_phrase", "bad_char"]) expect(branchOf({ chapter: 1, section: 0, rule: r, sentence: "x" }, c)).toBe("broken");
     expect(branchOf({ chapter: 1, section: 0, rule: "pair_outside", sentence: "x" }, c)).toBe("link");
   });
 });

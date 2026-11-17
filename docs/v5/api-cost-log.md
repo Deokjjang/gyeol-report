@@ -655,7 +655,35 @@
 | 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2244 | 1411 | 4049 | 0.00226301 | complete | req_011Ch6kV6upbTbokX2VTJPzS | 23.95133827 |
 | 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2504 | 1411 | 3814 | 0.00217151 | complete | req_011Ch6kV77UeMGA9oritbRyW | 23.95350978 |
 | 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2675 | 1411 | 3952 | 0.00225761 | complete | req_011Ch6kVH6jvcW9XLPqeVPkd | 23.95576739 |
-누적 합계: **$23.95576739** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 851 | 25291 | 1399 | 0.01822110 | complete | req_011Ch6pETHDfjtGQPPGRBn5f | 23.97398849 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 652 | 25291 | 1388 | 0.01771310 | complete | req_011Ch6pETD1iw6gdMf3P2WR6 | 23.99170159 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 771 | 25291 | 2064 | 0.02471110 | complete | req_011Ch6pET54hWhrqHDTkPSYe | 24.01641269 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 727 | 25291 | 1868 | 0.02266310 | complete | req_011Ch6pET8nkDGiaNjotUPY1 | 24.03907579 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 25291 | 2163 | 0.02448710 | complete | req_011Ch6pET7JYauB3nAH8QB2H | 24.06356289 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 26291 | 0 | 2505 | 0.09027750 | complete | req_011Ch6pENS2GBMED7mZLNo1s | 24.15384039 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1681 | 25291 | 168 | 0.00757110 | complete | req_011Ch6pFvY62vDejCN2wJuSZ | 24.16141149 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1577 | 25291 | 166 | 0.00734310 | complete | req_011Ch6pFvWMAB7oR2awFFznG | 24.16875459 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 742 | 28627 | 1340 | 0.01774670 | complete | req_011Ch6pGPzak5xFa16mVPodM | 24.18650129 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 688 | 28627 | 1566 | 0.01989870 | complete | req_011Ch6pGPzqMvxRqsuDi8k9W | 24.20639999 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 777 | 28627 | 1988 | 0.02429670 | complete | req_011Ch6pGQ3KSg7p4WLrweBtq | 24.23069669 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 29742 | 0 | 2769 | 0.10148750 | complete | req_011Ch6pGJzSt85CPXgiuox4r | 24.33218419 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 702 | 28627 | 2406 | 0.02832670 | complete | req_011Ch6pGPzLD9uguaVjrgJ5D | 24.36051089 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 28627 | 2784 | 0.03103070 | complete | req_011Ch6pGP1o8hrsy6jpismRr | 24.39154159 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 2029 | 28627 | 152 | 0.00844070 | complete | req_011Ch6pJLxLBj2e9GVnWAsM4 | 24.39998229 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 667 | 27780 | 1259 | 0.01670200 | complete | req_011Ch6pJzAwsEB9r7ZoBqtrb | 24.41668429 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 910 | 27780 | 1620 | 0.02079800 | complete | req_011Ch6pJzJsxgKiDVz6NZCm5 | 24.43748229 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 755 | 27780 | 1769 | 0.02197800 | complete | req_011Ch6pK1P8PmksajUgobXdU | 24.45946029 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 27780 | 2216 | 0.02526600 | complete | req_011Ch6pJzFevXw8ykM2gC1PA | 24.48472629 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 28963 | 0 | 2462 | 0.09643600 | complete | req_011Ch6pJvFZSP4DV55ENxNrP | 24.58116229 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 797 | 27780 | 2316 | 0.02753200 | complete | req_011Ch6pJzNrqrskzywkMSoxS | 24.60869429 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1962 | 27780 | 224 | 0.00894200 | complete | req_011Ch6pLYjJaDb7c9uoZ44bx | 24.61763629 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 329 | 25940 | 1304 | 0.01629200 | complete | req_011Ch6pM3q1x1Rn19C7K5M8X | 24.63392829 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 365 | 25940 | 1608 | 0.01940400 | complete | req_011Ch6pM3q28bizWaMAtx5Bd | 24.65333229 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 354 | 25940 | 1787 | 0.02117200 | complete | req_011Ch6pM3oHPoFeHGRSK1si7 | 24.67450429 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 26112 | 0 | 2507 | 0.09026400 | complete | req_011Ch6pLyy6tzcVJxiU6NMAJ | 24.76476829 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 25940 | 2528 | 0.02820200 | complete | req_011Ch6pM3nYkn4K1iNVoG6jZ | 24.79297029 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 206 | 25940 | 2552 | 0.02852600 | complete | req_011Ch6pM3pHQGic44VKkPYwM | 24.82149629 |
+누적 합계: **$24.82149629** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |
