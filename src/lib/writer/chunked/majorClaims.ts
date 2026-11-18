@@ -6,6 +6,9 @@
  *  age_claim      만 나이: 「만 N~M세」가 평생 지도의 어느 장 나이와도 맞지 않음 · 「YYYY년(만 N세 무렵)」의 N이 출생 연도와 어긋남(±1 밖).
  *  prev_year      해 key의 「앞 해 · 지난해 · 전해 + 관계 이름」이 바로 앞 해 엔진 관계에 없음(세운 prev_month의 해 판).
  *                 + 「이 10년이 끝난 뒤 다음 대운」(10년 창 안에서 열리는 다음 장을 창 뒤로 미룸).
+ *  AM2-13 7부(D1 판독 — 측정 중 고침):
+ *  fill_claim     + 「채움 판정」 「…로 판정되었습니다」(판정 말 노출) · 장을 가리키는 문장의 「X(나무 · 불 · 흙 · 쇠 · 물)로 채워지 · 더해지 · 쌓이」가 그 장 채움 까닭의 기운과 다름(고른 장은 모두).
+ *  memo_leak      + 대운 책 작성 메모: 「솔로로 적혀 있으니」 · 「위치 값으로 보면」 · 「한 번째 해」.
  *  year_list      6장(10년 영역 지도) 본문의 해 목록(해 둘 이상을 늘어놓음) — 해 목록은 화면 표가 맡는다(덕짱님 결정 · 본문 금지).
  * 차단 여부는 four.ts(저장 대운 책 전수 오탐 0만 — am2.md 23절).
  */
@@ -40,6 +43,14 @@ export function am213MajorFlags(chapters: readonly FinalChapter[], b: BlockCtx):
       for (const t of said) { const m = new RegExp(`(\\d{1,2})장 「${t}」`).exec(sen), ch = m ? P.chapters.find(x => x.n === Number(m[1])) : said.length === 1 ? target(sen) : undefined; if (ch && ch.title !== t) out.push({ ...at, rule: "chapter_title", detail: `「${t}」 — ${ch.n}장은 「${ch.title}」`, hint: "장 제목은 차례 값 그대로" }); }
       // ---- fill_claim ----
       for (const [re, label] of FILL_WORDS) if (re.test(sen)) { const ch = target(sen) ?? now; if (ch && ch.fill.label !== label && !(label === FILL_LABEL.even && /고른 장(?:이|은|으로)? 아니/.test(sen))) out.push({ ...at, rule: "fill_claim", detail: `「${label}」 — ${ch.n}장 판정 「${ch.fill.label}」`, hint: "채움 판정은 화면 장 머리 상자 값 그대로" }); }
+      // 판정 말 노출 · 오행 채움 주장(D1 판독 D1 「채움은 하늘 흙으로 판정되었습니다」 · D4 「불로 채워지는」 · D3 「이미 있는 균형 위에 불이 더해지는 장」 — 셋 다 고른 장).
+      if (/채움 판정|(?:으로|로) 판정(?:되었|됐|돼|된)/.test(sen)) out.push({ ...at, rule: "fill_claim", detail: "판정 말 노출", hint: "채움 판정은 화면이 보여 준다 — 뜻만 쓴다" });
+      { const ch = (target(sen) ?? (c.id === "next" || c.id === "turn" && NEXT_REF.test(sen) ? next : now));
+        for (const m of sen.matchAll(/(나무|불|흙|쇠|물)(?:이|가|을|를|으로|로)? ?(채워|채우|더해지|더해|쌓이|쌓여)/g)) { if (!ch || !/장|기운|오행/.test(sen)) continue;
+          const heap = /쌓/.test(m[2]), ok = heap ? new RegExp(`이미 많은 ${m[1]}`).test(ch.fill.why) : new RegExp(`(부족한|나를 돕는) ${m[1]}`).test(ch.fill.why);
+          if (!ok) out.push({ ...at, rule: "fill_claim", detail: `「${m[1]} ${m[2]}」 — ${ch.n}장 판정 「${ch.fill.label}」(${ch.fill.why})`, hint: "채움 판정은 화면 장 머리 상자 값 그대로" }); } }
+      // 대운 책 작성 메모(D1 판독 D1 「솔로로 적혀 있으니」 · D5 「위치 값으로 보면 … 한 번째 해」). 세운은 broken.ts memo_leak만.
+      { const mm = /(?:로|으로|이라고|라고) 적혀 있|위치 값|(?<![가-힣])한 번째 (?:해|달)/.exec(sen.replace(/"[^"]*"|“[^”]*”/g, "")); if (mm) out.push({ ...at, rule: "memo_leak", detail: `작성 메모 「${mm[0]}」` }); }
       // ---- dayun_timing ----
       if (P.turn && NEXT_REF.test(sen) && /(열|시작|바뀌|넘어가|들어서)/.test(sen)) {
         const ys = [...sen.matchAll(/(20\d\d)년(?: (\d{1,2})월)?/g)].filter(m => !/만 \d+세/.test(sen.slice(m.index ?? 0, (m.index ?? 0) + 14)));

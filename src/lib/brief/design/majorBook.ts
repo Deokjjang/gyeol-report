@@ -57,12 +57,14 @@ export function fillOf(st: ElementState, strongest: FiveElement, hanja: string):
   const parts: string[] = [];
   [0, 1].forEach(i => { const el = i === 0 ? s : b; if (el === E) parts.push(`${glyph(i)} — ${lacking ? "부족한" : "나를 돕는"} ${josa(EL_KO[E], "을를")} 채움`); else if (st.excess.includes(el as never)) parts.push(`${glyph(i)} — 이미 많은 ${EL_KO[el]}`); });
   const label = (kind === "fill" || kind === "both") && !lacking ? (kind === "fill" ? FILL_HELP_LABEL : FILL_LABEL.both) : FILL_LABEL[kind];
-  return { kind, label, element: E, why: parts.join(" · ") || `하늘 ${EL_KO[s]} · 땅 ${EL_KO[b]} — 채우거나 쌓이는 쪽 없이 고르게` };
+  // AM2-13 7부(D1 판독 D1 · D4 「하늘 흙으로 판정되었습니다」 「불로 채워지는」 — 고른 장인데 글자 오행을 채움으로 풀었다): 고른 장의 까닭에는 글자 오행을 적지 않는다.
+  return { kind, label, element: E, why: parts.join(" · ") || "원국에 모자란 기운을 채우지도, 많은 기운을 더 쌓지도 않아 한쪽으로 기울지 않음" };
 }
 
 export const WINDOW: readonly [number, number] = [2027, 2036];
 export type Act = { readonly n: 1 | 2 | 3; readonly name: string; readonly years: readonly number[] };
-export const ACT_NAME: Readonly<Record<1 | 2 | 3, string>> = { 1: "지금 장의 남은 쪽", 2: "문턱", 3: "다음 장의 시작과 한가운데" };
+// AM2-13 7부(D1 major-p5 6장 「장의 남은 쪽에 몰려」 — 시점 말 거름이 본문 재료에서만 「지금」을 떼어 화면 말과 어긋났다): 3장 제목과 같은 「읽고 있는 장」.
+export const ACT_NAME: Readonly<Record<1 | 2 | 3, string>> = { 1: "읽고 있는 장의 남은 쪽", 2: "문턱", 3: "다음 장의 시작과 한가운데" };
 /** 막: 다음 대운 시작 해 S, 교운기 S−1~S+1(엔진 교운기 줄과 같은 값). 빈 막은 두지 않는다(이웃 막에 합침 = 그 막 없이 이어짐). */
 export function actsOf(nextStart: number | undefined, win: readonly [number, number] = WINDOW): Act[] {
   const ys = Array.from({ length: win[1] - win[0] + 1 }, (_, i) => win[0] + i);

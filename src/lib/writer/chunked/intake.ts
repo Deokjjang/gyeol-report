@@ -864,7 +864,8 @@ export function majorKeyFix(kp: KeyPlan, e: TimelineEntry, brief: Brief): KeyPla
   }
   const sig: Readonly<Record<string, string>> = (e as TimelineEntry & { signals?: Record<string, string> }).signals ?? {};
   const top = Object.keys(DOM_KO).find(d => sig[d] === "↑") ?? Object.keys(DOM_KO).find(d => sig[d] === "↓");
-  const inputFact = input.length ? `이 사람 입력: ${(top === "love" ? input.filter(x => x.startsWith("연애")) : top === "work" || top === "money" ? input.filter(x => x.startsWith("일")) : input).join(" · ") || input.join(" · ")}` : undefined;
+  // AM2-13 7부(D1 판독 2027 · 2030 「솔로로 적혀 있으니」): 재료 칸 이름에 「입력」을 두지 않는다.
+  const inputFact = input.length ? `이 사람: ${(top === "love" ? input.filter(x => x.startsWith("연애")) : top === "work" || top === "money" ? input.filter(x => x.startsWith("일")) : input).join(" · ") || input.join(" · ")}` : undefined;
   const mats = [ring, inputFact].filter((x): x is string => Boolean(x));
   const own = mats.length ? (kp.depth === "deep" ? mats.slice(0, 2) : mats.slice(0, 1)).join(" · ") : kp.pair ? `짝 ${kp.pair}의 명리 줄(하늘 글자)` : undefined;
   // 기조: 해 판정 뜻 + 열어 둘 쪽 · 속도를 늦출 쪽(낱말만).
