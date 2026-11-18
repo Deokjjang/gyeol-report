@@ -7,6 +7,7 @@
  *  bad_char       깨진 글자(U+FFFD)가 작가 원문에 그대로 남음(P10 annual-p6a 「뚜렷하게 �잡히지 않아요」 — 첫 원고에 있음, 스트림 해독은 정상).
  *  memo_leak      작성 메모 · 지시 말이 본문에 샘(P12 r1117 「이름과 핵심어만 쓰면 되니 … 두겠습니다」 · 「…라는 이름으로만 두고 … 읽겠습니다」 · 「썸이라는 입력」,
  *                 P9 base-annual-p6b 「정재의 핵심어대로」, P7 major-p6a 「화면에 이미 있는 줄이라, 여기서는 뜻만」 · 카드 표시 기호 ▸). AM2-13 1부, 저장 책 118권 참 7 · 오탐 0.
+ *  mbti_time      「유형의 때(는 · 로 · 라고)」가 주어 · 서술로 선 꼴(S-final r1117 「ENTP의 때는 혼자 영화관에서 보내는 시간입니다」, P12 「ESFJ의 때로 보면」 「ISFP의 때는 기념일 달력」 — 재료 줄 이름 「…의 장면」이 「…의 때」로 바뀌어 샜다).
  *  pair_outside   (잘못된 연결 백업) 짝이 있는 key에서 MBTI 문장이 짝 밖 명리(핵심 관계 · 관계 말)와 인과 · 채움으로 이어짐(P9 annual-p6b 9월 「이 달의 부딪침이 그 빈 곳을 채웁니다」).
  * 각 검사는 저장 책 전수(AM-01 · P~P9 세운·대운)에서 오탐 0일 때만 차단(four.ts)에 둔다. 판정 기록: docs/v5/annual-major/rubric.md 2-6.
  */
@@ -37,6 +38,8 @@ export function dupPhrase(sen: string): string | null {
 const REL_TERM = /[자축인묘진사오미신유술해]{2,3}(?:충|형|파|해|합|반합|방합)|(?:이|그) (?:달|해)의 (?:부딪침|맺힘|묶임|모임|다듬음|어긋남|방해|빔)|부딪침이|맺힘이|모임이/;
 /** AM2-13 1부: 작성 메모 꼴(따옴표 대사는 뗀 뒤 본다 — 「"이 순서로 하겠습니다"」 같은 인용). 「내 이름으로만 된 통장」(지식 DB 줄)은 들지 않게 「라는 이름으로」만. */
 export const MEMO_LEAK = /(?:두|읽|쓰|넘어가)겠습니다|핵심어|라는 이름으로(?:만)? 두|(?:이)?라는 입력|이 책에서(?:는)?[^.!?]{0,40}(?:쓴다|씁니다|부른다|부릅니다)|(?:쓰|두|적|부르)면 되니|화면에 (?:이미 )?있는 (?:줄|값|이름)|여기서는 (?:뜻|이름)만|▸/;
+/** AM2-13 2부: 「ENTP의 때는 …」 꼴(유형 이름 + 「의 때」 + 조사). 「ENTP의 때때로」 같은 낱말 안은 들지 않는다. */
+export const MBTI_TIME = /(?<![A-Za-z])[EI][NS][TF][JP]의 때(?:는|로|라고|이|가|에|를|도)?(?![가-힣])/;
 export const memoLeak = (sen: string): string | null => sen.replace(/"[^"]*"|“[^”]*”/g, "").match(MEMO_LEAK)?.[0] ?? null;
 const CAUSAL_FILL = /채우|채워|채웁|채운|메우|메워|메웁|덕분|때문|그래서|그만큼|와 만나|과 만나|이 만나|가 만나|겹쳐|바꿔 놓|달라지|이라서|라서 /;
 
@@ -66,6 +69,7 @@ export function am210Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
           if (/(?:얼마나|어떻게|어디까지|왜|누가|무엇이|언제)[^,.?!]{0,30}(?:는지|은지|인지|던지), [^.?!]*(?:다면|라면)/.test(sen)) out.push({ ...at, rule: "cut_clause", detail: "「…는지,」가 받을 말 없이 끊김" });
           const d = dupPhrase(sen); if (d) out.push({ ...at, rule: "dup_phrase", detail: `「${d}」 되풀이` });
           if (sen.includes("\uFFFD")) out.push({ ...at, rule: "bad_char", detail: "깨진 글자(U+FFFD)" });
+          if (MBTI_TIME.test(sen.replace(/"[^"]*"|“[^”]*”/g, ""))) out.push({ ...at, rule: "mbti_time", detail: "「유형의 때」가 주어 · 서술로 섬" });
           const memo = memoLeak(sen); if (memo) out.push({ ...at, rule: "memo_leak", detail: `작성 메모 「${memo}」` });
           if (kp?.pair && type && sen.includes(type) && ((kp.core ?? []).some(n => sen.includes(n)) || REL_TERM.test(sen)) && CAUSAL_FILL.test(sen)) out.push({ ...at, rule: "pair_outside", detail: "짝 key의 MBTI 문장이 핵심 관계 · 관계 말과 이어짐" });
         });

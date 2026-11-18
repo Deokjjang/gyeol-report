@@ -36,6 +36,8 @@ const WHOLE: Readonly<Record<string, Branch>> = {
   year_dir: "fact", list_shape: "fact", status_claim: "fact", verdict_dir: "fact",
   // AM2-13 1부(broken.ts memo_leak): 작성 메모 노출 — 저장 책 118권 전수 대조 참 7 · 오탐 0(am2.md 23절).
   memo_leak: "broken",
+  // AM2-13 2부(S-final 측정 중 고침): 관계 없음 주장(claims.ts rel_none) · 「유형의 때」 깨진 꼴(broken.ts mbti_time) — 저장 책 전수 대조 am2.md 23절.
+  rel_none: "fact", mbti_time: "broken",
 };
 /** 인과 · 변화 꼴(성향을 그 시기 운의 결과로 쓰는 말). 장면(「…할 때」 「…라면」)은 들지 않는다. */
 /** 명리 말(십성 · 신살 · 일주 · 간지 · 합충 · 대운 · 기운) — 짝 없는 절이 이것과 한 문장에 묶일 때만 잘못된 연결(성향만 말하고 조언하는 절은 아니다). */

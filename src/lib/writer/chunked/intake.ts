@@ -270,7 +270,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
     const meaning = refineText(meaning0, genCtx, rlog);
     if (meaning0.trim() && !meaning.trim() && subject !== "mbti") return null;
     const unit = subject === "month" ? "달" : subject === "dayun" ? "10년" : "해";
-    const v = unitFix(say(value, year), unit), m0 = unitFix(dropGeneral(fits(say(meaning, year)), { weak: /WEAK/.test(brief.chart.strength.level) }), unit);
+    // AM2-13 2부(S-final r1117 Y15 「정해진 뜻밖의 작은 수입을 궁리하게 되는 때」): 낱말표 중립 꼴(「월급 밖 수입」 → 「뜻밖의 작은 수입」 · 「본업 밖 수입」)이 앞 꾸밈말 「정해진」(월급을 꾸미던 말)을 남긴다 — 세운·대운 카드에서 뗀다(premise.ts 낱말표는 4종 보호로 그대로).
+    const orphanMod = (t: string) => t.replace(/정해진 (?=뜻밖의 작은 수입|본업 밖 수입)/g, "");
+    const v = unitFix(orphanMod(say(value, year)), unit), m0 = unitFix(orphanMod(dropGeneral(fits(say(meaning, year)), { weak: /WEAK/.test(brief.chart.strength.level) })), unit);
     // 낱말표 중립 꼴(neutralize)이 연애 전제를 새로 만들 수 있다(연애 중에게 「좋아하는 사람이 생기면」 → 「연인이 생기면」) — 바꾼 뒤 한 번 더 거른다.
     if (inputClash(v, inputs)) return null;
     const m = m0.split(" · ").filter(a => { const c2 = inputClash(a, inputs); if (c2) rlog.dropped.push({ kind: "trait", text: a, why: `${c2}(중립 꼴 뒤)` }); return !c2; }).join(" · ");
@@ -392,7 +394,8 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const matLines = (m: Material, n: number, evidenceKey?: (key: string) => void): string[] => {
     if (m.kind === "trait") { const id = traitId.get(m.traitId); if (id) use.get(id)!.add(n); return id ? [id] : []; }
     if (m.kind === "ref") { const ids = refLine(m.ref); ids.forEach(id => use.get(id)?.add(n)); return ids; }
-    if (m.kind === "mbti") { if (!mbtiType) return []; use.get(mbtiType)!.add(n); const sc = seedFits(m.scene, brief) && !seedClash(m.scene) ? seedAsCondition(m.scene) : null; const id = sc ? add("mbti", `${mbti!.type}의 장면`, sc, n) : null; return [mbtiType, ...(id ? [id] : [])]; }
+    // AM2-13 2부(S-final r1117 「ENTP의 때는 혼자 영화관에서 …」 · P12 「ESFJ의 때로 보면」): 줄 이름 「…의 장면」은 card.ts unambiguous가 「…의 때」로 바꿔 작가가 주어로 옮겼다 — 「…다운 모습」.
+    if (m.kind === "mbti") { if (!mbtiType) return []; use.get(mbtiType)!.add(n); const sc = seedFits(m.scene, brief) && !seedClash(m.scene) ? seedAsCondition(m.scene) : null; const id = sc ? add("mbti", `${mbti!.type}다운 모습`, sc, n) : null; return [mbtiType, ...(id ? [id] : [])]; }
     if (m.kind === "evidence") {
       evidenceKey?.(m.key);
       if (/^(depth|month|bridge):/.test(m.key)) return [];

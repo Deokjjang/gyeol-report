@@ -18,6 +18,8 @@
  *  list_shape 목록 모양: 「네 달은 서로 떨어져」(이웃 달이 있음 — P9 annual-p6b) · 「이 두 달은 오르는 달보다 앞에」(P9 annual-1) · 「세 달 사이에는 흐름이 잔잔한 시기도」(사이 달 흐름 — P9 기준 annual-p6a)
  *  status_claim 입력 상태 말: 「연애 중인 당신」(썸 — P11 무작위 R1-1)
  *  verdict_dir 해 판정 반대: 「2027년은 밀어붙이기보다 다듬고 쌓는 쪽」(판정 밀고 갈 해 — P11 무작위 R1-5) · 「2027년 정미년은 확장보다 정비가」(P11 annual-p5 B6-2)
+ *  AM2-13 2부(S-final 판독 — 측정 중 고침):
+ *  rel_none   관계 없음 주장: 달 key의 「부딪침 없이 · 다듬음 없이 · 어긋남 없이」가 그 달 엔진 관계(충 · 형 · 파)와 반대(S-final r1117 2월 — 인신충).
  * 저장 책 전수(AM-01 · P~P11 세운·대운)에서 오탐 0인 검사만 차단(four.ts)에 둔다 — 나머지는 기록. 판정 기록: am2.md 21 · 22절 · rubric.md.
  */
 import type { FinalChapter } from "../safety";
@@ -37,6 +39,12 @@ const badgeSeats = (w: string | undefined) => new Set((w ?? "").split("·").map(
 /** 「같은 자리」가 원국 자리를 받는 꼴(「같은 자리에서 같은 일」 같은 장소 관용은 뺀다). */
 const SAME_SEAT = /(?<![가-힣])(?:같은|그) 자리(?!에서 같은)(?:에|의|를|는|가|에서|에도|와)?(?![가-힣])/;
 
+/** AM2-13 2부: 관계 없음 주장(「부딪침 없이」) ↔ 그 달 엔진 관계 종류. */
+const REL_NONE: readonly (readonly [RegExp, readonly string[], string])[] = [
+  [/(?:부딪침|부딪힘|충돌)(?:이|은|도)? ?없(?:이|는|고|어|습|던)/, ["CHUNG"], "부딪침"],
+  [/다듬음(?:이|은|도)? ?없(?:이|는|고|어|습)/, ["HYEONG"], "다듬음"],
+  [/어긋남(?:이|은|도)? ?없(?:이|는|고|어|습)/, ["PA"], "어긋남"],
+];
 type Dom = "love" | "money" | "work" | "people" | "mind";
 /** 「같은 자리」가 든 절(쉼표 · 「지만 · 는데 · 고」로 가른 마디). */
 function clauseAt(sen: string, at: number): string { const cuts = [...sen.matchAll(/, |지만 |는데 |(?<=[가-힣])고 /g)].map(m => m.index! + m[0].length); const a = Math.max(0, ...cuts.filter(c => c <= at)), b = Math.min(sen.length, ...cuts.filter(c => c > at)); return sen.slice(a, b); }
@@ -208,6 +216,8 @@ export function am211Flags(chapters: readonly FinalChapter[], b: BlockCtx): Chun
         // ---- flow_claim ----
         if (isKey && cur) {
           const f = cur.flow.score;
+          // AM2-13 2부(S-final r1117 2월 「앞 달 신축월의 다듬음과 달리 이번에는 부딪침 없이 끌림이 앞서요」 — 2월은 인신충 · 인신형): 관계 없음 주장 ↔ 그 달 엔진 관계.
+          for (const [re, kinds, nm] of REL_NONE) if (re.test(sen) && cur.badges.some(bd => kinds.includes(bd.kind))) out.push({ ...at, rule: "rel_none", detail: `「${nm} 없음」 — ${cur.label.split(" (")[0]}에 ${cur.badges.filter(bd => kinds.includes(bd.kind)).map(bd => bd.label).join(" · ")}`, hint: "관계가 있는 달을 관계 없음으로 쓰지 않는다" });
           if (/한결 순하게|순하게 (?:지나|흐르|옵|와)|잔잔한 달|조용히 지나가는 달|숨을 고르기 좋은 달/.test(sen) && f >= 4) out.push({ ...at, rule: "flow_claim", detail: `잔잔 · 순한 말 — ${cur.label.split(" (")[0]} 흐름 ${f}`, hint: "흐름 말은 카드(화면 흐름)와 같게" });
           if (/거센 달|세차게|크게 출렁|몰아치/.test(sen) && f <= 2) out.push({ ...at, rule: "flow_claim", detail: `거센 말 — ${cur.label.split(" (")[0]} 흐름 ${f}`, hint: "흐름 말은 카드(화면 흐름)와 같게" });
         }
