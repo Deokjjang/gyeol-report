@@ -1,7 +1,7 @@
 // P6d-ops 7 실패 주입(목업, 비용 0): 429·5xx·중간 끊김·Anthropic 장애·잔액 소진. 가짜 시계. W3 P2: 30분 결론(2차 1번, 대체 작가 없음).
 import { describe, expect, it } from "vitest";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
-import { superviseQueueJob, runLaneBatch, type Decision } from "@/lib/ops/generation/supervisor";
+import { superviseQueueJob, type Decision } from "@/lib/ops/generation/supervisor";
 import { memorySink } from "@/lib/ops/generation/sinks";
 import { judgeBuild, nextRetryAt, RETRY_WINDOW_MS, retryWindowMs } from "@/lib/ops/generation/policy";
 import { RAW_FULL, mockTextFor } from "../../helpers/v5Scenarios";

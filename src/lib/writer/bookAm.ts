@@ -11,6 +11,7 @@ import type { BookSection } from "./format";
 import { FLOW_WORD, halfHapLine, josa } from "@/lib/brief/labels";
 import { coreLine, coreOf, coreRowLine, loveUpOf, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
+import { toneOf } from "./chunked/tone";
 import type { V5BookDraft, V5TimelineCard } from "./book";
 
 const EL: Readonly<Record<string, AmEl>> = { WOOD: "wood", FIRE: "fire", EARTH: "earth", METAL: "metal", WATER: "water" };
@@ -30,7 +31,9 @@ const EL_NAME: Readonly<Record<string, string>> = { WOOD: "나무(목)", FIRE: "
 // AM2-8: 달 자리 뜻은 돈 버는 일이 있을 때만 「일터」(work=false면 「사회생활」 — 입력은 저장된 주문 입력에서 읽는다, 저장본은 그대로).
 const meaningOf = (c: Card, dayunTg?: string, gender?: string, work?: boolean) => coreLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}), { loveUp: c.seatSide ? c.seatSide === "close" : loveUpOf(c as never, gender), ...(work === false ? { work } : {}) });
 const rowMeaningOf = (c: Card, dayunTg?: string) => coreRowLine(coreOf(c, dayunTg ? { dayunTenGod: dayunTg } : {}));
-const signalsOf = (c: Card) => { const s: Readonly<Record<string, string>> = c.signals ?? {}; return { ups: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↑").map(([, v]) => v), cautions: Object.entries(DOMAIN_KO).filter(([k]) => s[k] === "↓").map(([, v]) => v) }; };
+// AM2-10 2부 7: 오르는 쪽 · 조심할 쪽 칩은 기조 함수(toneOf) 하나에서 — 작가 key 지시의 「이 달 기조」와 같은 값(등급 칩 · 흐름 단어는 화면에만).
+const signalsOf = (c: Card) => { const t = toneOf(c as never); return { ups: [...t.up], cautions: [...t.care] }; };
+void DOMAIN_KO;
 const monthName = (c: Card) => c.label.split(" (")[0].replace(/ · \d{4}년 .+ 마지막 달$/, "");
 
 /** 세운 달 카드 · 대운 해 카드(같은 문법). */

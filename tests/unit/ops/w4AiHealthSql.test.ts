@@ -106,7 +106,7 @@ describe("가짜 공급자 시뮬레이션(분 단위)", () => {
     for (let i = 0; i < 3; i++) expect(await minute(R402)).toMatchObject({ changed: null });
     for (let i = 0; i < 10; i++) expect(await minute({ status: 200 })).toMatchObject({ result: "ok", changed: null });
     expect(await state()).toMatchObject({ on: true, reason: "billing" });
-    expect(opsTexts()).toEqual(["🚨 <b>4종 판매 자동 멈춤</b> · Anthropic 잔액·결제 오류 · HTTP 402 · 자동 재개 안 함 — 풀리면 [다시 열기]"]);
+    expect(opsTexts()).toEqual(["🚨 <b>판매 자동 멈춤</b> · Anthropic 잔액·결제 오류 · HTTP 402 · 자동 재개 안 함 — 풀리면 [다시 열기]"]);
     expect(tg.sent("ops")[0].markup).toEqual({ inline_keyboard: [[{ text: "다시 열기", callback_data: "sl:resume" }]] });
     expect(await health()).toMatchObject({ result: "ok", okStreak: 10, outStreak: 0, status: 200 });
     // 버튼으로 다시 열기 → 판매 중. 그대로 정상이면 아무 일 없음.
@@ -118,7 +118,7 @@ describe("가짜 공급자 시뮬레이션(분 단위)", () => {
     expect(await minute(R401)).toMatchObject({ result: "auth", changed: "paused" });
     for (let i = 0; i < 6; i++) await minute({ status: 200 });
     expect(await state()).toMatchObject({ on: true, reason: "auth" });
-    expect(opsTexts()).toEqual(["🚨 <b>4종 판매 자동 멈춤</b> · Anthropic 인증·권한 오류 · HTTP 401 · 자동 재개 안 함 — 풀리면 [다시 열기]"]);
+    expect(opsTexts()).toEqual(["🚨 <b>판매 자동 멈춤</b> · Anthropic 인증·권한 오류 · HTTP 401 · 자동 재개 안 함 — 풀리면 [다시 열기]"]);
   });
   it("② 장애 2분은 그대로, 3분 연속 → 멈춤(outage) → 회복 4분은 그대로, 5분 연속 → 자동 재개 + 알림(멈춤·재개 각 1번)", async () => {
     expect(await minute(R529)).toMatchObject({ result: "outage", changed: null });
@@ -132,10 +132,10 @@ describe("가짜 공급자 시뮬레이션(분 단위)", () => {
     expect(await minute({ status: 200 })).toMatchObject({ changed: "resumed" });
     expect(await state()).toMatchObject({ on: false, by: "auto", reason: "recovered" });
     expect(opsTexts()).toEqual([
-      "🚨 <b>4종 판매 자동 멈춤</b> · AI 서버 장애 3분 연속 · HTTP 503 · 5분 연속 정상이면 자동 재개",
-      "▶️ <b>4종 판매 자동 재개</b> · AI 상태 확인 5분 연속 정상(멈춤 이유: AI 상태 확인 장애)",
+      "🚨 <b>판매 자동 멈춤</b> · AI 서버 장애 3분 연속 · HTTP 503 · 5분 연속 정상이면 자동 재개",
+      "▶️ <b>판매 자동 재개</b> · AI 상태 확인 5분 연속 정상(멈춤 이유: AI 상태 확인 장애)",
     ]);
-    expect(tg.sent("ops")[1].markup).toEqual({ inline_keyboard: [[{ text: "4종 멈춤", callback_data: "sl:pause" }]] });
+    expect(tg.sent("ops")[1].markup).toEqual({ inline_keyboard: [[{ text: "판매 멈춤", callback_data: "sl:pause" }]] });
     expect((await auditOf("sales_resumed")).at(-1)).toMatchObject({ actor: "system", detail: { by: "auto", reason: "recovered", detail: { source: "health", from: "outage", okStreak: 5 } } });
   });
   it("②' 장애 사이에 정상이 끼면 처음부터(연속만 셈). other(400 등)도 연속을 끊는다", async () => {
@@ -174,7 +174,7 @@ describe("가짜 공급자 시뮬레이션(분 단위)", () => {
     expect(await health()).toMatchObject({ okStreak: 0 });
     for (let i = 0; i < 4; i++) expect(await minute({ status: 200 })).toMatchObject({ changed: null });
     expect(await minute({ status: 200 })).toMatchObject({ changed: "resumed" });
-    expect(opsTexts()).toEqual(["▶️ <b>4종 판매 자동 재개</b> · AI 상태 확인 5분 연속 정상(멈춤 이유: 연결 오류 연속)"]);
+    expect(opsTexts()).toEqual(["▶️ <b>판매 자동 재개</b> · AI 상태 확인 5분 연속 정상(멈춤 이유: 연결 오류 연속)"]);
   });
   it("⑤ 장애로 멈춘 중 잔액 오류 → 이유를 billing으로 올림(알림 1번) → 이후 회복해도 자동 재개 없음", async () => {
     await minute(R529); await minute(R529); await minute(R529);
@@ -183,8 +183,8 @@ describe("가짜 공급자 시뮬레이션(분 단위)", () => {
     for (let i = 0; i < 6; i++) expect(await minute({ status: 200 })).toMatchObject({ changed: null });
     expect((await state()).on).toBe(true);
     expect(opsTexts()).toEqual([
-      "🚨 <b>4종 판매 자동 멈춤</b> · AI 서버 장애 3분 연속 · HTTP 529 · 5분 연속 정상이면 자동 재개",
-      "🚨 <b>4종 판매 멈춤 이유 바뀜</b> · Anthropic 잔액·결제 오류 · HTTP 402 · 자동 재개 안 함 — 풀리면 [다시 열기]",
+      "🚨 <b>판매 자동 멈춤</b> · AI 서버 장애 3분 연속 · HTTP 529 · 5분 연속 정상이면 자동 재개",
+      "🚨 <b>판매 멈춤 이유 바뀜</b> · Anthropic 잔액·결제 오류 · HTTP 402 · 자동 재개 안 함 — 풀리면 [다시 열기]",
     ]);
     expect((await auditOf("sales_pause_escalated")).at(-1)).toMatchObject({ actor: "system", detail: { from: "outage", reason: "billing" } });
   });

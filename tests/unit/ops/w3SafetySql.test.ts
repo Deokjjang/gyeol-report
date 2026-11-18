@@ -1,5 +1,5 @@
-// W3 P0 안전장치 — migration 20261114100000(PGlite, 외부 호출 0): 4종 판매 중지 스위치(ops_sales)·Anthropic 경보 쿨다운·SQL 직접 조작 감사 트리거,
-// 처리 봇 /sales·[4종 멈춤]·[다시 열기], 연결 오류 자동 멈춤(실제 SQL로).
+// W3 P0 안전장치 — migration 20261114100000(PGlite, 외부 호출 0): 판매 중지 스위치(ops_sales)·Anthropic 경보 쿨다운·SQL 직접 조작 감사 트리거,
+// 처리 봇 /sales·[판매 멈춤]·[다시 열기], 연결 오류 자동 멈춤(실제 SQL로).
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 vi.mock("@/lib/ops/admin/actions", () => ({ runAdminActionAs: async () => ({ status: 200, body: { ok: true } }), defaultAdminDeps: () => ({}) }));
@@ -85,7 +85,7 @@ describe("Anthropic 잔액/인증 경보(alarm)", () => {
     const rpc = (a: string, d: Record<string, unknown>) => sales.call(a, d);
     expect(await anthropicAlarm(rpc, send, "anthropic_credit")).toBe(true);
     expect(sent[0].text).toContain("🚨 <b>Anthropic 잔액/인증 — 모든 생성 실패 중</b>");
-    expect(sent[0].text).toContain("4종 판매를 자동으로 멈췄어요");
+    expect(sent[0].text).toContain("판매를 자동으로 멈췄어요");
     expect(sent[0].extra).toEqual({ reply_markup: { inline_keyboard: [[{ text: "다시 열기", callback_data: "sl:resume" }]] } });
     expect(await anthropicAlarm(rpc, send, "anthropic_credit")).toBe(false);
     expect(sent).toHaveLength(1);
@@ -109,7 +109,7 @@ describe("연결 오류 자동 멈춤(maybeAutoPause, 실제 SQL)", () => {
     const [x, y] = await Promise.all([maybeAutoPause(rpc, send, three, Date.now()), maybeAutoPause(rpc, send, three, Date.now())]);
     expect([x, y].filter(Boolean)).toHaveLength(1);
     expect(sent).toHaveLength(1);
-    expect(sent[0]).toContain("🚨 <b>4종 판매 자동 멈춤</b> · 연결 오류로 실패한 주문 3건(최근 10분)");
+    expect(sent[0]).toContain("🚨 <b>판매 자동 멈춤</b> · 연결 오류로 실패한 주문 3건(최근 10분)");
     expect(await sales.call("status")).toMatchObject({ on: true, by: "auto", reason: "connection" });
     // 멈춘 동안 더 실패해도 다시 알리지 않는다. 다시 여는 것은 버튼으로만.
     expect(await maybeAutoPause(rpc, send, [...three, run("a4", 0.2)], Date.now())).toBe(false);
@@ -132,7 +132,7 @@ describe("자동 멈춤 시뮬레이션(실패 기록 → createGenerationAlerts
     },
     rpc: async (fn: string, args: { p_action: string; p_data: Record<string, unknown> }) => ({ data: await h.rpc(fn, args.p_action, args.p_data), error: null }),
   } as unknown as SupabaseClient;
-  it("529 연결 실패 주문 3건(10분) → 세 번째 기록에서 4종 판매 자동 멈춤 + 알림 1번, 생각 소진은 세지 않는다", async () => {
+  it("529 연결 실패 주문 3건(10분) → 세 번째 기록에서 판매 자동 멈춤 + 알림 1번, 생각 소진은 세지 않는다", async () => {
     await sales.call("resume", { by: "telegram" });
     await h.exec("update ops_settings set value=jsonb_set(value,'{at}',to_jsonb(now()-interval '30 minutes')) where key='sales_pause'");
     const sent: { text: string; extra?: Record<string, unknown> }[] = [];
@@ -147,32 +147,32 @@ describe("자동 멈춤 시뮬레이션(실패 기록 → createGenerationAlerts
     expect(await pausedNow()).toBe(false);
     await fail(4, "connection");
     expect(await sales.call("status")).toMatchObject({ on: true, by: "auto", reason: "connection" });
-    const auto = sent.filter(m => m.text.includes("4종 판매 자동 멈춤"));
+    const auto = sent.filter(m => m.text.includes("판매 자동 멈춤"));
     expect(auto).toHaveLength(1);
     expect(auto[0].text).toContain("연결 오류로 실패한 주문 3건(최근 10분)");
     expect(auto[0].extra).toEqual({ reply_markup: { inline_keyboard: [[{ text: "다시 열기", callback_data: "sl:resume" }]] } });
     await fail(5, "connection");
-    expect(sent.filter(m => m.text.includes("4종 판매 자동 멈춤"))).toHaveLength(1);
+    expect(sent.filter(m => m.text.includes("판매 자동 멈춤"))).toHaveLength(1);
     expect((await auditOf("sales_paused")).at(-1)).toMatchObject({ actor: "system", detail: { by: "auto", reason: "connection", detail: { count: 3, windowMin: 10 } } });
     await sales.call("resume", { by: "telegram" });
   });
 });
 
-describe("처리 봇 /sales · [4종 멈춤] · [다시 열기]", () => {
+describe("처리 봇 /sales · [판매 멈춤] · [다시 열기]", () => {
   it("명령 목록에 /sales가 있다", () => { expect(BOT_COMMANDS.ops.map(c => c.command)).toContain("sales"); });
   it("/sales → 지금 상태 + 반대 버튼, [다시 열기] → 판매 중 + 감사(by telegram, 관리자 id), 다른 사람은 무시", async () => {
     await sales.call("pause", { by: "auto", reason: "connection" });
     expect(await handleUpdate("ops", msg("/sales"), deps)).toBe("sales");
     const status = tg.sent("ops").at(-1)!;
-    expect(status.text).toMatch(/^⏸ <b>4종 판매 멈춤<\/b> · \d{2}\/\d{2} \d{2}:\d{2} · 자동 · 연결 오류 연속/);
+    expect(status.text).toMatch(/^⏸ <b>판매 멈춤<\/b> · \d{2}\/\d{2} \d{2}:\d{2} · 자동 · 연결 오류 연속/);
     expect(status.markup).toEqual({ inline_keyboard: [[{ text: "다시 열기", callback_data: "sl:resume" }]] });
     expect(await handleUpdate("ops", cb("sl:resume", "123456"), deps)).toBe("ignored");
     expect(await pausedNow()).toBe(true);
     expect(await handleUpdate("ops", cb("sl:resume", OWNER, status.id), deps)).toBe("sales_resumed");
     expect(await pausedNow()).toBe(false);
     const edit = tg.calls.filter(c => c.method === "editMessageText").at(-1)!;
-    expect(edit.body).toMatchObject({ message_id: status.id, reply_markup: { inline_keyboard: [[{ text: "4종 멈춤", callback_data: "sl:pause" }]] } });
-    expect(String(edit.body.text)).toMatch(/^▶️ <b>4종 판매 중<\/b>/);
+    expect(edit.body).toMatchObject({ message_id: status.id, reply_markup: { inline_keyboard: [[{ text: "판매 멈춤", callback_data: "sl:pause" }]] } });
+    expect(String(edit.body.text)).toMatch(/^▶️ <b>판매 중<\/b>/);
     const resumed = (await h.all<{ actor_user_id: string; detail: Record<string, unknown> }>("select actor_user_id,detail from ops_audit_log where action='sales_resumed' order by id desc limit 1"))[0];
     expect(resumed).toMatchObject({ actor_user_id: A, detail: { by: "telegram" } });
     expect(await handleUpdate("ops", cb("sl:pause", OWNER, status.id), deps)).toBe("sales_paused");

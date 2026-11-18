@@ -148,7 +148,10 @@ export function stripRx(text: string): string {
  * - 필요한 상세: 가게 · 매장 · 셔터 · 손님 · 오픈 준비 · 단골(일 상세가 그 꼴일 때만 — 하는 일을 모르면 쓰지 않는다)
  */
 export const SEED_TAGS: readonly { readonly tag: string; readonly re: RegExp }[] = [
-  { tag: "rel:single", re: /소개팅|(?<![가-힣])썸(?![가-힣])|썸 (상대|단계|타는)|고백|첫 만남|소개받|데이트 신청|짝사랑|애프터|새 인연|인연이 생기|프로필 사진|소개팅 앱/ },
+  // AM2-12 1부 1: 「만나는 사람 없음」 전제(소개팅 · 첫 만남 · 새 인연)는 rel:solo — 썸에게는 쓰지 않는다(premise.ts와 같은 갈래).
+  { tag: "rel:single", re: /(?<![가-힣])썸(?![가-힣])|썸 (상대|단계|타는)|고백|데이트 신청|짝사랑|애프터/ },
+  // 두 꼬리표를 합친 낱말은 AM2-11까지의 rel:single과 같다(4종 씨앗 거름 seedOk가 이 표를 쓴다 — 4종 입력에는 썸이 없어 결과가 같다).
+  { tag: "rel:solo", re: /소개팅|첫 만남|소개받|새 인연|인연이 생기|프로필 사진|소개팅 앱/ },
   { tag: "rel:partner", re: /연인|애인|남자친구|여자친구|데이트(?! 신청)|기념일|커플/ },
   { tag: "rel:married", re: /배우자|남편|아내|와이프|시댁|처가|시부모|부부|신혼|결혼기념일/ },
   { tag: "job:employee", re: /회의|사무실|출근|퇴근|결재|상사|팀장|동료|월급|회식|사내|야근|보고서|부서|인사팀|사원증|점심시간/ },
@@ -169,6 +172,7 @@ export function seedTagsFit(tags: readonly string[], f: Brief["person"]["facts"]
   const job = f.job.status, detail = f.job.detail ?? "";
   for (const t of tags) {
     if (t === "rel:single" && f.relationship !== "single") return false;
+    if (t === "rel:solo" && (f.relationship !== "single" || f.relationshipNote === "some")) return false;
     if (t === "rel:partner" && !/^(dating|married)$/.test(f.relationship)) return false;
     if (t === "rel:married" && f.relationship !== "married") return false;
     if (t === "job:employee" && job !== "employee") return false;
@@ -197,6 +201,7 @@ export function seedAsCondition(text: string): string {
 }
 /** 카드 줄의 연애 조건 꼴을 입력에 맞춘다(「만나는 사람이 있다면」 → 연애 중 「연인과는」 · 솔로 「새 인연을 만난다면」 · 기혼 「배우자와는」). 미입력은 조건 꼴 그대로. */
 export function relCondition(t: string, rel: string): string {
+  // AM2-12 1부 1: 썸(some)은 조건 꼴 그대로(「새 인연을 만난다면」은 만나는 사람이 없다는 전제).
   const to = rel === "dating" ? "연인과는" : rel === "married" ? "배우자와는" : rel === "single" ? "새 인연을 만난다면" : null;
   // 「함께하는 사람」(살림·생활비를 함께하는 짝)은 솔로에게는 조건 꼴 그대로 둔다(새 인연 조건으로 바꾸면 살림 줄이 어긋난다).
   if (!to) return t;

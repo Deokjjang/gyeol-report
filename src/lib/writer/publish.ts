@@ -129,6 +129,10 @@ export type V5BuildDeps = Partial<Pick<WriterOptions, "stream" | "now" | "sleep"
   readonly reviewModel?: string; readonly testRun?: boolean;
   /** W3 P3 6절: 검수 판(기본 review-v4). review-v6-card이면 설계 카드 지침 + reviewDesignSummary(카드 렌더러가 만든 절마다 한 줄 요약)를 쓴다. 리드 재측정 전까지 운영은 넣지 않는다. */
   readonly reviewVersion?: import("./review").ReviewVersion; readonly reviewDesignSummary?: string;
+  /** AM2-9 2부(세운·대운 장 묶음 작가만): 감독 2차 — 1차 원고에서 이어, 빠진 묶음만 부르고 차단이 남은 묶음만 새 호출 1회(걸린 문장 인용 + 이유). 4종은 쓰지 않는다. */
+  readonly secondPass?: boolean;
+  /** AM2-9 3부(도구 전용 — 운영은 넘기지 않는다): 세운·대운 첫 원고 깃발 · 마지막 깃발을 본다(저장 기록 다시 대 보기). Book에는 남지 않는다. */
+  readonly onFlags?: (stage: "first" | "final", flags: readonly { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail?: string }[], chapters: readonly { readonly n: number; readonly sections: readonly { readonly heading: string; readonly paragraphs: readonly string[] }[] }[]) => void;
   /** book:replay(최종판 0-3): 저장 원문으로만 다시 돌린다. 저장본이 없는 수리·재작성은 부르지 않고(호출 0), 걸린 소제목·문단도 빼지 않고 기록만 남긴다. */
   readonly replay?: boolean;
   /** 최종판 4 실질 결함 고침(tools/final/fix-sections.ts): 이 소제목들을 사유와 함께 재작성 대상에 더한다(검사 깃발과 같은 재작성 1회). 작가는 다시 부르지 않는다. */
@@ -404,6 +408,10 @@ export function coverIssue(raw: string | null, brief: Brief, avoid: readonly str
   if (sentenceViolation(v, safetyFacts(brief)) !== null) return { reason: "사실 규칙", level: "hard" };
   // AM 1-1 ③: 그림 안 시간·계절 모순(「겨울 밤 … 따뜻한 해」).
   { const clash = imageClash(v); if (clash) return { reason: `그림 안 시간·계절 모순(${clash}) — 한 시간·한 계절의 그림으로`, level: "hard" }; }
+  // AM2-12 4부(P12 세운 표지 「등불처럼 오래 비추는 느긋한 한 해」 — 2027 흐름 5 거셈 · 밀고 갈 해): 세운 표지의 속도 말은 그 해 흐름과 같은 쪽.
+  if (brief.product === "annual_fortune") { const f = brief.timeline?.entries.find(e => e.kind === "year")?.flow.score;
+    const w = f === undefined ? undefined : f >= 4 ? v.match(/느긋|잔잔|고요|한가|쉬어 가|숨 고르/)?.[0] : f <= 2 ? v.match(/거센|거세|세차|몰아치|질주|폭발/)?.[0] : undefined;
+    if (w) return { reason: `해 흐름 ${f}/5와 반대인 속도 말(${w}) — 표지는 흐름표 해 판정과 같은 쪽`, level: "hard" }; }
   // 최종판3 2g: 종합 표지는 직업·나이 금지, 연애 표지는 직업 장소 금지, 같은 사람 이전 책 표지와 같은 모티프 계열 금지.
   if (brief.product === "saju_mbti_full") {
     const words = jobWordsOf(brief.person.facts.job.detail);

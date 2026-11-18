@@ -19,9 +19,8 @@ export const RETRY_DELAYS_MS = [1 * MIN, 5 * MIN, 15 * MIN, 1 * HOUR, 3 * HOUR, 
  */
 export const RETRY_WINDOW_MS = AUTO_REFUND_HOURS_DEFAULT * HOUR;
 export const retryWindowMs = (env: Readonly<Record<string, string | undefined>> = process.env) => autoRefundHours(env) * HOUR;
-/** 정식본·임시본 모델. 정식본은 환경 설정(LLM_PROVIDER 등)과 무관하게 Sonnet으로 고정한다. */
+/** 정식본 모델. 환경 설정(LLM_PROVIDER 등)과 무관하게 Sonnet으로 고정한다(임시본 · 대체 작가 없음 — W3 P2, 세운·대운은 AM2-9 2부). */
 export const OFFICIAL_TARGET = { provider: "anthropic", model: "claude-sonnet-5-5" } as const;
-export const INTERIM_TARGET = { provider: "openai", model: "gpt-6.1-terra" } as const;
 
 /**
  * 주문당 비용 상한(HOTFIX-W1 2부 6, USD): 작가 호출을 포함한 한 주문(Book)의 모든 시도 비용 합. 이 안에서만 부르고(작가 한도는 최악 비용이 남은 예산 안에
@@ -180,9 +179,9 @@ export function judgeBuild(built: { readonly meta: WriterMeta; readonly run: Wri
   const chapters: readonly ChapterMeta[] = built.meta.chapters;
   const det = chapters.filter(c => c.source === "deterministic");
   const keysFilled = chapters.filter(c => c.source !== "deterministic" && (c.reason ?? "").startsWith("keys_filled")).map(c => c.n);
-  // AM2-7 1부 7(덕짱님 지시): 세운·대운 장 묶음 작가가 지우고도 고칠 수 없는 차단이 남긴 장은 발행 보류.
-  const held = chapters.filter(c => /(^|;)generation_hold:/.test(c.reason ?? "")).map(c => c.n);
-  if (held.length) { const calls0 = built.run?.calls ?? built.meta.calls; return { kind: "incomplete", reason: `${calls0.every(c => c.chars === 0) ? "pre_output:" : "partial:"}generation_hold:${held.join(",")}`, rejected: [], missing: held, preOutput: false }; }
+  // AM2-9 2부: 세운·대운 장 묶음 작가가 지우고도 고칠 수 없는 차단(네 갈래)이 남긴 장(four_block)은 그 시도에서 발행하지 않는다 → 감독 2차 또는 결론(보류 없음).
+  const held = chapters.filter(c => /(^|;)four_block:/.test(c.reason ?? "")).map(c => c.n);
+  if (held.length) { const calls0 = built.run?.calls ?? built.meta.calls; return { kind: "incomplete", reason: `${calls0.every(c => c.chars === 0) ? "pre_output:" : "partial:"}four_block:${held.join(",")}`, rejected: [], missing: held, preOutput: false }; }
   if (!det.length && !keysFilled.length && chapters.length) return { kind: "complete", keysFilled };
   const calls = built.run?.calls ?? built.meta.calls;
   const preOutput = calls.every(c => c.chars === 0);

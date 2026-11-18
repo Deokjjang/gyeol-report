@@ -33,7 +33,8 @@ describe("AM2-6 1부 고리는 재료", () => {
     expect(jan.text).not.toMatch(/이 책|처음|번째/); // AM2-8 P8 뒤 고침
     const mar = keys.find(k => k.label === "3월 · 계묘월")!.links!.find(l => l.kind === "seat")!;
     // AM2-7 3부 5 · 4부 1: 앞 key의 같은 자리 관계를 다 적고, 글자째 옮길 틀(「…과 같은 … 자리지만 이번엔」)은 주지 않는다.
-    expect(mar.text).toMatch(/〕 앞: 1월 · 신축월\(그때 같은 자리: 병신합 · 축진파 — 맺힘\)/); expect(mar.nth).toBe(2);
+    // AM2-11 1부 3: 「그때 같은 자리」 대신 자리 이름.
+    expect(mar.text).toMatch(/〕 앞: 1월 · 신축월 태어난 달 자리의 병신합 · 축진파\(맺힘\) · 3월 · 계묘월 태어난 달 자리의 〔/); expect(mar.text).not.toMatch(/그때|같은 자리|이번/); expect(mar.nth).toBe(2);
     expect(mar.text).not.toMatch(/자리지만 이번엔/);
     // 둘째 핵심에도 뜻 한 마디(P5 R-G3).
     expect(keys.find(k => k.label === "1월 · 신축월")!.links!.find(l => l.kind === "second")?.text).toMatch(/둘째 핵심 〔축진파 = 어긋남/);
@@ -154,7 +155,7 @@ describe("AM2-6 P6 annual-1 자동 점검(호출 0)", () => {
     expect(quotes.some(q => /같은 .* 자리지만/.test(q))).toBe(false);
     for (const q of quotes) expect(calendarMonth(q), q).toBe(false);
     const k7 = keysOf(intake).find(x => x.label === "7월 · 정미월")!;
-    expect(k7.links!.find(l => l.kind === "seat")!.text).toMatch(/앞: 6월 · 병오월\(그때 같은 자리: /);
+    expect(k7.links!.find(l => l.kind === "seat")!.text).toMatch(/앞: 6월 · 병오월 태어난 날 자리의 /);
     for (const c of intake.chapters) for (const sp of c.sections ?? []) if (sp.pointer) { expect(CHAPTER_REF.test(sp.pointer), sp.pointer).toBe(false); expect(calendarMonth(sp.pointer), sp.pointer).toBe(false); }
   });
   it("문단 하나로 온 달 key는 문장 경계에서 둘로 — 장면 · 짝 문장에서 둘째 문단, 글자 그대로", () => {

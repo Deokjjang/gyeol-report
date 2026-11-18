@@ -2,6 +2,7 @@
  * 생성 감독(P6d-ops 7 → W3 P2). 책 생성 진입 함수(buildV5Snapshot)는 호출만 하고, deps로 모델·fetch만 정한다.
  * - 발행: Sonnet만(대체 작가·임시본 없음). 결정론 장이 하나라도 있으면 내보내지 않는다.
  * - W3 P2 30분 결론: 1차 → 실패 분류(policy failClassOf) → 2차 1번(nextAfterFailure) → 그래도 실패하거나 시작 + 25분이면 포기(결제 자동 환불·이용권 반환).
+ * - AM2-9 2부: 세운·대운(장 묶음 작가)의 2차는 1차 원고(저장된 장 · 원문)에서 잇는다(secondPass) — 빠진 묶음만 부르고, 네 갈래 차단이 남은 묶음만 새 호출 1회.
  * - 모든 시도·비용·사유는 book_generation_runs에, 상태는 book_generation_state에.
  * 최종판 0-1: 작가 원고가 나오면 그 책은 완성본이 된다(짧은 장도 버리지 않음). 다음 시도는 저장된 장 다음부터 빠진 장만 이어 쓴다.
  * 주문당 비용 상한(orderCostCap): 1차 + 2차 + 검수·수리 몫. 상한에 이르면 부르지 않고 포기한다.
@@ -13,8 +14,9 @@ import type { PriorBooks } from "../../writer/prior";
 import type { buildV5Snapshot, V5BuildDeps } from "../../writer/publish";
 import type { ChapterSink } from "../../writer/runner";
 import type { RawEntry, WriterCache } from "../../writer/runner";
-import { attemptBudgetMs, failClassOf, INTERIM_TARGET, judgeBuild, ladderOf, MAX_ATTEMPTS, nextAfterFailure, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict, type FailClass } from "./policy";
-import { failureLine, type GenerationAlerts } from "./alerts";
+import { attemptBudgetMs, failClassOf, judgeBuild, ladderOf, MAX_ATTEMPTS, nextAfterFailure, nextRetryAt, OFFICIAL_TARGET, orderCostCap, runSummary, spentOf, type BuildVerdict, type FailClass } from "./policy";
+import { writerModeOf } from "../../writer/mode";
+import type { GenerationAlerts } from "./alerts";
 import type { LadderStage } from "../../writer/runner";
 import { chainCache, opsChapterSink, opsRawCache, watchFetch, type OpsStore, type QuotaSeen } from "./sinks";
 import { devForceAnthropicDown, devMockMode, devMockStream } from "./devMock";
@@ -25,6 +27,7 @@ export type GenerationEnv = {
   readonly now?: () => number;
   /** 시험 주입(fetchImpl·sleep·people·budgetMs·stream). 모델·대체는 감독이 정한다. */
   readonly deps?: V5BuildDeps;
+  /** 옛 임시본(OpenAI) 경로의 키 — 쓰지 않는다(W3 P2 · AM2-9 2부). 시험 주입 호환으로만 남는다. */
   readonly openAiKey?: string | null;
   readonly build?: typeof buildV5Snapshot;
   /** 최종판3 6: 호출 원문 저장소(ops_writer_raw RPC). 교체 레인이 lease 토큰으로 쓴다. */
@@ -38,7 +41,7 @@ export type GenerationEnv = {
 };
 export type State = { phase: string; first_attempt_at: string; first_failure_at: string | null; failures: number; rejected_chapters: number[]; last_reason: string | null };
 export type Decision =
-  | { readonly kind: "publish"; readonly edition: "official" | "interim"; readonly snapshot: Record<string, unknown>; readonly meta: WriterMeta }
+  | { readonly kind: "publish"; readonly edition: "official"; readonly snapshot: Record<string, unknown>; readonly meta: WriterMeta }
   | { readonly kind: "defer"; readonly until: string; readonly reason: string }
   /** W3 P2: 결론 — 결제는 자동 환불, 이용권은 반환. cls·spentUsd는 알림 한 줄에 쓴다. */
   | { readonly kind: "give_up"; readonly reason: string; readonly cls?: FailClass | "deadline"; readonly spentUsd?: number }
@@ -55,14 +58,6 @@ const ms = (iso: string | null | undefined) => (iso ? Date.parse(iso) : NaN);
 const iso = (t: number) => new Date(t).toISOString();
 
 async function loadBuild(env: GenerationEnv) { return env.build ?? (await import("../../writer/publish")).buildV5Snapshot; }
-
-/** OpenAI를 쓸 수 있는가: 키가 있고, 잔액 부족으로 꺼지지 않았을 때. */
-export async function openAiAvailable(env: GenerationEnv): Promise<boolean> {
-  const key = env.openAiKey === undefined ? process.env.OPENAI_API_KEY : env.openAiKey;
-  if (!key) return false;
-  try { const r = await env.store.call("provider", {}); const p = (r.providers as Record<string, { disabledAt: string | null }> | undefined)?.openai; return r.ok === true && !p?.disabledAt; }
-  catch { return false; }
-}
 
 /** 저장된 원문(meta.raw)을 읽기 전용 저장소로(교체 레인·재생성: 같은 입력이면 다시 부르지 않는다). */
 export function rawCache(raw: readonly RawEntry[] | undefined, next?: WriterCache | null): WriterCache | null {
@@ -81,23 +76,24 @@ const productOf = (p: unknown) => { const k = (p as { productKey?: unknown } | n
 type Ladder = { startStage: LadderStage; exhaustedMaxTokens: number; end: boolean };
 
 /** 한 번 만들어 판정한다(Sonnet). 예외는 실패로 본다. costCapUsd: 이번 시도가 더 쓸 수 있는 비용. */
-async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder; fresh?: boolean }, lane: "official" | "interim") {
+async function attempt(env: GenerationEnv, job: { payload: ReportInputPayload; reportId: string; policyAt: string; sink: ChapterSink; prior?: PriorBooks; budgetMs?: number; costCapUsd?: number; stored?: readonly RawEntry[]; raw?: WriterCache | null; ladder?: Ladder; second?: boolean }) {
+  const lane = "official" as const;
   const seen: QuotaSeen = {};
   // 운영 경로는 모델을 넘기지 않는다 → 정식본은 항상 Sonnet. 시험·측정 도구가 모델을 명시하면 그 모델로(대체 모델은 어느 쪽이든 없음).
   const injected = env.deps?.provider && env.deps?.model ? { provider: env.deps.provider, model: env.deps.model } : null;
-  const target = lane === "interim" ? INTERIM_TARGET : injected ?? OFFICIAL_TARGET;
+  const target = injected ?? OFFICIAL_TARGET;
   const base = env.deps?.fetchImpl ?? ((...a: Parameters<typeof fetch>) => fetch(...a));
   // OPS_FORCE_ANTHROPIC_DOWN: Anthropic 시도를 출력 전 529로 실패시킨다(개발 전용).
-  const mock = devMockMode() ?? (lane === "official" && devForceAnthropicDown() ? "fail" as const : null);
+  const mock = devMockMode() ?? (devForceAnthropicDown() ? "fail" as const : null);
   // 개발 서버의 실제 호출은 예산 관문(tools/llm/budget.ts)을 지난다(최종판 0-5). 목업·시험 주입 stream이 있으면 그대로.
   const gate = mock || env.deps?.stream ? null : await devBudget(`${lane} ${job.reportId}`);
   // 최종판3 6: 저장된 Book 원문 → 이 주문의 운영 원문(받는 즉시 저장) → 개발 관문 순. 같은 입력이면 다시 부르지 않는다.
-  // W3 P2: 검사 탈락 뒤 2차(fresh)는 저장 원문을 쓰지 않고 새로 부른다(같은 원문이면 같은 탈락이 나온다).
-  const cache = job.fresh ? null : rawCache(job.stored, chainCache(lane === "official" ? job.raw : null, gate?.cache ?? env.deps?.cache ?? null));
+  // AM2-9 2부: 세운·대운 2차(second)도 저장 원문을 그대로 쓴다 — 같은 탈락을 되풀이하지 않는 것은 장 묶음 작가가 맡는다(차단이 남은 묶음만 걸린 문장 인용 + 이유로 새로 부름).
+  const cache = rawCache(job.stored, chainCache(job.raw ?? null, gate?.cache ?? env.deps?.cache ?? null));
   const deps: V5BuildDeps = { ...env.deps, provider: target.provider, model: target.model, fallback: null, fetchImpl: watchFetch(base, seen),
     ...(job.budgetMs ? { budgetMs: job.budgetMs } : {}), ...(mock ? { stream: devMockStream(mock, job.payload, job.policyAt) } : gate ? { stream: gate.stream } : {}),
     ...(cache ? { cache } : {}), ...(job.costCapUsd !== undefined ? { costCapUsd: job.costCapUsd } : {}),
-    ...(job.ladder ? { startStage: job.ladder.startStage, ...(job.ladder.exhaustedMaxTokens ? { exhaustedMaxTokens: job.ladder.exhaustedMaxTokens } : {}) } : {}) };
+    ...(job.ladder ? { startStage: job.ladder.startStage, ...(job.ladder.exhaustedMaxTokens ? { exhaustedMaxTokens: job.ladder.exhaustedMaxTokens } : {}) } : {}), ...(job.second ? { secondPass: true } : {}) };
   const started = (env.now ?? Date.now)();
   let built: Built | null = null, verdict: BuildVerdict;
   try {
@@ -137,7 +133,6 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   const ladder = ladderOf(runs as never, env.deps?.model ?? OFFICIAL_TARGET.model);
   // 한 시도 시간: 작업이 정한 값(결제 lease 몫) → 시험 주입 → 작가 기본(700초), 그리고 25분 마감까지 남은 시간 중 작은 쪽.
   const budget = attemptBudgetMs({ originAt, now: now(), defaultBudgetMs: job.budgetMs ?? env.deps?.budgetMs ?? 700_000 });
-  const lastCheck = /^official:.*generation_hold/.test(String(state.last_reason ?? ""));
   const usd = (n: number) => `$${n.toFixed(4)}`;
   const giveUp = (reason: string, cls: FailClass | "deadline", spent: number): Decision => ({ kind: "give_up", reason, cls, spentUsd: spent });
   let a: Awaited<ReturnType<typeof attempt>> | null = null, decision: Decision;
@@ -146,7 +141,8 @@ export async function superviseQueueJob(job: QueueJob, env: GenerationEnv, settl
   else if (ladder.end) decision = giveUp(`official:thinking_exhausted_end 2단까지 생각 소진(누적 ${usd(spentBefore)})`, "thinking_exhausted", spentBefore);
   else if (spentBefore >= cap) decision = giveUp(`official:cost_cap 주문당 비용 상한 ${usd(cap)} 도달(누적 ${usd(spentBefore)})`, "check", spentBefore);
   else {
-    a = await attempt(env, { ...job, budgetMs: budget, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(attemptIndex > 0 && lastCheck ? { fresh: true } : {}) }, "official");
+    // AM2-9 2부: 세운·대운 2차는 secondPass(1차 원고에서 이어 빠진 묶음 · 차단이 남은 묶음만). 4종은 그대로(같은 설정 — 저장된 장 다음부터 이어 쓴다).
+    a = await attempt(env, { ...job, budgetMs: budget, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(attemptIndex > 0 && writerModeOf(product ?? "") === "chunked" ? { second: true } : {}) });
     const spent = spentBefore + a.summary.costUsd;
     if (a.verdict.kind === "stale") decision = { kind: "stale", reason: a.reason };
     else if (a.verdict.kind === "complete") decision = { kind: "publish", edition: "official", snapshot: a.built!.snapshot as unknown as Record<string, unknown>, meta: a.built!.meta };
@@ -209,7 +205,7 @@ export async function runLaneJob(env: GenerationEnv): Promise<{ ok: boolean; emp
     return { ok: true, reportId: job.reportId, outcome: "held" };
   }
   const stored = (job.snapshot?.evidencePacket as { meta?: { raw?: RawEntry[] } } | undefined)?.meta?.raw;
-  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, raw: laneRaw, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(env.laneBudgetMs ? { budgetMs: env.laneBudgetMs() } : {}), ...(stored?.length ? { stored } : {}) }, "official");
+  const a = await attempt(env, { payload: evidence.input, reportId: job.reportId, policyAt: evidence.generatedAt, sink, raw: laneRaw, costCapUsd: Math.max(0, cap - spentBefore), ladder, ...(env.laneBudgetMs ? { budgetMs: env.laneBudgetMs() } : {}), ...(stored?.length ? { stored } : {}) });
   const runBase = { lane, provider: a.summary.provider, model: a.summary.model, costUsd: a.summary.costUsd, calls: a.summary.calls, chapters: a.summary.chapters, durationMs: a.summary.durationMs };
   if (a.verdict.kind === "stale") return { ok: true, reportId: job.reportId, outcome: "stale" };
   if (a.verdict.kind === "complete") {

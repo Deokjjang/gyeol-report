@@ -1,6 +1,6 @@
 // W3 P2 「30분 결론」 가짜 공급자 시뮬레이션(비용 0): 가짜 시계 + 1분 크론 흉내 + 스크립트 작가로 결제·이용권 주문 하나가 결론(발행 또는 자동 환불·이용권 반환)에
 // 닿는 시각을 잰다. 경로: (a) 생각 소진 → 2차 성공 / (a2) 생각 소진 두 번 → 결론 / (b) 529 장애 / (c) Anthropic 잔액 소진 / (d) 검사 탈락(장 빠짐) / (e) 첫 이벤트 멈춤 /
-// (f) 함수 죽음 / 이용권 경로. 모든 경로가 시작 + 30분 안. (장애 자동 멈춤 — 529 연결 실패 주문 3건 → 4종 판매 멈춤 — 은 실제 SQL로 w3SafetySql.test.ts가 본다.)
+// (f) 함수 죽음 / 이용권 경로. 모든 경로가 시작 + 30분 안. (장애 자동 멈춤 — 529 연결 실패 주문 3건 → 판매 멈춤 — 은 실제 SQL로 w3SafetySql.test.ts가 본다.)
 import { describe, expect, it } from "vitest";
 import { normalizeReportInputPayload } from "@/lib/report-generation/reportInputAdapter";
 import { superviseQueueJob, type Decision, type QueueJob } from "@/lib/ops/generation/supervisor";

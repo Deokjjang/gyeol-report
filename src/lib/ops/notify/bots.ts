@@ -94,7 +94,7 @@ async function opsCommand(deps: BotDeps, text: string): Promise<string> {
   const cmd = text.trim().split(/[\s@]/)[0].toLowerCase();
   if (cmd === "/campaign") return await campaignCommand(deps);
   if (cmd === "/sales") return await salesPauseCommand(deps);
-  if (cmd !== "/pending") { await send(deps, "ops", "명령: /pending 버튼이 남은 처리 건 · /campaign 가입 이용권 현황 · /sales 4종 판매 멈춤·다시 열기"); return "help"; }
+  if (cmd !== "/pending") { await send(deps, "ops", "명령: /pending 버튼이 남은 처리 건 · /campaign 가입 이용권 현황 · /sales 판매 멈춤·다시 열기"); return "help"; }
   const r = await deps.notify.call("pending", {});
   const items = Array.isArray(r.items) ? r.items as { id: number; kind: string; messageId: number | null; createdAt: string; orderCode: string | null; reason: string | null }[] : [];
   const failed = Array.isArray(r.failed) ? r.failed as { id: number; kind: string; bot: string; attempts: number; lastError: string | null; createdAt: string }[] : [];
@@ -140,7 +140,7 @@ async function signupSwitch(deps: BotDeps, q: NonNullable<Tg["callback_query"]>,
   return on ? "signup_resumed" : "signup_paused";
 }
 
-// ── W3 P0 4종 판매 중지(/sales · [4종 멈춤] · [다시 열기]) ──────────────────
+// ── W3 P0 판매 중지(/sales · [판매 멈춤] · [다시 열기]) ──────────────────
 const salesState = (r: Record<string, unknown>): SalesState => ({ on: r.on === true, at: typeof r.at === "string" ? r.at : null, by: typeof r.by === "string" ? r.by : null, reason: typeof r.reason === "string" ? r.reason : null });
 async function salesPauseCommand(deps: BotDeps): Promise<string> {
   const r = deps.sales ? await deps.sales.call("status", {}) : { ok: false };
@@ -149,7 +149,7 @@ async function salesPauseCommand(deps: BotDeps): Promise<string> {
   await send(deps, "ops", salesStatusText(st), { reply_markup: { inline_keyboard: salesButtons(st.on) } });
   return "sales";
 }
-/** [4종 멈춤]·[다시 열기]: 덕짱님 id만(웹훅 첫 관문), 돈이 오가지 않아 비밀번호 없음. 감사 한 줄은 SQL(ops_sales)이 같은 트랜잭션에 남긴다. 실패도 감사에 남긴다. */
+/** [판매 멈춤]·[다시 열기]: 덕짱님 id만(웹훅 첫 관문), 돈이 오가지 않아 비밀번호 없음. 감사 한 줄은 SQL(ops_sales)이 같은 트랜잭션에 남긴다. 실패도 감사에 남긴다. */
 async function salesSwitch(deps: BotDeps, q: NonNullable<Tg["callback_query"]>, pause: boolean): Promise<string> {
   if (!deps.sales) { await toast(deps, q.id, "판매 스위치 저장소가 없어요."); return "sales_unavailable"; }
   const r = await deps.sales.call(pause ? "pause" : "resume", { by: "telegram", reason: "manual", ...(deps.adminId ? { actorUserId: deps.adminId } : {}) });
@@ -160,7 +160,7 @@ async function salesSwitch(deps: BotDeps, q: NonNullable<Tg["callback_query"]>, 
   }
   const st = salesState(r);
   if (typeof q.message?.message_id === "number") await editOps(deps, q.message.message_id, { text: salesStatusText(st), buttons: salesButtons(st.on) });
-  await toast(deps, q.id, r.changed === false ? (st.on ? "이미 멈춰 있어요." : "이미 판매 중이에요.") : st.on ? "4종 판매를 멈췄어요." : "4종 판매를 다시 열었어요.");
+  await toast(deps, q.id, r.changed === false ? (st.on ? "이미 멈춰 있어요." : "이미 판매 중이에요.") : st.on ? "판매를 멈췄어요." : "판매를 다시 열었어요.");
   return pause ? "sales_paused" : "sales_resumed";
 }
 

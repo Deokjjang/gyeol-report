@@ -3,13 +3,14 @@
  * - 1장이 든 첫 묶음을 먼저 부르고, 첫 글자가 오면(접두부 캐시가 써진 뒤) 나머지 묶음을 속도 제한 안에서 병렬로 부른다.
  * - 묶음이 끝날 때마다 그 묶음의 장을 저장한다(대기 화면 진행률 · 「1장 먼저 읽기」). 한 장의 key 일부를 쓰는 묶음은 저장된 key와 합쳐 다시 저장한다.
  * - 이어 쓰기·회수(감독의 다음 시도): 저장된 장·key로 끝난 묶음을 알아내고 끊긴 묶음만 다시 부른다.
+ * - AM2-9 2부(운영 30분 흐름): 한 시도 안에서 같은 묶음을 다시 부르지 않는다. 못 끝낸 묶음은 감독 2차가 다시 부름 표지를 붙여 부른다(같은 원문이 저장본에서 돌아오지 않게).
  */
 import { parseChapters, type BookSection } from "../format";
-import { chunkCall, mergeRuns, rawKey, type ChapterSink, type WriterOptions, type WriterRun } from "../runner";
+import { chunkCall, mergeRuns, rawKey, type ChapterSink, type ChunkBudget, type WriterOptions, type WriterRun } from "../runner";
 import type { DraftChapter } from "../safety";
 import type { WriterChapter } from "../prompt";
 import type { Intake } from "./intake";
-import { chunkMaxTokens, chunkUser, parseReplacements, replaceMaxTokens, replaceUser, type Chunk, type ParaTarget } from "./prompt";
+import { CHUNK_THINKING_TOKENS, chunkMaxTokens, chunkUser, parseReplacements, replaceMaxTokens, replaceUser, type Chunk, type ParaTarget } from "./prompt";
 
 /** 못 끝낸 묶음을 다시 부를 때 지시 끝에 붙이는 한 줄. */
 export const CHUNK_RETRY_NOTE = "(다시 부름: 앞 호출이 이 묶음을 끝내지 못했다 — 위 머리글의 장·달·해를 빠짐없이 쓴다.)";
@@ -60,9 +61,16 @@ export function mergeParts(drafts: Map<number, DraftChapter>, got: ReadonlyMap<n
 export type ChunkRunArgs = {
   readonly o: WriterOptions; readonly intake: Intake; readonly chunks: readonly Chunk[]; readonly plan: readonly WriterChapter[];
   readonly system: { readonly rules: string; readonly card: string }; readonly sink: ChapterSink;
+  /** AM2-9 2부: 한 시도의 묶음 호출들이 함께 쓰는 비용 몫(주문 상한 안). */
+  readonly budget?: ChunkBudget;
 };
-/** 묶음 원고(묶음 id → 원문)와 장 원고. 저장된 장으로 이미 끝난 묶음은 부르지 않는다. */
-export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | null; drafts: Map<number, DraftChapter>; texts: Map<string, string>; log: ChunkLog[] }> {
+/** 본문 추정 토큰(한도에서 생각 몫을 뺀 값) — 남은 시간·비용으로 이보다 작게 자르지 않는다. */
+const bodyOf = (maxTokens: number) => Math.max(1, maxTokens - CHUNK_THINKING_TOKENS);
+/**
+ * 묶음 원고(묶음 id → 원문)와 장 원고. 저장된 장으로 이미 끝난 묶음은 부르지 않는다.
+ * retryTodo(감독 2차): 남은 묶음은 앞 시도가 끝내지 못한 묶음이다 — 다시 부름 표지를 붙인다. fresh = 이번 시도에 부른 묶음 id.
+ */
+export async function writeChunks(a: ChunkRunArgs & { readonly retryTodo?: boolean }): Promise<{ run: WriterRun | null; drafts: Map<number, DraftChapter>; texts: Map<string, string>; log: ChunkLog[]; fresh: string[] }> {
   const drafts = new Map<number, DraftChapter>(), texts = new Map<string, string>(), log: ChunkLog[] = [], runs: WriterRun[] = [];
   try { for (const s of await a.sink.load()) if (a.plan.some(p => p.n === s.n)) drafts.set(s.n, { chapter: s.chapter, source: s.source }); } catch { /* 저장소가 안 되면 처음부터 */ }
   const resumed = drafts.size > 0;
@@ -76,7 +84,8 @@ export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | n
     const t0 = Date.now();
     // AM2-3 6-1 ②: 다시 부를 때는 지시 끝에 한 줄을 붙인다(일부만 온 원고가 원문 캐시에서 그대로 돌아오지 않게).
     const user = chunkUser(a.intake, c) + (retry ? `\n\n${CHUNK_RETRY_NOTE}` : "");
-    const r = await chunkCall(a.o, undefined, { kind: "first", system, systemParts: parts, user, maxTokens: chunkMaxTokens(c, c.parts.some(p => p.n === 1)), ...(onFirstText ? { onFirstText } : {}) });
+    const max = chunkMaxTokens(c, c.parts.some(p => p.n === 1));
+    const r = await chunkCall(a.o, undefined, { kind: "first", system, systemParts: parts, user, maxTokens: max, body: bodyOf(max), ...(a.budget ? { budget: a.budget } : {}), ...(onFirstText ? { onFirstText } : {}) });
     runs.push(r.run);
     log.push({ id: c.id, kind: "first", round: retry ? 1 : 0, chars: r.text.length, finish: r.finish, costUsd: r.run.costUsd, ms: Date.now() - t0, ...(retry ? { reason: "retry_unfinished" } : {}) });
     if (!r.text) return;
@@ -85,26 +94,25 @@ export async function writeChunks(a: ChunkRunArgs): Promise<{ run: WriterRun | n
     for (const n of changed) { const d = drafts.get(n)!; if (!(await a.sink.save({ n, chapter: d.chapter, source: d.source }))) stale = true; }
   };
   const first = todo.find(c => c.parts.some(p => p.n === 1)) ?? todo[0];
+  const retry = Boolean(a.retryTodo);
   if (first) {
     // 첫 묶음의 첫 글자(= 접두부 캐시가 써짐) 또는 첫 묶음이 끝날 때 나머지를 띄운다.
     let release!: () => void; const warmed = new Promise<void>(r => { release = r; });
-    const head = one(first, () => release()).finally(() => release());
+    const head = one(first, () => release(), retry).finally(() => release());
     await warmed;
     const rest = todo.filter(c => c !== first), queue = [...rest];
-    const workers = Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let c = queue.shift(); c; c = queue.shift()) await one(c); });
+    const workers = Array.from({ length: Math.min(concurrency(), queue.length) }, async () => { for (let c = queue.shift(); c; c = queue.shift()) await one(c, undefined, retry); });
     await Promise.all([head, ...workers]);
-    // AM2-3 6-1 ②(덕짱님 결정 2026-11-12): 빈 원고 재호출(chunkCall 안 1회) 뒤에도 못 끝낸 묶음(장·key가 빠짐)은 같은 시도 안에서 한 번 더.
-    // 그래도 못 끝내면 빠진 자리는 결정론 채움 표시로 남고, 발행 관문(policy judgeBuild)이 내보내지 않는다 → 2차 또는 결론(W3 P2).
-    const left = todo.filter(c => !chunkDone(c, drafts)), q2 = [...left];
-    await Promise.all(Array.from({ length: Math.min(concurrency(), q2.length) }, async () => { for (let c = q2.shift(); c; c = q2.shift()) await one(c, undefined, true); }));
+    // AM2-9 2부: 못 끝낸 묶음(장·key가 빠짐)은 같은 시도 안에서 다시 부르지 않는다 — 빠진 자리는 결정론 채움 표시로 남고 발행 관문(policy judgeBuild)이 내보내지 않는다 → 감독 2차 또는 결론.
   }
-  return { run: runs.length ? { ...mergeRuns(runs), ...(stale ? { stale: true } : {}) } : null, drafts, texts, log };
+  return { run: runs.length ? { ...mergeRuns(runs), ...(stale ? { stale: true } : {}) } : null, drafts, texts, log, fresh: todo.map(c => c.id) };
 }
 
 /** 걸린 묶음 다시 쓰기 1회(같은 접두부 + 앞 원고 + 걸린 문장 인용·이유). 다시 쓴 몫으로 그 묶음의 장을 바꾼다. */
 export async function rewriteChunk(a: ChunkRunArgs & { readonly chunk: Chunk; readonly previous: string; readonly issues: readonly { sentence: string; reason: string }[]; readonly round: number; readonly drafts: Map<number, DraftChapter> }): Promise<{ run: WriterRun; text: string; log: ChunkLog; changed: number[] }> {
   const t0 = Date.now();
-  const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user: chunkUser(a.intake, a.chunk, { previous: a.previous, issues: a.issues }), maxTokens: chunkMaxTokens(a.chunk, a.chunk.parts.some(p => p.n === 1)) });
+  const max = chunkMaxTokens(a.chunk, a.chunk.parts.some(p => p.n === 1));
+  const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user: chunkUser(a.intake, a.chunk, { previous: a.previous, issues: a.issues }), maxTokens: max, body: bodyOf(max), ...(a.budget ? { budget: a.budget } : {}) });
   const got = r.text ? partsOf(r.text, a.chunk, a.plan) : new Map<number, BookSection[]>();
   // 다시 쓴 원고가 그 묶음 몫을 다 담았을 때만 바꾼다(빠진 장·key가 있으면 앞 원고를 둔다).
   const complete = a.chunk.parts.every(p => { const s = got.get(p.n); return s && (!p.keys || p.keys.every(k => s.some(x => x.heading === k))); });
@@ -122,7 +130,8 @@ export type ParaLock = (t: ParaTarget, before: readonly string[], after: readonl
 export async function replaceParagraphs(a: ChunkRunArgs & { readonly chunk: Chunk; readonly targets: readonly ParaTarget[]; readonly round: number; readonly drafts: Map<number, DraftChapter>; readonly cover?: { line: string; reason: string }; readonly lock?: ParaLock }): Promise<{ run: WriterRun; log: ChunkLog; applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[]; cover?: string; changed: number[]; locks: { at: string; kind: string; detail: string }[] }> {
   const t0 = Date.now();
   const user = replaceUser(a.intake, a.chunk, a.drafts, a.targets, a.cover);
-  const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user, maxTokens: replaceMaxTokens(a.targets) + (a.cover ? 200 : 0) });
+  const max = replaceMaxTokens(a.targets) + (a.cover ? 200 : 0);
+  const r = await chunkCall(a.o, undefined, { kind: "rewrite", system: `${a.system.rules}\n\n${a.system.card}`, systemParts: [a.system.rules, a.system.card], user, maxTokens: max, body: bodyOf(max), ...(a.budget ? { budget: a.budget } : {}) });
   const got = r.text ? parseReplacements(r.text) : { paras: new Map<string, string[]>() };
   const applied: { target: ParaTarget; before: readonly string[]; after: readonly string[] }[] = [], changed = new Set<number>(), locks: { at: string; kind: string; detail: string }[] = [];
   for (const t of a.targets) {
