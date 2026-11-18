@@ -94,7 +94,9 @@ describe("AM2-5 1부 연결 고리 · key 짝 · 장면", () => {
     const { intake } = setup("major-1"), keys = keysOf(intake);
     const idx = keys.map((k, i) => (k.pair ? i : -9)).filter(i => i >= 0);
     expect(idx.length).toBeGreaterThan(0);
-    for (let i = 1; i < idx.length; i++) expect(idx[i] - idx[i - 1]).toBeGreaterThanOrEqual(2);
+    // AM2-13 4부(덕짱님 결정 4): 9장 대운 책은 이웃 제한 대신 책당 최대 3 · ★ 해 먼저 · 하늘 십성 한 번.
+    if (intake.keySplit) { expect(idx.length).toBeLessThanOrEqual(3); const tgs = keys.filter(k => k.pair).map(k => k.label); expect(new Set(tgs).size).toBe(tgs.length); }
+    else for (let i = 1; i < idx.length; i++) expect(idx[i] - idx[i - 1]).toBeGreaterThanOrEqual(2);
     const why = intake.pairs.filter(p => p.key).map(p => p.why);
     expect(new Set(why).size).toBe(why.length);
     expect(why.join(" ")).not.toMatch(/(^|\s)(로|는|가)\s/);

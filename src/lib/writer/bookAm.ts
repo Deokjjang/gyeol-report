@@ -117,7 +117,7 @@ export function tocOf(m: MajorPlan): { toc: AmTocRow[]; turn?: string } {
 /** 3장 · 7장 장 머리 상자. */
 export function chapterHeadOf(m: MajorPlan, side: "now" | "next", eyebrow: string): Extract<BookPage, { kind: "chapterHead" }> | null {
   const c = m.chapters.find(x => x.n === (side === "now" ? m.now : m.next)); if (!c) return null;
-  return { kind: "chapterHead", id: `chapter-head-${side}`, title: side === "now" ? "지금 읽고 있는 장" : "다음 장", eyebrow, side, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, ages: c.ages,
+  return { kind: "chapterHead", id: `chapter-head-${side}`, title: side === "now" ? "내가 읽고 있는 장" : "다음 장", eyebrow, side, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, ages: c.ages,
     ...(side === "now" && m.position ? { position: `${m.position.yearIndex}번째 해(${m.position.label}) · 남은 기간 ${m.position.remaining}` } : {}), ...(side === "next" ? { start: c.start } : {}), fill: { label: c.fill.label, why: c.fill.why } };
 }
 const relLine = (r: string) => r.replace(/^이 대운 기둥과 /, "").replace(/\(([^)]*)\)/, "").replace(/ — .*$/, "").replace(/: /, " 자리와 ").replace(/ 자리 자리와/, " 자리와");

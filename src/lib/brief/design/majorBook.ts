@@ -137,3 +137,38 @@ export function majorPlanOf(a: { saju: SajuCalcResult; k: Knowledge; st: Element
     y2027: factsOf2027(a.entries.find(e => e.kind === "year" && Number(e.key) === WINDOW[0]), { ...(a.loveUp !== undefined ? { loveUp: a.loveUp } : {}), ...(a.work !== undefined ? { work: a.work } : {}) }),
     nowRelations: now ? relationsWithNatal(a.saju, a.k, pil(now.hanja)) : [], nextRelations: next ? relationsWithNatal(a.saju, a.k, pil(next.hanja)) : [] };
 }
+
+// ---------- AM2-13 4부: 9장 구성(지식 DB 원본은 그대로 — 코드 쪽에서 대운 장 목록을 바꾼다) ----------
+type Sec = { readonly q: string; readonly domain: string; readonly use: readonly string[]; readonly trait: string; readonly note?: string };
+type Ch = { readonly id: string; readonly title: string; readonly question: string; readonly role: string; readonly domains: readonly string[]; readonly paragraphs: { readonly min: number; readonly max: number }; readonly sections?: readonly Sec[]; readonly repeat?: number };
+const s = (q: string, domain: string, use: string, note?: string): Sec => ({ q, domain, use: [`ev:${use}`], trait: "none", ...(note ? { note } : {}) });
+/** 9장(덕짱님 결정 3): 1 목차 · 2 지난 3년 · 3 지금 장(채움) · 4 문턱(맞대기) · 5 10년(막) · 6 영역 지도 · 7 다음 장 · 8 실천 지도 · 9 편지. MBTI 장 없음(짝은 해 key ③ 칸에만). */
+export const MAJOR_BOOK_CHAPTERS: readonly Ch[] = [
+  { id: "read", title: "내 인생이라는 책", question: "대운은 무엇이고, 내 인생이라는 책의 차례는 어떻게 생겼을까?", role: "HOOK", domains: ["alone"], paragraphs: { min: 3, max: 3 },
+    sections: [s("대운은 무엇이고 어떻게 읽을까?", "alone", "dayunHow"), s("차례에서 내가 읽는 장과 다음 장은?", "alone", "toc", "지나온 장은 주제만(겪은 일로 단정하지 않는다)")] },
+  { id: "past", title: "지난 3년", question: "지난 3년은 어떤 흐름이었을까?", role: "WHY", domains: ["work", "relationships"], paragraphs: { min: 3, max: 4 },
+    sections: [s("2023~2025년은 어떤 흐름이었을까?", "work", "pastSummary", "질문형·조건형, 겪었다고 단정하지 않는다"), s("그 시기를 지나며 무엇이 남았을까?", "relationships", "pastDayun")] },
+  { id: "now", title: "내가 읽고 있는 장", question: "내가 읽고 있는 장은 어떤 장이고 언제까지일까?", role: "WHY", domains: ["work", "money", "relationships"], paragraphs: { min: 3, max: 4 },
+    sections: [s("이 장의 제목과 주제, 이 장 안의 위치는?", "work", "nowHead"), s("원국과 이 장은 어디서 만날까?", "relationships", "nowRelation"), s("이 장의 좋은 패와 숙제 하나는?", "money", "nowCards")] },
+  { id: "turn", title: "다음 장으로 넘어가는 문턱", question: "언제 바뀌고, 무엇이 끝나고 무엇이 시작될까?", role: "TWIST", domains: ["work", "relationships"], paragraphs: { min: 3, max: 4 },
+    sections: [s("무엇이 끝나고 무엇이 시작될까?", "work", "turnTable"), s("문턱에서 지킬 마음가짐은?", "alone", "turnMind")] },
+  { id: "decade", title: "2027년에서 시작하는 10년", question: "2027년부터 10년은 해마다 어떻게 흐를까?", role: "SCENE", domains: ["work", "money", "love", "relationships", "study"], paragraphs: { min: 2, max: 3 }, repeat: 10 },
+  { id: "map", title: "10년 영역 지도", question: "돈 · 일 · 사랑은 10년 동안 언제 오를까?", role: "PAYOFF", domains: ["work", "money", "love"], paragraphs: { min: 3, max: 4 },
+    sections: [s("돈과 일의 10년은?", "work", "mapMoneyWork", "해 목록은 화면 표가 맡는다"), s("사랑과 사람의 10년은?", "love", "mapLovePeople", "해 목록은 화면 표가 맡는다"), s("마음의 10년은?", "alone", "mapMind", "해 목록은 화면 표가 맡는다")] },
+  { id: "next", title: "다음 장 미리 보기", question: "다음 장은 어떤 장일까?", role: "TWIST", domains: ["alone", "relationships"], paragraphs: { min: 3, max: 4 },
+    sections: [s("다음 장의 주제와 채움은?", "alone", "nextHead"), s("다음 장에서 원국과 만나는 곳과 오르는 영역은?", "relationships", "nextRelation")] },
+  { id: "plan", title: "10년 실천 지도", question: "10년 동안 무엇을 준비할까?", role: "PAYOFF", domains: ["work", "money"], paragraphs: { min: 3, max: 4 },
+    sections: [s("가까운 1년과 문턱 해에 할 일은?", "work", "planNear"), s("5년 뒤와 10년 뒤에 준비할 것은?", "money", "planFar")] },
+  { id: "letter", title: "다음 장을 여는 편지", question: "다음 장으로 가져갈 것 하나는?", role: "PAYOFF", domains: ["alone", "relationships"], paragraphs: { min: 3, max: 4 },
+    sections: [s("다음 장으로 가져갈 것 하나는?", "alone", "letter")] },
+];
+/** 대운 장 목록을 9장으로(지식 DB 장의 금지 · 되풀이 규칙 · 분량 칸은 그대로 쓰고, decade 장은 DB 원본을 바탕으로 제목만). */
+export function majorNarrativeOf<T extends { chapters: readonly unknown[] }>(base: T): T {
+  const decade = (base.chapters as readonly { id: string }[]).find(c => c.id === "decade") as Record<string, unknown> | undefined;
+  return { ...base, chapters: MAJOR_BOOK_CHAPTERS.map(c => (c.id === "decade" && decade ? { ...decade, title: c.title, question: c.question } : c)) } as T;
+}
+/** 처방 사전 배분(덕짱님 지시 4부): 장마다 한 종류 — 화면 할 일과 같은 처방은 금지 종류로. 1 · 5 · 7장은 처방 없음. */
+export const MAJOR_RX: Readonly<Record<string, { readonly label: string; readonly each?: boolean }>> = {
+  past: { label: "기준 하나 붙이기(지난 흐름에서 남길 기준을 앞으로의 행동 하나로)" }, now: { label: "숙제 하나(이 장이 끝나기 전에 마칠 일 하나)" }, turn: { label: "마음가짐 하나(문턱에서 지킬 태도)" },
+  map: { label: "그 소제목 영역의 행동 하나", each: true }, plan: { label: "그 소제목 시점의 준비 하나", each: true }, letter: { label: "사전 밖의 행동 한 가지" },
+};

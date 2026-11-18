@@ -59,3 +59,36 @@ describe("AM2-13 3부 화면(새 대운 책만)", () => {
     expect(map.rows.find(r => r.domain === "돈")!.cells.filter(c => c === "up")).toHaveLength(p6b.domains.money.up.length);
   });
 });
+
+describe("AM2-13 4부 설계도 · 카드 · key 지시", async () => {
+  const { chunkPlan, chunkUser, chunkRules, ruleCtxOf, renderCard } = await import("@/lib/writer/chunked/prompt");
+  const { MAJOR_PAIR_MAX } = await import("@/lib/writer/chunked/intake");
+  it.each(people)("%s: 9장(MBTI 장 없음) · 묶음 6(5장 두 묶음 4~6해) · 짝 ≤ 3(★ 먼저 · 해 key ③에만) · 모든 key에 재료 · 기조에 숫자 · 화살표 0 · ①과 ② 자리 같음", (_id, x) => {
+    if (!planOf(x)) return;
+    const ix = x.intake, keyed = ix.chapters.find(c => c.keys)!;
+    expect(ix.chapters.map(c => c.id)).toEqual(["read", "past", "now", "turn", "decade", "map", "next", "plan", "letter"]);
+    const plan = chunkPlan(ix); expect(plan).toHaveLength(6);
+    for (const c of plan) for (const p of c.parts) if (p.keys) { expect(p.keys.length).toBeGreaterThanOrEqual(4); expect(p.keys.length).toBeLessThanOrEqual(6); }
+    expect(ix.pairs.length).toBeLessThanOrEqual(MAJOR_PAIR_MAX); expect(ix.pairs.every(p => p.key)).toBe(true);
+    const stars = new Set((planOf(x)!.stars ?? []).map(String)), paired = ix.pairs.map(p => p.key!);
+    { const tgOf = (k: string) => x.brief.timeline!.entries.find(y => y.key === k)!.tenGod.stem.replace(/\(.*$/, ""), usedTg = new Set(paired.map(tgOf));
+      // 짝 없는 ★ 해: 같은 하늘 십성이 이미 짝을 받았거나(책에서 한 번), Fusion 줄이 입력 거름에 걸려 없는 해 — 그 밖에 ★ 해를 건너뛰고 다른 해에 짝을 주지 않는다.
+      const skipped = [...stars].filter(s2 => keyed.keys!.some(k => k.key === s2) && !paired.includes(s2) && !usedTg.has(tgOf(s2)));
+      if (skipped.length && paired.length < MAJOR_PAIR_MAX) expect(paired.every(k => stars.has(k))).toBe(true); }
+    for (const k of keyed.keys!) {
+      expect(k.own ?? k.pair).toBeTruthy();
+      expect(k.tone ?? "").not.toMatch(/[0-9↑↓→]/);
+      const ringSeat = /^태어난 (해|달|날|시각) 자리/.exec(k.own ?? "")?.[1];
+      if (ringSeat) { const e = x.brief.timeline!.entries.find(y => y.key === k.key)!; const seats = e.badges.filter(b => (k.core ?? []).includes(b.label.replace(/\(반쯤\)$/, " 반합")) || (k.core ?? []).some(n => b.label.startsWith(n.replace(/ 반합$/, "")))).flatMap(b => (b.with ?? "").split("·").map(s => s.replace(/^태어난 /, "")));
+        expect(seats).toContain(ringSeat); }
+    }
+    const text = [renderCard(ix), ...plan.map(c => chunkUser(ix, c))].join("\n");
+    expect(text).not.toMatch(/입력 한 마디|앞과 다름|MBTI 성장|성장 곡선/);
+    // MBTI 줄은 짝이 든 묶음에만.
+    for (const c of plan) { const u = chunkUser(ix, c); if (/- B\d+ \| MBTI/.test(u)) expect(c.parts.some(p => p.keys?.some(k => paired.includes(k)))).toBe(true); }
+  });
+  it("작가 규칙(대운): 1부 뒤 7,013자 이하 · 차례 · 해 목록은 화면", () => {
+    const x = people.find(p => p[0] === "major-p6b")![1]; const r = chunkRules(ruleCtxOf(x.intake));
+    expect(r.length).toBeLessThanOrEqual(7013); expect(r).toContain("차례와 영역별 해 목록은 화면 표가 맡으니");
+  });
+});

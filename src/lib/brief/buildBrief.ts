@@ -38,7 +38,7 @@ import { annualEvidence, annualStatusQ, annualTidy, annualTidyLog, bridgeEvidenc
 import { profileCodes } from "./pairProfile";
 import { profilePoles } from "@/lib/writer/safety/contradiction";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
-import { majorPlanOf } from "./design/majorBook";
+import { majorNarrativeOf, majorPlanOf } from "./design/majorBook";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
@@ -416,7 +416,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       // 연애 전용 설계기(P6d G): 장마다 정해진 근거·관계 상태별 근거. 기존 근거(배우자·자녀 별·자리, 맞는 유형)는 base로 넘겨 재사용.
       return { ...base, ...loveDesign2({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, gender: me.person.gender, relationshipStatus: me.facts.relationshipStatus, facts: profile, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base }) };
     })()
-    : input.product === "major_fortune" && timeline ? majorEvidence({ saju: me.saju, k, dayun: me.dayun, thisYear: me.chart.thisYear.year, age: me.person.age, birthYear: Number(input.person.birthDate.slice(0, 4)), entries: timeline.entries, mbti: me.facts.mbti, rng: rng.fork("major") })
+    : input.product === "major_fortune" && timeline ? majorEvidence({ saju: me.saju, k, dayun: me.dayun, thisYear: me.chart.thisYear.year, age: me.person.age, birthYear: Number(input.person.birthDate.slice(0, 4)), entries: timeline.entries, mbti: me.facts.mbti, rng: rng.fork("major"), ...(timeline.major ? { plan: timeline.major } : {}) })
     : input.product === "annual_fortune" && timeline ? (() => {
       const year = annualProductYear(), yp = getAnnualPillar(year), cyc = me.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
       const all = timeline!.entries, yearEntry = all.find(e => e.kind === "year")!, bridge = all.find(e => e.bridge), months = all.filter(e => e.kind === "month" && !e.bridge);
@@ -465,6 +465,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // AM2-3 1-7: 대운 7장은 MBTI가 없으면 명리만으로 쓰는 대체 장(제목에서 MBTI를 뺀다, ev:ageGrowth·ageNext — design/major.ts).
   const growthAlt = { title: "나이와 함께 자라는 결", question: "나이와 대운에 따라 무엇이 단단해질까?", sections: [{ q: "이 대운 10년에 단단해지는 쪽은?", domain: "alone", use: ["ev:ageGrowth"], trait: "none" }, { q: "다음 대운에서 새로 자라는 쪽은?", domain: "relationships", use: ["ev:ageNext"], trait: "none" }] };
   const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) }
+    // AM2-13 4부: 새 대운 책(계획 있음)은 9장 「내 인생이라는 책」(MBTI 장 없음). 계획이 없으면(대운을 정할 수 없는 입력) 예전 장 목록.
+    : input.product === "major_fortune" && timeline?.major ? majorNarrativeOf(narrative)
     : input.product === "major_fortune" && !mbti ? { ...narrative, chapters: narrative.chapters.map(c => (c.id === "growth" ? { ...c, ...growthAlt } as typeof c : c)) } : narrative;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   // AM 1-1 ③ 장면 분산 = 고객 해시(이름·생일·시각·성별, 주문 시각 제외) + 상품 id. W3 P3: 4종도(소품 시작 자리·처방 시작 자리).
