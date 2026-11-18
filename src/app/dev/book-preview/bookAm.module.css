@@ -108,3 +108,33 @@
 .cycle[data-past] .age { color: var(--sub); font-weight: 600; }
 .age { font-size: 16px; font-weight: 700; font-variant-numeric: tabular-nums; }
 .cycleGod { font-size: 12px; color: var(--sub); text-align: right; }
+
+/* AM2-13 3부 「내 인생이라는 책」: 차례 · 장 머리 상자 · 문턱 맞대기 · 10년 영역 지도(흑백 + 글자, 오행 색은 간지 칸에만). 390px에서 가로 넘침 없음. */
+.toc { list-style: none; margin: 14px 0; padding: 0; display: grid; gap: 6px; }
+.tocRow { display: grid; grid-template-columns: 40px minmax(0, 1fr) auto; gap: 10px; align-items: center; padding: 10px; border: 1px solid var(--line); border-radius: 8px; }
+.tocRow[data-past] { color: var(--sub); }
+.tocRow[data-current] { border: 2px solid var(--ink); }
+.tocRow[data-next] { border-style: dashed; border-color: var(--ink); }
+.tocNo { font-size: 13px; color: var(--sub); font-weight: 700; }
+.tocMain { display: grid; gap: 2px; min-width: 0; word-break: keep-all; }
+.tocMain small { font-size: 12px; color: var(--sub); }
+.nextTag { margin-left: 6px; font-style: normal; font-size: 11px; padding: 1px 6px; border: 1px dashed var(--ink); border-radius: 999px; color: var(--ink); }
+.headBox { display: flex; gap: 14px; align-items: flex-start; margin: 14px 0 18px; padding: 14px; border: 1px solid var(--line); border-radius: 8px; }
+.headBox > div { min-width: 0; word-break: keep-all; }
+.fillLine { margin: 8px 0 0; display: grid; gap: 2px; }
+.fillLine b { font-size: 14px; }
+.fillLine small { font-size: 12px; color: var(--sub); line-height: 1.6; }
+.sides { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; margin: 12px 0; }
+@media (max-width: 420px) { .sides { grid-template-columns: minmax(0, 1fr); } }
+.side { padding: 12px; border: 1px solid var(--line); border-radius: 8px; min-width: 0; word-break: keep-all; }
+.sideHead { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.sideRel { margin: 6px 0; padding-left: 18px; font-size: 13px; line-height: 1.6; }
+.mapActs { list-style: none; margin: 8px 0 12px; padding: 0; display: grid; gap: 4px; font-size: 13px; }
+.mapRow { margin: 8px 0; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+.mapRow summary { display: flex; gap: 10px; align-items: baseline; cursor: pointer; flex-wrap: wrap; }
+.mapRow summary small { font-size: 12px; color: var(--sub); }
+.mapCells { list-style: none; margin: 8px 0 0; padding: 0; display: grid; grid-template-columns: repeat(10, minmax(0, 1fr)); gap: 2px; text-align: center; }
+.mapCells li { display: grid; gap: 2px; padding: 4px 0; border-radius: 4px; background: var(--wash); }
+.mapCells li small { font-size: 10px; color: var(--sub); }
+.mapCells li b { font-size: 13px; }
+.mapCells li[data-sig="up"] { outline: 2px solid var(--ink); outline-offset: -2px; }

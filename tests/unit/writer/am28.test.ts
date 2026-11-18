@@ -17,7 +17,9 @@ const books = BOOKS.map(id => ({ id, ...intakeOf(payloadFor(id)) }));
 describe("AM2-8 1부 고정 시험 묶음(P2~P7 판독 인용 문장)", () => {
   it("모든 사례가 기대대로(걸려야 함 · 통과해야 함 · 지우면 고아 · 결정론 고침)", () => {
     const rows = runAll();
-    expect(rows.filter(r => !r.ok).map(r => `${r.id} ${r.expect} got=${r.got.join(",")} — ${r.note}`)).toEqual([]);
+    // AM2-13 4부(덕짱님 결정 4): 옛 7장 「MBTI 성장 곡선」은 9장 대운 책에서 없앴다 — 그 장 문장(P7 7.1)을 새 7장(다음 장 미리 보기, MBTI 재료 0)에 대는 사례는 은퇴.
+    const RETIRED = new Set(["M2", "M3", "M5"]);
+    expect(rows.filter(r => !r.ok && !RETIRED.has(r.id)).map(r => `${r.id} ${r.expect} got=${r.got.join(",")} — ${r.note}`)).toEqual([]);
     expect(rows.length).toBeGreaterThanOrEqual(26);
   });
 }, 120_000);

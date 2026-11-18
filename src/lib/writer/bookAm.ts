@@ -6,7 +6,9 @@
  * - 대운 평생 지도: 같은 주제 대운을 한 띠로, 나이가 주인공, 간지는 오행 색 칸, 대운수·바뀌는 달은 머리에 한 번. 앞으로 10년표: 연도·나이 | 간지 | 한 줄 뜻 | 십성 | 흐름, 핵심 해 ★, 대운이 바뀌는 곳에 구분 줄.
  * 색은 오행에만(화면 CSS), 흐름·오름·살필·지금은 흑백 + 글자.
  */
-import type { AmEl, AmElement, AmRow, AmYearHead, BookPage, BookParagraph } from "@/app/dev/book-preview/bookTypes";
+import type { AmEl, AmElement, AmRow, AmSide, AmTocRow, AmYearHead, BookPage, BookParagraph } from "@/app/dev/book-preview/bookTypes";
+import type { MajorPlan } from "@/lib/brief/design/majorBook";
+import { MAJOR_DOMAIN_KO, MAJOR_DOMAINS } from "@/lib/brief/design/majorBook";
 import type { BookSection } from "./format";
 import { FLOW_WORD, halfHapLine, josa } from "@/lib/brief/labels";
 import { coreLine, coreOf, coreRowLine, loveUpOf, relFlow, TEN_GOD_SHORT } from "@/lib/brief/core";
@@ -77,11 +79,13 @@ export function flowTableOf(d: V5BookDraft, months: readonly Card[], day: string
 
 /** 대운 「앞으로 10년표」(지난 3년 · 기준 해 · 앞으로 10년, 대운이 바뀌는 곳에 구분 줄). */
 export function decadeTableOf(d: V5BookDraft, years: readonly Card[], thisYear: number): Extract<BookPage, { kind: "decadeTable" }> {
-  const life = d.timeline?.lifetime ?? [];
+  const life = d.timeline?.lifetime ?? [], major = d.timeline?.major;
   const rows = years.map(c => { const y = Number(c.key), cyc = life.find(l => l.startYear <= y && y <= l.endYear);
     const dyName = cyc ? `${cyc.ganji.match(/\(([가-힣]{2})\)/)?.[1] ?? cyc.ganji} 대운` : c.dayun?.ganji ?? "";
     const divider = c.dayun?.transition ? `${c.dayun.start ?? `${y}년 무렵부터`} ${dyName} · ${tg(c.dayun.tenGod ?? "")}${cyc ? ` · ${cyc.theme}` : ""}` : undefined;
-    return rowOf(c, { name: `${y}년`, sub: c.age !== undefined ? `만 ${c.age}세` : "", now: y === thisYear, past: y < thisYear, star: Boolean(c.keyYear), ...(divider ? { divider } : {}) }); });
+    // AM2-13 3부: 새 대운 책(계획 있음)은 막이 시작되는 해 앞에 막 구분 줄(막 이름) — 대운이 바뀌는 구분 줄과 같은 줄이면 둘을 한 줄로.
+    const act = major?.acts.find(a => a.years[0] === y), actLine = act ? `${act.n}막 · ${act.name}` : undefined;
+    return { ...rowOf(c, { name: `${y}년`, sub: c.age !== undefined ? `만 ${c.age}세` : "", now: y === thisYear, past: y < thisYear, star: Boolean(c.keyYear), ...(divider || actLine ? { divider: [actLine, divider].filter(Boolean).join(" · ") } : {}) }), ...(actLine ? { act: actLine } : {}) }; });
   // AM2-4 6부 머리: 「지난 3년(2023~2025) · 2026년 · 앞으로 10년(2027~2036)」.
   const past = years.filter(c => Number(c.key) < thisYear).map(c => Number(c.key)), next = years.filter(c => Number(c.key) > thisYear).map(c => Number(c.key));
   const head = [past.length ? `지난 ${past.length}년(${past[0]}~${past.at(-1)})` : "", `${thisYear}년`, next.length ? `앞으로 ${next.length}년(${next[0]}~${next.at(-1)})` : ""].filter(Boolean).join(" · ");
@@ -100,4 +104,34 @@ export function lifetimeOf(d: V5BookDraft, thisYear: number): Extract<BookPage, 
   // AM2-7 5부 4: 대운 줄마다 붙은 「(대운수 N)」 라벨은 고객 말이 아니다 — 머리에 한 번(「대운수 N(첫 대운이 시작되는 만 나이)」)만 두고 줄에서는 뗀다.
   const cycles2 = cycles.map(c => ({ ...c, label: c.label.replace(/ ?\(대운수 \d+\)/, "") }));
   return { kind: "lifetime", title: "평생 대운 지도", cycles: cycles2, ...(head ? { head } : {}), bands };
+}
+
+// ---------- AM2-13 3부 「내 인생이라는 책」 화면(새 대운 책 — 계획 timeline.major가 있을 때만, 옛 저장본은 그대로) ----------
+const chEls = (hanja: string) => elsOf(hanja);
+const ganjiKo = (g: string) => g.match(/\(([가-힣]{2})\)/)?.[1] ?? g;
+/** 1장 목차: 평생 지도 띠를 장 목록으로 — 장 번호 · 제목 · 만 나이 · 지금 장 책갈피 · 다음 장. */
+export function tocOf(m: MajorPlan): { toc: AmTocRow[]; turn?: string } {
+  const toc = m.chapters.map(c => ({ n: c.n, title: c.title, ages: c.ages, tenGod: tg(c.tenGod), hanja: c.hanja, els: chEls(c.hanja), current: c.current, next: c.next, past: c.past, start: c.start }));
+  return { toc, ...(m.turn ? { turn: `${m.turn.start} ${ganjiKo(m.turn.ganji)} 대운 — 다음 장이 열려요` } : {}) };
+}
+/** 3장 · 7장 장 머리 상자. */
+export function chapterHeadOf(m: MajorPlan, side: "now" | "next", eyebrow: string): Extract<BookPage, { kind: "chapterHead" }> | null {
+  const c = m.chapters.find(x => x.n === (side === "now" ? m.now : m.next)); if (!c) return null;
+  return { kind: "chapterHead", id: `chapter-head-${side}`, title: side === "now" ? "내가 읽고 있는 장" : "다음 장", eyebrow, side, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, ages: c.ages,
+    ...(side === "now" && m.position ? { position: `${m.position.yearIndex}번째 해(${m.position.label}) · 남은 기간 ${m.position.remaining}` } : {}), ...(side === "next" ? { start: c.start } : {}), fill: { label: c.fill.label, why: c.fill.why } };
+}
+const relLine = (r: string) => r.replace(/^이 대운 기둥과 /, "").replace(/\(([^)]*)\)/, "").replace(/ — .*$/, "").replace(/: /, " 자리와 ").replace(/ 자리 자리와/, " 자리와");
+/** 4장 문턱 맞대기 카드: 지금 장 ↔ 다음 장(제목 · 십성 주제 · 원국과 걸리는 관계와 자리 · 그 장 몫 10년 창에서 오르는 영역 · 채움). */
+export function thresholdOf(m: MajorPlan, eyebrow: string): Extract<BookPage, { kind: "threshold" }> | null {
+  const now = m.chapters.find(x => x.n === m.now), next = m.chapters.find(x => x.n === m.next); if (!now || !next || !m.turn || !m.transition) return null;
+  const ups = (from: number, to: number) => MAJOR_DOMAINS.filter(d => m.domains[d].up.some(y => y >= from && y <= to)).map(d => MAJOR_DOMAIN_KO[d]);
+  const side = (c: typeof now, label: string, rel: readonly string[], from: number, to: number): AmSide => ({ label, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, relations: rel.map(relLine), ups: ups(from, to), fill: { label: c.fill.label, why: c.fill.why } });
+  return { kind: "threshold", id: "threshold", title: "문턱 맞대기", eyebrow, turn: m.turn.start, range: `교운기 ${m.turn.range[0]}~${m.turn.range[1]}년 무렵`, end: m.transition.end, start: m.transition.start,
+    sides: [side(now, "지금 장", m.nowRelations, 2027, m.turn.year - 1), side(next, "다음 장", m.nextRelations, m.turn.year, 2036)] };
+}
+/** 6장 10년 영역 지도 표: 영역 5줄 × 해 10칸(오름 · 살핌), 막 띠. */
+export function domainMapOf(m: MajorPlan, eyebrow: string): Extract<BookPage, { kind: "domainMap" }> {
+  const years = m.acts.flatMap(a => a.years);
+  return { kind: "domainMap", id: "domain-map", title: "10년 영역 지도", eyebrow, years, acts: m.acts.map(a => ({ name: `${a.n}막 · ${a.name}`, years: [...a.years] })),
+    rows: MAJOR_DOMAINS.map(d => ({ domain: MAJOR_DOMAIN_KO[d], cells: years.map(y => (m.domains[d].up.includes(y) ? "up" : m.domains[d].down.includes(y) ? "down" : "")), summary: m.summary[d] })) };
 }

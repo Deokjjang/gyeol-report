@@ -19,7 +19,10 @@ export type BookMonth = { name?: string; signals?: string; bridge?: boolean; mon
 /** 오행 칸 색 이름(AM2-3: 목 초록 · 화 빨강 · 토 황토 · 금 은회색 · 수 남색). */
 export type AmEl = "wood" | "fire" | "earth" | "metal" | "water";
 /** 흐름표·10년표 한 줄. ups·cautions = 영역 신호의 오름·살필(그 밖은 표시하지 않음). divider = 이 줄 앞에 대운이 바뀌는 구분 줄. */
-export type AmRow = { key: string; name: string; sub: string; ganji: string; els: AmEl[]; line: string; sky: string; ground: string; ups: string[]; cautions: string[]; flow: number; flowWord: string; now: boolean; past: boolean; star: boolean; page: number; divider?: string };
+/** AM2-13 3부 목차 한 줄 · 맞대기 카드 한 쪽. */
+export type AmTocRow = { n: number; title: string; ages: string; tenGod: string; hanja: string; els: AmEl[]; current: boolean; next: boolean; past: boolean; start: string };
+export type AmSide = { label: string; no: number; name: string; ganji: string; els: AmEl[]; tenGod: string; theme: string; relations: string[]; ups: string[]; fill: { label: string; why: string } };
+export type AmRow = { key: string; name: string; sub: string; ganji: string; els: AmEl[]; line: string; sky: string; ground: string; ups: string[]; cautions: string[]; flow: number; flowWord: string; now: boolean; past: boolean; star: boolean; page: number; divider?: string; act?: string };
 export type AmYearHead = { ganji: string; els: AmEl[]; name: string; verdict?: string; sky: string; ground: string; skyLine: string; groundLine: string; flow: number; flowWord: string };
 export type AmElement = { el: AmEl; label: string; count: number; incoming: boolean };
 export type BookPage = (
@@ -39,7 +42,14 @@ export type BookPage = (
   | { kind: "keywords"; title: string; year: number; keywords: string[]; line: string; verdict?: string }
   | { kind: "lucky"; title: string; name: string; colors: string[]; direction: string; numbers: number[]; why: string; samjae?: { zodiac: string; phase: string; line: string } }
   | { kind: "continue"; title: string; text: string; href: string }
-  | { kind: "lifetime"; title: string; cycles: { label: string; ages: string; tenGod: string; theme: string; current: boolean; hanja?: string; els?: AmEl[]; past?: boolean }[]; head?: string; bands?: { theme: string; cycles: number[] }[] }
+  | { kind: "lifetime"; title: string; cycles: { label: string; ages: string; tenGod: string; theme: string; current: boolean; hanja?: string; els?: AmEl[]; past?: boolean }[]; head?: string; bands?: { theme: string; cycles: number[] }[];
+      /** AM2-13 3부 1장 목차(「내 인생이라는 책」 — 새 대운 책만): 장 번호 · 제목 · 만 나이 · 지금 장 책갈피 · 다음 장. */ toc?: AmTocRow[]; turn?: string }
+  /** AM2-13 3부: 3장 · 7장 장 머리 상자(제목 · 십성 주제 · 위치 또는 시작 연월 · 채움 판정). */
+  | { kind: "chapterHead"; id: string; title: string; eyebrow: string; side: "now" | "next"; no: number; name: string; ganji: string; els: AmEl[]; tenGod: string; theme: string; ages: string; position?: string; start?: string; fill: { label: string; why: string } }
+  /** AM2-13 3부: 4장 문턱 맞대기 카드(지금 장 ↔ 다음 장). */
+  | { kind: "threshold"; id: string; title: string; eyebrow: string; turn: string; range: string; end: string; start: string; sides: AmSide[] }
+  /** AM2-13 3부: 6장 10년 영역 지도 표(영역 5줄 × 해 10칸, 오름 · 살핌). */
+  | { kind: "domainMap"; id: string; title: string; eyebrow: string; years: number[]; acts: { name: string; years: number[] }[]; rows: { domain: string; cells: ("up" | "down" | "")[]; summary: string }[] }
   /** AM2-3 5부(덕짱님과 정한 시안): 세운 「2027 한 해 흐름표」 · 대운 「앞으로 10년표」 · 달·해 카드. AM 카드(세운 span·대운 평생 지도)가 있는 v5 책에만 쓴다(그 밖의 책은 위 timeline·months 그대로). */
   | { kind: "flowTable"; title: string; year: AmYearHead | null; elements: AmElement[]; rows: AmRow[]; dict: { name: string; line: string }[] }
   | { kind: "decadeTable"; title: string; head: string; rows: AmRow[]; dict: { name: string; line: string }[] }

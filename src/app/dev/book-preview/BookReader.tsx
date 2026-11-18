@@ -137,7 +137,7 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
   if (page.kind === "continue") return <><p className={s.eyebrow}>{data.title} · NEXT</p><h1>{text(page.title)}</h1><p className={s.profileLead}>{text(page.text)}</p>
     <p><a className={s.continueLink} href={page.href} data-continue-major>대운으로 이어 보기 →</a></p></>;
   // AM2-3 5부: 흐름표 · 10년표 · 달·해 카드 · 평생 지도 띠(AM 세운·대운 책만 — 그 밖의 책은 아래 예전 쪽 그대로).
-  if (page.kind === "flowTable" || page.kind === "decadeTable" || page.kind === "periodCard" || (page.kind === "lifetime" && page.bands)) return <AmPage page={page} title={data.title} onPage={onPage} text={text} />;
+  if (page.kind === "flowTable" || page.kind === "decadeTable" || page.kind === "periodCard" || page.kind === "chapterHead" || page.kind === "threshold" || page.kind === "domainMap" || (page.kind === "lifetime" && page.bands)) return <AmPage page={page} title={data.title} onPage={onPage} text={text} />;
   if (page.kind === "lifetime") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><p className={s.hint}>대운은 10년마다 바뀌는 큰 흐름이에요. 나이는 만 나이, 대운수는 첫 대운이 시작되는 나이예요.</p>
     <ol className={s.ledger}>{page.cycles.map(c => <li key={c.label} data-current={c.current ? "true" : undefined}><div><strong>{text(c.label)}</strong>{c.current ? <span className={s.transitionLabel}> 지금</span> : null}</div><p className={s.hint}>{c.ages} · {text(c.tenGod)} · {text(c.theme)}</p></li>)}</ol></>;
   const titleLines = text(page.title).split("\n");

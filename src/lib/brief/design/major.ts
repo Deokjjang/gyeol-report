@@ -75,6 +75,7 @@ export type MajorCtx = {
   readonly saju: SajuCalcResult; readonly k: Knowledge; readonly dayun: DayunInfo; readonly thisYear: number; readonly age: number; readonly birthYear: number;
   readonly entries: readonly TimelineEntry[]; readonly mbti: string | null; readonly rng: Rng;
   readonly currentLabel?: string; readonly nextLabel?: string; readonly nextStart?: string;
+  /** AM2-13 4부: 「내 인생이라는 책」 결정론 계획(있으면 9장 근거를 만든다). */ readonly plan?: import("./majorBook").MajorPlan;
 };
 const AGE_FACET = (age: number) => (age < 30 ? "twenties" : age < 40 ? "thirties" : age < 50 ? "forties" : "fifties");
 
@@ -118,11 +119,36 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
     planNear: ev("planNear", [`이 책을 쓴 ${c.thisYear}년 무렵: ${cur?.theme ?? ""}`, ...near.map(line)], "가까운 1년 / 2~3년 뒤를 각각 행동 하나로"),
     planFar: ev("planFar", [mid ? `5년 뒤: ${line(mid)}` : "", far ? `10년 뒤: ${line(far)}` : "", next ? `그 무렵 대운: ${next.label}` : ""], "5년 뒤 / 10년 뒤를 각각 준비 하나로. 일어날 사건 대신 준비할 것을 쓴다(단서·면책 문장 없이)"),
   };
+  // AM2-13 4부 9장 근거(계획 값 그대로 — 사실은 화면, 해석은 본문). 목록(해 · 장)은 본문 재료로 주지 않는다.
+  const P = c.plan;
+  if (P) {
+    const ch = (n?: number) => P.chapters.find(x => x.n === n), nowC = ch(P.now), nextC = ch(P.next), prevC = ch((P.now ?? 0) - 1), next2 = ch((P.next ?? 0) + 1);
+    const titled = (x: NonNullable<typeof nowC>) => `${x.n}장 「${x.title}」 · ${x.ganji.replace(/^[^(]*\(|\)$/g, "")} 대운 ${x.tenGod.replace(/\(.*$/, "")} · ${x.ages}`;
+    const upIn = (from: number, to: number) => (["money", "work", "love", "people", "mind"] as const).filter(d => P.domains[d].up.some(y => y >= from && y <= to)).map(d => ({ money: "돈", work: "일", love: "사랑", people: "사람", mind: "마음" })[d]);
+    const S = P.turn?.year;
+    Object.assign(out, {
+      dayunHow: ev("dayunHow", ["대운: 타고난 달 기둥에서 10년마다 한 칸씩 움직이는 큰 흐름 — 이 책에서는 대운 하나를 인생의 한 장으로 읽는다", "세운: 해마다 들어오는 기운 — 대운이 계절이라면 세운은 해마다의 날씨"], "짧게: 대운과 세운을 쉬운 그림 하나로"),
+      toc: ev("toc", [P.turn && nextC ? `10년 안 장 넘김 해: ${P.turn.start} 다음 장(${nextC.n}장 「${nextC.title}」)이 열림` : "", nowC ? `내가 읽고 있는 장: ${titled(nowC)}` : "", nextC ? `다음 장: ${titled(nextC)}` : "", prevC ? `지나온 장: ${titled(prevC)}` : "", next2 && !next2.tocOnly ? `그다음 장: ${titled(next2)}` : ""],
+        "첫 문장은 10년 안 장 넘김 해. 차례 전체는 화면 표가 보여 준다 — 이 네 장만 말하고, 지나온 장은 주제만(겪은 일로 단정하지 않는다)"),
+      nowHead: nowC ? ev("nowHead", [`내가 읽고 있는 장: ${nowC.n}장 「${nowC.title}」 — ${nowC.theme}`, P.position ? `위치: ${P.position.yearIndex}번째 해(${P.position.label}) · 남은 기간 ${P.position.remaining}` : "", `이 장의 오행 흐름: ${nowC.fill.label} — ${nowC.fill.why}`, ...mind(gCur, "inside", 1)], "제목 · 주제 · 위치 · 채움 판정을 이 사람 말로. 「좋은 대운 · 나쁜 대운」 말 금지") : null,
+      turnTable: nextC && P.transition && P.turn ? ev("turnTable", [`넘어가는 곳: ${nowC ? `${nowC.n}장 「${nowC.title}」 → ` : ""}${nextC.n}장 「${nextC.title}」 · ${P.turn.start}`, `교운기: ${P.turn.range[0]}~${P.turn.range[1]}년 무렵(앞뒤 1~2년)`, `끝나는 것: ${P.transition.end}`, `시작되는 것: ${P.transition.start}`],
+        c.dayun.error ? "경계 연도는 범위로만. 끝나는 것 → 시작되는 것 방향 그대로" : "끝나는 것 → 시작되는 것 방향 그대로(뒤집지 않는다). 교운 연월은 값 그대로") : null,
+      turnMind: gNext ? ev("turnMind", [...mind(gNext, "enter", 1), ...mind(gCur, "leave", 1)], "문턱의 마음가짐 하나로") : null,
+      mapMoneyWork: ev("mapMoneyWork", [`돈: ${P.summary.money}`, `일: ${P.summary.work}`, ...dom(gCur, "money", 1), ...dom(gNext, "work", 1)], "해 목록은 화면 표가 맡는다 — 몇 년이 오르는지 해를 늘어놓지 않고, 몰리는 막과 그 뜻만"),
+      mapLovePeople: ev("mapLovePeople", [`사랑: ${P.summary.love}`, `사람: ${P.summary.people}`, ...dom(gCur, "love", 1), ...dom(gNext, "people", 1)], "해 목록은 화면 표가 맡는다. 사랑·결혼은 조건형, 결혼 시기를 쓰지 않는다"),
+      mapMind: ev("mapMind", [`마음: ${P.summary.mind}`, ...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1)], "해 목록은 화면 표가 맡는다. 병명·증상 없이 생활 장면으로"),
+      nextHead: nextC ? ev("nextHead", [`다음 장의 주제: ${nextC.n}장 「${nextC.title}」 — ${nextC.theme}`, `그 장의 오행 흐름: ${nextC.fill.label} — ${nextC.fill.why}`, ...mind(gNext, "inside", 1)], "주제와 채움을 이 사람 말로. 「좋은 대운 · 나쁜 대운」 말 금지") : null,
+      nextRelation: nextC ? ev("nextRelation", [...relationsWithNatal(c.saju, c.k, { stem: nextC.hanja[0] as Pillar["stem"], branch: nextC.hanja[1] as Pillar["branch"] }), S ? `다음 장 몫(${S}~${WINDOW_END}년)에서 오르는 영역: ${upIn(S, WINDOW_END).join("·") || "없음"}` : ""], "원국 자리와 다음 대운 기둥의 관계만. 충=나쁨·합=좋음 단정 금지") : null,
+      planNear: ev("planNear", [P.y2027 ? `2027년 정미년: 하늘 ${P.y2027.sky} · 땅 ${P.y2027.ground} · ${P.y2027.core} · ${P.y2027.verdict}` : "", P.turn ? `문턱 해: ${P.turn.year}년 — ${P.turn.start} 다음 장이 열림` : ""], "가까운 1년(2027년, 판정 방향 그대로) / 문턱 해를 각각 행동 하나로"),
+      letter: nextC && nowC ? ev("letter", [`이 장을 덮으며: 「${nowC.title}」`, `다음 장을 열며: 「${nextC.title}」`], "가져갈 것 하나를 새 말로, 다음 장 제목으로 맺는다. 앞 장 문장을 옮기지 않는다") : null,
+    });
+  }
   return Object.fromEntries(Object.entries(out).filter((x): x is [string, Evidence] => Boolean(x[1])));
 }
+const WINDOW_END = 2036;
 
 /** 대운 기둥과 원국 자리 관계(쉬운 줄). */
-function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
+export function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
   const natal = natalEntries(saju);
   const seat = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
   return detectRelations([...natal, { position: "dayun", pillar: dp }]).filter(r => r.members.some(m => m.position === "dayun") && REL_PLAIN[r.kind])

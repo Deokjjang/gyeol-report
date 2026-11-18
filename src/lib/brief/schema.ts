@@ -271,7 +271,9 @@ export const BriefSchema = z.object({
   /** cycles[].label·ages(최종판3 8): 공통 대운 표기 줄과 만 나이(labels.dayunLabel). */
   timeline: z.object({ entries: z.array(TimelineEntrySchema), keyEntries: z.array(z.string()), tenGodNotes: z.record(z.string(), z.object({ meaning: z.string(), caution: z.string().optional() })), cycles: z.array(z.object({ ganji: z.string(), years: z.string(), period: z.string().optional(), tenGod: z.string(), current: z.boolean(), label: z.string().optional(), ages: z.string().optional() })),
     /** AM 3부 평생 대운 지도(대운 전부): 시작 만 나이·연도·간지·십성·한 줄 주제. 작가에게는 근거(lifetime)로만 간다. */
-    lifetime: z.array(z.object({ ganji: z.string(), hanja: z.string(), startYear: z.number().int(), endYear: z.number().int(), ages: z.string(), tenGod: z.string(), theme: z.string(), current: z.boolean(), label: z.string() })).optional() }).optional(),
+    lifetime: z.array(z.object({ ganji: z.string(), hanja: z.string(), startYear: z.number().int(), endYear: z.number().int(), ages: z.string(), tenGod: z.string(), theme: z.string(), current: z.boolean(), label: z.string() })).optional(),
+    /** AM2-13 3부 대운 「내 인생이라는 책」 결정론 계획(design/majorBook.ts MajorPlan). */
+    major: z.custom<import("./design/majorBook").MajorPlan>(v => typeof v === "object" && v !== null).optional() }).optional(),
   partner: z.object({ person: PersonBriefSchema, mbti: MbtiBriefSchema.nullable(), chart: ChartBriefSchema }).optional(),
   compatibility: CompatibilityBriefSchema.optional(),
   /**
