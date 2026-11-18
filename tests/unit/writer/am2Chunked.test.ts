@@ -252,8 +252,9 @@ describe("AM2 발행(가짜 작가, 호출 0)", () => {
     const built = await buildV5Snapshot({ payload: p as never, reportId: "report_am2testannual0001", policyAt: AT, sink: { save: async c => { saved.push(c.n); return sink.save(c); }, load: () => sink.load() }, deps: { provider: "anthropic", model: "claude-sonnet-5-5", fallback: null, stream: devMockStream("ok", p as never, AT), people: async () => [] } });
     const meta = built.meta, review = meta.review as Record<string, unknown>;
     expect(review.mode).toBe("chunked"); expect((review.briefCheck as { ok: boolean }).ok).toBe(true);
-    // AM2-8 5부: 남은 차단(보류)이 있으면 그 묶음 하나만 새 호출 1회(holdRetry) — 첫 호출은 6 + 많아야 1.
-    expect(meta.calls.filter(c => c.kind === "first")).toHaveLength(6 + (review.holdRetry ? 1 : 0));
+    // AM2-9 2부: 1차는 묶음 6개 첫 호출뿐(시도 안 다시 부름 없음 — 차단이 남으면 감독 2차).
+    expect(meta.calls.filter(c => c.kind === "first")).toHaveLength(6);
+    expect(review.attempt).toBe(1);
     expect(meta.calls.some(c => c.kind === "repair" || c.kind === "review")).toBe(false);
     expect(saved[0]).toBe(1);
     // AM2-3: 가짜 작가 글(결정론 문단)은 「반드시 쓸 것」(흐름 단어·관계 이름)을 담지 않는다 — 그 밖의 차단은 0. AM2-5: 가짜 글은 짧아 key_len(안전망)도 남을 수 있다.

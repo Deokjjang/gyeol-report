@@ -1,9 +1,9 @@
 /**
  * 생성 운영 알림(HOTFIX-W1 3부 1·3·6, W3 P2). 문구 만들기는 순수 함수(시험), 보내기는 처리 봇(📮)으로 바로(대기표 종류를 늘리지 않으려 — migration 없음).
  * - W3 P2: 보류 알림은 없앴다(보류 상태가 없다). 결론(자동 환불·이용권 반환)마다 「↩️ 자동 환불 · GR-… · 사유 · 비용」 한 줄, 그날 자동 결론이 선(3건)을 막 넘으면 경보 1번.
- * - 실패율 경보: 같은 상품에서 1시간 안에 생각 소진 2건 이상, 또는 그날(KST) 실패율이 선을 넘으면 「판매 일시 중지 검토」 + [4종 멈춤] 버튼. 이 경보로는 멈추지 않는다.
+ * - 실패율 경보: 같은 상품에서 1시간 안에 생각 소진 2건 이상, 또는 그날(KST) 실패율이 선을 넘으면 「판매 일시 중지 검토」 + [판매 멈춤] 버튼. 이 경보로는 멈추지 않는다.
  *   상태를 따로 저장하지 않고 「이번 기록으로 선을 막 넘었을 때」만 보낸다(같은 경보를 매번 다시 보내지 않게).
- * - W3 P0 자동 멈춤: 연결 오류(429·5xx·529·과부하·끊김·시간 초과 — 작가 호출 cls=connection)로 실패한 주문이 10분 안에 3건이면 4종 판매를 멈추고 알린다.
+ * - W3 P0 자동 멈춤: 연결 오류(429·5xx·529·과부하·끊김·시간 초과 — 작가 호출 cls=connection)로 실패한 주문이 10분 안에 3건이면 판매를 멈추고 알린다.
  *   마지막으로 다시 연 뒤의 실패만 센다. 다시 여는 것은 처리 봇 버튼으로만. 생각 소진 등 다른 실패는 위 경보(알림)만.
  * - W3 P0 Anthropic 잔액/인증 경보: 1시간 1번(OpenAI 잔액 경보 api_credit과 쿨다운 따로) + 판매 자동 멈춤(ops_sales 'alarm').
  */
@@ -88,7 +88,7 @@ export function rateAlert(runs: readonly RunLite[], latest: RunLite, now: number
     if (over(fails, total) && !over(before.fails, before.total)) reasons.push(`오늘 실패율 ${Math.round((fails / total) * 100)}%(실패 ${fails} / 시도 ${total})`);
   }
   if (!reasons.length) return null;
-  return [`🚨 <b>판매 일시 중지 검토</b> · ${esc(productLabel(latest.product))}`, ...reasons.map(esc), "이 경보로는 판매가 멈추지 않아요(연결 오류 연속만 자동 멈춤). 멈추려면 [4종 멈춤]. 지연 목록: " + ADMIN_DELAYED_URL].join("\n");
+  return [`🚨 <b>판매 일시 중지 검토</b> · ${esc(productLabel(latest.product))}`, ...reasons.map(esc), "이 경보로는 판매가 멈추지 않아요(연결 오류 연속만 자동 멈춤). 멈추려면 [판매 멈춤]. 지연 목록: " + ADMIN_DELAYED_URL].join("\n");
 }
 
 /** W3 P0 자동 멈춤 선: 연결 오류로 실패한 주문(책) 수 / 창. */
@@ -159,7 +159,7 @@ export function conclusionText(n: ConclusionNote, orderCode: string | null): str
   return `↩️ <b>${what}</b> · ${esc(orderCode ?? (n.origin === "ticket" ? "이용권 책" : "-"))} · ${esc(productLabel(n.product))} · ${esc(why)}${n.sweep ? " · 마감 청소" : ""} · ${won(n.spentUsd)}`;
 }
 export function dailyConclusionText(count: number): string {
-  return [`🚨 <b>오늘 자동 결론 ${count}건</b>(자동 환불 + 이용권 반환)`, "같은 원인이 겹치는지 확인해 주세요. 계속 늘면 [4종 멈춤]을 눌러 주세요.", ADMIN_DELAYED_URL].join("\n");
+  return [`🚨 <b>오늘 자동 결론 ${count}건</b>(자동 환불 + 이용권 반환)`, "같은 원인이 겹치는지 확인해 주세요. 계속 늘면 [판매 멈춤]을 눌러 주세요.", ADMIN_DELAYED_URL].join("\n");
 }
 /** 결론 한 줄 + (그날 자동 결론이 선에 막 닿으면) 경보. 실패는 삼킨다. */
 export async function conclusionAlert(db: SupabaseClient, send: Send, n: ConclusionNote, now: () => number = Date.now): Promise<void> {

@@ -318,7 +318,453 @@
 | 2026-11-14 20:21 | W3 P4 p4-2-compat-AL | anthropic/claude-sonnet-5-5 | 33130 | 0 | 11461 | 0.18087000 | complete | req_011Ch2jKMiuBSoDF67PWMwH4 | 20.43732180 |
 | 2026-11-14 20:21 | W3 P4 p4-2-compat-AL review | anthropic/claude-haiku-5-5 | 22212 | 0 | 4429 | 0.00443570 | complete | req_011Ch2jRKUdFBNUn5LJduoKE | 20.44175750 |
 | 2026-11-14 20:21 | W3 P4 p4-2-compat-AL repair | anthropic/claude-sonnet-5-5 | 9486 | 0 | 1737 | 0.03634200 | complete | req_011Ch2jSuQ6913wuroStmw1f | 20.47809950 |
-누적 합계: **$20.47809950** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 896 | 27797 | 1408 | 0.01865170 | complete | req_011Ch6Y8SNctasHYEgNsKA8L | 20.49675120 |
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 667 | 27797 | 1477 | 0.01888370 | complete | req_011Ch6Y8SNsMTTMM5FrJS28H | 20.51563490 |
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 28797 | 0 | 2401 | 0.09550250 | complete | req_011Ch6Y8M9MMVLUBavqHmEZd | 20.61113740 |
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 727 | 27797 | 2145 | 0.02568370 | complete | req_011Ch6Y8SK9Hv7BT6NDoRdkS | 20.63682110 |
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 801 | 27797 | 2403 | 0.02841170 | complete | req_011Ch6Y8SMsPh5Gcuw78mFL2 | 20.66523280 |
+| 2026-11-16 20:35 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 164 | 27797 | 2451 | 0.02761770 | complete | req_011Ch6Y8SEC3yrgDkmXsYH5H | 20.69285050 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 772 | 31694 | 1511 | 0.01982340 | complete | req_011Ch6Y9yFmwC3qy331XhH4Y | 20.71267390 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 703 | 31694 | 1617 | 0.02074540 | complete | req_011Ch6Y9yGmLap2Su8BvR1nQ | 20.73341930 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 807 | 31694 | 2097 | 0.02575340 | complete | req_011Ch6Y9xeZfN2XUU2dJYCDP | 20.75917270 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 164 | 31694 | 2478 | 0.02827740 | complete | req_011Ch6Y9xYMXHbKCjoiPzSgu | 20.78745010 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 32809 | 0 | 2966 | 0.11112500 | complete | req_011Ch6Y9uZ28AaWyBZbYqUhS | 20.89857510 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 767 | 31694 | 2334 | 0.02804340 | complete | req_011Ch6Y9xeKLqvib8iqnkg93 | 20.92661850 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 2442 | 31694 | 197 | 0.01002340 | complete | req_011Ch6YBbZbyvVNApBVTdyZu | 20.93664190 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 682 | 30984 | 1487 | 0.01933240 | complete | req_011Ch6YCB6UG6NfzXS2Ji5ei | 20.95597430 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 955 | 30984 | 1793 | 0.02293840 | complete | req_011Ch6YCB2kkJKW9wcdE2mZK | 20.97891270 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 164 | 30984 | 2154 | 0.02496640 | complete | req_011Ch6YCB5EPyrS1uSsQgP94 | 21.00387910 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 755 | 30984 | 1952 | 0.02412840 | complete | req_011Ch6YCB5DvguxGTxqje5YJ | 21.02800750 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 32167 | 0 | 2552 | 0.10534600 | complete | req_011Ch6YBwwTAQvBcnxPxmWHD | 21.13335350 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 827 | 30984 | 2373 | 0.02848240 | complete | req_011Ch6YCB3jX3n1dZxa7q3BP | 21.16183590 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 329 | 27906 | 1421 | 0.01765860 | complete | req_011Ch6YDc8t43pf4CCP836Zk | 21.17949450 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 365 | 27906 | 1639 | 0.01991060 | complete | req_011Ch6YDc5ukhcPoqd5uh2Ck | 21.19940510 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 354 | 27906 | 1948 | 0.02297860 | complete | req_011Ch6YDbNjygsnNBYyGHDfJ | 21.22238370 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 28078 | 0 | 2445 | 0.09455900 | complete | req_011Ch6YDYf3A4NjXeoykxkko | 21.31694270 |
+| 2026-11-16 20:36 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 164 | 27906 | 2527 | 0.02838860 | complete | req_011Ch6YDc2Brus7pW1DB94RM | 21.34533130 |
+| 2026-11-16 20:37 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 206 | 27906 | 2770 | 0.03090260 | complete | req_011Ch6YDbwE4eMkf11Cuir8u | 21.37623390 |
+| 2026-11-16 20:37 | AM2-9 P9 new | anthropic/claude-sonnet-5-5 | 1399 | 27906 | 256 | 0.00814860 | complete | req_011Ch6YFHgRpbgXrhhk2khoA | 21.38438250 |
+| 2026-11-16 20:37 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 667 | 28117 | 1478 | 0.01892570 | complete | req_011Ch6YJYoMnqW5HzGUfacof | 21.40330820 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 727 | 28117 | 1832 | 0.02258570 | complete | req_011Ch6YJYieieAW6Mfwo1svQ | 21.42589390 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 896 | 28117 | 1717 | 0.02177370 | complete | req_011Ch6YJYfBKbWG8L1PnkCYM | 21.44766760 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 164 | 28117 | 2282 | 0.02595970 | complete | req_011Ch6YJYgR7oQUCLEaMiwip | 21.47362730 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 21486 | 7631 | 2445 | 0.07842810 | complete | req_011Ch6YJSkEA2CnygozmJazZ | 21.55205540 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 801 | 28117 | 2283 | 0.02724370 | complete | req_011Ch6YJYgAgmupbMur16ei4 | 21.57929910 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2409 | 28117 | 325 | 0.01087970 | complete | req_011Ch6YKtw6C1iTZZB5bY2kD | 21.59017880 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1960 | 28117 | 455 | 0.01128170 | complete | req_011Ch6YKtoQgMjUuKGPSjqHp | 21.60146050 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2569 | 28117 | 428 | 0.01222970 | complete | req_011Ch6YKunwmPxNZfM4M6Umj | 21.61369020 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1929 | 28117 | 160 | 0.00826970 | complete | req_011Ch6YL9m53baqjMtAjs4Nc | 21.62195990 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 3391 | 28117 | 538 | 0.01497370 | complete | req_011Ch6YKu81NbVwkPx96UPkw | 21.63693360 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 4096 | 28117 | 696 | 0.01796370 | complete | req_011Ch6YKtnRRhVoiR8KBdgfc | 21.65489730 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1696 | 28117 | 175 | 0.00795370 | complete | req_011Ch6YLo2gAb6XQNXf4o6KT | 21.66285100 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1745 | 28117 | 164 | 0.00794170 | complete | req_011Ch6YLoXgRT9ujNMKSKZTJ | 21.67079270 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 772 | 31815 | 1548 | 0.02020550 | complete | req_011Ch6YMFgYte7bzWhxDBsTK | 21.69099820 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 703 | 31815 | 1609 | 0.02067750 | complete | req_011Ch6YMFhHdADAscnAKXSFy | 21.71167570 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 807 | 31815 | 2098 | 0.02577550 | complete | req_011Ch6YMFWsJcqqgcxDTjkrQ | 21.73745120 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 164 | 31815 | 2482 | 0.02832950 | complete | req_011Ch6YMEzNQYRq3Xaf2H4CM | 21.76578070 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 25077 | 7853 | 2850 | 0.09142030 | complete | req_011Ch6YM7uUbjZ7NzXvBtv51 | 21.85720100 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 767 | 31815 | 2552 | 0.03023550 | complete | req_011Ch6YMFkmVxExeghNXP341 | 21.88743650 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1730 | 31815 | 207 | 0.00871150 | complete | req_011Ch6YNreGf8jd8gUd8kbk7 | 21.89614800 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2703 | 31815 | 329 | 0.01187750 | complete | req_011Ch6YNrmTGHqh9uRX1Pn3q | 21.90802550 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2065 | 31815 | 176 | 0.00907150 | complete | req_011Ch6YNrfFbHoguYDQj6h3s | 21.91709700 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1568 | 31815 | 177 | 0.00808750 | complete | req_011Ch6YP316yWoxWrt5TkuKT | 21.92518450 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 3366 | 31815 | 597 | 0.01588350 | complete | req_011Ch6YNqwqindwBYWPugYVV | 21.94106800 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 3842 | 31815 | 768 | 0.01854550 | complete | req_011Ch6YNqyLEvUvfpbz1yoVi | 21.95961350 |
+| 2026-11-16 20:38 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1606 | 31815 | 201 | 0.00840350 | complete | req_011Ch6YPgWqJPyP52Ux4tXbR | 21.96801700 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1088 | 31815 | 180 | 0.00715750 | complete | req_011Ch6YPh4aoZPSzYj5JQHyz | 21.97517450 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 682 | 31278 | 1600 | 0.02049180 | complete | req_011Ch6YQ5REbABJjcKyVagQf | 21.99566630 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 955 | 31278 | 2026 | 0.02529780 | complete | req_011Ch6YQ5GZLvvv4VUXd84Ne | 22.02096410 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 755 | 31278 | 2151 | 0.02614780 | complete | req_011Ch6YQ5SVKwpJGkUcfpeCx | 22.04711190 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 24836 | 7625 | 2700 | 0.08926100 | complete | req_011Ch6YPyZ2Dgpe87RT6G3ZG | 22.13637290 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 164 | 31278 | 2540 | 0.02885580 | complete | req_011Ch6YQ4kZMwG3J5ByKYZvp | 22.16522870 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 827 | 31278 | 2830 | 0.03308180 | complete | req_011Ch6YQ5KY3iDZWuAcyvFWN | 22.19831050 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2335 | 31278 | 234 | 0.01013780 | complete | req_011Ch6YRsL27ywJLRjDa8XvL | 22.20844830 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1684 | 31278 | 206 | 0.00855580 | complete | req_011Ch6YRsp42J31vtePe7e8V | 22.21700410 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2570 | 31278 | 302 | 0.01128780 | complete | req_011Ch6YRsGJMJvf8fYsMtFoi | 22.22829190 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 4324 | 31278 | 724 | 0.01901580 | complete | req_011Ch6YRsEa74Moss1DBoJr4 | 22.24730770 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1776 | 31278 | 285 | 0.00952980 | complete | req_011Ch6YRsvVnarmgdWeSLdpA | 22.25683750 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1775 | 31278 | 144 | 0.00811780 | complete | req_011Ch6YSXvz6cEMTfhD1ax9n | 22.26495530 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2210 | 31278 | 464 | 0.01218780 | complete | req_011Ch6YSXqmtubeCK7RCMuea | 22.27714310 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1757 | 31278 | 152 | 0.00816180 | complete | req_011Ch6YSrThtvcrMwLzFo3Wv | 22.28530490 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 329 | 28080 | 1316 | 0.01662600 | complete | req_011Ch6YTCoKmE2vCHbSJbzeY | 22.30193090 |
+| 2026-11-16 20:39 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 365 | 28080 | 1420 | 0.01773800 | complete | req_011Ch6YTCtnkmEreTL8UZ2dN | 22.31966890 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 20926 | 7326 | 2249 | 0.07545160 | complete | req_011Ch6YT6xLsCoUZ6wYdeZaT | 22.39512050 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 354 | 28080 | 2104 | 0.02455600 | complete | req_011Ch6YTCfPovSgzrxoTrJJt | 22.41967650 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 164 | 28080 | 2374 | 0.02687600 | complete | req_011Ch6YTCp5SXdBvHXjPPLHK | 22.44655250 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 206 | 28080 | 2374 | 0.02696000 | complete | req_011Ch6YTCn6D5tbXBjtd1BtF | 22.47351250 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1028 | 28080 | 160 | 0.00646400 | complete | req_011Ch6YUinf4zd4C9f5TeLtV | 22.47997650 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1441 | 28080 | 289 | 0.00858000 | complete | req_011Ch6YUi7E17fmNei9pr7Ae | 22.48855650 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1940 | 28080 | 325 | 0.00993800 | complete | req_011Ch6YUinu7qUzzU6DXhthB | 22.49849450 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 1900 | 28080 | 347 | 0.01007800 | complete | req_011Ch6YUiDvNqm7pt4GMXDhd | 22.50857250 |
+| 2026-11-16 20:40 | AM2-9 P9 base | anthropic/claude-sonnet-5-5 | 2594 | 28080 | 520 | 0.01319600 | complete | req_011Ch6YUiBgTfrD5E6BvXWzT | 22.52176850 |
+| 2026-11-16 22:02 | AM2-10 1부 am2-10-w81-full | anthropic/claude-sonnet-5-5 | 26023 | 0 | 14733 | 0.19937600 | complete | req_011Ch6ebwcULreQ6vqunwMtk | 22.72114450 |
+| 2026-11-16 22:02 | AM2-10 1부 am2-10-w81-full review | anthropic/claude-haiku-5-5 | 23647 | 0 | 5952 | 0.00534070 | complete | req_011Ch6ejq535yytAiNQ1LMBW | 22.72648520 |
+| 2026-11-16 22:02 | AM2-10 1부 am2-10-w81-full repair | anthropic/claude-sonnet-5-5 | 5112 | 0 | 1079 | 0.02101400 | complete | req_011Ch6emseNc7iPfEc2LGimq | 22.74749920 |
+| 2026-11-16 22:04 | AM2-10 1부 am2-10-w81-compat | anthropic/claude-sonnet-5-5 | 32257 | 0 | 14245 | 0.20696400 | complete | req_011Ch6enht2gDy4sTrSDSTiM | 22.95446320 |
+| 2026-11-16 22:04 | AM2-10 1부 am2-10-w81-compat review | anthropic/claude-haiku-5-5 | 26063 | 0 | 1889 | 0.00355080 | complete | req_011Ch6evCpX8SWf1u4nNfARk | 22.95801400 |
+| 2026-11-16 22:04 | AM2-10 1부 am2-10-w81-compat repair | anthropic/claude-sonnet-5-5 | 6168 | 0 | 864 | 0.02097600 | complete | req_011Ch6evwHQvFXCK1gutEMRZ | 22.97899000 |
+| 2026-11-16 22:06 | AM2-10 1부 am2-10-w81-career | anthropic/claude-sonnet-5-5 | 24036 | 0 | 13618 | 0.18425200 | complete | req_011Ch6ewVfKbRdmaaSbo3yBh | 23.16324200 |
+| 2026-11-16 22:06 | AM2-10 1부 am2-10-w81-career review | anthropic/claude-haiku-5-5 | 22022 | 0 | 6882 | 0.00564320 | complete | req_011Ch6f4aUjtnJDwxiRzp767 | 23.16888520 |
+| 2026-11-16 22:07 | AM2-10 1부 am2-10-w81-career repair | anthropic/claude-sonnet-5-5 | 6626 | 0 | 1263 | 0.02588200 | complete | req_011Ch6f6yHVYkMcZafSuj5A8 | 23.19476720 |
+| 2026-11-16 22:08 | AM2-10 1부 am2-10-w81-love | anthropic/claude-sonnet-5-5 | 22950 | 0 | 12756 | 0.17346000 | complete | req_011Ch6f7jcVMP4qfhp6hd7go | 23.36822720 |
+| 2026-11-16 22:09 | AM2-10 1부 am2-10-w81-love review | anthropic/claude-haiku-5-5 | 21037 | 0 | 5913 | 0.00506020 | complete | req_011Ch6fF1EnS3xtsqKCxhfhD | 23.37328740 |
+| 2026-11-16 22:09 | AM2-10 1부 am2-10-w81-love repair | anthropic/claude-sonnet-5-5 | 6796 | 0 | 1407 | 0.02766200 | complete | req_011Ch6fH3Ppt3jYpWayE9Lb1 | 23.40094940 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3937 | 0 | 3187 | 0.00202247 | complete | req_011Ch6jvGTPHvspDMJWSN25P | 23.40297187 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3823 | 0 | 3685 | 0.00226007 | complete | req_011Ch6jvGTstXiTLsaagMLkQ | 23.40523194 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3968 | 0 | 3718 | 0.00229107 | complete | req_011Ch6jvGSPCCfcDcfzot7pq | 23.40752301 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 4006 | 0 | 4279 | 0.00257538 | complete | req_011Ch6jvGU7tKH9JFnCMDQj9 | 23.41009839 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3930 | 0 | 4710 | 0.00278328 | complete | req_011Ch6jvGUdGy6CmUgALcRzM | 23.41288167 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 4009 | 0 | 4518 | 0.00269518 | complete | req_011Ch6jvGStV8xRoZBVin6Ho | 23.41557685 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 4090 | 0 | 4389 | 0.00263878 | complete | req_011Ch6jvGV82W8cpt5MX194C | 23.41821563 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3960 | 0 | 4706 | 0.00278428 | complete | req_011Ch6jvGufpcrN2TNAYoTwg | 23.42099991 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2457 | 1411 | 1552 | 0.00103581 | complete | req_011Ch6jwUxjTGWidzhhHSAvz | 23.42203572 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2630 | 1411 | 3991 | 0.00227261 | complete | req_011Ch6jwA99ajLQo7kmReiZb | 23.42430833 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2783 | 1411 | 3127 | 0.00185591 | complete | req_011Ch6jwWVWtKPMMCW8DWKYP | 23.42616424 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2471 | 1411 | 4051 | 0.00228671 | complete | req_011Ch6jwGQS2pFDkRZN8kHpB | 23.42845095 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2640 | 1411 | 4187 | 0.00237161 | complete | req_011Ch6jwHmHfSQPF2TfEwJZi | 23.43082256 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2504 | 1411 | 3908 | 0.00221851 | complete | req_011Ch6jwSQCi8tLBQHqLVndY | 23.43304107 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2552 | 1411 | 3867 | 0.00220281 | complete | req_011Ch6jwW3Dfm8Nak27V8PN2 | 23.43524388 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2490 | 1411 | 3977 | 0.00225161 | complete | req_011Ch6jweXTL4R8EzT7APL9b | 23.43749549 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2478 | 1411 | 4048 | 0.00228591 | complete | req_011Ch6jws22jd4kFNmJLTZLY | 23.43978140 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2551 | 1411 | 4121 | 0.00232971 | complete | req_011Ch6jxKq5nAbGUBGmbXP2Y | 23.44211111 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2487 | 1411 | 3864 | 0.00219481 | complete | req_011Ch6jxNWa6Vpx9RChAKmte | 23.44430592 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2592 | 1411 | 4234 | 0.00239031 | complete | req_011Ch6jxPjVJXaD7jNi6CHL5 | 23.44669623 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2690 | 1411 | 4282 | 0.00242411 | complete | req_011Ch6jxWHdjjph1ZF1iwVTC | 23.44912034 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2705 | 1411 | 3241 | 0.00190511 | complete | req_011Ch6jxn4AQQf8uFHScn3RT | 23.45102545 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2797 | 1411 | 4450 | 0.00251881 | complete | req_011Ch6jxTxzQeGW7FqyG8r9r | 23.45354426 |
+| 2026-11-16 23:10 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2708 | 1411 | 4366 | 0.00246791 | complete | req_011Ch6jxc78kegpr6kYvvPRb | 23.45601217 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2587 | 1411 | 4349 | 0.00244731 | complete | req_011Ch6jxxZSvnFb6SaxHcXry | 23.45845948 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2387 | 1411 | 3720 | 0.00211281 | complete | req_011Ch6jybVwsdM2Vo5nfpf2U | 23.46057229 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2591 | 1411 | 4202 | 0.00237421 | complete | req_011Ch6jyT8eguq5NyLiWbczQ | 23.46294650 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2716 | 1411 | 4316 | 0.00244371 | complete | req_011Ch6jySR1DCpWrSUNPZMvW | 23.46539021 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2401 | 1411 | 3884 | 0.00219621 | complete | req_011Ch6jyf8jEGs5SVQ2xaK6n | 23.46758642 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2446 | 1411 | 3931 | 0.00222421 | complete | req_011Ch6jyfV4e8RN4wVUvSXgG | 23.46981063 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2380 | 1411 | 3644 | 0.00207411 | complete | req_011Ch6jyrLftzesUs8vdRyzg | 23.47188474 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2469 | 1411 | 4076 | 0.00229901 | complete | req_011Ch6jykr1cP8z4N2hkt6gp | 23.47418375 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2414 | 1411 | 4795 | 0.00265301 | complete | req_011Ch6jzAbGwd71UrF8GGFDE | 23.47683676 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2465 | 1411 | 2972 | 0.00174661 | complete | req_011Ch6jzevM317fFVrzywVdi | 23.47858337 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2485 | 1411 | 4078 | 0.00230161 | complete | req_011Ch6jzc8g6nvcDY7xXcbNC | 23.48088498 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2484 | 1411 | 3819 | 0.00217201 | complete | req_011Ch6jzcF8G5c8Qui6WhEhc | 23.48305699 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2576 | 1411 | 4278 | 0.00241071 | complete | req_011Ch6jzgydWusAJaCy1Vzwp | 23.48546770 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2618 | 1411 | 4186 | 0.00236891 | complete | req_011Ch6jzmax15Qkftwizkk7K | 23.48783661 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2593 | 1411 | 3710 | 0.00212841 | complete | req_011Ch6jzrBmMss5pqBfVkNTV | 23.48996502 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2487 | 1411 | 4034 | 0.00227981 | complete | req_011Ch6jzrVciAvZB9sCr9uc5 | 23.49224483 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2688 | 1411 | 4182 | 0.00237391 | complete | req_011Ch6k1ThCMTZgkQKuwHwSz | 23.49461874 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2525 | 1411 | 3730 | 0.00213161 | complete | req_011Ch6k1dLdagEJHTvyswZp5 | 23.49675035 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2658 | 1411 | 4074 | 0.00231691 | complete | req_011Ch6k1i9bRNYTrbKZuw6An | 23.49906726 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2647 | 1411 | 4524 | 0.00254081 | complete | req_011Ch6k1iFYYFDNkaEU2DyfL | 23.50160807 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2432 | 1411 | 4251 | 0.00238281 | complete | req_011Ch6k232u3ke4CScVGBBja | 23.50399088 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2597 | 1411 | 4852 | 0.00269981 | complete | req_011Ch6k1uxGDyJh96WMFwtVZ | 23.50669069 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2600 | 1411 | 4908 | 0.00272811 | complete | req_011Ch6k1sKWjNTxvCLzLmef8 | 23.50941880 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2697 | 1411 | 5031 | 0.00279931 | complete | req_011Ch6k1ujcFJcpsuasWSBWM | 23.51221811 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2562 | 1411 | 3717 | 0.00212881 | complete | req_011Ch6k2eaKPLxoS1DyUHUns | 23.51434692 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2645 | 1411 | 4405 | 0.00248111 | complete | req_011Ch6k2hD5RuePfxcmXxtGr | 23.51682803 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2389 | 1411 | 4547 | 0.00252651 | complete | req_011Ch6k2wczy5PjHquMPafsX | 23.51935454 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2703 | 1411 | 4592 | 0.00258041 | complete | req_011Ch6k2v9CTS9k3XV1hy3q6 | 23.52193495 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2496 | 1411 | 4918 | 0.00272271 | complete | req_011Ch6k3BxxK154qs3GnU2y3 | 23.52465766 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2476 | 1411 | 4518 | 0.00252071 | complete | req_011Ch6k3BviPbFeAHYVGi6YL | 23.52717837 |
+| 2026-11-16 23:11 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2553 | 1411 | 4150 | 0.00234441 | complete | req_011Ch6k3JCzbTdjojtPekvD3 | 23.52952278 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2585 | 1411 | 5443 | 0.00299411 | complete | req_011Ch6k3CHo1fLYEd8PErojy | 23.53251689 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2610 | 1411 | 4031 | 0.00229061 | complete | req_011Ch6k3fYPpK7g1gpQ6VuJT | 23.53480750 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2574 | 1411 | 1496 | 0.00101951 | complete | req_011Ch6k4dtwzjwycf3ass47g | 23.53582701 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2384 | 1411 | 4195 | 0.00235001 | complete | req_011Ch6k3vezAY8UHiRQhUUV7 | 23.53817702 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2482 | 1411 | 4358 | 0.00244131 | complete | req_011Ch6k4Dw48jwBx1Kii46Zr | 23.54061833 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2630 | 1411 | 4495 | 0.00252461 | complete | req_011Ch6k49xC2KAf9apnFMvCB | 23.54314294 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2558 | 1411 | 3993 | 0.00226641 | complete | req_011Ch6k4S82FRWqgWrydSygy | 23.54540935 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2650 | 1411 | 4392 | 0.00247511 | complete | req_011Ch6k4Smxcxt14rK6bZQkd | 23.54788446 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2502 | 1411 | 4439 | 0.00248381 | complete | req_011Ch6k4VtEsvpANjUUKRRFA | 23.55036827 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2516 | 1411 | 4326 | 0.00242871 | complete | req_011Ch6k4oioMvhmugs7v9TxA | 23.55279698 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2635 | 1411 | 4272 | 0.00241361 | complete | req_011Ch6k576JvodciKQ9KSWeA | 23.55521059 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2538 | 1411 | 4873 | 0.00270441 | complete | req_011Ch6k51u2TakyW5vmbvo84 | 23.55791500 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2448 | 1411 | 4266 | 0.00239191 | complete | req_011Ch6k5JaNtNiZVQaohCiNR | 23.56030691 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2491 | 1411 | 4823 | 0.00267471 | complete | req_011Ch6k5Q7kPoxz85Nbqx8ef | 23.56298162 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2436 | 1411 | 3954 | 0.00223471 | complete | req_011Ch6k5gwHJd87JN6bxBEas | 23.56521633 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2456 | 1411 | 4172 | 0.00234571 | complete | req_011Ch6k5dtEZGgZ7c126LTU9 | 23.56756204 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2597 | 1411 | 4567 | 0.00255731 | complete | req_011Ch6k5Zt8XiFFkNwE991Ak | 23.57011935 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2366 | 1411 | 4222 | 0.00236171 | complete | req_011Ch6k5xwCrFixgPdwdcW8T | 23.57248106 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2449 | 1411 | 3941 | 0.00222951 | complete | req_011Ch6k6Gk2919kBe3KwMsLN | 23.57471057 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2501 | 1411 | 4507 | 0.00251771 | complete | req_011Ch6k6GSREBMkL6p85mmfM | 23.57722828 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2441 | 1411 | 3971 | 0.00224371 | complete | req_011Ch6k6f5hNg67hr3hNRNjw | 23.57947199 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2390 | 1411 | 4511 | 0.00250861 | complete | req_011Ch6k6Wju58oixgqTeTw47 | 23.58198060 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2402 | 1411 | 4143 | 0.00232581 | complete | req_011Ch6k6mGmPe9CJx8u3jyL8 | 23.58430641 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2439 | 1411 | 4744 | 0.00263001 | complete | req_011Ch6k6mjYKh4qkVuonbdLv | 23.58693642 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2403 | 1411 | 5054 | 0.00278141 | complete | req_011Ch6k6s3XPfLb89JJXktaW | 23.58971783 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2475 | 1411 | 4409 | 0.00246611 | complete | req_011Ch6k78tn1pu31R8TFNsyc | 23.59218394 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2330 | 1411 | 3958 | 0.00222611 | complete | req_011Ch6k7LUnemtiT66KZ7DfV | 23.59441005 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2348 | 1411 | 4073 | 0.00228541 | complete | req_011Ch6k7VupMDUfGFGSuFJmc | 23.59669546 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2372 | 1411 | 4217 | 0.00235981 | complete | req_011Ch6k7jXrwKQZr1QfMmMt5 | 23.59905527 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2375 | 1411 | 2046 | 0.00127461 | complete | req_011Ch6k8QcrAkQ3aFdDFbp75 | 23.60032988 |
+| 2026-11-16 23:12 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2291 | 1411 | 3746 | 0.00211621 | complete | req_011Ch6k7ukn2hupHgJyJirEf | 23.60244609 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2464 | 1411 | 4320 | 0.00242051 | complete | req_011Ch6k7pH7TqgLDvJmSJ6C5 | 23.60486660 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2505 | 1411 | 4905 | 0.00271711 | complete | req_011Ch6k85n2RjBGxA9FbPCXc | 23.60758371 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2378 | 1411 | 4494 | 0.00249891 | complete | req_011Ch6k8Gt1zf8z3nUy4giNR | 23.61008262 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2470 | 1411 | 5338 | 0.00293011 | complete | req_011Ch6k8DNBjQdRFJFFRvkHj | 23.61301273 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2444 | 1411 | 4049 | 0.00228301 | complete | req_011Ch6k8gLAByAtdWsvFjbmN | 23.61529574 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2472 | 1411 | 3560 | 0.00204131 | complete | req_011Ch6k8vmKrJ7aHtATSesCR | 23.61733705 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2307 | 1411 | 4657 | 0.00257331 | complete | req_011Ch6k8uzSeo2szkBXxMe4j | 23.61991036 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2503 | 1411 | 4178 | 0.00235341 | complete | req_011Ch6k8zHfAc8wMn7KA6tok | 23.62226377 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2296 | 1411 | 5059 | 0.00277321 | complete | req_011Ch6k8mwVs4AoCYumcA6Qq | 23.62503698 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2514 | 1411 | 3808 | 0.00216951 | complete | req_011Ch6k9TprpPNAmuc4Eb1Kf | 23.62720649 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2561 | 1411 | 4142 | 0.00234121 | complete | req_011Ch6k9VW4qbtwhaC5fNAFu | 23.62954770 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2550 | 1411 | 4030 | 0.00228411 | complete | req_011Ch6k9Y2s7UUFsHrKJifLS | 23.63183181 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2433 | 1411 | 4539 | 0.00252691 | complete | req_011Ch6k9oz4Tgz5W3N19JTTy | 23.63435872 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2414 | 1411 | 4607 | 0.00255901 | complete | req_011Ch6k9uBbP7W8kcV4hbtuW | 23.63691773 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2507 | 1411 | 4034 | 0.00228181 | complete | req_011Ch6kA8DfonBmeAkCbWoJp | 23.63919954 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2558 | 1411 | 3914 | 0.00222691 | complete | req_011Ch6kAAdXVhma3Rz5fsGue | 23.64142645 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2301 | 1411 | 3554 | 0.00202121 | complete | req_011Ch6kAckQXFGAcoFFsD9sq | 23.64344766 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2613 | 1411 | 1710 | 0.00113041 | complete | req_011Ch6kBEYTYb68ifhV3pJi1 | 23.64457807 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2164 | 1411 | 5183 | 0.00282201 | complete | req_011Ch6kAFu2abYH2J2kY8U5H | 23.64740008 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2674 | 1411 | 4258 | 0.00241051 | complete | req_011Ch6kAda1xpWQSeQ11RTkt | 23.64981059 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2463 | 1411 | 4878 | 0.00269941 | complete | req_011Ch6kAWg3QAJCnRkC3upbW | 23.65251000 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2346 | 1411 | 3410 | 0.00195371 | complete | req_011Ch6kB8HufJK1Fbwkk2aby | 23.65446371 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2440 | 1411 | 4026 | 0.00227111 | complete | req_011Ch6kB55BzT7C5VTrZcAX8 | 23.65673482 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2678 | 1411 | 3841 | 0.00220241 | complete | req_011Ch6kBFgv9YBAi7wJBHkMB | 23.65893723 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2396 | 1411 | 3374 | 0.00194071 | complete | req_011Ch6kBgZ8gJEHPbaprUS6g | 23.66087794 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2449 | 1411 | 4136 | 0.00232701 | complete | req_011Ch6kBamsxxVAe1LP9FZRD | 23.66320495 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2797 | 1411 | 3672 | 0.00212981 | complete | req_011Ch6kBnVKujUPRTTJNPmPi | 23.66533476 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2671 | 1411 | 4510 | 0.00253621 | complete | req_011Ch6kBhqmzicGcnat1qQJo | 23.66787097 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2629 | 1411 | 3897 | 0.00222551 | complete | req_011Ch6kBzdaQc4rB23X9KWL1 | 23.67009648 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2431 | 1411 | 3638 | 0.00207621 | complete | req_011Ch6kC4R2p45eUDL5jHNY3 | 23.67217269 |
+| 2026-11-16 23:13 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2464 | 1411 | 3798 | 0.00215951 | complete | req_011Ch6kCCD5fYDYYdU4ofK94 | 23.67433220 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2501 | 1411 | 4780 | 0.00265421 | complete | req_011Ch6kCKa7E3MdY2sBArf1C | 23.67698641 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2658 | 1411 | 3717 | 0.00213841 | complete | req_011Ch6kCiZi437vdpcvdTsaz | 23.67912482 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2617 | 1411 | 4765 | 0.00265831 | complete | req_011Ch6kCZKbS4yzLEZRk6Stj | 23.68178313 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2479 | 1411 | 4596 | 0.00256001 | complete | req_011Ch6kCjr77D7kVwwaYSMNh | 23.68434314 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2587 | 1411 | 3585 | 0.00206531 | complete | req_011Ch6kD28tLhHkCXJgpsauN | 23.68640845 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2568 | 1411 | 3750 | 0.00214591 | complete | req_011Ch6kD51mc9LkkkL18KVPk | 23.68855436 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2315 | 1411 | 4389 | 0.00244011 | complete | req_011Ch6kCyeKHUc4871ZKai9u | 23.69099447 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2371 | 1411 | 4447 | 0.00247471 | complete | req_011Ch6kDF9EHrBxPMrSirZ9V | 23.69346918 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2364 | 1411 | 3063 | 0.00178201 | complete | req_011Ch6kDq98Ra2TBT68Eiswj | 23.69525119 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2597 | 1411 | 3302 | 0.00192481 | complete | req_011Ch6kDio7zDwGeobXB4mSN | 23.69717600 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2635 | 1411 | 3408 | 0.00198161 | complete | req_011Ch6kDnojbaovMpVmaJKME | 23.69915761 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2544 | 1411 | 3612 | 0.00207451 | complete | req_011Ch6kE2Rn5M1rgvRmhTpHi | 23.70123212 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2616 | 1411 | 3544 | 0.00204771 | complete | req_011Ch6kEBWEV8vu7rjrRPj6M | 23.70327983 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2577 | 1411 | 3898 | 0.00222081 | complete | req_011Ch6kE3HshcweJZ2n9sxPp | 23.70550064 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2626 | 1411 | 4265 | 0.00240921 | complete | req_011Ch6kE7dZwb6gdjUQXJash | 23.70790985 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2489 | 1411 | 3759 | 0.00214251 | complete | req_011Ch6kEUtVcbnYYw14mid5C | 23.71005236 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2612 | 1411 | 3341 | 0.00194581 | complete | req_011Ch6kEgwnbdGTgK4csTgjr | 23.71199817 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2556 | 1411 | 3404 | 0.00197171 | complete | req_011Ch6kEhYzToQ1yQhHdHTru | 23.71396988 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2381 | 1411 | 4261 | 0.00238271 | complete | req_011Ch6kEkRtDmqnLGuAkCbXB | 23.71635259 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2598 | 1411 | 3465 | 0.00200641 | complete | req_011Ch6kF3S5aEeER6P4ep6ZE | 23.71835900 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2564 | 1411 | 3488 | 0.00201451 | complete | req_011Ch6kFCqdDPS4Bi6Q85XmJ | 23.72037351 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 1983 | 1411 | 3222 | 0.00182341 | complete | req_011Ch6kFGuwSrtJgHBnncNbi | 23.72219692 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2571 | 1411 | 3730 | 0.00213621 | complete | req_011Ch6kFBkeNtk5WqwymMBMg | 23.72433313 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2201 | 1411 | 3140 | 0.00180421 | complete | req_011Ch6kFXWHVaqSSMmw56B57 | 23.72613734 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2341 | 1411 | 3447 | 0.00197171 | complete | req_011Ch6kFbea5SKAHGBprAnHA | 23.72810905 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2554 | 1411 | 3573 | 0.00205601 | complete | req_011Ch6kFcmY4jrqzkGP1zakc | 23.73016506 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2328 | 1411 | 3217 | 0.00185541 | complete | req_011Ch6kFx1BBRov8Jiwtu5Zx | 23.73202047 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2501 | 1411 | 3125 | 0.00182671 | complete | req_011Ch6kG9o6DbfQycKJmdVzT | 23.73384718 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2481 | 1411 | 4061 | 0.00229271 | complete | req_011Ch6kG18wMJ4LqPDf3tw8f | 23.73613989 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2328 | 1411 | 2586 | 0.00153991 | complete | req_011Ch6kGTLnRk8zREt1xoy7g | 23.73767980 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2530 | 1411 | 3506 | 0.00202011 | complete | req_011Ch6kGG57xkHxbZuLhzjx9 | 23.73969991 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2121 | 1411 | 4169 | 0.00231071 | complete | req_011Ch6kGBubXBvhq6bYDt5GY | 23.74201062 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2286 | 1411 | 2979 | 0.00173221 | complete | req_011Ch6kGcwjAdaDeFRpQwBny | 23.74374283 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2583 | 1411 | 4005 | 0.00227491 | complete | req_011Ch6kGXW4Yn9eCVNNd1G1A | 23.74601774 |
+| 2026-11-16 23:14 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2101 | 1411 | 1564 | 0.00100621 | complete | req_011Ch6kHJRH7tVTFNQ2GpKKD | 23.74702395 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2410 | 1411 | 3034 | 0.00177211 | complete | req_011Ch6kH6vUaiyPhX38LY3mX | 23.74879606 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2540 | 1411 | 4311 | 0.00242361 | complete | req_011Ch6kGrPcjJXYNmyTwthsq | 23.75121967 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2356 | 1411 | 2642 | 0.00157071 | complete | req_011Ch6kHTVEZRzF6bg5d7AhN | 23.75279038 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2391 | 1411 | 4039 | 0.00227271 | complete | req_011Ch6kH3doAT4j2ArScAzn5 | 23.75506309 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2111 | 1411 | 4792 | 0.00262121 | complete | req_011Ch6kHBGRirhW31p5Brsxp | 23.75768430 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2228 | 1411 | 4372 | 0.00242291 | complete | req_011Ch6kHEarZDUypJkLb9bDb | 23.76010721 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2201 | 1411 | 3274 | 0.00187121 | complete | req_011Ch6kHdD8v6xLZrXBVujVt | 23.76197842 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2333 | 1411 | 3919 | 0.00220691 | complete | req_011Ch6kHhEUh1pLvLrhxHfmy | 23.76418533 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2387 | 1411 | 3737 | 0.00212131 | complete | req_011Ch6kJ2ReGvYxqd7P1BoKT | 23.76630664 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2492 | 1411 | 4049 | 0.00228781 | complete | req_011Ch6kJ6etkQMACM8QmrYiN | 23.76859445 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2214 | 1411 | 4377 | 0.00242401 | complete | req_011Ch6kJBgzoBTeNDGvocft3 | 23.77101846 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2359 | 1411 | 4015 | 0.00225751 | complete | req_011Ch6kJDYcx88kp1vePUubg | 23.77327597 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2296 | 1411 | 4778 | 0.00263271 | complete | req_011Ch6kJQYv2Fa2duCCg4wCT | 23.77590868 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2314 | 1411 | 4562 | 0.00252651 | complete | req_011Ch6kJQA6jhJzPoKmyFqBe | 23.77843519 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2297 | 1411 | 4309 | 0.00239831 | complete | req_011Ch6kJZ9M3QsoH4QqLx3hM | 23.78083350 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2386 | 1411 | 3615 | 0.00206021 | complete | req_011Ch6kK4eNY1t87k3ZRLX76 | 23.78289371 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2354 | 1411 | 4571 | 0.00253501 | complete | req_011Ch6kJsyv9cswKnZmWBBdX | 23.78542872 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2349 | 1411 | 3784 | 0.00214101 | complete | req_011Ch6kKC7LPJX99ZMb2VbBE | 23.78756973 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2395 | 1411 | 3667 | 0.00208711 | complete | req_011Ch6kKHghP61WiEvwxxyzp | 23.78965684 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2399 | 1411 | 3485 | 0.00199651 | complete | req_011Ch6kKKiEd7MaC5nKRyb3r | 23.79165335 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2481 | 1411 | 2692 | 0.00160821 | complete | req_011Ch6kKeWKysJCs9FXtmFDp | 23.79326156 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2378 | 1411 | 3862 | 0.00218291 | complete | req_011Ch6kKZfdES3dtvmBkSjEC | 23.79544447 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2305 | 1411 | 4152 | 0.00232061 | complete | req_011Ch6kKerQcwVELM4en9P9L | 23.79776508 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2474 | 1411 | 3612 | 0.00206751 | complete | req_011Ch6kL1iY9xC6gSEKMbGH1 | 23.79983259 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2452 | 1411 | 2816 | 0.00166731 | complete | req_011Ch6kLJR83buDGhQbgPdA2 | 23.80149990 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2345 | 1411 | 3417 | 0.00195711 | complete | req_011Ch6kLAnFBVvxcpMu7ym2Q | 23.80345701 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2371 | 1411 | 3756 | 0.00212921 | complete | req_011Ch6kLDYw5gFyCFhJ5CnVa | 23.80558622 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2517 | 1411 | 3868 | 0.00219981 | complete | req_011Ch6kLHBTEX8xqq57dooQa | 23.80778603 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2720 | 1411 | 3997 | 0.00228461 | complete | req_011Ch6kLQLpSnKaKaNpsjZvQ | 23.81007064 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2792 | 1411 | 4795 | 0.00269081 | complete | req_011Ch6kLcy5oH4vznJ1HAreg | 23.81276145 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2602 | 1411 | 4190 | 0.00236931 | complete | req_011Ch6kLpHDgk4gaHZnkFWhY | 23.81513076 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2659 | 1411 | 4054 | 0.00230701 | complete | req_011Ch6kLzthdSZL6ToyVUjeB | 23.81743777 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2575 | 1411 | 3666 | 0.00210461 | complete | req_011Ch6kM723jAjiAYgUdP92W | 23.81954238 |
+| 2026-11-16 23:15 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2670 | 1411 | 4299 | 0.00243061 | complete | req_011Ch6kM4TGW9ehUk2jsyfKt | 23.82197299 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2532 | 1411 | 4700 | 0.00261731 | complete | req_011Ch6kMGPMxGz5yyjUu3wLP | 23.82459030 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2774 | 1411 | 4545 | 0.00256401 | complete | req_011Ch6kMKHyeoteuvp6uURdL | 23.82715431 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2614 | 1411 | 4367 | 0.00245901 | complete | req_011Ch6kMYaweM2JFDYd3Yydn | 23.82961332 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2699 | 1411 | 2799 | 0.00168351 | complete | req_011Ch6kN4dheraoSaHs3aBB4 | 23.83129683 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2713 | 1411 | 3735 | 0.00215291 | complete | req_011Ch6kMxUsg2GEkbR4wrrCi | 23.83344974 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2897 | 1411 | 4434 | 0.00252081 | complete | req_011Ch6kMv3XNDpa8LXTFiXfw | 23.83597055 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2617 | 1411 | 4148 | 0.00234981 | complete | req_011Ch6kNDMq3Pg24FkgVgxoE | 23.83832036 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2482 | 1411 | 4782 | 0.00265331 | complete | req_011Ch6kNCj7qcZ2pAGbp6m4Q | 23.84097367 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2543 | 1411 | 3901 | 0.00221891 | complete | req_011Ch6kNXGauQTKF9MhoQJ91 | 23.84319258 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2410 | 1411 | 4118 | 0.00231411 | complete | req_011Ch6kNZubS5HH89Kya2GMR | 23.84550669 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2625 | 1411 | 3569 | 0.00206111 | complete | req_011Ch6kNkKAAJkDtcuECmUkg | 23.84756780 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2257 | 1411 | 4383 | 0.00243131 | complete | req_011Ch6kNzDq1p4pqFMe4b1Qh | 23.84999911 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2588 | 1411 | 3644 | 0.00209491 | complete | req_011Ch6kP8DHuwpuRwpE9saRf | 23.85209402 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2564 | 1411 | 3540 | 0.00204051 | complete | req_011Ch6kNshANqQCGUEh2EUT8 | 23.85413453 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2592 | 1411 | 4702 | 0.00262431 | complete | req_011Ch6kPKh6hJVoWMdGbvo2D | 23.85675884 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2396 | 1411 | 4067 | 0.00228721 | complete | req_011Ch6kPTkHUcUqZqXkCpyEt | 23.85904605 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2315 | 1411 | 4086 | 0.00228861 | complete | req_011Ch6kPd8qu9rMtyzyn8Qkk | 23.86133466 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2496 | 1411 | 3929 | 0.00222821 | complete | req_011Ch6kPdzBS47cjNvfcBcuh | 23.86356287 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2308 | 1411 | 4147 | 0.00231841 | complete | req_011Ch6kPkJwMUMp2nFWSsthJ | 23.86588128 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2726 | 1411 | 4256 | 0.00241471 | complete | req_011Ch6kQCkuqStfn71pu8GQe | 23.86829599 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2780 | 1411 | 3451 | 0.00201761 | complete | req_011Ch6kQa26byRmLfawv9NWF | 23.87031360 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2569 | 1411 | 5193 | 0.00286751 | complete | req_011Ch6kQ7eaMisRWhPanJNnW | 23.87318111 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2767 | 1411 | 5498 | 0.00303981 | complete | req_011Ch6kQBfg6DVrLBB9u35Z5 | 23.87622092 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2767 | 1411 | 3734 | 0.00215781 | complete | req_011Ch6kQgASTJkhXjTjekKKG | 23.87837873 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2601 | 1411 | 4912 | 0.00273021 | complete | req_011Ch6kQZZoh7SXSoCJ9c4aZ | 23.88110894 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2774 | 1411 | 4348 | 0.00246551 | complete | req_011Ch6kQoEaTEqUHx4FqcNfk | 23.88357445 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2584 | 1411 | 5241 | 0.00289301 | complete | req_011Ch6kQhLsdDg9DTqWvQNiN | 23.88646746 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2825 | 1411 | 3393 | 0.00199311 | complete | req_011Ch6kRN1Z4NDJLze9JQqjj | 23.88846057 |
+| 2026-11-16 23:16 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2613 | 1411 | 3432 | 0.00199141 | complete | req_011Ch6kRZufZy66RFUYh6gnW | 23.89045198 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2555 | 1411 | 4766 | 0.00265261 | complete | req_011Ch6kRVH7HQckmQcDBwD7X | 23.89310459 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2487 | 1411 | 3245 | 0.00188531 | complete | req_011Ch6kRy9AQGQWyMY4vD9Eb | 23.89498990 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2553 | 1411 | 4114 | 0.00232641 | complete | req_011Ch6kRjgYiW3Yf8cWSwfzk | 23.89731631 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2621 | 1411 | 4229 | 0.00239071 | complete | req_011Ch6kRfjRH1FsrrbDntYo4 | 23.89970702 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2526 | 1411 | 4353 | 0.00244321 | complete | req_011Ch6kRwHYVMQwxEZZoNT5g | 23.90215023 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2389 | 1411 | 4235 | 0.00237051 | complete | req_011Ch6kS9LbVedkSA6gZVNbR | 23.90452074 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2582 | 1411 | 1992 | 0.00126831 | complete | req_011Ch6kSpK8Mnkh4U98iz2NG | 23.90578905 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2624 | 1411 | 4124 | 0.00233851 | complete | req_011Ch6kSJ7BP6qegso89avqJ | 23.90812756 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2445 | 1411 | 3997 | 0.00225711 | complete | req_011Ch6kSYQfeuCzHiKZtAyZk | 23.91038467 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2164 | 1411 | 3193 | 0.00182701 | complete | req_011Ch6kSraoChnXDFSQmgDLy | 23.91221168 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2424 | 1411 | 3779 | 0.00214601 | complete | req_011Ch6kSrRNcL9j7gLeCD3qa | 23.91435769 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2350 | 1411 | 4563 | 0.00253061 | complete | req_011Ch6kSqngL69KLaRTScurz | 23.91688830 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2487 | 1411 | 3462 | 0.00199381 | complete | req_011Ch6kT8V2YG1chuqtoKCuG | 23.91888211 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2392 | 1411 | 3084 | 0.00179531 | complete | req_011Ch6kTFesZABzxCHpVvkiN | 23.92067742 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2345 | 1411 | 4443 | 0.00247011 | complete | req_011Ch6kTJ12AMSu2fRZHxVmJ | 23.92314753 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2403 | 1411 | 3710 | 0.00210941 | complete | req_011Ch6kTSff6LWRnJXdvBB2C | 23.92525694 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2297 | 1411 | 3396 | 0.00194181 | complete | req_011Ch6kThVdsrzpexdUiKy7y | 23.92719875 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2397 | 1411 | 3707 | 0.00210731 | complete | req_011Ch6kTfRNB5ykkx99gn4Vu | 23.92930606 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2583 | 1411 | 3579 | 0.00206191 | complete | req_011Ch6kU7bUSHjFdLQkDyCWE | 23.93136797 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2518 | 1411 | 4319 | 0.00242541 | complete | req_011Ch6kTtiZtY9WWmhk9K9vF | 23.93379338 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2428 | 1411 | 4365 | 0.00243941 | complete | req_011Ch6kU6XyVHUDdUmdWnyGt | 23.93623279 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2319 | 1411 | 4335 | 0.00241351 | complete | req_011Ch6kU7AffDDQmhZiPWmtS | 23.93864630 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2305 | 1411 | 3618 | 0.00205361 | complete | req_011Ch6kUUSbSyCwrp2CSkoX6 | 23.94069991 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 114 | 1411 | 81 | 0.00006601 | complete | req_011Ch6kVVEW8bCV4vRe4K4ZX | 23.94076592 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2392 | 1411 | 4457 | 0.00248181 | complete | req_011Ch6kUUfz7veeaSdGxBGew | 23.94324773 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 3002 | 1411 | 1823 | 0.00122581 | complete | req_011Ch6kVHLtTeAFZ5vfXg7pP | 23.94447354 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2393 | 1411 | 3920 | 0.00221341 | complete | req_011Ch6kUgh3kyfMxpBjYxSpA | 23.94668695 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2467 | 1411 | 4255 | 0.00238831 | complete | req_011Ch6kUaj7SMFPzxS5LHS5q | 23.94907526 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2244 | 1411 | 4049 | 0.00226301 | complete | req_011Ch6kV6upbTbokX2VTJPzS | 23.95133827 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2504 | 1411 | 3814 | 0.00217151 | complete | req_011Ch6kV77UeMGA9oritbRyW | 23.95350978 |
+| 2026-11-16 23:17 | AM2-10 2부 꼬리표 repair | anthropic/claude-haiku-5-5 | 2675 | 1411 | 3952 | 0.00225761 | complete | req_011Ch6kVH6jvcW9XLPqeVPkd | 23.95576739 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 851 | 25291 | 1399 | 0.01822110 | complete | req_011Ch6pETHDfjtGQPPGRBn5f | 23.97398849 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 652 | 25291 | 1388 | 0.01771310 | complete | req_011Ch6pETD1iw6gdMf3P2WR6 | 23.99170159 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 771 | 25291 | 2064 | 0.02471110 | complete | req_011Ch6pET54hWhrqHDTkPSYe | 24.01641269 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 727 | 25291 | 1868 | 0.02266310 | complete | req_011Ch6pET8nkDGiaNjotUPY1 | 24.03907579 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 25291 | 2163 | 0.02448710 | complete | req_011Ch6pET7JYauB3nAH8QB2H | 24.06356289 |
+| 2026-11-17 00:06 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 26291 | 0 | 2505 | 0.09027750 | complete | req_011Ch6pENS2GBMED7mZLNo1s | 24.15384039 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1681 | 25291 | 168 | 0.00757110 | complete | req_011Ch6pFvY62vDejCN2wJuSZ | 24.16141149 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1577 | 25291 | 166 | 0.00734310 | complete | req_011Ch6pFvWMAB7oR2awFFznG | 24.16875459 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 742 | 28627 | 1340 | 0.01774670 | complete | req_011Ch6pGPzak5xFa16mVPodM | 24.18650129 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 688 | 28627 | 1566 | 0.01989870 | complete | req_011Ch6pGPzqMvxRqsuDi8k9W | 24.20639999 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 777 | 28627 | 1988 | 0.02429670 | complete | req_011Ch6pGQ3KSg7p4WLrweBtq | 24.23069669 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 29742 | 0 | 2769 | 0.10148750 | complete | req_011Ch6pGJzSt85CPXgiuox4r | 24.33218419 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 702 | 28627 | 2406 | 0.02832670 | complete | req_011Ch6pGPzLD9uguaVjrgJ5D | 24.36051089 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 28627 | 2784 | 0.03103070 | complete | req_011Ch6pGP1o8hrsy6jpismRr | 24.39154159 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 2029 | 28627 | 152 | 0.00844070 | complete | req_011Ch6pJLxLBj2e9GVnWAsM4 | 24.39998229 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 667 | 27780 | 1259 | 0.01670200 | complete | req_011Ch6pJzAwsEB9r7ZoBqtrb | 24.41668429 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 910 | 27780 | 1620 | 0.02079800 | complete | req_011Ch6pJzJsxgKiDVz6NZCm5 | 24.43748229 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 755 | 27780 | 1769 | 0.02197800 | complete | req_011Ch6pK1P8PmksajUgobXdU | 24.45946029 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 27780 | 2216 | 0.02526600 | complete | req_011Ch6pJzFevXw8ykM2gC1PA | 24.48472629 |
+| 2026-11-17 00:07 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 28963 | 0 | 2462 | 0.09643600 | complete | req_011Ch6pJvFZSP4DV55ENxNrP | 24.58116229 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 797 | 27780 | 2316 | 0.02753200 | complete | req_011Ch6pJzNrqrskzywkMSoxS | 24.60869429 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 1962 | 27780 | 224 | 0.00894200 | complete | req_011Ch6pLYjJaDb7c9uoZ44bx | 24.61763629 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 329 | 25940 | 1304 | 0.01629200 | complete | req_011Ch6pM3q1x1Rn19C7K5M8X | 24.63392829 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 365 | 25940 | 1608 | 0.01940400 | complete | req_011Ch6pM3q28bizWaMAtx5Bd | 24.65333229 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 354 | 25940 | 1787 | 0.02117200 | complete | req_011Ch6pM3oHPoFeHGRSK1si7 | 24.67450429 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 26112 | 0 | 2507 | 0.09026400 | complete | req_011Ch6pLyy6tzcVJxiU6NMAJ | 24.76476829 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 164 | 25940 | 2528 | 0.02820200 | complete | req_011Ch6pM3nYkn4K1iNVoG6jZ | 24.79297029 |
+| 2026-11-17 00:08 | AM2-10 P10 new | anthropic/claude-sonnet-5-5 | 206 | 25940 | 2552 | 0.02852600 | complete | req_011Ch6pM3pHQGic44VKkPYwM | 24.82149629 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 851 | 25147 | 1489 | 0.01910670 | complete | req_011Ch7rwgCjGkHQ8x1vqYJaX | 24.84060299 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 652 | 25147 | 1601 | 0.01982870 | complete | req_011Ch7rwg82KVyMQ13rsuXFV | 24.86043169 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 727 | 25147 | 2064 | 0.02460870 | complete | req_011Ch7rwg6HCMsBs8L7q3Cv7 | 24.88504039 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 771 | 25147 | 2290 | 0.02695670 | complete | req_011Ch7rwfwcCArh1hYXGQDzh | 24.91199709 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 26055 | 0 | 2463 | 0.08931350 | complete | req_011Ch7rwZEHSGarj8m9Eyfmz | 25.00131059 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 164 | 25147 | 2386 | 0.02670270 | complete | req_011Ch7rwgDUFvjerr8K4MPZi | 25.02801329 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 742 | 29513 | 1506 | 0.01949530 | complete | req_011Ch7ryEJoCpAsunCxF4tSC | 25.04750859 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 688 | 29513 | 1503 | 0.01935730 | complete | req_011Ch7ryEPGP6VuhHDgtWTVP | 25.06686589 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 777 | 29513 | 1922 | 0.02372530 | complete | req_011Ch7ryETip2zJghegDf4k4 | 25.09059119 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 164 | 29513 | 2311 | 0.02638930 | complete | req_011Ch7ryDuVKtehfzEKftxsx | 25.11698049 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 702 | 29513 | 2461 | 0.02896530 | complete | req_011Ch7ryEVTZq85JHnz5Wqfy | 25.14594579 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 30471 | 0 | 2912 | 0.10481850 | complete | req_011Ch7ry8Bhr5E6UWTLNFXDV | 25.25076429 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 1972 | 29513 | 179 | 0.00868530 | complete | req_011Ch7rziQXY1zpVUfNJofT2 | 25.25944959 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 667 | 27735 | 1294 | 0.01704750 | complete | req_011Ch7s16w6PHddjh4Henzwe | 25.27649709 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 910 | 27735 | 1441 | 0.01900350 | complete | req_011Ch7s16wMMrdWVtvyiCcj6 | 25.29550059 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 28844 | 0 | 2247 | 0.09402550 | complete | req_011Ch7s11TCVjsF9CiVbviqd | 25.38952609 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 755 | 27735 | 2021 | 0.02449350 | complete | req_011Ch7s1752aCUgma52bhDLu | 25.41401959 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 164 | 27735 | 2328 | 0.02638150 | complete | req_011Ch7s16kw3kzhrRQFZz7a6 | 25.44040109 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 797 | 27735 | 2217 | 0.02653750 | complete | req_011Ch7s16jgqg3g33xVAn9zY | 25.46693859 |
+| 2026-11-17 13:23 | AM2 P11 | anthropic/claude-sonnet-5-5 | 1922 | 27735 | 216 | 0.00877750 | complete | req_011Ch7s2SGxyXD3dNEjnA4gR | 25.47571609 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 329 | 26727 | 1102 | 0.01435070 | complete | req_011Ch7s2njXLWWz9VPgArdXf | 25.49006679 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 365 | 26727 | 1453 | 0.01793270 | complete | req_011Ch7s2nk2XXZatAkzZ5ky9 | 25.50799949 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 164 | 26727 | 2311 | 0.02611070 | complete | req_011Ch7s2nrxzV8oSaouEiqLf | 25.53411019 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 354 | 26727 | 2142 | 0.02480070 | complete | req_011Ch7s2nh3NFBHT4eZs72c8 | 25.55891089 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 26899 | 0 | 2517 | 0.09233150 | complete | req_011Ch7s2h8Rs1MdyH8Zhdzxr | 25.65124239 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 206 | 26727 | 2650 | 0.02958470 | complete | req_011Ch7s2noFUvRBavUTXc9gB | 25.68082709 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 670 | 27903 | 1301 | 0.01714030 | complete | req_011Ch7s4X6jbsERc5rUgwXNL | 25.69796739 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 758 | 27903 | 1408 | 0.01838630 | complete | req_011Ch7s4X4WVhkDNnP4ey9F3 | 25.71635369 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 536 | 27903 | 1692 | 0.02078230 | complete | req_011Ch7s4WNKwKskbbKRbrq6S | 25.73713599 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 689 | 27903 | 2102 | 0.02518830 | complete | req_011Ch7s4WtL97YhPw87CjtaJ | 25.76232429 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 164 | 27903 | 2529 | 0.02840830 | complete | req_011Ch7s4X7jQTuBaVH3MQCrd | 25.79073259 |
+| 2026-11-17 13:24 | AM2 P11 | anthropic/claude-sonnet-5-5 | 28639 | 0 | 2659 | 0.09781950 | complete | req_011Ch7s4SJzuVoF9kStSLHao | 25.88855209 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 652 | 24968 | 1323 | 0.01703080 | complete | req_011Ch8FyWUZrTQAewogZLWTe | 25.90558289 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 851 | 24968 | 1264 | 0.01683880 | complete | req_011Ch8FyWWZS7Y1TK2a1AK1v | 25.92242169 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 771 | 24968 | 2123 | 0.02526880 | complete | req_011Ch8FyWPbz47HN9GGMH41A | 25.94769049 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 25876 | 0 | 2358 | 0.08781600 | complete | req_011Ch8FyS88Zbo529Wmge9nh | 26.03550649 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 24968 | 2230 | 0.02512480 | complete | req_011Ch8FyWRMXhJP5cvbEyD5i | 26.06063129 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 727 | 24968 | 2018 | 0.02413080 | complete | req_011Ch8FyWQrhevwpVjaBXYqv | 26.08476209 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 742 | 29255 | 1304 | 0.01744950 | complete | req_011Ch8G1J9DfsKqrLy4M9Lfr | 26.10221159 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 688 | 29255 | 1608 | 0.02038150 | complete | req_011Ch8G1JBhSUMwLpG2i1E3Z | 26.12259309 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 777 | 29255 | 2157 | 0.02604950 | complete | req_011Ch8G1JADLy3MFYpgZ8eEF | 26.14864259 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 702 | 29255 | 2345 | 0.02777950 | complete | req_011Ch8G1HgRxo9Ch469ykcgn | 26.17642209 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 29255 | 2361 | 0.02686350 | complete | req_011Ch8G1J9xZz4pCxAigergM | 26.20328559 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 30213 | 0 | 2832 | 0.10337350 | complete | req_011Ch8G1DywA3ayYx7jpNN2i | 26.30665909 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 1955 | 29255 | 199 | 0.00882550 | complete | req_011Ch8G2i2gdGLQu2i8z9FTx | 26.31548459 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 667 | 27472 | 1300 | 0.01708120 | complete | req_011Ch8G34dfdRjMtQQBEhcGZ | 26.33256579 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 910 | 27472 | 1718 | 0.02174720 | complete | req_011Ch8G34eB3sdnrHCa1LSLp | 26.35431299 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 27472 | 2090 | 0.02397520 | complete | req_011Ch8G34qq5k7iKNRNJYynX | 26.37828819 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 797 | 27472 | 2397 | 0.02831120 | complete | req_011Ch8G34ZDY3vzi32pfTFGy | 26.40659939 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 755 | 27472 | 2193 | 0.02618720 | complete | req_011Ch8G34ahJe2YHdrYZhNcF | 26.43278659 |
+| 2026-11-17 18:25 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 28581 | 0 | 2881 | 0.09970800 | complete | req_011Ch8G2yCWCnJeTbH6cm1YN | 26.53249459 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 329 | 26641 | 1196 | 0.01528210 | complete | req_011Ch8G4i5UMeVGKevaWf3W1 | 26.54777669 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 365 | 26641 | 1254 | 0.01593410 | complete | req_011Ch8G4i1kaNsBfLPkfXrro | 26.56371079 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 354 | 26641 | 1907 | 0.02244210 | complete | req_011Ch8G4hvYaUWC3KGvxsayk | 26.58615289 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 26813 | 0 | 2338 | 0.09032650 | complete | req_011Ch8G4eJkC124yJGxqvWfb | 26.67647939 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 26641 | 2416 | 0.02715210 | complete | req_011Ch8G4i4De4NzmzKUao7L7 | 26.70363149 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 206 | 26641 | 2567 | 0.02874610 | complete | req_011Ch8G4hxmNhh1dkNb7GJnk | 26.73237759 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 1255 | 26641 | 248 | 0.00765410 | complete | req_011Ch8G68ipghYsK2FvW8UGy | 26.74003169 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 1967 | 26641 | 367 | 0.01026810 | complete | req_011Ch8G68o3KrhWidYHpEdp2 | 26.75029979 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 758 | 27461 | 1200 | 0.01626210 | complete | req_011Ch8G6XSp28z9rw2fXXseX | 26.76656189 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 670 | 27461 | 1679 | 0.02087610 | complete | req_011Ch8G6XPaS3e53N1xWzmMs | 26.78743799 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 536 | 27461 | 2198 | 0.02579810 | complete | req_011Ch8G6XU3Z48PtE6ZLFbGD | 26.81323609 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 689 | 27461 | 2026 | 0.02438410 | complete | req_011Ch8G6XUHdw16scLT3ydYV | 26.83762019 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 28198 | 0 | 2717 | 0.09729650 | complete | req_011Ch8G6TTSYVYbcoQVjdJae | 26.93491669 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 27461 | 2752 | 0.03059410 | complete | req_011Ch8G6Ws612edfR4E1sk4u | 26.96551079 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 1802 | 27461 | 199 | 0.00834010 | complete | req_011Ch8G85qz5fxMxjhf3iKy8 | 26.97385089 |
+| 2026-11-17 18:26 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 2618 | 27461 | 372 | 0.01170210 | complete | req_011Ch8G85pk2ntuGcC5oLXjV | 26.98555299 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 666 | 28890 | 1379 | 0.01801100 | complete | req_011Ch8G8cJZRQgePhBbwxMME | 27.00356399 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 915 | 28890 | 1783 | 0.02254900 | complete | req_011Ch8G8cE75pPcN98hhDDtF | 27.02611299 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 795 | 28890 | 2419 | 0.02866900 | complete | req_011Ch8G8cF5mt2AWJsE2yD6a | 27.05478199 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 30055 | 0 | 2820 | 0.10275500 | complete | req_011Ch8G8VqNMH221gg5A6iFw | 27.15753699 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 28890 | 2456 | 0.02777700 | complete | req_011Ch8G8cD72YZTAGU2Dmnnx | 27.18531399 |
+| 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 782 | 28890 | 2521 | 0.02966300 | complete | req_011Ch8G8cH52R5SWDAXiCN7p | 27.21497699 |
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 689 | 26985 | 2097 | 0.02504650 | complete | req_011Ch8SwGRxP85iLNJc11oWG | 27.24002349 |
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 27722 | 0 | 2916 | 0.09809650 | complete | req_011Ch8SwCMsUyo5qburHCTCx | 27.33811999 |
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 164 | 26985 | 2782 | 0.03084650 | complete | req_011Ch8SwGPiSVHgs7XRyuH1V | 27.36896649 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 758 | 26985 | 1283 | 0.01704450 | complete | req_011Ch8Sxm2BwtAcQ26wmriVe | 27.38601099 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 670 | 26985 | 1601 | 0.02004850 | complete | req_011Ch8Sxbm4qbw3KbPvHsFQv | 27.40605949 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 536 | 26985 | 1825 | 0.02202050 | complete | req_011Ch8SyRdtr2ZLswEBr7r71 | 27.42807999 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 1585 | 26985 | 155 | 0.00741850 | complete | req_011Ch8SzYbctUVEXtqBbscXm | 27.43549849 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 3042 | 26985 | 552 | 0.01430250 | complete | req_011Ch8SzXpEpsfiL8nyZdq62 | 27.44980099 |
+누적 합계: **$27.44980099** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |

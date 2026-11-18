@@ -34,7 +34,9 @@ import { allocateTodos } from "./prescriptions";
 import { avoidImagesFor, coverMotifs, type LedgerView } from "./imageLedger";
 import { cautionFor, cautionHolds, type CautionCtx } from "./caution";
 import { CAUTION_LINE, familyDesign, goodLineOf, loveDesign, periodDomains } from "./productEvidence";
-import { annualEvidence, annualStatusQ, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict } from "./design/annual";
+import { annualEvidence, annualStatusQ, annualTidy, annualTidyLog, bridgeEvidence, domainSignals, monthEvidence, readWish, yearVerdict, type AnnualTidy } from "./design/annual";
+import { profileCodes } from "./pairProfile";
+import { profilePoles } from "@/lib/writer/safety/contradiction";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
@@ -138,7 +140,10 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     name: input.name, gender, birthDate: input.birthDate, birthTimeUnknown: input.birthTimeUnknown || !det.hourIncluded, mbti: input.mbtiType || null,
     relationshipStatus: input.context?.relationshipStatus ?? "", jobStatus: input.context?.jobStatus ?? "", detailJob: input.context?.detailJob ?? "", children: input.context?.children,
   };
-  const base = { ...toFactProfile(facts), ...override };
+  // AM2-12 1부 1(P11 무작위 썸 — 인물 카드 「연애 중」 · 소제목 「솔로로 맞는」): 세운·대운에서 썸은 연인 없음(single)으로 두고 원문은 relationshipNote로 — 4종은 그대로(dating으로 접힘).
+  const amSome = amBrief(product) && !override && facts.relationshipStatus === "some";
+  const base = { ...toFactProfile(facts), ...override, ...(amSome ? { relationship: "single" as const } : {}) };
+  const relNote = amBrief(product) && !override && (facts.relationshipStatus === "some" || facts.relationshipStatus === "marriage_preparing") ? facts.relationshipStatus : undefined;
   // 장면 글 검사용 생활 맥락(P6b B-6). 궁합은 관계 유형이 정한 사실만(직업 입력은 쓰지 않는다).
   const sceneCtx = sceneCtxOf({ jobGroupId: override ? null : matchJob(facts.detailJob)?.id ?? null, job: base.job, age: ageAt(input.birthDate, baseDate), familyOk: false, freelancer: !override && facts.jobStatus === "freelancer" });
   // 최종판2 1-2: 종합은 P6d(d9985cda) 장면 고르기 — 직업 꼬리표(코드·팀·가게·돌봄·외주)로 거르지 않는다(직업과 무관한 보편 성향 장면, 직업은 작가에게 맡김).
@@ -227,7 +232,7 @@ function analyzePerson(input: BriefPersonInput, product: ProductKey, baseDate: s
     nameUse: ["제목", "1장 첫 문단", "가운데 장 전환 문장", "마지막 장 마무리", "그 밖에는 '당신'"],
     gender, age, ageBand: ageBand(age),
     // 궁합은 관계 유형이 정한 사실만 쓴다: 입력에 직업이 있어도 넘기지 않는다(P3.7 r1: "대학생"과 "학생 전제 금지"가 함께 나갔다).
-    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
+    facts: { birthTimeKnown: !facts.birthTimeUnknown, mbti: facts.mbti, relationship: profile.relationship, ...(relNote ? { relationshipNote: relNote } : {}), children: profile.children, job: { class: profile.job, status: override ? "" : facts.jobStatus, detail: override ? "" : facts.detailJob } },
     forbiddenFacts: forbiddenFacts(facts, profile),
     ...(override ? {} : (() => { const stage = lifeStage({ jobStatus: facts.jobStatus, age }, profile), job = matchJob(facts.detailJob);
       return { lifeStage: LIFE_STAGE_KO(stage, age), ...(job?.stages ? { workScenes: job.stages } : {}) }; })()),
@@ -333,6 +338,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // 타임라인(대운 14년·세운 12개월)
   let timeline: Brief["timeline"];
   let timelineKeys: string[] = [];
+  let annualTidyState: AnnualTidy | undefined;
   const keyMaterials = new Map<string, Material[]>();
   let display: Brief["display"];
   if (input.product === "major_fortune" || input.product === "annual_fortune") {
@@ -359,9 +365,15 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       timeline = { entries: [yearEntry, bridge, ...months], tenGodNotes: { ...tenGodNotes([bridge, ...months], "month"), ...tenGodNotes([yearEntry], "year") }, keyEntries: [...months].sort((a, b) => b.flow.score - a.flow.score || a.key.localeCompare(b.key)).slice(0, 3).map(e => e.key), cycles: cycleSummary(me.dayun, year, year, year, tenGodOf) };
       timelineKeys = [bridge.key, ...months.map(e => e.key)];
       const mrng = rng.fork("monthEvidence");
+      // AM2-9 4부: 세운 카드 재료 정리 — 성격표(4종 personProfileOf와 같은 계산: 특성 차원 × 점수 + MBTI 차원 × 1.5 × 가장 큰 점수) · 권당 뺄 줄 16.
+      annualTidyState = (() => { const v = new Map<string, number>(); const add = (tags: Readonly<Record<string, number>>, w: number) => { for (const [d, x] of Object.entries(tags)) v.set(d, (v.get(d) ?? 0) + x * w); };
+        for (const t of me.traits) { const f = k.features.get(t.featureId); if (f && f.family !== "relation") add(f.dimensionTags, t.score); }
+        const mp = me.facts.mbti ? k.mbti.get(me.facts.mbti as never) : undefined; if (mp) add(mp.dimensionTags, 1.5 * Math.max(1, ...me.traits.map(t => t.score)));
+        return annualTidy(profilePoles(profileCodes(me.facts.mbti ?? null, v, me.traits.map(t => t.featureId)))); })();
+      annualTidyLog.last = annualTidyState;
       const py = getAnnualPillar(year - 1), cy = getAnnualPillar(year);
       keyMaterials.set(bridge.key, [bridgeEvidence(bridge, `${year - 1}년 ${ganjiLabel(py).replace(/\(.*\)/, "")}년`, `${year}년 ${ganjiLabel(cy).replace(/\(.*\)/, "")}년`)]);
-      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus }, m); if (e) keyMaterials.set(m.key, [e]); }
+      for (const m of months) { const e = monthEvidence({ k, rng: mrng, relationshipStatus: me.facts.relationshipStatus, jobStatus: me.facts.jobStatus, tidy: annualTidyState }, m); if (e) keyMaterials.set(m.key, [e]); }
       // 「좋은 것」 결정론 값: 오르는 영역(없으면 보통 영역)의 그달 십성 영역 줄(periodDomains: 일·돈·관계·컨디션).
       // AM2-8 R-S3: 그 줄이 주의 쪽(「지출이 늘기 쉬움」 「대비가 필요함」)이면 다른 영역의 좋은 쪽 줄, 없으면(편관 달) 칸을 비운다. 입력에 맞출 수 없는 줄(기혼 「새 인연」)도 고르지 않는다.
       const gx = inputsOf(me.person.facts);
@@ -404,7 +416,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       const year = annualProductYear(), yp = getAnnualPillar(year), cyc = me.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
       const all = timeline!.entries, yearEntry = all.find(e => e.kind === "year")!, bridge = all.find(e => e.bridge), months = all.filter(e => e.kind === "month" && !e.bridge);
       const r = annualEvidence({ saju: me.saju, k, chart: me.chart, st: me.st, gender: me.person.gender, mbti: me.facts.mbti, year, yearPillar: yp, ...(cyc ? { dayunPillar: { stem: cyc.stem, branch: cyc.branch } } : {}),
-        yearEntry, months, ...(bridge ? { bridge } : {}), jobStatus: me.facts.jobStatus, relationshipStatus: me.facts.relationshipStatus, wish: readWish(input.wish), rng: rng.fork("annual") });
+        yearEntry, months, ...(bridge ? { bridge } : {}), jobStatus: me.facts.jobStatus, relationshipStatus: me.facts.relationshipStatus, wish: readWish(input.wish), rng: rng.fork("annual"), ...(annualTidyState ? { tidy: annualTidyState } : {}) });
       display = { year, keywords: [...yearEntry.keywords].slice(0, 3), verdict: yearVerdict(yearEntry.flow.score), lucky: { name: r.lucky.name, colors: [...r.lucky.colors], direction: r.lucky.direction, numbers: [...r.lucky.numbers], why: r.lucky.why }, ...(r.samjae ? { samjae: { zodiac: r.samjae.zodiac, phase: r.samjae.phase, line: r.samjae.line } } : {}) };
       return r.evidence;
     })()

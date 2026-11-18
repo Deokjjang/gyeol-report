@@ -23,6 +23,8 @@ export const PersonBriefSchema = z.object({
     birthTimeKnown: z.boolean(),
     mbti: z.enum(MBTI_TYPES).nullable(),
     relationship: z.enum(["single", "dating", "married", "unknown"]),
+    /** AM2-12 1부 1(세운·대운만): 입력 원문이 썸 · 결혼 준비일 때 — 썸은 relationship single(연인 없음) + 이 값, 결혼 준비는 dating + 이 값. 4종은 두지 않는다. */
+    relationshipNote: z.enum(["some", "marriage_preparing"]).optional(),
     children: z.enum(["has", "none", "unknown"]),
     job: z.object({ class: z.enum(["employed", "business", "student", "none"]), status: z.string(), detail: z.string() }),
   }),

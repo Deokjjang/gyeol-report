@@ -81,11 +81,11 @@ describe("AM2-7 1부 고치기 층 — 문단째 받기 · 결정론 받는 조�
     expect(ganjiClaim("2023년은 정묘 대운의 마지막 해였고, 2024년부터 무진 대운이 시작되었어요.", [o])).toBeNull();
     expect(ganjiClaim("2025년부터 무진 대운이 시작되었어요.", [o])?.rule).toBe("fact_ganji");
   });
-  it("고칠 수 없는 차단이 남은 장은 발행 보류(generation_hold)", () => {
-    const meta = { chapters: [{ n: 1, source: "writer", chars: 10 }, { n: 5, source: "writer", chars: 10, reason: "generation_hold:input_premise" }], calls: [{ chars: 100 }] } as never;
+  it("고칠 수 없는 차단이 남은 장(four_block)은 그 시도에서 발행하지 않는다 — AM2-9 2부: 보류가 아니라 감독 2차 또는 결론", () => {
+    const meta = { chapters: [{ n: 1, source: "writer", chars: 10 }, { n: 5, source: "writer", chars: 10, reason: "four_block:input_premise" }], calls: [{ chars: 100 }] } as never;
     const v = judgeBuild({ meta, run: null });
     expect(v.kind).toBe("incomplete");
-    if (v.kind === "incomplete") expect(v.reason).toContain("generation_hold:5");
+    if (v.kind === "incomplete") expect(v.reason).toContain("four_block:5");
   });
 
   it("재현 판독 고침: 견줌 꼴 「월급날 대신」은 마디째 · 「가게 일」 → 일터 · 「시험하며」 · 「단기 일감 같은」 · 「연인이 생기면」은 전제가 아니다", () => {
