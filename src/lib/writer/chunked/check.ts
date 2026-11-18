@@ -15,6 +15,7 @@ import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
 import { am210Flags } from "./broken";
+import { am213MajorFlags } from "./majorClaims";
 import { am211Flags } from "./claims";
 import { am28Flags } from "./check8";
 import type { Intake, Line } from "./intake";
@@ -455,6 +456,8 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   for (const f of am210Flags(chapters, b)) add(f);
   // AM2-11 1부 6: 엔진 주장 대조 셋(자리 · 달 × 영역 방향 · 흐름 세기) — 차단 여부는 four.ts(저장 책 전수 오탐 0만).
   for (const f of am211Flags(chapters, b)) add(f);
+  // AM2-13 5부: 대운 「내 인생이라는 책」 엔진 주장(장 제목 · 채움 · 장 넘김 · 교운기 · 만 나이 · 앞 해 · 6장 해 목록).
+  for (const f of am213MajorFlags(chapters, b)) add(f);
   return out;
 }
 

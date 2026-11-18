@@ -38,6 +38,8 @@ const WHOLE: Readonly<Record<string, Branch>> = {
   memo_leak: "broken",
   // AM2-13 2부(S-final 측정 중 고침): 관계 없음 주장(claims.ts rel_none) · 「유형의 때」 깨진 꼴(broken.ts mbti_time) — 저장 책 전수 대조 am2.md 23절.
   rel_none: "fact", mbti_time: "broken",
+  // AM2-13 5부(majorClaims.ts): 대운 9장 엔진 주장 — 저장 대운 책 42권 전수 대조 걸림 year_list 2 모두 참 · 오탐 0(am2.md 23절).
+  chapter_title: "fact", fill_claim: "fact", dayun_timing: "fact", age_claim: "fact", prev_year: "fact", year_list: "fact",
 };
 /** 인과 · 변화 꼴(성향을 그 시기 운의 결과로 쓰는 말). 장면(「…할 때」 「…라면」)은 들지 않는다. */
 /** 명리 말(십성 · 신살 · 일주 · 간지 · 합충 · 대운 · 기운) — 짝 없는 절이 이것과 한 문장에 묶일 때만 잘못된 연결(성향만 말하고 조언하는 절은 아니다). */

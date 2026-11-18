@@ -92,3 +92,29 @@ describe("AM2-13 4부 설계도 · 카드 · key 지시", async () => {
     expect(r.length).toBeLessThanOrEqual(7013); expect(r).toContain("차례와 영역별 해 목록은 화면 표가 맡으니");
   });
 });
+
+describe("AM2-13 5부 대운 엔진 주장 검사(majorClaims.ts)", async () => {
+  const { am213MajorFlags } = await import("@/lib/writer/chunked/majorClaims");
+  const { makeInspector } = await import("@/lib/writer/chunked/publish");
+  const { writerKnowledge } = await import("@/lib/writer/publish");
+  const x = people.find(p => p[0] === "major-p6b")![1];
+  const ins = makeInspector({ payload: payloadFor("major-p6b") as never, policyAt: "2026-12-02T03:00:00.000Z", brief: x.brief, k: writerKnowledge().k, plan: x.plan, intake: x.intake });
+  const run = (id: string, heading: string, sen: string) => am213MajorFlags([{ n: 1, id, title: "t", source: "writer", chars: 0, sections: [{ heading, paragraphs: [sen] }] }] as never, ins.bctx).map(f => f.rule);
+  it.each([
+    ["read", "h", "다음 장인 「차곡차곡 쌓아 가는 장」이 2028년 8월 무렵 열려요.", "chapter_title"],
+    ["now", "h", "이 장은 고른 장이라 기운이 한쪽으로 기울지 않아요.", "fill_claim"],
+    ["turn", "h", "다음 장은 2030년 무렵 시작돼요.", "dayun_timing"],
+    ["turn", "h", "교운기는 2028~2030년 무렵이에요.", "dayun_timing"],
+    ["plan", "h", "경인 대운은 이 10년이 끝난 뒤에 이어지는 다음 장이에요.", "dayun_timing"],
+    ["read", "h", "만 50~59세는 차곡차곡 쌓아 가는 장이에요.", "age_claim"],
+    ["decade", "2029", "앞 해의 자오충과 달리 이 해는 모임의 기운이 큽니다.", "prev_year"],
+    ["map", "h", "돈은 2028년과 2029년에 오르기 쉬워요.", "year_list"],
+  ])("잡는다 %s: %s", (id, heading, sen, rule) => expect(run(id, heading, sen)).toContain(rule));
+  it.each([
+    ["read", "h", "다음 장인 「크게 움직이며 넓히는 장」이 2028년 8월 무렵 열려요."],
+    ["now", "h", "이 장은 채움과 쌓임이 함께 오는 장이에요."],
+    ["turn", "h", "교운기는 2027~2029년 무렵이에요."],
+    ["read", "h", "만 46~65세는 성과와 돈을 다루는 시기예요."],
+    ["map", "h", "2026년까지는 기준을 세우고, 2027년부터는 그 기준을 쓰는 쪽이에요."],
+  ])("잡지 않는다 %s: %s", (id, heading, sen) => expect(run(id, heading, sen)).toEqual([]));
+});
