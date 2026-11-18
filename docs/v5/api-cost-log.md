@@ -756,7 +756,15 @@
 | 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 30055 | 0 | 2820 | 0.10275500 | complete | req_011Ch8G8VqNMH221gg5A6iFw | 27.15753699 |
 | 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 164 | 28890 | 2456 | 0.02777700 | complete | req_011Ch8G8cD72YZTAGU2Dmnnx | 27.18531399 |
 | 2026-11-17 18:27 | AM2-12 P12 | anthropic/claude-sonnet-5-5 | 782 | 28890 | 2521 | 0.02966300 | complete | req_011Ch8G8cH52R5SWDAXiCN7p | 27.21497699 |
-누적 합계: **$27.21497699** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 689 | 26985 | 2097 | 0.02504650 | complete | req_011Ch8SwGRxP85iLNJc11oWG | 27.24002349 |
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 27722 | 0 | 2916 | 0.09809650 | complete | req_011Ch8SwCMsUyo5qburHCTCx | 27.33811999 |
+| 2026-11-17 20:48 | AM2 P | anthropic/claude-sonnet-5-5 | 164 | 26985 | 2782 | 0.03084650 | complete | req_011Ch8SwGPiSVHgs7XRyuH1V | 27.36896649 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 758 | 26985 | 1283 | 0.01704450 | complete | req_011Ch8Sxm2BwtAcQ26wmriVe | 27.38601099 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 670 | 26985 | 1601 | 0.02004850 | complete | req_011Ch8Sxbm4qbw3KbPvHsFQv | 27.40605949 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 536 | 26985 | 1825 | 0.02202050 | complete | req_011Ch8SyRdtr2ZLswEBr7r71 | 27.42807999 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 1585 | 26985 | 155 | 0.00741850 | complete | req_011Ch8SzYbctUVEXtqBbscXm | 27.43549849 |
+| 2026-11-17 20:49 | AM2 P | anthropic/claude-sonnet-5-5 | 3042 | 26985 | 552 | 0.01430250 | complete | req_011Ch8SzXpEpsfiL8nyZdq62 | 27.44980099 |
+누적 합계: **$27.44980099** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |
