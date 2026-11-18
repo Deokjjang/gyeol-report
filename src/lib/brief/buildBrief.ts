@@ -38,6 +38,7 @@ import { annualEvidence, annualStatusQ, annualTidy, annualTidyLog, bridgeEvidenc
 import { profileCodes } from "./pairProfile";
 import { profilePoles } from "@/lib/writer/safety/contradiction";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
+import { majorNarrativeOf, majorPlanOf } from "./design/majorBook";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
@@ -349,12 +350,16 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) });
     if (input.product === "major_fortune") {
       // AM 3부: 14년 카드 계약은 그대로(지난 3년 + 올해 + 앞으로 10년). 작가 key 장은 앞으로 10년, 핵심 해 3개(결정론)는 깊게.
-      const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles);
+      // AM2-13 3부: 대운 해 줄에도 해 칩(세운과 같은 domainSignals — 영역 지도 · 해 key 기조의 원천).
+      const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles).map(e => ({ ...e, signals: domainSignals(me.saju, me.person.gender, getAnnualPillar(Number(e.key)), "annual", { fillsLack: e.fillsLack.fills, feedsExcess: e.fillsLack.feedsExcess.length > 0 }).signals }));
       const future = entries0.filter(e => Number(e.key) > thisYear);
       const keys = keyYears(me.saju, future, me.dayun.cycles, needMet("job:work", inputsOf(me.person.facts)));
       const entries = entries0.map(e => (keys.has(e.key) ? { ...e, keyYear: keys.get(e.key)! } : e));
       timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: [...keys.keys()], cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)),
         lifetime: lifetimeMap(me.saju, me.dayun, thisYear) };
+      // AM2-13 3부: 「내 인생이라는 책」 결정론 계획(장 제목 · 채움 · 막 · 전환 · 영역 해 목록 · ★ · 2027 사실).
+      if (timeline.lifetime?.length) timeline = { ...timeline, major: majorPlanOf({ saju: me.saju, k, st: me.st, strongest: me.chart.elements.strongest.element as never, life: timeline.lifetime, entries, thisYear,
+        ...(me.chart.currentDayun?.phase ? { phase: { yearIndex: me.chart.currentDayun.phase.yearIndex, label: me.chart.currentDayun.phase.label, remaining: me.chart.currentDayun.phase.remaining ?? "" } } : {}), work: needMet("job:work", inputsOf(me.person.facts)) }) };
       timelineKeys = future.map(e => e.key);
       for (const e of entries.filter(x => Number(x.key) > thisYear)) keyMaterials.set(e.key, [decadeKeyEvidence(e, keys.get(e.key))]);
     } else {
@@ -411,7 +416,7 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
       // 연애 전용 설계기(P6d G): 장마다 정해진 근거·관계 상태별 근거. 기존 근거(배우자·자녀 별·자리, 맞는 유형)는 base로 넘겨 재사용.
       return { ...base, ...loveDesign2({ saju: me.saju, det: me.det, k, chart: me.chart, mbti: mbti ? k.mbti.get(mbti.type)! : null, gender: me.person.gender, relationshipStatus: me.facts.relationshipStatus, facts: profile, hitIds: new Set(me.hitIds), baseDate: input.baseDate, priorEvidence, base }) };
     })()
-    : input.product === "major_fortune" && timeline ? majorEvidence({ saju: me.saju, k, dayun: me.dayun, thisYear: me.chart.thisYear.year, age: me.person.age, birthYear: Number(input.person.birthDate.slice(0, 4)), entries: timeline.entries, mbti: me.facts.mbti, rng: rng.fork("major") })
+    : input.product === "major_fortune" && timeline ? majorEvidence({ saju: me.saju, k, dayun: me.dayun, thisYear: me.chart.thisYear.year, age: me.person.age, birthYear: Number(input.person.birthDate.slice(0, 4)), entries: timeline.entries, mbti: me.facts.mbti, rng: rng.fork("major"), ...(timeline.major ? { plan: timeline.major } : {}) })
     : input.product === "annual_fortune" && timeline ? (() => {
       const year = annualProductYear(), yp = getAnnualPillar(year), cyc = me.dayun.cycles.find(c => c.startYear <= year && year <= c.endYear);
       const all = timeline!.entries, yearEntry = all.find(e => e.kind === "year")!, bridge = all.find(e => e.bridge), months = all.filter(e => e.kind === "month" && !e.bridge);
@@ -460,6 +465,8 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
   // AM2-3 1-7: 대운 7장은 MBTI가 없으면 명리만으로 쓰는 대체 장(제목에서 MBTI를 뺀다, ev:ageGrowth·ageNext — design/major.ts).
   const growthAlt = { title: "나이와 함께 자라는 결", question: "나이와 대운에 따라 무엇이 단단해질까?", sections: [{ q: "이 대운 10년에 단단해지는 쪽은?", domain: "alone", use: ["ev:ageGrowth"], trait: "none" }, { q: "다음 대운에서 새로 자라는 쪽은?", domain: "relationships", use: ["ev:ageNext"], trait: "none" }] };
   const narrativeUsed = input.product === "annual_fortune" ? { ...narrative, chapters: narrative.chapters.filter(c => !c.requires?.includes("wish") || wishOk).map(c => ({ ...c, title: c.title.replace(/2027/g, yearStr), question: c.question.replace(/2027/g, yearStr), ...(c.sections ? { sections: c.sections.map(s => ({ ...s, q: s.q.replace(/2027/g, yearStr) })) } : {}) })) }
+    // AM2-13 4부: 새 대운 책(계획 있음)은 9장 「내 인생이라는 책」(MBTI 장 없음). 계획이 없으면(대운을 정할 수 없는 입력) 예전 장 목록.
+    : input.product === "major_fortune" && timeline?.major ? majorNarrativeOf(narrative)
     : input.product === "major_fortune" && !mbti ? { ...narrative, chapters: narrative.chapters.map(c => (c.id === "growth" ? { ...c, ...growthAlt } as typeof c : c)) } : narrative;
   const relTopics = isPair ? k.compatScenes.types.find(t => t.type === input.relationshipType)?.topics : undefined;
   // AM 1-1 ③ 장면 분산 = 고객 해시(이름·생일·시각·성별, 주문 시각 제외) + 상품 id. W3 P3: 4종도(소품 시작 자리·처방 시작 자리).

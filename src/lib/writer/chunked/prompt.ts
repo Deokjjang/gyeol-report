@@ -8,7 +8,7 @@ import { AM_STYLE_EXAMPLES } from "../prompt/examples";
 import type { ChapterPlan, Intake, KeyPlan, Line } from "./intake";
 import { neutralize, soften, type Inputs } from "@/lib/brief/premise";
 import { cardDir, type Dir3 } from "./accept";
-import { CHUNK_GROUPS, KEY_TARGET, relationshipOf, SUBJECT_KO, WISH_MARK } from "./intake";
+import { chunkGroupsOf, KEY_TARGET, relationshipOf, SUBJECT_KO, WISH_MARK } from "./intake";
 
 export const CHUNK_PROMPT_VERSION = "chunk-prompt-am2-13";
 /** 작가에게 보이는 분량 = 목표 × 이 값(AM2-3 2-4: 목표가 실측·카드 양에서 오므로 1). */
@@ -142,7 +142,7 @@ const RULES_MAJOR = `
 # 대운 책
 - 연도 key: 근거 깊이가 「깊게」면 문단 2~3개, 「짧게」면 문단 정확히 2개, 문단 사이에 빈 줄. 사건으로 열지 않는다. 카드 줄([그림] 등)은 쓰지 않는다. key끼리 같은 문장 금지. 위치 말은 그 해 「위치 값」이 있을 때만 값 그대로(key마다 되풀이하지 않는다).
 - 1장이 든 묶음은 맨 앞에 [표지] 한 줄(공백 빼고 12~26자, 이 사람의 10년 그림, 명사로 끝, 채움말·연차·설명문 금지)을 쓴다.
-- 평생 대운 지도는 화면이 표로 보여 주니 본문에서 전부 나열하지 않고 큰 줄기 두세 개만. 나이에 무슨 일이 일어난다고 못 박지 않는다.`;
+- 차례와 영역별 해 목록은 화면 표가 맡으니 본문에 늘어놓지 않는다. 나이에 무슨 일이 일어난다고 못 박지 않는다.`;
 
 /** AM2-6 1부: key 고리 재료(① 자리 · ② 겹침), 둘째 핵심 한 마디, 엔진이 고른 바람 고리. 고리가 없으면 칸을 두지 않는다(「이어 볼 고리가 없어서」 — P5 R-G12). */
 const linkText = (k: KeyPlan) => { const ls = k.links ?? [], main = ls.filter(l => l.kind === "seat" || l.kind === "echo"), second = ls.filter(l => l.kind === "second"), wish = ls.filter(l => l.kind === "wish");
@@ -162,7 +162,7 @@ const coreWord = (k: KeyPlan, name: string) => { for (const l of k.links ?? []) 
 /** AM2-10 3부 key 지시: ① 핵심 ② 재료 하나(바람 고리 > 자리 고리 > 이 사람 입력 재료) ③ 짝 또는 장면 · 기조(지킬 것). */
 function keyText(k: KeyPlan, mbtiOn: boolean): string {
   const when = k.when === "future" ? "" : ` · 때: ${WHEN_KO[k.when]}`;
-  const core = (k.core ?? []).map(n => { const w = coreWord(k, n); return w ? `${n} — ${w}` : n; }).join(" / ");
+  const core = (k.core ?? []).map(n => { const w = coreWord(k, n) || k.coreWords?.[n] || ""; return w ? `${n} — ${w}` : n; }).join(" / ");
   const wish = (k.links ?? []).find(l => l.kind === "wish"), seat = (k.links ?? []).find(l => l.kind === "seat");
   const own = wish ? wish.text : seat ? linkCore(seat.text) : k.own ?? "";
   const third = k.pair && mbtiOn ? `짝 ${k.pair} — MBTI 문장은 짝의 명리 줄하고만 잇는다. 핵심 관계·재료와는 잇지 않는다` : k.scene ? `장면(${SEED_FRAME[k.when]}): ${k.scene}` : "";
@@ -193,7 +193,7 @@ function chapterText(c: ChapterPlan, product: Intake["product"], inputs?: Inputs
   if (c.away && Object.keys(c.away).length) out.push(`- 다른 장이 집인 근거(이 장에서는 소제목 각도로 한 줄만, 집 장의 문장을 옮기지 않는다): ${Object.entries(c.away).map(([id, h]) => `${id}(집 ${h}장)`).join(" · ")}`);
   // AM2-7 2부: 처방 종류 이름도 입력에 맞춘다(일 미입력에 「월급날·먼저 떼어 두기」 → 「돈이 들어오는 날·먼저 떼어 두기」 — P6 annual-p6b 3.1).
   const rxSay = (kd: string) => (inputs ? neutralize(kd, inputs) ?? kd.replace(/^[^·]*·/, "") : kd);
-  if (c.rx && c.sections) out.push(`- 처방 소제목: ${(c.rxAt ?? c.sections.length - 1) + 1}) · 쓸 처방 종류: ${c.rx.use ? rxSay(c.rx.use) : "사전 밖의 행동 하나(이 장 근거에 맞게)"}${c.rx.forbid.length ? ` · 금지 종류(다른 곳이 맡음): ${c.rx.forbid.map(rxSay).join("·")}` : ""}`);
+  if (c.rx && c.sections) out.push(`- 처방 소제목: ${c.rx.each ? "소제목마다" : `${(c.rxAt ?? c.sections.length - 1) + 1})`} · 쓸 처방 종류: ${c.rx.label ?? (c.rx.use ? rxSay(c.rx.use) : "사전 밖의 행동 하나(이 장 근거에 맞게)")}${c.rx.forbid.length ? ` · 금지 종류(다른 곳이 맡음): ${c.rx.forbid.map(rxSay).join("·")}` : ""}`);
   if (c.avoid.length) out.push(`- 되풀이 금지(다른 장의 주장): ${c.avoid.join(" / ")}`);
   return out.join("\n");
 }
@@ -259,7 +259,7 @@ export function chunkPlan(x: Intake): Chunk[] {
   const labelOf = new Map(keyed.keys!.map(k => [k.key, k.label]));
   const slice = (a: number, b: number) => ({ n: keyed.n, keys: keys.slice(a, b), labels: keys.slice(a, b).map(k => labelOf.get(k) ?? k) });
   // AM2-4: 묶음 구성은 intake CHUNK_GROUPS 한 표(장면 씨앗 솎기와 같은 묶음).
-  const groups: Chunk["parts"][] = CHUNK_GROUPS[x.product].map(g => g.flatMap(id => { const m = /^keys:(\d+)-(\d*)$/.exec(id); if (m) return [slice(Number(m[1]), m[2] === "" ? keys.length : Number(m[2]))]; const c = by.get(id); return c ? [{ n: c.n }] : []; }));
+  const groups: Chunk["parts"][] = chunkGroupsOf(x).map(g => g.flatMap(id => { const m = /^keys:(\d+)-(\d*)$/.exec(id); if (m) return [slice(Number(m[1]), m[2] === "" ? keys.length : Number(m[2]))]; const c = by.get(id); return c ? [{ n: c.n }] : []; }));
   // 설계에 없는 장(상품 구성이 바뀐 경우)은 마지막 묶음에 붙인다.
   const placed = new Set(groups.flat().map(p => p.n));
   const rest = x.chapters.filter(c => !placed.has(c.n)).map(c => ({ n: c.n }));

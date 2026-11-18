@@ -59,6 +59,23 @@ export function AmPage({ page, title, onPage, text }: { page: BookPage; title: s
     <details className={a.myeongri}><summary>명리로 보면</summary><p>하늘 글자 <b>{page.sky}</b> · 땅 글자 <b>{page.ground}</b></p>
       {page.relations.length ? <ul>{page.relations.map(r => <li key={r.name}><b>{r.name}</b> — {text(r.plain)}</li>)}</ul> : <p className={a.hint}>이 {page.unit}에는 태어난 사주와 걸리는 관계가 없어요.</p>}</details>
   </article>;
+  // AM2-13 3부: 「내 인생이라는 책」 차례(장 번호 · 제목 · 만 나이 · 지금 장 책갈피 · 다음 장).
+  if (page.kind === "lifetime" && page.toc) return <section className={a.am} data-am="toc"><p className={a.eyebrow}>{title}</p><h1>{text(page.title)}</h1>{page.head ? <p className={a.hint}>{text(page.head)}</p> : null}
+    <ol className={a.toc}>{page.toc.map(c => <li key={c.n} className={a.tocRow} data-current={c.current ? "" : undefined} data-next={c.next ? "" : undefined} data-past={c.past ? "" : undefined}>
+      <span className={a.tocNo}>{c.n}장</span><span className={a.tocMain}><b>{text(c.title)}</b><small>{c.ages} · {c.tenGod}{c.current ? <em className={a.nowTag}>🔖 지금 읽는 장</em> : null}{c.next ? <em className={a.nextTag}>다음 장</em> : null}</small></span><ElCells ganji={c.hanja} els={c.els} /></li>)}</ol>
+    {page.turn ? <p className={a.hint}>{text(page.turn)}</p> : null}</section>;
+  if (page.kind === "chapterHead") return <section className={a.am} data-am="chapter-head"><p className={a.eyebrow}>{text(page.eyebrow)}</p><h1>{text(page.title)}</h1>
+    <div className={a.headBox}><ElCells ganji={page.ganji} els={page.els} big /><div><p className={a.yearName}><b>{page.no}장 · {text(page.name)}</b></p><p className={a.yearGods}>{page.tenGod} · {text(page.theme)}</p>
+      <p className={a.yearGods}>{page.ages}{page.position ? ` · ${text(page.position)}` : ""}{page.start ? ` · ${text(page.start)}` : ""}</p><p className={a.fillLine}><b>{text(page.fill.label)}</b><small>{text(page.fill.why)}</small></p></div></div></section>;
+  if (page.kind === "threshold") return <section className={a.am} data-am="threshold"><p className={a.eyebrow}>{text(page.eyebrow)}</p><h1>{text(page.title)}</h1><p className={a.hint}>{text(page.turn)} 다음 장이 열려요 · {text(page.range)}</p>
+    <div className={a.sides}>{page.sides.map(sd => <section key={sd.label} className={a.side}><p className={a.eyebrow}>{sd.label}</p><header className={a.sideHead}><ElCells ganji={sd.ganji} els={sd.els} /><b>{sd.no}장 · {text(sd.name)}</b></header>
+      <p className={a.yearGods}>{sd.tenGod} · {text(sd.theme)}</p>{sd.relations.length ? <ul className={a.sideRel}>{sd.relations.map(r => <li key={r}>{text(r)}</li>)}</ul> : <p className={a.hint}>태어난 사주와 걸리는 관계 없음</p>}
+      {sd.ups.length ? <p className={a.chips}><span className={a.signals}>{sd.ups.map(x => <span key={x} data-sig="up">{x} 오름</span>)}</span></p> : null}<p className={a.fillLine}><b>{text(sd.fill.label)}</b></p></section>)}</div>
+    <dl className={a.dict}><div><dt>끝나는 것</dt><dd>{text(page.end)}</dd></div><div><dt>시작되는 것</dt><dd>{text(page.start)}</dd></div></dl></section>;
+  if (page.kind === "domainMap") return <section className={a.am} data-am="domain-map"><p className={a.eyebrow}>{text(page.eyebrow)}</p><h1>{text(page.title)}</h1><p className={a.hint}>▲ 오름 · ▽ 살필. 막은 대운이 바뀌는 때(교운기)로 나눴어요.</p>
+    <ol className={a.mapActs}>{page.acts.map(ac => <li key={ac.name}><b>{text(ac.name)}</b> {ac.years[0]}~{ac.years.at(-1)}년</li>)}</ol>
+    {page.rows.map(r => <details key={r.domain} className={a.mapRow} open><summary><b>{r.domain}</b><small>{text(r.summary)}</small></summary>
+      <ol className={a.mapCells}>{page.years.map((y, i) => <li key={y} data-sig={r.cells[i] || undefined}><small>{String(y).slice(2)}</small><b aria-label={r.cells[i] === "up" ? "오름" : r.cells[i] === "down" ? "살필" : "보통"}>{r.cells[i] === "up" ? "▲" : r.cells[i] === "down" ? "▽" : "·"}</b></li>)}</ol></details>)}</section>;
   if (page.kind === "lifetime" && page.bands) return <section className={a.am} data-am="lifetime"><p className={a.eyebrow}>{title}</p><h1>{text(page.title)}</h1>{page.head ? <p className={a.hint}>{text(page.head)}</p> : null}
     <ol className={a.bands}>{page.bands.map((b, bi) => <li key={bi} className={a.band}><h2>{text(b.theme)}</h2><ol>{b.cycles.map(i => { const c = page.cycles[i];
       return <li key={c.label} className={a.cycle} data-current={c.current ? "" : undefined} data-past={c.past ? "" : undefined}><span className={a.age}>{c.ages}{c.current ? <em className={a.nowTag}>지금</em> : null}</span>{c.hanja && c.els ? <ElCells ganji={c.hanja} els={c.els} /> : null}<span className={a.cycleGod}>{c.tenGod}</span></li>; })}</ol></li>)}</ol></section>;

@@ -79,8 +79,9 @@ describe("8 대운 표기 통일(dayunLabel)", () => {
     // AM2-3 5부: 앞으로 10년표(decadeTable)는 대운이 바뀌는 해 앞에 구분 줄 「N년 M월 무렵부터 OO 대운 · 십성 · 주제」.
     const dt = pagesOf(data, "decadeTable")[0];
     const row = dt.rows.find(y => y.key === "2027")!;
-    expect(row.divider).toMatch(/^2027년 5월 무렵부터 무진 대운 · 편재 · /);
-    expect(dt.rows.filter(y => y.divider)).toHaveLength(1);
+    // AM2-13 3부: 새 대운 책은 막이 시작되는 해에 막 이름을 같은 구분 줄 앞에 둔다(「2막 · 문턱 · 2027년 5월 무렵부터 …」).
+    expect(row.divider).toMatch(/(^|· )2027년 5월 무렵부터 무진 대운 · 편재 · /);
+    expect(dt.rows.filter(y => y.divider && /대운/.test(y.divider))).toHaveLength(1);
     expect(html(data, dt)).toContain("2027년 5월 무렵부터 무진 대운 · 편재");
   });
 });

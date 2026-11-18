@@ -15,6 +15,7 @@ import { HARD_RULES, type LintFlag } from "../safety/p6c";
 import { INTERNAL, INTERNAL_LABEL } from "../safety/sentences";
 import type { FinalChapter } from "../safety";
 import { am210Flags } from "./broken";
+import { am213MajorFlags } from "./majorClaims";
 import { am211Flags } from "./claims";
 import { am28Flags } from "./check8";
 import type { Intake, Line } from "./intake";
@@ -455,6 +456,8 @@ export function blockFlags(chapters: readonly FinalChapter[], lint: readonly Lin
   for (const f of am210Flags(chapters, b)) add(f);
   // AM2-11 1부 6: 엔진 주장 대조 셋(자리 · 달 × 영역 방향 · 흐름 세기) — 차단 여부는 four.ts(저장 책 전수 오탐 0만).
   for (const f of am211Flags(chapters, b)) add(f);
+  // AM2-13 5부: 대운 「내 인생이라는 책」 엔진 주장(장 제목 · 채움 · 장 넘김 · 교운기 · 만 나이 · 앞 해 · 6장 해 목록).
+  for (const f of am213MajorFlags(chapters, b)) add(f);
   return out;
 }
 
@@ -792,7 +795,9 @@ export function cardEngineIssues(x: Intake, brief: Brief): CardIssue[] {
     if (Boolean(fills) !== sc.some(t => / 채움$/.test(t))) out.push({ where: k.key, rule: "card_engine", text: "오행 채움 화면 값 ≠ 엔진" });
     // 핵심(core) = 엔진 가중치로 다시 고른 것(대운 책 — 세운 달은 책의 해 대운 십성을 함께 넘겨 고른다).
     const again = coreOf(e, { short: k.depth === "short" }).map(c2 => c2.name);
-    if (x.product === "major_fortune" && JSON.stringify(again) !== JSON.stringify(k.core ?? [])) out.push({ where: k.key, rule: "card_engine", text: `핵심 ${JSON.stringify(k.core)} ≠ 엔진 다시 고름 ${JSON.stringify(again)}` });
+    // AM2-13 4부: 9장 대운 key(coreWords 있음)는 「새 대운 시작」을 머리 문장이 말한다 — ①에서 뺀 것과 맞댄다.
+    const noTr = (xs: readonly string[]) => (k.coreWords && xs.some(n => !/^새 대운/.test(n)) ? xs.filter(n => !/^새 대운/.test(n)) : xs);
+    if (x.product === "major_fortune" && JSON.stringify(noTr(again)) !== JSON.stringify(noTr(k.core ?? []))) out.push({ where: k.key, rule: "card_engine", text: `핵심 ${JSON.stringify(k.core)} ≠ 엔진 다시 고름 ${JSON.stringify(again)}` });
     // 흐름표·10년표 「뜻」 한 줄은 390px 표 칸(약 122px)에서 두 줄 안 — 공백 포함 16자 안.
     const line = coreRowLine(coreOf(e, { short: k.depth === "short" }));
     if (line.length > 16) out.push({ where: k.key, rule: "screen_len", text: `「뜻」 한 줄 ${line.length}자: ${line}` });

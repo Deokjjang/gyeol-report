@@ -61,7 +61,8 @@ describe("P3.8 질문 중심 배정·직무·관계 장면·명칭", () => {
   it("1: 전환 장은 원국 특성 재소개 없이 교운기 근거와 앞 장 참조만", () => {
     const tr = xMajor.chapters.find(c => c.id === "turn")!;
     expect(tr.materials.some(m => m.kind === "trait")).toBe(false);
-    expect(tr.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["turnWhen", "turnMind"]);
+    // AM2-13 4부: 9장 대운 책의 4장 근거 = 전환 표(끝나는 것 / 시작되는 것 · 교운기) + 문턱 마음가짐.
+    expect(tr.materials.filter(m => m.kind === "evidence").map(m => (m as { key: string }).key)).toEqual(["turnTable", "turnMind"]);
   });
 
   it("1: 이미지 계열은 그림 대상(저장·식물…)으로 묶어 대표 하나, 연·월 열쇠말은 일간 기준 십성", () => {
