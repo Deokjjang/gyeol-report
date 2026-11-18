@@ -23,7 +23,7 @@ import { baseRowOf } from "@/lib/compat/display";
 import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
 import { inputsOf, needMet } from "@/lib/brief/premise";
-import { decadeTableOf, flowTableOf, lifetimeOf, periodCardOf , yearDayunTg } from "./bookAm";
+import { chapterHeadOf, decadeTableOf, domainMapOf, flowTableOf, lifetimeOf, periodCardOf, thresholdOf, tocOf, yearDayunTg } from "./bookAm";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -47,7 +47,8 @@ export type V5BookDraft = {
   readonly chapters: readonly V5Chapter[];
   readonly timeline?: { readonly cards: readonly V5TimelineCard[]; readonly tenGodNotes: NonNullable<Brief["timeline"]>["tenGodNotes"]; readonly thisYear: number; readonly age: number; readonly cycles?: readonly V5Cycle[];
     /** AM 3부 평생 대운 지도(대운 전부). AM 이전 Book에는 없다. */
-    readonly lifetime?: NonNullable<NonNullable<Brief["timeline"]>["lifetime"]> };
+    readonly lifetime?: NonNullable<NonNullable<Brief["timeline"]>["lifetime"]>;
+    /** AM2-13 3부 대운 「내 인생이라는 책」 결정론 계획(새 책만). */ readonly major?: NonNullable<NonNullable<Brief["timeline"]>["major"]> };
   /** AM 2부 세운 신년판: 연도·키워드 카드(작가 [키워드] 줄, 걸리면 엔진 열쇠말)·한 해 판정·나를 돕는 색·방향·숫자·삼재(해당 띠만). AM 이전 Book에는 없다. */
   readonly annual?: { readonly year: number; readonly keywords: readonly string[]; readonly keywordSource: "writer" | "engine"; readonly verdict?: string; readonly lucky?: NonNullable<Brief["display"]>["lucky"]; readonly samjae?: NonNullable<Brief["display"]>["samjae"] };
   /** 핵심 이미지(P6b B-4, p6b-fields.md 3). 궁합은 pairImage. P6b 이전 Book에는 없다. */
@@ -234,7 +235,7 @@ export function assembleV5Book(a: {
     // AM2-7 3부 4: 태어난 날 자리의 쪽(책 하나에 하나 — 고리 재료 daySide와 같은 값)을 카드에 적어 화면 핵심 줄이 같은 말을 쓴다.
     ...(brief.timeline ? { timeline: { cards: brief.timeline.entries.map(card => ({ ...timelineCard(card, brief.timeline!.tenGodNotes, birthYear, cardOf.get(card.key)?.card, cardOf.get(card.key)?.bad), seatSide: brief.person.facts.relationship === "unknown" ? "life" as const : "close" as const })), tenGodNotes: brief.timeline.tenGodNotes, thisYear: brief.chart.thisYear.year, age: brief.person.age,
       cycles: brief.timeline.cycles.map(c => { const [s, e] = c.years.split("~").map(Number), x = c.ages?.match(/^만 (\d+)~(\d+)세$/); return { ganji: c.ganji, years: c.years, ages: x ? [Number(x[1]), Number(x[2])] as const : [manAge(s, birthYear), manAge(e, birthYear)] as const, tenGod: c.tenGod, current: c.current, ...(c.label ? { label: c.label } : {}) }; }),
-      ...(brief.timeline.lifetime ? { lifetime: brief.timeline.lifetime } : {}) } } : {}),
+      ...(brief.timeline.lifetime ? { lifetime: brief.timeline.lifetime } : {}), ...(brief.timeline.major ? { major: brief.timeline.major } : {}) } } : {}),
     ...(annualYear !== undefined ? { annual: { year: annualYear, keywords: a.keywords?.length === 3 ? a.keywords : (brief.display?.keywords ?? []), keywordSource: a.keywords?.length === 3 ? "writer" as const : "engine" as const,
       ...(brief.display?.verdict ? { verdict: brief.display.verdict } : {}), ...(brief.display?.lucky ? { lucky: brief.display.lucky } : {}), ...(brief.display?.samjae ? { samjae: brief.display.samjae } : {}) } } : {}),
     // 최종판2 1-1: 궁합 첫 쪽 관계 그림도 작가 표지 줄(엔진 기본 줄은 작가 표지가 없을 때만).
@@ -396,7 +397,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
   const jobAm = (e as unknown as { input?: { userContext?: { jobStatus?: string } } }).input?.userContext?.jobStatus ?? "";
   const workAm = needMet("job:work", inputsOf({ relationship: "", children: "", job: { status: jobAm } }));
   // AM 3부: 평생 대운 지도(0) — 대운 전부, 시작 만 나이·연도·간지·십성·한 줄 주제.
-  if (amMajor) { if (d.timeline?.lifetime?.length) pages.push(lifetimeOf(d, thisYearAm)); }
+  const majorPlan = amMajor ? d.timeline?.major : undefined;
+  if (amMajor) { if (d.timeline?.lifetime?.length) pages.push({ ...lifetimeOf(d, thisYearAm), ...(majorPlan ? { title: "내 인생이라는 책 — 차례", ...tocOf(majorPlan) } : {}) }); }
   else if (d.timeline?.lifetime?.length) pages.push({ kind: "lifetime", title: "평생 대운 지도", cycles: d.timeline.lifetime.map(c => ({ label: c.label, ages: c.ages, tenGod: c.tenGod, theme: c.theme, current: c.current })) });
   const natalEls = ((e.people[0] as { table?: { elements?: readonly { label: string; visible: number }[] } } | undefined)?.table?.elements) ?? [];
   const flowTable = amAnnual ? flowTableOf(d, monthCards as never, dayAm, natalEls) : null;
@@ -406,6 +408,8 @@ export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string):
     return { order: i, start: sp.start.slice(0, 10), end: sp.end.slice(0, 10), range: `${md(sp.start)}~${md(sp.end)}` }; }) : seasonMonths(monthCards);
   const monthLabel = new Map(monthCards.map((c, i) => [c.key, spanned ? { title: c.label, sub: c.label.split(" (")[0] } : seasonLabel(season[i], c.ganji.hangul)]));
   for (const ch of d.chapters) {
+    // AM2-13 3부: 새 대운 책 — 3장 · 7장 머리 상자, 4장 문턱 맞대기 카드, 6장 10년 영역 지도 표(장 글 앞).
+    if (majorPlan && !ch.keys) { const head = ch.id === "now" ? chapterHeadOf(majorPlan, "now", ch.title) : ch.id === "next" ? chapterHeadOf(majorPlan, "next", ch.title) : ch.id === "turn" ? thresholdOf(majorPlan, ch.title) : ch.id === "map" ? domainMapOf(majorPlan, ch.title) : null; if (head) pages.push(head); }
     if (!ch.keys) { chapterPage.set(ch.n, pages.length); pages.push({ kind: "narrative", id: ch.n === 1 ? "core" : `chapter-${ch.id}`, title: ch.title, paragraphs: toParagraphs(ch.sections), notes: [] });
       // AM 2부: 운을 쓰는 법 장 뒤에 나를 돕는 색·방향·숫자(+ 삼재 해당 띠만), 이어지는 큰 흐름 장 뒤에 대운으로 이어 보기.
       if (ch.id === "use" && d.annual?.lucky) pages.push({ kind: "lucky", title: "나를 돕는 색·방향·숫자", name: d.annual.lucky.name, colors: [...d.annual.lucky.colors], direction: d.annual.lucky.direction, numbers: [...d.annual.lucky.numbers], why: d.annual.lucky.why, ...(d.annual.samjae ? { samjae: d.annual.samjae } : {}) });

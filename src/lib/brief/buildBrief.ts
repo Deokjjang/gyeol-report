@@ -38,6 +38,7 @@ import { annualEvidence, annualStatusQ, annualTidy, annualTidyLog, bridgeEvidenc
 import { profileCodes } from "./pairProfile";
 import { profilePoles } from "@/lib/writer/safety/contradiction";
 import { decadeKeyEvidence, keyYears, lifetimeMap, majorEvidence } from "./design/major";
+import { majorPlanOf } from "./design/majorBook";
 import { annualProductYear } from "@/lib/ops/config";
 import { conditionsHold } from "./conditions";
 import { CAREER_BUSINESS_NOSHOP_Q, CAREER_STATUS_Q, careerDesign, careerStatusOf } from "./design/career";
@@ -349,12 +350,16 @@ export function buildBrief(input: BriefInput, k: Knowledge): Brief {
     const tenGodNotes = tenGodNotesOf(k, { strength: me.saju.structureAnalysis.dayMasterStrength.level, distribution: me.saju.tenGods.distribution, groups: groupValues(me.saju) });
     if (input.product === "major_fortune") {
       // AM 3부: 14년 카드 계약은 그대로(지난 3년 + 올해 + 앞으로 10년). 작가 key 장은 앞으로 10년, 핵심 해 3개(결정론)는 깊게.
-      const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles);
+      // AM2-13 3부: 대운 해 줄에도 해 칩(세운과 같은 domainSignals — 영역 지도 · 해 key 기조의 원천).
+      const entries0 = buildYearEntries(tctx, thisYear, me.dayun.cycles).map(e => ({ ...e, signals: domainSignals(me.saju, me.person.gender, getAnnualPillar(Number(e.key)), "annual", { fillsLack: e.fillsLack.fills, feedsExcess: e.fillsLack.feedsExcess.length > 0 }).signals }));
       const future = entries0.filter(e => Number(e.key) > thisYear);
       const keys = keyYears(me.saju, future, me.dayun.cycles, needMet("job:work", inputsOf(me.person.facts)));
       const entries = entries0.map(e => (keys.has(e.key) ? { ...e, keyYear: keys.get(e.key)! } : e));
       timeline = { entries, tenGodNotes: tenGodNotes(entries, "year"), keyEntries: [...keys.keys()], cycles: cycleSummary(me.dayun, thisYear - 3, thisYear + 10, thisYear, tenGodOf, baseMsOf(input.baseDate, input.baseAt)),
         lifetime: lifetimeMap(me.saju, me.dayun, thisYear) };
+      // AM2-13 3부: 「내 인생이라는 책」 결정론 계획(장 제목 · 채움 · 막 · 전환 · 영역 해 목록 · ★ · 2027 사실).
+      if (timeline.lifetime?.length) timeline = { ...timeline, major: majorPlanOf({ saju: me.saju, k, st: me.st, strongest: me.chart.elements.strongest.element as never, life: timeline.lifetime, entries, thisYear,
+        ...(me.chart.currentDayun?.phase ? { phase: { yearIndex: me.chart.currentDayun.phase.yearIndex, label: me.chart.currentDayun.phase.label, remaining: me.chart.currentDayun.phase.remaining ?? "" } } : {}), work: needMet("job:work", inputsOf(me.person.facts)) }) };
       timelineKeys = future.map(e => e.key);
       for (const e of entries.filter(x => Number(x.key) > thisYear)) keyMaterials.set(e.key, [decadeKeyEvidence(e, keys.get(e.key))]);
     } else {

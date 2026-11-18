@@ -122,7 +122,7 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
 }
 
 /** 대운 기둥과 원국 자리 관계(쉬운 줄). */
-function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
+export function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
   const natal = natalEntries(saju);
   const seat = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
   return detectRelations([...natal, { position: "dayun", pillar: dp }]).filter(r => r.members.some(m => m.position === "dayun") && REL_PLAIN[r.kind])
