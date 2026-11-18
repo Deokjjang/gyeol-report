@@ -96,7 +96,10 @@ export function makeInspector(a: { readonly payload: ReportInputPayload; readonl
   // AM2-6 5부: 차단(교체 → 그래도면 지우기) · 교체 대상(경계 · 고객이 알아챌 경미 — 교체만, 지우지 않음) · 경미(다른 까닭으로 고칠 때만 함께).
   const fourOf = (chs: readonly FinalChapter[]) => fourCtxOf(brief, intake, (n, si) => chs.find(c => c.n === n)?.sections[si]?.heading ?? "");
   const branch = (f: ChunkFlag, chs: readonly FinalChapter[]): Branch | null => branchOf(f, fourOf(chs));
-  const inspect = (chs: readonly FinalChapter[]): Inspection => { const lint = lintBook(chs, lctx), all = blockFlags(chs, lint, bctx).filter(f => chs.find(c => c.n === f.chapter)?.source !== "deterministic" && !wishWord(f));
+  // AM2-13 6부: 9장 대운 책의 「장」은 인생의 장(대운)이다 — 「6장 「…」」 · 「다음 장」 · 막 이름을 책 장 번호 참조(chapter_ref, 4종 공용 검사)로 보지 않는다.
+  const lifeBook = brief.product === "major_fortune" && Boolean(brief.timeline?.major);
+  const LIFE_REF = /\d{1,2}장 「|다음 장|그다음 장|지나온 장|읽고 있는 장|이 장(?!면)|장 넘김|지금 장의 남은 쪽/;
+  const inspect = (chs: readonly FinalChapter[]): Inspection => { const lint = lintBook(chs, lctx).filter(f => !(lifeBook && f.rule === "chapter_ref" && LIFE_REF.test(f.sentence))), all = blockFlags(chs, lint, bctx).filter(f => chs.find(c => c.n === f.chapter)?.source !== "deterministic" && !wishWord(f));
     const four = fourOf(chs), isFour = (f: ChunkFlag) => branchOf(f, four) !== null;
     return { lint, block: all.filter(isFour), minor: all.filter(f => !isFour(f) && !FIX_RULES.has(f.rule)), fix: all.filter(f => !isFour(f) && FIX_RULES.has(f.rule)) }; };
   const normS = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");

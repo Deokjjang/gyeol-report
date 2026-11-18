@@ -36,7 +36,8 @@ export function am213MajorFlags(chapters: readonly FinalChapter[], b: BlockCtx):
     s.paragraphs.forEach((p, pi) => splitSentences(p).forEach(sen => {
       const at = { chapter: c.n, section: si, paragraph: pi, sentence: sen };
       // ---- chapter_title ----
-      for (const t of TITLES) if (sen.includes(t)) { const ch = target(sen); if (ch && ch.title !== t) out.push({ ...at, rule: "chapter_title", detail: `「${t}」 — ${ch.n}장은 「${ch.title}」`, hint: "장 제목은 차례 값 그대로" }); }
+      const said = TITLES.filter(t => sen.includes(t));
+      for (const t of said) { const m = new RegExp(`(\\d{1,2})장 「${t}」`).exec(sen), ch = m ? P.chapters.find(x => x.n === Number(m[1])) : said.length === 1 ? target(sen) : undefined; if (ch && ch.title !== t) out.push({ ...at, rule: "chapter_title", detail: `「${t}」 — ${ch.n}장은 「${ch.title}」`, hint: "장 제목은 차례 값 그대로" }); }
       // ---- fill_claim ----
       for (const [re, label] of FILL_WORDS) if (re.test(sen)) { const ch = target(sen) ?? now; if (ch && ch.fill.label !== label && !(label === FILL_LABEL.even && /고른 장(?:이|은|으로)? 아니/.test(sen))) out.push({ ...at, rule: "fill_claim", detail: `「${label}」 — ${ch.n}장 판정 「${ch.fill.label}」`, hint: "채움 판정은 화면 장 머리 상자 값 그대로" }); }
       // ---- dayun_timing ----
