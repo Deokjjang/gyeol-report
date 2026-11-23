@@ -46,7 +46,7 @@ const SELF_WORDS = ["돈", "연애", "일", "공부", "사람", "마음"] as con
 export const SELF_COMPARE = new RegExp(`^(${SELF_WORDS.join("|")})보다 `);
 export const dropSelfCompare = (line: string, areaKo: string): string => (line.startsWith(`${areaKo}보다 `) ? line.slice(areaKo.length + 3) : line);
 /** 달 칸 방향과 뜻 방향: 오르는 칸에 살필 뜻(P8 5월 「무리한 일정」 ↔ 「무리할 달 없음」) · 살필 칸에 좋은 뜻을 주지 않는다. */
-export const dirFits = (s: string, arrow: Arrow) => { const d = annualTagOf(s)?.dir; return !(arrow === "↑" && d === "down") && !(arrow === "↓" && d === "up"); };
+export const dirFits = (s: string, arrow: Arrow, dirOf: (s: string) => "up" | "down" | "any" | undefined = x => annualTagOf(x)?.dir) => { const d = dirOf(s); return !(arrow === "↑" && d === "down") && !(arrow === "↓" && d === "up"); };
 /** 넓히기 줄(사람 · 인연을 늘리는 뜻) — 관계 속도를 늦출 달(사람 ↓) · 연애 속도를 늦출 달(연애 ↓)에는 주지 않는다(P8 12월 「새 자리」 ↔ 「관계 늦출 달」). */
 export const EXPAND_PEOPLE = /사람 만나는 자리가 늘|새 얼굴|인맥이 넓어|모임이 늘|모임·행사|새 무리를 찾|새 자리|새 인연/;
 const EXPAND_LOVE = /새 인연|먼저 다가가|빠르게 빠져들/;

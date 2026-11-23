@@ -41,6 +41,8 @@ const WHOLE: Readonly<Record<string, Branch>> = {
   // AM2-13 5부(majorClaims.ts): 대운 9장 엔진 주장 — 저장 대운 책 42권 전수 대조 걸림 year_list 2 모두 참 · 오탐 0(am2.md 23절).
   chapter_title: "fact", fill_claim: "fact", dayun_timing: "fact", age_claim: "fact", prev_year: "fact", year_list: "fact",
 };
+/** AM2-14 2부: 장면을 사건으로 못 박지 않은 꼴 — 양보(…와도 · …때도 · …더라도) · 비유(…때처럼 · …처럼). 저장 대운 책 future_event 오탐 3곳의 꼴. */
+const SCENE_HEDGE = /때도|때처럼|처럼|더라도|(?:와|어|아|여|해|져|워|러|서)도(?:,|\s)/;
 /** 인과 · 변화 꼴(성향을 그 시기 운의 결과로 쓰는 말). 장면(「…할 때」 「…라면」)은 들지 않는다. */
 /** 명리 말(십성 · 신살 · 일주 · 간지 · 합충 · 대운 · 기운) — 짝 없는 절이 이것과 한 문장에 묶일 때만 잘못된 연결(성향만 말하고 조언하는 절은 아니다). */
 const SAJU_TERM = /(비견|겁재|식신|상관|편재|정재|편관|정관|편인|정인|도화살|홍염살|역마살|화개살|귀문관살|백호대살|괴강살|양인살|원진살|일주|대운|세운|월운|기운|반합|삼합|육합|천간합|(?<![가-힣])[갑을병정무기경신임계][자축인묘진사오미신유술해](?=일주|월|년|대운|의 |과 |와 |이 |가 |은 |는 )|[자축인묘진사오미신유술해]{2}[충형파합])/;
@@ -62,6 +64,8 @@ export type FourCtx = {
   readonly mbtiType: string | null;
   /** 그 자리(달·해 key 또는 소제목)에 짝이 있나. */
   readonly pairedAt: (chapter: number, section: number) => boolean;
+  /** AM2-14 2부: 상품(대운만 거는 갈래 — future_event 장면 씨앗). */
+  readonly product?: string;
 };
 export function fourCtxOf(brief: Brief, intake: Intake, headingOf: (chapter: number, section: number) => string): FourCtx {
   const f = brief.person.facts;
@@ -70,7 +74,7 @@ export function fourCtxOf(brief: Brief, intake: Intake, headingOf: (chapter: num
   const secs = new Map(intake.chapters.flatMap(c => (c.sections ?? []).map((sp, si) => [`${c.n}|${si}`, intake.pairs.some(p => sp.lines.includes(p.myeongri) && sp.lines.includes(p.mbti))] as const)));
   return {
     entered: { job: Boolean(job) && job !== "unknown", rel: f.relationship !== "unknown", children: f.children !== "unknown" },
-    relationship: f.relationship, inputs: inputsOf(f), mbtiType: brief.mbti?.type ?? null,
+    relationship: f.relationship, inputs: inputsOf(f), mbtiType: brief.mbti?.type ?? null, product: brief.product,
     pairedAt: (chapter, section) => { const h = headingOf(chapter, section); return keys.get(`${chapter}|${h}`) ?? secs.get(`${chapter}|${section}`) ?? false; },
   };
 }
@@ -108,6 +112,9 @@ export function branchOf(f: FlagLike, c: FourCtx): Branch | null {
       return LINK_CAUSAL.test(s) ? "link" : null;
     }
     case "pair_scope": return null; // 짝의 까닭 안 잇기와 밖 잇기를 가르지 못함(전수 대조 1/3) — 기록
+    // AM2-14 2부(덕짱님 결정 4 — D1 D3 2035 「…원서를 내고, 마감 전날 밤을 새웁니다」): 대운 앞날 key의 장면 씨앗을 그때의 사건으로 옮긴 문장.
+    // 저장 대운 47권 전수 대조 걸림 9 = 참 2 · 오탐 7(「~기 좋음」 갈래 4 · 양보 · 조건 · 비유 꼴 3) → 이 좁힌 꼴(장면 갈래 · 대운 · SCENE_HEDGE 없음)만 사실로 차단(참 2 · 오탐 0). 그 밖 · 세운은 기록.
+    case "future_event": return c.product === "major_fortune" && /장면 씨앗을 그때의 사건으로 단정/.test(d) && !SCENE_HEDGE.test(s) ? "fact" : null;
     case "pair_causal": return c.pairedAt(f.chapter, f.section) ? null : "link";
     case "pair_clause": return LINK_CAUSAL.test(s) && SAJU_TERM.test(s) ? "link" : null;
     default: return null;
