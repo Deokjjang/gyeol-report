@@ -11,7 +11,7 @@
 import { bookForProduct, readerTitle } from "../book/product";
 import { isOpenEndedAccess, reportAccessOpen } from "../book/accessWindow";
 import { REQUEST_RESULT_COPY } from "../legal/socialLinks";
-import { CONCLUSION_DEADLINE_MS } from "../ops/config";
+import { CONCLUSION_DEADLINE_MS, annualProductYear } from "../ops/config";
 import { validLibraryReportId, type LibraryRow } from "./model";
 
 export type ShelfOrder = { orderCode: string; reportId: string | null; productType: string; paymentStatus: string; bookStatus: string | null; createdAt: string; paidAt: string | null; refundState?: string | null; refundedAt?: string | null };
@@ -36,6 +36,8 @@ export type ShelfBook = {
 export const RESULT_DAYS_MS = 7 * 86_400_000;
 
 const MAKING = new Set(["QUEUED", "GENERATING", "RETRYING", "RUNNING", "PENDING"]);
+/** AM2-14 1부: 아직 책이 없는 카드(만드는 중 · 환불)의 세운 이름은 판매 중인 신년판(「나의 2027」). 완성 카드는 저장 연도 그대로. */
+const saleYear = String(annualProductYear());
 export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: ShelfPending[], now = Date.now(), requests: ShelfRequest[] = []): ShelfBook[] {
   const codeByReport = new Map(orders.filter(o => o.reportId).map(o => [o.reportId!, o.orderCode]));
   const orderByCode = new Map(orders.map(o => [o.orderCode, o]));
@@ -64,7 +66,7 @@ export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: Sh
     const book = bookForProduct(o.productType);
     if (!book) continue;
     seen.add(o.reportId);
-    working.push({ reportId: o.reportId, title: readerTitle(book, ""), displayName: "", coverColor: book.color, ink: book.ink, state: "refunded",
+    working.push({ reportId: o.reportId, title: readerTitle(book, saleYear), displayName: "", coverColor: book.color, ink: book.ink, state: "refunded",
       href: null, publishedAt: null, openEnded: false, expiresAt: null, orderCode: o.orderCode, viaTicket: false, madeAt: o.paidAt ?? o.createdAt, request: null, refundedAt: o.refundedAt ?? null,
       at: Date.parse(o.refundedAt ?? "") || 0 });
   }
@@ -78,7 +80,7 @@ export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: Sh
     const attention = o.bookStatus === "FAILED_REQUIRES_ATTENTION";
     if (!refunding && !attention && o.bookStatus !== null && !MAKING.has(o.bookStatus)) continue;
     seen.add(o.reportId);
-    working.push({ reportId: o.reportId, title: readerTitle(book, ""), displayName: "", coverColor: book.color, ink: book.ink, state: refunding ? "refunding" : attention ? "attention" : "making",
+    working.push({ reportId: o.reportId, title: readerTitle(book, saleYear), displayName: "", coverColor: book.color, ink: book.ink, state: refunding ? "refunding" : attention ? "attention" : "making",
       href: `/reports/${o.reportId}`, publishedAt: null, openEnded: false, expiresAt: null, orderCode: o.orderCode, viaTicket: false, madeAt: o.paidAt ?? o.createdAt,
       request: reqOf(o.orderCode, o.reportId), refundedAt: null, at: Date.parse(o.paidAt ?? o.createdAt) || 0 });
   }
@@ -89,7 +91,7 @@ export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: Sh
     const returned = p.state === "REVERSED";
     if (returned && !recent(p.createdAt)) continue;
     seen.add(p.reportId);
-    working.push({ reportId: p.reportId, title: readerTitle(book, ""), displayName: p.displayName ?? "", coverColor: book.color, ink: book.ink, state: returned ? "returned" : "making",
+    working.push({ reportId: p.reportId, title: readerTitle(book, saleYear), displayName: p.displayName ?? "", coverColor: book.color, ink: book.ink, state: returned ? "returned" : "making",
       href: returned ? null : `/reports/${p.reportId}`, publishedAt: null, openEnded: false, expiresAt: null, orderCode: null, viaTicket: true, madeAt: p.createdAt, request: reqOf(null, p.reportId), refundedAt: null,
       at: Date.parse(p.createdAt) || 0 });
   }

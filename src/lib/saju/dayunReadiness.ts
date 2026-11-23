@@ -7,6 +7,7 @@
  */
 import { calculateCustomerDayun, type CustomerDayunInput } from "./customerDayun";
 import { BIRTH_TIME_SLOT_DEFINITIONS, birthTimeSlotOptions } from "./birthTimePrecisionTypes";
+import { annualProductYear } from "../ops/config";
 
 export type DayunReadiness =
   | { readonly ok: true }
@@ -14,7 +15,8 @@ export type DayunReadiness =
   | { readonly ok: false; readonly code: "DAYUN_UNDETERMINABLE"; readonly message: string; readonly recommend: "annual_fortune" };
 
 export const DAYUN_NEED_SLOT_MESSAGE = "태어난 시각을 모르면 이 생일은 대운이 시작되는 해를 하나로 정할 수 없어요. 대략적인 시간대를 골라 주시면 대운을 계산할 수 있어요.";
-export const DAYUN_UNDETERMINABLE_MESSAGE = "이 생일은 대운을 정확히 계산할 수 없어요. 대운(앞으로의 나) 대신 세운(나의 한 해)을 권해요 — 세운은 이 입력 그대로 만들 수 있어요.";
+/** AM2-14 1부: 세운 이름은 신년판 연도(「나의 2027」) — 문구만, 계산은 그대로. */
+export const DAYUN_UNDETERMINABLE_MESSAGE = `이 생일은 대운을 정확히 계산할 수 없어요. 대운(앞으로의 나) 대신 세운(나의 ${annualProductYear()})을 권해요 — 세운은 이 입력 그대로 만들 수 있어요.`;
 
 /** 대운이 하나로 정해지는지. 성별이 없거나 입력이 이상하면 이 함수가 판정하지 않는다(ok — 다른 입력 검사가 맡는다). */
 export function dayunReadiness(person: CustomerDayunInput): DayunReadiness {

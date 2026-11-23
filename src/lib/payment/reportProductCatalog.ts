@@ -3,6 +3,7 @@ import {
   reportProductTypes,
 } from "./reportProductTypes";
 import type { ReportProductType } from "./reportProductTypes";
+import { annualProductYear } from "../ops/config";
 
 export type ReportProductCurrency = "KRW";
 
@@ -29,6 +30,13 @@ export const REPORT_PRICE_TABLE_KRW = {
   annual_fortune: FORTUNE_PRICE_KRW.annual_fortune ?? FORTUNE_PLACEHOLDER_KRW,
 } as const satisfies Record<ReportProductType, number>;
 export const formatKrw = (amount: number) => `${amount.toLocaleString("ko-KR")}원`;
+/**
+ * AM2-14 4부(덕짱님 결정 2026-11-23): 세운 「나의 2027」을 결제한 회원의 대운 반값 = 대운 정가 × 0.5(10원 내림, 토스 최소 100원) — 4,900원이면 2,450원.
+ * 결제 준비(서버 금액) · 승인 직전 대조 · 화면 표시가 모두 이 값을 쓴다.
+ */
+export const MAJOR_HALF_RATE = 0.5;
+export const discountedAmount = (price: number, rate: number) => Math.max(MIN_PAYMENT_AMOUNT_KRW, Math.floor((price * (1 - rate)) / 10) * 10);
+export function majorHalfPriceKrw(): number { return discountedAmount(REPORT_PRICE_TABLE_KRW.major_fortune, MAJOR_HALF_RATE); }
 /** 상품 하나의 새 주문 가격(원). */
 export function reportPriceKrw(productType: ReportProductType): number { return REPORT_PRICE_TABLE_KRW[productType]; }
 /** 출시 4종(종합·커리어·연애·궁합) 공통 가격 — 표의 종합 값을 읽는다. 상품을 아는 곳은 reportPriceKrw(productType)를 쓴다. */
@@ -117,6 +125,16 @@ const reportProductCatalog = [
     isPurchasable: true,
   },
 ] as const satisfies readonly ReportProductCatalogItem[];
+
+/**
+ * AM2-14 1부: 고객이 보는 결제 이름(토스 주문 이름 · 카카오 상품 이름 · 결제 완료 「상품」 줄). 세운은 책 이름 「나의 {신년판 연도}」,
+ * 그 밖(4종 · 대운)은 카탈로그 labelKo 그대로. 관리자 화면 · 매출 봇은 labelKo를 쓴다.
+ */
+export function customerProductLabelKo(productType: unknown): string {
+  const product = getReportProduct(productType);
+  if (!product) return "결리포트";
+  return product.productType === "annual_fortune" ? `나의 ${annualProductYear()}` : product.labelKo;
+}
 
 export function getReportProductCatalog(): readonly ReportProductCatalogItem[] {
   return reportProductCatalog;

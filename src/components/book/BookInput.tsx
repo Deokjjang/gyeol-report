@@ -1,7 +1,8 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from "react";
-import { BOOKS, bookForProduct, readerTitle } from "../../lib/book/product";
+import { BOOKS, bookForProduct, fortuneIntro, readerTitle } from "../../lib/book/product";
+import { formatKrw, majorHalfPriceKrw, reportPriceKrw } from "../../lib/payment/reportProductCatalog";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
 import { ANNUAL_WISH_MAX, type PersonInputState } from "../../lib/report-generation/reportInputPresentation";
 import { MBTI_TYPES, compatibilityRoleLabels, type CompatibilityRelationshipType } from "../../lib/report-generation/reportInputTypes";
@@ -50,14 +51,27 @@ export function BookInput({ internal, now, initial, authEnabled = internal, tick
   // drafts are additionally namespaced per product and cannot activate routes.
   return withPopup(<BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} giftEventProducts={giftEventProducts} />);
 }
+/** AM2-14 1부: 판매 화면의 책 이름 — 세운은 신년판 연도(「나의 2027」). */
+const saleTitle = (book: typeof BOOKS[number]) => readerTitle(book, String(annualProductYear()));
+/**
+ * AM2-14 1부: 세운 · 대운 소개 한 줄. 입력 첫 쪽은 이름 · 가격과 함께(판매가 열린 화면), 닫힘 안내는 소개만.
+ * 가격 = 결제 카탈로그(세운 · 대운 정가, 세운을 산 회원의 대운 반값).
+ */
+export function FortuneIntro({ book, withPrice }: { book: typeof BOOKS[number]; withPrice: boolean }) {
+  const intro = fortuneIntro(book.productKey, annualProductYear());
+  if (!intro) return null;
+  const price = book.productKey === "annual_fortune" ? formatKrw(reportPriceKrw("annual_fortune")) : `${formatKrw(reportPriceKrw("major_fortune"))} · 세운을 산 분은 ${formatKrw(majorHalfPriceKrw())}`;
+  return withPrice ? <p className={s.wide} data-fortune-intro><b>{saleTitle(book)} · {price}</b><br />{intro}</p> : <p data-fortune-intro>{intro}</p>;
+}
 function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-closed style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="공개 안내">
-      <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>2027 신년판으로 새로 단장하고 있어요</h1>
+      <p className={s.eyebrow}>{saleTitle(book)} / NOTICE</p><h1>2027 신년판으로 새로 단장하고 있어요</h1>
       <p><b>{FORTUNE_REOPEN_LINE}</b></p>
-      <p>대운(앞으로의 나)과 세운(나의 한 해)은 2027년 흐름을 담아 12월에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
+      <FortuneIntro book={book} withPrice={false} />
+      <p>대운(앞으로의 나)과 세운(나의 {annualProductYear()})은 2027년 흐름을 담아 12월 1일에 새로 공개해요. 그때까지는 새로 구매하거나 이용권으로 만들 수 없어요.</p>
       <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
       <p><a href={home}>다른 책 고르기 →</a></p><p><a href="/account">내 서재 →</a></p>
     </div></section>
@@ -67,7 +81,7 @@ function SalesPausedNotice({ book, home, message }: { book: typeof BOOKS[number]
   return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-paused style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="잠시 멈춤 안내">
-      <p className={s.eyebrow}>{book.title.replace("\n", " ")} / NOTICE</p><h1>지금은 책 만들기를 잠시 멈췄어요</h1>
+      <p className={s.eyebrow}>{saleTitle(book)} / NOTICE</p><h1>지금은 책 만들기를 잠시 멈췄어요</h1>
       <p>{message}</p>
       <p>이미 받은 책은 내 서재에서 그대로 열 수 있어요.</p>
       <p><a href="/account">내 서재 →</a></p>
@@ -214,6 +228,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
       {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} {...(discount ? { discount } : {})} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} giftEventProducts={giftEventProducts} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
         <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
+        {step === 0 ? <FortuneIntro book={book} withPrice /> : null}
         {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>
           <label>현재 상태<select value={state.person.jobStatus} onChange={e => update({ ...state, person: { ...state.person, jobStatus: e.target.value } })}><option value="">미선택</option>{JOBS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}<option value="other">기타</option></select></label>
@@ -228,7 +243,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>
       </form>}
       {message ? <p className={f.error} role="alert">{message}</p> : null}
-      {annualLink ? <a className={f.next} href={internal ? "/dev/book-flow" : "/report/new?product=annual-fortune"} data-annual-recommend>세운(나의 한 해)으로 가기 →</a> : null}
+      {annualLink ? <a className={f.next} href={internal ? "/dev/book-flow" : "/report/new?product=annual-fortune"} data-annual-recommend>세운(나의 {annualProductYear()})으로 가기 →</a> : null}
     </div><nav className={s.pageNav} aria-label="입력 페이지"><button aria-label="이전 페이지" disabled={!step || checking} onClick={() => window.history.back()}>←</button><span><strong>{title}</strong><span>{step + 1} / {total + 1}</span></span><a href={home}>책장 ↗</a></nav></section>
   </main>;
 }
