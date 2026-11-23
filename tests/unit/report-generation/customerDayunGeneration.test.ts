@@ -1,5 +1,7 @@
 import { adultCheckoutConsent } from "../../fixtures/checkoutConsent";
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
+// AM2-14 5부: v5 작가 상품은 코드 상수(6상품, 운영 env 없음) — 이 시험은 옛 V4 엔진 경로를 그대로 보려고 목록을 비운다(운영에서는 타지 않는 경로).
+vi.mock("../../../src/lib/writer/flags", async orig => ({ ...(await orig<object>()), writerV5Products: () => [] }));
 import { readFileSync } from "node:fs";
 import { normalizeReportInputPayload } from "../../../src/lib/report-generation/reportInputAdapter";
 import { generateMajorFortuneProductDraft } from "../../../src/lib/report-generation/majorFortuneGenerationHandler";
@@ -72,8 +74,8 @@ describe("customer Dayun production boundaries", () => {
     expect(storage.create).not.toHaveBeenCalled();
     expect(storage.bind).not.toHaveBeenCalled();
   });
-  it.each(["major_fortune", "annual_fortune"])("P6d-ops: %s sales closed by default answers 409 before any order write", async product => {
-    vi.stubEnv("FORTUNE_SALES_OPEN", "");
+  it.each(["major_fortune", "annual_fortune"])("P6d-ops → AM2-14 5부: %s 판매 시작 시각 전이면 주문 쓰기 전에 409", async product => {
+    vi.stubEnv("FORTUNE_SALES_OPEN_AT_TEST", "2099-01-01T00:00:00+09:00");
     vi.stubEnv("NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY", "test_toss_client_key");
     vi.stubEnv("TOSS_PAYMENTS_SECRET_KEY", "test_toss_secret_key");
     const p = payload(product);

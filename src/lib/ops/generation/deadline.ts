@@ -23,7 +23,7 @@ export type SweepDeps = {
   readonly audit: (e: { actor: "system"; action: string; target: string; detail?: Record<string, unknown> }) => Promise<boolean>;
   readonly refundNow?: (paymentOrderId: string) => Promise<unknown>;
   readonly concluded?: (n: ConclusionNote) => Promise<unknown>;
-  /** v5 작가 상품(WRITER_V5_PRODUCTS). 그 밖(v4 결제·이용권)은 건드리지 않는다. */
+  /** v5 작가 상품(writer/flags 상수 — AM2-14 5부부터 6상품). 그 밖(v4 결제·이용권)은 건드리지 않는다. */
   readonly v5Products: readonly string[];
   readonly now?: () => number;
 };

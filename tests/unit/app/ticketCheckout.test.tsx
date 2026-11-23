@@ -64,3 +64,19 @@ describe("member-aware receipt SSR boundaries", () => {
     finally { stop?.(); }
   });
 });
+
+// AM2-14 4부: 대운 · 세운은 이용권으로 만들 수 없다 — 이용권이 있어도 이용권 칸 없이 결제가 기본(4종은 위 시험 그대로).
+describe("AM2-14 대운 · 세운 결제 화면의 이용권 칸", () => {
+  it.each(["major_fortune", "annual_fortune"] as const)("%s: 이용권 5장이 있어도 이용권 칸 · 이용권 발행 버튼 없이 결제하기", async product => {
+    state.session = { status: "member" };
+    vi.stubGlobal("window", new EventTarget()); vi.stubGlobal("document", { hidden: false });
+    vi.mocked(fetch).mockResolvedValue({ ok: true, json: async () => ({ ok: true, wallet: { usable: 5 } }) } as Response);
+    const payload = { ...(RUNTIME_FIXTURES[0].payload as ReportInputPayload), productKey: product, productSlug: product === "major_fortune" ? "major-fortune" : "annual-fortune", productOptions: product === "annual_fortune" ? { selectedYear: "2027" } : {} } as ReportInputPayload;
+    const one = () => { hooks.index = 0; hooks.effects = []; return renderToStaticMarkup(<BookCheckout {...props} payload={payload} />); };
+    one(); const stop = hooks.effects[0](); for (let i = 0; i < 8; i++) await Promise.resolve();
+    try {
+      const html = one();
+      expect(html).not.toContain("이용권 1장 쓰기"); expect(html).not.toContain("이용권 1장으로 책 발행하기"); expect(html).toContain("결제하기");
+    } finally { stop?.(); }
+  });
+});

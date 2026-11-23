@@ -15,6 +15,11 @@ import { coreLine, coreOf, coreRowLine, loveUpOf, relFlow, TEN_GOD_SHORT } from 
 import { BRANCH_MAIN_ELEMENT, STEM_ELEMENT } from "@/lib/saju/constants";
 import { toneOf } from "./chunked/tone";
 import type { V5BookDraft, V5TimelineCard } from "./book";
+/**
+ * AM2-14 3부: 화면 쪽 이름 — 바로 뒤 본문 장 제목(3장 「내가 읽고 있는 장」 · 6장 「10년 영역 지도」 · 7장 「다음 장 미리 보기」)과 연달아 같지 않게.
+ * 화면은 그릴 때 만든다(저장 책도 이 이름). 장 제목 자체(본문 · 차례 · 머리 위 작은 글)는 그대로.
+ */
+export const SCREEN_TITLE = { now: "한눈에 보기 — 지금 장", next: "한눈에 보기 — 다음 장", map: "한눈에 보기 — 10년 영역" } as const;
 
 const EL: Readonly<Record<string, AmEl>> = { WOOD: "wood", FIRE: "fire", EARTH: "earth", METAL: "metal", WATER: "water" };
 export const elsOf = (hanja: string): AmEl[] => { const a = STEM_ELEMENT[hanja[0] as keyof typeof STEM_ELEMENT], b = BRANCH_MAIN_ELEMENT[hanja[1] as keyof typeof BRANCH_MAIN_ELEMENT]; return [EL[a] ?? "earth", EL[b] ?? "earth"]; };
@@ -117,7 +122,7 @@ export function tocOf(m: MajorPlan): { toc: AmTocRow[]; turn?: string } {
 /** 3장 · 7장 장 머리 상자. */
 export function chapterHeadOf(m: MajorPlan, side: "now" | "next", eyebrow: string): Extract<BookPage, { kind: "chapterHead" }> | null {
   const c = m.chapters.find(x => x.n === (side === "now" ? m.now : m.next)); if (!c) return null;
-  return { kind: "chapterHead", id: `chapter-head-${side}`, title: side === "now" ? "내가 읽고 있는 장" : "다음 장", eyebrow, side, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, ages: c.ages,
+  return { kind: "chapterHead", id: `chapter-head-${side}`, title: side === "now" ? SCREEN_TITLE.now : SCREEN_TITLE.next, eyebrow, side, no: c.n, name: c.title, ganji: c.hanja, els: chEls(c.hanja), tenGod: tg(c.tenGod), theme: c.theme, ages: c.ages,
     ...(side === "now" && m.position ? { position: `${m.position.yearIndex}번째 해(${m.position.label}) · 남은 기간 ${m.position.remaining}` } : {}), ...(side === "next" ? { start: c.start } : {}), fill: { label: c.fill.label, why: c.fill.why } };
 }
 const relLine = (r: string) => r.replace(/^이 대운 기둥과 /, "").replace(/\(([^)]*)\)/, "").replace(/ — .*$/, "").replace(/: /, " 자리와 ").replace(/ 자리 자리와/, " 자리와");
@@ -132,6 +137,6 @@ export function thresholdOf(m: MajorPlan, eyebrow: string): Extract<BookPage, { 
 /** 6장 10년 영역 지도 표: 영역 5줄 × 해 10칸(오름 · 살핌), 막 띠. */
 export function domainMapOf(m: MajorPlan, eyebrow: string): Extract<BookPage, { kind: "domainMap" }> {
   const years = m.acts.flatMap(a => a.years);
-  return { kind: "domainMap", id: "domain-map", title: "10년 영역 지도", eyebrow, years, acts: m.acts.map(a => ({ name: `${a.n}막 · ${a.name}`, years: [...a.years] })),
+  return { kind: "domainMap", id: "domain-map", title: SCREEN_TITLE.map, eyebrow, years, acts: m.acts.map(a => ({ name: `${a.n}막 · ${a.name}`, years: [...a.years] })),
     rows: MAJOR_DOMAINS.map(d => ({ domain: MAJOR_DOMAIN_KO[d], cells: years.map(y => (m.domains[d].up.includes(y) ? "up" : m.domains[d].down.includes(y) ? "down" : "")), summary: m.summary[d] })) };
 }

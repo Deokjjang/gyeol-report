@@ -10,7 +10,7 @@ import { prePaymentPrivacyNoticeKo } from "../../lib/legal/privacyPolicy";
 import { AI_WRITTEN_RECEIPT_LINE_KO, RECEIPT_REFUND_LINE_KO, RECEIPT_TICKET_REFUND_LINE_KO } from "../../lib/legal/aiNotice";
 import type { ReportInputPayload } from "../../lib/report-generation/reportInputTypes";
 import { bookCheckoutSnapshot } from "../../lib/book/form";
-import { BOOK_CHAPTER_TITLES, bookForProduct, readerTitle } from "../../lib/book/product";
+import { BOOK_CHAPTER_TITLES, MAJOR_HALF_LINE, bookForProduct, readerTitle } from "../../lib/book/product";
 import { CONSENT_LINK_LABELS } from "../../lib/legal/socialLinks";
 import { birthTimeSlotLabel } from "../../lib/saju/birthTimePrecisionTypes";
 import { SAJU_CALENDAR_VERSION } from "../../lib/saju/calendarVersion";
@@ -24,13 +24,13 @@ import { checkoutReturnKey, useTicketPublication } from "./useTicketPublication"
 import { recordBookReturn } from "../../lib/tickets/shopClient";
 import { receiptMethodKey } from "../../lib/tickets/shopContract";
 import { PROFILE_REQUIRED_MESSAGE } from "../../lib/account/contact";
-import { EVENT_TICKET_DAYS, kstMonthDayLabel } from "../../lib/ops/config";
+import { EVENT_TICKET_DAYS, kstMonthDayLabel, ticketProductAllowed } from "../../lib/ops/config";
 import type { SupportedEasyPay } from "../../lib/payment/tossClientCheckoutTypes";
 
 /** v5Book: 이 상품이 v5(AI 작가)로 발행됨 — 열람 "탈퇴 전까지 계속"·AI 작성 고지. 아니면 v5 이전 규칙(생성일로부터 90일).
  * giftEventProducts: 지금(서버 시각) 1+1 이벤트가 걸린 상품 키 — 이벤트 기간이 아니면 빈 배열(giftEventConfig). */
-/** discount(AM 3부): 세운 → 대운 연결 할인(표시용 — 결제 준비가 같은 판정을 다시 하고 서버 금액으로 주문을 만든다). */
-export type MajorDiscountView = { from: string; amount: number; original: number; until: string };
+/** discount(AM2-14 4부): 세운 → 대운 반값(표시용 — 결제 준비가 같은 판정을 다시 하고 서버 금액으로 주문을 만든다). from = 세운 책 id 또는 "annual". */
+export type MajorDiscountView = { from: string; amount: number; original: number };
 type CheckoutProps = { payload: ReportInputPayload; now: string; internal: boolean; authEnabled?: boolean; ticketShopEnabled?: boolean; v5Book?: boolean; giftEventProducts?: readonly string[]; onPublishing: () => void; onError: (message: string) => void; discount?: MajorDiscountView };
 type ReceiptConsentId = typeof RECEIPT_CONSENTS[number]["id"];
 /** 최종 A 16: 1+1 영수증 줄. P 추가 A: 결제는 로그인한 회원만 하므로(비회원 결제 없음) 한 줄뿐이다. 2026-11-10 정정: 이용권 기한(받은 날부터 30일)을 함께 적는다. */
@@ -99,10 +99,11 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
           accountScope.current = b.scope;
           if (!chosenMethod.current) { try {
             const saved = JSON.parse(sessionStorage.getItem(receiptMethodKey(payload.productKey)) ?? "null");
-            if (saved?.scope === b.scope && ["ticket", "payment"].includes(saved.method)) { chosenMethod.current = true; setMethod(saved.method); }
+            if (saved?.scope === b.scope && ["ticket", "payment"].includes(saved.method) && (saved.method === "payment" || ticketProductAllowed(payload.productKey))) { chosenMethod.current = true; setMethod(saved.method); }
           } catch { /* optional method preference */ } }
         }
-        if (!chosenMethod.current && !lock.current) setMethod(b.quantity > 0 ? "ticket" : "payment");
+        // AM2-14 4부: 대운 · 세운은 이용권으로 만들 수 없다(서버 TICKET_PRODUCT_EXCLUDED) — 이용권이 있어도 결제가 기본이고 이용권 칸을 보이지 않는다(4종 그대로).
+        if (!chosenMethod.current && !lock.current) setMethod(b.quantity > 0 && ticketProductAllowed(payload.productKey) ? "ticket" : "payment");
       }).catch(() => { if (!abort.signal.aborted) setBalanceError(true); });
     };
     refresh(); window.addEventListener("focus", refresh);
@@ -236,17 +237,17 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   return <div className={s.receipt} data-book-checkout><p className={s.micro}>GYEOL REPORT</p><h1>발행 주문서</h1><p className={s.micro}>PUBLISHING ORDER</p>
     <dl>{[["TITLE", readerTitle(book, payload.productKey !== "saju_mbti_compatibility" && "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : "")], ["ISSUED TO", snapshot.displayName ?? ""], ["PRICE", ticketSelected ? "리포트 이용권 1장" : `${(discount?.amount ?? coupon.quote?.finalAmount ?? product.amount).toLocaleString("ko-KR")}원`]].map(([key, value]) => <div key={key}><dt>{key}</dt><dd>{value}</dd></div>)}</dl>
     {giftEventLine && !ticketSelected ? <p className={s.receiptNote} data-gift-event-line>{giftEventLine}</p> : null}
-    {discount ? <p className={s.receiptNote} data-major-discount>대운 · 세운 연결 할인 · {discount.original.toLocaleString("ko-KR")}원 → {discount.amount.toLocaleString("ko-KR")}원 · 세운 1건당 1회, 세운 결제 뒤 7일 안({discount.until.slice(0, 10)}까지), 같은 사람 입력만</p> : null}
+    {discount && !ticketSelected ? <p className={s.receiptNote} data-major-discount><b>{MAJOR_HALF_LINE}</b> · {discount.original.toLocaleString("ko-KR")}원 → {discount.amount.toLocaleString("ko-KR")}원 · 세운 「나의 2027」 결제 1건마다 대운 1회</p> : null}
     {method==="payment"&&coupon.selection&&coupon.quote?<dl aria-label="쿠폰 적용 금액"><div><dt>상품 금액</dt><dd>₩{coupon.quote.originalAmount.toLocaleString("ko-KR")}</dd></div><div><dt>쿠폰 할인</dt><dd>−₩{coupon.quote.discountAmount.toLocaleString("ko-KR")}</dd></div><div><dt>결제 금액</dt><dd>₩{coupon.quote.finalAmount.toLocaleString("ko-KR")}</dd></div></dl>:null}
     <dl>{(payload.productKey === "saju_mbti_compatibility" ? [payload.personA, payload.personB] : [payload.person]).map((p, i) => <div key={i}><dt>{p.name}</dt><dd>{p.birthDate} · {p.birthTimeUnknown ? "시간 모름" : p.birthTime || `대략 · ${birthTimeSlotLabel(p.approximateBirthTimeSlot, SAJU_CALENDAR_VERSION, p.birthDate) ?? "미확인"}`} · {p.mbtiType || "MBTI 모름"}</dd></div>)}</dl>
     <p className={s.receiptNote}>입력값 기반 자동 생성 디지털 리포트 · 사람 상담 아님<br />{ticketSelected ? "이용권 사용 후 보통 몇 분 안에 · 30분 안에 못 만들면 이용권 자동 반환" : "결제 후 보통 몇 분 안에 · 30분 안에 못 만들면 자동 전액 환불"}<br />{v5Book ? "탈퇴 전까지 계속 열람" : "생성일로부터 90일"} · {ticketSelected ? "온라인 열람" : "결제 후 온라인 열람"}</p>
     {/* P 추가 E: 이용권이 0장이면 이용권 칸 자체를 숨기고 결제만 보인다(묶음 판매가 켜졌을 때만 구매 버튼 때문에 남긴다). */}
-    {session.status === "member" && (accountChanged || checkingBalance || ticketPending || (tickets ?? 0) > 0 || ticketShopEnabled) ? <fieldset className={s.consents} data-ticket-method><legend>발행 방법</legend>
+    {session.status === "member" && (accountChanged || checkingBalance || ticketPending || ((tickets ?? 0) > 0 && ticketProductAllowed(payload.productKey)) || ticketShopEnabled) ? <fieldset className={s.consents} data-ticket-method><legend>발행 방법</legend>
       {accountChanged ? <p role="alert">계정이 바뀌었어요. <a href={`${internal ? "/dev/book-flow/input" : "/report/new"}?product=${payload.productKey}`}>입력부터 다시 확인해 주세요.</a></p> : null}
       {checkingBalance ? <p role={balanceError ? "alert" : "status"}>{balanceError ? "이용권을 확인하지 못했어요." : "이용권을 확인하고 있어요."}{balanceError ? <button onClick={() => setBalanceRetry(n => n + 1)}>다시 확인</button> : null}</p> : <>
-        {(tickets ?? 0) > 0 || ticketPending ? <>
+        {((tickets ?? 0) > 0 && ticketProductAllowed(payload.productKey)) || ticketPending ? <>
           <label><input type="radio" name="method" checked={ticketSelected} disabled={blocked || !tickets || couponOrder !== null} onChange={() => { choose("ticket"); interaction("ticket_selected", payload.productKey); }} />리포트 이용권 1장 쓰기 · 남은 이용권 {tickets}장{ticketUntil ? ` · ${ticketUntil}까지` : ""}</label>
-          <label><input type="radio" name="method" checked={!ticketSelected} disabled={blocked || couponOrder !== null} onChange={() => choose("payment")} />{product.amount.toLocaleString("ko-KR")}원 결제하기</label>
+          <label><input type="radio" name="method" checked={!ticketSelected} disabled={blocked || couponOrder !== null} onChange={() => choose("payment")} />{(discount?.amount ?? product.amount).toLocaleString("ko-KR")}원 결제하기</label>
         </> : null}
         {ticketShopEnabled && !ticketPending ? <button type="button" disabled={blocked} onClick={() => void visitShop()}>묶음 이용권 구매하기 →</button> : null}
       </>}
@@ -268,7 +269,7 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
     <p className={s.receiptNote} data-refund-notice>{ticketSelected ? RECEIPT_TICKET_REFUND_LINE_KO : RECEIPT_REFUND_LINE_KO}{v5Book ? <><br /><span data-ai-notice>{AI_WRITTEN_RECEIPT_LINE_KO}</span></> : null}</p>
     {payPick ? <DetailSheet title="결제수단 선택" closeLabel="결제수단 닫기" onClose={() => setPayPick(false)}>
       <div className={s.payMethods} data-pay-methods>{PAY_METHODS.map(m => <button key={m.easyPay} type="button" data-easy-pay={m.easyPay} disabled={blocked || !ready} onClick={() => void pay(m.easyPay)}>{m.label}</button>)}</div>
-      <p className={s.receiptNote}>{product.amount.toLocaleString("ko-KR")}원 · 고른 수단의 결제 화면으로 바로 이어져요.</p>
+      <p className={s.receiptNote}>{(discount?.amount ?? product.amount).toLocaleString("ko-KR")}원 · 고른 수단의 결제 화면으로 바로 이어져요.</p>
     </DetailSheet> : null}
     {detail ? <DetailSheet title={selected ? label(selected.id) : "구매 안내"} onClose={() => setDetail(null)}>{selected ? selected.covers.map(id => <p key={id}>{RECEIPT_DETAIL_TEXTS[id] ?? CONSENTS.find(c => c.id === id)!.label}</p>) : null}{selected?.id === "orderAndRefund" && member ? <p>{MEMBER_SIGNUP_CONSENT_TEXT}은 가입할 때 따로 받았어요.</p> : null}<p>{prePaymentRefundNoticeKo}</p><p>{prePaymentPrivacyNoticeKo}</p>{LEGAL_TITLES.map((title, i) => <details key={title} open={detail === `policy-${i}`}><summary>{title} +</summary><LegalDocument index={i} onNavigate={n => setDetail(`policy-${n}`)} /></details>)}</DetailSheet> : null}
   </div>;

@@ -1,7 +1,8 @@
 "use client";
 import { useEffect, useState } from "react";
 import { REQUEST_COPY, REQUEST_WINDOW_LINE, SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
-import { orderStatusLabel, productLabel, seoulDateTime, won, type OrderSummary } from "../../lib/ops/orders/summary";
+import { orderStatusLabel, seoulDateTime, won, type OrderSummary } from "../../lib/ops/orders/summary";
+import { customerProductLabelKo } from "../../lib/payment/reportProductCatalog";
 import s from "./ops.module.css";
 
 /** 주문 한 건(주문코드·상품·일시·금액·상태·영수증). 결제 완료 화면과 서재가 같이 쓴다. */
@@ -9,7 +10,7 @@ export function OrderSummaryCard({ order, bookHref, children }: { order: OrderSu
   return <div className={s.order} data-order-code={order.orderCode}>
     <dl>
       <dt>주문코드</dt><dd><b>{order.orderCode}</b></dd>
-      <dt>상품</dt><dd>{productLabel(order.productType)}</dd>
+      <dt>상품</dt><dd>{customerProductLabelKo(order.productType)}</dd>
       <dt>결제 일시</dt><dd>{seoulDateTime(order.paidAt ?? order.createdAt)}</dd>
       <dt>금액</dt><dd>{won(order.amount)}</dd>
       <dt>상태</dt><dd>{orderStatusLabel(order)}{order.openRequests ? " · 문의 접수됨" : ""}</dd>

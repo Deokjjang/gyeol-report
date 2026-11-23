@@ -25,7 +25,6 @@ async function main() {
   const s = localSupabase();
   writeLocalEnv(s, {
     CRON_SECRET: prev.CRON_SECRET ?? `local-${randomBytes(12).toString("hex")}`,
-    WRITER_V5_PRODUCTS: prev.WRITER_V5_PRODUCTS ?? "saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility,major_fortune,annual_fortune",
     LLM_PROVIDER: prev.LLM_PROVIDER ?? "openai", LLM_MODEL: prev.LLM_MODEL ?? "gpt-4o-mini",
     // next dev는 RSS가 수 GB라 이용권 워커의 메모리 상한(1.25GiB)에 바로 걸린다. 개발 모드에서만 읽힌다.
     TICKET_WORKER_MAX_RSS_MB: prev.TICKET_WORKER_MAX_RSS_MB ?? "16384",

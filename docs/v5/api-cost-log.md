@@ -804,7 +804,13 @@
 | 2026-11-18 14:00 | AM2 P | anthropic/claude-sonnet-5-5 | 154 | 18953 | 1527 | 0.01747330 | complete | req_011Ch9obmmwY94rLb32pJQXe | 28.29382349 |
 | 2026-11-18 14:00 | AM2 P | anthropic/claude-sonnet-5-5 | 1031 | 18953 | 153 | 0.00548730 | complete | req_011Ch9ocqdtXJdSgL26mYx64 | 28.29931079 |
 | 2026-11-18 14:00 | AM2 P | anthropic/claude-sonnet-5-5 | 2084 | 18953 | 372 | 0.00978330 | complete | req_011Ch9ocpzCNy68LZ6qdR1Wb | 28.30909409 |
-누적 합계: **$28.30909409** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 19958 | 0 | 1561 | 0.06542200 | complete | req_011ChLD9vuEYk28yQnLyrAqo | 28.37451609 |
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 897 | 19792 | 1364 | 0.01741320 | complete | req_011ChLDA4kWc2jBqkWHx4YNH | 28.39192929 |
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 170 | 19792 | 2186 | 0.02417920 | complete | req_011ChLDA4hXxMXwLdj6FcLjp | 28.41610849 |
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 359 | 19792 | 1120 | 0.01389720 | complete | req_011ChLDBEHWsxJW2DMN4cGsK | 28.43000569 |
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 152 | 19792 | 1739 | 0.01967320 | complete | req_011ChLDBNCmr7zTyhQxJBWqW | 28.44967889 |
+| 2026-11-24 01:55 | AM2 D2 | anthropic/claude-sonnet-5-5 | 154 | 19792 | 1539 | 0.01767720 | complete | req_011ChLDBs1d9GgjwUXrnPTeq | 28.46735609 |
+누적 합계: **$28.46735609** (P0-2 점검 상한 $0.10, 개발 총 상한 $8)
 | 2026-11-11 11:26 | AM 7부 | anthropic/claude-sonnet-5-5 | 42122 | 0 | 19660 | 0.28432700 | complete | req_011CgvM5ZBFdKp5YdoM4NezC | 12.65846340 |
 | 2026-11-11 11:27 | AM 7부 review | anthropic/claude-haiku-5-5 | 25575 | 0 | 8712 | 0.00696285 | complete | req_011CgvMFk95irBJ8oSpmjZ1g | 12.66542625 |
 | 2026-11-11 11:27 | AM 7부 repair | anthropic/claude-sonnet-5-5 | 10886 | 0 | 2557 | 0.04764100 | complete | req_011CgvMJiaeotwQMpXnL8Wk1 | 12.71306725 |

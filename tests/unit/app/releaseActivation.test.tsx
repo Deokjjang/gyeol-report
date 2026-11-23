@@ -2,6 +2,8 @@ import { readFileSync } from "node:fs";
 import { renderToStaticMarkup } from "react-dom/server";
 import { NextRequest, NextResponse } from "next/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+// AM2-14 5부: v5 작가 상품은 코드 상수(6상품, 운영 env 없음) — 이 시험은 옛 V4 엔진 경로를 그대로 보려고 목록을 비운다(운영에서는 타지 않는 경로).
+vi.mock("../../../src/lib/writer/flags", async orig => ({ ...(await orig<object>()), writerV5Products: () => [] }));
 const state = vi.hoisted(() => ({ book: false, account: false, auth: null as unknown, library: null as unknown, orders: [] as Array<Record<string, unknown>>, cookie: "", owned: false }));
 vi.mock("../../../src/lib/book/publicGate", () => ({ bookExperiencePublicEnabled: () => state.book }));
 vi.mock("../../../src/lib/account/gate", () => ({ accountPublicEnabled: () => state.account }));

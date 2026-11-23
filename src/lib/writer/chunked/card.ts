@@ -77,14 +77,25 @@ const HOMEMAKER = /주부|살림|집안일|장보기 목록|반찬/;
 /** 앞날 장면의 결과 꼬리(건수·반응·완료를 못 박는 마디). */
 const OUTCOME = /두세 개|한꺼번에 들어|반응이 [^,.]{0,10}(옵|와)|부탁이 옵|빠르게 찹|끝까지 다 채웁|처음 나옵|들어옵니다|생깁니다|늘어납니다|쏟아집니다|성공|합격|뽑힙니다|잘 팔립/;
 export type SeedCtx = { readonly brief: Brief; readonly workplaceOk: boolean };
-/** 「-(스)ㅂ니다.」 → 「-는 장면」(받침 ㅂ을 떼어 어간을 얻는다). 꼴이 맞지 않으면 null. */
-function toScene(clause: string): string | null {
+/** 「-(스)ㅂ니다.」 → 「-는 {tail}」(받침 ㅂ을 떼어 어간을 얻는다). 꼴이 맞지 않으면 null. */
+function toScene(clause: string, tail = "장면"): string | null {
   const t = clause.trim().replace(/[.!]$/, "");
   const m = /^(.*?)([가-힣])(니다|습니다)$/.exec(t); if (!m) return /(는|ㄴ) (모습|장면|날|때|순간)$/.test(t) ? t : null;
-  if (m[3] === "습니다") return `${m[1]}${m[2]}는 장면`;
+  if (m[3] === "습니다") return `${m[1]}${m[2]}는 ${tail}`;
   const code = m[2].charCodeAt(0) - 0xac00; if (code < 0 || code > 11171 || code % 28 !== 17) return null; // 받침 ㅂ
   const stem = String.fromCharCode(0xac00 + code - 17);
-  return `${m[1]}${stem}는 장면`;
+  return `${m[1]}${stem}는 ${tail}`;
+}
+/** 장면 씨앗의 끝 확정 꼴(「-(스)ㅂ니다」 · 「-어요」류) — 앞날을 일어날 일로 못 박는 꼴. */
+export const SEED_DEFINITE_END = /(니다|[가-힣]요)[.!]?$/;
+/**
+ * AM2-14 2부(덕짱님 결정 4 — D1 D3 2035 「…원서를 내고, 마감 전날 밤을 새웁니다」): 대운 앞날 key의 장면 씨앗 끝 확정 꼴을 조건 꼴 「…는 날이라면」으로.
+ * 이미 조건 · 비유 꼴(…라면 · …면 · …때 · …처럼)이나 명사 꼴(…장면 · 모습 · 순간 · 날)이면 그대로. 바꿀 수 없는 확정 꼴이면 null(장면을 주지 않는다).
+ */
+export function seedAsMaybe(text: string): string | null {
+  const t = text.trim().replace(/[.!]$/, "");
+  if (!SEED_DEFINITE_END.test(t)) return t;
+  return toScene(t, "날이라면");
 }
 /** 고객 문장 꼴의 장면 씨앗만 남긴다. 뺄 것이면 null. */
 export function cleanSeed(seed: string, c: SeedCtx): string | null {
