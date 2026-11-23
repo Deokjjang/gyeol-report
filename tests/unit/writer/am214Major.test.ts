@@ -100,3 +100,15 @@ describe("AM2-14 2부 ③ 6장 영역 말", () => {
     }
   });
 });
+
+describe("AM2-14 3부 화면 쪽 이름", () => {
+  it.each(people.slice(0, 4))("%s: 3장 · 6장 · 7장 앞 화면 제목이 바로 뒤 본문 장 제목과 같지 않다(「한눈에 보기 — …」)", async (_id, x) => {
+    const { chapterHeadOf, domainMapOf, SCREEN_TITLE } = await import("@/lib/writer/bookAm");
+    const m = x.brief.timeline?.major; if (!m) return;
+    const title = (id: string) => MAJOR_BOOK_CHAPTERS.find(c => c.id === id)!.title;
+    const now = chapterHeadOf(m as never, "now", title("now")), next = chapterHeadOf(m as never, "next", title("next")), map = domainMapOf(m as never, title("map"));
+    expect([now?.title, next?.title, map?.title]).toEqual([SCREEN_TITLE.now, SCREEN_TITLE.next, SCREEN_TITLE.map]);
+    expect(now?.title).not.toBe(title("now")); expect(map?.title).not.toBe(title("map")); expect(next?.title).not.toBe(title("next"));
+    expect([now?.eyebrow, next?.eyebrow, map?.eyebrow]).toEqual([title("now"), title("next"), title("map")]);
+  });
+});
