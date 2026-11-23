@@ -26,6 +26,9 @@ li[data-state=making] .cover,li[data-state=attention] .cover,li[data-state=refun
 .small{display:flex;flex-wrap:wrap;gap:4px 10px;margin-top:6px;font-size:11px;color:#888;line-height:1.6}
 .textLink{border:0;background:none;padding:0;font:inherit;font-size:11px!important;color:#888!important;text-decoration:underline;text-underline-offset:2px;cursor:pointer}
 .textLink:disabled{text-decoration:none;cursor:default;color:#111!important;font-weight:700}
+/* AM2-14 4부: 세운 카드의 대운 반값 버튼 — 회색 작은 글(.small)과 달리 읽을 수 있는 대비(#111 · #444)로 한 줄을 다 쓴다. */
+.small .halfLink{flex-basis:100%;font-size:12px;font-weight:700;color:#111;text-decoration:underline;text-underline-offset:2px}
+.small .halfClosed{flex-basis:100%;font-size:12px;color:#444}
 .result{margin:8px 0 0;font-size:12px;line-height:1.6;color:#111;border-left:2px solid #111;padding-left:8px;overflow-wrap:anywhere}
 .result a{display:block;margin-top:4px;font-size:12px;text-decoration:underline;text-underline-offset:2px;color:#111}
 li[data-state=refunded] .cover,li[data-state=returned] .cover{opacity:.45}

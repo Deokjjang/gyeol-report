@@ -154,23 +154,26 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   useEffect(() => { if (ready && draftWritable.current) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
   useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
-  // AM 3부: 세운 책의 「대운으로 이어 보기」(?from=세운 책 id) — 세운 입력(같은 사람)을 채우고 바로 주문서로, 할인 금액은 서버 판정.
+  // AM2-14 4부 세운 → 대운 반값: 대운 입력은 회원이면 자격을 늘 조회한다(금액은 서버 판정). 세운 책 끝 · 서재 버튼(?from=)으로 왔으면 그 세운의 사람을
+  // 미리 채운다 — 첫 쪽부터, 바꿀 수 있다(같은 사람 조건 없음). 링크 없이 들어왔으면 채우지 않고 반값만 보인다.
   const [discount, setDiscount] = useState<MajorDiscountView | null>(null);
   useEffect(() => {
-    if (book.productKey !== "major_fortune" || typeof window === "undefined") return;
-    const from = new URLSearchParams(window.location.search).get("from"); if (!from) return;
+    // 초안 복원(ready) 뒤에 — 같은 탭에 남은 대운 초안이 미리 채운 세운 사람을 덮지 않게.
+    if (book.productKey !== "major_fortune" || typeof window === "undefined" || !authEnabled || !ready) return;
+    const link = new URLSearchParams(window.location.search).get("from"), from = link ?? "annual";
     let live = true;
-    void fetch(`/api/major-discount/quote?from=${encodeURIComponent(from)}`, { cache: "no-store" }).then(r => r.json()).then((r: { ok?: boolean; message?: string; amount?: number; original?: number; until?: string; person?: Record<string, unknown> | null; userContext?: Record<string, unknown> | null }) => {
+    void fetch(`/api/major-discount/quote?from=${encodeURIComponent(from)}`, { cache: "no-store" }).then(r => r.json()).then((r: { ok?: boolean; code?: string; message?: string; amount?: number; original?: number; person?: Record<string, unknown> | null; userContext?: Record<string, unknown> | null }) => {
       if (!live) return;
-      if (!r.ok || !r.person) { if (r.message) setMessage(r.message); return; }
+      if (!r.ok) { if (link && r.message && r.code !== "LOGIN") setMessage(r.message); return; }
+      setDiscount({ from, amount: Number(r.amount), original: Number(r.original) });
+      if (!link || !r.person) return;
       const p = r.person, c = r.userContext ?? {};
       const mode = p.birthTimeUnknown === true ? "unknown" : p.birthTime ? "exact" : p.approximateBirthTimeSlot ? "approximate" : "unknown";
       setState(st => ({ ...st, person: { ...st.person, name: String(p.name ?? ""), birthDate: String(p.birthDate ?? ""), birthTime: String(p.birthTime ?? ""), birthTimeUnknown: p.birthTimeUnknown === true, paidBirthTimeMode: mode, timeBranch: (p.approximateBirthTimeSlot ?? "") as never,
         gender: String(p.gender ?? ""), mbtiType: String(p.mbtiType ?? ""), relationshipStatus: String(c.relationshipStatus ?? ""), jobStatus: String(c.jobStatus ?? ""), detailedJob: String(c.detailJob ?? "") } }));
-      setDiscount({ from, amount: Number(r.amount), original: Number(r.original), until: String(r.until ?? "") }); setStep(total);
     }).catch(() => undefined);
     return () => { live = false; };
-  }, [book.productKey, total]);
+  }, [book.productKey, authEnabled, ready]);
   const update = (next: BookFormState) => {
     if (!draftWritable.current) {
       // Only an explicit new edit may replace a draft whose owner was not verified.

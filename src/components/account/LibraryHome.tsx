@@ -3,7 +3,8 @@ import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { cardResult, stillMaking, type ShelfBook } from "../../lib/library/shelf";
 import { REQUEST_COPY, SUPPORT_CHAT_LABEL, SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
-import { EVENT_TICKET_DAYS } from "../../lib/ops/config";
+import { EVENT_TICKET_DAYS, fortuneOpenByClock } from "../../lib/ops/config";
+import { MAJOR_HALF_CTA, MAJOR_HALF_CTA_CLOSED } from "../../lib/book/product";
 import type { TicketWallet } from "../../lib/ops/gift/service";
 import { OrderRequestForm } from "../ops/OrderParts";
 import { GiftSheet } from "./GiftSheet";
@@ -71,7 +72,7 @@ function TicketLine({ wallet, eventDuring, eventEndsAt, onGift }: { wallet: Tick
   </div>;
 }
 
-function ShelfCard({ book, onChanged }: { book: ShelfBook; onChanged: () => void }) {
+export function ShelfCard({ book, onChanged }: { book: ShelfBook; onChanged: () => void }) {
   const [ask, setAsk] = useState(false), [sent, setSent] = useState(false);
   const cover = <div className={s.cover} style={{ background: book.coverColor, color: book.ink }}><small>결리포트</small><strong>{book.title}</strong><span>{book.displayName}</span><small>PERSONAL EDITION</small></div>;
   const when = book.state === "making" ? "만드는 중" : book.state === "attention" ? "결과를 확인하고 있어요" : book.state === "refunding" ? "결제 취소 중"
@@ -86,6 +87,8 @@ function ShelfCard({ book, onChanged }: { book: ShelfBook; onChanged: () => void
     {book.href ? <Link href={book.href} className={s.card} aria-label={label}>{body}</Link> : <div className={s.card} aria-label={label}>{body}</div>}
     <div className={s.small}>
       {book.orderCode ? <span>주문코드 {book.orderCode}</span> : book.viaTicket ? <span>이용권으로 만든 책</span> : null}
+      {/* AM2-14 4부: 세운 책 카드 — 대운 반값으로 이어 보기(같은 사람 입력을 미리 채움, 바꿀 수 있음). 판매가 닫혀 있으면 닫힘 문구만. */}
+      {book.state === "ready" && book.productType === "annual_fortune" ? (fortuneOpenByClock() ? <Link className={s.halfLink} href={`/report/new?product=major-fortune&from=${book.reportId}`} data-major-half>{MAJOR_HALF_CTA} →</Link> : <span className={s.halfClosed} aria-disabled="true" data-major-half="closed">{MAJOR_HALF_CTA} · {MAJOR_HALF_CTA_CLOSED}</span>) : null}
       {concluded ? null : open ? <button type="button" className={s.textLink} disabled aria-disabled="true" data-request-submitted>접수됨</button>
         : !ask ? <button type="button" className={s.textLink} onClick={() => setAsk(true)}>문의·환불 요청</button> : null}
     </div>

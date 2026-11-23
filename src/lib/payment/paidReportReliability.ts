@@ -33,8 +33,9 @@ async function defaultPaused(): Promise<boolean> { return (await import("../ops/
 // salesGate(선택): 승인 전에 판매 중지 상품 주문을 거른다(HTTP 승인 진입점만 넘긴다). 걸리면 토스 승인·주문 선점 없이 끝낸다.
 // 값: 막는 이유 코드(문자열) · true(= 판매 닫힘) · false/null(통과).
 export async function confirmPaidReport(input: TossConfirmRequest, store: ReliabilityStore,
-  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>, salesGate?: (orderId: string) => Promise<string | boolean | null>) {
-  const gated = salesGate ? await salesGate(input.orderId) : null;
+  confirm: (input: TossConfirmRequest) => Promise<TossConfirmClientResult>, salesGate?: (orderId: string, amount: number) => Promise<string | boolean | null>) {
+  // AM2-14 4부: 문은 요청 금액도 본다(대운 반값 — 저장 금액과 다른 요청이면 자격을 잡기 전에 거절). 4종 · 세운 문(closedProductOrder)은 금액을 쓰지 않는다.
+  const gated = salesGate ? await salesGate(input.orderId, input.amount) : null;
   if (gated) return { ok: false, code: typeof gated === "string" ? gated : SALES_CLOSED_CODE };
   const claim = await store.call("confirm_claim", { ...input });
   if (!claim.ok || claim.reportId || claim.pending) return claim;

@@ -21,6 +21,8 @@ export type ShelfRequest = { orderCode: string | null; reportId: string | null; 
 export type ShelfPending = { reportId: string; productType: string; state: string; createdAt: string; displayName?: string };
 export type ShelfBook = {
   reportId: string; title: string; displayName: string; coverColor: string; ink: string;
+  /** AM2-14 4부: 상품 키(서재 세운 카드의 대운 반값 버튼). */
+  productType?: string;
   /** attention = 결과 확인 중(생성 실패, 곧 자동 환불) · refunding = 결제 취소 중 · refunded = 환불됨(7일) · returned = 이용권 반환(7일). */
   state: "ready" | "making" | "attention" | "refunding" | "refunded" | "returned";
   /** 카드 링크(대기 화면 또는 책). 환불됨·이용권 반환 카드는 열 책이 없어 null. */
@@ -54,7 +56,7 @@ export function buildShelf(rows: LibraryRow[], orders: ShelfOrder[], pending: Sh
     if (row.status !== "available" || !reportAccessOpen(row.expiresAt, now) || !Number.isFinite(Date.parse(row.publishedAt))) continue;
     seen.add(row.reportId);
     const orderCode = codeByReport.get(row.reportId) ?? null;
-    ready.push({ reportId: row.reportId, title: readerTitle(book, row.selectedYear ?? ""), displayName: row.displayName, coverColor: book.color, ink: book.ink, state: "ready",
+    ready.push({ reportId: row.reportId, productType: row.productType, title: readerTitle(book, row.selectedYear ?? ""), displayName: row.displayName, coverColor: book.color, ink: book.ink, state: "ready",
       href: `/reports/${row.reportId}`, publishedAt: row.publishedAt, openEnded: isOpenEndedAccess(row.expiresAt), expiresAt: isOpenEndedAccess(row.expiresAt) ? null : row.expiresAt,
       orderCode, viaTicket: row.source === "ticket", madeAt: (orderCode ? orderByCode.get(orderCode)?.paidAt : null) ?? row.publishedAt, request: reqOf(orderCode, row.reportId), refundedAt: null,
       at: Date.parse(row.publishedAt) });

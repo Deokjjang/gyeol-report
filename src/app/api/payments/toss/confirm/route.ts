@@ -1,5 +1,7 @@
 import { isDirectReportPaymentAmount } from "../../../../../lib/payment/reportProductCatalog";
-import { closedProductOrder, confirmPaidReport } from "../../../../../lib/payment/paidReportReliability";
+import { confirmPaidReport } from "../../../../../lib/payment/paidReportReliability";
+import { confirmGate } from "../../../../../lib/payment/confirmGate";
+import { HALF_AMOUNT_CODE, HALF_AMOUNT_MESSAGE, HALF_REFUSED_CODE, HALF_REFUSED_MESSAGE } from "../../../../../lib/payment/majorDiscount";
 import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE, salesPausedMessage } from "../../../../../lib/ops/config";
 import { createPaidReportReliabilityStore } from "../../../../../lib/payment/paidReportReliabilityStore";
 import { NextResponse } from "next/server";
@@ -201,7 +203,9 @@ export async function POST(
 
   const store = createPaidReportReliabilityStore();
   const result = await confirmPaidReport(parsedRequest.request, store,
-    (payment) => confirmTossPayment({ ...payment, secretKey }), orderId => closedProductOrder(store, orderId));
+    (payment) => confirmTossPayment({ ...payment, secretKey }), (orderId, amount) => confirmGate(store, orderId, { amount }));
+  // AM2-14 4부: 대운 반값 자격을 소진하지 못했거나 저장 금액이 정가 · 반값이 아니면 토스 승인을 부르지 않는다(결제되지 않음).
+  if (!result.ok && (result.code === HALF_REFUSED_CODE || result.code === HALF_AMOUNT_CODE)) return NextResponse.json({ ok: false, error: { code: result.code, message: result.code === HALF_REFUSED_CODE ? HALF_REFUSED_MESSAGE : HALF_AMOUNT_MESSAGE } }, { status: 409, headers: jsonResponseHeaders });
   // v5 최종3: 판매 중지 상품(대운·세운)의 승인 전 주문은 토스 승인을 부르지 않는다(결제되지 않음).
   if (!result.ok && result.code === SALES_CLOSED_CODE) return NextResponse.json({ ok: false, error: { code: SALES_CLOSED_CODE, message: SALES_CLOSED_MESSAGE } }, { status: 409, headers: jsonResponseHeaders });
   // W3 P0: 4종 판매 중지 중인 승인 전 주문 — 토스 승인을 부르지 않는다(결제되지 않음).

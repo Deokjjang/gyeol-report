@@ -25,6 +25,8 @@ export function fortuneSalesOpenAtMs(env: Env = process.env): number {
   const override = process.env.NODE_ENV !== "production" ? Date.parse(env.FORTUNE_SALES_OPEN_AT_TEST ?? "") : NaN;
   return Number.isFinite(override) ? override : Date.parse(FORTUNE_SALES_OPEN_AT);
 }
+/** AM2-14 4부: 화면(브라우저) 쪽 판매 시작 판정 — 판매 시작 시각 상수만 본다(세운 책 끝 · 서재의 대운 반값 버튼). 서버 판정은 아래 fortuneSalesOpen · 판매 멈춤. */
+export function fortuneOpenByClock(now: number = Date.now()): boolean { return now >= Date.parse(FORTUNE_SALES_OPEN_AT); }
 export function fortuneSalesOpen(env: Env = process.env, now: number = Date.now()) { return env.FORTUNE_SALES_OPEN === "1" && now >= fortuneSalesOpenAtMs(env); }
 /** AM 2부: 세운 신년판 연도(설정값, 기본 2027 정미년). 연 1회 재구매 상품이라 해마다 이 값만 바꾼다. */
 export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR ?? env.NEXT_PUBLIC_ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }

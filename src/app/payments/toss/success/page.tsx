@@ -1,6 +1,8 @@
 import { isDirectReportPaymentAmount } from "../../../../lib/payment/reportProductCatalog";
 import { ReportStatusView } from "../../../../components/report/ReportStatusView";
-import { closedProductOrder, confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
+import { confirmPaidReport } from "../../../../lib/payment/paidReportReliability";
+import { confirmGate } from "../../../../lib/payment/confirmGate";
+import { HALF_AMOUNT_CODE, HALF_AMOUNT_MESSAGE, HALF_REFUSED_CODE, HALF_REFUSED_MESSAGE } from "../../../../lib/payment/majorDiscount";
 import { SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_AI_MESSAGE, SALES_PAUSED_CODE, salesPausedMessage } from "../../../../lib/ops/config";
 import { createPaidReportReliabilityStore } from "../../../../lib/payment/paidReportReliabilityStore";
 import { redirect } from "next/navigation";
@@ -27,7 +29,9 @@ type InitialSuccessState =
   | "generation_failed"
   | "sales_closed"
   | "sales_paused"
-  | "sales_paused_ai";
+  | "sales_paused_ai"
+  | "major_half_refused"
+  | "major_amount_mismatch";
 
 const tossConfirmApiEnabledEnv = "TOSS_CONFIRM_API_ENABLED";
 const tossSecretKeyEnv = "TOSS_PAYMENTS_SECRET_KEY";
@@ -103,6 +107,8 @@ function createInitialCopy(state: InitialSuccessState): {
     };
   }
 
+  if (state === "major_half_refused") return { title: "대운 반값을 쓸 수 없어요.", message: HALF_REFUSED_MESSAGE };
+  if (state === "major_amount_mismatch") return { title: "결제 금액을 확인해 주세요.", message: HALF_AMOUNT_MESSAGE };
   // v5 최종3: 판매 중지 상품(대운·세운)의 승인 전 주문 — 토스 승인을 부르지 않아 결제되지 않는다.
   if (state === "sales_closed") {
     return {
@@ -148,8 +154,11 @@ async function confirmAndGenerateReport(input: {
 }): Promise<InitialSuccessState | { readonly redirectReportId: string; readonly receiptUrl?: string }> {
   const store = createPaidReportReliabilityStore();
   const result = await confirmPaidReport(input, store,
-    (payment) => confirmTossPayment({ ...payment, secretKey: process.env[tossSecretKeyEnv] ?? "" }), orderId => closedProductOrder(store, orderId));
+    (payment) => confirmTossPayment({ ...payment, secretKey: process.env[tossSecretKeyEnv] ?? "" }), (orderId, amount) => confirmGate(store, orderId, { amount }));
   if (!result.ok && result.code === SALES_CLOSED_CODE) return "sales_closed";
+  // AM2-14 4부: 대운 반값 자격을 소진하지 못함 · 금액이 정가 · 반값이 아님 — 토스 승인을 부르지 않아 결제되지 않는다.
+  if (!result.ok && result.code === HALF_REFUSED_CODE) return "major_half_refused";
+  if (!result.ok && result.code === HALF_AMOUNT_CODE) return "major_amount_mismatch";
   if (!result.ok && result.code === SALES_PAUSED_CODE) {
     const { readSalesPause, SALES_PAUSE_CACHE_MS } = await import("../../../../lib/ops/salesPause");
     return salesPausedMessage((await readSalesPause({ maxAgeMs: SALES_PAUSE_CACHE_MS }))?.reason) === SALES_PAUSED_AI_MESSAGE ? "sales_paused_ai" : "sales_paused";
