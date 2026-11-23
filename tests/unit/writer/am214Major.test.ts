@@ -37,7 +37,7 @@ describe("AM2-14 2부 ① 대운 영역 줄 칩 방향 거름", () => {
     expect(dirFits("어느 태그에도 없는 줄", "↑")).toBe(true);
   });
   it.each(people)("%s: 해 key 영역 줄 · 8장 5년 · 10년 뒤 줄 ↔ 그 해 칩 반대 0", (_id, x) => {
-    const ent = (y: string) => x.brief.timeline!.entries.find(e => e.key === y) as (typeof x.brief.timeline.entries[number] & { signals?: Sig }) | undefined;
+    const ent = (y: string) => x.brief.timeline!.entries.find(e => e.key === y) as (NonNullable<typeof x.brief.timeline>["entries"][number] & { signals?: Sig }) | undefined;
     const raw = (y: string, d: string) => ent(y)?.material?.domains?.find(t => t.startsWith(`${d}: `))?.replace(/^[^:]+: /, "");
     let n = 0;
     for (const ch of x.intake.chapters) for (const kp of ch.keys ?? []) for (const id of kp.lines) {

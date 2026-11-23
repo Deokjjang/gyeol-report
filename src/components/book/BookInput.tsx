@@ -37,7 +37,7 @@ export function MbtiInput({ person, change, role }: { person: PersonInputState; 
   return <label>{role} MBTI<select value={person.mbtiType} onChange={e => change({ ...person, mbtiType: e.target.value })}>{MBTI_TYPES.map(v => <option key={v} value={v}>{v || "모름"}</option>)}</select></label>;
 }
 
-/** v5Products(서버 WRITER_V5_PRODUCTS): 이 상품이 v5(AI 작가)로 발행되는지 — 결제 직전 열람 기간(탈퇴 전까지 / 90일)과 AI 작성 고지를 고른다(최종3). */
+/** v5Products(서버 writer/flags 상수 — AM2-14 5부부터 6상품): 이 상품이 v5(AI 작가)로 발행되는지 — 결제 직전 열람 기간(탈퇴 전까지 / 90일)과 AI 작성 고지를 고른다(최종3). */
 export function BookInput({ internal, now, initial, authEnabled = internal, ticketShopEnabled = false, closed = [], v5Products = [], giftEventProducts = [] }: { internal: boolean; now: string; initial?: BookFormState; authEnabled?: boolean; ticketShopEnabled?: boolean; closed?: readonly string[]; v5Products?: readonly string[]; giftEventProducts?: readonly string[] }) {
   const params = useSearchParams(), book = bookForProduct(params.get("product") ?? "") ?? BOOKS[0], paused = useSalesPaused();
   // P6d-ops 1: 판매를 잠시 닫은 책(대운·세운)은 입력·결제 대신 공개 안내. 서버(결제·이용권 API)도 같은 설정으로 거절한다.

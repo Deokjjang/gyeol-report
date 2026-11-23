@@ -1,4 +1,4 @@
-// P3.5 B: 결제 워커 배선 — WRITER_V5_PRODUCTS가 비어 있으면 v5 훅을 넘기지 않는다(기존 호출과 같음).
+// P3.5 B 결제 워커 배선 → AM2-14 5부: v5 작가 상품은 코드 상수 6상품(운영 env를 읽지 않는다).
 import { afterEach, describe, expect, it, vi } from "vitest";
 vi.mock("server-only", () => ({}));
 const { run } = vi.hoisted(() => ({ run: vi.fn<(...args: unknown[]) => Promise<{ ok: boolean; status: string }>>(async () => ({ ok: true, status: "EMPTY" })) }));
@@ -14,18 +14,13 @@ const store = { call: vi.fn(async () => ({ ok: true })) };
 afterEach(() => { run.mockClear(); vi.unstubAllEnvs(); });
 
 describe("결제 워커 v5 플래그", () => {
-  it("플래그 비어 있음: 훅 없음(인자 4개 그대로)", async () => {
-    vi.stubEnv("WRITER_V5_PRODUCTS", "");
-    await runPublicPaidReportJob(store, WRITER_DISABLED_RUNTIME);
-    expect(run).toHaveBeenCalledTimes(1);
-    expect((run.mock.calls[0] as unknown[])[4]).toBeUndefined();
-  });
-  it("플래그 켬: 훅을 넘기고, 플래그 밖 상품에는 null을 돌려 기존 경로를 탄다", async () => {
-    vi.stubEnv("WRITER_V5_PRODUCTS", "saju_mbti_full");
-    await runPublicPaidReportJob(store, WRITER_DISABLED_RUNTIME);
-    const hook = (run.mock.calls[0] as unknown[])[4] as (job: object) => Promise<unknown>;
-    expect(typeof hook).toBe("function");
-    expect(await hook({ payload: {}, product_type: "career_money_study", report_id: "r", created_at: "2026-10-29T00:00:00Z", attempt: 1 })).toBeNull();
+  it("AM2-14 5부: v5 훅은 운영 env 없이 늘 넘긴다(6상품 상수 — WRITER_V5_PRODUCTS를 비우거나 4종만 넣어도 같다)", async () => {
+    for (const v of ["", "saju_mbti_full"]) {
+      vi.stubEnv("WRITER_V5_PRODUCTS", v); run.mockClear();
+      await runPublicPaidReportJob(store, WRITER_DISABLED_RUNTIME);
+      expect(run).toHaveBeenCalledTimes(1);
+      expect(typeof (run.mock.calls[0] as unknown[])[4]).toBe("function");
+    }
   });
   it("HOTFIX-W1: 긴 예산은 늘린 lease·함수 시간 안, 짧은 예산은 claim lease 10분 안", () => {
     expect(PAID_SHORT_BUDGET_MS).toBeLessThan(10 * 60_000 - 60_000);

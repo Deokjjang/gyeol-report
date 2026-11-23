@@ -15,8 +15,8 @@ export const FORTUNE_REOPEN_LINE = "2027 신년판 · 12월 공개";
 export const ALL_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 
 /**
- * AM 판매 시작(덕짱님 결정 2026-11-11): 대운·세운은 이 시각이 지나면 저절로 열린다(재배포 없이).
- * FORTUNE_SALES_OPEN은 끄기 스위치다 — "1"이 아니면 시각이 지나도 닫힘. 가격 설정값이 비어도 닫힘(fortunePriceSet).
+ * AM 판매 시작(덕짱님 결정 2026-11-11 · AM2-14 5부 2026-11-24): 대운·세운은 이 시각(코드 상수)이 지나면 저절로 열린다 — 운영 env에 기대지 않는다
+ * (옛 끄기 스위치 FORTUNE_SALES_OPEN · 가격 설정값 잠금은 없앴다). 긴급 정지는 DB 판매 멈춤(ops_settings 'sales_pause' — Q0 · 처리 봇)이 4종 · 세운 · 대운에 함께 건다.
  * 정적 화면(/, /products, /report/new)은 revalidate 60초로 다시 그려 1분 안에 따라온다.
  */
 export const FORTUNE_SALES_OPEN_AT = "2026-12-01T09:00:00+09:00";
@@ -27,15 +27,10 @@ export function fortuneSalesOpenAtMs(env: Env = process.env): number {
 }
 /** AM2-14 4부: 화면(브라우저) 쪽 판매 시작 판정 — 판매 시작 시각 상수만 본다(세운 책 끝 · 서재의 대운 반값 버튼). 서버 판정은 아래 fortuneSalesOpen · 판매 멈춤. */
 export function fortuneOpenByClock(now: number = Date.now()): boolean { return now >= Date.parse(FORTUNE_SALES_OPEN_AT); }
-export function fortuneSalesOpen(env: Env = process.env, now: number = Date.now()) { return env.FORTUNE_SALES_OPEN === "1" && now >= fortuneSalesOpenAtMs(env); }
+export function fortuneSalesOpen(env: Env = process.env, now: number = Date.now()) { return now >= fortuneSalesOpenAtMs(env); }
 /** AM 2부: 세운 신년판 연도(설정값, 기본 2027 정미년). 연 1회 재구매 상품이라 해마다 이 값만 바꾼다. */
 export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR ?? env.NEXT_PUBLIC_ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }
-/** AM 6부: 대운·세운 가격 설정값이 비어 있으면 판매를 열어도 팔지 않는다(가격은 덕짱님 결정). */
-export function fortunePriceSet(product: string, env: Env = process.env): boolean {
-  const v = Number(product === "major_fortune" ? env.FORTUNE_PRICE_MAJOR_KRW ?? env.NEXT_PUBLIC_FORTUNE_PRICE_MAJOR_KRW : product === "annual_fortune" ? env.FORTUNE_PRICE_ANNUAL_KRW ?? env.NEXT_PUBLIC_FORTUNE_PRICE_ANNUAL_KRW : undefined);
-  return Number.isSafeInteger(v) && v >= 100;
-}
-export function closedSaleProducts(env: Env = process.env, now: number = Date.now()): string[] { return fortuneSalesOpen(env, now) ? CLOSED_FORTUNE_PRODUCTS.filter(p => !fortunePriceSet(p, env)) : [...CLOSED_FORTUNE_PRODUCTS]; }
+export function closedSaleProducts(env: Env = process.env, now: number = Date.now()): string[] { return fortuneSalesOpen(env, now) ? [] : [...CLOSED_FORTUNE_PRODUCTS]; }
 /** 결제·이용권 사용 진입점 전용(읽기·분석 경로는 isPurchasable 그대로). */
 export function productOnSale(product: unknown, env: Env = process.env, now: number = Date.now()): boolean { return typeof product === "string" && !closedSaleProducts(env, now).includes(product); }
 export const SALES_CLOSED_CODE = "PRODUCT_SALES_CLOSED";

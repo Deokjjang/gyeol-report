@@ -364,7 +364,7 @@ export async function POST(request: Request): Promise<NextResponse> {
     );
   }
 
-  // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 결제를 시작하지 않는다(FORTUNE_SALES_OPEN=1이면 다시 연다).
+  // P6d-ops 1 → AM2-14 5부: 판매 시작 전(대운·세운, 코드 상수 시각)이면 결제를 시작하지 않는다.
   if (!productOnSale(json.productType ?? defaultProductType)) {
     return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
   }

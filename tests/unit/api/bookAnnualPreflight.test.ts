@@ -1,6 +1,8 @@
 import { readFileSync } from "node:fs";
 import { randomUUID } from "node:crypto";
 import { afterEach, expect, it, vi } from "vitest";
+// AM2-14 5부: v5 작가 상품은 코드 상수(6상품, 운영 env 없음) — 이 시험은 옛 V4 엔진 경로를 그대로 보려고 목록을 비운다(운영에서는 타지 않는 경로).
+vi.mock("../../../src/lib/writer/flags", async orig => ({ ...(await orig<object>()), writerV5Products: () => [] }));
 import { POST as preflight } from "../../../src/app/api/reports/validate-input/route";
 import { POST as prepare } from "../../../src/app/api/payment-checkout/prepare/route";
 import { DAYUN_UNCERTAIN_MESSAGE } from "../../../src/lib/saju/customerDayun";

@@ -12,6 +12,9 @@ import { LAUNCH_V5_PRODUCTS } from "../../../src/lib/writer/flags";
 import { createAnnualCommerceAcceptance } from "../../../src/lib/payment/annualPurchasePolicy";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterAll, beforeAll, describe, expect, it, vi } from "vitest";
+// AM2-14 5부: v5 작가 상품은 코드 상수(운영 env 없음) — 이 시험은 V4 이용권 책 · v5 이용권 책을 차례로 만들려고 목록을 시험 안에서만 바꾼다.
+const v5List = vi.hoisted(() => ({ list: [] as string[] }));
+vi.mock("../../../src/lib/writer/flags", async orig => ({ ...(await orig<object>()), writerV5Products: () => [...v5List.list] }));
 import { TICKET_A as A, TICKET_B as B, ticketAuth } from "../../helpers/ticketPublicationSql";
 import { enqueue, llmDeps, mockTextFor, opsStoreOf, v5Queue, type Queue } from "../../helpers/v5Scenarios";
 import { RUNTIME_FIXTURES } from "../interpretation-v4/runtimeFixtures";
@@ -85,13 +88,13 @@ beforeAll(async () => {
   // V4 결제 책(v5 이전 결제분과 같은 조건: 결제 워커의 기존 V4 엔진).
   books.v4Paid = { reportId: await paidBook(fixture("comprehensive"), false), port: sqlBookSharePort(h.db), owner: ticketAuth(BUYER), other: ticketAuth(OTHER) };
   // v5 이용권 책(운영 20:13:27과 같은 경로: 이용권 큐 → v5 작가(목업) → 발행).
-  process.env.WRITER_V5_PRODUCTS = "saju_mbti_full";
+  v5List.list = ["saju_mbti_full"];
   try {
     const job = await enqueue(h);
     const { deps } = llmDeps([{ text: mockTextFor(job.input).text }]);
     expect(await runTicketPublicationJob(h.queue, undefined, { ...deps, ops: opsStoreOf(h), openAiKey: null })).toMatchObject({ state: "COMPLETED" });
     books.v5Ticket = { reportId: job.reportId, port: ticketPort(), owner: ticketAuth(A), other: ticketAuth(B) };
-  } finally { delete process.env.WRITER_V5_PRODUCTS; }
+  } finally { v5List.list = []; }
   // v5 결제 책(운영 20:20:45와 같은 경로), 출시 4종 모두.
   for (const product of LAUNCH_V5_PRODUCTS) books[`v5Paid:${product}`] = { reportId: await paidBook(PAID_PAYLOADS[product], true), port: sqlBookSharePort(h.db), owner: ticketAuth(BUYER), other: ticketAuth(OTHER) };
   for (const key of FORMATS) {

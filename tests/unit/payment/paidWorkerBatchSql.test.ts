@@ -1,4 +1,6 @@
 import { afterAll, beforeAll, beforeEach, expect, it, vi } from "vitest";
+// AM2-14 5부: v5 작가 상품은 코드 상수(6상품, 운영 env 없음) — 이 시험은 옛 V4 엔진 경로를 그대로 보려고 목록을 비운다(운영에서는 타지 않는 경로).
+vi.mock("../../../src/lib/writer/flags", async orig => ({ ...(await orig<object>()), writerV5Products: () => [] }));
 import { paidWorkerSql, seedPaid } from "../../helpers/paidWorkerSql";
 import { runPaidReportBatch } from "../../../src/lib/book/paidWorkerBatch";
 import { runPaidReportJob, type ProductGenerator } from "../../../src/lib/payment/paidReportReliability";
