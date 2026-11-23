@@ -1,0 +1,534 @@
+{
+  "version": "ziwei-db-zw1",
+  "family": "mbti",
+  "entries": [
+    {
+      "id": "zw-mbti:jami:INTJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "INTJ",
+      "kind": "resonance",
+      "dimension": "planning",
+      "why": "자미는 큰 방향부터 정해 둬야 마음이 놓입니다. INTJ도 끝 그림을 먼저 세워 놓고 거기서 거꾸로 순서를 짭니다. 정하는 별에 설계하는 머리가 붙어 계획이 깊어집니다.",
+      "scene": {
+        "broad": "여럿이 떠나는 일정에서 전체 순서를 혼자 미리 짜 두고 그대로 이끄는 편",
+        "text": "여행 한 달 전에 이미 날짜별 동선표가 나와 있습니다. 일행이 「어디 갈까」 물으면 말없이 표를 내밉니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:INTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:INTP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "INTP",
+      "kind": "tension",
+      "dimension": "statusDrive",
+      "why": "INTP는 누가 알아주는지보다 이치가 맞는지가 궁금한 유형입니다. 그런데 명궁에 앉은 자미는 인정받는 자리와 그에 맞는 대접을 바랍니다. 오르고 싶은데 오르면 번거로운, 두 마음이 한 사람 안에 삽니다.",
+      "scene": {
+        "broad": "앞에 서는 역할을 제안받았을 때 하고 싶은 마음과 번거로운 마음 사이에서 오래 망설이는 편",
+        "text": "동호회 회장을 맡아 달라는 말에 속으로는 솔깃합니다. 그런데 「단체 연락을 내가 다 돌려야 하나」가 떠올라 답을 일주일 미룹니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:INTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ENTJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ENTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "why": "자미는 가운데에 앉아 사람과 일의 방향을 쥐려 하고, ENTJ는 목표가 보이면 사람부터 배치합니다. 이끄는 힘이 두 겹이라 판을 잡는 속도는 빠르고 내려놓기는 그만큼 어렵습니다.",
+      "scene": {
+        "broad": "여럿이 하는 일에서 역할과 순서를 자기가 나눠 줘야 직성이 풀리는 편",
+        "text": "김장하러 모인 날 도착하자마자 「너는 무, 너는 양념, 나는 절임」 하고 자리를 나눕니다. 십 분 뒤 모두 그 말대로 움직이고 있습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ENTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ENTP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "why": "세워 둔 질서와 격식이 흔들리면 자미는 불편해합니다. ENTP는 잘 굴러가는 방식도 한 번 뒤집어 봐야 직성이 풀립니다. 그러다 보니 자기가 세운 규칙을 자기가 제일 먼저 깨고 싶어집니다.",
+      "scene": {
+        "broad": "스스로 정한 방식을 잘 굴러가는 중에도 다른 방식으로 바꿔 보고 싶어 하는 편",
+        "text": "모임 규칙을 자기가 만들어 놓고 석 달 뒤 「이번엔 순서를 거꾸로 해 볼까」를 꺼냅니다. 다들 「네가 정한 거잖아」 하고 웃습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:INFJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "directness",
+      "why": "INFJ는 일이 어디로 흐를지 먼저 알아채고도 분위기를 살피느라 입을 닫는 날이 많습니다. 자미는 정한 방향을 사람들 앞에서 말할 때 힘이 실리는 별입니다. 믿는 사람이 곁에 있는 자리에서만 두 힘이 만나 조용한 확신이 또렷한 말이 됩니다.",
+      "scene": {
+        "broad": "결과가 미리 보이는 상황에서 편한 사람들 앞에서만 분명하게 방향을 말하는 편",
+        "text": "낯선 자리에서는 고개만 끄덕이다가, 친한 셋만 남으면 「아까 그 계획은 두 달 뒤에 막힐 거야」 하고 또렷하게 짚습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:INFP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "why": "내가 정하고 이끌어야 편한 별을 타고났는데, INFP의 마음은 누구에게도 내 뜻을 강요하고 싶지 않습니다. 정해 놓고도 밀지 못해 속만 끓는 날이 생깁니다.",
+      "scene": {
+        "broad": "자기 뜻이 분명한데도 상대에게 강요가 될까 봐 결정권을 넘겨 버리는 편",
+        "text": "보고 싶은 영화가 분명히 있는데 「너 보고 싶은 거 보자」가 먼저 나옵니다. 상영관에 앉아서 내내 그 영화 생각을 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ENFJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ENFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "따르는 사람을 책임지고 품으려는 마음이 자미에게 있습니다. ENFJ는 곁 사람이 자랄 모습을 먼저 믿어 주고 그 사람이 설 때까지 기다립니다. 이끄는 일과 챙기는 일이 한 방향으로 포개져, 사람을 세워 주면서 무리의 가운데가 됩니다.",
+      "scene": {
+        "broad": "무리에서 뒤처지는 사람을 먼저 알아보고 챙기면서 전체를 이끄는 편",
+        "text": "등산 모임에서 맨 뒤로 처진 사람 옆으로 내려가 배낭을 나눠 멥니다. 그러면서 앞쪽에는 「쉼터에서 모이자」고 크게 외칩니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ENFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ENFP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ENFP",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "why": "ENFP는 새 생각에 불이 붙으면 판부터 벌이고 마무리는 뒤로 밀립니다. 다만 「내가 연 판」이라는 이름표가 붙은 일은 다릅니다. 맡은 판을 끝까지 책임지려는 자미의 무게가 그때만큼은 불씨를 꺼뜨리지 않습니다.",
+      "scene": {
+        "broad": "여러 일을 벌여 놓되 자기 이름이 걸린 일만큼은 끝까지 마무리하는 편",
+        "text": "벌여 놓은 취미가 다섯 개인데, 자기가 사람들을 모아 연 벼룩시장만은 마지막 천막을 접을 때까지 자리를 지킵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ENFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ISTJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ISTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "맡은 자리의 책임을 체면처럼 무겁게 여기는 별과, 확인한 순서대로 기한 안에 일을 닫는 유형이 만났습니다. 책임지는 마음에 지키는 방법까지 갖춰져 한 번 선 약속은 좀처럼 어긋나지 않습니다.",
+      "scene": {
+        "broad": "한 번 맡은 역할은 누가 보지 않아도 정해진 날짜에 빠짐없이 해 두는 편",
+        "text": "모임 회비 정리를 맡으면 매달 같은 날 내역을 올립니다. 날짜가 하루도 밀리지 않아 다들 달력처럼 믿습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ISTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ISFJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "why": "ISFJ는 누가 했는지 모르게 뒤에서 빈자리를 채우는 쪽이 편합니다. 자미는 가운데 자리에서 눈길과 대접을 받을 때 살아납니다. 알아주길 바라면서 나서지는 못하니, 해 놓고 말을 못 한 서운함이 쌓입니다.",
+      "scene": {
+        "broad": "남몰래 일을 다 해 두고도 스스로 알리지 못해 알아주기를 속으로 기다리는 편",
+        "text": "잔치 음식을 새벽부터 혼자 다 차려 놓고 「누가 했어?」 소리에 가만히 있습니다. 아무도 더 묻지 않으면 설거지하면서 입이 나옵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ESTJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "controlNeed",
+      "why": "자미는 규칙을 따르기보다 세우는 쪽에 서는 별입니다. ESTJ는 담당과 마감을 정해 일이 굴러가게 만들어야 마음이 놓입니다. 기준을 세우는 별과 지키게 만드는 실무가 겹쳐, 이 사람이 있는 곳에는 금세 질서가 생깁니다.",
+      "scene": {
+        "broad": "여럿이 쓰는 것에 규칙이 없으면 직접 기준을 만들어 붙이고 지키게 하는 편",
+        "text": "같이 쓰는 냉장고가 어지러우면 칸마다 이름표를 붙입니다. 「유통기한 지난 건 금요일에 비웁니다」 쪽지도 문에 붙여 둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ESFJ",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "conflictApproach",
+      "why": "결정을 내려 판을 정리하고 싶은 자미와 달리, ESFJ는 누가 마음 상할 결정 앞에서 머뭇거립니다. 모두를 위한 일이라는 확신이 설 때에만 싫은 소리가 다정한 말투를 입고 나옵니다.",
+      "scene": {
+        "broad": "분위기를 깨기 싫어 참다가도 모두에게 필요한 일이면 나서서 정리하는 편",
+        "text": "늘 늦는 한 사람 때문에 모임이 삼십 분씩 밀리면 한참 참습니다. 그러다 「우리 다음부터는 정각에 먼저 시작하자」고 웃으며 못 박습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ISTP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ISTP",
+      "kind": "resonance",
+      "dimension": "independence",
+      "why": "도와 달라는 말을 삼키고 혼자 짊어지는 것이 자미의 버릇입니다. ISTP도 설명하느니 직접 열어 보고 고치는 편이 빠릅니다. 혼자 해결하는 쪽으로 둘이 겹쳐서, 일은 깔끔한데 어깨가 늘 무겁습니다.",
+      "scene": {
+        "broad": "남에게 맡긴 일을 지켜보다 답답해져 결국 자기 손으로 다시 하는 편",
+        "text": "선반 조립을 친구에게 맡겨 놓고 오 분을 못 버팁니다. 「줘 봐」 하고 드라이버를 가져와 혼자 끝낸 뒤 어깨를 주무릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ISTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ISFP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ISFP",
+      "kind": "conditional",
+      "dimension": "boundarySetting",
+      "why": "ISFP는 맞지 않는 일 앞에서 다투는 대신 말없이 빠집니다. 자미는 내 기준이 가볍게 다뤄지는 것을 못 넘깁니다. 취향과 가치가 걸린 일에 한해 별의 자존심이 말이 되어, 「이건 안 해요」가 또렷이 나옵니다.",
+      "scene": {
+        "broad": "평소에는 맞춰 주다가 자기 취향이 걸린 일에서만 물러서지 않는 편",
+        "text": "밥 메뉴는 늘 「아무거나」인데, 자기 방 벽지 색만큼은 누가 뭐래도 안 바꿉니다. 견본을 석 장 들고 와 조용히 하나를 짚습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ISFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ESTP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "decisionSpeed",
+      "why": "어디로 갈지 정해 주는 방향 감각이 자미의 몫이라면, 눈앞의 것을 먼저 잡아 움직이는 몸은 ESTP의 몫입니다. 갈 곳이 먼저 정해진 일에서는 결정이 빠르면서도 헛돌지 않습니다.",
+      "scene": {
+        "broad": "목표가 분명히 정해진 상황에서 망설임 없이 바로 몸을 움직여 해결하는 편",
+        "text": "소풍 날 갑자기 비가 쏟아지면 일 분 만에 정합니다. 「저 정자로 옮기자」 하고 돗자리 끝을 자기가 먼저 듭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:jami:ESFP",
+      "ziweiId": "zw:star:jami",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "attentionSeeking",
+      "why": "ESFP는 그 자리의 소리와 표정을 받아 흥을 올리는 데 타고났습니다. 자미가 바라는 가운데 자리는 떠들썩함보다 격이 있는 중심입니다. 자리를 살려야 할 책임이 주어진 때에는 흥에 품위가 얹혀, 가볍지 않게 사람들을 모읍니다.",
+      "scene": {
+        "broad": "분위기를 책임져야 하는 자리에서 흥을 올리되 흐트러지지 않게 중심을 잡는 편",
+        "text": "송년 모임 진행을 맡으면 농담으로 웃음을 터뜨리다가도 건배 인사 때는 자세를 고쳐 섭니다. 한 사람씩 이름을 불러 한 해 고마움을 전합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:jami",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

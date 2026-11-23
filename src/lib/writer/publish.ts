@@ -67,11 +67,11 @@ import { buildChunkedSnapshot } from "./chunked/publish";
 import { writerModeOf } from "./mode";
 
 let knowledgeCache: { k: Knowledge; version: string } | null = null;
-/** 지식 DB와 그 내용 해시(Book 메타데이터의 지식 버전). */
+/** 지식 DB와 그 내용 해시(Book 메타데이터의 지식 버전). ZW-1: ziwei/(자미 단독 상품 DB)는 4종 · 세운 · 대운이 읽지 않으므로 세지 않는다(legacy와 같음). */
 export function writerKnowledge(root = DEFAULT_KNOWLEDGE_ROOT): { k: Knowledge; version: string } {
   if (knowledgeCache) return knowledgeCache;
   const h = createHash("sha256");
-  const walk = (dir: string) => { for (const f of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) { const p = join(dir, f.name); if (f.isDirectory()) { if (f.name !== "legacy") walk(p); } else if (f.name.endsWith(".json")) h.update(f.name).update(readFileSync(p)); } };
+  const walk = (dir: string) => { for (const f of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) { const p = join(dir, f.name); if (f.isDirectory()) { if (f.name !== "legacy" && f.name !== "ziwei") walk(p); } else if (f.name.endsWith(".json")) h.update(f.name).update(readFileSync(p)); } };
   walk(root);
   knowledgeCache = { k: loadKnowledge(root), version: `knowledge-v5:${h.digest("hex").slice(0, 12)}` };
   return knowledgeCache;

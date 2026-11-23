@@ -45,10 +45,15 @@ export const MUTAGEN_TABLE: Readonly<Record<Stem, readonly [StarId, StarId, Star
   癸: ["pagun", "geomun", "taeeum", "tamrang"],
 };
 export const MUTAGEN_ORDER: readonly MutagenId[] = ["rok", "gwon", "gwa", "gi"];
-/** 학파차이 해(표가 유파마다 다른 천간)와 다른 표. 고객 문구 · DB confidence에 쓴다. */
+/**
+ * 학파차이 해(표가 유파마다 다른 천간)와 다른 표. 고객 문구 · DB confidence에 쓴다(유파 이름은 내부 기록).
+ * 근거(0부 조사, 2026-11-24): 중주파(왕정지) 무 태양과 · 경 천부과 · 임 천부과 — ziweifu.com/ziweizatan/1886.html, tradiculture.com 사화표 해설,
+ * fortel-ziweidoushu(중주파 구현) starDerivative. 북파 경 = 陽武同相(천동과 · 천상기) — ziweifu 같은 글, 108s.tw/article/info/95.
+ * 경 = 陽武同陰(천동과 · 태음기)은 전서 일부 판본 · 민파로 전함 — zh.wikipedia 紫微斗數, ziweifu(위키문헌 全書 卷二 원문은 통행표 「庚日武陰同」).
+ */
 export const MUTAGEN_SCHOOL_VARIANTS: Readonly<Partial<Record<Stem, readonly { readonly school: string; readonly mutagen: MutagenId; readonly star: StarId }[]>>> = {
   戊: [{ school: "중주파", mutagen: "gwa", star: "taeyang" }],
-  庚: [{ school: "중주파", mutagen: "gwa", star: "cheonbu" }, { school: "북파", mutagen: "gwa", star: "cheondong" }, { school: "북파", mutagen: "gi", star: "cheonsang" }],
+  庚: [{ school: "중주파", mutagen: "gwa", star: "cheonbu" }, { school: "북파", mutagen: "gwa", star: "cheondong" }, { school: "북파", mutagen: "gi", star: "cheonsang" }, { school: "전서 일부 판본", mutagen: "gwa", star: "cheondong" }, { school: "전서 일부 판본", mutagen: "gi", star: "taeeum" }],
   壬: [{ school: "중주파", mutagen: "gwa", star: "cheonbu" }],
 };
 

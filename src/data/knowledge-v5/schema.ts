@@ -413,3 +413,132 @@ export const PersonaTagSchema = z.object({
 }).strict();
 export type PersonaTag = z.infer<typeof PersonaTagSchema>;
 export const PersonaTagsFileSchema = z.object({ version: z.string(), note: z.string().optional(), items: z.record(z.string().regex(/^[0-9a-f]{12}$/), PersonaTagSchema) }).strict();
+
+// ---------- 13) ziwei/*.json (ZW-1: 자미두수 단독 상품 지식 DB) ----------
+/**
+ * 자미두수 DB. 엔진 id(src/lib/ziwei/ids.ts)와 짝을 맞춘다: id = zw:<family 줄임>:<엔진 id>, engineKey = 엔진 id.
+ * 문장 원칙은 MyeongriFeature와 같다(Line · Para · Meaning · Scene 길이). 장면은 2~3영역 × 2~3개, 큰 틀(broad) 필수.
+ * MBTI 연결은 짝 파일(mbti.json) 하나에만 둔다(별 항목에 mbtiLinks 없음). 검사: tests/unit/ziwei/db.test.ts.
+ */
+export const ZIWEI_FAMILIES = ["majorStar", "helperStar", "maleficStar", "loveStar", "palace", "starPair", "emptyPalace", "mutagen", "fiveClass"] as const;
+export const ZiweiFamilySchema = z.enum(ZIWEI_FAMILIES);
+export const ZIWEI_PALACE_KEYS = ["myeong", "hyeongje", "bucheo", "janyeo", "jaebaek", "jilaek", "cheoni", "nobok", "gwanrok", "jeontaek", "bokdeok", "bumo"] as const;
+export const ZiweiPalaceKeySchema = z.enum(ZIWEI_PALACE_KEYS);
+/** 장면: 큰 틀(broad, 구체 명사 없음) 먼저, 구체 장면(text)은 그다음. 직업 · 가족 소품은 requires가 any가 아닐 때만. */
+export const ZiweiSceneSchema = z.object({ broad: z.string().min(8).max(120), text: Scene, requires: SceneRequiresSchema }).strict();
+export const ZiweiScenesSchema = z.partialRecord(DomainSchema, z.array(ZiweiSceneSchema).min(2).max(3))
+  .refine(s => Object.keys(s).length >= 2 && Object.keys(s).length <= 3, "장면 영역은 2~3개");
+export const ZiweiForYouSchema = z.object({ base: Para, bright: Para.optional(), dark: Para.optional() }).strict();
+const ziweiCore = {
+  id: z.string().regex(/^zw:[a-z]+:[a-z0-9-]+$/).max(60),
+  name: z.string().min(1).max(30),
+  easyName: z.string().min(2).max(16),
+  oneLiner: Line,
+  image: ImageSchema,
+  imageVariants: z.array(ImageSchema).max(6).optional(),
+  meaning: Meaning,
+  forYou: ZiweiForYouSchema,
+  strengths: z.array(Para).min(2).max(6),
+  overuse: z.array(Para).min(1).max(5),
+  shadow: Para,
+  scenes: ZiweiScenesSchema,
+  dimensionTags: DimensionTagsSchema.refine(t => Object.keys(t).length >= 3, "dimensionTags 3개 이상"),
+  domains: z.array(DomainSchema).min(1).max(4),
+  confidence: ConfidenceSchema,
+  /** 내부 전용(고객 본문 노출 금지). 예: "통용", "全書 卷三", "학파:중주파". */
+  sources: Sources,
+  engineKey: z.string().min(2).max(40),
+};
+export const ZiweiPalaceNuanceSchema = z.object(Object.fromEntries(ZIWEI_PALACE_KEYS.map(k => [k, Para])) as Record<(typeof ZIWEI_PALACE_KEYS)[number], typeof Para>).strict();
+export const ZiweiStarSchema = z.object({
+  ...ziweiCore,
+  family: z.enum(["majorStar", "helperStar", "maleficStar", "loveStar"]),
+  /** 주성만: 12궁 한 줄씩(그 칸에 있을 때의 뉘앙스). */
+  palaceNuance: ZiweiPalaceNuanceSchema.optional(),
+  /** 주성만: 밝음 · 보통 · 어두움일 때의 별 모습. 밝기 근거가 「통용」인 칸에서만 쓰이므로, 그 별의 통용 칸에 실제로 나오는 단만 쓴다(검사기가 강제). */
+  brightness: z.object({ bright: Para.optional(), normal: Para.optional(), dark: Para.optional() }).strict().optional(),
+}).strict().superRefine((s, ctx) => {
+  if (s.family !== "majorStar") return;
+  if (!s.palaceNuance) ctx.addIssue({ code: "custom", message: "주성은 palaceNuance 12줄 필수" });
+  if (!s.brightness) ctx.addIssue({ code: "custom", message: "주성은 brightness 필수(나오는 단만 — 검사기)" });
+  if ((s.imageVariants?.length ?? 0) < 3) ctx.addIssue({ code: "custom", message: "주성은 imageVariants 3개 이상" });
+  if (Object.keys(s.dimensionTags).length < 6) ctx.addIssue({ code: "custom", message: "주성은 dimensionTags 6개 이상" });
+});
+export type ZiweiStar = z.infer<typeof ZiweiStarSchema>;
+/** 궁 렌즈의 입력 거름: 연애 상태 4 · 자녀 2 · 일 상태 4마다 이 칸을 읽는 렌즈(없으면 default). */
+export const ZIWEI_RELATIONSHIP_STATES = ["single", "some", "dating", "married"] as const;
+export const ZIWEI_CHILDREN_STATES = ["has", "none"] as const;
+export const ZIWEI_JOB_STATES = ["employed", "business", "student", "other"] as const;
+export const ZiweiLensSchema = z.object({
+  default: Line,
+  relationship: z.object(Object.fromEntries(ZIWEI_RELATIONSHIP_STATES.map(k => [k, Line.optional()])) as Record<(typeof ZIWEI_RELATIONSHIP_STATES)[number], z.ZodOptional<typeof Line>>).strict().optional(),
+  children: z.object(Object.fromEntries(ZIWEI_CHILDREN_STATES.map(k => [k, Line.optional()])) as Record<(typeof ZIWEI_CHILDREN_STATES)[number], z.ZodOptional<typeof Line>>).strict().optional(),
+  job: z.object(Object.fromEntries(ZIWEI_JOB_STATES.map(k => [k, Line.optional()])) as Record<(typeof ZIWEI_JOB_STATES)[number], z.ZodOptional<typeof Line>>).strict().optional(),
+}).strict();
+export const ZiweiPalaceSchema = z.object({
+  ...ziweiCore,
+  /** 궁 쉬운 이름은 한 글자도 된다(「나」「짝」「돈」, 0부 확정). */
+  easyName: z.string().min(1).max(16),
+  /** 궁은 렌즈라 행동 꼬리표는 선택(영역 매핑은 domains). */
+  dimensionTags: DimensionTagsSchema.optional(),
+  family: z.literal("palace"),
+  /** 이 칸이 맡는 삶의 무대(한 줄). */
+  stage: Line,
+  lens: ZiweiLensSchema,
+}).strict();
+export type ZiweiPalace = z.infer<typeof ZiweiPalaceSchema>;
+export const ZiweiPairSchema = z.object({ ...ziweiCore, family: z.literal("starPair"), stars: z.tuple([z.string().min(2), z.string().min(2)]) }).strict();
+export const ZiweiEmptySchema = z.object({ ...ziweiCore, family: z.literal("emptyPalace"), /** 맞은편 칸을 빌려 읽는 법. */ borrow: Para }).strict();
+export const ZiweiMutagenSchema = z.object({ ...ziweiCore, family: z.literal("mutagen") }).strict();
+export const ZiweiFiveClassSchema = z.object({
+  id: ziweiCore.id, family: z.literal("fiveClass"), name: ziweiCore.name, easyName: ziweiCore.easyName, number: z.number().int().min(2).max(6),
+  oneLiner: Line, image: ImageSchema, meaning: Meaning, forYou: z.object({ base: Para }).strict(), confidence: ConfidenceSchema, sources: Sources, engineKey: ziweiCore.engineKey,
+}).strict();
+/** 생년 사화 연간 표 한 줄(엔진 basis.ts MUTAGEN_TABLE과 같아야 한다 — 시험). */
+export const ZiweiMutagenYearSchema = z.object({
+  stem: z.enum(STEMS), rok: z.string().min(2), gwon: z.string().min(2), gwa: z.string().min(2), gi: z.string().min(2),
+  confidence: ConfidenceSchema,
+  variants: z.array(z.object({ school: z.string().min(2).max(10), mutagen: z.enum(["rok", "gwon", "gwa", "gi"]), star: z.string().min(2) }).strict()),
+  note: Line,
+}).strict();
+/** 심화 원고: 4궁(명궁 · 부처궁 · 재백궁 · 관록궁) × 별 묶음(단독 주성 · 쌍성 · 공궁). */
+export const ZiweiDeepSchema = z.object({
+  id: z.string().regex(/^zw:deep:(myeong|bucheo|jaebaek|gwanrok):[a-z-]+$/),
+  family: z.literal("deep"),
+  palace: z.enum(["myeong", "bucheo", "jaebaek", "gwanrok"]),
+  /** 주성 id · 쌍성 id(앞별-뒷별) · "empty". */
+  bundle: z.string().min(4).max(30),
+  headline: Line,
+  reading: z.array(Para).min(2).max(3),
+  strengths: z.array(Para).min(1).max(2),
+  watch: z.array(Para).min(1).max(2),
+  scene: ZiweiSceneSchema,
+  confidence: ConfidenceSchema,
+  sources: Sources,
+}).strict();
+export type ZiweiDeep = z.infer<typeof ZiweiDeepSchema>;
+/** 자미 × MBTI 짝(명궁 주성 14 × 16유형): FusionRule 구조에서 myeongriId 자리를 ziweiId로. */
+export const ZiweiMbtiRuleSchema = z.object({
+  id: z.string().regex(/^zw-mbti:[a-z]+:[EI][NS][TF][JP]$/),
+  ziweiId: z.string().regex(/^zw:star:[a-z]+$/),
+  mbtiTarget: MbtiTypeSchema,
+  kind: LinkKindSchema,
+  dimension: DimensionId,
+  score: z.number().optional(),
+  why: Para,
+  scene: ZiweiSceneSchema,
+  factBoundary: z.object({ requires: z.array(FactRequirementSchema), forbids: z.array(z.string()) }),
+  /** 자미 × MBTI 연결은 전통 근거가 없어 대개 「추정」. */
+  confidence: ConfidenceSchema,
+  sources: Sources,
+}).strict();
+export type ZiweiMbtiRule = z.infer<typeof ZiweiMbtiRuleSchema>;
+/** 「같은 무대」 대응표(궁 ↔ 명리 자리, 데이터만 — 3중 결합 대비, 코드에서 쓰지 않는다). */
+export const ZiweiStageMapRowSchema = z.object({ palace: ZiweiPalaceKeySchema, myeongri: Line, keys: z.array(z.string().min(3)).min(1).max(4), confidence: ConfidenceSchema }).strict();
+export const ZiweiFileSchema = z.object({
+  version: z.string(),
+  family: z.enum([...ZIWEI_FAMILIES, "deep", "mbti", "stageMap"]),
+  note: z.string().optional(),
+  entries: z.array(z.unknown()).min(1),
+  yearTable: z.array(ZiweiMutagenYearSchema).optional(),
+}).strict();

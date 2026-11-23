@@ -5,10 +5,13 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { Solar } from "lunar-javascript";
+import { createRequire } from "node:module";
 import { computeZiweiChart } from "@/lib/ziwei/chart";
 import { solarToKoreanLunar } from "@/lib/ziwei/lunar";
 import { compareWithVerifier, invariantViolations } from "./helpers";
+
+type LunarJs = { Solar: { fromYmd(y: number, m: number, d: number): { getLunar(): { getYear(): number; getMonth(): number; getDay(): number } } } };
+const { Solar } = createRequire(__filename)("lunar-javascript") as LunarJs;
 
 type Golden = {
   id: string; source: string; program: string; input: { birthDate: string; slot: string; gender: "MALE" | "FEMALE" };
@@ -25,7 +28,7 @@ describe("골든 명반 20", () => {
       expect(g.source, g.id).toMatch(/^https:\/\//);
       const kr = solarToKoreanLunar(g.input.birthDate);
       const [y, m, d] = g.input.birthDate.split("-").map(Number);
-      const cn = (Solar as unknown as { fromYmd(y: number, m: number, d: number): { getLunar(): { getYear(): number; getMonth(): number; getDay(): number } } }).fromYmd(y, m, d).getLunar();
+      const cn = Solar.fromYmd(y, m, d).getLunar();
       expect([kr.year, kr.month, kr.day, kr.leap], `${g.id} 한국 음력 = 공개 음력`).toEqual(g.lunar);
       expect([cn.getYear(), Math.abs(cn.getMonth()), cn.getDay(), cn.getMonth() < 0], `${g.id} 중국 음력 = 공개 음력`).toEqual(g.lunar);
       expect(g.krcn).toBe("같음");

@@ -46,6 +46,16 @@
     - 시험 불변식이 나이가 마지막 대한을 넘는 경우를 빠뜨렸다(1900년생).
 - calc-basis: `docs/v5/ops/calc-basis.md` 부록 C(해 경계 = 설 · 윤달 · 시진만 가능). 카카오 블록 반영은 다음 범위다.
 
+### 2부. DB 파일럿(36항목 + 사화 연간 표 10줄)
+
+- 파일: `src/data/knowledge-v5/ziwei/` stars-major(자미 · 칠살 · 천동) · palaces(명궁 · 부처궁 · 재백궁) · pairs(자미칠살 · 천동태음) · mutagens(4 뜻 + 연간 표) · stars-helper(좌보 · 문창) · stars-malefic(경양 · 지공) · deep-myeong/bucheo/jaebaek/gwanrok · mbti(자미 × 16).
+- 스키마: `src/data/knowledge-v5/schema.ts` 13절(Ziwei*). 결정론 검사: `tests/unit/ziwei/dbCheck.ts` · `db.test.ts`(PHASE pilot) · 정규식 표본 `dbPatterns.test.ts`.
+- 작성 Fable 3 · 교차 검수 Opus 2(분리). 지적 1차 79 → 2차 42 → 3차 15 → 남은 지적 0. 판정: `~/Desktop/gyeol-review/ziwei-01/pilot.md`.
+- 파일럿에서 바뀐 규칙: 밝기 단은 그 별의 통용 칸에 나오는 단만(`agreedLevels`), 이름 뒤 조사, palaceNuance · 짝 why 첫머리, 공궁에 빌릴 수 없는 별(칠살 · 천부 · 천상 · 파군), 자녀궁 열린 꼴, 그림 핵심 사물(자미 안 · 명리 DB).
+- 보호: 지식 버전 해시(`writerKnowledge`)는 ziwei/를 세지 않는다(4종 · 세운 · 대운 책 메타 = 759d87b3 `knowledge-v5:4db8ffa7dd72`, `tests/unit/ziwei/protect.test.ts`).
+- 엔진 표: 경년 사화 이설에 「전서 일부 판본(천동과 · 태음기)」 + 출처 주석(`basis.ts`).
+- 정할 것(덕짱): 칠살 「장군의 칼」(지시서 예시)이 명리 양인 「왕 옆의 칼」 · 접칼 · 주머니칼과 같은 사물 — 지금은 검사기 예외(`DIRECTED_IMAGES`).
+
 ### 남은 일(다음 명령 이후)
 
 - 음력 입력을 여는 명령에서 사주 엔진의 음력 변환도 KASI로 바꾸고 왕복 고정 목록을 0(100%)으로 만든다(`SAJU_CALENDAR_VERSION` 영향 보고 포함).
