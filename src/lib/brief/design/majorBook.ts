@@ -155,8 +155,9 @@ export const MAJOR_BOOK_CHAPTERS: readonly Ch[] = [
   { id: "turn", title: "다음 장으로 넘어가는 문턱", question: "언제 바뀌고, 무엇이 끝나고 무엇이 시작될까?", role: "TWIST", domains: ["work", "relationships"], paragraphs: { min: 3, max: 4 },
     sections: [s("무엇이 끝나고 무엇이 시작될까?", "work", "turnTable"), s("문턱에서 지킬 마음가짐은?", "alone", "turnMind")] },
   { id: "decade", title: "2027년에서 시작하는 10년", question: "2027년부터 10년은 해마다 어떻게 흐를까?", role: "SCENE", domains: ["work", "money", "love", "relationships", "study"], paragraphs: { min: 2, max: 3 }, repeat: 10 },
-  { id: "map", title: "10년 영역 지도", question: "돈 · 일 · 사랑은 10년 동안 언제 오를까?", role: "PAYOFF", domains: ["work", "money", "love"], paragraphs: { min: 3, max: 4 },
-    sections: [s("돈과 일의 10년은?", "work", "mapMoneyWork", "해 목록은 화면 표가 맡는다"), s("사랑과 사람의 10년은?", "love", "mapLovePeople", "해 목록은 화면 표가 맡는다"), s("마음의 10년은?", "alone", "mapMind", "해 목록은 화면 표가 맡는다")] },
+  // AM2-14 2부(D1 D5 「세 영역 가운데」 — 화면은 다섯 영역): 질문 · 핵심 주장이 다섯 영역을 그대로 말한다.
+  { id: "map", title: "10년 영역 지도", question: "일 · 돈 · 사랑 · 사람 · 마음, 다섯 영역은 10년 동안 언제 오를까?", role: "PAYOFF", domains: ["work", "money", "love"], paragraphs: { min: 3, max: 4 },
+    sections: [s("돈과 일의 10년은?", "work", "mapMoneyWork", "해 목록은 화면 표가 맡는다 · 영역은 화면 지도와 같은 다섯(일 · 돈 · 사랑 · 사람 · 마음)"), s("사랑과 사람의 10년은?", "love", "mapLovePeople", "해 목록은 화면 표가 맡는다"), s("마음의 10년은?", "alone", "mapMind", "해 목록은 화면 표가 맡는다")] },
   { id: "next", title: "다음 장 미리 보기", question: "다음 장은 어떤 장일까?", role: "TWIST", domains: ["alone", "relationships"], paragraphs: { min: 3, max: 4 },
     sections: [s("다음 장의 주제와 채움은?", "alone", "nextHead"), s("다음 장에서 원국과 만나는 곳과 오르는 영역은?", "relationships", "nextRelation")] },
   { id: "plan", title: "10년 실천 지도", question: "10년 동안 무엇을 준비할까?", role: "PAYOFF", domains: ["work", "money"], paragraphs: { min: 3, max: 4 },

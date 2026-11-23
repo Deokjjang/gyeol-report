@@ -1,5 +1,5 @@
 import { parsePaymentProviderId } from "./paymentProviderBoundary";
-import { getReportProduct } from "./reportProductCatalog";
+import { customerProductLabelKo, getReportProduct } from "./reportProductCatalog";
 import type { ReportProductCurrency } from "./reportProductCatalog";
 import type { PaymentOrderStatus } from "./paymentOrderTypes";
 import type { ReportProductType } from "./reportProductTypes";
@@ -168,7 +168,7 @@ export function preparePaymentCheckoutSession(
 
   const payloadInput = {
     providerOrderId: input.providerOrderId,
-    productLabelKo: product.labelKo,
+    productLabelKo: customerProductLabelKo(product.productType),
     amount: payableAmount,
     currency: product.currency,
   };
@@ -179,7 +179,7 @@ export function preparePaymentCheckoutSession(
       paymentOrderId: input.paymentOrderId,
       providerOrderId: input.providerOrderId,
       productType: product.productType as ReportProductType,
-      productLabelKo: product.labelKo,
+      productLabelKo: customerProductLabelKo(product.productType),
       provider,
       amount: payableAmount,
       currency: product.currency,

@@ -9,8 +9,7 @@ describe("로컬 개발 전용 로그인·기능 플래그(P3)", () => {
     expect(localDevAuthAllowed({ NODE_ENV: "development", NEXT_PUBLIC_SUPABASE_URL: "https://abc.supabase.co" })).toBe(false);
     expect(localDevAuthAllowed({ NODE_ENV: "development" })).toBe(false);
   });
-  it("WRITER_V5_PRODUCTS: 기본 비어 있음, 모르는 키는 버린다", () => {
-    expect(writerV5Products({})).toEqual([]);
-    expect(writerV5Products({ WRITER_V5_PRODUCTS: " saju_mbti_full, nope ,annual_fortune,saju_mbti_full" })).toEqual(["saju_mbti_full", "annual_fortune"]);
+  it("AM2-14 5부: v5 작가 상품은 코드 상수 6상품(env를 읽지 않는다)", () => {
+    expect(writerV5Products()).toEqual(["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"]);
   });
 });

@@ -38,7 +38,7 @@ describe("서재 책장(buildShelf)", () => {
   it("책 본문은 들어 있지 않다(요약 칸만)", () => {
     const [b] = buildShelf([row(1)], [], [], NOW);
     // 운영 Q 2부: 문의 결과·환불 카드용 칸(madeAt·request·refundedAt)만 더해졌다 — 본문·입력값 없음.
-    expect(Object.keys(b).sort()).toEqual(["coverColor", "displayName", "expiresAt", "href", "ink", "madeAt", "openEnded", "orderCode", "publishedAt", "refundedAt", "reportId", "request", "state", "title", "viaTicket"]);
+    expect(Object.keys(b).sort()).toEqual(["coverColor", "displayName", "expiresAt", "href", "ink", "madeAt", "openEnded", "orderCode", "productType", "publishedAt", "refundedAt", "reportId", "request", "state", "title", "viaTicket"]);
   });
 });
 

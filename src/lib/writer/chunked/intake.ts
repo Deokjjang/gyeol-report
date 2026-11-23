@@ -28,11 +28,12 @@ import { FARMING, presumedPartner } from "../safety/lint";
 import { RURAL_PROP } from "../safety/patterns";
 import { meaningOf, readWish, WISH_UP_LINE, wishDomainsOf } from "@/lib/brief/design/annual";
 import { MAJOR_RX } from "@/lib/brief/design/majorBook";
+import { periodLineFits } from "@/lib/brief/design/major";
 /** AM2-13 4부: 대운 책당 MBTI 짝 상한. */
 export const MAJOR_PAIR_MAX = 3;
 import { pairTextIssue } from "./card";
 import { dayunPositionKo } from "../safety/lint";
-import { cleanSeed, dedupeSentences, dropGeneral, plainCard, predicate, relCondition, seedAsCondition, seedTagsFit, seedTagsOf, SENIORITY_PROP, stripFnCodes, stripRx, unambiguous, unitFix } from "./card";
+import { cleanSeed, dedupeSentences, dropGeneral, plainCard, predicate, relCondition, seedAsCondition, seedAsMaybe, seedTagsFit, seedTagsOf, SENIORITY_PROP, stripFnCodes, stripRx, unambiguous, unitFix } from "./card";
 import { coreOf, REL_SHORT, relFlow, relName, seatShort, TEN_GOD_SHORT } from "@/lib/brief/core";
 import { keyLinks, keyPairWhy, rankWishLinks, REASON_OF, type Link, type LinkCtx, type PairReason } from "./link";
 import { allocateChapters, rxKindsOf, type RxKind } from "@/lib/brief/prescriptions";
@@ -497,7 +498,9 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
       const sc2 = scene(s.materials.flatMap(m => (m.kind === "trait" && m.scene ? [m.scene] : [])));
       const lineOf = (id: string) => lines.find(l => l.id === id);
       // AM2-4 2부(P3 판독 annual-1 차단 #7 · 경미 #34): 「할 것·피할 것」 소제목에는 행동 줄만 — 달 목록·「살필 거리」·영역 이름 줄은 주지 않는다.
-      const advice = /할 것|피할 것/.test(s.q);
+      // AM2-14 2부: 대운 8장 「5년 뒤와 10년 뒤에 준비할 것은?」은 이 거름 대상이 아니다(세운 운을 쓰는 법 「할 것 · 피할 것」 소제목용) — 칩 거름으로 바뀐
+      // 10년 뒤 줄(「돈 = 작은 수입이 … 들어오기 좋음」)이 행동 꼴로 읽혀 5년 뒤 · 그 무렵 대운 근거가 빠졌다(major-1).
+      const advice = /할 것|피할 것/.test(s.q) && product !== "major_fortune";
       let use0 = advice ? ids.filter(id => { const l = lineOf(id); return Boolean(l) && ACTION_LINE.test(`${l!.value} ${l!.meaning}`.trim()) && !NOT_ACTION.test(`${l!.value} ${l!.meaning}`); }) : ids;
       if (advice && !use0.length) use0 = ids.filter(id => { const l = lineOf(id); return l && !NOT_ACTION.test(`${l.value} ${l.meaning}`); });
       // AM2-4 2부(P3 판독 major-1 C2·B19, annual-1 경계 #2): 짝이 없는 명리 줄과 MBTI 줄은 같은 절에 두지 않는다 — 짝이 있으면 짝 아닌 명리 줄을, 없으면 MBTI 줄을 뺀다.
@@ -790,7 +793,9 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
     const order = [...new Set([seatD, grp, "일", "돈", "관계", "컨디션"].filter((d): d is string => Boolean(d)))];
     const dl = (e.material?.domains ?? []).filter(x2 => sceneFits(x2, brief));
     // AM2-5 1부: 영역 줄 값은 「일에서」 같은 칸 이름 대신 「그 해 일 쪽」(P4 판독 대운 m15 마 — 칸 이름으로 여는 문장 9 key).
-    for (const d of order) { if (picked.length >= maxDomains) break; const line = dl.find(x2 => x2.startsWith(`${d}: `)); if (!line) continue; const t = line.replace(/^[^:]+: /, ""); if (seen.life.has(t)) continue; seen.life.set(t, label); picked.push({ v: `${d} 쪽`, m: t }); }
+    // AM2-14 2부(D1 모순 4곳): 대운 해 key는 그 해 칩과 방향이 반대인 영역 줄을 빼고 다음 영역으로(세운 dirFits와 같은 판정 — design/major periodLineFits).
+    const chips = brief.product === "major_fortune" ? (e as TimelineEntry & { signals?: Parameters<typeof periodLineFits>[2] }).signals : undefined;
+    for (const d of order) { if (picked.length >= maxDomains) break; const line = dl.find(x2 => x2.startsWith(`${d}: `)); if (!line) continue; const t = line.replace(/^[^:]+: /, ""); if (seen.life.has(t)) continue; if (chips && !periodLineFits(d, t, chips)) continue; seen.life.set(t, label); picked.push({ v: `${d} 쪽`, m: t }); }
   }
   const pickedIds: string[] = [];
   for (const pk of picked) { const id = push(pk.v, pk.m); if (id) pickedIds.push(id); }
@@ -810,9 +815,12 @@ function keyPlan(e: TimelineEntry, mats: readonly Material[], n: number, add: (s
   const areas = [...new Set(areas0.length ? areas0 : ["alone"])];
   let scene = scene0 && seedFits(scene0, brief) && !SCENE_COUNT.test(scene0) && areas.includes(seedDomainOf(scene0)) ? seed(scene0) : undefined, sceneArea = scene ? seedDomainOf(scene0!) : undefined;
   if (scene) scene = seedAsCondition(scene);
+  // AM2-14 2부: 대운 앞날 key의 장면은 조건 꼴(「…는 날이라면」) — 일어날 일로 못 박는 끝 꼴을 재료에서 뺀다(세운은 그대로).
+  const futureMajor = brief.product === "major_fortune" && (e.when ?? e.period ?? "future") !== "past";
+  if (scene && futureMajor) scene = seedAsMaybe(scene) ?? undefined;
   // AM2-9 4부: 세운 MBTI 장면 씨앗은 짝 있는 key에서만(짝 없는 key의 MBTI 장면은 짝 밖 잇기의 재료가 된다 — P7 F1 「모임 공지에 요일까지 정확히 적는 사람이라면」).
   let sceneMbti = false;
-  for (const d of areas) { if (scene || (brief.product === "annual_fortune" && !x.pair)) break; scene = x.mbtiSeed(d); if (scene) { sceneArea = d; sceneMbti = brief.product === "annual_fortune"; } }
+  for (const d of areas) { if (scene || (brief.product === "annual_fortune" && !x.pair)) break; scene = x.mbtiSeed(d); if (scene && futureMajor) scene = seedAsMaybe(scene) ?? undefined; if (scene) { sceneArea = d; sceneMbti = brief.product === "annual_fortune"; } }
   // AM2-6 4부: 대운 해 key의 위치 값(엔진 yearIndex — 위치 말은 이 값으로만).
   const position = e.kind === "year" && e.dayun?.yearIndex ? `${e.dayun.ganji.replace(/[一-鿿]/g, ch => READING[ch] ?? ch)} ${e.dayun.yearIndex}번째 해(${phaseKo(e.dayun.yearIndex)})` : undefined;
   const todoRaw = e.todo && sceneFits(e.todo, brief) ? say(e.todo, year) : "";

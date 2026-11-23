@@ -10,6 +10,9 @@
  *  fill_claim     + 「채움 판정」 「…로 판정되었습니다」(판정 말 노출) · 장을 가리키는 문장의 「X(나무 · 불 · 흙 · 쇠 · 물)로 채워지 · 더해지 · 쌓이」가 그 장 채움 까닭의 기운과 다름(고른 장은 모두).
  *  memo_leak      + 대운 책 작성 메모: 「솔로로 적혀 있으니」 · 「위치 값으로 보면」 · 「한 번째 해」.
  *  year_list      6장(10년 영역 지도) 본문의 해 목록(해 둘 이상을 늘어놓음) — 해 목록은 화면 표가 맡는다(덕짱님 결정 · 본문 금지).
+ *  AM2-14 6부(D2 판독 — 측정 중 고침):
+ *  dayun_seat_rel 「OO 대운 기둥과 태어난 X 자리 … 반합 · 삼합 · 육합 · 충 · 형 · 파 · 원진」이 그 대운 기둥과 그 자리의 엔진 관계에 없음(D2 7장 「을축 대운 기둥과 태어난 달 자리가 만나 반합」 — 반합은 병인의 관계, 을축과 달 자리는 형).
+ *  chapter_pos    「차례의 앞쪽 · 한가운데 · 끝」이 지금 장의 차례 위치(N장 / 전체)와 다름(D2 1장 「지금 읽는 장은 차례의 한가운데쯤」 — 10장 중 3장).
  * 차단 여부는 four.ts(저장 대운 책 전수 오탐 0만 — am2.md 23절).
  */
 import type { FinalChapter } from "../safety";
@@ -18,6 +21,8 @@ import type { MajorPlan } from "@/lib/brief/design/majorBook";
 import { CHAPTER_TITLE, FILL_HELP_LABEL, FILL_LABEL } from "@/lib/brief/design/majorBook";
 import { relName } from "@/lib/brief/core";
 import { splitSentences } from "../safety/patterns";
+import { detectRelations } from "@/lib/saju/detections/relations";
+import type { PositionedPillar } from "@/lib/saju/detections/types";
 import type { BlockCtx, ChunkFlag } from "./check";
 
 const TITLES = Object.values(CHAPTER_TITLE);
@@ -25,6 +30,12 @@ const FILL_WORDS: readonly (readonly [RegExp, string])[] = [[/부족한 기운�
 const NEXT_REF = /다음 장|다음 대운|새 대운|새 장|넘어갈 장|이어질 장/;
 const NOW_REF = /읽고 있는 장|이 장(?!면)|지금 장|서 있는 장/;
 const YEAR_HEAD = /^(20\d\d)$/;
+/** 관계 이름 → 엔진 관계 종류(「해(害)」 · 홑 「합」은 낱말이 겹쳐 보지 않는다). */
+const REL_WORD: Readonly<Record<string, readonly string[]>> = { 반합: ["SAMHAP"], 삼합: ["SAMHAP"], 육합: ["YUKHAP"], 충: ["CHUNG"], 형: ["HYEONG"], 파: ["PA"], 원진: ["WONJIN"] };
+const SEAT_POS: Readonly<Record<string, string>> = { 해: "year", 달: "month", 날: "day", 시각: "hour" };
+const DAYUN_SEAT = /(?<![가-힣])([갑을병정무기경신임계][자축인묘진사오미신유술해])(?:\([^)]*\))? 대운(?:\([^)]*\))? 기둥[^.?!]*?태어난 (해|달|날|시각) 자리([^.?!]*)/;
+const REL_IN = /(?<![가-힣])(반합|삼합|육합|원진|충|형|파)(?:\([^)]*\))?(?=$|[^가-힣]|을|를|이|가|으로|로|도|과|와|은|는|에)/g;
+const POS_WORD: readonly (readonly [RegExp, "front" | "middle" | "end"])[] = [[/차례의 (?:앞쪽|앞부분|첫머리|처음)/, "front"], [/차례의 (?:한가운데|가운데|중간)/, "middle"], [/차례의 (?:끝|끝자락|뒷부분|뒤쪽|마지막)/, "end"]];
 
 export function am213MajorFlags(chapters: readonly FinalChapter[], b: BlockCtx): ChunkFlag[] {
   const out: ChunkFlag[] = [], P = b.brief?.timeline?.major as MajorPlan | undefined;
@@ -33,6 +44,13 @@ export function am213MajorFlags(chapters: readonly FinalChapter[], b: BlockCtx):
   const now = P.chapters.find(c => c.n === P.now), next = P.chapters.find(c => c.n === P.next);
   const birthYear = (now ? now.startYear - now.startAge : 0) || undefined;
   const relNames = [...new Set(entries.flatMap(e => e.badges.map(bd => relName(bd.label))).filter(n => n.length >= 2))].sort((a, c) => c.length - a.length);
+  // AM2-14 6부: 대운 기둥 × 원국 자리 관계(엔진 detectRelations 그대로) · 차례 위치.
+  const ch2 = b.brief?.chart?.pillars as Record<string, { hanja: string } | undefined> | undefined;
+  const natal: PositionedPillar[] = ch2 ? (["year", "month", "day", "hour"] as const).flatMap(pos => { const h = ch2[pos]?.hanja; return h ? [{ position: pos, pillar: { stem: h[0], branch: h[1] } } as unknown as PositionedPillar] : []; }) : [];
+  const hanjaOf = new Map(P.chapters.map(c => [c.ganji.replace(/^[^(]*\(|\)$/g, ""), c.hanja] as const));
+  const seatRels = (ganji: string, seat: string): Set<string> | null => { const h = hanjaOf.get(ganji), pos = SEAT_POS[seat]; if (!h || !pos || !natal.some(n => n.position === pos)) return null;
+    return new Set(detectRelations([...natal, { position: "dayun", pillar: { stem: h[0], branch: h[1] } } as unknown as PositionedPillar]).filter(r => r.members.some(m => m.position === "dayun") && r.members.some(m => m.position === pos)).map(r => r.kind as string)); };
+  const posOf = (n: number, total: number): "front" | "middle" | "end" => (n <= total / 3 ? "front" : n > (2 * total) / 3 ? "end" : "middle");
   const target = (sen: string) => { const n = /(\d{1,2})장 「/.exec(sen)?.[1]; if (n) return P.chapters.find(c => c.n === Number(n)); return NEXT_REF.test(sen) ? next : NOW_REF.test(sen) ? now : undefined; };
   for (const c of chapters) c.sections.forEach((s, si) => {
     const keyYear = YEAR_HEAD.exec(s.heading)?.[1] ?? /^(20\d\d)년/.exec(s.heading)?.[1];
@@ -72,6 +90,9 @@ export function am213MajorFlags(chapters: readonly FinalChapter[], b: BlockCtx):
         if (pm && pv && !pv.badges.some(bd => relName(bd.label) === pm[1] || bd.label.startsWith(pm[1]))) out.push({ ...at, rule: "prev_year", detail: `「앞 해 ${pm[1]}」 — ${pv.key}년에는 ${pv.badges.map(bd => relName(bd.label)).join(" · ") || "관계 없음"}`, hint: "앞 해 관계는 엔진 값 그대로" }); void relNames; }
       // ---- year_list ---- 6장(영역 지도): 해 둘 이상을 늘어놓은 목록.
       const joined = /(?<![0-9])(20[23]\d)년?\s?(?:과|와|,|·|및)\s?(20[23]\d)년/.test(sen) || /(?<![0-9])20[23]\d\s?·\s?20[23]\d/.test(sen) || (sen.match(/(?<![0-9])20[23]\d년에는/g) ?? []).length >= 2;
+      { const m = DAYUN_SEAT.exec(sen); const rels = m ? seatRels(m[1], m[2]) : null;
+        if (m && rels) for (const w of new Set([...m[3].matchAll(REL_IN)].map(x => x[1]))) if (!REL_WORD[w].some(k => rels.has(k))) { out.push({ ...at, rule: "dayun_seat_rel", detail: `「${m[1]} 대운 기둥 × 태어난 ${m[2]} 자리 ${w}」 — 엔진 관계 ${[...rels].join("·") || "없음"}`, hint: "대운 기둥과 원국 자리 관계는 카드 값 그대로(다음 장 관계는 다음 대운 이름으로)" }); break; } }
+      if (now) for (const [re, pos] of POS_WORD) if (re.test(sen) && posOf(now.n, P.chapters.length) !== pos) { out.push({ ...at, rule: "chapter_pos", detail: `차례 위치 「${re.exec(sen)![0]}」 — 지금 장 ${now.n}장 / ${P.chapters.length}장`, hint: "차례 위치는 장 번호 그대로(대운 안 위치 「N번째 해」와 다르다)" }); break; }
       if (c.id === "map" && joined) { const ys = new Set([...sen.matchAll(/(?<![0-9])(20[23]\d)/g)].map(m => m[1])); out.push({ ...at, rule: "year_list", detail: `6장 해 목록 ${[...ys].join(" · ")}`, hint: "해 목록은 화면 표가 맡는다 — 몰리는 막과 뜻으로" }); }
     }));
   });

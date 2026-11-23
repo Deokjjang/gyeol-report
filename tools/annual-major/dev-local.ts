@@ -7,7 +7,7 @@
  *   - 로컬 가드: Supabase API·DB 주소가 localhost가 아니면 중단(scripts/dev/local.ts). 운영 키·운영 DB는 쓰지 않는다.
  *   - 작가 키를 이 서버에서는 일부러 막는다: ANTHROPIC_API_KEY·OPENAI_API_KEY·LLM_API_KEY = local-disabled, LLM_BUDGET_* 없음(devBudget 거절), OPS_MOCK_WRITER=ok(목업 작가).
  *   - 결제: 토스 승인·취소는 tools/p6d/toss-mock.mjs가 받는다(NODE_OPTIONS --import, 키는 test_ 자리값).
- *   - 판매: 로컬에서 대운·세운 결제 흐름을 보려고 FORTUNE_SALES_OPEN=1 + FORTUNE_SALES_OPEN_AT_TEST(지난 시각, 개발 전용) + 자리 가격(세운 3,900 · 대운 5,900 — 결정 전 자리값).
+ *   - 판매: 로컬에서 대운·세운 결제 흐름을 보려고 FORTUNE_SALES_OPEN_AT_TEST(지난 시각, 개발 전용). 가격 · v5 작가 상품은 코드 상수(AM2-14 5부 — env 없음).
  *   - CRON_SECRET은 실행마다 무작위(로컬 전용). 캡처 도구가 워커를 부르게 .cache/am-dev.json(git 밖)에 둔다.
  */
 import { spawn, spawnSync, execFileSync } from "node:child_process";
@@ -33,13 +33,12 @@ async function main() {
     ...process.env,
     NEXT_PUBLIC_SUPABASE_URL: s.API_URL, SUPABASE_URL: s.API_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY: s.ANON_KEY, SUPABASE_SERVICE_ROLE_KEY: s.SERVICE_ROLE_KEY, LOCAL_DB_URL: s.DB_URL,
     NEXT_PUBLIC_APP_URL: `http://localhost:${PORT}`, CRON_SECRET: cron,
-    WRITER_V5_PRODUCTS: "saju_mbti_full,career_money_study,love_marriage_child,saju_mbti_compatibility,major_fortune,annual_fortune",
     TICKET_WORKER_MAX_RSS_MB: "16384", PAID_WORKER_MAX_RSS_MB: "16384",
     OPS_MOCK_WRITER: "ok", ANTHROPIC_API_KEY: "local-disabled", OPENAI_API_KEY: "local-disabled", LLM_API_KEY: "local-disabled",
     LLM_BUDGET_SCOPE: undefined, LLM_BUDGET_RUN: undefined,
     NODE_OPTIONS: `--import ${join(ROOT, "tools/p6d/toss-mock.mjs")}`, TOSS_MOCK_DIR: tossDir,
     NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_KEY: "test_ck_local_mock", TOSS_PAYMENTS_SECRET_KEY: "test_sk_local_mock", TOSS_CONFIRM_API_ENABLED: "1", PAID_REPORT_RELIABILITY_ENABLED: "1",
-    FORTUNE_SALES_OPEN: "1", FORTUNE_SALES_OPEN_AT_TEST: "2000-01-01T00:00:00+09:00", FORTUNE_PRICE_ANNUAL_KRW: "3900", FORTUNE_PRICE_MAJOR_KRW: "5900",
+    FORTUNE_SALES_OPEN_AT_TEST: "2000-01-01T00:00:00+09:00",
   };
   for (const k of Object.keys(env)) if (env[k] === undefined) delete env[k];
   console.log(`next dev: http://localhost:${PORT}`);

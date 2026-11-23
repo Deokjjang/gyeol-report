@@ -3,6 +3,7 @@ import {
   reportProductTypes,
 } from "./reportProductTypes";
 import type { ReportProductType } from "./reportProductTypes";
+import { annualProductYear } from "../ops/config";
 
 export type ReportProductCurrency = "KRW";
 
@@ -10,25 +11,25 @@ export type ReportProductCurrency = "KRW";
 // 가격은 이 상품별 표 한 곳에서만 정한다(새 주문부터 적용). 화면·주문 생성·결제 금액 검증·이벤트·영수증이 모두 이 표를 읽는다.
 // 바꾸기 전에 만든 주문은 서버에 저장된 금액(payment_orders.amount) == 토스 금액이면 그대로 승인된다(아래 isDirectReportPaymentAmount 설명).
 /**
- * AM 6부(덕짱님 결정 대기): 대운·세운 가격은 코드 상수가 아니라 설정값이다(비워 두면 판매하지 않는다 — ops/config closedSaleProducts).
- * 서버 FORTUNE_PRICE_MAJOR_KRW·FORTUNE_PRICE_ANNUAL_KRW, 화면 표시는 NEXT_PUBLIC_ 같은 이름(빌드 때 새겨짐). 비어 있으면 표의 자리표시 값(판매 안 됨)이 타입만 채운다.
+ * AM2-14 5부(덕짱님 결정 2026-11-23 · 11-24): 대운 · 세운 가격도 4종처럼 이 표의 상수다(운영 env에 기대지 않는다 — FORTUNE_PRICE_* · NEXT_PUBLIC_FORTUNE_PRICE_*는 읽지 않는다).
+ * 세운 「나의 2027」 3,900원 · 대운 「앞으로의 나」 4,900원(세운 구매자 반값은 아래 majorHalfPriceKrw).
  */
-const fortunePrice = (server: string | undefined, client: string | undefined) => { const v = Number(server ?? client); return Number.isSafeInteger(v) && v >= 100 ? v : null; };
-export const FORTUNE_PRICE_KRW = {
-  major_fortune: fortunePrice(process.env.FORTUNE_PRICE_MAJOR_KRW, process.env.NEXT_PUBLIC_FORTUNE_PRICE_MAJOR_KRW),
-  annual_fortune: fortunePrice(process.env.FORTUNE_PRICE_ANNUAL_KRW, process.env.NEXT_PUBLIC_FORTUNE_PRICE_ANNUAL_KRW),
-} as const;
-const FORTUNE_PLACEHOLDER_KRW = 4900;
 export const REPORT_PRICE_TABLE_KRW = {
   saju_mbti_full: 3900,
   career_money_study: 3900,
   love_marriage_child: 3900,
   saju_mbti_compatibility: 3900,
-  // 대운·세운: 설정값(FORTUNE_PRICE_*_KRW). 비어 있으면 자리표시(판매 안 됨).
-  major_fortune: FORTUNE_PRICE_KRW.major_fortune ?? FORTUNE_PLACEHOLDER_KRW,
-  annual_fortune: FORTUNE_PRICE_KRW.annual_fortune ?? FORTUNE_PLACEHOLDER_KRW,
+  major_fortune: 4900,
+  annual_fortune: 3900,
 } as const satisfies Record<ReportProductType, number>;
 export const formatKrw = (amount: number) => `${amount.toLocaleString("ko-KR")}원`;
+/**
+ * AM2-14 4부(덕짱님 결정 2026-11-23): 세운 「나의 2027」을 결제한 회원의 대운 반값 = 대운 정가 × 0.5(10원 내림, 토스 최소 100원) — 4,900원이면 2,450원.
+ * 결제 준비(서버 금액) · 승인 직전 대조 · 화면 표시가 모두 이 값을 쓴다.
+ */
+export const MAJOR_HALF_RATE = 0.5;
+export const discountedAmount = (price: number, rate: number) => Math.max(MIN_PAYMENT_AMOUNT_KRW, Math.floor((price * (1 - rate)) / 10) * 10);
+export function majorHalfPriceKrw(): number { return discountedAmount(REPORT_PRICE_TABLE_KRW.major_fortune, MAJOR_HALF_RATE); }
 /** 상품 하나의 새 주문 가격(원). */
 export function reportPriceKrw(productType: ReportProductType): number { return REPORT_PRICE_TABLE_KRW[productType]; }
 /** 출시 4종(종합·커리어·연애·궁합) 공통 가격 — 표의 종합 값을 읽는다. 상품을 아는 곳은 reportPriceKrw(productType)를 쓴다. */
@@ -117,6 +118,16 @@ const reportProductCatalog = [
     isPurchasable: true,
   },
 ] as const satisfies readonly ReportProductCatalogItem[];
+
+/**
+ * AM2-14 1부: 고객이 보는 결제 이름(토스 주문 이름 · 카카오 상품 이름 · 결제 완료 「상품」 줄). 세운은 책 이름 「나의 {신년판 연도}」,
+ * 그 밖(4종 · 대운)은 카탈로그 labelKo 그대로. 관리자 화면 · 매출 봇은 labelKo를 쓴다.
+ */
+export function customerProductLabelKo(productType: unknown): string {
+  const product = getReportProduct(productType);
+  if (!product) return "결리포트";
+  return product.productType === "annual_fortune" ? `나의 ${annualProductYear()}` : product.labelKo;
+}
 
 export function getReportProductCatalog(): readonly ReportProductCatalogItem[] {
   return reportProductCatalog;
