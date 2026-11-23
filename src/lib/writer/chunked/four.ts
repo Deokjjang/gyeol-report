@@ -40,6 +40,8 @@ const WHOLE: Readonly<Record<string, Branch>> = {
   rel_none: "fact", mbti_time: "broken",
   // AM2-13 5부(majorClaims.ts): 대운 9장 엔진 주장 — 저장 대운 책 42권 전수 대조 걸림 year_list 2 모두 참 · 오탐 0(am2.md 23절).
   chapter_title: "fact", fill_claim: "fact", dayun_timing: "fact", age_claim: "fact", prev_year: "fact", year_list: "fact",
+  // AM2-14 6부(D2 판독 — 측정 중 고침, majorClaims.ts): 대운 기둥 × 원국 자리 관계 · 차례 위치 — 저장 세운 · 대운 책 전수 대조(am2.md 24절).
+  dayun_seat_rel: "fact", chapter_pos: "fact",
 };
 /** AM2-14 2부: 장면을 사건으로 못 박지 않은 꼴 — 양보(…와도 · …때도 · …더라도) · 비유(…때처럼 · …처럼). 저장 대운 책 future_event 오탐 3곳의 꼴. */
 const SCENE_HEDGE = /때도|때처럼|처럼|더라도|(?:와|어|아|여|해|져|워|러|서)도(?:,|\s)/;

@@ -143,7 +143,8 @@ export function majorEvidence(c: MajorCtx): Record<string, Evidence> {
       mapLovePeople: ev("mapLovePeople", [`사랑과 사람: 사랑은 ${P.summary.love}, 사람은 ${P.summary.people}`, ...dom(gCur, "love", 1), ...dom(gNext, "people", 1)], "해 목록은 화면 표가 맡는다. 사랑·결혼은 조건형, 결혼 시기를 쓰지 않는다"),
       mapMind: ev("mapMind", [`마음: ${P.summary.mind}`, ...dom(gCur, "mind", 1), ...dom(gNext, "mind", 1)], "해 목록은 화면 표가 맡는다. 병명·증상 없이 생활 장면으로"),
       nextHead: nextC ? ev("nextHead", [`다음 장의 주제: ${nextC.n}장 「${nextC.title}」 — ${nextC.theme}`, `그 장의 오행 흐름: ${nextC.fill.label} — ${nextC.fill.why}`, ...mind(gNext, "inside", 1)], "주제와 채움을 이 사람 말로. 「좋은 대운 · 나쁜 대운」 말 금지") : null,
-      nextRelation: nextC ? ev("nextRelation", [...relationsWithNatal(c.saju, c.k, { stem: nextC.hanja[0] as Pillar["stem"], branch: nextC.hanja[1] as Pillar["branch"] }), S ? `다음 장 몫(${S}~${WINDOW_END}년)에서 오르는 영역: ${upIn(S, WINDOW_END).join("·") || "없음"}` : ""], "원국 자리와 다음 대운 기둥의 관계만. 충=나쁨·합=좋음 단정 금지") : null,
+      // AM2-14 6부(D2 판독 — 측정 중 고침): 다음 장 관계 줄은 다음 대운 이름으로(「이 대운」은 이름 붙이기가 지금 대운으로 바꿔 「을축 대운 기둥과 태어난 달 자리: 반합」이 됐다 — 반합은 병인의 관계).
+      nextRelation: nextC ? ev("nextRelation", [...relationsWithNatal(c.saju, c.k, { stem: nextC.hanja[0] as Pillar["stem"], branch: nextC.hanja[1] as Pillar["branch"] }, `${nextC.ganji.replace(/^[^(]*\(|\)$/g, "")} 대운`), S ? `다음 장 몫(${S}~${WINDOW_END}년)에서 오르는 영역: ${upIn(S, WINDOW_END).join("·") || "없음"}` : ""], "원국 자리와 다음 대운 기둥의 관계만. 충=나쁨·합=좋음 단정 금지") : null,
       planNear: ev("planNear", [P.y2027 ? `2027년 정미년: 하늘 ${P.y2027.sky} · 땅 ${P.y2027.ground} · ${P.y2027.core} · ${P.y2027.verdict}` : "", P.turn ? `문턱 해: ${P.turn.year}년 — ${P.turn.start} 다음 장이 열림` : ""], "가까운 1년(2027년, 판정 방향 그대로) / 문턱 해를 각각 행동 하나로"),
       letter: nextC && nowC ? ev("letter", [`이 장을 덮으며: 「${nowC.title}」`, `다음 장을 열며: 「${nextC.title}」`], "가져갈 것 하나를 새 말로, 다음 장 제목으로 맺는다. 앞 장 문장을 옮기지 않는다") : null,
     });
@@ -166,7 +167,7 @@ export function periodLineFits(domain: string, text: string, signals?: Partial<D
 }
 
 /** 대운 기둥과 원국 자리 관계(쉬운 줄). */
-export function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar): string[] {
+export function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pillar, label = "이 대운"): string[] {
   const natal = natalEntries(saju);
   const seat = { year: "태어난 해", month: "태어난 달", day: "태어난 날", hour: "태어난 시각" } as const;
   return detectRelations([...natal, { position: "dayun", pillar: dp }]).filter(r => r.members.some(m => m.position === "dayun") && REL_PLAIN[r.kind])
@@ -175,7 +176,7 @@ export function relationsWithNatal(saju: SajuCalcResult, k: Knowledge, dp: Pilla
       // 삼형 세 글자 중 두 글자만 만난 형은 일반 형 풀이(「세 땅이 서로 눌러」는 세 글자일 때 말 — 타임라인 카드와 같은 원리).
       const twoHyeong = r.kind === "HYEONG" && r.completeness === "partial" && [...r.key].length === 3, plain = twoHyeong ? k.badges.find(x => x.kind === "HYEONG" && x.pair === undefined) : undefined;
       const half = r.kind === "SAMHAP" && r.completeness !== "full", src = plain ?? b, mean = (src?.line ? (half ? halfHapLine(src.line) : src.line) : "").replace(/ (해|달)$/, " 흐름");
-      return `이 대운 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${half ? HALF_HAP_PLAIN : REL_PLAIN[r.kind]}${mean ? ` — ${mean}` : ""}`; });
+      return `${label} 기둥과 ${[...new Set(r.members.filter(m => m.position !== "dayun").map(m => seat[m.position as keyof typeof seat]).filter(Boolean))].join("·")} 자리: ${half ? HALF_HAP_PLAIN : REL_PLAIN[r.kind]}${mean ? ` — ${mean}` : ""}`; });
   // AM 재생성 판독(major-1 3장): 丑·巳 두 글자(반합)를 「삼합(세 글자가 한 기운으로 모임)」으로 줘서 작가가 그대로 썼다 → 반합 풀이.
 }
 

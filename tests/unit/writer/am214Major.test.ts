@@ -112,3 +112,29 @@ describe("AM2-14 3부 화면 쪽 이름", () => {
     expect([now?.eyebrow, next?.eyebrow, map?.eyebrow]).toEqual([title("now"), title("next"), title("map")]);
   });
 });
+
+describe("AM2-14 6부 D2 측정 중 고침(결정론 · 다시 생성 없음)", () => {
+  it.each(people.slice(0, 4))("%s: 다음 장(7장) 관계 줄은 다음 대운 이름, 지금 장(3장) 관계 줄은 지금 대운 이름", (_id, x) => {
+    const m = x.brief.timeline?.major; if (!m || !m.next) return;
+    const name = (n: number) => m.chapters.find(c => c.n === n)!.ganji.replace(/^[^(]*\(|\)$/g, "");
+    const rel = (chId: string) => (x.intake.chapters.find(c => c.id === chId)?.sections ?? []).flatMap(s => s.lines).map(id => x.intake.lines.find(l => l.id === id)?.value ?? "").filter(v => /대운 기둥과 태어난/.test(v));
+    for (const v of rel("next")) expect(v.startsWith(`${name(m.next)} 대운 기둥`), v).toBe(true);
+    for (const v of rel("now")) expect(v.startsWith(`${name(m.now!)} 대운 기둥`), v).toBe(true);
+  });
+  it("검사: 대운 기둥 × 원국 자리 관계 주장 · 차례 위치 주장(D2 결함 두 꼴 재현, 맞는 문장은 통과)", async () => {
+    const { am213MajorFlags } = await import("@/lib/writer/chunked/majorClaims");
+    const x = people[0][1]; // major-1: 지금 3장 을축 · 다음 4장 병인 · 태어난 달 壬戌
+    const ctx = { brief: x.brief, intake: x.intake } as never;
+    const book = (sentences: readonly string[]) => [{ n: 7, id: "next", title: "다음 장 미리 보기", source: "writer", chars: 0, sections: [{ heading: "다음 장에서 원국과 만나는 곳과 오르는 영역은?", paragraphs: sentences.map(s => s) }] }] as never;
+    const rules = (s: string) => am213MajorFlags(book([s]), ctx).map(f => f.rule);
+    expect(rules("을축 대운 기둥과 태어난 달 자리가 만나 반합을 이룹니다.")).toContain("dayun_seat_rel");
+    expect(rules("병인 대운 기둥과 태어난 달 자리가 만나 반합을 이룹니다.")).not.toContain("dayun_seat_rel");
+    expect(rules("을축 대운 기둥은 태어난 달 자리와 형을 이룹니다.")).not.toContain("dayun_seat_rel");
+    expect(rules("지금 읽는 장은 차례의 한가운데쯤에서 다음 장을 향해 넘어가는 중입니다.")).toContain("chapter_pos");
+    expect(rules("지금 읽는 장은 차례의 앞쪽에 있어요.")).not.toContain("chapter_pos");
+    const { branchOf } = await import("@/lib/writer/chunked/four");
+    const c = { entered: { job: true, rel: true, children: false }, relationship: "single", inputs: {} as never, mbtiType: "ENTP", pairedAt: () => false, product: "major_fortune" } as never;
+    expect(branchOf({ chapter: 7, section: 0, rule: "dayun_seat_rel", sentence: "s" }, c)).toBe("fact");
+    expect(branchOf({ chapter: 1, section: 1, rule: "chapter_pos", sentence: "s" }, c)).toBe("fact");
+  });
+});
