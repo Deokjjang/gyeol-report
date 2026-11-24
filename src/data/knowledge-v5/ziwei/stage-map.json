@@ -1,0 +1,122 @@
+{
+  "version": "ziwei-db-zw1",
+  "family": "stageMap",
+  "entries": [
+    {
+      "palace": "myeong",
+      "myeongri": "나 자신을 뜻하는 일간과 일주가 타고난 기질을 맡는 자리",
+      "keys": [
+        "dayMaster:*",
+        "dayPillar:*"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "hyeongje",
+      "myeongri": "나와 어깨를 나란히 하는 기운인 비견이 형제와 가까운 또래처럼 좁은 사이를 맡는 자리",
+      "keys": [
+        "tenGod:比肩"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "bucheo",
+      "myeongri": "배우자 자리로 읽는 일지가 가장 가까운 한 사람과의 사이를 맡는 자리",
+      "keys": [
+        "position:day.branch"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "janyeo",
+      "myeongri": "자녀 자리인 시주, 내가 길러 내는 작업과 아랫사람을 뜻하는 식신 · 상관. 자녀 별은 성별 따라 식상 · 관성으로 갈림",
+      "keys": [
+        "position:hour.branch",
+        "position:hour.stem",
+        "tenGod:食神",
+        "tenGod:傷官"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "jaebaek",
+      "myeongri": "내가 다루는 재물을 뜻하는 정재 · 편재와 그 기운의 세기",
+      "keys": [
+        "tenGod:正財",
+        "tenGod:偏財",
+        "tenGodBalance:WEALTH:STRONG",
+        "tenGodBalance:WEALTH:WEAK"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "jilaek",
+      "myeongri": "오행의 치우침과 태어난 계절의 기운으로 몸과 마음의 리듬을 보는 자리",
+      "keys": [
+        "element:*",
+        "climate:*"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "cheoni",
+      "myeongri": "밖으로 움직이는 기운인 역마가 이동과 바깥 활동을 맡는 자리",
+      "keys": [
+        "shinsal:YEOKMASAL",
+        "shinsal:TWELVE_YEOKMASAL",
+        "shinsal:TWELVE_JISAL"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "nobok",
+      "myeongri": "내 몫을 나눠 갖는 기운인 겁재와 비겁의 세기가 여럿과 얽히는 넓은 사이를 맡는 자리",
+      "keys": [
+        "tenGod:劫財",
+        "tenGodBalance:PEER:STRONG",
+        "tenGodBalance:PEER:WEAK"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "gwanrok",
+      "myeongri": "일과 자리를 뜻하는 정관 · 편관, 그리고 사회 무대로 읽는 월지",
+      "keys": [
+        "tenGod:正官",
+        "tenGod:偏官",
+        "tenGodBalance:OFFICER:STRONG",
+        "position:month.branch"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "jeontaek",
+      "myeongri": "집과 문서를 뜻하는 정인, 그리고 재물을 쌓아 두는 곳간 자리인 재고",
+      "keys": [
+        "tenGod:正印",
+        "gwiin:JAEGO"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "bokdeok",
+      "myeongri": "먹고 누리는 여유를 뜻하는 식신과 마음을 제자리로 돌려놓는 안정을 뜻하는 복성귀인",
+      "keys": [
+        "tenGod:食神",
+        "gwiin:BOKSEONG"
+      ],
+      "confidence": "추정"
+    },
+    {
+      "palace": "bumo",
+      "myeongri": "육친으로는 편재가 아버지 · 정인이 어머니, 자리로는 년주가 조상 · 월주가 부모",
+      "keys": [
+        "tenGod:偏財",
+        "tenGod:正印",
+        "position:month.stem",
+        "position:month.branch"
+      ],
+      "confidence": "추정"
+    }
+  ]
+}

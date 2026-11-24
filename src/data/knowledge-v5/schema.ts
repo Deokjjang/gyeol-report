@@ -488,7 +488,8 @@ export const ZiweiPalaceSchema = z.object({
 }).strict();
 export type ZiweiPalace = z.infer<typeof ZiweiPalaceSchema>;
 export const ZiweiPairSchema = z.object({ ...ziweiCore, family: z.literal("starPair"), stars: z.tuple([z.string().min(2), z.string().min(2)]) }).strict();
-export const ZiweiEmptySchema = z.object({ ...ziweiCore, family: z.literal("emptyPalace"), /** 맞은편 칸을 빌려 읽는 법. */ borrow: Para }).strict();
+/** 공궁은 궁처럼 렌즈(어느 칸이 비었는지에 따라 영역이 달라진다)라 행동 꼬리표는 선택(3부, 궁과 같은 결정). */
+export const ZiweiEmptySchema = z.object({ ...ziweiCore, dimensionTags: DimensionTagsSchema.optional(), family: z.literal("emptyPalace"), /** 맞은편 칸을 빌려 읽는 법. */ borrow: Para }).strict();
 export const ZiweiMutagenSchema = z.object({ ...ziweiCore, family: z.literal("mutagen") }).strict();
 export const ZiweiFiveClassSchema = z.object({
   id: ziweiCore.id, family: z.literal("fiveClass"), name: ziweiCore.name, easyName: ziweiCore.easyName, number: z.number().int().min(2).max(6),
