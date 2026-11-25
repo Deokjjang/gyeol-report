@@ -1,0 +1,1293 @@
+{
+  "version": "ziwei-db-zw1",
+  "family": "mbti",
+  "entries": [
+    {
+      "id": "zw-mbti:cheongi:ENTP",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "why": "ENTP는 다들 끄덕이는 말에도 「왜 꼭 그래야 하지」를 붙이고, 천기는 그 물음 뒤에 올 다음 물음까지 미리 헤아립니다. 묻는 버릇에 셈하는 머리가 겹쳐 까닭을 캐는 힘이 깊어집니다. 다만 물음을 잇는 재미가 앞서면, 처음에 무엇이 궁금했는지는 저만치 뒤로 밀립니다.",
+      "scene": {
+        "broad": "새 규칙이나 설명을 들으면 까닭부터 묻고, 그 까닭으로 예외를 짚어 내는 편",
+        "text": "도서관에서 「책은 두 주까지만」 안내를 보면 까닭부터 묻습니다. 「기다리는 사람이 많아서」라는 답을 듣자마자 「그럼 아무도 안 찾는 책은 더 오래 빌려도 되겠네요」가 나옵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ENTP",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ENTP",
+      "kind": "conditional",
+      "dimension": "socialEnergy",
+      "why": "여럿에게 고루 마음을 써야 하는 자리에서는 태양의 결이 앞서, 사람을 많이 만날수록 얼굴이 환해집니다. 그런데 머리에 꽂힌 생각이 하나 생기면 ENTP의 결이 앞서, 시끌벅적한 데를 빠져나와 혼자 그 생각을 굴려야 기운이 다시 찹니다. 사람이 기운을 주는 날과 생각이 기운을 주는 날이 따로 있는 셈입니다.",
+      "scene": {
+        "broad": "사람 많은 자리에서 두루 어울리다가도 생각 하나에 꽂히면 혼자 있을 곳을 찾아 빠져나오는 편",
+        "text": "동네 축제에 가면 천막마다 들러 아는 얼굴, 모르는 얼굴과 한마디씩 나눕니다. 그러다 누가 던진 말에 새 생각 하나가 떠오르면 「나 이것 좀 생각하러 갈게」 하고 손을 흔들고 일어나, 집까지 걷는 내내 그 생각만 굴립니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ENTP",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "persistence",
+      "why": "끝을 봐야 손을 터는 무곡과 달리, ENTP는 뼈대가 잡히는 순간 흥미가 다음 것으로 건너갑니다. 한 사람 안에서 「마저 하자」와 「이건 다 알았어」가 다툽니다. 둘 다 맞는 말이라 속이 더 시끄럽습니다.",
+      "scene": {
+        "broad": "거의 다 된 일 앞에서 새것으로 건너가고 싶은 마음과 끝내고 싶은 마음이 맞서는 편",
+        "text": "직접 만든 나무 의자를 사포질하는 마지막 날, 모양이 다 잡히자 손이 근질거립니다. 다음에 만들 탁자가 머릿속에 벌써 서 있는데, 입을 삐죽이며 다리 안쪽까지 마저 문지릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ENTP",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "why": "말싸움이든 내기든 불이 붙으면 ENTP는 끝까지 이기고 싶어집니다. 그런데 천동은 웃음이 도는 판에 금이 가는 것을 승패보다 크게 치는 별입니다. 이길 수를 손에 쥐고도 쓸까 말까 망설이는 사람이 됩니다.",
+      "scene": {
+        "broad": "승부가 걸린 놀이에서 이기고 싶은 마음과 분위기를 지키고 싶은 마음 사이를 오가는 편",
+        "text": "친구들과 말장난 겨루기가 붙으면 받아칠 한마디가 늘 하나쯤 남아 있습니다. 그런데 다들 허리를 꺾고 웃는 판이면 그 한마디를 꾹 삼키고 남의 말에 제일 크게 웃어 줍니다. 웃는 동안에도 입술 끝이 몇 번이나 들썩입니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ENTP",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "why": "ENTP는 「이 금은 누가 왜 그었지」를 따져 보지 않고는 못 배깁니다. 염정은 한번 받아들인 선을 깍듯이 지켜야 속이 편합니다. 머리로는 규칙을 다 뜯어 놓고 발로는 그 규칙을 지키는, 묘한 모범생이 됩니다.",
+      "scene": {
+        "broad": "정해진 규칙의 까닭을 끝까지 따지면서도 행동은 그 규칙 안에 두는 편",
+        "text": "「들어가지 마시오」 팻말 앞에서 「왜 안 되지, 잔디가 그렇게 약한가」 하고 한참 따집니다. 그러면서도 발은 끝내 금 밖에 두고 길을 돌아서 갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ENTP",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "why": "ENTP의 머리는 새 판과 새 방법을 볼 때마다 들썩입니다. 천부는 손에 익은 것과 쌓아 둔 것을 쉽게 내놓지 않습니다. 구경은 누구보다 신나게 하고 갈아타는 데는 누구보다 뜸을 들이는 까닭입니다.",
+      "scene": {
+        "broad": "새로 나온 것을 누구보다 궁금해하면서도 정작 쓰던 것을 좀처럼 바꾸지 않는 편",
+        "text": "새로 나온 전화기 소개 영상은 빠짐없이 챙겨 보고 장단점까지 줄줄 욉니다. 정작 손에 든 것은 네 해째 쓰는 그것이고, 「아직 멀쩡해」 하며 창을 닫습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ENTP",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "detailFocus",
+      "why": "ENTP는 밑그림이 서면 자잘한 칸 채우기는 미뤄 두고 다음 그림으로 가고 싶어 합니다. 그런데 태음의 눈은 한 뼘 어긋난 모서리 하나에 자꾸 걸려 멈춥니다. 큰 그림을 신나게 펼치던 손이 귀퉁이 하나 앞에서 한참 서 있는 까닭입니다.",
+      "scene": {
+        "broad": "큰 틀을 빠르게 그려 놓고도 작은 어긋남 하나가 눈에 걸려 다시 멈추는 편",
+        "text": "방을 바꾸기로 하면 십 분 만에 가구 자리를 통째로 새로 그립니다. 그러다 콘센트가 침대 머리맡에서 한 뼘 모자란 것을 알아채고, 그린 것을 놓고 한참 끙끙댑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ENTP",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "why": "새것 냄새를 맡으면 몸이 먼저 가는 탐랑에, 물건 하나를 받아 들면 「이걸 이렇게도 쓰겠는데」가 먼저 나오는 ENTP가 겹쳤습니다. 처음 만지는 것도 금방 요령을 잡아 눈이 두 배로 반짝입니다. 다만 같이 하자고 끌어들인 사람이 막 재미를 붙일 즈음, 이 사람은 벌써 다른 문 앞에 가 있습니다.",
+      "scene": {
+        "broad": "새로 나온 것을 알게 되면 바로 해 보고 주변 사람에게까지 퍼뜨리는 편",
+        "text": "새로 나온 사진 꾸미기 놀이를 알게 되면 그날 밤 친구들 얼굴로 열 장을 만들어 돌립니다. 다음 날 친구들이 따라 하기 시작할 즈음, 이 사람은 벌써 다른 놀이에 빠져 있습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ENTP",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "inquiry",
+      "why": "거문은 말에 붙은 숫자 하나도 어디서 왔는지 물어야 속이 풀리고, ENTP는 남이 내린 결론을 거꾸로 놓고 그래도 버티는지 흔들어 봅니다. 따지는 눈이 두 겹이라, 허술한 말이 이 사람 앞을 무사히 넘어가는 일은 드뭅니다. 다만 근거를 캐는 재미에 빠지면 상대가 그 얘기를 왜 꺼냈는지는 뒷전이 됩니다.",
+      "scene": {
+        "broad": "칭찬이든 단언이든 그대로 받기보다 왜 그런지 근거부터 물어보는 편",
+        "text": "누가 「너 오늘 말 진짜 잘하더라」 하면 고맙다는 말보다 「어느 대목이? 왜 그게 좋았는데?」를 먼저 묻습니다. 그냥 칭찬하고 싶었던 친구는 웃음을 터뜨리고, 이 사람은 대답을 끝까지 기다립니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ENTP",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "why": "격식을 갖춰야 할 자리에서 천상은 상대를 반듯하게 대접하고 싶어 합니다. ENTP는 누구나 쓰는 인사말이 입에 붙지 않아 남이 안 쓴 첫 줄부터 지어냅니다. 예를 지키려는 마음과 뻔한 말을 못 견디는 마음이 글 한 장을 두고 자리를 다툽니다.",
+      "scene": {
+        "broad": "예를 갖춰야 하는 글이나 자리에서 격식과 자기만의 재치 사이를 오가는 편",
+        "text": "어른께 보낼 축하 글은 「축하드립니다」로 반듯하게 열어야 한다는 걸 압니다. 그런데 손은 자꾸 장난스러운 첫 줄을 쓰고, 세 번 지운 끝에 격식대로 열고는 맨 끝에만 웃음 한 줄을 남깁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ENTP",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ENTP",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "why": "천량은 누군가를 지켜 줄 때 오래 다져진 정석부터 손에 쥐여 줍니다. 그런데 ENTP는 정해진 방법을 보면 한 번은 비틀어 봐야 직성이 풀립니다. 남에게는 정석을 권하고 혼자서는 딴 길을 뚫어 보는데, 둘 다 진심이라 스스로도 웃음이 납니다.",
+      "scene": {
+        "broad": "남에게는 기본을 지키라고 일러 주면서 자기는 다른 방법을 몰래 시험해 보는 편",
+        "text": "수영을 갓 배우는 후배에게는 「기본 자세부터 몸에 붙여」 하고 일러 줍니다. 돌아서서 자기는 「팔을 이렇게 꺾으면 더 빠르지 않나」를 혼자 해 보다 물을 먹습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ENTP",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "riskTaking",
+      "why": "결과가 보이지 않는 판 앞에서 ENTP는 오히려 머리가 더 잘 돌고, 칠살은 그 판에 몸부터 들이밀 배짱을 보탭니다. 깨지면서 빨리 배우는 힘이 두 겹입니다. 다만 물러설 자리를 남겨 두지 않고 뛰어드는 때가 있습니다.",
+      "scene": {
+        "broad": "해 본 적 없는 일도 여럿 앞에서 처음 해 보는 것을 마다하지 않는 편",
+        "text": "친구 여덟을 부른 날, 한 번도 안 해 본 요리를 내놓기로 정합니다. 만드는 법은 미리 두 번 읽어 두고, 「맛없으면 설거지는 내가 다 한다」를 먼저 걸고서 불을 켭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ENTP",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ENTP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "why": "ENTP는 남들이 안 해 본 조합을 떠올릴 때 눈이 빛나고, 파군은 있던 것을 허문 빈터 앞에서 기운이 솟습니다. 허무는 손과 엮는 머리가 만나 새 판이 빨리 섭니다. 다만 옛것이 왜 그 모양이었는지 묻기도 전에 치워 버려, 그 안에 들어 있던 요령까지 함께 버려질 때가 있습니다.",
+      "scene": {
+        "broad": "쓰던 물건도 원래 모양을 허물어 전혀 다른 쓰임으로 다시 만들어 보는 편",
+        "text": "안 입는 청바지를 버리려다 말고 가위를 듭니다. 다리는 잘라 가방으로, 뒷주머니는 떼어 벽에 거는 꽂이로 바꿔 놓고는 남은 조각을 보며 「이건 또 뭐가 되려나」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ENTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheongi:INFJ",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "why": "INFJ는 남의 속은 금세 읽으면서 제 속은 한 바퀴 돌아서야 읽는 편이라, 제 버릇에 생긴 작은 변화를 실마리로 혼자 속을 더듬어 내려갑니다. 천기는 그 길에 「언제부터, 무엇이 걸렸나」를 하나씩 셈해 보는 머리를 보탭니다. 속을 들여다보는 눈이 밝아지는 만큼, 작은 신호 하나에도 까닭을 찾느라 머리가 쉬지 못할 때가 있습니다.",
+      "scene": {
+        "broad": "제 버릇에 생긴 작은 변화를 눈치채면 그 까닭을 거슬러 혼자 차례로 짚어 보는 편",
+        "text": "좋아하던 노래를 며칠째 한 번도 안 틀었다는 걸 알아채면 그 까닭부터 찾아 나섭니다. 「그날부터 뭐가 걸렸지?」 하고 날짜를 거슬러 짚어 가다, 답을 미뤄 둔 부탁 하나에서 멈춥니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:INFJ",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "INFJ는 곁 사람의 표정에서 오늘 무엇이 모자란지를 알아보고, 태양은 그것을 망설임 없이 드러내 놓고 채워 줍니다. 알아보는 눈에 나서는 손이 붙어 도움이 빠르고 환합니다. 다만 환하게 챙기는 만큼, 조용히 넘어가고 싶던 사람까지 여럿의 눈길 앞에 세울 때가 있습니다.",
+      "scene": {
+        "broad": "곁 사람에게 모자란 것을 알아채면 여럿이 보는 데서도 망설이지 않고 채워 주는 편",
+        "text": "바람 부는 강가에서 한 사람이 어깨를 움츠리는 걸 가장 먼저 봅니다. 주머니 속 손난로를 꺼내 「이거 너 해」 하고 쥐여 주고는, 「다들 추우면 말해, 두 개 더 있어」 하고 크게 묻습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:INFJ",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "empathyResponse",
+      "why": "마음이 막 무너진 사람 앞에서는 INFJ의 결이 앞서, 맞고 틀림은 미뤄 두고 속부터 받아 줍니다. 한숨 돌린 뒤 무엇을 할지 정하는 자리가 되면 무곡의 결이 나와, 부풀었던 말을 사실 크기로 되돌려 놓습니다. 곁 사람은 같은 사람에게서 위로와 셈을 차례로 받습니다.",
+      "scene": {
+        "broad": "속상한 이야기는 먼저 마음으로 받아 주고, 가라앉은 뒤에 사실을 하나씩 짚어 보는 편",
+        "text": "친구가 「다들 나만 빼고 다녀」 하고 울먹이면 그날은 맞장구만 치며 들어 줍니다. 며칠 뒤 「그 다들이 누구누구야?」 하고 이름을 하나씩 짚어 보니, 실은 한 사람 얘기였습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:INFJ",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "why": "INFJ는 남의 이야기를 들으면 그 사람이 서 있던 자리까지 마음이 먼저 걸어가 봅니다. 천동은 거기에 곁 사람과 같은 온도로 웃고 우는 순한 결을 보탭니다. 그래서 이 사람 앞에서는 속이 쉽게 풀리는 편이지만, 너무 빨리 따라 울어 위로받으러 온 사람이 도리어 달래는 쪽이 될 때도 있습니다.",
+      "scene": {
+        "broad": "남의 속상한 이야기를 들으면 제 감정이 먼저 따라 움직여 함께 울고 웃는 편",
+        "text": "친구가 힘들었던 지난 일을 웃으며 털어놓는데, 듣는 이 사람 눈가가 먼저 붉어집니다. 친구가 「아니, 네가 왜 울어」 하다가 둘이 같이 웃음이 터집니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:INFJ",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "intimacyPace",
+      "why": "가까워지는 문이 두 겹입니다. 염정은 갓 알게 된 사이에 단정한 금을 그어 두고, INFJ는 이 사이가 몇 해 뒤 어디에 닿을지를 먼저 그려 본 다음에야 걸음을 뗍니다. 들어온 사람은 깊이 아끼지만, 문 앞에서 기다리다 돌아간 사람도 적지 않습니다.",
+      "scene": {
+        "broad": "여럿이 어울리는 사이에서 둘만의 사이로 넘어가는 데 오래 걸리는 편",
+        "text": "여럿이 만나는 자리에는 꼬박꼬박 나가도, 둘이서만 보자는 말은 좀처럼 먼저 꺼내지 않습니다. 「이번엔 둘이 산책할래요?」를 이 사람이 먼저 보낸 날, 그 사람은 금 안으로 들어온 것입니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:INFJ",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "planning",
+      "why": "쌀과 세제, 겨울 이불처럼 살림이 걸린 일에서는 천부의 결이 앞서 몇 달 치를 미리 장만해 둡니다. 그런데 앞으로 어떻게 살지 같은 큰일에서는 INFJ의 결이 앞서, 가 닿을 곳 하나만 정해 두고 가는 길은 그때그때 직감을 따라 고릅니다. 곳간은 꼼꼼한데 앞날의 지도에는 점 하나만 찍혀 있는 셈입니다.",
+      "scene": {
+        "broad": "살림은 철마다 미리 챙겨 두면서, 앞날은 가 닿을 곳만 속으로 정해 두고 길은 가 보며 고르는 편",
+        "text": "가을이 오면 겨울 이불 꺼낼 날과 보일러 손볼 날을 미리 정해 둡니다. 그런데 「내년엔 뭐 할 거야?」라는 물음에는 「길은 가면서 찾지 뭐」 하고 웃는데, 속으로는 닿고 싶은 곳 하나가 이미 또렷합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:INFJ",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "why": "태음은 손때 묻은 것과 고요한 틈에서 제 마음결을 알아보는 별이고, INFJ는 그 결 밑에 흐르는 뜻을 읽어 냅니다. 둘이 겹치면 물건 하나, 계절 하나에서도 요즘의 자신을 비춰 봅니다. 다만 지난 것을 오래 비춰 보는 동안, 오늘 손댈 일이 그 뒤로 밀리곤 합니다.",
+      "scene": {
+        "broad": "정리하다 손이 멈추는 물건 앞에서 요즘 자기 마음이 어디로 기울어 있는지 들여다보는 편",
+        "text": "오래 둔 책장을 비우는 날, 손이 멈추는 책마다 「이건 왜 아직 못 보내지」를 묻습니다. 끝내 남긴 세 권을 나란히 세워 보고서야, 요즘 제가 무엇을 그리워하는지 알게 됩니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:INFJ",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "INFJ",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "why": "처음 본 자리에서 탐랑은 금세 웃음을 트고 장난까지 주고받습니다. 그런데 INFJ는 사람을 웃음보다 조용한 자리에서 알아 가는 유형이라, 떠들썩한 첫날의 친함을 아직 친함으로 세지 않습니다. 그래서 장난이 아무리 잘 맞아도, 속 이야기는 둘이 조용히 남는 날까지 미뤄 둡니다.",
+      "scene": {
+        "broad": "처음 본 사람과 장난은 금세 트면서도 속 이야기 앞에서는 한 발 물러서는 편",
+        "text": "처음 본 날 서로 별명을 지어 부를 만큼 금세 장난을 틉니다. 그런데 「요즘 너는 어때?」 하고 속을 묻는 말이 오면, 웃는 얼굴로 농담 하나를 던지고 슬쩍 비켜 갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:INFJ",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "trustThreshold",
+      "why": "떠도는 말과 숫자 앞에서는 거문의 결이 나와, 근거를 하나씩 확인하고서야 고개를 끄덕입니다. 그런데 오래 마음을 맡겨 온 사람이 나에 대해 하는 말 앞에서는 INFJ의 결이 앞서, 근거를 묻지 않고 그대로 받아들입니다. 세상의 말은 의심해도, 나를 오래 본 사람의 눈은 믿는 셈입니다.",
+      "scene": {
+        "broad": "떠도는 이야기는 출처부터 짚어 보고, 오래 믿어 온 사람이 나에 대해 하는 말은 따지지 않고 받아들이는 편",
+        "text": "누가 「이게 요즘 제일 잘 팔린대」 하면 어디서 나온 숫자인지부터 찾아봅니다. 그런데 오래 믿어 온 친구가 「너 요즘 좀 지쳐 보여」 하면 따져 묻지 않고, 그날은 정말 일찍 불을 끕니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:INFJ",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "INFJ는 가까운 사람이 곧 무엇을 버거워할지 한발 먼저 짐작하고, 천상은 그 짐작을 반듯한 손길로 갖춰 냅니다. 필요한 것이 필요한 자리에 미리 놓여 있어 받는 사람이 한결 편해집니다. 다만 너무 반듯하게 갖춰 두면, 받는 쪽이 오히려 남의 집에 온 듯 어려워하기도 합니다.",
+      "scene": {
+        "broad": "가까운 사람이 버거워할 것을 미리 짐작해 필요한 것을 반듯하게 갖춰 두는 편",
+        "text": "처음 우리 동네로 찾아오는 친구가 어디서 헤맬지 짐작해, 갈림길 두 곳의 사진을 미리 찍어 보내 둡니다. 그러고도 마음이 안 놓여 정류장까지 마중을 나가 서 있으니, 친구가 「이렇게까지 안 해도 되는데」 하며 쑥스러워합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:INFJ",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "INFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "좋은 쪽이든 아픈 쪽이든, INFJ는 가까운 사람이 기다리는 일의 두 갈래 끝을 함께 떠올려 둡니다. 천량은 그 길목에 먼저 가 서서 무엇이 오든 받아 낼 채비를 합니다. 다만 아픈 쪽까지 늘 대비해 두는 버릇 탓에, 좋은 소식 앞에서도 한 박자 늦게 웃곤 합니다.",
+      "scene": {
+        "broad": "가까운 사람이 큰 소식을 기다릴 때 어느 쪽이 와도 곁에서 받아 줄 채비를 미리 해 두는 편",
+        "text": "친구가 오래 기다린 소식을 듣기로 한 날이면 「그 시간에 같이 있을까?」 하고 곁에 앉습니다. 반가운 소식이면 갈 밥집을, 아니면 같이 걸을 길을 둘 다 미리 생각해 두었습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:INFJ",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "conflictApproach",
+      "why": "제 몫이 깎이는 일에는 INFJ의 결이 앞서 말을 삼키고 물러섭니다. 그런데 곁 사람이 부당한 일을 당하면 칠살의 결이 나와 곧장 앞에 섭니다. 평소 조용하던 사람이라 그 한 걸음이 더 크게 보입니다.",
+      "scene": {
+        "broad": "자기 일에는 참고 넘어가다가도 함께 있는 사람의 일에는 바로 나서서 바로잡는 편",
+        "text": "기차에서 누가 제 자리에 앉아 있으면 말없이 빈자리를 찾아 섭니다. 같이 탄 친구 자리에 누가 앉아 있으면 표를 내밀며 「여기 저희 자리예요」 하고 바로 말합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:INFJ",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "INFJ",
+      "kind": "conditional",
+      "dimension": "directness",
+      "why": "고쳐 쓸 수 있다고 믿는 동안에는 INFJ의 결이 앞서 말을 고르고 돌려 건넵니다. 「이건 틀부터 바꿔야 한다」는 판단이 서면 파군의 결이 나와 한 번에 꺼냅니다. 그동안 돌려 말하던 사람이라, 곁에서는 그 한마디를 듣고서야 일이 얼마나 기울었는지 압니다.",
+      "scene": {
+        "broad": "한동안은 조심스럽게 돌려 말하다가 마음이 정해진 뒤에는 단번에 분명히 말하는 편",
+        "text": "늘 듣는 쪽이던 친구 사이에서, 몇 달은 「나도 요즘 좀 그래」를 슬쩍 흘리기만 합니다. 어느 날 「이제 나도 너한테 기댈게, 오늘은 내 얘기를 먼저 들어 줘」 하고 또렷이 말해 친구가 눈을 동그랗게 뜹니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:INFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheongi:INFP",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "introspection",
+      "why": "풀어야 할 일이 눈앞에 있으면 천기의 결이 앞서 바깥 판을 읽고 수를 냅니다. 마음이 걸린 일 앞에서는 INFP의 결이 앞서 안으로 깊이 내려갑니다. 그래서 일을 풀 때와 마음을 풀 때 걸리는 시간이 딴판입니다.",
+      "scene": {
+        "broad": "손으로 풀 문제는 금방 해결하면서 마음에 걸린 말은 오래 혼자 들여다보는 편",
+        "text": "벗겨진 자전거 체인은 영상 하나 보고 십 분 만에 걸어 놓습니다. 그런데 「넌 늘 네 생각만 해」라는 한마디는 사흘을 혼자 이리저리 뒤집어 봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:INFP",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "why": "마음이 움직인 일이 생기면 태양의 결이 앞서, 평소 조용하던 사람이 먼저 손을 들고 여럿을 챙깁니다. 그 밖의 자리에서는 INFP의 결대로 제 생각 속에 깊이 잠겨 있어, 곁 사람의 빈 잔이나 모자란 자리 같은 손 갈 일이 미처 눈에 들어오지 않습니다. 그래서 이 사람이 앞장선 일은 곁 사람들도 진심인 줄 알아봅니다.",
+      "scene": {
+        "broad": "평소에는 제 생각에 잠겨 곁을 덜 살피다가, 마음이 가는 일이 나오면 먼저 나서서 여럿을 챙기는 편",
+        "text": "여럿이 무언가를 할 때 대개는 제 생각에 빠져 누구 잔이 비었는지도 모르고 앉아 있습니다. 그런데 이웃 어르신들께 겨울 목도리를 떠 드리자는 말이 나오면 「털실은 내가 구해 올게」 하고 제일 먼저 손을 듭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:INFP",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "directness",
+      "why": "사실과 숫자를 말할 때는 무곡의 결이 앞서 짧고 곧게 나옵니다. 제 마음을 말할 차례가 되면 INFP의 결이 앞서 말이 멀리 돌아갑니다. 「틀렸어」는 바로 하면서 「서운했어」는 좀처럼 꺼내지 못하는 까닭입니다.",
+      "scene": {
+        "broad": "틀린 사실은 바로 고쳐 말하면서 자기 서운함은 좀처럼 꺼내지 못하는 편",
+        "text": "친구가 「그 전시 네가 먼저 가자고 했잖아」 하면 「아니, 네가 먼저 말했어」는 바로 고쳐 줍니다. 그런데 전시가 끝나자마자 친구가 다른 약속으로 먼저 가 버려 서운했다는 말은 집에 올 때까지 입 밖에 내지 못합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:INFP",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "empathyResponse",
+      "why": "천동은 맞고 틀림보다 곁 사람의 기분을 먼저 헤아리는 순한 별이고, INFP는 상대 마음에 이는 작은 물결까지 제 일처럼 느낍니다. 마음을 받아 주는 결이 두 겹이라, 이 사람 곁에서는 속을 편히 내놓는 사람이 많습니다. 다만 고운 말부터 골라 건네다 보니, 상대가 「정말 괜찮은 건가」 하고 다른 사람에게 한 번 더 묻기도 합니다.",
+      "scene": {
+        "broad": "상대가 작은 일로 속상해할 때 일의 크기보다 그 마음을 먼저 받아 주는 편",
+        "text": "친구가 머리를 생각보다 짧게 잘랐다며 울상이면 「금방 자라」보다 「거울 보고 많이 놀랐겠다」를 먼저 건넵니다. 그날은 친구가 거울을 볼 때마다 옆에서 「봐, 벌써 어울려」 하고 웃어 줍니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:INFP",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "why": "염정은 넘지 말아야 할 금을 또렷이 긋고 지키는 별이고, INFP는 그 금이 정말 제 마음에서 나온 것인지 한참 들여다본 뒤에야 긋는 유형입니다. 그래서 처음 받는 물음 앞에서는 금을 긋지 못하고 머뭇거리다가, 혼자 마음을 다 살핀 뒤에야 선을 내놓습니다. 한번 내놓은 선은 염정의 결대로 좀처럼 바뀌지 않습니다.",
+      "scene": {
+        "broad": "처음 받는 물음 앞에서는 선을 바로 긋지 못하고, 혼자 마음을 살핀 뒤에 내놓은 선은 오래 지키는 편",
+        "text": "모임에서 찍은 사진을 단톡방에 올려도 되냐는 말에 「괜찮아」라고 할지 「나는 빼 줘」라고 할지 정하지 못하고 웃기만 합니다. 집에 와서 한참 생각한 뒤에야 「내 얼굴 나온 건 올리지 말아 줘」를 보내고, 그 뒤로 그 말은 바꾸지 않습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:INFP",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "noveltySeeking",
+      "why": "INFP의 새로움은 머릿속에서 먼저 일어납니다. 생각과 취향을 고를 때는 INFP의 결이 앞서 처음 듣는 이야기와 낯선 노래 쪽으로 자꾸 문을 열지만, 먹고 쓰고 지내는 살림에서는 천부의 결이 앞서 익숙한 것을 지킵니다. 몸은 늘 가던 자리에 두고 마음만 멀리 다녀오는 사람입니다.",
+      "scene": {
+        "broad": "생활에서는 익숙한 것을 지키면서 생각과 취향에서는 늘 처음 보는 쪽을 찾아다니는 편",
+        "text": "빵집에 가면 늘 고르던 빵 하나만 집어 옵니다. 그 빵을 먹으며 듣는 노래는 지난주에 처음 알게 된 먼 나라의 노래이고, 다음 주에는 또 다른 나라로 넘어갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:INFP",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "introspection",
+      "why": "지나간 계절과 장면을 태음은 곱게 접어 간직하고, INFP는 그 기억마다 「그때의 나는 어떤 사람이었지」를 묻습니다. 기억과 물음이 만나, 같은 자리에서도 해마다 달라진 자신을 알아봅니다. 다만 안에서 혼자 고쳐 쓴 마음이 많아, 곁 사람이 그 변화를 알아채기까지는 시간이 걸리는 편입니다.",
+      "scene": {
+        "broad": "해마다 같은 때 같은 곳에서 지난해의 자신과 지금의 자신을 가만히 견주어 보는 편",
+        "text": "첫눈이 오는 날이면 늘 걷던 산책길을 혼자 한 바퀴 돕니다. 작년 이 길에서 무엇을 걱정했는지 떠올리고, 그게 지금은 얼마나 작아졌는지를 가만히 재어 봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:INFP",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "INFP",
+      "kind": "resonance",
+      "dimension": "noveltySeeking",
+      "why": "INFP는 처음 본 물건에도 저만의 사연을 붙여 보고, 탐랑은 그 사연을 직접 손으로 해 보고 싶어 합니다. 해 보고 싶은 것이 손에서도 마음에서도 함께 불어납니다. 다만 마음이 닿은 것만 남기는 사람이라, 나머지는 첫 장에서 조용히 멈춥니다.",
+      "scene": {
+        "broad": "새로 배울 거리를 보면 그것으로 만들 것들을 먼저 상상하며 바로 뛰어드는 편",
+        "text": "동네 게시판에서 「쪽빛 물들이기」 안내를 보면, 배우기도 전에 물든 천으로 만들 책 싸개와 손수건이 머릿속에 줄줄이 떠오릅니다. 다녀온 날에는 처음 물든 손수건 한 장에 「첫 쪽빛」이라는 이름을 붙여 책상 위 벽에 붙여 둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:INFP",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "why": "틀린 데가 보이면 입이 먼저 근질거리는 것이 거문입니다. INFP는 그 말이 상대 마음에 어떻게 닿을지가 먼저 걸립니다. 짚을 말을 다 찾아 놓고도 삼킬지 꺼낼지를 두고 속에서 한참 씨름합니다.",
+      "scene": {
+        "broad": "고칠 곳이 또렷이 보여도 상대 마음이 걸려 말을 돌리다가 끝내 짚고 마는 편",
+        "text": "친구가 쓴 글에서 앞뒤가 안 맞는 곳 세 군데가 바로 보입니다. 「좋은데…」로 시작해 십 분을 돌다가, 결국 「근데 둘째 문단은 말이 안 이어져」가 튀어나옵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:INFP",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "why": "여럿이 함께 나누는 자리에서는 천상의 결이 앞서, 끝자리까지 모자란 데가 없는지 고르게 살펴 챙깁니다. 그런데 한 사람이 제 일을 붙들고 있을 때는 INFP의 결이 앞서, 그 사람이 청하기 전에는 손을 보태지 않고 맡겨 둡니다. 여럿의 몫은 꼼꼼히 챙기고, 한 사람의 일은 그 사람 것으로 남겨 두는 셈입니다.",
+      "scene": {
+        "broad": "여럿이 함께하는 자리에서는 고르게 챙기고, 한 사람이 제 일을 할 때는 청하기 전까지 맡겨 두는 편",
+        "text": "여럿이 밥을 먹을 때는 끝자리 수저와 물컵까지 빠진 데가 없는지 고르게 살핍니다. 그런데 친구가 혼자 낑낑대며 흔들리는 의자를 고치고 있으면 「도와줄까?」 한마디만 건네고, 괜찮다는 말에 정말로 손을 거둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:INFP",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "why": "일이 벌어지는 동안에는 INFP의 결이 앞서, 걱정이 돼도 그 사람이 고른 길이면 말없이 지켜봅니다. 그러다 그 사람이 넘어지고 나면 천량의 결이 나와, 누구보다 먼저 달려가 뒷일을 함께 짊어집니다. 앞을 막아서지는 않아도, 넘어진 자리에는 이 사람이 먼저 와 있는 편입니다.",
+      "scene": {
+        "broad": "가까운 사람이 고른 길은 걱정돼도 지켜보다가, 넘어진 뒤에는 누구보다 먼저 달려가 챙기는 편",
+        "text": "친구가 빠듯해 보이는 여행 계획을 짜도 「너답다」 하고 웃으며 지켜봅니다. 그러다 여행지에서 지갑을 잃었다는 연락이 오면, 그날 밤 갈 수 있는 차편부터 찾아 두고 「내가 갈게」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:INFP",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "INFP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "why": "칠살은 갈림길에 오래 서 있는 것 자체가 몸에 맞지 않는 별입니다. INFP는 고른 뒤의 제 모습이 마음에 드는지 끝까지 그려 보고서야 손을 뻗습니다. 몸은 벌써 문 앞에 나가 있는데 마음은 아직 방 안에서 신발 끈만 만지작거립니다.",
+      "scene": {
+        "broad": "오래 망설이다가 어느 순간 단번에 정해 버리고, 정한 뒤에 다시 곱씹는 편",
+        "text": "떠날지 말지를 두고 기차표 사는 창을 열 번 열었다 닫습니다. 그러다 어느 순간 「에라, 가자」 하고 십 초 만에 끝내고는, 그날 밤 잘한 건지를 또 곱씹습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:INFP",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "INFP",
+      "kind": "conditional",
+      "dimension": "noveltySeeking",
+      "why": "파군은 묵은 것을 걷어 내야 속이 시원하고, INFP는 마음이 깃든 것을 오래 품습니다. 그래서 갈림은 「나다운가」에서 납니다. 나답지 않다고 느낀 것은 단번에 뒤엎고, 추억이 밴 것은 낡아도 그대로 둡니다.",
+      "scene": {
+        "broad": "안 맞는 것은 한 번에 크게 비우면서도 마음이 담긴 것만은 손대지 않고 남기는 편",
+        "text": "방을 뒤집는 날에는 옷장 절반을 미련 없이 비웁니다. 그런데 오래전에 받은 손 글씨 엽서 상자는 뚜껑만 열어 보고 그대로 닫아 둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:INFP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

@@ -29,12 +29,12 @@ export const BANNED: readonly [string, RegExp][] = [
   ["흉한 옛말", /(?<![가-힣])(극처|극부|형극|상처|상부|단명|요절|이별수|과부|홀아비|파재|패가)|이혼|재혼|망신|횡사|팔자/],
   ["고독 확정", /고독(한|할)? ?(팔자|운명|별|확정)|평생 ?(혼자|외롭|외로)|외로울 (운명|팔자)|혼자 살 (운|팔자)/],
   ["병명 · 수술 · 사고 단정", /질병|질환|병명|암(에|이) ?(걸|생기)|당뇨|고혈압|우울증|공황|불면증|심장병|위염|위궤양|디스크|관절염|치매|뇌졸중|수술|입원|교통사고|사고(가|를)? ?(나|당하|날|난|칩)|부상|다치(게 됩|는 운|기 쉽)/],
-  ["형벌 · 감옥", /감옥|교도소|구속|형벌|처벌|징역|(?<![가-힣])전과|범죄/],
+  ["형벌 · 감옥", /감옥|교도소|구속|형벌|처벌|징역|전과(자|가 있|가 생|기록| 기록)|범죄/],
   ["등급 낱말", /대길|대흉|길흉|흉(?!내|터|보|금)|길(하다|한 |합니다|해요|성|운|일|조)(?![가-힣])|좋은 별|나쁜 별|좋은 궁|나쁜 궁|길성|흉성/],
   ["확정 예언", /(결혼|이별|이혼|사고|질병|죽음|사망|파산|합격|승진|임신|출산|성공|실패|부자)(을|이|가)? ?(하게 됩니다|하게 돼요|합니다\.|납니다|됩니다\.|생깁니다|옵니다|할 거예요|할 것입니다|하게 될 거예요)|(올해|내년|\d+년 ?(안|내|뒤|후)|\d+(살|세)) ?(에|쯤|무렵)? ?(결혼|이별|이혼|승진|합격|임신|부자|성공)|반드시|틀림없이|무조건|100%|운명적/],
   ["메모 · 내부 말", /(?<![가-힣])(카드|브리프|입력|미입력|핵심어|화면|작가|데이터|프롬프트|엔진|라이브러리|필드|항목|스키마)(?=$|[^가-힣]|(이|가|은|는|을|를|에|의|로|으로|와|과|도|만|에서|처럼|이나|란|이란)(?![가-힣]))|iztro|\bDB\b|zw:|TODO|※|주의:|참고:|메모/],
   ["「살」 공포 꼴", /(?<![칠지])살(이|을|에)? ?(끼|맞|풀|막|받|붙)|살풀이|살기(?! ?(좋|편|어|전|위|힘|바|쉽|나))|흉살|액살|살성(이|은|의)? ?(무섭|위험|나쁘|해롭)|칼에 (베|찔)/],
-  ["화기 겁주기", /화기(가|는|를|의|로)?[^.!?]{0,14}(나쁘|무섭|위험|불행|망하|재앙|실패|손해|조심해야|피해야)/],
+  ["화기 겁주기", /(?<![전소])화기(가|는|를|의|로)?[^.!?]{0,14}(나쁘|무섭|위험|불행|망하|재앙|실패|손해|조심해야|피해야)/],
   ["건강 단정", /건강(이|을|에)? ?(나쁘|약하|해치|무너|위험|안 좋)|아프(게 됩|기 쉽|기 쉬운|다는)|병(이|에|을) ?(들|걸|생기)|몸이 약(하|한)/],
   ["정보량 0 · 진부", /남다른 잠재력|무한한 가능성|특별한 존재|소중한 사람|빛나는 (존재|사람)|자신만의 길|큰 복|많은 복|복이 많|좋은 일이 (생깁니다|있을)|타고난 복|귀인이 나타|대박|잠재력이 (있|큽|많)|행복해질|긍정적인 (에너지|마음)/],
   ["흐린 말투", /일 수도 있습니다|가능성이 있습니다|일지도 모릅니다|참고하세요|일 수 있을지도/],
@@ -60,12 +60,12 @@ export function particleErrors(text: string): string[] {
 }
 const MBTI_WORD = /\b[EI][NS][TF][JP]\b|MBTI/;
 /** 장면에는 자미두수 용어를 쓰지 않는다(상황만). */
-export const SCENE_JARGON = /명궁|형제궁|부처궁|자녀궁|재백궁|질액궁|천이궁|노복궁|관록궁|전택궁|복덕궁|부모궁|신궁|사화|화록|화권|화과|화기|명반|(?<!에 )(?<![가-힣])대한|주성|보좌성|살성|자미|칠살|천동|오행국/;
+export const SCENE_JARGON = /명궁|형제궁|부처궁|자녀궁|재백궁|질액궁|천이궁|노복궁|관록궁|전택궁|복덕궁|부모궁|신궁|사화|화록|화권|화과|(?<![전소])화기|명반|(?<!에 )(?<![가-힣])대한|주성|보좌성|살성|자미|칠살|천동|오행국/;
 /** 연애 any 장면에 쓰면 어느 연애 상태를 전제하게 되는 말. */
 export const LOVE_ANY_BAD = /마음이? 가는|새로 만난|처음 만난|고백|소개팅|(?<![가-힣])썸|기념일|사귄 지|사귀는 사이|우리 사이/;
 /** 별이 그 칸에 앉아 있다고 말하는 꼴(공궁 빌려 읽기에서 틀린다). */
-export const BORROW_UNSAFE = /배치(이|입|예|라|로)|제자리를 (만난|찾은)|제집에 (든|들)|이 칸에 (든|들어|앉)|(?<![가-힣])여기 (앉|들어)/;
-export const JOB_PROP = /회사|사무실|팀장|부장|과장|상사(?!병)|동료|출근|퇴근|회의(?!적)|거래처|손님|(?<![러아어여])가게(?! ?(되|된|돼|만들|하|해))|매장|사장님|직원|수업|학교|교실|(?<![가-힣])시험(?! ?삼|해)|과제|교수|선생님|고객사/;
+export const BORROW_UNSAFE = /배치(이|입|예|라|로)|제자리를 (만난|찾은)|제집에 (든|들)|이 칸에 (든|들어|앉)|(?<![가-힣])여기 (앉|들어)|명궁에 (앉|든|들어|놓인)/;
+export const JOB_PROP = /회사|사무실|팀장|부장|과장|상사(?!병)|동료|출근|퇴근|회의(?!적)|거래처|손님|(?<![러아어여])가게(?! ?(되|된|돼|만들|하|해))|매장|사장님|직원|수업|학교|교실|(?<![가-힣])시험(?! ?삼|해)|과제|교수|선생님|고객사|일감|화물차|연장 가방|납품|의뢰인|동아리|학기|강의실/;
 export const SPOUSE_PROP = /(?<![가-힣])(남편|아내|배우자|연인|애인|남자친구|여자친구|남친|여친|신혼)|결혼한/;
 export const KID_PROP = /(?<![가-힣])(아이|아들|딸)(?!디어|콘|돌|기|템)(?=$|[^가-힣]|(가|는|를|이|의|에게|와|과|도|들|랑|한테|은|을|이랑))|자녀|육아|유치원|어린이집/;
 
@@ -184,7 +184,7 @@ export function runZiweiDbCheck(): DbReport {
   const rules = loadZiweiFiles().filter(f => f.family === "mbti").flatMap(f => f.entries as { id: string; ziweiId: string; why: string }[]);
   const byStar = new Map<string, Map<string, number>>();
   for (const r of rules) { const m = byStar.get(r.ziweiId) ?? new Map<string, number>(); const h = head(r.why, 6); m.set(h, (m.get(h) ?? 0) + 1); byStar.set(r.ziweiId, m); }
-  for (const [star, m] of byStar) for (const [h, n] of m) if (n > 4) fail("mbti.json", star, "짝 why 첫머리 겹침(같은 첫 6글자 5개 이상)", `${h} × ${n}`);
+  for (const [star, m] of byStar) for (const [h, n] of m) if (n > 4) fail("mbti*.json", star, "짝 why 첫머리 겹침(같은 첫 6글자 5개 이상)", `${h} × ${n}`);
   // 같이 나가는 글끼리의 문장 겹침(파일럿 교훈): 쌍성 ↔ 두 별, 심화 ↔ 그 묶음의 별 · 쌍성 · 그 궁, 짝 ↔ 그 주성. 문장 세 글자 묶음이 70% 이상 겹치면 실패.
   for (const [a, b] of coOccurringPairs()) for (const sa of sentencesOf(a.entry)) for (const sb of sentencesOf(b.entry)) {
     if (sa.n.length < 15 || sb.n.length < 15) continue;
@@ -325,6 +325,7 @@ function checkIdentity(file: string, fam: string, e: Record<string, unknown>, fa
     if (!(MAJOR_STARS as readonly string[]).includes(star)) fail(file, id, "짝은 주성 14만");
     if (id !== `zw-mbti:${star}:${e.mbtiTarget}`) fail(file, id, "짝 id ≠ zw-mbti:<주성>:<유형>");
     if (!(e.factBoundary as { requires: string[] }).requires.includes("mbtiKnown")) fail(file, id, "짝 factBoundary.requires에 mbtiKnown 없음");
+    for (const t of [e.why as string, (e.scene as { broad: string; text: string }).broad, (e.scene as { broad: string; text: string }).text]) if (BORROW_UNSAFE.test(t)) fail(file, id, "짝 글이 빌려 읽을 때 틀림(명궁이 비면 빌린 별의 짝도 나감)", t);
   } else if (fam === "stageMap") {
     if (!(PALACES as readonly string[]).includes(e.palace as string)) fail(file, id, "같은 무대 궁 id");
     for (const key of e.keys as string[]) if (!/^position:(year|month|day|hour)\.(stem|branch)$/.test(key) && !/^[a-zA-Z]+:\*$/.test(key) && !MYEONGRI_IDS.has(key)) fail(file, id, "같은 무대 keys가 명리 DB id가 아님", key);

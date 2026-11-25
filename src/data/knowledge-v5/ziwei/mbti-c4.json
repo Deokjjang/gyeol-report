@@ -1,0 +1,1293 @@
+{
+  "version": "ziwei-db-zw1",
+  "family": "mbti",
+  "entries": [
+    {
+      "id": "zw-mbti:cheongi:ISFJ",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "noveltySeeking",
+      "why": "바꾸면 더 낫겠다는 수가 먼저 보이는 것이 천기의 결이고, 해 오던 대로라야 마음이 놓이는 것이 ISFJ의 결입니다. 머리는 새 방법을 벌써 찾아 놓았는데 손은 익숙한 순서를 따라갑니다. 그래서 고칠 곳을 알면서도 한동안 옛 방식으로 버팁니다.",
+      "scene": {
+        "broad": "더 나은 방법을 알아 두고도 하던 일은 익숙한 방식으로 마저 끝내는 편",
+        "text": "더 빠른 뜨개 법을 영상에서 찾아 놓고도 목도리는 처음 배운 방식으로 끝까지 뜹니다. 새 방법은 다음 실타래부터 쓰기로 하고 즐겨찾기에만 넣어 둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ISFJ",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "why": "ISFJ는 이름이 불리는 순간 얼굴이 달아올라 뒤로 한 걸음 물러납니다. 태양은 반대로 남을 돕는 일에서 앞줄로 걸어 나오는 별입니다. 돕자고 나선 것은 본인인데, 막상 눈길이 쏠리면 숨을 곳부터 찾습니다.",
+      "scene": {
+        "broad": "도울 일에는 먼저 뛰어나가되 칭찬이 쏟아지면 뒤로 숨는 편",
+        "text": "동네 달리기 대회에서 쓰러진 물통 탁자를 먼저 달려가 세웁니다. 진행자가 마이크로 「저분께 박수!」 하자 손사래를 치며 사람들 뒤로 들어갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ISFJ",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "약속한 몫은 끝을 내야 직성이 풀리는 무곡과, 제가 빠지면 남이 그만큼 더 져야 한다는 것을 먼저 떠올리는 ISFJ는 같은 쪽으로 걷습니다. 그래서 차례가 오면 사정이 어떻든 그 자리에 가 있습니다. 둘이 겹친 탓에 「이번만 바꿔 줄래요」 한마디가 유난히 입에서 안 떨어집니다.",
+      "scene": {
+        "broad": "맡은 차례에 사정이 생겨도 바꿔 달라는 말을 꺼내지 못하고 그대로 나가는 편",
+        "text": "주말 텃밭 물 주기 당번을 맡으면 비 오는 날에도 나가 봅니다. 먼 데서 막차로 돌아온 다음 날 새벽에도 「내 차례니까」 하고 물뿌리개를 들고, 바꿔 달라는 말은 꺼내지 않습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ISFJ",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "conflictApproach",
+      "why": "천동은 얼굴 붉힐 일이 생겨도 따져서 바로잡을 것보다 편하게 지나갈 한때를 더 쳐주는 별이고, ISFJ는 서운해도 「내가 참지」 하고 삼키는 유형입니다. 둘이 겹치니 이 사람 곁에서는 언성이 높아지는 일이 드뭅니다. 지나치면 곁 사람이 대신 따지려는 것까지 말려서, 같이 있던 사람이 속을 끓입니다.",
+      "scene": {
+        "broad": "제 불편은 넘기고 곁 사람이 대신 따지려는 것까지 말리는 편",
+        "text": "식당에서 시킨 것과 다른 음식이 나와도 「이것도 맛있겠네요」 하고 그냥 먹습니다. 같이 간 사람이 바꿔 달라고 하려 하면 소매를 잡고 고개를 젓습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ISFJ",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "boundarySetting",
+      "why": "염정은 속을 보여 줄 사람과 아닌 사람 사이에 선을 그어 두는 별인데, ISFJ는 말을 걸어 오는 얼굴 앞에서 그 선을 드러내 보이지 못합니다. 그래서 제 이야기는 좀처럼 내놓지 않으면서, 선 밖에 있는 사람의 긴 이야기는 마지막까지 들어 줍니다. 돌아서고 나면 남의 이야기만 한 아름 안고 온 것이 이상하게 무겁습니다.",
+      "scene": {
+        "broad": "제 속은 아무에게나 열지 않으면서, 남이 꺼내 놓는 긴 이야기는 끊지 못하고 다 들어 주는 편",
+        "text": "얼굴만 알던 이웃이 엘리베이터 앞에서 자기 집 이야기를 꺼내기 시작합니다. 속으로는 「이걸 나한테?」 싶은데 고개를 끄덕이며 삼십 분을 서서 듣고, 「그쪽은요?」 소리에는 「저야 뭐」 하고 웃고 맙니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ISFJ",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "누가 맡겨 둔 것 앞에서 천부와 ISFJ는 똑같이 움직입니다. 흘리지 않고 간수하는 별에, 받은 그대로 지켜 주는 유형이 겹쳐 맡긴 사람이 잊어도 이 사람은 좀처럼 잊지 않습니다. 그 책임이 깊어, 남에게 넘겨도 될 것까지 여러 해 혼자 안고 갑니다.",
+      "scene": {
+        "broad": "맡긴 사람이 잊은 물건도 찾으러 올 날을 생각하며 오래 간수해 두는 편",
+        "text": "멀리 이사 간 친구가 잠깐만 두자던 기타가 해를 넘겨 방 한쪽에 서 있습니다. 친구는 잊은 눈치인데, 눅눅한 철마다 가방을 열어 습기를 살피고 줄이 녹슬지 않게 닦아 둡니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ISFJ",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "ISFJ의 챙김은 기억에서 나오고, 태음의 챙김은 눈썰미에서 나옵니다. 지난번에 어땠는지를 아는 사람이 오늘 낯빛까지 읽으니, 상대가 입을 열기 전에 필요한 것이 와 있습니다. 지나치면 묻기 전에 짐작으로 챙겨 버려, 상대가 정말 바라던 것이 따로 있었다는 것을 뒤늦게 압니다.",
+      "scene": {
+        "broad": "함께 있을 때 불편할 사람을 미리 알아보고 티 나지 않게 제 것을 내주는 편",
+        "text": "여럿이 밤 산책을 나설 때 얇게 입고 온 사람을 먼저 알아봅니다. 가방에서 여벌 겉옷을 꺼내 「나는 더워서」 하고 건네고, 본인은 팔짱을 낀 채 걷습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ISFJ",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "why": "보여 주고 싶은 재주가 많은 탐랑인데, ISFJ는 무대 아래 자리가 편합니다. 연습은 누구보다 해 놓고 차례가 오면 「저는 괜찮아요」가 먼저 나옵니다. 박수받고 싶은 마음과 숨고 싶은 마음이 번갈아 고개를 듭니다.",
+      "scene": {
+        "broad": "잘하는 것이 있어도 여럿 앞에서는 숨기고 혼자일 때만 꺼내 보는 편",
+        "text": "노래방에서 남들 노래에 탬버린만 흔듭니다. 다들 잠깐 나간 틈에 혼자 번호를 누르고 제일 자신 있는 곡을 부르다가, 문이 열리면 얼른 끕니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ISFJ",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ISFJ",
+      "kind": "conditional",
+      "dimension": "detailFocus",
+      "why": "거문의 눈은 어긋난 한 줄을 찾고, ISFJ의 눈은 사람의 달라진 한 구석을 찾습니다. 낯선 글과 숫자 앞에서는 거문이 앞서 앞뒤 안 맞는 데를 짚어 내고, 오래 본 사람 앞에서는 ISFJ가 앞서 흠보다 그 사람 사정을 먼저 읽습니다. 꼼꼼함은 하나인데 무엇을 들여다보느냐가 자리 따라 바뀝니다.",
+      "scene": {
+        "broad": "낯선 글에서는 어긋난 곳을 찾고 익숙한 사람에게서는 달라진 낌새를 먼저 읽는 편",
+        "text": "새로 든 모임의 규약은 끝줄까지 읽고 앞 장과 뒷장의 날짜가 어긋난 것을 짚어 냅니다. 오랜 친구가 보낸 초대 글에서는 틀린 글자보다 「요즘 글이 짧아졌네, 바쁜가」가 먼저 보입니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ISFJ",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "여럿을 대신해 맡은 일일수록 이 사람 손이 느려집니다. 천상은 마지막 매듭을 제 눈으로 봐야 손을 떼는 별이고, ISFJ는 믿고 맡긴 일에 흠이 날까 봐 잠을 설치는 유형이라서입니다. 뒷마무리에서 흠이 나는 일은 좀처럼 없지만, 끝난 일을 집에 가서도 다시 떠올리며 빠진 것을 찾습니다.",
+      "scene": {
+        "broad": "여럿을 대신해 맡은 일은 내고 난 뒤에도 한 번 더 확인해야 마음이 놓이는 편",
+        "text": "동네 모임 대표로 신청서를 내러 가기 전, 이름 철자와 날짜를 세 번 맞춰 봅니다. 접수하고 나서도 「잘 들어갔나요?」 하고 한 번 더 물어봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ISFJ",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ISFJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "남의 궂은일 앞에서 자리를 지키는 것을 도리로 아는 천량에, 맡은 자리를 묵묵히 채우는 ISFJ가 겹쳤습니다. 그래서 누가 부르지 않아도 그 집의 손 모자란 데를 제 몫으로 채웁니다. 다만 그 무게를 제 것처럼 지는 터라, 일이 끝난 뒤에도 그 집 걱정을 한동안 내려놓지 못합니다.",
+      "scene": {
+        "broad": "가까운 사람에게 궂은일이 생기면 찾아가 손 모자란 데를 말없이 채우는 편",
+        "text": "친구 집안에 궂은일이 생겼다는 소식을 들으면 먼 길이어도 그날 저녁 검은 옷을 챙겨 나섭니다. 사흘 동안 벗어 둔 신발을 가지런히 하고 찾아온 사람들을 자리로 안내하다가, 집에 와서도 그 친구가 밥은 챙겨 먹는지가 한동안 마음에 걸립니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ISFJ",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "conflictApproach",
+      "why": "부딪칠 일이 생기면 속에서 두 목소리가 납니다. 칠살은 「지금 말해, 바로 끝내」 하고, ISFJ는 「좋게 넘어가자」 합니다. 참다 참다 한 번 입을 열면 말이 짧고 세서, 평소 순하던 사람이라 듣는 쪽이 더 놀랍니다.",
+      "scene": {
+        "broad": "거슬리는 일을 한동안 참다가 어느 순간 짧고 단단하게 말해 버리는 편",
+        "text": "극장에서 뒷자리가 의자를 자꾸 차면 두 번은 몸만 앞으로 당깁니다. 세 번째에 돌아보며 「그만 차 주세요」 하고 짧게 말하고, 영화 내내 제 말투가 셌나 되짚습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ISFJ",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ISFJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "why": "파군은 정해진 틀을 보면 한 번은 뒤집어 봐야 속이 풀리는 별입니다. 그런데 ISFJ는 배운 대로, 정한 대로 해야 남에게 폐가 안 된다고 믿습니다. 그래서 틀은 틀대로 지키고, 뒤집기는 아무에게도 닿지 않는 제 방 안에서만 합니다.",
+      "scene": {
+        "broad": "정해진 대로 익히면서도 아무도 없을 때는 같은 것을 제멋대로 뒤집어 해 보는 편",
+        "text": "붓글씨를 배울 때 본보기에 적힌 획 차례를 하나도 안 어깁니다. 그러다 혼자 남은 저녁이면 같은 글자를 크기도 기울기도 제멋대로 뒤집어 쓰고, 다음 날은 다시 본보기대로 씁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ISFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheongi:ESTJ",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ESTJ",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "why": "ESTJ는 오늘 정해서 내일 굴리고 싶고, 천기는 정하기 전에 길 세 갈래를 끝까지 걸어 보고 싶습니다. 입은 「이걸로 갑시다」를 말하려는데 머리가 「잠깐, 다른 수는?」 하고 붙잡습니다. 정해 놓고 뒤늦게 더 나은 수가 떠올라 혼자 속을 볶기도 합니다.",
+      "scene": {
+        "broad": "빨리 정해 놓고도 더 나은 수가 없었는지 뒤에서 다시 따져 보는 편",
+        "text": "새 휴대폰을 사러 가서 십 분 만에 「이걸로 주세요」 합니다. 집에 오는 길에 다른 기종 비교 글을 세 개 읽고, 상자를 뜯기 전에 한 번 더 따져 봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ESTJ",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "directness",
+      "why": "태양이 준 말에는 깔아 둔 뒷뜻이 없고, ESTJ가 준 말에는 에두르는 앞머리가 없습니다. 그래서 부탁할 때도 바라는 것이 첫마디에 나오고, 「혹시」나 「괜찮으시면」 같은 말은 좀처럼 앞에 붙지 않습니다. 다만 좋은 뜻으로 한 말일수록 소리가 크고 결론이 먼저라, 듣는 쪽은 마음의 채비를 못 한 채 받습니다.",
+      "scene": {
+        "broad": "부탁할 일이 있으면 돌려 말하지 않고 바라는 것을 첫마디에 또렷이 꺼내는 편",
+        "text": "미용실 의자에 앉자마자 「옆은 귀가 보이게, 뒤는 그대로요」 하고 바라는 것을 한 번에 말합니다. 머뭇거림 없는 말에 미용사가 웃으며 곧장 가위를 듭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ESTJ",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "말로 한 약속도 빚으로 치는 무곡과, 맡은 일은 「다 됐습니다」를 제 입으로 알려야 끝난 것으로 치는 ESTJ가 만났습니다. 그래서 하기로 한 것이 흐지부지되는 일이 드뭅니다. 같은 잣대를 남에게도 대는 터라, 하루 늦은 사람에게 건네는 말이 유난히 짧아집니다.",
+      "scene": {
+        "broad": "맡은 일은 끝났다고 제 입으로 알릴 수 있을 때까지 손에서 놓지 않는 편",
+        "text": "여럿이 입을 단체복 주문을 맡으면 치수 받기부터 나눠 주기까지 혼자 챙깁니다. 옷이 온 날 봉지마다 받을 사람을 적어 한 줄로 놓고, 「다 왔습니다, 가져가세요」를 알려야 손을 텁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ESTJ",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ESTJ",
+      "kind": "tension",
+      "dimension": "controlNeed",
+      "why": "판이 어수선하면 ESTJ 쪽 손이 먼저 근질거립니다. 누가 무엇을 할지 정해 주고 싶어서입니다. 그런데 천동은 「굴러가는 대로 두면 다들 편한데」 하고 그 손을 잡습니다. 나서서 정리하고도 미안해하고, 내버려 두고도 속이 탑니다.",
+      "scene": {
+        "broad": "정해 주고 싶은 마음과 편하게 두고 싶은 마음 사이에서 손을 댔다 뗐다 하는 편",
+        "text": "여럿이 소풍 갈 때 누가 무엇을 싸 올지 나눠 적다가 「에이, 각자 알아서 가져오자」 하고 지웁니다. 당일 돗자리가 네 장에 마실 것이 없자 속으로 「그냥 정할걸」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ESTJ",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "statusDrive",
+      "why": "자리와 직함을 보면 ESTJ의 눈이 먼저 반짝입니다. 다만 염정이 그어 둔 선이 먼저 묻습니다. 「그 자리, 내 원칙대로 할 수 있는 곳인가.」 제 방식이 통하는 자리라면 기꺼이 올라가 누구보다 엄하게 해내고, 아니라면 높은 자리도 깨끗이 사양합니다.",
+      "scene": {
+        "broad": "앞자리를 제안받으면 제 기준대로 할 수 있는지부터 확인하고 맡는 편",
+        "text": "합창단에서 파트장을 맡아 달라고 하자 먼저 묻습니다. 「연습 빠지는 사람한테 제가 싫은 소리 해도 되는 거죠?」 된다는 답을 듣고서야 맡겠다고 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ESTJ",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "ESTJ가 일이 굴러갈 틀을 짠다면, 천부는 그 틀에 들어갈 물건과 돈이 바닥나지 않게 곳간을 봅니다. 둘이 겹친 사람이 꾸린 살림에는 구멍이 좀처럼 나지 않습니다. 다만 손수 꾸린 살림을 남에게 넘길 때는 일러 줄 것이 너무 많아, 받는 사람이 다 외우기도 전에 지칩니다.",
+      "scene": {
+        "broad": "오래 꾸려 온 살림을 남에게 넘길 때는 아는 것을 하나도 빼놓지 않고 적어 건네는 편",
+        "text": "여러 해 살던 집을 비우는 날, 들어올 사람에게 물 잠그는 곳과 겨울마다 바람이 드는 창, 계량기 자리까지 적은 종이 석 장을 건넵니다. 받는 사람이 「이걸 다요?」 하며 웃자 「뒷장은 겨울에 보면 돼요」 하고 한 장을 더 꺼냅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ESTJ",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ESTJ",
+      "kind": "tension",
+      "dimension": "empathyResponse",
+      "why": "태음이 준 눈에는 상대가 왜 늦었는지, 얼마나 지쳤는지가 먼저 들어옵니다. 그런데 ESTJ는 한 사람에게 늘려 준 날짜만큼, 차례를 지켜 기다린 사람들 몫이 줄어든다고 셈합니다. 봐주자니 기다린 쪽에 미안하고, 안 봐주자니 읽어 버린 그 낯빛이 마음에 남습니다.",
+      "scene": {
+        "broad": "상대 사정이 눈에 들어와도 정한 기준은 그대로 적용하고 말끝에 마음을 얹는 편",
+        "text": "돌려 읽는 책을 기한 넘겨 들고 온 사람의 눈 밑이 검은 것을 봅니다. 「힘들었나 보다」 싶으면서도 「다음 차례는 맨 뒤인 거 알죠」를 말하고, 말끝에 「오늘은 일찍 들어가요」를 붙입니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ESTJ",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "why": "탐랑은 새것에 눈이 가면 하던 것을 내려놓는 별인데, ESTJ는 끝이 정해진 일을 중간에 못 놓습니다. 그래서 날짜와 결과가 걸린 일은 재미가 식어도 끝을 보고, 재미로만 시작한 일은 석 달을 못 넘깁니다. 끈기가 있고 없고가 아니라 무엇이 걸렸느냐가 가릅니다.",
+      "scene": {
+        "broad": "기한과 결과가 걸린 일은 끝까지 가고 재미로만 하는 일은 금방 바꾸는 편",
+        "text": "취미로 등록한 목공은 한 달 만에 앞치마째 구석에 둡니다. 그런데 참가비를 내고 날짜가 박힌 달리기 대회는 비 오는 새벽에도 나가 연습 칸을 채웁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ESTJ",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ESTJ",
+      "kind": "conditional",
+      "dimension": "directness",
+      "why": "틀린 숫자나 어긴 약속처럼 눈에 보이는 일 앞에서는 ESTJ가 그 자리에서 곧바로 말합니다. 그런데 미심쩍기만 하고 증거가 덜 모인 일에서는 거문이 앞서, 단정하는 대신 질문을 여러 개 던져 가며 둘러 갑니다. 같은 사람이 한 번은 곧은 말로, 한 번은 긴 질문으로 다가옵니다.",
+      "scene": {
+        "broad": "확실한 잘못은 바로 말하고 미심쩍기만 한 일은 질문으로 돌아 확인하는 편",
+        "text": "중고 거래로 받은 물건에 흠이 있으면 「설명과 다르네요, 돈 돌려주세요」 하고 바로 보냅니다. 흠은 안 보이는데 찜찜할 때는 「언제 사셨어요? 상자는요?」 하고 하나씩 묻습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ESTJ",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "맡은 자리가 작아도 끝까지 제 몫으로 지는 데서 천상과 ESTJ가 겹칩니다. 남이 마음 놓고 제 일을 하도록 뒤를 맡아 주는 별에, 한번 맡겠다고 한 몫은 중간에 넘기지 않는 유형이 더해졌습니다. 그래서 대신해 주겠다는 손을 번번이 물려, 거들고 싶던 사람이 무안해지곤 합니다.",
+      "scene": {
+        "broad": "하루짜리 작은 역할이라도 맡으면, 대신해 주겠다는 사람이 있어도 끝까지 그 자리를 지키는 편",
+        "text": "친구 결혼식에서 하객 안내를 맡은 날, 식이 시작돼도 입구를 떠나지 않습니다. 다른 친구가 「이제 들어가, 내가 볼게」 해도 「늦게 오는 분 있을지 몰라」 하고 버텨, 그 친구까지 머쓱하게 옆에 서 있게 됩니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ESTJ",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "dutifulness",
+      "why": "일을 끝내는 것이 ESTJ의 책임이라면, 사람을 바르게 세우는 것은 천량의 책임입니다. 둘이 만나면 맡은 사람을 끝까지 가르치고 챙기는 사람이 됩니다. 걱정에서 나온 말이 할 일 목록처럼 들릴 때에는 상대가 고마움보다 숨 막힘을 먼저 느낍니다.",
+      "scene": {
+        "broad": "돌보기로 한 사람에게는 챙겨 줄 뿐 아니라 해 올 것까지 정해 주는 편",
+        "text": "자전거 모임에 처음 온 사람의 안장 높이와 바퀴 바람을 직접 봐 줍니다. 헤어질 때는 「다음 주까지 장갑 사고, 전조등 달고, 물통 챙겨 와요」 하고 숙제 세 개를 줍니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ESTJ",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ESTJ",
+      "kind": "resonance",
+      "dimension": "decisionSpeed",
+      "why": "칠살은 재는 시간을 아까워하는 별이고, ESTJ는 정해져야 일이 굴러간다고 믿는 유형입니다. 둘이 겹치니 고민이 길어질 틈이 없어, 남들이 차림표를 펼 때 이 사람은 이미 주문을 끝냈습니다. 빠른 만큼, 같이 정했어야 할 사람의 뜻이 빠져 있을 때가 있습니다.",
+      "scene": {
+        "broad": "곁의 사람이 살펴볼 틈보다 한 걸음 앞서 결론을 말해 버리는 편",
+        "text": "살 집을 보러 가서 세 번째 집 현관에서 「여기로 합시다」 합니다. 같이 간 사람이 창문을 열어 보기도 전에 이미 언제 들어올 수 있는지를 묻고 있습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ESTJ",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ESTJ",
+      "kind": "tension",
+      "dimension": "ruleAdherence",
+      "why": "ESTJ는 정한 방식이 지켜져야 일이 바로 선다고 보는 유형이고, 파군은 더 나은 방식이 보이면 정해 둔 틀부터 허물고 싶어지는 별입니다. 그래서 남이 정해진 방식을 벗어나면 짚으려던 말이, 그 방식이 더 나아 보이는 순간 목에서 멈춥니다. 지키자는 말과 따라 하고픈 손이 한자리에서 부딪칩니다.",
+      "scene": {
+        "broad": "정한 방식을 지키자고 하다가도, 벗어난 쪽이 더 나아 보이면 짚던 말을 거두고 슬쩍 따라 해 보는 편",
+        "text": "친구들과 만두를 빚을 때 「접는 건 이렇게 통일하자」고 먼저 정해 둡니다. 그런데 한 친구가 제 식으로 더 빨리 접는 것을 보자 「그렇게 하면 안…」 하다가 말끝을 흐리고 슬쩍 그 손을 따라 해 봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ESTJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheongi:ESFJ",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "inquiry",
+      "why": "믿는 사람이 권하면 ESFJ는 고개부터 끄덕입니다. 그 순간 천기가 뒤에서 「잠깐, 그게 왜 좋은 건데?」 하고 셈을 시작합니다. 따져 묻자니 상대 얼굴이 굳을까 걱정이고, 그냥 받자니 머리가 가만있지 않습니다.",
+      "scene": {
+        "broad": "가까운 사람의 권유를 일단 받아 놓고 뒤에서 혼자 따져 보는 편",
+        "text": "친한 친구가 「이거 진짜 좋아, 같이 사자」 하면 「그래!」 하고 답부터 합니다. 집에 와서 후기를 스무 개 읽고 다른 물건과 값을 견줘 본 뒤, 뭐라고 말을 꺼낼지 한참 고릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ESFJ",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "emotionalExpression",
+      "why": "좋은 일 앞에서는 ESFJ와 태양이 한목소리라 말도 얼굴도 한꺼번에 환해집니다. 서운한 일 앞에서는 갈립니다. ESFJ는 자리를 생각해 「괜찮아」를 말하는데, 태양이 준 얼굴이 따라 주지 않습니다. 누가 한 번 더 물어 주면 그제야 말이 얼굴을 따라 그 자리에서 다 나옵니다.",
+      "scene": {
+        "broad": "서운한 일에 말로는 괜찮다 해도 얼굴에 드러나고, 다시 물어 주면 그 자리에서 털어놓는 편",
+        "text": "집들이에서 누가 음식 간을 두고 농담을 하자 「에이, 괜찮아」 하는데 입꼬리만 올라갑니다. 옆 사람이 「진짜?」 하고 다시 묻자 「사실 오전 내내 만든 건데 좀 그랬어」가 그 자리에서 나옵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ESFJ",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "why": "남의 손을 빌리면 그만큼 갚을 것이 생긴다고 셈하는 쪽이 무곡입니다. ESFJ는 일이 생기면 사람부터 떠올리고, 여럿이 붙어야 신이 납니다. 부르고 싶은 마음과 신세 지기 싫은 마음이 맞서다, 사람은 부르되 힘든 몫은 혼자 다 해 두는 것으로 끝나곤 합니다.",
+      "scene": {
+        "broad": "사람을 불러 놓고도 힘든 몫은 오기 전에 혼자 끝내 두는 편",
+        "text": "책장을 옮기는 주말에 친구 둘을 부릅니다. 그런데 둘이 오기 전에 책을 다 빼고 장까지 밀어 놓아, 친구들은 와서 짜장면만 먹고 갑니다. 「일은 무슨, 얼굴 보려고 불렀지」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ESFJ",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "socialEnergy",
+      "why": "함께 먹고 웃을 때 가장 편한 천동과, 사람들 사이에서 기운이 차오르는 ESFJ는 같은 쪽을 봅니다. 이 사람이 낀 자리는 낯선 얼굴도 금세 말이 풀립니다. 사람 좋아하는 것이 겹쳐 주말이 약속으로 다 차고, 혼자 숨 돌릴 저녁이 달력에서 사라집니다.",
+      "scene": {
+        "broad": "혼자 볼일을 보러 나가서도 만나는 사람마다 어울리다 함께 시간을 보내게 되는 편",
+        "text": "잠깐 빵 사러 나갔다가 아는 얼굴을 셋 만납니다. 첫 사람과는 서서 이십 분, 둘째와는 벤치에서 커피, 셋째는 아예 집으로 데려와 빵을 같이 뜯습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ESFJ",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "emotionalExpression",
+      "why": "남의 일 앞에서는 ESFJ가 앞섭니다. 친구의 좋은 소식에 본인보다 먼저 소리를 지르고, 궂은 소식에는 먼저 눈이 붉어집니다. 제 일이 되면 염정이 앞서 자세를 고쳐 앉습니다. 같은 크기의 기쁨도 제 것이면 「네, 고맙습니다」 한마디로 접습니다.",
+      "scene": {
+        "broad": "남의 기쁨과 슬픔은 크게 드러내 주면서 제 일의 감정은 단정하게 접어 두는 편",
+        "text": "친구가 뽑혔다는 소식에는 길 한가운데서 펄쩍 뛰며 손을 잡고 흔듭니다. 같은 주에 제가 상을 받게 됐을 때는 「운이 좋았어요」 하고 옷매무새만 고치고, 축하 자리도 조용히 치릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ESFJ",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "caretaking",
+      "why": "살림에 여유가 보일 때는 ESFJ가 앞서, 사람들 밥과 선물을 넉넉하게 챙깁니다. 남은 것이 바닥을 보이기 시작하면 천부가 조용히 곳간 문을 반쯤 닫습니다. 인심이 변한 것이 아니라, 오래 챙기려고 남길 몫을 셈하는 것입니다.",
+      "scene": {
+        "broad": "넉넉할 때는 두루 나누고 빠듯할 때는 남길 몫을 먼저 떼고 나누는 편",
+        "text": "텃밭 상추가 넘치는 달에는 이웃 문고리마다 봉지를 걸어 둡니다. 가뭄으로 몇 포기만 남은 달에는 먹을 만큼 먼저 덜어 놓고, 남은 것을 꼭 줄 두 집에만 나눕니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ESFJ",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "태음은 말없이 불편을 참는 한 사람을 눈으로 찾아내는 별이고, ESFJ는 찾아낸 순간 소리 내어 움직이는 유형입니다. 조용한 눈에 큰 목소리가 붙어, 이 사람 곁에서는 혼자 참고 넘어가는 사람이 드뭅니다. 다만 살짝 건네면 될 것까지 모두 앞에서 챙겨, 받는 사람이 쑥스러워질 때가 있습니다.",
+      "scene": {
+        "broad": "함께 움직일 때 누가 불편한지 먼저 알아채고 모두를 세워서라도 챙기는 편",
+        "text": "여럿이 걷는 길에서 한 사람이 자꾸 뒤꿈치를 만지는 것을 봅니다. 「잠깐 쉬어 가요!」 하고 큰 소리로 다 세운 뒤, 가방에서 밴드를 꺼내 건넵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ESFJ",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "verbalOutput",
+      "why": "ESFJ의 말은 남을 끼워 주려는 말이고, 탐랑의 말은 듣는 이를 사로잡으려는 말입니다. 웃음이 터지는 자리에서는 탐랑이 신이 나 제 이야기가 길어집니다. 듣는 얼굴 하나가 딴 데를 보기 시작하면 ESFJ가 얼른 방향을 틀어 「너는 어땠어?」 하고 묻습니다.",
+      "scene": {
+        "broad": "반응이 좋으면 제 이야기를 길게 하다가도 조용한 사람이 보이면 말을 넘겨주는 편",
+        "text": "모닥불 앞에서 낯선 도시에서 길 잃은 이야기를 손짓까지 섞어 십 분째 합니다. 맞은편 사람이 불만 보고 있는 것을 알아채자 「아 맞다, 너도 거기 가 봤다며?」 하고 말을 넘깁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ESFJ",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "verbalOutput",
+      "why": "같은 물건을 보여 줘도 ESFJ는 그것을 고른 사람을, 거문은 그것이 만들어진 속을 먼저 궁금해합니다. 사 온 것 앞에서는 ESFJ가 앞서 어디서 누구와 골랐는지로 수다가 이어지고, 손수 만든 것 앞에서는 거문이 앞서 무늬 하나 이음 하나를 짚어 가느라 이야기가 불어납니다.",
+      "scene": {
+        "broad": "보여 주는 물건이 사 온 것이면 그날 일을, 손수 만든 것이면 만듦새를 두고 이야기가 불어나는 편",
+        "text": "친구가 사 온 가방을 보여 주면 「어디서 샀어? 누구랑 갔어?」로 그날 이야기가 길게 이어집니다. 그런데 직접 만든 향초를 내밀면 이리저리 돌려 보며 「여기서부터 색이 옅어지네, 이 줄무늬는 일부러 낸 거지?」 하고 한참을 짚어 갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ESFJ",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ESFJ",
+      "kind": "resonance",
+      "dimension": "caretaking",
+      "why": "누군가 앞에 설 일이 생기면 이 사람은 그 곁에 섭니다. 받쳐서 바로 세우는 천상과, 필요한 것을 먼저 건네는 ESFJ가 한 방향이라서입니다. 다만 받치는 손에 힘이 너무 들어가면 앞에 선 사람보다 제가 더 떨어, 그 사람이 도리어 「나 괜찮아」 하고 달래 줍니다.",
+      "scene": {
+        "broad": "앞에 선 사람이 흔들리지 않게 가까이에서 필요한 것을 받쳐 주는 편",
+        "text": "친구가 여럿 앞에서 축사를 맡으면 맨 앞줄에 앉습니다. 물 한 병을 발치에 놓아 주고, 말이 막히면 고개를 끄덕여 주며, 끝나면 가장 먼저 다가가 옷깃을 바로잡아 줍니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ESFJ",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "ruleAdherence",
+      "why": "천량과 ESFJ는 둘 다 정해진 것을 지키는 쪽인데, 지키는 것이 다릅니다. ESFJ는 다들 그렇게 해 온 관례를, 천량은 옳다고 믿는 도리를 지킵니다. 평소에는 둘이 한길이라 조용하다가, 관례가 누군가를 곤란하게 만드는 순간 천량이 앞에 나서 「이건 아니지」 합니다.",
+      "scene": {
+        "broad": "평소에는 해 오던 관례를 따르다가 누가 곤란해지면 관례보다 도리를 앞세우는 편",
+        "text": "늦게 온 사람이 간식을 사는 모임 관례를 몇 해째 따라 왔습니다. 이사 온 지 며칠 안 된 사람이 길을 헤매다 늦은 날에는 「오늘은 없던 걸로 합시다」 하고 제 간식을 먼저 풉니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ESFJ",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ESFJ",
+      "kind": "conditional",
+      "dimension": "conflictApproach",
+      "why": "걸리는 일을 그날 넘기지 않는 것이 칠살인데, ESFJ는 여럿이 웃고 있는 판을 제 손으로 깨지 못합니다. 그래서 둘만 있는 자리에서는 그 자리에서 바로 말하고, 여럿이 모인 자리에서는 끝날 때까지 쥐고 있다가 흩어지는 길에 따로 불러 말합니다. 미루는 것은 몇 시간뿐, 다음 날로 넘어가지는 않습니다.",
+      "scene": {
+        "broad": "둘이 있을 때는 바로 말하고 여럿 앞에서는 자리가 끝난 뒤 따로 불러 말하는 편",
+        "text": "둘이 밥 먹다 친구가 말을 자꾸 끊으면 「내 말 아직 안 끝났어」 하고 바로 말합니다. 여럿이 모인 저녁 자리에서 같은 일이 생기면 웃으며 넘기고, 나가는 길 신발장 앞에서 그 친구만 붙잡습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ESFJ",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ESFJ",
+      "kind": "tension",
+      "dimension": "independence",
+      "why": "ESFJ는 「다들 어떻게 생각해?」를 묻고 고개가 끄덕여져야 발이 떨어집니다. 파군은 남이 말려도 제가 납득한 길이면 혼자 갑니다. 그래서 일은 제 뜻대로 벌여 놓고, 뒤돌아 사람들 표정을 살피며 「괜찮다고 해 줘」 하는 마음이 됩니다.",
+      "scene": {
+        "broad": "하고 싶은 일은 의논 없이 먼저 저질러 놓고 뒤늦게 사람들의 호응을 구하는 편",
+        "text": "늘 걷던 둘레길이 지루해지자 아무와도 의논 없이 혼자 새 길을 다녀옵니다. 돌아와서는 「다음엔 여기 어때? 같이 가자」 하고 묻고, 답이 올 때까지 휴대폰을 자꾸 들여다봅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ESFJ:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}

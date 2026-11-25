@@ -1,0 +1,864 @@
+{
+  "version": "ziwei-db-zw1",
+  "family": "mbti",
+  "entries": [
+    {
+      "id": "zw-mbti:cheongi:ESTP",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "mobility",
+      "why": "ESTP는 한자리에 오래 앉아 있으면 엉덩이부터 들썩이는 유형입니다. 그런데 머리를 굴릴 거리가 눈앞에 놓이면 천기가 그 몸을 붙들어 앉힙니다. 수를 읽는 재미가 도는 동안에는 자리를 안 뜨고, 그 재미가 다하면 그제야 발이 문 쪽으로 갑니다.",
+      "scene": {
+        "broad": "궁리할 거리가 있는 동안에는 꼼짝 않고 머물다가 그것이 끝나면 곧바로 자리를 뜨는 편",
+        "text": "친구 집 탁자에서 아무도 못 푼 쇠고리 장난감을 보면 외투도 안 벗고 그 앞에 앉습니다. 한참을 꼼짝 않다가 고리가 툭 빠지자마자 「됐다」 한마디를 남기고 벌써 현관에서 신발을 꿰고 있습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ESTP",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "spendingControl",
+      "why": "ESTP는 눈앞에서 바로 써 볼 수 있는 것에 지갑이 먼저 열리는 유형입니다. 태양은 돈을 쓸 때도 남 앞에 내놓고 말할 수 있는지를 따지는 별입니다. 그래서 당장 즐길 것에는 시원하게 쓰다가도, 뒷말이 붙을 만한 값 앞에서는 지갑이 닫힙니다.",
+      "scene": {
+        "broad": "그 자리에서 바로 즐길 것에는 선뜻 쓰고 뒷말이 나올 만한 값에는 지갑을 닫는 편",
+        "text": "웃돈을 얹어 되파는 공연 표를 사자는 말에는 「그렇게까지는 안 볼래」 하고 지갑을 도로 넣습니다. 그 대신 같은 날 밤 길거리 노점에서는 꼬치와 반짝이 팔찌를 보이는 대로 집어 듭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ESTP",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "decisionSpeed",
+      "why": "무곡은 돈이 걸리면 숫자가 다 맞을 때까지 답을 아끼는 별이고, ESTP는 눈앞의 판을 보자마자 몸이 정해 버리는 유형입니다. 셈할 것이 없는 일은 그 자리에서 정해지고, 돈이 나가는 일은 계산이 끝날 때까지 답이 하루쯤 묵습니다.",
+      "scene": {
+        "broad": "돈이 안 걸린 선택은 그 자리에서 정하고 돈이 나가는 선택은 셈이 끝날 때까지 답을 미루는 편",
+        "text": "저녁 메뉴와 주말에 갈 곳은 묻자마자 답이 나옵니다. 같이 쓸 텐트를 사자는 말에는 「내일 말해 줄게」 하고, 이튿날 중고로 나온 것과 새것 값을 나란히 놓고 따져 본 뒤에야 「그래, 사자」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ESTP",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "why": "누가 「내가 더 잘해」 하면 ESTP의 몸은 벌써 소매를 걷고 있습니다. 천동은 그 옆에서 「이겨서 뭐 하게」 하고 하품하는 별입니다. 달려드는 몸과 늘어지고 싶은 마음이 엎치락뒤치락해, 불이 확 붙었다가 제풀에 꺼집니다.",
+      "scene": {
+        "broad": "겨루자는 말에 바로 달려들었다가 하는 사이 승부에 흥미를 잃고 느긋해지는 편",
+        "text": "친구가 「볶음밥은 내가 더 잘해」 하면 「무슨 소리야」 하고 프라이팬을 잡습니다. 파를 써는 사이 열이 식어, 다 볶은 뒤에는 누가 이겼는지 묻지도 않고 친구 것을 맛있게 퍼먹습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ESTP",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "competitiveness",
+      "why": "염정은 남 앞에서 밀리는 제 모습을 속으로 견디지 못하는 별이고, ESTP는 견줄 판이 눈앞에 서면 몸에 먼저 불이 붙는 유형입니다. 속에서만 끓던 염정의 지기 싫은 마음이 ESTP를 만나 겉으로 나와, 겨루자는 사람이 없어도 혼자 판을 벌이니 멈출 때를 놓치기 쉽습니다.",
+      "scene": {
+        "broad": "견줄 사람이 옆에 있으면 겨루자는 말이 없어도 한 수 더 보여 주려 나서는 편",
+        "text": "길을 묻는 여행객이 오면 옆 친구보다 먼저 나서 손짓까지 섞어 설명합니다. 친구가 한마디 거들면 질세라 지도를 펴 들고 가는 길을 한 번 더 그려 보입니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ESTP",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "riskTaking",
+      "why": "천부는 발을 떼기 전에 쌓아 둔 것이 축나지 않을지부터 헤아리는 별입니다. ESTP는 재미있어 보이면 재 볼 틈도 없이 몸이 기우는 유형입니다. 뛰어들고 싶은 몸과 곳간 문을 지키는 마음이 한 사람 안에서 서로 소매를 당깁니다.",
+      "scene": {
+        "broad": "솔깃한 제안에 대답은 먼저 해 놓고 뒤늦게 잃을 것을 헤아리며 마음이 갈리는 편",
+        "text": "낯선 섬마을에서 한 달 지내 볼 사람을 모은다는 글을 보자마자 「저요!」 댓글부터 달아 버립니다. 밤늦게 달력에 적힌 일들을 하나씩 짚어 보며 「진짜 가도 되나」를 혼잣말합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ESTP",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ESTP",
+      "kind": "conditional",
+      "dimension": "socialEnergy",
+      "why": "같이 몸을 움직이는 자리라면 ESTP의 기운이 앞서 낯선 사람과도 금세 어울립니다. 앉아서 말만 길게 오가는 자리라면 태음이 고개를 듭니다. 여럿의 말소리 속에서 기운이 조금씩 새는 별이라, 그런 자리는 슬쩍 건너뛰는 때가 많습니다.",
+      "scene": {
+        "broad": "몸을 쓰며 어울리는 자리에는 빠짐없이 나가고 앉아서 말만 하는 자리는 자주 건너뛰는 편",
+        "text": "주말 배드민턴 모임에는 한 번도 빠지지 않고, 짝이 바뀔 때마다 제일 크게 소리칩니다. 같은 사람들이 앉아서 이야기만 나누자는 저녁 모임 알림에는 답을 미루다 「이번엔 쉴게」를 보냅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ESTP",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "riskTaking",
+      "why": "남들이 「아직 이르다」고 할 때 이 사람은 벌써 한 칸 위에 올라가 있습니다. 하고 싶은 것이 줄줄이 생기는 탐랑에 ESTP의 「일단 부딪쳐 보자」가 붙어서입니다. 해 본 것이 빠르게 늘지만, 재 보는 단계가 통째로 빠지는 때도 생깁니다.",
+      "scene": {
+        "broad": "서툰 채로도 겁 없이 한 단계 위의 판에 먼저 끼어 보는 편",
+        "text": "드럼 채를 처음 잡은 지 보름 만에 친구들 합주에 끼워 달라고 합니다. 박자를 세 번 놓치고도 웃으며, 다음 곡은 더 빠른 걸로 하자고 먼저 고릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ESTP",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "introspection",
+      "why": "ESTP는 속이 시끄러워지면 몸부터 움직여 털어 내는 유형입니다. 거문은 걸리는 것 하나를 그냥 못 넘기고 까닭이 나올 때까지 속으로 되묻는 별입니다. 털고 나가려는 손발과 붙들고 캐려는 머리가 엇갈려, 손은 바쁜데 생각은 아직 그 자리에 있습니다.",
+      "scene": {
+        "broad": "마음에 걸리는 일이 있으면 몸을 움직여 털어 내려 하면서도 끝내 제 속의 까닭을 되짚는 편",
+        "text": "저녁 모임에서 괜히 목소리를 높이고 돌아온 밤, 생각하기 싫어 밀린 빨래와 신발장 정리를 연달아 해치웁니다. 손이 멈추자 「내가 뭐가 그렇게 싫었던 거지」가 다시 올라옵니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ESTP",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "decisionSpeed",
+      "why": "무언가를 고를 때면 두 마음이 따로 놉니다. ESTP의 몸은 보자마자 한쪽으로 기울고, 천상은 빠뜨린 것이 없는지 한 번 더 훑어본 뒤에야 고개를 끄덕이는 별입니다. 입은 벌써 정했다고 말했는데 속은 아직 확인하는 중입니다.",
+      "scene": {
+        "broad": "보자마자 결정을 입 밖에 내 놓고도 빠뜨린 데가 있을까 싶어 곧바로 멈칫하는 편",
+        "text": "머리를 자르러 가서 견본 사진 한 장을 보자마자 「이걸로요」가 튀어나옵니다. 그런데 가위가 머리에 닿기 직전 「아, 잠깐만요」 하고 옆모습 사진을 다시 찾아 넘깁니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ESTP",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ESTP",
+      "kind": "tension",
+      "dimension": "competitiveness",
+      "why": "이기고 싶은 마음은 ESTP 쪽에서 올라옵니다. 천량은 이긴 결과보다 이긴 방법을 더 무겁게 보는 별입니다. 그래서 순위에는 불이 붙는데 남의 손을 빌린 승리는 반기지 않는, 승부사와 어른이 한 몸에 삽니다.",
+      "scene": {
+        "broad": "순위에는 마음이 달아오르면서도 제 힘이 아닌 도움으로 얻는 승리는 마다하는 편",
+        "text": "사진 모임 전시에 건 제 사진이 관람객 투표에서 두 번째로 밀리자 하루에도 몇 번씩 순위를 들여다봅니다. 그런데 친구들이 몰래 표를 몰아 줘 일등에 오르자, 「이건 내가 이긴 게 아니야」 하며 모임에 그 표를 빼 달라고 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ESTP",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "directness",
+      "why": "칠살은 돌려 말할 시간에 결론부터 내놓는 별입니다. ESTP도 눈에 보인 것을 본 대로 말해야 속이 시원합니다. 둘이 겹쳐 하고 싶은 말이 곧장 꽂히니, 일은 금방 풀리는데 받는 쪽 마음이 미처 따라오지 못하는 때가 있습니다.",
+      "scene": {
+        "broad": "남이 말하기 껄끄러워하는 것도 보이는 대로 곧바로 말해 주는 편",
+        "text": "식사 자리에서 친구 이 사이에 고춧가루가 끼었으면 「이에 뭐 꼈어」가 바로 나옵니다. 친구가 웃으며 거울을 꺼내는 사이 하던 이야기를 그대로 잇습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ESTP",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ESTP",
+      "kind": "resonance",
+      "dimension": "riskTaking",
+      "why": "안 해 본 길이 보이면 파군은 지금 것을 접고서라도 그쪽으로 틉니다. ESTP는 결과를 재기 전에 몸으로 먼저 부딪쳐 봅니다. 접는 손과 뛰는 발이 겹쳐 판이 크게 바뀌는 만큼, 한꺼번에 여럿을 바꾸느라 무엇이 통했는지 모르고 지나가는 때도 생기는 편입니다.",
+      "scene": {
+        "broad": "잘되던 방식을 두고도 결과를 모르는 새 방식에 한꺼번에 걸어 보는 편",
+        "text": "늘 맛있게 되던 카레에 이번에는 처음 보는 향신료 세 가지를 한꺼번에 털어 넣습니다. 먹을 만할지 아닐지는 「끓여 봐야 알지」 한마디이고, 맛있게 끓은 뒤에도 셋 가운데 무엇 덕인지는 모릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ESTP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheongi:ESFP",
+      "ziweiId": "zw:star:cheongi",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "why": "재미가 식으면 ESFP는 손을 놓고, 천기는 솔깃한 다른 방법이 떠오르면 가던 길을 바꿉니다. 그래서 혼자 같은 방식으로 되풀이하는 일은 오래 못 갑니다. 곁에 같이 하는 사람이 있고 새 방식을 끼워 볼 틈이 있는 일이라면, 궁리하는 재미가 흥을 이어 줘 좀처럼 손을 놓지 않습니다.",
+      "scene": {
+        "broad": "혼자 되풀이하는 일은 금방 놓고 여럿이 새 방식을 궁리해 가며 하는 일은 오래 이어 가는 편",
+        "text": "혼자 시작한 아침 줄넘기는 나흘 만에 줄이 서랍으로 들어갑니다. 친구 둘과 하는 춤 연습은 매주 동작 순서를 새로 짜 보느라 석 달째 빠지지 않습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheongi",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeyang:ESFP",
+      "ziweiId": "zw:star:taeyang",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "attentionSeeking",
+      "why": "사람들 눈길이 모이는 곳에서 태양은 더 환해지고, ESFP는 그 눈길을 흥으로 바꿉니다. 드러나는 별에 판을 달구는 유형이 겹치니 가운데에 서는 일이 잦은 편입니다. 그만큼 차분해야 할 자리에서도 들뜬 목소리를 낮추는 데 한 박자가 걸립니다.",
+      "scene": {
+        "broad": "나설 사람을 찾는 순간에 망설임 없이 손을 들고 앞으로 걸어 나가는 편",
+        "text": "길거리 공연에서 「같이 하실 분」 소리가 나오면 손이 먼저 올라갑니다. 앞에 나가 발을 구르며 한 곡을 같이 하고, 들어올 때는 얼굴이 환합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeyang",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:mugok:ESFP",
+      "ziweiId": "zw:star:mugok",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "emotionalExpression",
+      "why": "얼굴은 ESFP라서 기쁨도 서운함도 표정에 먼저 뜹니다. 입은 무곡이라서 그 마음을 말로 옮기려면 목에 걸립니다. 표정은 다 말했는데 말은 딴청이라, 곁의 사람이 어느 쪽을 믿을지 헷갈립니다.",
+      "scene": {
+        "broad": "감정이 표정에는 그대로 드러나는데 말로는 딴청을 부리고 행동으로 대신하는 편",
+        "text": "슬픈 영화를 보면 옆 사람보다 먼저 눈이 빨개집니다. 나와서 친구가 「울었어?」 하고 물으면 「먼지 들어갔어」 하고는, 그날 밤 영화에 나온 노래만 말없이 보내 줍니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:mugok",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheondong:ESFP",
+      "ziweiId": "zw:star:cheondong",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "spendingControl",
+      "why": "곁에 사람이 있을 때는 ESFP의 지갑이 먼저 열려, 그 자리의 즐거움을 늘리는 데 돈이 나갑니다. 혼자 보낼 때는 천동이 앞에 나옵니다. 가진 것 안에서 즐길 거리를 찾아내는 별이라, 거의 쓰지 않고도 하루를 잘 보내는 편입니다.",
+      "scene": {
+        "broad": "여럿이 노는 자리에서는 즐거운 시간을 늘리는 데 아끼지 않고 혼자 쉴 때는 거의 쓰지 않고 지내는 편",
+        "text": "친구들과 강가에 놀러 간 날은 「한 바퀴만 더」 하며 오리배 빌리는 시간을 두 번이나 늘립니다. 혼자인 다음 날은 창가에 누워 라디오를 틀어 놓고 지갑을 한 번도 안 엽니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheondong",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:yeomjeong:ESFP",
+      "ziweiId": "zw:star:yeomjeong",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "why": "처음 본 사람에게도 ESFP의 웃음은 먼저 나갑니다. 그런데 안쪽 문은 들일 사람을 오래 가려 뽑는 염정이 지켜서, 겉으로는 벌써 친구인데 속 이야기는 한참 뒤에야 나옵니다. 상대는 가까운 줄 알았다가 선을 만나 멈칫합니다.",
+      "scene": {
+        "broad": "겉으로는 하루 만에 허물없이 지내면서도 자기 안쪽 공간은 쉽게 내주지 않는 편",
+        "text": "새로 알게 된 사람과 하루 만에 말을 놓고 어깨동무를 합니다. 그런데 그 사람이 「다음엔 너희 집에서 보자」 하면 웃으며 「밖이 더 재밌지」 하고 다른 곳을 잡습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:yeomjeong",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonbu:ESFP",
+      "ziweiId": "zw:star:cheonbu",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "persistence",
+      "why": "ESFP의 흥은 시작할 때 가장 크고, 새로움이 빠지면 금세 다른 데로 눈이 갑니다. 천부는 모아 놓은 것이 헛되이 흩어지는 것을 아까워하는 별이라, 쌓인 것이 눈에 보이기 시작한 일은 다르게 대합니다. 그때부터는 아까워서라도 붙들어, 초반 고비를 넘긴 일은 오래 가는 편입니다.",
+      "scene": {
+        "broad": "시작한 일이 금방 시들해지다가도 쌓인 것이 눈에 보이면 아까워서 끝까지 채우는 편",
+        "text": "여행 갈 때마다 기념 도장을 찍는 수첩을 만들었다가 세 번째 여행에는 깜빡 두고 갑니다. 그러다 한 쪽이 거의 찬 수첩을 펼쳐 보고는 「여기서 끊기는 아깝다」 하며 다음 여행지를 도장 찍을 곳부터 고릅니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonbu",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:taeeum:ESFP",
+      "ziweiId": "zw:star:taeeum",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "why": "눈길이 쏠리면 신이 나는 쪽은 ESFP이고, 그 눈길이 오래 머물면 숨고 싶어지는 쪽은 태음입니다. 아는 얼굴들의 눈길은 반갑게 받다가도, 모르는 이의 눈길이 길어지는 순간 그 반가움이 쑥 들어갑니다. 한 사람 안에 무대와 커튼 뒤가 같이 있습니다.",
+      "scene": {
+        "broad": "눈에 띄는 것을 골라 반가운 눈길을 즐기다가도 시선이 길어지면 가리고 싶어지는 편",
+        "text": "새로 산 빨간 신발을 친구들에게 「이거 봐」 하며 발끝까지 내밀어 보입니다. 지하철에서 낯선 눈길이 발에 오래 머물자 가방을 내려 슬며시 가립니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:taeeum",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:tamrang:ESFP",
+      "ziweiId": "zw:star:tamrang",
+      "mbtiTarget": "ESFP",
+      "kind": "resonance",
+      "dimension": "attentionSeeking",
+      "why": "탐랑은 새것과 재밋거리를 남보다 먼저 찾아내는 별이고, ESFP는 구경꾼이 생기면 손짓부터 커지는 유형입니다. 들고 온 재밋거리에 내보이고 싶은 마음이 겹쳐, 사람들 눈이 이쪽으로 모이는 때가 많습니다. 그 힘이 커서, 남이 주인공인 자리에서도 눈길을 가져오는 때가 생깁니다.",
+      "scene": {
+        "broad": "새로 익힌 재밋거리를 꺼내 보이며 사람들 눈길을 끌어모으는 편",
+        "text": "친구들과 줄 서 기다리는 사이 새로 익힌 동전 마술을 꺼내자, 앞뒤 사람들까지 고개를 돌립니다. 「어떻게 한 거야?」 소리가 나올수록 손놀림이 커집니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:tamrang",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:geomun:ESFP",
+      "ziweiId": "zw:star:geomun",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "intimacyPace",
+      "why": "ESFP는 첫 만남에서 벌써 손을 내미는 유형이고, 거문은 사람을 믿는 데 시간을 두는 별입니다. 몸은 금세 다가가는데 마음의 문은 한 칸씩만 열려, 웃으며 어울리다가도 「친구」라는 말 앞에서는 한 박자 쉽니다.",
+      "scene": {
+        "broad": "금세 어울려 웃고 떠들어도 가까운 사이라는 말에는 한 박자 늦게 답하는 편",
+        "text": "동호회 첫날 옆자리 사람과 죽이 맞아 한참을 웃고 떠듭니다. 헤어질 무렵 상대가 「우리 오늘부터 친구다」 하자, 웃으며 「다음에 또 보고」로만 받습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:geomun",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonsang:ESFP",
+      "ziweiId": "zw:star:cheonsang",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "attentionSeeking",
+      "why": "ESFP는 앞에 나가 흥을 올릴 때 가장 신이 나는 유형입니다. 천상은 남의 몫을 가로채는 일이 마음에 걸려 순서를 먼저 따지는 별입니다. 그래서 눈길을 받고 싶어 몸이 달면서도 끼어들지는 못하는, 들뜬 마음과 반듯한 마음이 함께 있습니다.",
+      "scene": {
+        "broad": "나서고 싶은 마음이 커도 남의 순서를 넘지 않고 자기 순서가 왔을 때 몰아서 드러내는 편",
+        "text": "친구가 제 춤을 찍고 있으면 찍히는 자리 밖에서 발끝이 저절로 박자를 타도 끼어들지 않습니다. 친구가 「너도 들어와」 하자 그제야 뛰어들어 참았던 만큼 가장 크게 흔듭니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonsang",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:cheonryang:ESFP",
+      "ziweiId": "zw:star:cheonryang",
+      "mbtiTarget": "ESFP",
+      "kind": "tension",
+      "dimension": "directness",
+      "why": "분위기가 식는 것을 유난히 꺼리는 유형이 ESFP입니다. 그런데 천량은 가까운 사람이 엇나가는 것을 보면 입이 근질거리는 별입니다. 해야 할 말과 지키고 싶은 웃음 사이에서 망설이다, 그 말을 농담 속에 넣어 건넵니다.",
+      "scene": {
+        "broad": "쓴소리가 필요한 순간에 바로 꺼내지 못하고 웃음에 섞어 돌려서 전하는 편",
+        "text": "친구가 또 큰 운동 기구를 들이겠다고 하면 「그만 좀 사」가 목까지 올라옵니다. 대신 「너희 집 빨래 건조대 또 늘겠네」 하고 웃기고, 친구가 따라 웃는 틈에 「지난번 것도 안 쓰잖아」를 얹습니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:cheonryang",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:chilsal:ESFP",
+      "ziweiId": "zw:star:chilsal",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "noveltySeeking",
+      "why": "놀고 먹고 어울리는 데서는 ESFP가 앞서 안 가 본 곳, 안 해 본 것을 고르는 때가 많습니다. 칠살은 제 손으로 겪어 확인한 것에 무게를 두는 별이라, 제가 밀고 가기로 한 일에서는 손에 익은 것을 바꾸지 않습니다. 새것은 즐기는 쪽에, 익숙한 것은 해내야 하는 쪽에 놓입니다.",
+      "scene": {
+        "broad": "즐길 때는 새것을 찾아다니고 꼭 해내야 하는 일에서는 손에 익은 것을 고집하는 편",
+        "text": "주말마다 처음 가 보는 밥집과 새로 생긴 놀 곳을 찾아다닙니다. 그런데 중요한 일을 치르는 아침에는 오래 쓴 낡은 가방과 늘 쓰던 펜을 챙기고, 새것을 권해도 「이게 손에 맞아」 합니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:chilsal",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    },
+    {
+      "id": "zw-mbti:pagun:ESFP",
+      "ziweiId": "zw:star:pagun",
+      "mbtiTarget": "ESFP",
+      "kind": "conditional",
+      "dimension": "spendingControl",
+      "why": "벌일 판이 없는 평소에는 ESFP가 지갑을 쥐어, 사람들과 어울리는 데 조금씩 자주 나갑니다. 파군은 새로 지을 것이 생기면 그 밖의 것부터 비워 자리를 내는 별입니다. 그래서 하고 싶은 큰일이 생긴 뒤로는 자잘한 씀씀이가 뚝 끊겨, 딴사람처럼 지갑이 닫힙니다.",
+      "scene": {
+        "broad": "평소에는 어울리는 데 선뜻 쓰다가 크게 벌일 일이 정해지면 자잘한 씀씀이를 뚝 끊는 편",
+        "text": "평소엔 만나는 사람마다 마실 것을 사 주고 길에서 본 귀여운 것을 그냥 못 지나칩니다. 「가을에 혼자 먼 나라에 가 보겠다」고 정한 뒤로는 약속 자리에서도 물만 시키고 걸어서 집에 갑니다.",
+        "requires": {
+          "relationship": "any",
+          "children": "any",
+          "job": "any"
+        }
+      },
+      "factBoundary": {
+        "requires": [
+          "mbtiKnown"
+        ],
+        "forbids": [
+          "직업 단정",
+          "건강 단정",
+          "연애 상태 단정"
+        ]
+      },
+      "confidence": "추정",
+      "sources": [
+        "zw:star:pagun",
+        "mbti:ESFP:functionStack",
+        "추정"
+      ]
+    }
+  ]
+}
