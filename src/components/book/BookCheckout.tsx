@@ -26,6 +26,7 @@ import { receiptMethodKey } from "../../lib/tickets/shopContract";
 import { PROFILE_REQUIRED_MESSAGE } from "../../lib/account/contact";
 import { EVENT_TICKET_DAYS, kstMonthDayLabel, ticketProductAllowed } from "../../lib/ops/config";
 import type { SupportedEasyPay } from "../../lib/payment/tossClientCheckoutTypes";
+import { webEvent } from "../../lib/analytics/web";
 
 /** v5Book: 이 상품이 v5(AI 작가)로 발행됨 — 열람 "탈퇴 전까지 계속"·AI 작성 고지. 아니면 v5 이전 규칙(생성일로부터 90일).
  * giftEventProducts: 지금(서버 시각) 1+1 이벤트가 걸린 상품 키 — 이벤트 기간이 아니면 빈 배열(giftEventConfig). */
@@ -140,6 +141,8 @@ function BookCheckoutReceipt({ payload, now, internal, onPublishing, onError, se
   const consentUi: CheckoutConsentUiClaim = { version: CHECKOUT_CONSENT_UI_VERSION, layout: member ? "member" : "guest", ...(orderCheckedAt ? { checkedAt: orderCheckedAt } : {}) };
   const giftEventLine = giftEventProducts.includes(payload.productKey) ? GIFT_EVENT_RECEIPT_LINE : null;
   useEffect(() => { if (allRef.current) allRef.current.indeterminate = some && !all; }, [some, all]);
+  // OPS-1: 결제 화면 진입(상품 키만). 기존 효과 뒤에 둔다.
+  useEffect(() => { if (!internal) webEvent("checkout_open", { product: payload.productKey }); }, [internal, payload.productKey]);
   const ready = isDevTossCheckoutLegalConfirmationComplete(snapshot, effective, new Date(now));
   const checkingBalance = session.status === "member" && (tickets === null || balanceError);
   const ticketPending = !internal && publication.pending;

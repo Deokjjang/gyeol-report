@@ -19,6 +19,8 @@ import ReportLoading from "../../../src/app/reports/[reportId]/loading";
 import { projectBookShare } from "../../../src/lib/book/shareModel";
 import { LAUNCH_START, LAUNCH_END, type LaunchEventView } from "../../../src/lib/growth/launchEvent";
 const model = projectBookShare({ productType: "annual_fortune", selectedYear: "2027", names: "김 하늘 & 별", shareUrl: `https://gyeolreport.com/r/gr_${"a".repeat(32)}`, publishedAt: "2026-10-12T00:00:00Z", expiresAt: "2027-01-10T00:00:00Z" })!;
+// OPS-1: 공유 버튼이 내보내는 링크에는 from=share가 붙는다(서버 모델 shareUrl · 표지 이미지 주소는 그대로).
+const sentUrl = `${model.shareUrl}?from=share`;
 const owner = { reportId: "report_private" };
 function find(n: ReactNode, predicate: (e: ReactElement<Record<string, unknown>>) => boolean): ReactElement<Record<string, unknown>>[] {
   if (Array.isArray(n)) return n.flatMap(v => find(v, predicate));
@@ -47,7 +49,7 @@ describe("Book share gestures and status", () => {
   it("native share runs inside the click (no await before it); only a completed share says so", async () => {
     const share = vi.fn(async () => {}); vi.stubGlobal("navigator", { share });
     click(await open(), "시스템 공유");
-    expect(share).toHaveBeenCalledOnce(); expect(share).toHaveBeenCalledWith({ title: model.displayTitle, text: "한 권 펼쳐보세요.", url: model.shareUrl });
+    expect(share).toHaveBeenCalledOnce(); expect(share).toHaveBeenCalledWith({ title: model.displayTitle, text: "한 권 펼쳐보세요.", url: sentUrl });
     await flush(); expect(status(render())).toBe("공유했어요."); expect(fetch).toHaveBeenCalledOnce();
   });
   it("Kakao sends the prefetched link inside the click without claiming completion", async () => {
@@ -55,30 +57,30 @@ describe("Book share gestures and status", () => {
     click(await open(), "카카오톡으로 책 공유");
     expect(sendDefault).toHaveBeenCalledOnce(); expect(status(render())).toBe("카카오톡을 여는 중이에요.");
     const card = sendDefault.mock.calls[0][0];
-    expect(card.content.title).toContain("님의 책이 도착했습니다."); expect(card.content.link).toEqual({ mobileWebUrl: model.shareUrl, webUrl: model.shareUrl });
-    expect(card.buttons[0].link).toEqual({ mobileWebUrl: model.shareUrl, webUrl: model.shareUrl });
+    expect(card.content.title).toContain("님의 책이 도착했습니다."); expect(card.content.link).toEqual({ mobileWebUrl: sentUrl, webUrl: sentUrl });
+    expect(card.buttons[0].link).toEqual({ mobileWebUrl: sentUrl, webUrl: sentUrl });
   });
   it("missing or failing Kakao SDK falls back to native share, then to copy, still inside the click", async () => {
     const share = vi.fn(async () => {}); vi.stubGlobal("navigator", { share });
     click(await open(), "카카오톡으로 책 공유"); expect(share).toHaveBeenCalledOnce();
     vi.stubGlobal("navigator", {}); vi.stubGlobal("window", { Kakao: { isInitialized: () => true, Share: { sendDefault: () => { throw new Error("sdk"); } } } });
-    click(render(), "카카오톡으로 책 공유"); expect(browser.copy).toHaveBeenCalledWith(model.shareUrl);
+    click(render(), "카카오톡으로 책 공유"); expect(browser.copy).toHaveBeenCalledWith(sentUrl);
     await flush(); expect(status(render())).toBe("링크를 복사했어요.");
   });
   it("cancel is quiet; without Web Share the same link is copied inside the click", async () => {
     vi.stubGlobal("navigator", { share: async () => { throw new DOMException("cancel", "AbortError"); } });
     click(await open(), "시스템 공유"); await flush(); expect(status(render())).toBe(""); expect(browser.copy).not.toHaveBeenCalled();
     expect(find(render(), e => e.props["aria-label"] === "복사할 공유 링크")).toHaveLength(0);
-    vi.stubGlobal("navigator", {}); click(render(), "시스템 공유"); expect(browser.copy).toHaveBeenCalledWith(model.shareUrl);
+    vi.stubGlobal("navigator", {}); click(render(), "시스템 공유"); expect(browser.copy).toHaveBeenCalledWith(sentUrl);
     await flush(); expect(status(render())).toBe("링크를 복사했어요.");
   });
   it("copy is called inside the click; failure shows the selectable link and never a success message", async () => {
-    click(await open(), "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(model.shareUrl);
+    click(await open(), "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(sentUrl);
     await flush(); expect(status(render())).toBe("링크를 복사했어요."); expect(browser.event).toHaveBeenCalledWith("report_share_copy", model.productType, true);
     browser.copy.mockResolvedValue(false); click(render(), "공유 링크 복사"); await flush();
     expect(status(render())).toBe("길게 눌러 복사해 주세요.");
     const field = find(render(), e => e.props["aria-label"] === "복사할 공유 링크")[0];
-    expect(field.props.value).toBe(model.shareUrl); expect(field.props.readOnly).toBe(true);
+    expect(field.props.value).toBe(sentUrl); expect(field.props.readOnly).toBe(true);
     expect(JSON.stringify(status(render()))).not.toContain("복사했어요");
   });
   it.each([403, 404, 503])("failed preparation (%i) keeps all buttons; pressing again re-prepares, never copies a missing link", async code => {
@@ -88,7 +90,7 @@ describe("Book share gestures and status", () => {
     expect(status(tree)).toBe(code === 403 ? "공유하려면 이 책을 산 계정으로 로그인하고 약관 동의를 마쳐 주세요." : "공유 링크를 만들지 못했어요. 버튼을 다시 눌러 주세요.");
     vi.mocked(fetch).mockResolvedValue(new Response(JSON.stringify({ model })));
     click(tree, "공유 링크 복사"); expect(fetch).toHaveBeenCalledTimes(2); expect(browser.copy).not.toHaveBeenCalled();
-    await flush(); click(render(), "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(model.shareUrl);
+    await flush(); click(render(), "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(sentUrl);
   });
   it("rapid clicks while preparing cannot issue duplicate share requests", async () => {
     let resolve!: (v: Response) => void; vi.mocked(fetch).mockReturnValue(new Promise(r => { resolve = r; }));
@@ -99,7 +101,7 @@ describe("Book share gestures and status", () => {
   it("a recipient's shared view is ready immediately (no request) and copies the same link", async () => {
     const props = { model, local: true } as unknown as Parameters<typeof render>[0];
     const tree = await open(props); expect(fetch).not.toHaveBeenCalled(); expect(buttons(tree).every(b => b.props.disabled === false)).toBe(true);
-    click(tree, "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(model.shareUrl);
+    click(tree, "공유 링크 복사"); expect(browser.copy).toHaveBeenCalledWith(sentUrl);
   });
 });
 describe("server event copy and closed policy", () => {

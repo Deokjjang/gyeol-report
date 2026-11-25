@@ -1,17 +1,20 @@
 "use client";
 import dynamic from "next/dynamic";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { BookShareModel } from "../../lib/book/shareModel";
 import type { BookData } from "../../app/dev/book-preview/bookTypes";
 import { bookForProduct } from "../../lib/book/product";
 import { bookShareEvent } from "../../lib/book/shareEvents";
 import s from "./bookShare.module.css";
+import { webEventOnce } from "../../lib/analytics/web";
 const Reader = dynamic(() => import("./BookReading").then(m => m.BookReading), { loading: () => <p role="status">책을 펼치고 있습니다.</p> });
 
 export function SharedBookEntry({ model, local = false }: { model: BookShareModel; local?: boolean }) {
   const [opened, setOpened] = useState<{ data: BookData; share: BookShareModel; edition?: string } | null>(null), [busy, setBusy] = useState(false), [error, setError] = useState("");
   const pending = useRef(false), book = bookForProduct(model.productType)!;
   const home = local ? "/dev/book-flow" : "/";
+  // OPS-1: 공유 링크로 들어온 첫 화면에서 한 번(상품 키만).
+  useEffect(() => { if (!local) webEventOnce("share_landing", { product: model.productType }, model.shareToken ?? "-"); }, [local, model.productType, model.shareToken]);
   async function open() {
     if (pending.current) return;
     pending.current = true; setBusy(true); setError("");

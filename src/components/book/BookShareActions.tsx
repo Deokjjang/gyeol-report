@@ -8,6 +8,14 @@ import { ShareIcon } from "../../app/dev/book-preview/BookPages";
 import s from "./bookShare.module.css";
 import { useLaunchEvent } from "../growth/LaunchCountdown";
 import { BookEventNotice } from "./BookEventNotice";
+import { webEvent, withShareFrom } from "../../lib/analytics/web";
+
+/** OPS-1: 내보내는 링크에만 from=share(표지 이미지 주소·서버 모델은 그대로). */
+function kakaoCardFrom(value: BookShareModel) {
+  const card = bookKakaoCard(value), url = withShareFrom(card.content.link.webUrl), link = { mobileWebUrl: url, webUrl: url };
+  return { ...card, content: { ...card.content, link }, buttons: card.buttons.map(b => ({ ...b, link })) };
+}
+const nativeDataFrom = (value: BookShareModel) => { const d = bookNativeData(value); return { ...d, url: withShareFrom(d.url) }; };
 
 const kakaoKey = process.env.NEXT_PUBLIC_KAKAO_JAVASCRIPT_KEY?.trim();
 type Mode = "kakao" | "native" | "copy";
@@ -77,7 +85,7 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
   }
   function shareNow(value: BookShareModel, url: string, mine: number) {
     if (typeof navigator.share !== "function") { copyNow(value, url, mine); return; }
-    void nativeShare(bookNativeData(value)).then(outcome => {
+    void nativeShare(nativeDataFrom(value)).then(outcome => {
       if (outcome === "shared") bookShareEvent("report_share_native", value.productType, local);
       if (turn.current !== mine) return;
       if (outcome === "shared") setMessage(SHARE_STATUS.shared);
@@ -90,7 +98,7 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
     const kakao = typeof window === "undefined" ? undefined : window.Kakao;
     try {
       if (kakao?.isInitialized() && typeof kakao.Share?.sendDefault === "function") {
-        kakao.Share.sendDefault(bookKakaoCard(value));
+        kakao.Share.sendDefault(kakaoCardFrom(value));
         bookShareEvent("report_share_kakao", value.productType, local); setMessage(SHARE_STATUS.kakao); return;
       }
     } catch { /* SDK 실패: 공유하기 → 링크 복사 */ }
@@ -106,9 +114,11 @@ export function BookShareActions({ owner, model, local = false }: { owner?: { re
       return;
     }
     setMessage("");
-    if (mode === "copy") copyNow(ready, url, mine);
-    else if (mode === "native") shareNow(ready, url, mine);
-    else kakaoNow(ready, url, mine);
+    if (!local) webEvent("share_click", { channel: mode, product: ready.productType });
+    const sent = withShareFrom(url);
+    if (mode === "copy") copyNow(ready, sent, mine);
+    else if (mode === "native") shareNow(ready, sent, mine);
+    else kakaoNow(ready, sent, mine);
   }
   const status = loading ? SHARE_STATUS.preparing : message || (!ready && !reportId ? SHARE_STATUS.unavailable : "");
   return <section className={s.actions} aria-label="이 책 공유하기" aria-busy={loading} data-share-state={loading ? "preparing" : ready ? "ready" : "unavailable"}>
