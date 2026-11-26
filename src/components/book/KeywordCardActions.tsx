@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import type { BookShareModel } from "../../lib/book/shareModel";
 import shareStyle from "./bookShare.module.css";
+import { webEvent, withShareFrom } from "../../lib/analytics/web";
 
 /**
  * AM 2부 세운 키워드 카드 [이미지 저장] [공유]. 이미지는 공유 링크(토큰) 아래 서버 이미지(1080×1350)를 미리 받아 두고,
@@ -36,8 +37,9 @@ export function KeywordCardActions({ owner, local = false }: { owner: { reportId
   }
   function share() {
     const f = file.current, nav = navigator as Navigator & { canShare?: (d: ShareData) => boolean };
+    if (!local) webEvent("share_click", { channel: "card" });
     if (f && nav.canShare?.({ files: [f] })) { nav.share({ files: [f], title: "나의 키워드" }).catch(() => undefined); return; }
-    if (url && nav.share) { nav.share({ url, title: "나의 키워드" }).catch(() => undefined); return; }
+    if (url && nav.share) { nav.share({ url: withShareFrom(url), title: "나의 키워드" }).catch(() => undefined); return; }
     setMessage("이 브라우저는 공유를 지원하지 않아요. [이미지 저장]을 눌러 주세요.");
   }
   return <section className={shareStyle.actions} aria-label="키워드 카드 저장·공유" data-keyword-actions>
