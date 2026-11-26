@@ -70,6 +70,14 @@ const condOnChart = (s: string) => { const m = COND.exec(s); return Boolean(m &&
 export const ZW_MEMO = /통용|全書|전서|추정|학파|유파|중주파|북파|삼합파|비성|계산 기준|라이브러리|iztro|DB|엔진|카드|설계도|근거 id|zw:|engineKey/i;
 /** 건강 단정 · 병 이름(질액궁은 「컨디션 리듬」 말만). */
 export const ZW_HEALTH = /(?<![가-힣])병(?:이|을|에|원)|질환|질병|증상|통증|아프|아파|소화|위장|심장|혈압|두통|피부|허리|어깨|관절|호흡기|면역|수술|진료|검진|몸살|감기|염증|탈이 나|탈이 납|약을 먹|약이 |건강이 (?:나빠|약해|상)|건강을 해/;
+/**
+ * 몸의 열 말(ZW-2 7부 Z5 판독 ① 6 — 「속에 열이 차오르는 컨디션 리듬」 「컨디션 리듬 칸의 열이 식을 때까지」는 몸 증상으로 읽힌다). 카드에서 빼고 원고 검사도 같은 꼴로 막는다.
+ * 「속 · 몸 · 가슴 · 머리의 열」(「열기」 = 속마음의 뜨거움은 빼고)은 그대로, 열 · 열기가 오르고 식는 말은 같은 문장에 몸 · 컨디션 말이 있을 때만(오탐 대보기: 「파를 써는 사이 열이 식어」 · 「열기가 식은 뒤」는 통과). 「열두 · 열정 · 열리다」는 낱말 경계로 비킨다.
+ */
+const HEAT_PLACE = /(?<![가-힣])(?:속|몸|가슴|머리)(?:에|의|이)\s*열(?![기두정리어])/;
+const HEAT_MOVE = /(?<![가-힣])열(?:이|기가|기|을|기를)\s*(?:차오르|차올|차오|오르|올라|식|내리|내려|뻗|나[고면서요는]|납니다)/;
+const HEAT_BODY = /몸|컨디션|리듬|기운|피로|지치|지쳐|회복|잠(?:을|이|으로|자)|쉬(?:는|어|면|기)/;
+export const ZW_HEAT = { test: (s: string) => HEAT_PLACE.test(s) || (HEAT_MOVE.test(s) && HEAT_BODY.test(s)) };
 /** 극단 운명 말(fate_word — 0부 덕짱님 수정 2: 지시 · 카드에도 0). */
 export const FATE_WORD = /극처|극부|이혼|단명|요절|사별|과부|홀아비|파혼|재혼|형극|횡사|객사|흉사|상부살|상처살|고독살|팔자가 사납|박복/;
 /** 등급 낱말(밝기 단 · 길흉 단) — 카드 · 지시 · 본문 모두 0. 「살성」 갈래 이름도(0부 덕짱님 수정 3). */
@@ -94,7 +102,7 @@ export function cleanZiwei(text: string, c: CleanCtx, log?: CleanLog, max = 3): 
   for (const s0 of splitSents(text)) {
     if (!prevKept && LEANS_BACK.test(s0)) { log?.dropped.push({ why: "orphan", text: s0 }); continue; }
     prevKept = false;
-    const why = RULE.test(s0) ? "rule" : DISCLAIMER.test(s0) ? "disclaimer" : condOnChart(s0) ? "cond" : ZW_MEMO.test(s0) ? "memo" : ZW_HEALTH.test(s0) ? "health" : FATE_WORD.test(s0) ? "fate" : GRADE_WORD.test(s0) ? "grade" : null;
+    const why = RULE.test(s0) ? "rule" : DISCLAIMER.test(s0) ? "disclaimer" : condOnChart(s0) ? "cond" : ZW_MEMO.test(s0) ? "memo" : ZW_HEALTH.test(s0) || ZW_HEAT.test(s0) ? "health" : FATE_WORD.test(s0) ? "fate" : GRADE_WORD.test(s0) ? "grade" : null;
     if (why) { log?.dropped.push({ why, text: s0 }); continue; }
     const s1 = stripAdviceSentence(s0);
     if (s1 !== s0) { if (log) { log.tails++; if (s1) log.salvaged++; else log.dropped.push({ why: "advice", text: s0 }); } }

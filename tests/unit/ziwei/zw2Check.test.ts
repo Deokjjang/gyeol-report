@@ -6,7 +6,8 @@ import { computeZiweiChart } from "../../../src/lib/ziwei/chart";
 import { loadZiweiKnowledge } from "../../../src/lib/ziwei/knowledge";
 import { buildZiweiBrief } from "../../../src/lib/ziwei/brief";
 import { splitSents } from "../../../src/lib/ziwei/text";
-import { ziweiSentenceFlags, ZIWEI_RULE_BRANCH } from "../../../src/lib/writer/chunked/ziweiCheck";
+import { cutSentence, inspectZiwei, splitZ, ziweiSentenceFlags, ZIWEI_RULE_BRANCH } from "../../../src/lib/writer/chunked/ziweiCheck";
+import { buildZiweiDesign } from "../../../src/lib/ziwei/design";
 import { buildV5Snapshot, writerKnowledge } from "../../../src/lib/writer/publish";
 import { ziweiMockStreamFor } from "../../../src/lib/writer/chunked/ziweiMock";
 import { randomPeople, Z5_PEOPLE } from "./zw2People";
@@ -45,10 +46,36 @@ describe("참 꼴은 걸린다(갈래 붙음)", () => {
     ["뚜렷하게 �잡히지 않아요.", "bad_char"],
     ["2028년에는 반드시 결혼하게 됩니다.", "future_event"],
     ["지치면 소화가 먼저 흔들립니다.", "health_claim"],
+    // 7부 Z5 판독 ① → 결정론 1판(연애 별 · 빌려 읽기 · 오행국 뜻 · 몸의 열 · 9장 기조 말)
+    ["마음이 끌리는 쪽은 일 칸에 모여 있습니다.", "love_claim"],
+    ["마음이 끌리는 쪽은 터전 칸에 있습니다.", "love_claim"],
+    ["비어 있어서 오히려 이웃한 무대의 힘이 넉넉히 흘러드는 자리입니다.", "empty_claim"],
+    ["당신의 오행국은 금사국이라 성격이 단단합니다.", "chart_claim"],
+    ["당신의 힘은 속에 열이 차올랐다가 뚝 끊기는 리듬으로 움직입니다.", "health_claim"],
+    ["먼저 컨디션 리듬 칸의 열이 식을 때까지 손을 멈추세요.", "health_claim"],
+    ["10년의 연도 범위만 알고 있어도 믿음을 둘 수 있습니다.", "memo_leak"],
   ])("%s → %s", (s, rule) => {
     const got = rules(s);
     expect(got).toContain(rule);
     expect(ZIWEI_RULE_BRANCH[rule]).not.toBeNull();
+  });
+  it("오행국 문단 안의 오행 비유는 문단 맥락으로 건다(오행국 없는 문단의 비유는 통과)", () => {
+    const b = buildZiweiBrief({ chart: z3, kb: loadZiweiKnowledge(), k: writerKnowledge().k, person: Z5_PEOPLE[2].person, asOf: ASOF }), design = buildZiweiDesign(b);
+    const ch = (p: string) => [{ n: 1, id: "read", title: "t", chars: 0, sections: [{ heading: "명반은 열두 칸의 지도입니다", paragraphs: [p] }] }] as never;
+    const got = (p: string) => inspectZiwei(ch(p), { brief: b, design, intake: {} as never }).filter(f => f.paragraph === 0 && f.branch).map(f => `${f.rule} ${f.sentence}`);
+    expect(got("당신의 오행국은 금사국입니다. 쇠처럼 한번 자리를 잡으면 쉽게 흔들리지 않는 결로 읽으면 됩니다.")).toEqual(["chart_claim 쇠처럼 한번 자리를 잡으면 쉽게 흔들리지 않는 결로 읽으면 됩니다."]);
+    expect(got("쇠처럼 단단한 하루를 보냅니다. 나 칸에는 천량이 앉아 있습니다.")).toEqual([]);
+  });
+  it("문장 나누기: 핵심 문장 기호 ⟫가 마침표 뒤에 붙어도 옆 문장과 따로(지우기가 옆 문장까지 지우지 않게)", () => {
+    expect(splitZ("앞 문장입니다. ⟪걸린 문장입니다.⟫ 옆 문장이에요.")).toEqual(["앞 문장입니다.", "⟪걸린 문장입니다.⟫", "옆 문장이에요."]);
+    expect(splitZ("\"요즘 편해졌어.\" 하고 웃습니다.")).toEqual(["\"요즘 편해졌어.\" 하고 웃습니다."]);
+  });
+  it("지우기: 그 문장만 빼고, 다음 문장이 「그 칸」으로 받으면 지운 문장의 칸 이름으로 바꾼다 · 문단이 비면 null · 못 찾으면 undefined", () => {
+    expect(cutSentence("마음이 끌리는 쪽은 컨디션 리듬 칸에 있습니다. 인연 신호(홍란)와 설렘의 별(함지)이 그 칸에 있어서, 마음이 쉽게 물들어요. 설렘은 오래갑니다.", "마음이 끌리는 쪽은 컨디션 리듬 칸에 있습니다."))
+      .toBe("인연 신호(홍란)와 설렘의 별(함지)이 컨디션 리듬 칸에 있어서, 마음이 쉽게 물들어요. 설렘은 오래갑니다.");
+    expect(cutSentence("앞 문장입니다. ⟪걸린 문장입니다.⟫ 옆 문장이에요.", "걸린 문장입니다.")).toBe("앞 문장입니다. 옆 문장이에요.");
+    expect(cutSentence("걸린 문장입니다.", "걸린 문장입니다.")).toBeNull();
+    expect(cutSentence("다른 문장입니다.", "걸린 문장입니다.")).toBeUndefined();
   });
   it("짝이 든 소제목 · 맞는 유형은 MBTI 걸림 없음", () => {
     expect(rules("ISFJ의 성실함이 천량의 품과 겹칩니다.", { pairHere: true })).not.toContain("mbti_outside");
@@ -83,6 +110,17 @@ describe("맞는 말 · 오탐 대보기 꼴은 걸리지 않는다", () => {
     "당신에게는 천부적인 감각이 있습니다.",
     "화기애애한 자리를 좋아합니다.",
     "태양처럼 환한 사람이라는 말을 듣습니다.",
+    // 7부 1판의 맞는 꼴 · 보통 낱말
+    "마음이 끌리는 쪽도 칸마다 나뉩니다.",
+    "인연 신호(홍란)는 터전 칸에 있어요.",
+    "이웃과 모임에서 얼굴이 자주 바뀝니다.",
+    "열두 칸을 차례로 읽어 봅니다.",
+    "열정이 오르는 날에는 일이 술술 풀립니다.",
+    "문이 열리는 칸입니다.",
+    "물처럼 흘러가는 하루를 좋아합니다.",
+    "파를 써는 사이 열이 식어, 다 볶은 뒤에는 친구 것을 맛있게 퍼먹습니다.",
+    "마음이 달아오른 그때 판을 엎고, 열기가 식은 뒤에 다듬는 손이 옵니다.",
+    "오행국은 금사국입니다. 다섯 가운데 첫 십 년 칸이 세 번째로 열리는, 쇠의 이름이 붙은 흐름이에요.",
   ])("%s", s => {
     const got = ziweiSentenceFlags(s, ctx({ pairHere: true })).filter(f => ZIWEI_RULE_BRANCH[f.rule]);
     expect(got).toEqual([]);

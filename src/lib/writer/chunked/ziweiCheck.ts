@@ -8,7 +8,9 @@
  *  brightness_claim 별의 밝고 어두움(「환하게 빛나는 천량」 「빛이 약한 천기」): 근거가 「통용」이 아닌 칸의 별이면, 또는 통용이어도 단과 반대 방향이면.
  *  transform_claim  사화(화록 · 화권 · 화과 · 화기)가 붙은 별 · 칸(「거문에 붙은 화권」 「짝 칸의 화권」 「화기가 붙은 내가 기르는 것 칸」).
  *  empty_claim      빈 칸(「짝 칸은 빈 칸」) · 빌려 읽는 맞은편(「짝 칸은 맞은편 일 칸의 별을 빌려」) · 맞은편 칸(「짝 칸의 맞은편 일 칸」).
- *  chart_claim      명궁 지지 칸(「명궁은 축(丑) 칸」) · 신궁이 겹친 칸 · 오행국 이름 · 국수.
+ *  chart_claim      명궁 지지 칸(「명궁은 축(丑) 칸」) · 신궁이 겹친 칸 · 오행국 이름 · 국수 · 오행국에 성격 · 비유 뜻(오행국 문단 안, 7부 1판).
+ *  love_claim       연애 별 자리를 한 칸으로 단정(「마음이 끌리는 쪽은 X 칸에 있습니다」 — 연애 별이 여러 칸이면, 7부 1판).
+ *  (empty_claim에 더함) 빈 칸 · 빌려 읽기를 이웃 · 옆 칸으로(7부 1판). health_claim에 몸의 열 말(text.ts ZW_HEAT, 카드에서도 뺌). memo_leak에 9장 기조 말(연도 범위 · 날짜와 사건).
  *  decade_claim     10년 연도 범위(「2026~2035년」) · 지금 · 다음 10년의 칸 · 나이 말(「34세」 「서른 살」 「30대」 — 자미 책은 연도 범위로만).
  *  mbti_outside     짝이 없는 소제목의 MBTI 유형 이름 · MBTI 없는 책의 유형 이름.
  * 재사용: status_claim(연애 상태 말, claims.ts 꼴) · input_premise(premise 낱말표, 칸 이름은 가림) · memo_leak(broken.ts MEMO_LEAK + 자미 지시 말) ·
@@ -21,7 +23,7 @@ import { premiseHits } from "@/lib/brief/premise";
 import type { ZiweiBrief } from "@/lib/ziwei/brief";
 import type { ZiweiDesign } from "@/lib/ziwei/design";
 import { BRANCH_KO, FIVE_CLASS_INFO, MUTAGEN_NAMES, PALACE_NAMES, PALACES, STAR_NAMES, type Branch, type MutagenId, type PalaceId, type StarId } from "@/lib/ziwei/ids";
-import { FATE_WORD, GRADE_WORD, maskPalaceNames } from "@/lib/ziwei/text";
+import { FATE_WORD, GRADE_WORD, maskPalaceNames, ZW_HEAT } from "@/lib/ziwei/text";
 import type { ZiweiChart } from "@/lib/ziwei/types";
 import { dupPhrase, MEMO_LEAK } from "./broken";
 import type { Intake } from "./intake";
@@ -29,9 +31,10 @@ import type { Intake } from "./intake";
 export type ZBranch = "fact" | "input" | "memo" | "broken" | "future" | "health";
 export type ZFlag = { readonly chapter: number; readonly section: number; readonly paragraph: number; readonly rule: string; readonly sentence: string; readonly detail: string; readonly branch: ZBranch | null };
 export type ZCheckCtx = { readonly brief: ZiweiBrief; readonly design: ZiweiDesign; readonly intake: Intake };
-export const splitZ = (t: string) => t.split(/(?<=[.!?])\s+/).map(s => s.trim()).filter(Boolean);
+/** 문장 나누기. 핵심 문장 기호 ⟫가 마침표 뒤에 붙어도 나눈다(7부 재현: 기호 때문에 두 문장이 한 덩어리가 되어 지우기가 옆 문장까지 지웠다). */
+export const splitZ = (t: string) => t.split(/(?<=[.!?]⟫?)\s+/).map(s => s.trim()).filter(Boolean);
 export const ZIWEI_RULE_BRANCH: Readonly<Record<string, ZBranch | null>> = {
-  star_palace: "fact", brightness_claim: "fact", transform_claim: "fact", empty_claim: "fact", chart_claim: "fact", decade_claim: "fact", mbti_outside: "fact",
+  star_palace: "fact", brightness_claim: "fact", transform_claim: "fact", empty_claim: "fact", chart_claim: "fact", decade_claim: "fact", mbti_outside: "fact", love_claim: "fact",
   status_claim: "input", input_premise: "input", memo_leak: "memo", lib_name: "memo", school_talk: "memo", grade_word: "memo",
   bad_char: "broken", cut_clause: "broken", dup_phrase: "broken", chapter_missing: "broken", section_empty: "broken",
   future_event: "future", fate_word: "future", health_claim: "health", section_count: null,
@@ -76,7 +79,14 @@ const AGE = /(?<![\d가-힣])\d{1,2}\s?(?:세|살)(?![가-힣])|(?<![가-힣])(?
 /** 오탐 대보기(5부 ③ 저장 책): 「자유파」(子酉破)의 「유파」 · 「프로그램」 · 돈 나누는 「계산 방식」(보통 낱말)은 뺐다 — 계산 말은 명반 · 별 맥락만. */
 const SCHOOL = /학파|(?<![가-힣])유파|중주파|북파|삼합파|비성 사화|(?:명반|자미|별자리|사화|별)[^.?!]{0,12}(?:계산 기준|계산 방식|계산법)|라이브러리|(?<![가-힣])전서(?![가-힣])|全書|통용 표|명반을 (?:계산|뽑)/;
 /** 오탐 대보기(5부 ① DB 그림 · ③ 저장 책): 「설계도」(그림 낱말) · 「쓰는 장면」은 뺐다 — 카드 칸 이름 꼴만. */
-const ZW_MEMO_EXTRA = /(?<![A-Za-z])[ZBP]\d{1,2}(?![0-9A-Za-z])|근거 카드|책 설계도|묶음 지시|소제목 틀|이 사람 재료|(?<![가-힣])기조(?:에|를|대로)|쓰는 장:|새 각도|집 장(?![가-힣])/;
+const ZW_MEMO_EXTRA = /(?<![A-Za-z])[ZBP]\d{1,2}(?![0-9A-Za-z])|근거 카드|책 설계도|묶음 지시|소제목 틀|이 사람 재료|(?<![가-힣])기조(?:에|를|대로)|쓰는 장:|새 각도|집 장(?![가-힣])|연도 범위|날짜와 사건|일어날 일을 정하지/;
+/** ZW-2 7부 Z5 판독 ①(1판): 연애 별을 한 칸으로 단정 · 빌려 읽기를 맞은편이 아닌 칸으로 · 오행국에 성격 뜻. */
+const LOVE_ONE = new RegExp(`(?:(?:마음이 )?(?:끌리는|가는|설레는) 쪽|연애 별(?:들)?)(?:은|이)\\s*(?:[^\\s.,·]+\\s){0,1}?(${PALACE_ALTS.map(a => esc(a[0])).join("|")})(?:에|에만|에는)\\s*(?:다\\s*|모두\\s*|모여\\s*|몰려\\s*)?(?:있|모여|몰려|앉아)`);
+const BORROW_WORD = /빈 칸|비어 있|비어서|빌려|큰 별이 없|주성이 없/;
+const NEIGHBOR = /(?<![가-힣])(?:이웃한|이웃 칸|이웃의 칸|이웃 무대|이웃한 무대|옆 칸|옆의 칸|옆 무대|양옆|주변 칸|주위 칸)/;
+const FIVE_NAME = /수이국|목삼국|금사국|토오국|화육국|오행국/;
+const FIVE_TRAIT = /성격|기질|성품|타고난 결/;
+const FIVE_SIMILE = /(?<![가-힣])(?:쇠|물|나무|흙|불)(?:처럼|같이|같은)/;
 const STATUS_SAY = /(?<![가-힣])(연애 중인|솔로인|기혼인|결혼한|썸 타는|썸 중인) 당신(?!이라면|이라도)/;
 const STATUS_OF: Readonly<Record<string, string>> = { "연애 중인": "dating", 솔로인: "single", 기혼인: "married", 결혼한: "married", "썸 타는": "some", "썸 중인": "some" };
 const EVENT = /(결혼|이별|이혼|헤어지|재회|합격|승진|이직|취업|창업|임신|출산|사고|이사|큰돈|복권|부자가|성공)[^.?!]{0,24}(?:하게 됩니다|하게 될 것|할 것입니다|하게 돼요|찾아옵니다|찾아와요|일어납니다|일어나요|생깁니다|생겨요|들어옵니다|들어와요|이뤄집니다|이루어집니다|됩니다)[.!]?$/;
@@ -136,6 +146,14 @@ export function ziweiSentenceFlags(sen: string, c: { readonly chart: ZiweiChart;
     const om = new RegExp(`^의 맞은편(?:은|인|에 있는|에는)?\\s*(${PALACE_ALTS.map(a => esc(a[0])).join("|")})`).exec(plain.slice(p.end));
     if (om && f.opposite(x.id) !== palaceOf(om[1])) out.push({ rule: "empty_claim", detail: `${PALACE_NAMES[x.id].easy} 칸의 맞은편은 ${PALACE_NAMES[f.opposite(x.id)].easy} 칸` });
   }
+  // 빈 칸 · 빌려 읽기를 이웃 · 옆 칸으로(빌리는 칸은 맞은편 한 칸뿐). 빈 칸 말이 없는 「이웃」은 보통 낱말이라 통과.
+  if (BORROW_WORD.test(plain) && NEIGHBOR.test(plain)) out.push({ rule: "empty_claim", detail: "빈 칸은 맞은편 한 칸의 별만 빌려 읽는다(이웃 · 옆 칸 아님)" });
+  // ---- love_claim: 연애 별 자리를 한 칸으로 ----
+  const lv = LOVE_ONE.exec(plain);
+  if (lv) {
+    const at = new Set(c.chart.palaces.filter(p => p.loves.length).map(p => p.id)), named = palaceOf(lv[1]);
+    if (at.size !== 1 || !named || !at.has(named)) out.push({ rule: "love_claim", detail: `연애 별은 ${[...at].map(p => PALACE_NAMES[p].easy).join(" · ") || "없음"} 칸에 있다` });
+  }
   // ---- chart_claim ----
   const life = /명궁(?:은|이|이 놓인|이 앉은)?\s*([자축인묘진사오미신유술해])(?:\([^)]*\))?\s*(?:칸|자리|궁)/.exec(plain);
   if (life && BRANCH_OF_KO.get(life[1]) !== c.chart.lifePalace.branch) out.push({ rule: "chart_claim", detail: `명궁은 ${BRANCH_KO[c.chart.lifePalace.branch]} 칸` });
@@ -143,6 +161,7 @@ export function ziweiSentenceFlags(sen: string, c: { readonly chart: ZiweiChart;
   if (body && palaceOf(body[1]) !== c.chart.bodyPalace.palace) out.push({ rule: "chart_claim", detail: `신궁은 ${PALACE_NAMES[c.chart.bodyPalace.palace].easy} 칸에 겹친다` });
   for (const m of plain.matchAll(/(수이국|목삼국|금사국|토오국|화육국)/g)) if (m[1] !== FIVE_CLASS_INFO[c.chart.fiveClass.id].ko) out.push({ rule: "chart_claim", detail: `오행국은 ${FIVE_CLASS_INFO[c.chart.fiveClass.id].ko}` });
   const num = /국수(?:는|가)?\s*(\d)/.exec(plain); if (num && Number(num[1]) !== c.chart.fiveClass.number) out.push({ rule: "chart_claim", detail: `국수는 ${c.chart.fiveClass.number}` });
+  if (FIVE_NAME.test(plain) && (FIVE_TRAIT.test(plain) || FIVE_SIMILE.test(plain))) out.push({ rule: "chart_claim", detail: "오행국에 카드에 없는 뜻(오행국은 첫 10년이 열리는 때만)" });
   // ---- decade_claim ----
   for (const m of plain.matchAll(/(\d{4})\s*[~–-]\s*(\d{4})\s*년|(\d{4})년부터 (\d{4})년까지/g)) {
     const a = Number(m[1] ?? m[3]), b = Number(m[2] ?? m[4]);
@@ -174,6 +193,7 @@ export function ziweiSentenceFlags(sen: string, c: { readonly chart: ZiweiChart;
   { const d = dupPhrase(plain); if (d) out.push({ rule: "dup_phrase", detail: `「${d}」 되풀이` }); }
   if (EVENT.test(plain) && WHEN.test(plain)) out.push({ rule: "future_event", detail: "때와 결과를 정한 예언" });
   if (HEALTH_CLAIM.test(plain) || HEALTH_BODY.test(plain) || DISEASE.test(plain)) out.push({ rule: "health_claim", detail: "건강 단정 · 병 이름" });
+  else if (ZW_HEAT.test(plain)) out.push({ rule: "health_claim", detail: "몸의 열 말(몸 증상으로 읽힘)" });
   return out;
 }
 
@@ -197,10 +217,39 @@ function claims(chs: readonly FinalChapter[], c: ZCheckCtx): ZFlag[] {
       const pairHere = Boolean(d?.sections[si]?.pair);
       const ctx = { chart: b.chart, mbti: b.person.mbti, relationship: b.person.relationshipStatus, inputs: b.inputs, pairHere };
       for (const r of ziweiSentenceFlags(s.heading, ctx)) out.push({ chapter: ch.n, section: si, paragraph: -1, rule: r.rule, sentence: s.heading, detail: r.detail, branch: ZIWEI_RULE_BRANCH[r.rule] ?? null });
-      s.paragraphs.forEach((p, pi) => { for (const sen of splitZ(p.replace(/[⟪⟫]/g, ""))) for (const r of ziweiSentenceFlags(sen, ctx)) out.push({ chapter: ch.n, section: si, paragraph: pi, rule: r.rule, sentence: sen, detail: r.detail, branch: ZIWEI_RULE_BRANCH[r.rule] ?? null }); });
+      s.paragraphs.forEach((p, pi) => {
+        const five = FIVE_NAME.test(p);
+        for (const sen of splitZ(p.replace(/[⟪⟫]/g, ""))) {
+          const rs = ziweiSentenceFlags(sen, ctx);
+          // 오행국이 나온 문단: 이어지는 문장의 오행 비유(「쇠처럼 … 결로 읽으면」)도 카드에 없는 오행국 뜻(Z5 판독 ① 1).
+          if (five && !FIVE_NAME.test(sen) && (FIVE_SIMILE.test(sen) || FIVE_TRAIT.test(sen)) && !rs.some(r => r.rule === "chart_claim")) rs.push({ rule: "chart_claim", detail: "오행국에 카드에 없는 뜻(오행국은 첫 10년이 열리는 때만)" });
+          for (const r of rs) out.push({ chapter: ch.n, section: si, paragraph: pi, rule: r.rule, sentence: sen, detail: r.detail, branch: ZIWEI_RULE_BRANCH[r.rule] ?? null });
+        }
+      });
     });
   }
   return out;
+}
+/**
+ * 남은 차단 문장 지우기(발행 함수 마지막 단계 · 재현 도구 공통). 문단에서 그 문장만 뺀다. 못 찾으면 undefined, 빼면 문단이 비면 null(보류 몫).
+ * 지운 문장이 칸 하나를 말했고 바로 다음 문장이 「그 칸 · 이 칸」으로 받으면 받는 말을 그 칸 이름으로 바꾼다(7부 재현: 지운 뒤 「그 칸」이 앞 문단의 다른 칸을 가리켰다).
+ */
+const DEICTIC_PALACE = /(?<![가-힣])(?:그|이) 칸(?=[은는이가을를의에도과와]|\s)/;
+const normZ = (t: string) => t.replace(/[⟪⟫]/g, "").replace(/[^가-힣A-Za-z0-9]/g, "");
+export function cutSentence(para: string, sentence: string): string | null | undefined {
+  const parts = splitZ(para), target = normZ(sentence);
+  const gone = parts.map(s => normZ(s) === target || normZ(s).includes(target));
+  const first = gone.indexOf(true);
+  if (first < 0) return undefined;
+  const kept = parts.filter((_, i) => !gone[i]);
+  if (!kept.length) return null;
+  const named = [...new Set(hits(parts[first].replace(/[⟪⟫]/g, ""), PALACE_RE, palaceOf).map(h => h.id))];
+  const nextAt = parts.findIndex((_, i) => i > first && !gone[i]);
+  if (named.length === 1 && nextAt === first + 1) {
+    const k = kept.indexOf(parts[nextAt]);
+    if (k >= 0) kept[k] = kept[k].replace(DEICTIC_PALACE, `${PALACE_NAMES[named[0] as PalaceId].easy} 칸`);
+  }
+  return kept.join(" ");
 }
 export type ZCheck = (chs: readonly FinalChapter[], c: ZCheckCtx) => ZFlag[];
 export const ZIWEI_CHECKS: ZCheck[] = [structure, claims];

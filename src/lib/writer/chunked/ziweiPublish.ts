@@ -24,7 +24,7 @@ import { kstDate, writerKnowledge, type V5BuildDeps } from "../publish";
 import { chunkPlan, renderCard, type Chunk, type ParaTarget } from "./prompt";
 import { replaceParagraphs, writeChunks, type ChunkLog } from "./run";
 import { buildZiweiIntake, ziweiRuleCtxOf, ziweiRules, ZIWEI_PROMPT_VERSION } from "./ziwei";
-import { inspectZiwei, splitZ, type ZFlag } from "./ziweiCheck";
+import { cutSentence, inspectZiwei, type ZFlag } from "./ziweiCheck";
 import { createZiweiSnapshot, ZIWEI_DRAFT_VERSION, ZIWEI_EVIDENCE_VERSION, type ZiweiBookDraft, type ZiweiEvidence } from "../ziweiBook";
 
 export const ZIWEI_BOOK_TITLE = "나의 열두 서가";
@@ -132,12 +132,11 @@ export async function buildZiweiSnapshot(a: { payload: ReportInputPayload; repor
   // ---- 남은 차단 문장 지우기(문단이 남을 때만 — 빈 소제목은 보류) ----
   const cut: { at: string; rule: string; sentence: string }[] = [];
   let flags = inspectZiwei(chs, ctx);
-  const norm = (t: string) => t.replace(/[^가-힣A-Za-z0-9]/g, "");
   for (const f of block(flags).filter(x => x.paragraph >= 0 && x.sentence)) {
     const d = drafts.get(f.chapter), sec = d?.chapter.sections[f.section]; if (!d || !sec) continue;
-    const para = sec.paragraphs[f.paragraph] ?? "", kept = splitZ(para).filter(s => norm(s.replace(/[⟪⟫]/g, "")) !== norm(f.sentence.replace(/[⟪⟫]/g, "")) && !norm(s).includes(norm(f.sentence)));
-    if (kept.length === splitZ(para).length || !kept.length) continue;
-    const paragraphs = sec.paragraphs.map((t, i) => (i === f.paragraph ? kept.join(" ") : t));
+    const next = cutSentence(sec.paragraphs[f.paragraph] ?? "", f.sentence);
+    if (next === undefined || next === null) continue;
+    const paragraphs = sec.paragraphs.map((t, i) => (i === f.paragraph ? next : t));
     drafts.set(f.chapter, { ...d, chapter: { ...d.chapter, sections: d.chapter.sections.map((s, i) => (i === f.section ? { ...s, paragraphs } : s)) } });
     cut.push({ at: `${f.chapter}.${f.section}.${f.paragraph}`, rule: f.rule, sentence: f.sentence });
   }
