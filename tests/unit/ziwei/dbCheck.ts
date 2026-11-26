@@ -325,6 +325,10 @@ function checkIdentity(file: string, fam: string, e: Record<string, unknown>, fa
     if (!(MAJOR_STARS as readonly string[]).includes(star)) fail(file, id, "짝은 주성 14만");
     if (id !== `zw-mbti:${star}:${e.mbtiTarget}`) fail(file, id, "짝 id ≠ zw-mbti:<주성>:<유형>");
     if (!(e.factBoundary as { requires: string[] }).requires.includes("mbtiKnown")) fail(file, id, "짝 factBoundary.requires에 mbtiKnown 없음");
+    const whySentences = (e.why as string).trim().split(/(?<=[.!?])\s+/).filter(Boolean).length;
+    if (whySentences < 2 || whySentences > 3) fail(file, id, "짝 why는 2~3문장", `${whySentences}문장`);
+    const starKo = STAR_NAMES[star as StarId]?.ko;
+    if (!starKo || !(e.why as string).includes(starKo) || !(e.why as string).includes(e.mbtiTarget as string)) fail(file, id, "짝 why에 별 이름 · 유형 코드가 다 들어가야 함", e.why as string);
     for (const t of [e.why as string, (e.scene as { broad: string; text: string }).broad, (e.scene as { broad: string; text: string }).text]) if (BORROW_UNSAFE.test(t)) fail(file, id, "짝 글이 빌려 읽을 때 틀림(명궁이 비면 빌린 별의 짝도 나감)", t);
   } else if (fam === "stageMap") {
     if (!(PALACES as readonly string[]).includes(e.palace as string)) fail(file, id, "같은 무대 궁 id");
