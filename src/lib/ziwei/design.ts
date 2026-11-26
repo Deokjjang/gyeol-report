@@ -95,7 +95,6 @@ export function buildZiweiDesign(b: ZiweiBrief): ZiweiDesign {
   const partnerTone = rel === "married" || rel === "dating" || rel === "marriage_preparing" ? "곁의 한 사람과 지내는 방식으로 직설과 따뜻함을 함께" : "만나게 되면 · 가까워지면 꼴로, 끌리는 사람과 마음을 여는 방식으로";
   const childTone = inp.children === "has" ? "기르는 방식의 장점을 먼저, 붙어 살피는 정도와 믿고 맡기는 정도로" : "아랫사람 · 내가 길러 내는 일 · 가르치는 사람으로 읽는다";
   const workTone = /^(employee|freelancer|self_employed|business_owner)$/.test(inp.jobStatus) ? "맡은 몫을 해내는 방식 — 장점은 직설로" : inp.jobStatus === "student" ? "공부와 맡은 몫을 해내는 방식으로" : "일을 대하는 방식과 맡은 몫을 해내는 힘으로";
-  const malefic = (ls: readonly (ZLine | undefined)[]) => ls.some(l => l && (l.kind === "minor" || l.kind === "overuse" || l.kind === "deepWatch" || l.kind === "mutagenWatch"));
   const facty = (l: ZLine | undefined) => (l ? `${l.id} ${gist(l.value.replace(/ · 곁의 별:.*$/, ""), 46)}${l.meaning ? ` — ${gist(l.meaning)}` : ""}` : "");
   const lifeP = palaceLine("myeong"), life = b.chart.palaces.find(p => p.id === "myeong")!;
   const empties = b.chart.palaces.filter(p => p.empty);
