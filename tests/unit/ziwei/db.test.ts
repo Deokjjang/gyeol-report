@@ -7,7 +7,7 @@ import { writeFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { FULL_COUNTS, fullExpectedIds, PILOT_IDS, runZiweiDbCheck } from "./dbCheck";
 
-const PHASE: "pilot" | "full" = "full";
+const PHASE = "full" as "pilot" | "full";
 
 describe("자미두수 DB", () => {
   const report = runZiweiDbCheck();

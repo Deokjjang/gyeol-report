@@ -26,7 +26,7 @@ export function ziweiMockChunk(x: Intake, user: string): string | null {
     for (const line of rest.split("\n")) {
       const t = /^- \[¶([0-9.*]+)\]/.exec(line); if (t) { flush(); id = t[1]; para = ""; bad = []; continue; }
       const p = /^ {2}(?:고칠 문단|지금 글): (.*)$/.exec(line); if (p) { para = p[1].replace(/ \/ /g, " "); continue; }
-      const b = /^ {2}· «(.*)» — /.exec(line); if (b) bad.push(b[1]);
+      const b = /^ {2}· (?:걸린 문장 )?«(.*)» — /.exec(line); if (b) bad.push(b[1]);
     }
     flush();
     return out.join("\n");

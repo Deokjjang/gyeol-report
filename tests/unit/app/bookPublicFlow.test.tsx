@@ -39,7 +39,7 @@ function form(payload: ReportInputPayload): BookFormState {
   const state = emptyBookForm(now.getUTCFullYear());
   state.person = { ...state.person, ...person(p) };
   if (payload.productKey === "saju_mbti_compatibility") { state.personB = person(payload.personB); state.category = payload.relationshipType; }
-  else { state.person = { ...state.person, relationshipStatus: payload.userContext.relationshipStatus, jobStatus: payload.userContext.jobStatus, detailedJob: payload.userContext.detailJob, focusAreas: payload.userContext.focusAreas, selectedYear: "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear : state.person.selectedYear }; }
+  else { state.person = { ...state.person, relationshipStatus: payload.userContext.relationshipStatus, jobStatus: payload.userContext.jobStatus, detailedJob: payload.userContext.detailJob, focusAreas: payload.userContext.focusAreas, selectedYear: "selectedYear" in payload.productOptions ? payload.productOptions.selectedYear ?? state.person.selectedYear : state.person.selectedYear }; }
   return state;
 }
 const request = (payload: ReportInputPayload) => ({ provider: "toss", productType: payload.productKey, inputSnapshot: bookCheckoutSnapshot(payload), consent: createCheckoutConsentAssertion(agreed) });

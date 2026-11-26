@@ -26,7 +26,7 @@ const same = (a: string, b: string) => { const x = norm(a), y = norm(b); return 
 const cache = new Map<string, ReturnType<typeof setup>>();
 function setup(book: string) {
   const payload = payloadFor(book) as never, { k } = writerKnowledge();
-  const brief = buildBrief(payloadToBriefInput(payload, kstDate(AT)), k), plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
+  const brief = buildBrief(payloadToBriefInput(payload, kstDate(AT)) as never, k), plan = buildWriterPrompt(brief, { knowledge: k }).chapters;
   const intake = buildIntake(brief, k, plan);
   return { brief, plan, intake, ins: makeInspector({ payload, policyAt: AT, brief, k, plan, intake }) };
 }

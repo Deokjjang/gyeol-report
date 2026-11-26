@@ -68,7 +68,7 @@ describe("오픈소스 고지", () => {
   });
   it("「iztro」는 고지 데이터와 내부 코드(계산 어댑터 · 기준 기록 · 검사 낱말)에만", () => {
     const hits = walk("src").filter(f => /\.(tsx?|json|css|md)$/.test(f) && /iztro/i.test(readFileSync(f, "utf8"))).map(f => f.replaceAll("\\", "/")).sort();
-    expect(hits).toEqual(["src/data/licenses/open-source.json", "src/lib/writer/chunked/ziweiPublish.ts", "src/lib/ziwei/basis.ts", "src/lib/ziwei/chart.ts", "src/lib/ziwei/text.ts"]);
+    expect(hits).toEqual(["src/data/licenses/open-source.json", "src/lib/writer/chunked/ziweiCheck.ts", "src/lib/writer/chunked/ziweiPublish.ts", "src/lib/ziwei/basis.ts", "src/lib/ziwei/chart.ts", "src/lib/ziwei/text.ts"]);
     expect(readFileSync("src/app/legal/open-source/page.tsx", "utf8")).toContain("open-source.json");
     expect(readFileSync("src/components/legal/LegalPageLayout.tsx", "utf8")).toContain("/legal/open-source");
   });

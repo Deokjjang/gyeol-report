@@ -163,7 +163,10 @@ export async function buildZiweiSnapshot(a: { payload: ReportInputPayload; repor
     writer: run?.writer ?? null, promptVersion: ZIWEI_PROMPT_VERSION, knowledgeVersion: ziweiKnowledgeVersion(), briefVersion: ZIWEI_BRIEF_VERSION,
     briefHash: createHash("sha256").update(JSON.stringify([brief.lines, brief.pairs, design.chapters])).digest("hex").slice(0, 16),
     tokens: { input: run?.usage.inputTokens ?? 0, cachedInput: run?.usage.cachedInputTokens ?? 0, output: run?.usage.outputTokens ?? 0 }, costUsd: run?.costUsd ?? 0, calls: run?.calls ?? [], durationMs: now() - started,
-    chapters: chs.map(c => ({ n: c.n, id: c.id, title: c.title, source: c.source, chars: c.chars, evidence: design.chapters.find(d => d.n === c.n)?.home ?? [] })),
+    // 30분 흐름 관문(policy judgeBuild): 빈 장은 결정론 장(빠짐)으로, 지우고도 남은 차단(갈래)이 있는 장은 「four_block:」 사유로 — 그 시도에서 발행하지 않는다(감독 2차 · 결론).
+    chapters: chs.map(c => { const left = block(flags).filter(f => f.chapter === c.n); const empty = !c.sections.length || c.sections.every(s => !s.paragraphs.length);
+      return { n: c.n, id: c.id, title: c.title, source: empty ? "deterministic" as const : c.source, chars: c.chars, evidence: design.chapters.find(d => d.n === c.n)?.home ?? [],
+        ...(left.length ? { reason: `four_block:${[...new Set(left.map(f => f.rule))].join(",")}` } : {}) }; }),
     safety: { deletions: cut.length, byRule: byRule(flags), warnings: flags.filter(f => f.branch === null).length }, recovered: Boolean(a.recover),
     ...(run?.raw?.length ? { raw: run.raw } : {}), review: { first: byRule(first), final: byRule(flags), rounds, replaced, reverted, cut, hold, cover: cover.source, chunks: log },
     ...(deps.testRun ? { test: true } : {}),
