@@ -1,13 +1,12 @@
 import { readableBookText } from "../../../lib/book/readerCopy";
 import { termPattern } from "../../../lib/book/terms";
 import { Cover, MbtiPage, MbtiProfile, NatalTable, ShareIcon } from "./BookPages";
-import { BOOKS } from "./model";
 import type { BookData, BookNote, BookPage, BookParagraph, BookRowExtras } from "./bookTypes";
 import s from "./book.module.css";
 import { useState, type ReactNode } from "react";
 import { FlowBar, GanjiChip } from "./BookPeriodData";
 import { AmPage } from "./BookAm";
-import { MAJOR_HALF_CTA, MAJOR_HALF_CTA_CLOSED } from "../../../lib/book/product";
+import { ALL_BOOKS, MAJOR_HALF_CTA, MAJOR_HALF_CTA_CLOSED } from "../../../lib/book/product";
 import { fortuneOpenByClock } from "../../../lib/ops/config";
 
 export function BookInputSummary({ data }: { data: BookData }) {
@@ -82,7 +81,7 @@ const legend = (rows: readonly (BookRowExtras & { importance?: string })[], unit
 
 /** endNotice(F): 마지막 쪽 공유 버튼 바로 아래 줄(주인 화면의 1+1·가입 이용권 책 안내). 공유 버튼은 그대로. */
 export function BookReader({ data, page, onNote, onShare, onPage, backAction, shareActions, endNotice, keywordActions }: { keywordActions?: ReactNode; data: BookData; page: BookPage; onNote: (note: BookNote) => void; onShare: (text: string) => void; onPage: (page: number, anchor?: string) => void; backAction?: ReactNode; shareActions?: ReactNode; endNotice?: ReactNode }) {
-  const book = BOOKS.find(b => b.id === data.bookId)!;
+  const book = ALL_BOOKS.find(b => b.id === data.bookId)!;
   const text = (value: string) => readableBookText(value, data.people.map(p => p.name));
   if (page.kind === "contents") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><ol className={s.bookContents}>{page.entries.map(entry => <li key={entry.targetId}><button onClick={() => onPage(entry.page, entry.targetId)} data-target-chapter={entry.targetId}><span>{text(entry.title)}</span><small>{String(entry.page + 1).padStart(2, "0")} ↗</small></button></li>)}</ol></>;
   if (page.kind === "score") {

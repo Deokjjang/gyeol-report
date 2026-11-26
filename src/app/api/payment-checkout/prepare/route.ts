@@ -8,7 +8,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { accountPublicEnabled } from "../../../../lib/account/gate";
 import { isPublicSameOrigin } from "../../../../lib/account/origin";
 import { bookExperiencePublicEnabled } from "../../../../lib/book/publicGate";
-import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
+import { productOnSale, SALES_CLOSED_CODE, salesClosedMessageFor, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
 import { salesPauseNotice } from "../../../../lib/ops/salesPause";
 
 import type { PaymentCheckoutSessionDraft } from "../../../../lib/payment/paymentCheckoutSessionTypes";
@@ -366,7 +366,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   // P6d-ops 1 → AM2-14 5부: 판매 시작 전(대운·세운, 코드 상수 시각)이면 결제를 시작하지 않는다.
   if (!productOnSale(json.productType ?? defaultProductType)) {
-    return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
+    return createErrorResponse(SALES_CLOSED_CODE, salesClosedMessageFor(json.productType ?? defaultProductType), 409);
   }
   // W3 P0: 4종 판매 중지(DB 스위치) — 결제를 시작하지 않는다. 못 읽으면 판매를 계속한다.
   // W4 Q0: 문구는 멈춘 이유대로(AI 장애·연결 오류 = 「AI 서버 점검」, 그 밖 = 기존 문구).

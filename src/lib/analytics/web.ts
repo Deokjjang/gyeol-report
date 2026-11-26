@@ -23,6 +23,8 @@ export function webEventProps(name: WebEventName, a: { product?: unknown; channe
 
 export function webEvent(name: WebEventName, a: { product?: unknown; channel?: unknown } = {}): boolean {
   if (typeof window === "undefined" || testerBrowser()) return false;
+  // ZW-2 1부: 직접 주소로만 여는 검수 상품(자미 「나의 열두 서가」)은 분석 이벤트를 보내지 않는다.
+  if (a.product === "ziwei_full") return false;
   try { track(name, webEventProps(name, a)); return true; } catch { return false; }
 }
 

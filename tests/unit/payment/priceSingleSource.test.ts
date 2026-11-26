@@ -23,10 +23,11 @@ describe("가격 단일 출처", () => {
     for (const type of reportProductTypes) {
       const p = getReportProduct(type)!;
       expect(p.amount).toBe(REPORT_PRICE_TABLE_KRW[type]);
-      expect(p.priceLabelKo).toBe(formatKrw(REPORT_PRICE_TABLE_KRW[type]));
+      // ZW-2: 판매 닫힘 자미는 가격 표시 말이 없다(표의 값은 자리표시).
+      expect(p.priceLabelKo).toBe(type === "ziwei_full" ? undefined : formatKrw(REPORT_PRICE_TABLE_KRW[type]));
     }
     // 최종 A: 출시 4종 3,900원, 대운·세운 4,900원(판매 중지 유지, 값만).
-    expect(REPORT_PRICE_TABLE_KRW).toEqual({ saju_mbti_full: 3900, career_money_study: 3900, love_marriage_child: 3900, saju_mbti_compatibility: 3900, major_fortune: 4900, annual_fortune: 3900 });
+    expect(REPORT_PRICE_TABLE_KRW).toEqual({ saju_mbti_full: 3900, career_money_study: 3900, love_marriage_child: 3900, saju_mbti_compatibility: 3900, major_fortune: 4900, annual_fortune: 3900, ziwei_full: 3900 });
     expect(REPORT_PRICE_KRW).toBe(REPORT_PRICE_TABLE_KRW.saju_mbti_full);
     expect(REPORT_PRICE_LABEL_KO).toBe("3,900원");
   });
@@ -38,7 +39,8 @@ describe("가격 단일 출처", () => {
     // 카탈로그에서도 가격 숫자는 출시 4종 4줄 + 대운·세운 자리표시 1개뿐이다(AM 6부: 대운·세운 가격은 설정값 FORTUNE_PRICE_*_KRW).
     const catalog = readFileSync("src/lib/payment/reportProductCatalog.ts", "utf8").replace(/\/\/.*$/gm, "").replace(/\/\*[\s\S]*?\*\//g, "");
     // AM2-14 5부: 대운 · 세운 가격도 이 표의 상수(4종 4줄 + 대운 4,900 + 세운 3,900).
-    expect(catalog.match(price)).toEqual(["3900", "3900", "3900", "3900", "4900", "3900"]);
+    // ZW-2: + 자미 자리표시 3,900(판매 닫힘 — 측정 뒤 덕짱님이 정한다).
+    expect(catalog.match(price)).toEqual(["3900", "3900", "3900", "3900", "4900", "3900", "3900"]);
   });
 
   it("서버(결제 준비)는 화면이 보낸 금액을 카탈로그 금액과 대조한다 — 다르면 거절", () => {

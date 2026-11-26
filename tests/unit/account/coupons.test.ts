@@ -43,10 +43,12 @@ beforeEach(async()=>{await db.exec("reset role;truncate coupon_definitions,payme
 afterAll(async()=>{await db?.close();});
 describe("coupon pricing / SQL authority",()=>{
   it("no coupon keeps each catalog price for all six; quote never reserves",async()=>{
-    for(const p of getReportProductCatalog())expect(await quoteCoupon(store,guest(),p.productType)).toMatchObject({originalAmount:REPORT_PRICE_TABLE_KRW[p.productType],discountAmount:0,finalAmount:REPORT_PRICE_TABLE_KRW[p.productType]});
+    for(const p of getReportProductCatalog().filter(x=>x.isPurchasable))expect(await quoteCoupon(store,guest(),p.productType)).toMatchObject({originalAmount:REPORT_PRICE_TABLE_KRW[p.productType],discountAmount:0,finalAmount:REPORT_PRICE_TABLE_KRW[p.productType]});
+    // ZW-2: 판매 닫힘 자미(살 수 없음)는 쿠폰 견적도 거절한다.
+    expect(await quoteCoupon(store,guest(),"ziwei_full")).toMatchObject({ok:false});
     expect((await db.query("select * from coupon_redemptions")).rows).toHaveLength(0);
   });
-  it.each(getReportProductCatalog())("$productType fixed 300 and 20 percent",async p=>{
+  it.each(getReportProductCatalog().filter(x=>x.isPurchasable))("$productType fixed 300 and 20 percent",async p=>{
     const amount=REPORT_PRICE_TABLE_KRW[p.productType],percent=Math.floor(amount*20/100);
     expect(await quote("GYEOL300",guest(),p.productType)).toMatchObject({originalAmount:amount,discountAmount:300,finalAmount:amount-300});
     expect(await quote("20PERCENT",member(),p.productType)).toMatchObject({originalAmount:amount,discountAmount:percent,finalAmount:amount-percent});

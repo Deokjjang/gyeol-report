@@ -41,7 +41,8 @@ describe("report product catalog", () => {
       "annual_fortune",
     ] as const;
 
-    expect(getInactiveReportProductTypes()).toEqual([]);
+    // ZW-2: 판매 닫힘 자미만 살 수 없다(6상품은 모두 살 수 있다).
+    expect(getInactiveReportProductTypes()).toEqual(["ziwei_full"]);
 
     for (const productType of launchProductTypes) {
       const product = getReportProduct(productType);
@@ -62,6 +63,8 @@ describe("report product catalog", () => {
       "saju_mbti_compatibility",
       "major_fortune",
       "annual_fortune",
+      // ZW-2: 자미 「나의 열두 서가」(판매 닫힘).
+      "ziwei_full",
     ]);
   });
 

@@ -1,7 +1,7 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState, type CSSProperties, type ReactElement } from "react";
-import { BOOKS, bookForProduct, fortuneIntro, readerTitle } from "../../lib/book/product";
+import { BOOKS, bookForProduct, fortuneIntro, readerTitle, ZIWEI_COVER_LINE, ZIWEI_GENDER_MESSAGE, ZIWEI_PREPARING_LINE, ZIWEI_TIME_UNKNOWN_MESSAGE, type Book } from "../../lib/book/product";
 import { formatKrw, majorHalfPriceKrw, reportPriceKrw } from "../../lib/payment/reportProductCatalog";
 import { bookInputPayload, emptyBookForm, personErrors, restoreBookForm, type BookFormState } from "../../lib/book/form";
 import { ANNUAL_WISH_MAX, type PersonInputState } from "../../lib/report-generation/reportInputPresentation";
@@ -53,18 +53,20 @@ export function BookInput({ internal, now, initial, authEnabled = internal, tick
   return withPopup(<BookForm key={book.id} book={book} internal={internal} now={now} initial={initial} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Products.includes(book.productKey)} giftEventProducts={giftEventProducts} />);
 }
 /** AM2-14 1부: 판매 화면의 책 이름 — 세운은 신년판 연도(「나의 2027」). */
-const saleTitle = (book: typeof BOOKS[number]) => readerTitle(book, String(annualProductYear()));
+const saleTitle = (book: Book) => readerTitle(book, String(annualProductYear()));
 /**
  * AM2-14 1부: 세운 · 대운 소개 한 줄. 입력 첫 쪽은 이름 · 가격과 함께(판매가 열린 화면), 닫힘 안내는 소개만.
  * 가격 = 결제 카탈로그(세운 · 대운 정가, 세운을 산 회원의 대운 반값).
  */
-export function FortuneIntro({ book, withPrice }: { book: typeof BOOKS[number]; withPrice: boolean }) {
+export function FortuneIntro({ book, withPrice }: { book: Book; withPrice: boolean }) {
+  // ZW-2 1부: 자미 「나의 열두 서가」는 판매 닫힘 — 소개 한 줄만(가격 없음).
+  if (book.productKey === "ziwei_full") return <p className={s.wide} data-ziwei-intro><b>{saleTitle(book)}</b><br />{ZIWEI_COVER_LINE}</p>;
   const intro = fortuneIntro(book.productKey, annualProductYear());
   if (!intro) return null;
   const price = book.productKey === "annual_fortune" ? formatKrw(reportPriceKrw("annual_fortune")) : `${formatKrw(reportPriceKrw("major_fortune"))} · 세운을 산 분은 ${formatKrw(majorHalfPriceKrw())}`;
   return withPrice ? <p className={s.wide} data-fortune-intro><b>{saleTitle(book)} · {price}</b><br />{intro}</p> : <p data-fortune-intro>{intro}</p>;
 }
-function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: string }) {
+function SalesClosedNotice({ book, home }: { book: Book; home: string }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-closed style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
@@ -78,7 +80,7 @@ function SalesClosedNotice({ book, home }: { book: typeof BOOKS[number]; home: s
     </div></section>
   </main>;
 }
-function SalesPausedNotice({ book, home, message }: { book: typeof BOOKS[number]; home: string; message: string }) {
+function SalesPausedNotice({ book, home, message }: { book: Book; home: string; message: string }) {
   return <main className={`${s.root} ${f.flow}`} data-book-input data-sales-paused style={{ "--cover": book.color, "--ink": book.ink } as CSSProperties}>
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     <section className={s.bookShell}><div className={s.pageScroll} role="region" aria-label="잠시 멈춤 안내">
@@ -89,19 +91,26 @@ function SalesPausedNotice({ book, home, message }: { book: typeof BOOKS[number]
     </div></section>
   </main>;
 }
+/** ZW-2 1부: 자미 결제 단계 — 판매 닫힘이라 주문서(가격 · 결제) 대신 준비 중 안내(서버 결제 준비도 409). */
+function ZiweiPreparing({ home }: { home: string }) {
+  return <div data-ziwei-preparing data-sales-closed><p className={s.micro}>GYEOL REPORT</p><h1>준비 중</h1><p>{ZIWEI_PREPARING_LINE}</p><p><a href={home}>다른 책 고르기 →</a></p></div>;
+}
 // AM 2부: 세운 신년판은 한 해만 판다 — 빈 폼·저장된 초안 모두 신년판 연도로(입력 변환 bookInputPayload는 상태 그대로).
 const pinAnnualYear = (bookId: string, f: BookFormState): BookFormState => bookId === "annual" ? { ...f, person: { ...f.person, selectedYear: String(annualProductYear()) } } : f;
-function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled, v5Book, giftEventProducts }: { book: typeof BOOKS[number]; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean; v5Book: boolean; giftEventProducts: readonly string[] }) {
+function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled, v5Book, giftEventProducts }: { book: Book; internal: boolean; now: string; initial?: BookFormState; authEnabled: boolean; ticketShopEnabled: boolean; v5Book: boolean; giftEventProducts: readonly string[] }) {
   useEffect(() => { interaction("book_viewed", book.productKey); }, [book.productKey]);
   const policy = getAnnualFortuneCommerceYearPolicy(new Date(now)), key = `gyeol-book-input-v1:${book.productKey}`;
   const [state, setState] = useState(pinAnnualYear(book.id, initial ?? emptyBookForm(policy.currentYear))), [step, setStep] = useState(0), [ready, setReady] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({}), [message, setMessage] = useState(""), [checking, setChecking] = useState(false), [publishing, setPublishing] = useState(false), [decoration, setDecoration] = useState(0);
   // AM2-4 7부: 대운을 정할 수 없는 생일 — 세운을 권하는 링크(결제 단계로 가지 않는다).
   const [annualLink, setAnnualLink] = useState(false);
+  // ZW-2 1부: 자미 — 시간을 전혀 모르는 분께 「나라는 사람」을 권하는 링크.
+  const [fullLink, setFullLink] = useState(false);
   const scroll = useRef<HTMLDivElement>(null), validationId = useRef(0), reachedStep = useRef(0);
   const draftWritable = useRef(true);
   const total = ["love", "annual"].includes(book.id) ? 3 : 2, receipt = step === total;
-  const pair = book.id === "compatibility", roles = compatibilityRoleLabels(state.category), requiredGender = ["major", "annual"].includes(book.id);
+  const pair = book.id === "compatibility", roles = compatibilityRoleLabels(state.category), requiredGender = ["major", "annual", "ziwei"].includes(book.id), ziwei = book.id === "ziwei";
+  const genderMessage = ziwei ? ZIWEI_GENDER_MESSAGE : undefined;
   const payload = bookInputPayload(book, state), title = readerTitle(book, state.person.selectedYear);
   useEffect(() => {
     let active = true;
@@ -133,7 +142,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
           setState(saved);
           const returnToReceipt = sessionStorage.getItem(checkoutReturnKey(book.productKey)) === "1" || sessionStorage.getItem(ticketPendingKey(book.productKey)) !== null;
           const persons = pair ? [saved.person, saved.personB] : [saved.person];
-          if (returnToReceipt && persons.every(p => Object.keys(personErrors(p, now, requiredGender)).length === 0)) {
+          if (returnToReceipt && persons.every(p => Object.keys(personErrors(p, now, requiredGender, genderMessage)).length === 0)) {
             // Local hint only. No restored consent, balance, gate or publication.
             reachedStep.current = total; setStep(total);
             window.history.replaceState({ ...window.history.state, bookInputProduct: book.id, bookInputPage: total }, "");
@@ -151,7 +160,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
       setPublishing(false); setMessage("");
     };
     window.addEventListener("popstate", back); return () => { active = false; clearTimeout(restore); window.removeEventListener("popstate", back); };
-  }, [key, policy.currentYear, initial, book.id, book.productKey, now, pair, requiredGender, total, internal, ticketShopEnabled]);
+  }, [key, policy.currentYear, initial, book.id, book.productKey, now, pair, requiredGender, genderMessage, total, internal, ticketShopEnabled]);
   useEffect(() => { if (ready && draftWritable.current) { try { sessionStorage.setItem(key, JSON.stringify({ version: 1, state })); } catch { /* optional local draft */ } } }, [state, ready, key]);
   useEffect(() => { scroll.current?.scrollTo({ top: 0 }); scroll.current?.focus({ preventScroll: true }); }, [step]);
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
@@ -181,14 +190,16 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
       draftWritable.current = true;
       try { sessionStorage.removeItem(bundleReturnKey); sessionStorage.removeItem(checkoutReturnKey(book.productKey)); } catch { /* optional local hint */ }
     }
-    interaction("input_started", book.productKey); validationId.current++; setState(next); setErrors({}); setMessage(""); setAnnualLink(false);
+    interaction("input_started", book.productKey); validationId.current++; setState(next); setErrors({}); setMessage(""); setAnnualLink(false); setFullLink(false);
   };
   const next = async () => {
     if (checking) return;
     interaction("input_started", book.productKey);
     const found: Record<string, string> = {};
-    for (const [slot, person] of pair ? [["a", state.person], ["b", state.personB]] as const : [["a", state.person]] as const) for (const [field, text] of Object.entries(personErrors(person, now, requiredGender))) found[`${slot}.${field}`] = text;
+    for (const [slot, person] of pair ? [["a", state.person], ["b", state.personB]] as const : [["a", state.person]] as const) for (const [field, text] of Object.entries(personErrors(person, now, requiredGender, genderMessage))) found[`${slot}.${field}`] = text;
     if (Object.keys(found).length) { setStep(0); setErrors(found); setTimeout(() => document.getElementById(Object.keys(found)[0].replace(".", "-"))?.focus(), 0); return; }
+    // ZW-2 1부(덕짱님 결정 2026-11-26): 자미두수는 시간대가 있어야 한다 — 시각 「모름」이면 첫 쪽에서 막고 시간 없이도 읽는 책을 권한다(결제 단계로 가지 않는다).
+    if (step === 0 && ziwei && state.person.paidBirthTimeMode === "unknown") { setMessage(ZIWEI_TIME_UNKNOWN_MESSAGE); setFullLink(true); return; }
     // AM2-4 7부(덕짱님 결정 2026-11-12): 대운 첫 쪽에서 출생 시각이 「모름·대략」이면 엔진이 대운을 정할 수 있는지 먼저 본다 —
     // 대략 시간대로 정해지면 시간대를 묻고(선택지), 그래도 정할 수 없으면 「이 생일은 대운을 정확히 계산할 수 없어요」 + 세운을 권한다(결제 전 단계에서 멈춤).
     if (step === 0 && book.productKey === "major_fortune" && state.person.paidBirthTimeMode !== "exact") {
@@ -214,7 +225,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         // other public products are checked by the unchanged checkout server.
         const result = await response.json();
         if (attempt !== validationId.current) return;
-        if (!result.ok) { setMessage(typeof result.message === "string" ? result.message : typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); setAnnualLink(result.code === "DAYUN_UNDETERMINABLE"); return; }
+        if (!result.ok) { setMessage(typeof result.message === "string" ? result.message : typeof result.error === "string" ? result.error : "입력 정보를 확인해 주세요."); setAnnualLink(result.code === "DAYUN_UNDETERMINABLE"); setFullLink(result.code === "ZIWEI_NEED_SLOT"); return; }
       } catch { setMessage("입력을 확인하지 못했습니다. 다시 시도해 주세요."); return; }
       finally { setChecking(false); }
     }
@@ -230,13 +241,14 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
     <header className={s.header}><a href={home} className={s.wordmark}><b>결리포트</b><span>GYEOL REPORT</span></a><a href={home} className={s.close}>닫기 ×</a></header>
     {internal && publishing ? <div data-observed-status="REQUESTED" data-intermediate-states="decorative"><Publishing book={book} name={state.person.name} state={PUBLISHING_STATES[decoration]} notice="내부 검수 · 실제 결제 없음" /><p className={f.status} role="status">책을 생성하고 있습니다. 종이·제본 움직임은 연출이며 진행률이 아닙니다.</p></div> : null}
     <section className={s.bookShell} hidden={publishing}><div className={s.pageScroll} ref={scroll} tabIndex={-1} role="region" aria-label="책 입력">
-      {!ready ? <p role="status">입력 준비 중</p> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} {...(discount ? { discount } : {})} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} giftEventProducts={giftEventProducts} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
+      {!ready ? <p role="status">입력 준비 중</p> : receipt && ziwei ? <ZiweiPreparing home={home} /> : receipt ? <BookCheckout payload={payload} now={now} internal={internal} {...(discount ? { discount } : {})} authEnabled={authEnabled} ticketShopEnabled={ticketShopEnabled} v5Book={v5Book} giftEventProducts={giftEventProducts} onPublishing={() => { if (internal) { setDecoration(0); setPublishing(true); } }} onError={text => { if (text) setPublishing(false); setMessage(text); }} /> : <form noValidate onSubmit={e => { e.preventDefault(); void next(); }}>
         <p className={s.eyebrow}>{title} / {String(step + 1).padStart(2, "0")}</p><h1>{step === 0 ? "이 책의 주인공" : step === 1 ? "지금의 나" : book.id === "annual" ? "읽고 싶은 한 해" : "지금의 관계"}</h1>
         {step === 0 ? <FortuneIntro book={book} withPrice /> : null}
         {step === 0 ? <>{pair ? <label>관계 유형<select value={state.category} onChange={e => update({ ...state, category: e.target.value as CompatibilityRelationshipType })}>{CATEGORIES.map(([value, label]) => <option key={value} value={value}>{label}</option>)}</select></label> : null}<Fields person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} prefix="a" role={pair ? roles.personA : "주인공"} errors={errors} now={now} requiredGender={requiredGender} />{pair ? <Fields person={state.personB} change={p => update({ ...state, personB: p })} prefix="b" role={roles.personB} errors={errors} now={now} requiredGender={false} /> : null}</> : null}
         {step === 1 ? <div className={s.fields}><MbtiInput person={state.person} change={p => update({ ...state, person: { ...state.person, ...p } })} role={pair ? roles.personA : ""} />{pair ? <MbtiInput person={state.personB} change={p => update({ ...state, personB: p })} role={roles.personB} /> : <>
           <label>현재 상태<select value={state.person.jobStatus} onChange={e => update({ ...state, person: { ...state.person, jobStatus: e.target.value } })}><option value="">미선택</option>{JOBS.map(([value, label]) => <option key={value} value={value}>{label}</option>)}<option value="other">기타</option></select></label>
           <label className={s.wide}>현재 직업<input value={state.person.detailedJob} maxLength={200} onChange={e => update({ ...state, person: { ...state.person, detailedJob: e.target.value } })} /></label>{book.id !== "love" ? relation : null}
+          {ziwei ? <label>자녀<select value={state.person.children ?? ""} data-ziwei-children onChange={e => update({ ...state, person: { ...state.person, children: e.target.value } })}><option value="">안 적음</option><option value="has">있음</option><option value="none">없음</option></select></label> : null}
         </>}</div> : null}
         {step === 2 ? book.id === "love" ? relation : book.id === "annual" ? <div className={s.fields}>
           {/* AM 2부: 신년판은 한 해(설정값)만. 소망은 선택, 200자, 자료로만 쓰인다. */}
@@ -247,6 +259,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         <button type="submit" className={f.next} disabled={checking}>{checking ? "입력 확인 중" : "다음 페이지"} →</button>
       </form>}
       {message ? <p className={f.error} role="alert">{message}</p> : null}
+      {fullLink ? <a className={f.next} href={internal ? "/dev/book-flow" : "/report/new?product=saju-mbti-full"} data-full-recommend>나라는 사람으로 가기 →</a> : null}
       {annualLink ? <a className={f.next} href={internal ? "/dev/book-flow" : "/report/new?product=annual-fortune"} data-annual-recommend>세운(나의 {annualProductYear()})으로 가기 →</a> : null}
     </div><nav className={s.pageNav} aria-label="입력 페이지"><button aria-label="이전 페이지" disabled={!step || checking} onClick={() => window.history.back()}>←</button><span><strong>{title}</strong><span>{step + 1} / {total + 1}</span></span><a href={home}>책장 ↗</a></nav></section>
   </main>;

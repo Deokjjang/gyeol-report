@@ -16,12 +16,12 @@ export function bookCheckoutSnapshot(payload: ReportInputPayload) {
   const pair = payload.productKey === "saju_mbti_compatibility", p = pair ? payload.personA : payload.person;
   return createCheckoutInputSnapshot({ displayName: pair ? `${p.name} · ${payload.personB.name}` : p.name, birthDate: p.birthDate, birthTime: p.birthTime, birthTimeUnknown: p.birthTimeUnknown, gender: p.gender, mbtiType: p.mbtiType, reportInputPayload: payload });
 }
-export function personErrors(person: PersonInputState, now: string, genderRequired: boolean) {
+export function personErrors(person: PersonInputState, now: string, genderRequired: boolean, genderMessage = "대운 계산에 필요한 성별을 선택해 주세요.") {
   const errors: Record<string, string> = {};
   if (!person.name.trim()) errors.name = "이름을 입력해 주세요.";
   const age = calculateCheckoutAge(person.birthDate, new Date(now));
   if (age === null || age < 0 || Number(person.birthDate.slice(0, 4)) < 1900) errors.birthDate = "생년월일을 확인해 주세요.";
-  if (genderRequired && !person.gender) errors.gender = "대운 계산에 필요한 성별을 선택해 주세요.";
+  if (genderRequired && !person.gender) errors.gender = genderMessage;
   if (!normalizeBirthTimePrecision(createReportPersonInputPayload(person)).ok) errors.birthTime = "정확한 시각 또는 대략적인 시간대를 선택해 주세요.";
   return errors;
 }

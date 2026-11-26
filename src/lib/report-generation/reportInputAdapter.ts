@@ -1,3 +1,4 @@
+import { ziweiReadiness } from "../ziwei/readiness";
 import { normalizeBirthTimePrecision, type BirthTimePrecision, type BirthTimeCalculationContext } from "../saju/birthTimePrecisionTypes";
 import { resolveBirthTimeCalculation } from "../saju/birthTimePrecision";
 import { calculateCustomerDayun, selectCustomerDayun } from "../saju/customerDayun";
@@ -37,7 +38,9 @@ export type ReportProductKind =
   | "majorFortune"
   | "annualFortune"
   | "comprehensiveV2"
-  | "compatibility";
+  | "compatibility"
+  /** ZW-2 자미두수 단독 상품(v5 작가 전용 — 옛 생성 경로는 없다). */
+  | "ziweiFull";
 
 export type ReportInputAdapterErrorCode =
   | "INVALID_PAYLOAD"
@@ -56,7 +59,11 @@ export type ReportInputAdapterErrorCode =
   | "SELECTED_YEAR_REQUIRED"
   | "SELECTED_YEAR_INVALID"
   | "RELATIONSHIP_TYPE_REQUIRED"
-  | "INVALID_COMPATIBILITY_ROLE_VERSION";
+  | "INVALID_COMPATIBILITY_ROLE_VERSION"
+  /** ZW-2: 자미두수는 성별 · 시간대(시진)가 있어야 명반을 만든다 · 한국 음력 범위(1900-01-31~2050-12-30). */
+  | "ZIWEI_GENDER_REQUIRED"
+  | "ZIWEI_NEED_SLOT"
+  | "ZIWEI_OUT_OF_RANGE";
 
 export type ReportInputAdapterResult<T> =
   | {
@@ -97,6 +104,11 @@ export type SinglePersonGenerationInput = {
     | Record<string, never>
     | {
         readonly selectedYear: string;
+      }
+    | {
+        /** ZW-2 자미: 자녀(선택). selectedYear는 없다(세운 꼴과 같은 칸 접근이 되게 never). */
+        readonly selectedYear?: never;
+        readonly children?: "has" | "none";
       };
 };
 
@@ -122,6 +134,7 @@ const PRODUCT_KIND_BY_KEY = {
   annual_fortune: "annualFortune",
   saju_mbti_full: "comprehensiveV2",
   saju_mbti_compatibility: "compatibility",
+  ziwei_full: "ziweiFull",
 } as const satisfies Record<ReportProductKey, ReportProductKind>;
 
 const PRODUCT_SLUG_BY_KEY = {
@@ -131,6 +144,7 @@ const PRODUCT_SLUG_BY_KEY = {
   annual_fortune: "annual-fortune",
   saju_mbti_full: "saju-mbti-full",
   saju_mbti_compatibility: "compatibility",
+  ziwei_full: "ziwei-full",
 } as const satisfies Record<ReportProductKey, ReportProductSlug>;
 
 export function getReportProductKind(
@@ -181,6 +195,8 @@ export function toSinglePersonGenerationInput(
 
   const personResult = normalizePerson(payload.person);
   if (!personResult.ok) {
+    // ZW-2 1부: 자미두수는 시각 「모름」이면 절기 날 여부와 상관없이 시간대(시진)를 묻는다 — 같은 막음 코드로.
+    if (payload.productKey === "ziwei_full" && personResult.error === "BIRTH_TIME_UNCERTAIN") return { ok: false, error: "ZIWEI_NEED_SLOT" };
     return personResult;
   }
 
@@ -196,6 +212,13 @@ export function toSinglePersonGenerationInput(
   );
   if (!productOptionsResult.ok) {
     return productOptionsResult;
+  }
+
+  // ZW-2 1부: 자미두수는 성별과 시간대(정확한 시각 또는 시진)가 있어야 명반을 만든다 — 시각을 전혀 모르면 결제 전에 막는다(입력 화면이 다른 상품을 권한다).
+  if (payload.productKey === "ziwei_full") {
+    if (personResult.value.gender !== "MALE" && personResult.value.gender !== "FEMALE") return { ok: false, error: "ZIWEI_GENDER_REQUIRED" };
+    const ready = ziweiReadiness(personResult.value);
+    if (!ready.ok) return { ok: false, error: ready.code };
   }
 
   if (payload.productKey === "major_fortune" || payload.productKey === "annual_fortune") {
@@ -346,6 +369,11 @@ function normalizeSingleProductOptions(
   value: unknown,
   options: ReportInputAdapterOptions,
 ): ReportInputAdapterResult<SinglePersonGenerationInput["productOptions"]> {
+  if (productKey === "ziwei_full") {
+    // ZW-2 1부: 자녀는 선택(있음 · 없음). 그 밖의 값 · 빈 값은 「안 적음」(자녀궁은 「아랫사람 · 내가 길러 내는 것」 렌즈).
+    const children = isRecord(value) && (value.children === "has" || value.children === "none") ? value.children : undefined;
+    return { ok: true, value: children ? { children } : {} };
+  }
   if (productKey !== "annual_fortune") {
     return { ok: true, value: {} };
   }
@@ -395,7 +423,8 @@ function isReportProductKey(value: unknown): value is ReportProductKey {
     value === "major_fortune" ||
     value === "annual_fortune" ||
     value === "saju_mbti_full" ||
-    value === "saju_mbti_compatibility"
+    value === "saju_mbti_compatibility" ||
+    value === "ziwei_full"
   );
 }
 
@@ -407,7 +436,8 @@ function isSinglePersonProductKey(
     value === "love_marriage_child" ||
     value === "major_fortune" ||
     value === "annual_fortune" ||
-    value === "saju_mbti_full"
+    value === "saju_mbti_full" ||
+    value === "ziwei_full"
   );
 }
 

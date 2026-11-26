@@ -24,6 +24,7 @@ export const PRODUCT_PREVIEW_PRODUCT_TYPES = [
   "major_fortune",
   "annual_fortune",
   "saju_mbti_full",
+  "ziwei_full",
 ] as const;
 
 export type ProductPreviewProductType =
@@ -108,6 +109,7 @@ export const productSlugByType = {
   major_fortune: "major-fortune",
   annual_fortune: "annual-fortune",
   saju_mbti_full: "saju-mbti-full",
+  ziwei_full: "ziwei-full",
 } as const satisfies Record<ProductPreviewProductType, ReportProductSlug>;
 
 export function createProductPreviewSnapshot(
@@ -226,7 +228,8 @@ function isProductPreviewProductType(
     value === "saju_mbti_compatibility" ||
     value === "major_fortune" ||
     value === "annual_fortune" ||
-    value === "saju_mbti_full"
+    value === "saju_mbti_full" ||
+    value === "ziwei_full"
   );
 }
 

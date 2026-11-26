@@ -80,6 +80,7 @@ const PRODUCT_GENERATION_HANDLERS = {
   majorFortune: handleMajorFortuneGeneration,
   annualFortune: handleAnnualFortuneGeneration,
   comprehensiveV2: handleComprehensiveV2Generation,
+  ziweiFull: handleZiweiFullGeneration,
 } as const satisfies Record<ReportProductKind, ProductGenerationHandler>;
 
 export function getProductGenerationHandler(
@@ -287,6 +288,20 @@ function invalidInputResult(message: string, birthTimeContext?: BirthTimeCalcula
       code: "INVALID_REPORT_INPUT",
       message,
       ...(birthTimeContext ? { birthTimeContext } : {}),
+    },
+  };
+}
+
+/** ZW-2 1부: 자미두수 단독 상품은 v5 작가(writer/publish buildV5Snapshot)로만 만든다 — 옛 생성 경로는 없다. */
+async function handleZiweiFullGeneration(
+  input: ReportGenerationInput,
+): Promise<ProductGenerationResult> {
+  return {
+    ok: false,
+    kind: input.kind,
+    error: {
+      code: "PRODUCT_GENERATION_NOT_IMPLEMENTED",
+      message: "ziwei_full은 v5 작가 경로에서만 만든다.",
     },
   };
 }

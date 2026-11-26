@@ -12,6 +12,13 @@ const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export const CLOSED_FORTUNE_PRODUCTS = ["major_fortune", "annual_fortune"] as const;
 /** AM2 6부(덕짱님 지시): 닫혀 있을 때(시각 전 · 끄기 스위치 · 가격 없음) 모두 같은 문구. 날짜를 박지 않는다. */
 export const FORTUNE_REOPEN_LINE = "2027 신년판 · 12월 공개";
+/**
+ * ZW-2 1부(덕짱님 결정 2026-11-26): 자미두수 단독 상품 「나의 열두 서가」는 늘 닫는다 — 판매 시작 시각(FORTUNE_SALES_OPEN_AT)과 무관.
+ * 결제 준비 · 주문 · 승인 · 이용권 사용이 모두 productOnSale로 막는다. ALL_PRODUCTS(관리 · 증정 · 보상 목록)와 이용권 목록에는 넣지 않는다.
+ * 판매를 열 때: 이 목록에서 빼고 + 운영 migration(payment_orders_product_type_check에 키) + 가격(카탈로그) + 홈 표지(BOOKS) — 따로 결정.
+ */
+export const ALWAYS_CLOSED_PRODUCTS = ["ziwei_full"] as const;
+export const ZIWEI_SALES_CLOSED_MESSAGE = "「나의 열두 서가」는 아직 준비 중이에요. 공개되면 알려 드릴게요.";
 export const ALL_PRODUCTS = ["saju_mbti_full", "career_money_study", "love_marriage_child", "saju_mbti_compatibility", "major_fortune", "annual_fortune"] as const;
 
 /**
@@ -32,7 +39,7 @@ export function fortuneSalesOpen(env: Env = process.env, now: number = Date.now(
 export function annualProductYear(env: Env = process.env): number { const y = Number(env.ANNUAL_PRODUCT_YEAR ?? env.NEXT_PUBLIC_ANNUAL_PRODUCT_YEAR); return Number.isInteger(y) && y >= 2026 && y <= 2100 ? y : 2027; }
 export function closedSaleProducts(env: Env = process.env, now: number = Date.now()): string[] { return fortuneSalesOpen(env, now) ? [] : [...CLOSED_FORTUNE_PRODUCTS]; }
 /** 결제·이용권 사용 진입점 전용(읽기·분석 경로는 isPurchasable 그대로). */
-export function productOnSale(product: unknown, env: Env = process.env, now: number = Date.now()): boolean { return typeof product === "string" && !closedSaleProducts(env, now).includes(product); }
+export function productOnSale(product: unknown, env: Env = process.env, now: number = Date.now()): boolean { return typeof product === "string" && !(ALWAYS_CLOSED_PRODUCTS as readonly string[]).includes(product) && !closedSaleProducts(env, now).includes(product); }
 export const SALES_CLOSED_CODE = "PRODUCT_SALES_CLOSED";
 /**
  * AM 3부(약관 termsPolicy 「이용권으로 만들 수 있는 리포트는 … 4종」 유지): 이용권(보상·증정·가입·추천·묶음·관리자 지급 모두)은 출시 4종에만 쓴다.
@@ -43,6 +50,8 @@ export const TICKET_PRODUCT_CODE = "TICKET_PRODUCT_EXCLUDED";
 export const TICKET_PRODUCT_MESSAGE = "대운·세운은 이용권으로 만들 수 없어요. 결제로 만들 수 있어요.";
 export function ticketProductAllowed(product: unknown): boolean { return typeof product === "string" && (TICKET_PRODUCTS as readonly string[]).includes(product); }
 export const SALES_CLOSED_MESSAGE = "대운·세운은 2027 신년판으로 새로 단장하고 있어요. 12월 1일에 다시 만나요.";
+/** ZW-2: 닫힘 응답 문구(상품별). 대운 · 세운 · 그 밖은 SALES_CLOSED_MESSAGE 그대로. */
+export function salesClosedMessageFor(product: unknown): string { return product === "ziwei_full" ? ZIWEI_SALES_CLOSED_MESSAGE : SALES_CLOSED_MESSAGE; }
 /**
  * W3 P0: 4종 판매 중지(DB ops_settings 'sales_pause', 처리 봇 [4종 멈춤]·[다시 열기]·연결 오류 자동 멈춤). 읽기는 ops/salesPause.ts(서버).
  * 막는 곳: 결제 준비 · 주문 생성 · 승인 직전 ready 주문 · 이용권 사용 · 화면. 이미 결제한 주문·접수한 이용권 책은 그대로 만든다. 못 읽으면 판매를 계속한다.

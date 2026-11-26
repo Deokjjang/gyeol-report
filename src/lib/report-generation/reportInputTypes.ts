@@ -6,6 +6,7 @@ export const REPORT_PRODUCT_KEYS = [
   "annual_fortune",
   "saju_mbti_full",
   "saju_mbti_compatibility",
+  "ziwei_full",
 ] as const;
 
 export type ReportProductKey = (typeof REPORT_PRODUCT_KEYS)[number];
@@ -16,6 +17,7 @@ export const SINGLE_PERSON_REPORT_PRODUCT_KEYS = [
   "major_fortune",
   "annual_fortune",
   "saju_mbti_full",
+  "ziwei_full",
 ] as const;
 
 export type SinglePersonReportProductKey =
@@ -28,6 +30,7 @@ export const REPORT_PRODUCT_SLUGS = [
   "annual-fortune",
   "saju-mbti-full",
   "compatibility",
+  "ziwei-full",
 ] as const;
 
 export type ReportProductSlug = (typeof REPORT_PRODUCT_SLUGS)[number];
@@ -154,6 +157,10 @@ export type SinglePersonReportInputPayload = {
     readonly wish?: string;
   } | {
     readonly contentVersion: "v3";
+  } | {
+    /** ZW-2 자미 단독 상품: 자녀(선택 — 자녀궁 렌즈 입력 거름). 없으면 「안 적음」. */
+    readonly selectedYear?: never;
+    readonly children?: "has" | "none";
   };
 };
 

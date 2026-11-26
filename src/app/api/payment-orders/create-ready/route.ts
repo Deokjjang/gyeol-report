@@ -1,5 +1,5 @@
 import { randomUUID } from "node:crypto";
-import { productOnSale, SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
+import { productOnSale, SALES_CLOSED_CODE, salesClosedMessageFor, SALES_PAUSED_CODE } from "../../../../lib/ops/config";
 import { salesPauseNotice } from "../../../../lib/ops/salesPause";
 
 import { NextResponse } from "next/server";
@@ -92,7 +92,7 @@ export async function POST(request: Request): Promise<NextResponse> {
 
   // P6d-ops 1: 판매를 닫은 상품(대운·세운)은 주문을 만들지 않는다.
   if (!productOnSale(json.productType ?? defaultProductType)) {
-    return createErrorResponse(SALES_CLOSED_CODE, SALES_CLOSED_MESSAGE, 409);
+    return createErrorResponse(SALES_CLOSED_CODE, salesClosedMessageFor(json.productType ?? defaultProductType), 409);
   }
   // W3 P0: 4종 판매 중지(DB 스위치) — 주문을 만들지 않는다. 못 읽으면 판매를 계속한다.
   // W4 Q0: 문구는 멈춘 이유대로(AI 장애·연결 오류 = 「AI 서버 점검」, 그 밖 = 기존 문구).

@@ -4,6 +4,8 @@ import {
 } from "./reportProductTypes";
 import type { ReportProductType } from "./reportProductTypes";
 import { annualProductYear } from "../ops/config";
+/** ZW-2: 「나의 열두 서가」(덕짱님 0부 답 2026-11-26) — book/product.ts ZIWEI_BOOK과 같은 이름. */
+export const ZIWEI_BOOK_NAME = "나의 열두 서가";
 
 export type ReportProductCurrency = "KRW";
 
@@ -21,6 +23,8 @@ export const REPORT_PRICE_TABLE_KRW = {
   saju_mbti_compatibility: 3900,
   major_fortune: 4900,
   annual_fortune: 3900,
+  /** ZW-2 자리표시 값 — 「나의 열두 서가」 가격은 측정 뒤 덕짱님이 정한다. 판매 닫힘(늘 닫힘 목록 · isPurchasable false · priceLabelKo 없음)이라 화면 · 주문에 쓰이지 않는다. */
+  ziwei_full: 3900,
 } as const satisfies Record<ReportProductType, number>;
 export const formatKrw = (amount: number) => `${amount.toLocaleString("ko-KR")}원`;
 /**
@@ -117,6 +121,15 @@ const reportProductCatalog = [
     priceLabelKo: formatKrw(REPORT_PRICE_TABLE_KRW.annual_fortune),
     isPurchasable: true,
   },
+  {
+    // ZW-2 1부: 판매 닫힘 — 가격 표시 말(priceLabelKo)을 두지 않고 살 수 없다(결제 준비는 ops/config productOnSale이 먼저 409).
+    productType: "ziwei_full",
+    labelKo: "자미두수 리포트",
+    descriptionKo: "태어난 순간의 명반 열두 칸과 별로 한 사람을 읽는 리포트입니다.",
+    amount: REPORT_PRICE_TABLE_KRW.ziwei_full,
+    currency: "KRW",
+    isPurchasable: false,
+  },
 ] as const satisfies readonly ReportProductCatalogItem[];
 
 /**
@@ -126,7 +139,7 @@ const reportProductCatalog = [
 export function customerProductLabelKo(productType: unknown): string {
   const product = getReportProduct(productType);
   if (!product) return "결리포트";
-  return product.productType === "annual_fortune" ? `나의 ${annualProductYear()}` : product.labelKo;
+  return product.productType === "annual_fortune" ? `나의 ${annualProductYear()}` : product.productType === "ziwei_full" ? ZIWEI_BOOK_NAME : product.labelKo;
 }
 
 export function getReportProductCatalog(): readonly ReportProductCatalogItem[] {

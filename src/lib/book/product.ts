@@ -10,11 +10,23 @@ export const BOOKS = [
   { id: "major", productKey: "major_fortune", slug: "major-fortune", title: "앞으로의\n나", color: "#203754", ink: "#FFFFFF", issue: "05" },
   { id: "annual", productKey: "annual_fortune", slug: "annual-fortune", title: "나의\n한 해", color: "#CED1D4", ink: "#111111", issue: "06" },
 ] as const satisfies readonly { id: string; productKey: ReportProductKey; slug: ReportProductSlug; title: string; color: string; ink: string; issue: string }[];
-export type Book = typeof BOOKS[number];
+/**
+ * ZW-2 1부(덕짱님 결정 2026-11-26): 자미두수 단독 상품 「나의 열두 서가」. 홈 서가 · 상품 목록 · 캠페인 · 이용권 화면(BOOKS를 도는 곳)에는 넣지 않는다 —
+ * 직접 주소(/report/new?product=ziwei-full)로만 연다. 찾기(bookForProduct · 책 읽기)는 ALL_BOOKS를 쓴다. 판매는 ops/config ALWAYS_CLOSED_PRODUCTS가 닫는다.
+ */
+export const ZIWEI_BOOK = { id: "ziwei", productKey: "ziwei_full", slug: "ziwei-full", title: "나의\n열두 서가", color: "#2B2D4A", ink: "#FFFFFF", issue: "07" } as const satisfies { id: string; productKey: ReportProductKey; slug: ReportProductSlug; title: string; color: string; ink: string; issue: string };
+/** 표지 문구(덕짱님 0부 답 2026-11-26). 확정 예언 없이 책 구성만. */
+export const ZIWEI_COVER_LINE = "태어난 순간의 하늘을 열두 칸으로 나눠 읽었어요. 칸마다 앉은 별이 나 · 짝 · 돈 · 일을 말해 줍니다.";
+export const ALL_BOOKS = [...BOOKS, ZIWEI_BOOK] as const;
+/** ZW-2 1부 입력 화면 문구(클라이언트 — 계산 모듈을 싣지 않으려고 lib/ziwei/readiness 문구와 따로 둔다). */
+export const ZIWEI_GENDER_MESSAGE = "자미두수 명반에는 성별이 필요해요. 성별을 선택해 주세요.";
+export const ZIWEI_TIME_UNKNOWN_MESSAGE = "자미두수는 태어난 시간대가 있어야 명반을 만들 수 있어요. 정확한 시각을 모르셔도 「대략」에서 시간대만 골라 주시면 돼요. 시간을 전혀 모르시면 시간 없이도 읽는 「나라는 사람」을 권해요.";
+export const ZIWEI_PREPARING_LINE = "「나의 열두 서가」는 아직 준비 중이라 지금은 주문할 수 없어요. 공개되면 알려 드릴게요.";
+export type Book = typeof ALL_BOOKS[number];
 export function readerTitle(book: Book, year: string) {
   return book.id === "annual" ? (/^\d{4}$/.test(year) ? `나의 ${year}` : "나의 한 해") : book.title.replace("\n", " ");
 }
-export function bookForProduct(product: string) { return BOOKS.find(b => b.productKey === product || b.slug === product); }
+export function bookForProduct(product: string): Book | undefined { return ALL_BOOKS.find(b => b.productKey === product || b.slug === product); }
 /** AM2-14 4부: 세운 책 끝 · 서재 세운 카드의 대운 반값 버튼(판매가 닫혀 있으면 닫힘 문구 — 결제로 넘어가지 않는다). */
 export const MAJOR_HALF_CTA = "10년으로 이어 보기 — 세운을 산 분은 대운 반값";
 export const MAJOR_HALF_CTA_CLOSED = "12월 1일 공개";

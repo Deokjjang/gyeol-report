@@ -27,6 +27,8 @@ describe("report input payload contract", () => {
       "annual_fortune",
       "saju_mbti_full",
       "saju_mbti_compatibility",
+      // ZW-2: 자미 「나의 열두 서가」(판매 닫힘).
+      "ziwei_full",
     ]);
     expect(SINGLE_PERSON_REPORT_PRODUCT_KEYS).toEqual([
       "career_money_study",
@@ -34,6 +36,7 @@ describe("report input payload contract", () => {
       "major_fortune",
       "annual_fortune",
       "saju_mbti_full",
+      "ziwei_full",
     ]);
     expect(REPORT_PRODUCT_SLUGS).toEqual([
       "career-money-study",
@@ -42,6 +45,7 @@ describe("report input payload contract", () => {
       "annual-fortune",
       "saju-mbti-full",
       "compatibility",
+      "ziwei-full",
     ]);
   });
 

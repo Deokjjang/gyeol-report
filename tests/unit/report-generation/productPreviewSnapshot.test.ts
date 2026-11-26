@@ -111,6 +111,8 @@ describe("product preview snapshot contract", () => {
       "major_fortune",
       "annual_fortune",
       "saju_mbti_full",
+      // ZW-2: 자미 「나의 열두 서가」(판매 닫힘).
+      "ziwei_full",
     ]);
   });
 

@@ -5,7 +5,7 @@ import { DetailSheet } from "../../app/dev/book-preview/BookLegal";
 import type { BookData, BookNote } from "../../app/dev/book-preview/bookTypes";
 import { readerBook } from "../../app/dev/book-preview/readerLayout";
 import type { BookShareModel } from "../../lib/book/shareModel";
-import { BOOKS } from "../../lib/book/product";
+import { ALL_BOOKS } from "../../lib/book/product";
 import s from "../../app/dev/book-preview/book.module.css";
 import { SaveToLibrary } from "../account/SaveToLibrary";
 import { BookShareActions } from "./BookShareActions";
@@ -46,7 +46,7 @@ export function BookReading({ data: stored, edition, today, share, home = "/", s
   const pointerDown = useRef<{ x: number; y: number; pointerId: number } | null>(null);
   const swipeClick = useRef<{ x: number; y: number; at: number } | null>(null);
   const [turning, setTurning] = useState<number | null>(null);
-  const book = BOOKS.find(b => b.id === data.bookId)!;
+  const book = ALL_BOOKS.find(b => b.id === data.bookId)!;
   useEffect(() => {
     scroll.current?.scrollTo({ top: restoreTop.current }); restoreTop.current = 0;
     if (pendingAnchor.current) document.getElementById(pendingAnchor.current)?.scrollIntoView({ block: "start" });

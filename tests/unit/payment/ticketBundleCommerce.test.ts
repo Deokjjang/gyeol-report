@@ -58,9 +58,11 @@ afterAll(async () => { await db?.close(); });
 describe("member bundle commerce: real isolated SQL + mock provider", () => {
   it("catalog, all six new prices and customer/analytics display SSOT; historical Purchase stays 1290", () => {
     expect(TICKET_BUNDLES.map(b => [b.quantity, b.amount])).toEqual([[1,REPORT_PRICE_KRW],[3,4290],[5,6890],[10,13400]]);
-    expect(getReportProductCatalog()).toHaveLength(6);
+    // ZW-2: 7번째 줄은 판매 닫힘 자미(살 수 없음 · 가격 표시 없음) — 살 수 있는 줄은 6.
+    expect(getReportProductCatalog()).toHaveLength(7);
+    expect(getReportProductCatalog().filter(p => p.isPurchasable)).toHaveLength(6);
     expect(GYEOL_PRODUCTS.every(p => p.priceAmount === REPORT_PRICE_TABLE_KRW[p.productType] && p.priceKo === formatKrw(REPORT_PRICE_TABLE_KRW[p.productType]))).toBe(true);
-    expect(getReportProductCatalog().every(p => p.amount === REPORT_PRICE_TABLE_KRW[p.productType] && p.priceLabelKo === formatKrw(REPORT_PRICE_TABLE_KRW[p.productType]))).toBe(true);
+    expect(getReportProductCatalog().filter(p => p.isPurchasable).every(p => p.amount === REPORT_PRICE_TABLE_KRW[p.productType] && p.priceLabelKo === formatKrw(REPORT_PRICE_TABLE_KRW[p.productType]))).toBe(true);
     // 최종3: 약관에는 가격 숫자를 적지 않는다(상품 페이지와 결제 화면에 표시된 금액).
     expect(JSON.stringify(termsPolicySections)).toContain("상품 페이지와 결제 화면에 표시된 금액");
     expect(metaProduct("InitiateCheckout", "annual_fortune")?.params.value).toBe(REPORT_PRICE_TABLE_KRW.annual_fortune);

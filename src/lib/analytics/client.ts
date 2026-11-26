@@ -105,6 +105,8 @@ const FUNNEL_OF: Partial<Record<Interaction, FunnelStep>> = { book_viewed: "prod
 export function interaction(event: Interaction, productType?: string, campaign?: string) {
   if (manualReviewSilent()) return;
   if (typeof window === "undefined") return;
+  // ZW-2 1부: 직접 주소로만 여는 검수 상품(자미)은 퍼널 · Meta 이벤트를 남기지 않는다.
+  if (productType === "ziwei_full") return;
   const step = FUNNEL_OF[event]; if (step) funnel(step);
   const mapped = event === "book_viewed" ? "ViewContent" : event === "checkout_started" ? "InitiateCheckout" : null;
   // 최종 A 20: Meta로 가는 행동은 보낼 수 있을 때(거부 안 함·서버 설정 확인 뒤, 또는 로컬 측정)만 센다. 그 전에 중복 방지 표시를 남기면

@@ -1,6 +1,7 @@
 import { normalizeReportInputPayload } from "../../../../lib/report-generation/reportInputAdapter";
 import { DAYUN_UNCERTAIN_MESSAGE } from "../../../../lib/saju/customerDayun";
 import { dayunReadiness } from "../../../../lib/saju/dayunReadiness";
+import { ZIWEI_NEED_SLOT_MESSAGE, ZIWEI_OUT_OF_RANGE_MESSAGE } from "../../../../lib/ziwei/readiness";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -15,7 +16,7 @@ export async function POST(request: Request): Promise<Response> {
     if (text.length > 16_384) return Response.json({ ok: false, message: "입력 정보를 확인해 주세요." }, { status: 400, headers });
     const payload: unknown = JSON.parse(text);
     if (!payload || typeof payload !== "object" || !("productKey" in payload) ||
-        (payload.productKey !== "major_fortune" && payload.productKey !== "annual_fortune" && payload.productKey !== "saju_mbti_compatibility")) {
+        (payload.productKey !== "major_fortune" && payload.productKey !== "annual_fortune" && payload.productKey !== "saju_mbti_compatibility" && payload.productKey !== "ziwei_full")) {
       return Response.json({ ok: false, message: "입력 정보를 확인해 주세요." }, { status: 400, headers });
     }
     const result = normalizeReportInputPayload(payload);
@@ -23,6 +24,12 @@ export async function POST(request: Request): Promise<Response> {
     if (!result.ok && result.error === "DAYUN_UNCERTAIN" && payload.productKey === "major_fortune" && "person" in payload && payload.person && typeof payload.person === "object") {
       const r = dayunReadiness(payload.person as never);
       if (!r.ok) return Response.json({ ok: false, code: r.code, message: r.message, ...(r.code === "DAYUN_NEED_SLOT" ? { slots: r.slots } : { recommend: r.recommend }) }, { status: 400, headers });
+    }
+    // ZW-2 1부: 자미두수 — 시각을 전혀 모르면 막고(시간대를 고르거나 다른 상품), 범위 밖 생일은 막는다. 판매 닫힘은 결제 준비가 따로 막는다(409).
+    if (!result.ok && payload.productKey === "ziwei_full") {
+      const message = result.error === "ZIWEI_GENDER_REQUIRED" ? "자미두수 명반에는 성별이 필요해요. 성별을 선택해 주세요."
+        : result.error === "ZIWEI_NEED_SLOT" ? ZIWEI_NEED_SLOT_MESSAGE : result.error === "ZIWEI_OUT_OF_RANGE" ? ZIWEI_OUT_OF_RANGE_MESSAGE : "리포트 입력 정보를 확인해 주세요.";
+      return Response.json({ ok: false, code: result.error, message, ...(result.error === "ZIWEI_NEED_SLOT" ? { recommend: "saju_mbti_full" } : {}) }, { status: 400, headers });
     }
     if (!result.ok) {
       const message = result.error === "DAYUN_GENDER_REQUIRED" ? "성별을 선택해 주세요."

@@ -21,6 +21,8 @@ describe("report product types", () => {
       "saju_mbti_compatibility",
       "major_fortune",
       "annual_fortune",
+      // ZW-2: 자미 「나의 열두 서가」(판매 닫힘).
+      "ziwei_full",
     ]);
   });
 
