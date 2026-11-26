@@ -124,7 +124,7 @@ export function PreviewFooter({ publicPresentation = false }: { publicPresentati
     <SocialIconLinks />
     </nav></div><p data-support-line>{SUPPORT_FOOTER_LINE}</p>
     <details data-business><summary>사업자 정보 <span aria-hidden="true">+</span></summary><BusinessDetails /></details>
-    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>
+    <nav className={s.legalLinks} aria-label="정책 링크"><button type="button" onClick={() => setLegal(true)}>이용약관 · 개인정보처리방침 · 환불정책 ›</button>{/* ZW-2 4부: 오픈소스 고지(작게, 정책 링크 옆) */}<a href="/legal/open-source" data-open-source-link>오픈소스 고지</a><MetaSettingsLink /></nav><p className={s.micro}>© GYEOL REPORT</p>
     {legal ? <DetailSheet title="이용약관과 정책" onClose={() => setLegal(false)}><LegalAccordion publicPresentation={publicPresentation} /></DetailSheet> : null}
   </footer>;
 }

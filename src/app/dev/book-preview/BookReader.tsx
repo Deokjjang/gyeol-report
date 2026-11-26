@@ -6,6 +6,7 @@ import s from "./book.module.css";
 import { useState, type ReactNode } from "react";
 import { FlowBar, GanjiChip } from "./BookPeriodData";
 import { AmPage } from "./BookAm";
+import { ZiweiBoard, ZiweiDecadeBand, ZiweiMutagenBadges } from "../../../components/ziwei/ZiweiBoard";
 import { ALL_BOOKS, MAJOR_HALF_CTA, MAJOR_HALF_CTA_CLOSED } from "../../../lib/book/product";
 import { fortuneOpenByClock } from "../../../lib/ops/config";
 
@@ -138,6 +139,10 @@ export function BookReader({ data, page, onNote, onShare, onPage, backAction, sh
   if (page.kind === "continue") return <><p className={s.eyebrow}>{data.title} · NEXT</p><h1>{text(page.title)}</h1><p className={s.profileLead}>{text(page.text)}</p>
     <p>{fortuneOpenByClock() ? <a className={s.continueLink} href={page.href} data-continue-major>{MAJOR_HALF_CTA} →</a> : <span className={s.continueLink} aria-disabled="true" data-continue-major="closed">{MAJOR_HALF_CTA} · {MAJOR_HALF_CTA_CLOSED}</span>}</p></>;
   // AM2-3 5부: 흐름표 · 10년표 · 달·해 카드 · 평생 지도 띠(AM 세운·대운 책만 — 그 밖의 책은 아래 예전 쪽 그대로).
+  // ZW-2 4부: 자미 책 명반 화면.
+  if (page.kind === "ziweiBoard") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><ZiweiBoard view={page.view} name={page.name} /></>;
+  if (page.kind === "ziweiMutagens") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><ZiweiMutagenBadges view={page.view} /></>;
+  if (page.kind === "ziweiDecades") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><ZiweiDecadeBand view={page.view} /></>;
   if (page.kind === "flowTable" || page.kind === "decadeTable" || page.kind === "periodCard" || page.kind === "chapterHead" || page.kind === "threshold" || page.kind === "domainMap" || (page.kind === "lifetime" && page.bands)) return <AmPage page={page} title={data.title} onPage={onPage} text={text} />;
   if (page.kind === "lifetime") return <><p className={s.eyebrow}>{data.title}</p><h1>{text(page.title)}</h1><p className={s.hint}>대운은 10년마다 바뀌는 큰 흐름이에요. 나이는 만 나이, 대운수는 첫 대운이 시작되는 나이예요.</p>
     <ol className={s.ledger}>{page.cycles.map(c => <li key={c.label} data-current={c.current ? "true" : undefined}><div><strong>{text(c.label)}</strong>{c.current ? <span className={s.transitionLabel}> 지금</span> : null}</div><p className={s.hint}>{c.ages} · {text(c.tenGod)} · {text(c.theme)}</p></li>)}</ol></>;

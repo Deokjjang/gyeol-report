@@ -9,6 +9,8 @@ export const legalLinks = [
   { href: "/privacy", labelKo: "개인정보처리방침" },
   { href: "/refund", labelKo: "환불정책" },
   { href: "/business", labelKo: "사업자정보" },
+  // ZW-2 4부: 오픈소스 고지.
+  { href: "/legal/open-source", labelKo: "오픈소스 고지" },
 ] as const;
 
 type LegalPageLayoutProps = {

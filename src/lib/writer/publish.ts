@@ -64,6 +64,7 @@ import { factCtxOf, seniorityHit } from "@/lib/factsheet/check";
 import { matchJob, PROPS } from "@/lib/brief/props";
 import type { PriorBooks } from "./prior";
 import { buildChunkedSnapshot } from "./chunked/publish";
+import { buildZiweiSnapshot } from "./chunked/ziweiPublish";
 import { writerModeOf } from "./mode";
 
 let knowledgeCache: { k: Knowledge; version: string } | null = null;
@@ -490,6 +491,8 @@ export async function buildV5Snapshot(a: { payload: ReportInputPayload; reportId
   // 같은 고객의 이전 책이 쓴 장면은 고르지 않고, 이미 뜻을 푼 특성은 이 책에서 뜻을 다시 풀지 않는다(P6b E-1, P6c A3).
   // 고객 원장(P6d F): 앞 책이 쓴 각도(Fusion·팩폭)와 MBTI 씨앗은 빼고, 앞 책 근거 항목은 쓰지 않은 것을 먼저 고른다.
   // AM2: 세운·대운은 장 묶음 작가(상품별 설정 writerMode). 4종은 아래 그대로(책 1권 = 작가 1회).
+  // ZW-2: 자미 단독 상품은 자미 빌더(명리 브리프 없음 — 같은 장 묶음 작가 · 30분 흐름).
+  if (a.payload.productKey === "ziwei_full") return buildZiweiSnapshot(a);
   if (writerModeOf(a.payload.productKey) === "chunked") return buildChunkedSnapshot(a);
   const pl = a.prior?.ledger;
   const brief = briefFor(a.payload, a.policyAt, a.prior, deps.ledgerView, k);

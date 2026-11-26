@@ -126,6 +126,8 @@ export type WriterOptions = {
   readonly fallback?: WriterTarget | null;
   /** 지식 DB(P6c A1): 작가 입력의 원문 문장을 재료로 바꾼다. */
   readonly knowledge?: Knowledge;
+  /** ZW-2: 장 목록을 바깥에서 준다(자미 책 — 명리 브리프가 없다). 없으면 브리프에서 만든다(그 밖의 상품 그대로). */
+  readonly plan?: readonly WriterChapter[];
   /** W5 R1: 정답지(사실 표시 표를 만든다). 없으면 표시 없이 예전 브리프. */
   readonly facts?: import("@/lib/factsheet/build").FactSheet | null;
   /** 원문 저장소(최종판 0-2). 같은 입력 해시면 다시 부르지 않는다. */
@@ -190,7 +192,7 @@ const now = (o: WriterOptions) => (o.now ?? (() => Date.now()))();
 const leftOf = (s: Session) => (s.o.budgetMs ?? WRITER_TIME_BUDGET_MS) - (now(s.o) - s.started);
 
 function session(o: WriterOptions, prev?: WriterRun): Session {
-  const plan = new Map(buildWriterPrompt(o.brief, { knowledge: o.knowledge }).chapters.map(c => [c.n, c]));
+  const plan = new Map((o.plan ?? buildWriterPrompt(o.brief, { knowledge: o.knowledge }).chapters).map(c => [c.n, c]));
   const target: WriterTarget = { provider: o.provider, model: o.model, ...(o.apiKey ? { apiKey: o.apiKey } : {}) };
   // 이전 실행에서 대체 모델로 썼으면 같은 모델로 이어 간다.
   const wrote = prev?.writer && prev.fallback && prev.fallback.to !== "deterministic" && o.fallback ? o.fallback : prev?.writer ? target : null;

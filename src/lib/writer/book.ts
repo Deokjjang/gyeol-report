@@ -24,6 +24,7 @@ import { getMonthlyPillars } from "@/lib/saju/detections";
 import { explainedOf, ledgerOf, newEvidenceShare, usedScenesOf, type BookLedger } from "./prior";
 import { inputsOf, needMet } from "@/lib/brief/premise";
 import { chapterHeadOf, decadeTableOf, domainMapOf, flowTableOf, lifetimeOf, periodCardOf, thresholdOf, tocOf, yearDayunTg } from "./bookAm";
+import { projectZiweiBook, validateZiweiPublication } from "./ziweiBook";
 
 export const V5_DRAFT_VERSION = "v5-book-1" as const;
 export const V5_EVIDENCE_VERSION = "v5-evidence-1" as const;
@@ -283,6 +284,7 @@ export function createV5Snapshot(a: { reportId: string; createdAtIso: string; dr
 
 /** 저장된 v5 초안·근거가 발행 가능한 모양인가(읽기 경로 검사). 기존 검사 함수와 같은 {ok, errors} 모양. */
 export function validateV5Publication(product: string, draft: unknown, evidence: unknown): { ok: boolean; errors: string[] } {
+  if (product === "ziwei_full") return validateZiweiPublication(draft, evidence);
   const d = draft as V5BookDraft | null, e = evidence as V5Evidence | null;
   const errors: string[] = [];
   if (!d || d.version !== V5_DRAFT_VERSION || d.productVersion !== "v5" || d.productType !== product) errors.push("V5_DRAFT_INVALID");
@@ -361,6 +363,8 @@ export const v5EditionLabel = (draft: unknown) => { const d = draft as V5BookDra
  * today(KST 날짜): 표의 지금·돌아보기·앞으로 기준. 열람 화면은 읽는 날을 넘기고, 없으면 책을 만든 날. */
 export function projectV5Book(snapshot: ProductPreviewSnapshot, today?: string): BookData | null {
   if (snapshot.productVersion !== "v5") return null;
+  // ZW-2 4부: 자미 책은 자기 저장 모양 · 투영(ziweiBook.ts). 다른 상품은 아래 그대로.
+  if (snapshot.productType === "ziwei_full") return projectZiweiBook(snapshot);
   const d = snapshot.draft as unknown as V5BookDraft, e = snapshot.evidencePacket as V5Evidence;
   if (!validateV5Publication(snapshot.productType, d, e).ok) return null;
   const book = BOOKS.find(b => b.productKey === d.productType)!;

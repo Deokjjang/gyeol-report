@@ -1,5 +1,6 @@
 import type { V4CustomerTables } from "../../../lib/interpretation-v4/runtimeTypes";
 import type { Book, Person } from "./model";
+import type { ZiweiBoardView } from "../../../lib/ziwei/view";
 
 // Presentation-only DTO. No calculation objects, proof IDs or composer imports.
 export type BookPerson = Person & { role: string; timeLabel: string; table: V4CustomerTables[number] };
@@ -56,6 +57,10 @@ export type BookPage = (
   | { kind: "periodCard"; unit: "달" | "해"; title: string; eyebrow: string; sub: string; ganji: string; els: AmEl[]; flow: number; flowWord: string; line: string; good?: { label: string; text: string }; caution?: string; one?: { label: string; text: string }; paragraphs: BookParagraph[]; relations: { name: string; plain: string }[]; sky: string; ground: string; past: boolean; now: boolean; star: boolean;
     /** AM2-4 1부·6부: 카드(결정론)가 맡는 사실 — 하늘·땅 쉬운 뜻 · 영역 신호 · 오행 채움 · 핵심 한 줄. */
     skyLine?: string; groundLine?: string; ups?: string[]; cautions?: string[]; fills?: string; core?: string }
+  /** ZW-2 4부 자미 책: 명반 12칸(1장 앞) · 사화 배지 4칸(8장 앞) · 대한 띠(9장 앞). 값은 저장된 명반의 뷰(lib/ziwei/view). */
+  | { kind: "ziweiBoard"; title: string; view: ZiweiBoardView; name: string }
+  | { kind: "ziweiMutagens"; title: string; view: ZiweiBoardView }
+  | { kind: "ziweiDecades"; title: string; view: ZiweiBoardView }
   /** aiNotice: 책 끝 AI 작성 고지(v5 최종3, v5 책만). */
   | { kind: "back"; title: string; finalLine: string; aiNotice?: string }) & { id?: string; anchors?: string[] };
 export type BookData = {

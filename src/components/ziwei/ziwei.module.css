@@ -1,0 +1,54 @@
+/* ZW-2 4부 명반 부품. 색 · 선은 책 회색 변수(book.module.css --g111 …)를 따른다 — 책 밖에서는 기본값(밝은 화면).
+   다크는 그 변수를 바꾸는 쪽([data-scheme=auto] 책 · 프로필 화면)이 맡는다. 대비 4.5:1 이상(밝은 #111/#555 on #fff, 다크 #ececec/#b4b4b4 on #141414). */
+.board { --zw-ink: var(--g111, #111); --zw-sub: var(--g555, #555); --zw-line: var(--gd6, #d6d6d6); --zw-wash: var(--gf2, #f2f2f2); --zw-bg: var(--gfff, #fff); --zw-accent: var(--zw-ink);
+  color: var(--zw-ink); margin: 0 0 22px; max-width: 520px; }
+.grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); grid-template-rows: repeat(4, auto); gap: 4px; }
+.cell { all: unset; box-sizing: border-box; display: flex; flex-direction: column; gap: 3px; min-height: 84px; min-width: 0; padding: 6px 5px; border: 0; box-shadow: inset 0 0 0 1px var(--zw-line); border-radius: 6px;
+  background: var(--zw-bg); color: var(--zw-ink); cursor: pointer; word-break: keep-all; overflow-wrap: anywhere; transition: transform .12s ease, background-color .12s ease; -webkit-tap-highlight-color: transparent; }
+.board .cell { padding: 6px 7px; }
+.cell:active { transform: scale(.97); }
+.cell:focus-visible { outline: 2px solid var(--zw-ink); outline-offset: 1px; }
+.cell[aria-pressed="true"] { box-shadow: inset 0 0 0 2px var(--zw-ink); background: var(--zw-wash); }
+.cell[data-life] .pal { text-decoration: underline; text-underline-offset: 2px; }
+.cellHead { display: flex; justify-content: space-between; align-items: baseline; gap: 2px; min-width: 0; }
+.pal { font-size: 11px; line-height: 1.25; font-weight: 600; min-width: 0; }
+.cellHead small { font-size: 10px; color: var(--zw-sub); flex: none; }
+.marks { display: flex; gap: 2px; }
+.marks i { font-style: normal; font-size: 9px; line-height: 1; padding: 2px 3px; border: 1px solid var(--zw-ink); border-radius: 3px; }
+.stars { display: flex; flex-wrap: wrap; gap: 2px 4px; align-items: center; }
+.major { display: inline-flex; align-items: center; gap: 2px; font-size: 14px; font-weight: 700; line-height: 1.2; }
+.minorMut { display: inline-flex; align-items: center; gap: 2px; font-size: 11px; color: var(--zw-sub); }
+.emptyStar { font-size: 12px; color: var(--zw-sub); }
+.mut { display: inline-grid; place-items: center; min-width: 15px; height: 15px; padding: 0 2px; font-size: 10px; font-weight: 700; line-height: 1; border-radius: 3px; border: 1px solid var(--zw-ink); color: var(--zw-ink); background: var(--zw-bg); }
+.mut[data-mut="gi"] { background: var(--zw-ink); color: var(--zw-bg); }
+.dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; border: 1px solid var(--zw-ink); vertical-align: middle; }
+.dot[data-bright="bright"] { background: var(--zw-ink); }
+.dot[data-bright="normal"] { background: linear-gradient(90deg, var(--zw-ink) 50%, transparent 50%); }
+.dot[data-bright="dark"] { background: transparent; }
+.nowTag { margin-top: auto; font-size: 9px; color: var(--zw-sub); }
+.center { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 3px; padding: 8px; text-align: center; border: 1px dashed var(--zw-line); border-radius: 6px; font-size: 12px; color: var(--zw-sub); word-break: keep-all; }
+.centerName { font-size: 16px; color: var(--zw-ink); }
+.legend { margin: 10px 0 6px; font-size: 12px; line-height: 1.6; color: var(--zw-sub); word-break: keep-all; }
+.legend .dot { margin: 0 2px 0 4px; }
+.detail { border-top: 1px solid var(--zw-line); padding-top: 8px; font-size: 13px; line-height: 1.65; word-break: keep-all; }
+.detail p { margin: 0 0 4px; }
+.detailHead small { color: var(--zw-sub); }
+.note { margin: 10px 0 0; font-size: 11px; line-height: 1.6; color: var(--zw-sub); word-break: keep-all; }
+.muts { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+.muts li { display: grid; grid-template-columns: auto 1fr; column-gap: 8px; row-gap: 1px; align-items: baseline; padding: 10px; border: 1px solid var(--zw-line); border-radius: 6px; min-width: 0; word-break: keep-all; }
+.muts li > span:last-child { grid-column: 1 / -1; font-size: 13px; }
+.muts small { grid-column: 2; font-size: 12px; color: var(--zw-sub); }
+.mutBig { grid-row: span 2; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 5px; border: 1px solid var(--zw-ink); font-weight: 700; }
+.muts li[data-mut="gi"] .mutBig { background: var(--zw-ink); color: var(--zw-bg); }
+.band { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 4px; }
+.band li { display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 6px 5px; border: 1px solid var(--zw-line); border-radius: 5px; font-size: 11px; word-break: keep-all; }
+.band li span { color: var(--zw-sub); font-variant-numeric: tabular-nums; }
+.band li b { font-size: 12px; }
+.band li i { font-style: normal; font-size: 10px; font-weight: 700; }
+.band li[data-current] { border-color: var(--zw-ink); box-shadow: inset 0 0 0 1px var(--zw-ink); background: var(--zw-wash); }
+.band li[data-next] { border-style: dashed; border-color: var(--zw-ink); }
+@media (prefers-reduced-motion: reduce) { .cell { transition: none; } .cell:active { transform: none; } }
+/* 책 밖에서 기기 다크 모드를 따를 때(프로필 등): 부르는 쪽이 data-scheme="auto"를 단 상자 안에 둔다. 책 안은 book.module.css 변수가 이미 바뀐다. */
+@media (prefers-color-scheme: dark) {
+  :global([data-scheme="auto"]) .board { --zw-ink: var(--g111, #ececec); --zw-sub: var(--g555, #b4b4b4); --zw-line: var(--gd6, #3b3b3b); --zw-wash: var(--gf2, #1f1f1f); --zw-bg: var(--gfff, #141414); }
+}

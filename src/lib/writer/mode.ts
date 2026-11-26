@@ -3,5 +3,6 @@
  * 차단 검사 → 걸린 묶음 다시 쓰기 → 문장 삭제 → 장 결정론 대체). 상품 구성·지식 DB·엔진은 같다.
  */
 export type WriterMode = "book" | "chunked";
-export const WRITER_MODE: Readonly<Record<string, WriterMode>> = { annual_fortune: "chunked", major_fortune: "chunked" };
+/** ZW-2: 자미 단독 상품도 장 묶음 작가(감독 2차 = 빠진 묶음만 — buildZiweiSnapshot). */
+export const WRITER_MODE: Readonly<Record<string, WriterMode>> = { annual_fortune: "chunked", major_fortune: "chunked", ziwei_full: "chunked" };
 export const writerModeOf = (productKey: string): WriterMode => WRITER_MODE[productKey] ?? "book";
