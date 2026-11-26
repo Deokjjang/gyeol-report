@@ -45,12 +45,12 @@ const LABEL_OF = (v: string) => /^(20\d\d년 [가-힣]{2}년|(?:20\d\d년 )?(?:1
 import { tidyBookPass } from "./tidyBook";
 import { atomsOf, CARD_MAX_DROPS, cardPoles, chartFacts, clashesCard, gradeToMeaning, inputClash, loveSignalMeaning, newRefineLog, refineAtom, refineLog, refineText, specificity, tidyCard, type AtomCtx, type TidyItem } from "./refine";
 
-export type Subject = "natal" | "dayun" | "year" | "month" | "mbti" | "input";
+export type Subject = "natal" | "dayun" | "year" | "month" | "mbti" | "input" | "ziwei";
 /** AM2-11 1부 5: 원국 짝 기록(도구 · verdict) — Fusion 규칙 id · 뺀 계산 짝 · 계산 짝 대신 규칙으로 만든 짝. */
 export type PairLog = { fusion: string[]; removedComputed: string[]; fromRule: string[] };
 export const pairLog: { last?: PairLog } = {};
-export const SUBJECT_KO: Readonly<Record<Subject, string>> = { natal: "원국(타고난 사주)", dayun: "대운", year: "세운(해 줄)", month: "월운(달 줄)", mbti: "MBTI", input: "고객 입력" };
-const PREFIX: Readonly<Record<Subject, string>> = { natal: "N", dayun: "D", year: "Y", month: "M", mbti: "B", input: "I" };
+export const SUBJECT_KO: Readonly<Record<Subject, string>> = { natal: "원국(타고난 사주)", dayun: "대운", year: "세운(해 줄)", month: "월운(달 줄)", mbti: "MBTI", input: "고객 입력", /** ZW-2 자미 책(Z 줄). */ ziwei: "자미 명반(Z 줄)" };
+const PREFIX: Readonly<Record<Subject, string>> = { natal: "N", dayun: "D", year: "Y", month: "M", mbti: "B", input: "I", ziwei: "Z" };
 /** 근거 한 줄: 엔진 값 + 쉬운 뜻 + 쓸 수 있는 장(장 번호). */
 export type Line = { readonly id: string; readonly subject: Subject; readonly value: string; readonly meaning: string; readonly use: readonly number[] };
 /** 명리 × MBTI 짝. 이 짝만 한 문장 안에서 잇는다. use = 두 줄 모두 허용된 장. */
@@ -74,7 +74,8 @@ export type KeyPlan = { /** AM2-13 4부 대운: 핵심 이름 → 뜻 한 마디
   /** AM2-8 2부 뿌리 3: 고리 · 짝이 없는 key의 이 사람 재료(고객이 적은 입력 사실 하나 × 그 key 영역). */ readonly own?: string;
   /** AM2-10 2부 7: 이 달 · 해 기조 한 줄(tone.ts toneOf — 화면 카드 칩과 같은 함수, 등급 낱말 없이 · 작가는 지키고 본문에 옮기지 않는다). */ readonly tone?: string };
 /** AM2-5 2부: pointer = 같은 주장이 앞 장에 있을 때 엔진이 만든 가리키기 말(「앞에서 본 2월 · 임인월, 7월 · 정미월」) — 이 절은 주장을 다시 쓰지 않는다. */
-export type SectionPlan = { readonly q: string; readonly lines: readonly string[]; readonly angle?: string; readonly claims: readonly string[]; readonly claimIds?: readonly string[]; readonly recapIds?: readonly string[]; readonly scene?: string; readonly pointer?: string; readonly pointerIds?: readonly string[] };
+export type SectionPlan = { readonly q: string; readonly lines: readonly string[]; readonly angle?: string; readonly claims: readonly string[]; readonly claimIds?: readonly string[]; readonly recapIds?: readonly string[]; readonly scene?: string; readonly pointer?: string; readonly pointerIds?: readonly string[];
+  /** ZW-2 자미 책: 소제목 지시 4칸(핵심 · 이 사람 재료 · 짝 또는 장면 · 기조 — 기조는 지킬 것, 본문에 옮기지 않는다). 있으면 chapterText가 이 꼴로 쓴다. */ readonly slots?: { readonly core: string; readonly own: string; readonly third?: string; readonly tone: string } };
 export type ChapterPlan = {
   readonly n: number; readonly id: string; readonly title: string; readonly question: string;
   readonly target: readonly [number, number]; readonly useName: boolean;
@@ -96,7 +97,7 @@ export type ChapterPlan = {
   /** AM2-7 3부 9: 처방을 둘 소제목(없으면 마지막 소제목). */
   readonly rxAt?: number;
 };
-export type Intake = { /** AM2-13 4부 대운: 5장 앞 묶음 해 수(막 경계에 가장 가까운 4~6). */ readonly keySplit?: number; readonly product: "annual_fortune" | "major_fortune"; readonly person: readonly string[]; readonly lines: readonly Line[]; readonly pairs: readonly Pair[]; readonly chapters: readonly ChapterPlan[]; readonly wish?: string; /** AM2-11: 상한으로 남긴 성향 반대 쌍(기록). */ readonly tidyOver?: readonly string[];
+export type Intake = { /** AM2-13 4부 대운: 5장 앞 묶음 해 수(막 경계에 가장 가까운 4~6). */ readonly keySplit?: number; readonly product: "annual_fortune" | "major_fortune" | "ziwei_full"; readonly person: readonly string[]; readonly lines: readonly Line[]; readonly pairs: readonly Pair[]; readonly chapters: readonly ChapterPlan[]; readonly wish?: string; /** AM2-11: 상한으로 남긴 성향 반대 쌍(기록). */ readonly tidyOver?: readonly string[];
   /** 2-1 근거가 없어 뺀 절(기록). */ readonly droppedPlan?: readonly string[];
   /** 엔진이 대운을 계산하지 못한 대운 책(출생 시각 미상 일부 — 계산은 보호 대상, 결정 필요로 보고). */ readonly noDayun?: boolean;
   /** AM2-6 4부: 대운 안 위치 값(해마다 「2027년: 무진 대운 3번째 해(앞쪽)」). 본문의 위치 말은 이 값으로만. */ readonly positions?: readonly string[];
@@ -114,6 +115,8 @@ const NOT_ACTION = /달(\(같은 세기\))?:|(오르는|살필) 영역|살필 �
 export const CHUNK_GROUPS: Readonly<Record<Intake["product"], readonly (readonly string[])[]>> = {
   annual_fortune: [["big", "love"], ["money", "work", "people"], ["mind", "keys:0-4"], ["keys:4-9"], ["keys:9-"], ["use", "wish", "next"]],
   major_fortune: [["read", "past"], ["now", "turn"], ["keys:0-5"], ["keys:5-"], ["map", "next"], ["plan", "letter"]],
+  // ZW-2 자미 9장(ziwei/design ZIWEI_CHUNK_GROUPS와 같은 표): [1+2] [3+4] [5] [6+7] [8] [9].
+  ziwei_full: [["read", "me"], ["inner", "moneywork"], ["love"], ["people", "rhythm"], ["mutagen"], ["decade"]],
 };
 /** AM2-13 4부: 대운 5장 나누기는 사람마다(막 경계에 가장 가까운 곳, 두 묶음 4~6해). 세운 · 옛 대운은 표 그대로. */
 export const chunkGroupsOf = (x: { readonly product: Intake["product"]; readonly keySplit?: number }): readonly (readonly string[])[] =>
@@ -258,7 +261,7 @@ export function buildIntake(brief: Brief, k: Knowledge, plan: readonly WriterCha
   const product = brief.product as Intake["product"];
   const year = product === "annual_fortune" ? Number(brief.timeline?.entries.find(e => e.kind === "year")?.key) || brief.chart.thisYear.year : brief.chart.thisYear.year;
   const lines: Line[] = [], pairs: Pair[] = [];
-  const counter: Record<Subject, number> = { natal: 0, dayun: 0, year: 0, month: 0, mbti: 0, input: 0 };
+  const counter: Record<Subject, number> = { natal: 0, dayun: 0, year: 0, month: 0, mbti: 0, input: 0, ziwei: 0 };
   const byText = new Map<string, Line>();
   const use = new Map<string, Set<number>>();
   // 뜻 문장도 입력에 맞지 않는 상황(연차·팀원·직원·자녀·연인 전제·학교·거주 전제)이면 그 마디만 뺀다. 일반론(이 사람에게 해당하는지 모르는 규칙 문장)도 뺀다.

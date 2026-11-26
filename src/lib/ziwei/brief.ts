@@ -14,7 +14,7 @@ import { ziweiCards, type ZiweiCard } from "@/lib/brief/cards/ziwei";
 import { BODY_PALACE_NAME, BRANCH_KO, FIVE_CLASS_INFO, MUTAGEN_NAMES, PALACE_NAMES, STAR_NAMES, type MajorStarId, type MutagenId, type PalaceId, type StarId } from "./ids";
 import type { ZiweiKnowledge } from "./knowledge";
 import { lookupZiwei, type ZiweiLookup, type ZiweiPalaceRead } from "./lookup";
-import { cleanZiwei, maskPalaceNames, newCleanLog, splitSents, type CleanCtx, type CleanLog } from "./text";
+import { cleanZiwei, maskPalaceNames, newCleanLog, splitSents, untimeZw, type CleanCtx, type CleanLog } from "./text";
 import { josa } from "@/lib/brief/labels";
 import type { ZiweiChart, ZiweiDecadal } from "./types";
 
@@ -121,7 +121,7 @@ export function buildZiweiBrief(a: { readonly chart: ZiweiChart; readonly kb: Zi
     palaceInfo[p.id] = { angle: lens ? clean(lensAngle(lens.line), { palace: p.id }, 1) || lensAngle(lens.line) : "", lensKey: lens?.key ?? "default", stage: clean(r.entry?.entry.stage, { palace: p.id }, 1), scenes: scenesOf(r, clean) };
     const minors = [...p.helpers, ...p.malefics, ...p.loves];
     const majorText = (s: MajorStarId) => { const m = mutOf.get(s); const br = brightOk(s) ? kb.stars.get(s)?.brightness?.[placed.get(s)!.brightness!.level] : undefined;
-      const look0 = br ? first(clean(br, { palace: p.id, star: s }, 1)).replace(/ 모습으로 나옵니다\.?$/, " 모습").replace(/(?:입니다|이에요|예요)\.?$/, "").replace(/\.$/, "") : "";
+      const look0 = br ? first(clean(br, { palace: p.id, star: s }, 1)).replace(/ 모습으로 나옵니다\.?$/, " 모습").replace(/모습(?:입니다|이에요|예요)\.?$/, "모습").replace(/\.$/, "") : "";
       return `${majorLabel(s)}${m ? ` · ${mutLabel(m)}` : ""}${look0 ? ` · 별 모습: ${look0}` : ""}`; };
     let value: string, meaning: string;
     const borrowedFrom = p.empty ? p.borrowFrom : undefined;
@@ -200,7 +200,7 @@ export function buildZiweiBrief(a: { readonly chart: ZiweiChart; readonly kb: Zi
       if (!zLine || !dim) continue;
       const sign = (prof?.dimensionTags[rule.dimension] ?? 1) >= 0 ? "plus" : "minus";
       const bid = `B${mbtiLines.length + 1}`;
-      mbtiLines.push({ id: bid, value: `${person.mbti} · ${dim.name}: ${dim.poles[sign].label}`, meaning: fitSegments(dim.poles[sign].description, inputs).replace(/\.$/, "") });
+      mbtiLines.push({ id: bid, value: `${person.mbti} · ${dim.name}: ${dim.poles[sign].label}`, meaning: untimeZw(fitSegments(dim.poles[sign].description, inputs)).replace(/\.$/, "") });
       const why = clean(rule.why, { palace: "myeong", star: r.star }, 2);
       if (!why) { mbtiLines.pop(); continue; }
       pairs.push({ id: `P${pairs.length + 1}`, z: zLine.id, b: bid, reason: rule.kind === "resonance" ? "공통" : rule.kind === "tension" ? "긴장" : "보완", why, use: [2], ruleId: rule.id, star: r.star });

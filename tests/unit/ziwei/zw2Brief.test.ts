@@ -94,6 +94,7 @@ function check(tp: TestPerson, out: { violations: string[]; tally: Tally }) {
     if (ZW_MEMO.test(x.text) && x.where !== "person") v("memo", `${x.where} «${x.text}»`);
     if (DEICTIC_ZW.test(x.text)) v("deictic", `${x.where} «${x.text}»`);
     if (ZW_HEALTH.test(x.text)) v("health", `${x.where} «${x.text}»`);
+    if (/(?<![가-힣])(?:요즘|최근|올해|요새|당장)/.test(x.text) || (/(?<![가-힣])지금/.test(x.text) && !(x.where.endsWith(".value") && b.lines.find(l => `${l.id}.value` === x.where)?.kind === "decade"))) v("time_word", `${x.where} «${x.text}»`);
     const hits = x.where === "person" ? [] : premiseHits(maskPalaceNames(x.text).text, b.inputs); if (hits.length) v("premise", `${x.where} ${hits.map(h => h.word).join(",")} «${x.text}»`);
     if (tp.person.mbti && x.text.includes(tp.person.mbti) && !/^(?:B\d+\.|P\d+\.why|person)/.test(x.where)) v("mbti_outside", `${x.where}`);
   }

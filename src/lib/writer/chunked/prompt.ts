@@ -180,7 +180,10 @@ function chapterText(c: ChapterPlan, product: Intake["product"], inputs?: Inputs
   // AM2-10 3부: 장 지시는 질문 · 근거 · 핵심 주장(뜻 문장) · 되풀이 금지 · 처방 배정 · 분량만(이름 부르기 · 장면 씨앗 · 각도는 주지 않는다).
   if (c.sections) {
     out.push(`- 분량: ${target(c.target)} · 소제목 ${c.sections.length}개`);
-    c.sections.forEach((s, i) => out.push(`  ${i + 1}) 소제목 틀: ${s.q} — 근거 ${s.lines.join("·") || "없음"}${s.pointer ? ` · 핵심 주장: 앞 장 몫 — 가리키기 「${s.pointer}」로만 짚고 그 목록·뜻을 다시 적지 않는다` : s.claims.length ? ` · 핵심 주장: ${s.claims.join(" / ")}` : ""}`));
+    c.sections.forEach((s, i) => out.push(s.slots
+      // ZW-2 자미: 소제목 지시 4칸.
+      ? [`  ${i + 1}) 소제목 틀: ${s.q} — 근거 ${s.lines.join("·") || "없음"}`, `     · 핵심: ${s.slots.core}`, `     · 이 사람 재료: ${s.slots.own || "없음"}`, ...(s.slots.third ? [`     · ${s.slots.third}`] : []), `     · 기조(지킬 것, 본문에 옮기지 않는다): ${s.slots.tone}`].join("\n")
+      : `  ${i + 1}) 소제목 틀: ${s.q} — 근거 ${s.lines.join("·") || "없음"}${s.pointer ? ` · 핵심 주장: 앞 장 몫 — 가리키기 「${s.pointer}」로만 짚고 그 목록·뜻을 다시 적지 않는다` : s.claims.length ? ` · 핵심 주장: ${s.claims.join(" / ")}` : ""}`));
   }
   if (c.keys) {
     const per = product === "annual_fortune" ? target(c.target, CARD_CHARS) : "";
@@ -215,7 +218,7 @@ function renderCard0(x: Intake): string {
   return [
     "# 인물 카드", ...x.person.map(p => (hasMbti && /^MBTI: /.test(p) ? "- MBTI: 적음(유형 · MBTI 줄 · 짝은 그것을 쓰는 묶음 지시에만 있다)" : `- ${p}`)), "",
     "# 근거 카드(id | 값 | 뜻 | 쓰는 장)", ...groups, "",
-    ...(hasMbti ? ["# 명리×MBTI 짝: 묶음 지시의 「이 묶음의 MBTI 줄 · 짝」에 적힌 곳에서만 쓴다. 묶음 지시에 없으면 그 묶음에서는 MBTI를 쓰지 않는다.", ""] : []),
+    ...(hasMbti ? [`# ${x.product === "ziwei_full" ? "자미×MBTI" : "명리×MBTI"} 짝: 묶음 지시의 「이 묶음의 MBTI 줄 · 짝」에 적힌 곳에서만 쓴다. 묶음 지시에 없으면 그 묶음에서는 MBTI를 쓰지 않는다.`, ""] : []),
     ...(x.positions?.length ? ["# 위치 값(대운 안에서 몇 번째 해 — 위치 말은 이 값이 있는 해만, 값 그대로)", ...x.positions.map(t => `- ${t}`), ""] : []),
     "# 책 설계도(모든 장)", ...x.chapters.map(c => chapterText(c, x.product, x.inputs, x.lines.some(l => l.subject === "mbti"))),
   ].join("\n");
@@ -254,10 +257,11 @@ export type Chunk = { readonly id: string; readonly parts: readonly { readonly n
  */
 export function chunkPlan(x: Intake): Chunk[] {
   const by = new Map(x.chapters.map(c => [c.id, c]));
-  const keyed = x.chapters.find(c => c.keys)!;
-  const keys = keyed.keys!.map(k => k.key);
-  const labelOf = new Map(keyed.keys!.map(k => [k.key, k.label]));
-  const slice = (a: number, b: number) => ({ n: keyed.n, keys: keys.slice(a, b), labels: keys.slice(a, b).map(k => labelOf.get(k) ?? k) });
+  // ZW-2: 자미 책은 key 장이 없다(장 9개 모두 소제목 장).
+  const keyed = x.chapters.find(c => c.keys);
+  const keys = keyed?.keys?.map(k => k.key) ?? [];
+  const labelOf = new Map((keyed?.keys ?? []).map(k => [k.key, k.label]));
+  const slice = (a: number, b: number) => ({ n: keyed?.n ?? 0, keys: keys.slice(a, b), labels: keys.slice(a, b).map(k => labelOf.get(k) ?? k) });
   // AM2-4: 묶음 구성은 intake CHUNK_GROUPS 한 표(장면 씨앗 솎기와 같은 묶음).
   const groups: Chunk["parts"][] = chunkGroupsOf(x).map(g => g.flatMap(id => { const m = /^keys:(\d+)-(\d*)$/.exec(id); if (m) return [slice(Number(m[1]), m[2] === "" ? keys.length : Number(m[2]))]; const c = by.get(id); return c ? [{ n: c.n }] : []; }));
   // 설계에 없는 장(상품 구성이 바뀐 경우)은 마지막 묶음에 붙인다.

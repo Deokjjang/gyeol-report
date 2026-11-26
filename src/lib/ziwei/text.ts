@@ -83,6 +83,8 @@ export function undeictic(t: string, c: CleanCtx): string {
 }
 /** 앞 문장을 받는 첫머리(앞 문장을 뺐으면 이 문장도 뺀다). */
 const LEANS_BACK = /^(?:그렇게|그런|그래서|그러니|그러면|그러다|이렇게|이런|그때|그 (?:뒤|다음|대신|덕분|만큼)|그 [가-힣]+(?:은|는|이|가|을|를|도))/;
+/** 시점이 아닌 「지금」도 9장 밖에서는 쓰지 않는다: 「지금 할 일」 → 「눈앞의 일」, 「지금의 · 지금(은 · 도) 」는 뗀다. */
+export const untimeZw = (t: string) => t.replace(/(?<![가-힣])지금 (?:할|해야 할) 일/g, "눈앞의 일").replace(/(?<![가-힣])지금의 /g, "").replace(/(?<![가-힣])지금(?:은|도)? (?=[가-힣])/g, "");
 export type CleanLog = { tails: number; salvaged: number; dropped: { why: string; text: string }[] };
 export const newCleanLog = (): CleanLog => ({ tails: 0, salvaged: 0, dropped: [] });
 /** 작가에게 갈 DB 글 하나를 다듬는다(문장 단위). 남는 문장이 없으면 빈 글. */
@@ -97,7 +99,9 @@ export function cleanZiwei(text: string, c: CleanCtx, log?: CleanLog, max = 3): 
     const s1 = stripAdviceSentence(s0);
     if (s1 !== s0) { if (log) { log.tails++; if (s1) log.salvaged++; else log.dropped.push({ why: "advice", text: s0 }); } }
     if (!s1) continue;
-    const s2 = undeictic(s1, c);
+    // 시점 말: 「요즘 · 최근 · 올해 · 이번 달 · 당장」 문장은 빼고, 부사 「지금(은 · 도)」은 뗀다(자미 책은 9장 「지금 머무는 10년」만 지금을 말한다).
+    if (/(?<![가-힣])(?:요즘|최근|올해|요새|이번 ?(?:달|주|해)|당장|오늘|내일)/.test(s1)) { log?.dropped.push({ why: "time", text: s1 }); continue; }
+    const s2 = untimeZw(undeictic(s1, c));
     if (hangul(s2) < 8) continue;
     if (!out.length && LEANS_BACK.test(s2)) { log?.dropped.push({ why: "orphan", text: s2 }); continue; }
     out.push(s2); prevKept = true;
