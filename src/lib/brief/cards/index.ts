@@ -7,6 +7,7 @@ import type { Line, Pair } from "@/lib/writer/chunked/intake";
 import type { Connection, FeatureCard } from "./features";
 
 export * from "./features";
+export { ziweiCards, ziweiTags, ziweiStarName, ZIWEI_MUTAGEN_WEIGHT, type ZiweiCard } from "./ziwei";
 export { designCards, writerCard, cardWhere, CARDS_VERSION, MAX_DIM_LINKS, MAX_RX_KIND, type BookDesign, type CardEvidence, type CardFactDrop, type CardPerson, type SectionCard } from "./design";
 
 /** 특징 카드 → AM 근거 줄(원국 = N, MBTI = B). meaning은 카드에 없어서 부르는 쪽이 준다(지식 DB 뜻). use = 쓸 수 있는 장 번호. */

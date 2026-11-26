@@ -1,6 +1,6 @@
 /**
  * W3 P3 연결 시스템 1·2 — 특징 카드와 연결(결정론, 호출 0).
- * - 특징 카드: 명리(trait/FeatureHit + MyeongriFeature.dimensionTags) · MBTI(MbtiProfile.dimensionTags, 유형·기능·글자) · 자미두수(인터페이스만).
+ * - 특징 카드: 명리(trait/FeatureHit + MyeongriFeature.dimensionTags) · MBTI(MbtiProfile.dimensionTags, 유형·기능·글자) · 자미두수(./ziwei.ts, ZW-2).
  * - 의미 태그 = behavior-ontology 31차원 그대로(새 태그 0). 연결은 두 카드가 같은 차원을 둘 다 가질 때만(|값| ≥ 0.3).
  * - 연결 규칙: Fusion 규칙이 있으면 그 kind·dimension(resonance → 공통, tension → 긴장, conditional → 보완),
  *   없으면 scorePair — 섞임(conditional) → 보완, 같은 부호·둘 다 ≥ 0.4 → 공통, 반대 부호·둘 다 ≥ 0.4 → 긴장, 반대 부호·한쪽 < 0.4 → 차이
@@ -62,9 +62,7 @@ export const LINK_MIN = 0.3;
 export const LINK_STRONG = 0.4;
 export const FUSION_KIND: Readonly<Record<FusionRule["kind"], ConnKind>> = { resonance: "공통", tension: "긴장", conditional: "보완" };
 
-/** 자미두수 변환기(인터페이스만 — 엔진이 없다). */
-export type ZiweiConverter = (chart: unknown) => FeatureCard[];
-export const ziweiCards: ZiweiConverter = () => [];
+/** 자미두수 변환기: ZW-2 2부부터 ./ziwei.ts(ziweiCards — 명반 + 조회 결과 → 별 카드). */
 
 const domainsOf = (tags: Readonly<Record<string, number>>, k: Knowledge): Area6[] => {
   const out = new Set<Area6>();
