@@ -92,7 +92,7 @@ describe("명반 성질", () => {
     const before = JSON.stringify(astro.getConfig());
     for (const input of randomInputs(11, 40)) expect(computeZiweiChart(input, "2026-11-24")).toEqual(computeZiweiChart({ ...input }, "2026-11-24"));
     expect(JSON.stringify(astro.getConfig())).toBe(before);
-  });
+  }, 60_000);
 
   it("밝기 근거가 별 칸마다 붙는다(천기 辰 = 학파차이, 보좌 · 살성 = 추정, 연애 별 = 없음)", () => {
     let seenConflict = false;
@@ -123,10 +123,14 @@ describe("명반 성질", () => {
   it("계산 시간: 명반 1개 평균 100ms 미만(측정값은 판정 파일에 적는다)", () => {
     const inputs = randomInputs(14, 300);
     computeZiweiChart(inputs[0], "2026-11-24");
+    // 판정은 이 프로세스의 CPU 시간으로 한다. 전체 시험을 병렬로 돌리면 벽시계 시간은 다른 작업자에게 밀려 늘어난다(11-26: 단독 ≈39ms, 전체 병렬 112ms).
     const t0 = performance.now();
+    const c0 = process.cpuUsage();
     for (const i of inputs) computeZiweiChart(i, "2026-11-24");
-    const avg = (performance.now() - t0) / inputs.length;
-    console.log(`[ziwei] 명반 1개 평균 ${avg.toFixed(2)}ms (n=${inputs.length})`);
+    const cpu = process.cpuUsage(c0);
+    const wall = (performance.now() - t0) / inputs.length;
+    const avg = (cpu.user + cpu.system) / 1000 / inputs.length;
+    console.log(`[ziwei] 명반 1개 평균 CPU ${avg.toFixed(2)}ms · 벽시계 ${wall.toFixed(2)}ms (n=${inputs.length})`);
     expect(avg).toBeLessThan(100);
   }, 120_000);
 });
