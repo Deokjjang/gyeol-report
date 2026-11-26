@@ -20,6 +20,7 @@ import { AccountChannelOnboarding } from "../account/AccountSession";
 import { FORTUNE_REOPEN_LINE, annualProductYear } from "../../lib/ops/config";
 import { useSalesPaused } from "./useSalesPaused";
 import { EventPopupHost } from "../event/EventPopup";
+import { webEvent } from "../../lib/analytics/web";
 
 export function Fields({ person, change, prefix, role, errors, now, requiredGender }: { person: PersonInputState; change: (value: PersonInputState) => void; prefix: string; role: string; errors: Record<string, string>; now: string; requiredGender: boolean }) {
   const error = (key: string) => errors[`${prefix}.${key}`] ? <small id={`${prefix}-${key}-error`} role="alert" className={f.error}>{errors[`${prefix}.${key}`]}</small> : null;
@@ -218,7 +219,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
       finally { setChecking(false); }
     }
     const nextStep = Math.min(total, step + 1);
-    if (nextStep === total) interaction("input_completed", book.productKey);
+    if (nextStep === total) { interaction("input_completed", book.productKey); webEvent("input_done", { product: book.productKey }); }
     reachedStep.current = Math.max(reachedStep.current, nextStep);
     setStep(nextStep); window.history.pushState({ ...window.history.state, bookInputProduct: book.id, bookInputPage: nextStep }, "", `#page-${nextStep + 1}`);
   };

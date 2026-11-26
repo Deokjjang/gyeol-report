@@ -2,6 +2,7 @@ import "server-only";
 import Link from "next/link";
 import MetaPurchaseTracker from "../analytics/MetaPurchaseTracker";
 import { FunnelPing } from "../analytics/FunnelTracker";
+import { WebEventPing } from "../analytics/WebAnalytics";
 import { createOpsStores } from "../../lib/ops/store";
 import { giftEventConfig } from "../../lib/ops/config";
 import { afterPaidOrder } from "../../lib/ops/gift/service";
@@ -42,6 +43,7 @@ export async function PaymentCompleteView(a: { providerOrderId: string; paymentK
     </div>
     {state === "refunded" ? null : <MetaPurchaseTracker reportId={a.reportId} />}
     <FunnelPing steps={PAID_STEPS} />
+    {state === "refunded" ? null : <WebEventPing name="paid" product={order.productType} onceKey={a.reportId} />}
     <AutoOpen href={bookHref} />
   </main>;
 }
