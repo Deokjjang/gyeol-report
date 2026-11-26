@@ -143,7 +143,7 @@ describe("책 공유 버튼 — 실제 WebKit(iPhone 13)", () => {
   });
 
   it.each(ROWS.map((r, i) => [label(r), r, i] as const))("%s: 미리 받기 1번 → 링크 복사·카카오톡·공유하기가 모두 제스처 안에서 같은 링크, 공유 취소는 조용히", async (_name, row, i) => {
-    const model = modelOf(row, i), url = model.shareUrl!;
+    const model = modelOf(row, i), url = `${model.shareUrl!}?from=share`; // OPS-1: 내보내는 링크에 from=share
     const { page, context, requests } = await open([{ status: 200, model }]);
     try {
       await state(page, "ready");
@@ -186,7 +186,7 @@ describe("책 공유 버튼 — 실제 WebKit(iPhone 13)", () => {
     [503, SHARE_STATUS.failed],
     [0, SHARE_STATUS.failed],
   ] as const)("미리 받기 실패 %i: 버튼 3개가 남고 안내 문구, 다시 누르면 다시 받고 다음 누름에서 복사", async (code, text) => {
-    const model = modelOf(ROWS[3], 3), url = model.shareUrl!;
+    const model = modelOf(ROWS[3], 3), url = `${model.shareUrl!}?from=share`; // OPS-1: 내보내는 링크에 from=share
     const { page, context, requests } = await open([code === 0 ? { status: 0, abort: true } : { status: code }, { status: 200, model }]);
     try {
       await state(page, "unavailable");

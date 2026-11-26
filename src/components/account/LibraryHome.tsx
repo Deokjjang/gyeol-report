@@ -8,6 +8,7 @@ import { MAJOR_HALF_CTA, MAJOR_HALF_CTA_CLOSED } from "../../lib/book/product";
 import type { TicketWallet } from "../../lib/ops/gift/service";
 import { OrderRequestForm } from "../ops/OrderParts";
 import { GiftSheet } from "./GiftSheet";
+import { webEvent } from "../../lib/analytics/web";
 import s from "./libraryHome.module.css";
 
 export type LibraryHomeData = { ok: true; books: ShelfBook[]; wallet: TicketWallet | null; event: { during: boolean; endsAt: string | null } };
@@ -84,7 +85,7 @@ export function ShelfCard({ book, onChanged }: { book: ShelfBook; onChanged: () 
   // W3 P2: 결제 취소 중·이용권 반환 카드도 이미 결론이 난 책이라 문의 버튼이 없다.
   const result = cardResult(book), open = book.request?.status === "open", concluded = book.state === "refunded" || book.state === "refunding" || book.state === "returned";
   return <li data-state={book.state} {...(ask && !open && !concluded ? { "data-asking": "" } : {})}>
-    {book.href ? <Link href={book.href} className={s.card} aria-label={label}>{body}</Link> : <div className={s.card} aria-label={label}>{body}</div>}
+    {book.href ? <Link href={book.href} className={s.card} aria-label={label} onClick={() => webEvent("book_open", { product: book.productType })}>{body}</Link> : <div className={s.card} aria-label={label}>{body}</div>}
     <div className={s.small}>
       {book.orderCode ? <span>주문코드 {book.orderCode}</span> : book.viaTicket ? <span>이용권으로 만든 책</span> : null}
       {/* AM2-14 4부: 세운 책 카드 — 대운 반값으로 이어 보기(같은 사람 입력을 미리 채움, 바꿀 수 있음). 판매가 닫혀 있으면 닫힘 문구만. */}
