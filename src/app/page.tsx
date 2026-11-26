@@ -1,4 +1,6 @@
 import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
+import { mirrorPublicEnabled } from "../lib/mirror/gate";
+import { MirrorEntry } from "../components/mirror/MirrorEntry";
 import { BookHomeRoute } from "../components/book/BookRoutes";
 import Link from "next/link";
 import { REPORT_PRICE_LABEL_KO } from "../lib/payment/reportProductCatalog";
@@ -13,6 +15,8 @@ import styles from "./home.module.css";
 export const revalidate = 60;
 
 export default function Home() {
+  // 「남이 본 나」(명령 1/3): 공개 관문(로컬 개발에서만 열림)이 열려 있으면 "/"는 이 서비스. 닫혀 있으면(배포 빌드) 지금 홈 그대로.
+  if (mirrorPublicEnabled()) return <MirrorEntry />;
   if (bookExperiencePublicEnabled()) return <BookHomeRoute />;
   return (
     <main className={styles.home}>

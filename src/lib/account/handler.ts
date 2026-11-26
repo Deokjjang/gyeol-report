@@ -24,7 +24,8 @@ const noStore = { "Cache-Control": "private, no-store, max-age=0", "Vary": "Cook
 
 /** compWaiting: 재동의 화면 맨 위 한 줄(P 본문 3) — 안 쓴 보상 이용권이 있는지. 예전에 필수 동의를 마친 기존 회원(재동의 대상)에게만 묻는다(신규 가입자는 묻지도 않는다). */
 /** isTester(F): 시험 계정(관리자·누나 계정)인가 — 세션 응답에 tester:true와 「시험」 브라우저 표시(쿠키 값 "1")를 남긴다. */
-export type AccountDeps = { compWaiting?: (userId: string) => Promise<boolean>; isTester?: (userId: string) => boolean };
+/** mirrorFlow(「남이 본 나」 명령 1/3): 이 돌아갈 곳(next)이 동의 · 프로필을 직접 받는 화면인가 — 참이면 가입 정보가 없어도 /account를 거치지 않고 그 화면으로 돌아간다. 주지 않으면 지금과 같다. */
+export type AccountDeps = { compWaiting?: (userId: string) => Promise<boolean>; isTester?: (userId: string) => boolean; mirrorFlow?: (next: string) => boolean };
 const TEST_COOKIE_AGE = 365 * 86_400;
 export async function handleAccount(request: NextRequest, action: string, port: AccountPort, local = false, deps: AccountDeps = {}): Promise<NextResponse> {
   const url = new URL(request.url);
@@ -72,8 +73,9 @@ export async function handleAccount(request: NextRequest, action: string, port: 
       }
       // 회원이어도 가입 정보가 없으면 정보 화면(/account)으로 보낸다. 로그인·열람은 막지 않는다(결제·이용권만 서버에서 막는다).
       const ready = session.status === "member" && session.profile !== "required";
-      const response = clear(redirect(ready ? next : home));
-      response.cookies.set(RETURN_COOKIE, ready ? "" : next, { ...cookieOptions, maxAge: ready ? 0 : 600 });
+      const direct = ready || deps.mirrorFlow?.(next) === true;
+      const response = clear(redirect(direct ? next : home));
+      response.cookies.set(RETURN_COOKIE, direct ? "" : next, { ...cookieOptions, maxAge: direct ? 0 : 600 });
       // F 퍼널: 기존 회원 로그인 완료 신호(화면이 1번 세고 지운다, 식별자 없음). 시험 계정은 신호 대신 「시험」 브라우저 표시.
       if (deps.isTester?.(user.id)) response.cookies.set(TEST_BROWSER_COOKIE, "1", { ...cookieOptions, maxAge: TEST_COOKIE_AGE });
       else if (ready) response.cookies.set(FUNNEL_LOGIN_COOKIE, "member", { ...cookieOptions, httpOnly: false, maxAge: 120 });

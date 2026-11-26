@@ -1,0 +1,857 @@
+<title>결리포트 관측소 시안</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;800&display=swap">
+<style>
+/* Layout: one-screen app over a WebGL sky. Home holds only my star, my synchro and one share button; the record board, reports, stories, the shared story space and my account are full-screen layers. Deliberately one dark look. */
+:root{
+  color-scheme: dark;
+  --ink:#000000;
+  --pearl:#F4F4F7;
+  --mist:#A9A9B1;
+  --faint:#7E7E87;
+  --line:rgba(255,255,255,.16);
+  --glass:rgba(10,10,14,.55);
+  --star:#CAD7FF;
+  --gold:#FFD08A;
+  --warm:#FFF1E2;
+  --kakao:#FEE500;
+  --font:"Geist",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  --ease:cubic-bezier(.2,.75,.1,1);
+}
+[hidden]{display:none!important}
+html,body{height:100%}
+body{margin:0;background:var(--ink);color:var(--pearl);font-family:var(--font);overflow:hidden;-webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent;word-break:keep-all}
+#gl{position:fixed;inset:0;width:100%;height:100%;display:block;touch-action:none}
+.scene{position:fixed;inset:0;display:flex;flex-direction:column;box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(14px + env(safe-area-inset-top,0px)) calc(16px + env(safe-area-inset-bottom,0px));pointer-events:none;transition:opacity .9s var(--ease);z-index:2}
+.scene.fade{opacity:0}
+.scene button,.scene .live{pointer-events:auto}
+.wrap{width:100%;max-width:480px;margin:0 auto;display:flex;flex-direction:column;flex:1;min-height:0}
+button{font:inherit;color:inherit}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--star);outline-offset:3px}
+@keyframes up{from{opacity:0;transform:translateY(10px);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+.press{transition:transform .2s var(--ease)}
+.press:active{transform:scale(.97)}
+
+.wordmark{display:grid;gap:1px;text-align:left;color:var(--pearl)}
+.wordmark b{font-weight:800;letter-spacing:-.07em;line-height:1.25}
+.wordmark span{font-weight:500;letter-spacing:.12em}
+.wordmark.sm b{font-size:18px}.wordmark.sm span{font-size:10px}
+.wordmark.xs b{font-size:13px}.wordmark.xs span{font-size:7px}
+.wordmark.lg b{font-size:46px}.wordmark.lg span{font-size:25.5px}
+.sweep{background:linear-gradient(100deg,#C9C9D0 0%,#C9C9D0 40%,#FFFFFF 50%,#C9C9D0 60%,#C9C9D0 100%);background-size:320% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sweep 6s 1.6s var(--ease) infinite}
+@keyframes sweep{0%{background-position:100% 0}55%,100%{background-position:0% 0}}
+
+#login .wrap{align-items:center;justify-content:center}
+.logo-in{animation:up 1.8s .2s var(--ease) both}
+.tagline{margin:22px 0 0;font-size:14px;color:var(--mist);animation:up 1.4s 1s var(--ease) both}
+.auth{margin-top:56px;width:100%;max-width:340px;display:grid;gap:10px;animation:up 1.2s 1.5s var(--ease) both}
+.btn-kakao{height:52px;border:0;border-radius:12px;background:var(--kakao);color:rgba(0,0,0,.86);font-size:15px;font-weight:500;cursor:pointer}
+.btn-google{height:52px;border:0;border-radius:12px;background:#FFFFFF;color:#1F1F1F;font-size:15px;font-weight:500;cursor:pointer}
+.fine{margin:8px 0 0;font-size:11px;color:var(--faint);text-align:center;line-height:1.55}
+
+#quiz .wrap{justify-content:flex-end;gap:14px}
+.qhead{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:var(--mist);font-variant-numeric:tabular-nums}
+.qbar{flex:1;max-width:160px;height:2px;background:rgba(255,255,255,.16);position:relative;overflow:hidden}
+.qbar i{position:absolute;inset:0;background:var(--pearl);transform-origin:left;transform:scaleX(0);transition:transform .8s var(--ease)}
+.qspace{flex:1}
+.mile{min-height:18px;margin:0;font-size:12px;color:var(--star);text-align:center;opacity:0;transition:opacity .6s}
+.mile.on{opacity:1}
+.qtitle{margin:0;font-size:clamp(22px,6vw,28px);font-weight:400;line-height:1.38;letter-spacing:-.03em;text-wrap:balance}
+.opts{display:grid;gap:10px;margin-top:16px}
+.opt{display:flex;align-items:center;gap:14px;text-align:left;padding:18px;border-radius:14px;border:1px solid var(--line);background:var(--glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:15px;line-height:1.45;cursor:pointer}
+.opt b{flex:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:grid;place-items:center;font-weight:500;font-size:12px;color:var(--mist)}
+.opt.picked{border-color:var(--pearl)}
+.skip{align-self:center;background:none;border:0;color:var(--faint);font-size:12px;padding:6px 10px;cursor:pointer;text-align:center}
+.qin>*{animation:up .7s var(--ease) both}
+.beam{position:fixed;left:0;top:0;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;pointer-events:none;z-index:4}
+
+.hbar{display:flex;justify-content:space-between;align-items:center}
+.hbar-r{display:flex;align-items:center;gap:8px}
+.icon{position:relative;width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--glass);display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-size:14px}
+.badge{position:absolute;top:-3px;right:-3px;min-width:16px;height:16px;padding:0 4px;box-sizing:border-box;border-radius:999px;background:var(--pearl);color:#000;font-size:10px;font-weight:600;display:grid;place-items:center}
+.demo-t{align-self:flex-start;margin-top:8px;height:26px;padding:0 10px;border-radius:999px;border:1px dashed rgba(255,255,255,.25);background:none;font-size:11px;color:var(--faint);cursor:pointer}
+.demo{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.chip{height:28px;padding:0 10px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);font-size:12px;cursor:pointer}
+.sync{align-self:center;margin-top:18px;display:grid;justify-items:center;gap:4px;background:none;border:0;cursor:pointer;text-shadow:0 1px 14px rgba(0,0,0,.7)}
+.sync b{font-weight:300;font-size:52px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.sync b small{font-size:20px;color:var(--mist);margin-left:2px}
+.sync .lab{font-size:12px;color:var(--mist)}
+.hspace{flex:1}
+.cta{height:54px;border:0;border-radius:999px;background:var(--pearl);color:#000;font-size:15px;font-weight:500;cursor:pointer}
+.graph{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:1;overflow:visible}
+#flash{position:fixed;inset:0;background:#FFFFFF;opacity:0;pointer-events:none;z-index:5}
+.toast{position:fixed;left:50%;top:calc(env(safe-area-inset-top,0px) + 64px);transform:translate(-50%,-8px);opacity:0;z-index:100;width:max-content;max-width:min(88vw,420px);box-sizing:border-box;padding:10px 14px;border-radius:12px;border:1px solid var(--line);background:rgba(12,12,18,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);font-size:13px;line-height:1.5;transition:opacity .35s,transform .45s var(--ease);pointer-events:none;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+.page{position:fixed;inset:0;z-index:7;overflow-y:auto;background:rgba(0,0,0,.9);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(14px + env(safe-area-inset-top,0px)) calc(28px + env(safe-area-inset-bottom,0px));animation:up .45s var(--ease) both}
+.page.top{z-index:10}
+.pg{max-width:480px;margin:0 auto;display:grid;gap:20px}
+.pghead{display:flex;align-items:center;gap:10px}
+.back{height:38px;padding:0 12px 0 8px;border-radius:999px;border:1px solid var(--line);background:none;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:4px}
+.pghead h2{margin:0;font-size:18px;font-weight:500;letter-spacing:-.02em}
+.blk{display:grid;gap:10px;padding-top:16px;border-top:1px solid var(--line)}
+.blk h3{margin:0;font-size:13px;font-weight:500;color:var(--mist)}
+.big{font-weight:300;font-size:40px;line-height:1;letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.big small{font-size:16px;color:var(--mist);margin-left:2px}
+.txt{margin:0;font-size:14px;line-height:1.7}
+.ev{margin:0;font-size:12px;line-height:1.6;color:var(--mist);padding-left:10px;border-left:2px solid rgba(202,215,255,.35)}
+.sub{margin:0;font-size:12px;color:var(--faint);line-height:1.6}
+.pbar{height:3px;background:rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
+.pbar i{display:block;height:100%;background:var(--star)}
+.btn{height:48px;border-radius:999px;border:1px solid rgba(255,255,255,.26);background:none;cursor:pointer;font-size:14px}
+.btn.on{background:var(--pearl);color:#000;border-color:var(--pearl)}
+.btn[disabled]{opacity:.45;cursor:default}
+.radar{justify-self:center;width:100%;max-width:320px;height:auto;overflow:visible}
+.legend{display:flex;gap:16px;justify-content:center;font-size:12px;color:var(--mist)}
+.legend i{display:inline-block;width:16px;height:0;border-top:1.5px dashed #fff;vertical-align:3px;margin-right:6px}
+.legend i.f{border-top:1.5px solid var(--star)}
+.pole{display:grid;gap:6px;padding:10px 0}
+.pole .ph{display:flex;justify-content:space-between;align-items:baseline;font-size:13px}
+.pole .ph b{font-weight:500}
+.pole .pct{color:var(--mist);font-variant-numeric:tabular-nums}
+.pole.gap .pct{color:var(--star)}
+.track{position:relative;height:18px}
+.track::before{content:"";position:absolute;left:0;right:0;top:8px;height:2px;background:rgba(255,255,255,.12);border-radius:2px}
+.track::after{content:"";position:absolute;left:50%;top:4px;width:1px;height:10px;background:rgba(255,255,255,.2)}
+.mk{position:absolute;top:3px;width:12px;height:12px;margin-left:-6px;border-radius:50%;box-sizing:border-box}
+.mk.me{border:1.5px solid var(--warm);background:#000}
+.mk.fr{background:var(--star);box-shadow:0 0 10px rgba(202,215,255,.7)}
+.pole .ends{display:flex;justify-content:space-between;font-size:11px;color:var(--faint)}
+.kv{display:flex;justify-content:space-between;gap:12px;font-size:14px}
+.kv span:last-child{color:var(--mist);text-align:right}
+.type{display:grid;gap:4px;padding:14px;border-radius:14px;border:1px solid var(--line);background:#0A0A0D}
+.type b{font-size:18px;font-weight:500}
+.type span{font-size:12px;color:var(--mist);line-height:1.6}
+.story{display:grid;gap:10px;padding:16px;border-radius:16px;border:1px solid var(--line);background:#0A0A0D}
+.story .top{display:flex;justify-content:space-between;align-items:center;gap:10px}
+.story .who{display:flex;gap:8px;align-items:center;font-size:12px;color:var(--mist);min-width:0;flex-wrap:wrap}
+.story .tag{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:2px 8px;color:var(--pearl)}
+.story p{margin:0;font-size:15px;line-height:1.7}
+.story .on{font-size:12px;color:var(--star)}
+.story.feat{border-color:rgba(202,215,255,.45);box-shadow:0 10px 40px -18px rgba(202,215,255,.6)}
+.heart{display:flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:999px;border:1px solid rgba(255,255,255,.22);background:none;cursor:pointer;font-size:13px;font-variant-numeric:tabular-nums}
+.heart[aria-pressed="true"]{border-color:#FF8FA8;color:#FFB3C4}
+.sw{width:46px;height:28px;border-radius:999px;border:1px solid rgba(255,255,255,.24);background:#0B0B0E;padding:3px;display:flex;cursor:pointer;box-sizing:border-box;flex:none}
+.sw i{width:20px;height:20px;border-radius:50%;background:#7E7E87;display:block;transition:transform .25s var(--ease)}
+.sw[aria-checked="true"]{background:#FFFFFF;border-color:#FFFFFF}
+.sw[aria-checked="true"] i{background:#000;transform:translateX(18px)}
+.seg2{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;justify-self:start}
+.seg2 button{height:30px;padding:0 14px;border:0;border-radius:999px;background:none;color:var(--mist);font-size:12px;cursor:pointer}
+.seg2 button[aria-pressed="true"]{background:var(--pearl);color:#000}
+.prof{display:flex;align-items:center;gap:14px}
+.ava{width:56px;height:56px;border-radius:50%;background:radial-gradient(circle at 40% 35%,#2A2A33,#0A0A0D);border:1px solid var(--line);display:grid;place-items:center;font-size:20px}
+.prof b{display:block;font-size:18px;font-weight:500}
+.prof span{font-size:13px;color:var(--mist)}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:13px 0;border:0;border-top:1px solid var(--line);background:none;text-align:left;width:100%;cursor:pointer;font-size:14px}
+.row span:last-child{color:var(--mist);font-size:13px;text-align:right}
+.row .t{display:grid;gap:2px}
+.row .t small{font-size:12px;color:var(--faint)}
+.pill{font-size:11px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--mist)}
+
+.cardwrap{position:fixed;inset:0;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;box-sizing:border-box;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:calc(12px + env(safe-area-inset-top,0px)) calc(14px + env(safe-area-inset-bottom,0px))}
+.seg{display:flex;border:1px solid var(--line);border-radius:999px;padding:3px;background:rgba(0,0,0,.5)}
+.seg button{height:30px;padding:0 14px;border:0;border-radius:999px;background:none;color:var(--mist);font-size:12px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--pearl);color:#000}
+.card{position:relative;box-sizing:border-box;height:min(62vh,600px);aspect-ratio:9/16;max-width:100%;border-radius:28px;border:1px solid rgba(255,255,255,.24);box-shadow:0 0 0 200vmax rgba(0,0,0,.74),0 30px 90px -20px rgba(202,215,255,.35);display:flex;flex-direction:column;justify-content:space-between;padding:18px;background-size:cover;background-position:center;overflow:hidden}
+.card.photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,.15) 55%,rgba(0,0,0,.82) 100%)}
+.card>*{position:relative}
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;font-size:13px;font-weight:500}
+.cbot{display:grid;gap:3px;padding-bottom:30px}
+.ck{margin:0;font-size:11px;color:var(--mist);letter-spacing:.04em}
+.cn{margin:0;font-weight:300;font-size:56px;line-height:1;letter-spacing:-.03em}
+.cn small{font-size:13px;color:var(--mist);margin-left:4px;letter-spacing:0;font-weight:400}
+.cs{margin:0;font-size:14px}
+.cu{margin:6px 0 0;font-size:11px;color:var(--mist)}
+.cmini{position:absolute;left:50%;top:40%;transform:translate(-50%,-50%);width:62%;height:auto;opacity:.95}
+.ctoggle{position:absolute;right:14px;bottom:14px;display:flex;align-items:center;gap:6px;font-size:11px;color:var(--mist);background:rgba(0,0,0,.45);border:1px solid var(--line);border-radius:999px;padding:4px 4px 4px 10px;cursor:pointer}
+.ctoggle .sw{width:34px;height:20px;padding:2px}
+.ctoggle .sw i{width:14px;height:14px}
+.ctoggle .sw[aria-checked="true"] i{transform:translateX(14px)}
+.cardbtns{display:grid;grid-template-columns:1fr auto;gap:8px;width:100%;max-width:360px}
+.cardwrap>.seg,.cardwrap>.cardbtns,.cardwrap>.sub{position:relative;z-index:1}
+.cardbtns .cta{height:50px}
+.cardbtns .btn{height:50px;padding:0 18px}
+
+.rater{position:fixed;inset:0;z-index:90;display:flex;align-items:flex-end;justify-content:center;background:rgba(0,0,0,.55);box-sizing:border-box;padding-left:max(12px,env(safe-area-inset-left,0px));padding-right:max(12px,env(safe-area-inset-right,0px));padding-bottom:calc(12px + env(safe-area-inset-bottom,0px))}
+.rbox{width:100%;max-width:480px;box-sizing:border-box;padding:20px;border-radius:20px;border:1px solid rgba(255,255,255,.18);background:rgba(10,10,14,.96);display:grid;gap:14px;animation:up .45s var(--ease) both}
+.rbox h3{margin:0;font-size:20px;font-weight:400;letter-spacing:-.02em;line-height:1.4}
+.rk{font-size:12px;color:var(--mist)}
+.three{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid var(--line);border-radius:999px;padding:3px}
+.three button{height:42px;border:0;border-radius:999px;background:none;color:var(--mist);font-size:12.5px;cursor:pointer;padding:0 4px}
+.three button[aria-pressed="true"]{background:var(--pearl);color:#000;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chips button{height:32px;padding:0 12px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--mist);font-size:12px;cursor:pointer}
+.chips button[aria-pressed="true"]{background:var(--pearl);color:#000;border-color:var(--pearl)}
+.rbox textarea{box-sizing:border-box;width:100%;resize:none;padding:14px;border:1px solid var(--line);border-radius:14px;background:#08080B;color:var(--pearl);font:inherit;font-size:14px;line-height:1.6}
+.score{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:14px;border:1px solid var(--line)}
+.score b{font-weight:300;font-size:46px;line-height:1;font-variant-numeric:tabular-nums}
+.score span{font-size:13px;color:var(--mist);line-height:1.5}
+.mystar{display:flex;align-items:center;gap:10px;font-size:14px}
+.mystar i{flex:none;width:16px;height:16px;border-radius:50%;background:radial-gradient(circle,#fff 0%,var(--star) 45%,rgba(202,215,255,0) 72%)}
+.mystar i.g{background:radial-gradient(circle,#fff 0%,var(--gold) 45%,rgba(255,208,138,0) 72%);width:26px;height:26px}
+.linkbtn{justify-self:center;background:none;border:0;color:var(--mist);font-size:13px;padding:6px 10px;cursor:pointer}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<canvas id="gl" aria-hidden="true"></canvas>
+<svg class="graph" id="graph" aria-hidden="true"><path id="cPath" d="" fill="none" stroke="#FFFFFF" stroke-opacity="0" stroke-width="1" stroke-linecap="round"></path></svg>
+
+<section class="scene" id="login">
+  <div class="wrap">
+    <div class="logo-in"><div class="wordmark lg" aria-label="결리포트 GYEOL REPORT"><b class="sweep">결리포트</b><span class="sweep">GYEOL REPORT</span></div></div>
+    <p class="tagline">내가 아는 나, 남이 본 나</p>
+    <div class="auth">
+      <button class="btn-kakao press" type="button" data-start>카카오로 시작하기</button>
+      <button class="btn-google press" type="button" data-start>Google로 계속하기</button>
+      <p class="fine">시안이에요. 실제 버튼에는 각 회사 가이드의 로고가 들어가요.<br>인스타·카톡 안에서 열면 구글 대신 「다른 브라우저로 열기」가 떠요.</p>
+    </div>
+  </div>
+</section>
+
+<section class="scene fade" id="quiz" hidden>
+  <div class="wrap">
+    <div class="qhead"><span id="qn">답 0 / 60</span><div class="qbar" aria-hidden="true"><i id="qbar"></i></div></div>
+    <div class="qspace"></div>
+    <p class="mile" id="mile" aria-live="polite"></p>
+    <div class="qin" id="qin">
+      <h2 class="qtitle" id="qt"></h2>
+      <div class="opts">
+        <button class="opt press" type="button" data-o="0"><b>A</b><span id="qa"></span></button>
+        <button class="opt press" type="button" data-o="1"><b>B</b><span id="qb"></span></button>
+      </div>
+    </div>
+    <button class="skip" type="button" id="skip">시안은 6문항이 60문항 몫이에요 · 빨리 채우고 빅뱅 보기</button>
+  </div>
+</section>
+
+<section class="scene fade" id="home" hidden>
+  <div class="wrap">
+    <div class="hbar">
+      <div class="wordmark sm" aria-label="결리포트"><b>결리포트</b><span>GYEOL REPORT</span></div>
+      <div class="hbar-r">
+        <button class="icon" type="button" id="storyBtn" aria-label="받은 이야기"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="#F4F4F7" stroke-width="1.4" stroke-linejoin="round"></path><path d="M4 7l8 6 8-6" fill="none" stroke="#F4F4F7" stroke-width="1.4"></path></svg><span class="badge" id="badge" hidden>0</span></button>
+        <button class="icon" type="button" id="spaceBtn" aria-label="모두의 이야기"><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="#F4F4F7" stroke-width="1.4" stroke-linejoin="round"></path></svg></button>
+        <button class="icon" type="button" id="meBtn" aria-label="내 계정">민</button>
+      </div>
+    </div>
+    <button class="demo-t" type="button" id="demoT" aria-expanded="false">시안 조작</button>
+    <div class="demo live" id="demo" hidden>
+      <button class="chip press" type="button" id="raterBtn">친구 시점으로 답하기</button>
+      <button class="chip press" type="button" data-add="1">+ 친구</button>
+      <button class="chip press" type="button" data-add="j">+ 60개 다 한 친구</button>
+      <button class="chip press" type="button" data-add="5">5명</button>
+      <button class="chip press" type="button" data-add="15">15명</button>
+      <button class="chip press" type="button" data-add="40">40명</button>
+      <button class="chip press" type="button" data-add="100">100명</button>
+      <button class="chip press" type="button" id="restart">처음부터</button>
+    </div>
+    <button class="sync" type="button" id="syncBtn" aria-label="기록판 열기"><span class="lab">싱크로율</span><b id="sync">—</b><span class="lab" id="syncNote">관측 전 · 기록판 ›</span></button>
+    <div class="hspace"></div>
+    <button class="cta press" type="button" id="shareBtn">별 달아 달라고 하기</button>
+  </div>
+</section>
+
+<section class="page" id="board" hidden aria-label="기록판"><div class="pg" id="boardIn"></div></section>
+<section class="page" id="stories" hidden aria-label="받은 이야기"><div class="pg" id="storiesIn"></div></section>
+<section class="page" id="space" hidden aria-label="모두의 이야기"><div class="pg" id="spaceIn"></div></section>
+<section class="page" id="acct" hidden aria-label="내 계정"><div class="pg" id="acctIn"></div></section>
+<section class="page top" id="report" hidden aria-label="보고서"><div class="pg" id="reportIn"></div></section>
+
+<div class="cardwrap" id="cardwrap" hidden>
+  <div class="seg" role="group" aria-label="카드 모양"><button type="button" data-lay="star" aria-pressed="true">내 별자리</button><button type="button" data-lay="photo" aria-pressed="false">내 사진</button></div>
+  <input type="file" id="photoIn" accept="image/*" hidden>
+  <div class="card" id="card">
+    <div class="ctop"><span>@minji.k</span><div class="wordmark xs"><b>결리포트</b><span>GYEOL REPORT</span></div></div>
+    <svg class="cmini" id="cMini" viewBox="-110 -110 220 220" aria-hidden="true" hidden></svg>
+    <div class="cbot">
+      <p class="ck">남이 본 나 × 내가 아는 나</p>
+      <p class="cn" id="cNum">—<small>싱크로율</small></p>
+      <p class="cs" id="cStage" hidden></p>
+      <p class="cu">gyeolreport.com/@minji.k · 내 별자리에 별 하나 달아 줘</p>
+    </div>
+    <button class="ctoggle" type="button" id="cToggle" aria-label="단계와 친구 수 표시"><span>단계 표시</span><span class="sw" role="switch" aria-checked="false" id="cSw"><i></i></span></button>
+  </div>
+  <div class="cardbtns"><button class="cta press" type="button" id="cShare">스토리에 공유</button><button class="btn press" type="button" id="cClose">닫기</button></div>
+  <p class="sub" style="text-align:center">사진은 이 기기 안에서만 카드에 합쳐지고, 서버에 올라가지 않아요.</p>
+</div>
+
+<div class="rater" id="rater" hidden><div class="rbox" id="rbox"></div></div>
+<div id="flash"></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const clamp = (x, a, b) => Math.min(b, Math.max(a, x));
+  const ease = (x) => 1 - Math.pow(1 - clamp(x, 0, 1), 3);
+  const rand = Math.random;
+  const gauss = () => { let u = 0, v = 0; while (!u) u = rand(); while (!v) v = rand(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.2832 * v); };
+  const buzz = (p) => { try { navigator.vibrate && navigator.vibrate(p); } catch (e) {} };
+  const josa = (w, a, b) => { const c = w.charCodeAt(w.length - 1); return (c >= 0xac00 && c <= 0xd7a3 && (c - 0xac00) % 28) ? a : b; };
+  const fmt = (n) => n.toLocaleString("ko-KR");
+
+  const DIMS = [
+    { n: "사교", a: "사람 속에서 충전하는", b: "혼자서 충전하는", sa: "사람 속 충전", sb: "혼자 충전" },
+    { n: "주도", a: "앞에서 이끄는", b: "뒤에서 받쳐 주는", sa: "앞에서 이끎", sb: "뒤에서 받침" },
+    { n: "공감", a: "마음부터 챙기는", b: "답부터 찾는", sa: "마음부터", sb: "답부터" },
+    { n: "표현", a: "분위기를 맞춰 주는", b: "할 말은 하는", sa: "분위기 맞춤", sb: "할 말은 함" },
+    { n: "추진", a: "끝까지 밀어붙이는", b: "여유를 즐길 줄 아는", sa: "밀어붙임", sb: "여유를 즐김" },
+    { n: "정돈", a: "계획대로 가는", b: "흐름 따라 가는", sa: "계획대로", sb: "흐름 따라" },
+    { n: "상상", a: "상상과 감성의", b: "현실과 감각의", sa: "상상과 감성", sb: "현실과 감각" },
+    { n: "탐구", a: "원리를 파고드는", b: "쓸모를 먼저 보는", sa: "원리 탐구", sb: "쓸모 먼저" },
+    { n: "감정", a: "감정에 솔직한", b: "감정을 차분히 다스리는", sa: "솔직하게", sb: "차분하게" },
+    { n: "회복", a: "조심스럽게 살피는", b: "툭툭 털고 나아가는", sa: "조심스럽게", sb: "툭툭 털고" },
+  ];
+  const QS = [
+    { d: 0, q: "모임이 끝나면 나는?", a: "다음 약속을 먼저 잡는다", b: "혼자 조용히 충전한다" },
+    { d: 2, q: "친구가 고민을 털어놓으면 나는?", a: "마음부터 챙긴다", b: "해결책을 같이 정리한다" },
+    { d: 5, q: "여행 가기 전날 나는?", a: "일정표를 다 짜 둔다", b: "가서 끌리는 대로 정한다" },
+    { d: 6, q: "멍하니 있을 때 나는?", a: "상상의 세계로 떠난다", b: "주변 소리와 풍경에 빠진다" },
+    { d: 8, q: "속상한 일이 생기면 나는?", a: "바로 표정에 드러난다", b: "차분히 가라앉힌 뒤 말한다" },
+    { d: 1, q: "조별 과제를 시작할 때 나는?", a: "먼저 역할을 나눈다", b: "맡은 일을 확실히 해낸다" },
+  ];
+  // 16 types: plain titles first, a real constellation only as the emblem
+  const NOUN = [["모험가", "해결사"], ["몽상가", "장인"]];
+  const ADJ = [["다정한", "자유로운"], ["단단한", "기발한"]];
+  const EMBLEM = ["오리온", "카시오페이아", "페르세우스", "안드로메다", "백조", "거문고", "독수리", "돌고래", "큰곰", "작은곰", "목동", "헤라클레스", "페가수스", "마차부", "케페우스", "용"];
+  const AXIS_TXT = [["사람 속에서 힘을 얻고", "혼자만의 시간에 힘을 얻고"], ["상상과 감성으로 세상을 보고", "현실과 감각으로 세상을 보고"], ["마음부터 챙기고", "답부터 찾고"], ["계획대로 나아가는 사람", "흐름을 타며 나아가는 사람"]];
+  const CLOSE = ["아는 사이", "친구", "찐친·가족"];
+  const CLOSE_CAP = ["얼굴과 이름을 아는 정도예요", "같이 놀고 연락하는 친구예요", "절친 · 가족 · 연인이라면 여기예요"];
+  const STAGES = [[0, "원시별"], [1, "첫 별빛"], [3, "별자리"], [5, "성단"], [15, "성운"], [40, "은하"], [100, "큰 은하"]];
+  const EDGES = [[0, 1], [1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7], [7, 8], [8, 9], [2, 6]];
+  const TAGS = ["멋있었던 순간", "고마웠던 순간", "같이 웃겼던 순간", "덕분에 좋아진 일", "의외였던 모습"];
+  const STORIES = [
+    ["같이 웃겼던 순간", "수학여행 때 자기가 지도 본다더니 30분 동안 반대로 걸었음. 근데 계속 웃겨서 하나도 안 힘들었어."],
+    ["고마웠던 순간", "시험 전날 내가 무너졌을 때 자기 공부 멈추고 정리 노트를 통째로 보내 줬다."],
+    ["멋있었던 순간", "알바하다 손님이 소리 질렀는데 끝까지 웃으면서 응대하고, 끝나고 나한테 먼저 괜찮냐고 물어봤다."],
+    ["의외였던 모습", "맨날 제일 시끄러운데 고양이 앞에서는 속삭이듯 말함. 고양이가 놀랄까 봐."],
+    ["덕분에 좋아진 일", "얘 덕분에 아침 러닝 시작했다. 벌써 두 달째."],
+    ["고마웠던 순간", "전학 온 첫날 혼자 있던 나한테 먼저 와서 같이 점심 먹자고 해 줬다."],
+    ["같이 웃겼던 순간", "노래방에서 고음 도전하다 삑사리 났는데 그 뒤로 그 노래만 부름. 자기 흑역사를 개그로 만드는 재능."],
+    ["멋있었던 순간", "조별 과제 마감 전날 아무도 안 할 때 혼자 밤새 정리해 놓고 생색 하나 안 냄."],
+  ];
+  const HANDLES = ["@jiho_", "@seoa.lee", "@dohyun.r", "@yuna.p"];
+  const SIM = [.86, .8, .84, .38, .78, .82, .34, .76, .7, .8];
+  const HEAT = [[.55, .08, .03], [1, .42, .12], [1, .82, .6], [1, .97, .93], [.75, .85, 1]];
+  const heatRGB = (h) => { const x = clamp(h, 0, 1) * 4, i = Math.min(3, Math.floor(x)), f = x - i, a = HEAT[i], b = HEAT[i + 1]; return a.map((v, k) => v + (b[k] - v) * f); };
+
+  const S = { phase: "login", t: 0, qi: 0, done: 0, quizAt: 0, ans: Array(10).fill(null), str: Array(10).fill(.6), heat: 0, heatT: 0, pulse: 0, collapseAt: -1, bangAt: -1, lift: .14, card: false,
+    total: Array(10).fill(0), match: Array(10).fill(0), obs: [], answers: 0, reports: [], stories: [], unread: 0, showStage: false, layout: "star", photo: null, feedSort: "new",
+    feed: STORIES.map((s, i) => ({ tag: s[0], text: s[1], to: "어느 별", author: "익명", likes: [128, 86, 214, 57, 41, 73, 162, 95][i], liked: false, mine: false })),
+    neb: 0, nebT: 0, gal: 0, galT: 0, clus: 0, clusT: 0, queue: [], qAcc: 0 };
+
+  // ---------- three ----------
+  const renderer = new THREE.WebGLRenderer({ canvas: $("#gl"), antialias: true, powerPreference: "high-performance" });
+  let PR = Math.min(window.devicePixelRatio || 1, 1.75);
+  renderer.setPixelRatio(PR); renderer.setClearColor(0x000000, 1);
+  const scene = new THREE.Scene();
+  const camera = new THREE.PerspectiveCamera(50, innerWidth / innerHeight, .1, 600);
+  const sky = new THREE.Group(); scene.add(sky);
+  const world = new THREE.Group(); scene.add(world);
+  const C = new THREE.Group(); C.rotation.x = -.22; world.add(C);
+  const mats = [];
+  const VS = `attribute float aSize; attribute vec3 aColor; attribute float aSeed;
+    uniform float uTime, uPR, uOpacity, uTw;
+    varying vec3 vC; varying float vA;
+    void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0);
+      float tw = 1.0 + uTw * sin(uTime * (1.0 + aSeed * 2.0) + aSeed * 50.0);
+      gl_PointSize = min(aSize * uPR * tw * (300.0 / -mv.z), 48.0 * uPR);
+      gl_Position = projectionMatrix * mv; vC = aColor; vA = uOpacity; }`;
+  const FS = `varying vec3 vC; varying float vA;
+    void main(){ float d = length(gl_PointCoord - .5);
+      float a = pow(smoothstep(.5, 0.0, d), 2.4) + smoothstep(.08, 0.0, d) * .6;
+      gl_FragColor = vec4(vC * a * vA, a * vA); }`;
+  const BURST_VS = `attribute float aSize; attribute vec3 aColor; attribute float aSeed;
+    uniform float uTime, uPR, uOpacity, uBang; varying vec3 vC; varying float vA;
+    void main(){ vec3 dir = normalize(position + vec3(.0001,.0002,.0003));
+      vec3 p = dir * (.05 + (4.0 + aSeed * 13.0) * (1.0 - exp(-uBang * 1.4)));
+      vec4 mv = modelViewMatrix * vec4(p, 1.0);
+      gl_PointSize = min(aSize * uPR * (300.0 / -mv.z), 20.0 * uPR);
+      gl_Position = projectionMatrix * mv; vC = aColor; vA = uOpacity * exp(-uBang * 1.6); }`;
+  function mat(vs, extra) {
+    const m = new THREE.ShaderMaterial({ uniforms: Object.assign({ uTime: { value: 0 }, uPR: { value: PR }, uOpacity: { value: 1 }, uTw: { value: .12 } }, extra || {}), vertexShader: vs || VS, fragmentShader: FS, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending });
+    mats.push(m); return m;
+  }
+  function geo(n, fill) {
+    const g = new THREE.BufferGeometry(), pos = new Float32Array(n * 3), col = new Float32Array(n * 3), size = new Float32Array(n), seed = new Float32Array(n);
+    for (let i = 0; i < n; i++) fill(i, pos, col, size, seed);
+    g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("aColor", new THREE.BufferAttribute(col, 3));
+    g.setAttribute("aSize", new THREE.BufferAttribute(size, 1)); g.setAttribute("aSeed", new THREE.BufferAttribute(seed, 1));
+    return g;
+  }
+  const TEMP = [[.74, .82, 1], [.88, .92, 1], [1, 1, 1], [1, .95, .88], [1, .84, .68]];
+  const tcol = () => { const r = rand(); return TEMP[r < .18 ? 0 : r < .45 ? 1 : r < .75 ? 2 : r < .92 ? 3 : 4]; };
+
+  const farMat = mat(VS, {});
+  sky.add(new THREE.Points(geo(4200, (i, p, c, s, sd) => {
+    const th = 6.2832 * rand(), ph = Math.acos(2 * rand() - 1), r = 70 + rand() * 60;
+    p[i * 3] = r * Math.sin(ph) * Math.cos(th); p[i * 3 + 1] = r * Math.cos(ph); p[i * 3 + 2] = r * Math.sin(ph) * Math.sin(th);
+    const t = tcol(), b = .22 + .7 * Math.pow(rand(), 2.4); c[i * 3] = t[0] * b; c[i * 3 + 1] = t[1] * b; c[i * 3 + 2] = t[2] * b;
+    s[i] = .5 + 2.2 * Math.pow(rand(), 8); sd[i] = rand();
+  }), farMat));
+  const bandMat = mat(VS, {}); bandMat.uniforms.uTw.value = 0;
+  const band = new THREE.Points(geo(12000, (i, p, c, s, sd) => {
+    const th = rand() * 6.2832, R = 95 + gauss() * 4, y = gauss() * (5 + 4 * Math.abs(Math.sin(th * 1.5)));
+    p[i * 3] = Math.cos(th) * R; p[i * 3 + 1] = y; p[i * 3 + 2] = Math.sin(th) * R;
+    const warm = Math.max(0, Math.cos(th - 1.2)) * .5, b = .07 + .12 * rand();
+    c[i * 3] = (.8 + .2 * warm) * b; c[i * 3 + 1] = (.82 + .08 * warm) * b; c[i * 3 + 2] = (.95 - .2 * warm) * b;
+    s[i] = .35 + .6 * rand(); sd[i] = rand();
+  }), bandMat); band.rotation.set(1.05, .2, .55); sky.add(band);
+
+  const orbMat = new THREE.ShaderMaterial({
+    uniforms: { uTime: { value: 0 }, uHeat: { value: 0 }, uPulse: { value: 0 }, uAlpha: { value: 0 }, uCollapse: { value: 0 } },
+    vertexShader: "varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }",
+    fragmentShader: `uniform float uTime, uHeat, uPulse, uAlpha, uCollapse; varying vec2 vUv;
+      float hash(vec2 p){ return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
+      float noise(vec2 p){ vec2 i = floor(p), f = fract(p); vec2 u = f * f * (3.0 - 2.0 * f);
+        return mix(mix(hash(i), hash(i + vec2(1.0, 0.0)), u.x), mix(hash(i + vec2(0.0, 1.0)), hash(i + vec2(1.0, 1.0)), u.x), u.y); }
+      float fbm(vec2 p){ float v = 0.0, a = .5; for (int i = 0; i < 5; i++){ v += a * noise(p); p *= 2.03; a *= .5; } return v; }
+      vec3 heatCol(float h){ vec3 c1 = vec3(.55,.08,.03), c2 = vec3(1.,.42,.12), c3 = vec3(1.,.82,.6), c4 = vec3(1.,.97,.93), c5 = vec3(.75,.85,1.);
+        if (h < .25) return mix(c1, c2, h / .25); if (h < .5) return mix(c2, c3, (h - .25) / .25); if (h < .75) return mix(c3, c4, (h - .5) / .25); return mix(c4, c5, (h - .75) / .25); }
+      void main(){ vec2 p = (vUv - .5) * 2.0; float r = length(p);
+        float size = mix(.12, .34, uHeat) * (1.0 + .08 * uPulse) * (1.0 - .9 * uCollapse);
+        float ang = atan(p.y, p.x);
+        float n = fbm(vec2(ang * 1.4 + uTime * .12, r * 3.2 - uTime * .35));
+        float core = exp(-pow(r / max(size, .001), 2.0) * 2.4);
+        float halo = exp(-r / (size * 2.4 + .001)) * .5 * (.55 + .45 * n);
+        float wisp = smoothstep(.5, .95, fbm(p * 2.4 + vec2(uTime * .05, -uTime * .07))) * exp(-r / (size * 3.4 + .001)) * .45 * (.25 + uHeat);
+        vec3 col = heatCol(uHeat);
+        vec3 c = col * (halo + wisp) * (1.0 + .5 * uPulse) + mix(col, vec3(1.0), .65) * core * (1.1 + uHeat + 2.5 * uCollapse);
+        c *= uAlpha * smoothstep(1.0, .62, r);
+        gl_FragColor = vec4(c, 1.0); }`,
+    transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
+  });
+  const orb = new THREE.Mesh(new THREE.PlaneGeometry(7, 7), orbMat); scene.add(orb);
+  const burstMat = mat(BURST_VS, { uBang: { value: 0 } }); burstMat.uniforms.uOpacity.value = 0;
+  world.add(new THREE.Points(geo(2400, (i, p, c, s, sd) => {
+    const th = 6.2832 * rand(), ph = Math.acos(2 * rand() - 1);
+    p[i * 3] = Math.sin(ph) * Math.cos(th); p[i * 3 + 1] = Math.cos(ph) * .7; p[i * 3 + 2] = Math.sin(ph) * Math.sin(th);
+    const t = tcol(); c[i * 3] = t[0]; c[i * 3 + 1] = t[1]; c[i * 3 + 2] = t[2]; s[i] = .4 + 1.2 * Math.pow(rand(), 3); sd[i] = rand();
+  }), burstMat));
+
+  const SV = Array.from({ length: 10 }, () => new THREE.Vector3()), AV = Array.from({ length: 10 }, () => new THREE.Vector3());
+  const clusMat = mat(VS, {}); clusMat.uniforms.uOpacity.value = 0; clusMat.uniforms.uTw.value = .3;
+  const clusG = geo(520, (i, p, c, s, sd) => { const t = tcol(), b = .5 + .5 * rand(); c[i * 3] = t[0] * b; c[i * 3 + 1] = t[1] * b; c[i * 3 + 2] = t[2] * b; s[i] = .25 + .45 * Math.pow(rand(), 2); sd[i] = rand(); });
+  C.add(new THREE.Points(clusG, clusMat));
+  const nebMat = mat(VS, {}); nebMat.uniforms.uTw.value = 0; nebMat.uniforms.uOpacity.value = 0;
+  const centers = Array.from({ length: 8 }, (_, k) => ({ a: k * .78 + rand() * .3, r: .8 + rand() * 1.8, sg: .55 + rand() * .7, cool: k % 3 !== 1 }));
+  world.add(new THREE.Points(geo(2600, (i, p, c, s, sd) => {
+    const cc = centers[i % centers.length];
+    p[i * 3] = Math.cos(cc.a) * cc.r + gauss() * cc.sg; p[i * 3 + 1] = Math.sin(cc.a) * cc.r * .8 + gauss() * cc.sg * .7; p[i * 3 + 2] = -1.4 + gauss() * cc.sg * .6;
+    const b = .045 + .06 * rand(); if (cc.cool) { c[i * 3] = .5 * b; c[i * 3 + 1] = .66 * b; c[i * 3 + 2] = 1 * b; } else { c[i * 3] = 1 * b; c[i * 3 + 1] = .7 * b; c[i * 3 + 2] = .5 * b; }
+    s[i] = 1.3 + 2.4 * rand(); sd[i] = rand();
+  }), nebMat));
+  const galMat = mat(VS, {}); galMat.uniforms.uTw.value = .06; galMat.uniforms.uOpacity.value = 0;
+  const gal = new THREE.Points(geo(14000, (i, p, c, s, sd) => {
+    let x, y, z, rr;
+    if (i % 5 === 0) { rr = Math.abs(gauss()) * .55; const th = rand() * 6.2832, ph = Math.acos(2 * rand() - 1); x = rr * Math.sin(ph) * Math.cos(th); y = rr * Math.cos(ph) * .45; z = rr * Math.sin(ph) * Math.sin(th); }
+    else { const arm = i % 2, t = Math.pow(rand(), .8) * 3.4; rr = .45 * Math.exp(.55 * t); const a = t * 1.15 + arm * Math.PI + gauss() * .28 / (1 + t * .4); x = Math.cos(a) * rr + gauss() * .08 * rr; z = Math.sin(a) * rr + gauss() * .08 * rr; y = gauss() * .06 * (1 + rr * .3); }
+    p[i * 3] = x; p[i * 3 + 1] = y; p[i * 3 + 2] = z;
+    const k = clamp(rr / 3.2, 0, 1), b = .14 + .34 * rand() * (1 - k * .4);
+    c[i * 3] = (1 - .35 * k) * b; c[i * 3 + 1] = (.9 - .05 * k) * b; c[i * 3 + 2] = (.76 + .24 * k) * b;
+    s[i] = .3 + .7 * rand(); sd[i] = rand();
+  }), galMat); gal.rotation.set(1.18, 0, .3); gal.position.set(0, 0, -1.2); gal.scale.setScalar(1.05); world.add(gal);
+
+  const selfMat = mat(VS, {}); selfMat.uniforms.uOpacity.value = 0; selfMat.uniforms.uTw.value = .06;
+  const selfG = geo(10, (i, p, c, s, sd) => { c[i * 3] = 1; c[i * 3 + 1] = .96; c[i * 3 + 2] = .9; s[i] = 1.25; sd[i] = rand(); });
+  C.add(new THREE.Points(selfG, selfMat));
+  const CAP = 420;
+  const friendMat = mat(VS, {}); friendMat.uniforms.uTw.value = .1;
+  const fG = geo(CAP, (i, p, c, s, sd) => { sd[i] = rand(); }); fG.setDrawRange(0, 0);
+  C.add(new THREE.Points(fG, friendMat));
+  function spikeTex() {
+    const cv = document.createElement("canvas"); cv.width = cv.height = 256; const g = cv.getContext("2d");
+    const r = g.createRadialGradient(128, 128, 0, 128, 128, 128); r.addColorStop(0, "rgba(255,255,255,1)"); r.addColorStop(.05, "rgba(255,248,238,.95)"); r.addColorStop(.18, "rgba(255,236,214,.22)"); r.addColorStop(.5, "rgba(200,210,255,.04)"); r.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = r; g.fillRect(0, 0, 256, 256); g.globalCompositeOperation = "lighter";
+    [[0, 1], [1, 0]].forEach(([vx, vy]) => { const lg = g.createLinearGradient(128 - 128 * vx, 128 - 128 * vy, 128 + 128 * vx, 128 + 128 * vy); lg.addColorStop(0, "rgba(255,255,255,0)"); lg.addColorStop(.5, "rgba(255,255,255,.6)"); lg.addColorStop(1, "rgba(255,255,255,0)"); g.fillStyle = lg; if (vx) g.fillRect(0, 127, 256, 2); else g.fillRect(127, 0, 2, 256); });
+    return new THREE.CanvasTexture(cv);
+  }
+  const core = new THREE.Sprite(new THREE.SpriteMaterial({ map: spikeTex(), transparent: true, blending: THREE.AdditiveBlending, depthWrite: false }));
+  core.scale.set(0, 0, 1); C.add(core);
+  const ring = new THREE.Mesh(new THREE.RingGeometry(.985, 1, 180), new THREE.MeshBasicMaterial({ color: 0xFFF3E6, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide }));
+  scene.add(ring);
+  let ringAt = -10, ringCol = [1, 1, 1];
+
+  // ---------- data model ----------
+  const vtx = (d, pole, st) => { const base = Math.PI / 2 - d * Math.PI / 5, a = base + (pole ? .1 : -.1), r = 1.15 + .95 * st; return new THREE.Vector3(Math.cos(a) * r, Math.sin(a) * r, 0); };
+  const selfB = (d) => (S.ans[d] ? .5 + .5 * S.str[d] : .5 - .5 * S.str[d]);
+  const friendB = (d) => { if (!S.total[d]) return null; const r = S.match[d] / S.total[d]; return S.ans[d] ? r : 1 - r; };
+  function buildSelf() {
+    for (let d = 0; d < 10; d++) {
+      SV[d].copy(vtx(d, S.ans[d], S.str[d])); SV[d].z = (rand() - .5) * .2;
+      const base = Math.PI / 2 - d * Math.PI / 5, a2 = base + (S.ans[d] ? -.26 : .26), r2 = 1.15 + .95 * (1 - S.str[d] * .55);
+      AV[d].set(Math.cos(a2) * r2, Math.sin(a2) * r2, SV[d].z);
+    }
+    const p = selfG.attributes.position.array; SV.forEach((v, d) => { p[d * 3] = v.x; p[d * 3 + 1] = v.y; p[d * 3 + 2] = v.z; }); selfG.attributes.position.needsUpdate = true;
+    const cp = clusG.attributes.position.array;
+    for (let i = 0; i < 520; i++) { const v = SV[i % 10], j = .12 + .3 * Math.pow(rand(), .7); cp[i * 3] = v.x + gauss() * j; cp[i * 3 + 1] = v.y + gauss() * j; cp[i * 3 + 2] = v.z + gauss() * j; }
+    clusG.attributes.position.needsUpdate = true;
+  }
+  // one representative face per axis, so the type line never contradicts the 10-face rows
+  const TYPE_AXES = [0, 6, 2, 5];
+  function typeBits(bFn) {
+    const bits = [];
+    for (const d of TYPE_AXES) { const v = bFn(d); if (v === null) return null; bits.push(v > .5 ? 1 : v < .5 ? 0 : S.ans[d]); }
+    return bits;
+  }
+  function typeOf(bFn) {
+    const bits = typeBits(bFn); if (!bits) return null;
+    const idx = bits[0] * 8 + bits[1] * 4 + bits[2] * 2 + bits[3];
+    return { bits, title: `${ADJ[bits[2]][bits[3]]} ${NOUN[bits[0]][bits[1]]}`, emblem: EMBLEM[idx] + "자리", line: AXIS_TXT.map((t, i) => t[bits[i]]).join(", ") };
+  }
+  const STARS = [];
+  const stageOf = (n) => { let s = STAGES[0]; for (const st of STAGES) if (n >= st[0]) s = st; return s; };
+  function addObserver(nAns, close, ceremony, rater) {
+    const per = Array(10).fill(0), perM = Array(10).fill(0), start = Math.floor(rand() * 10);
+    for (let j = 0; j < nAns; j++) { const d = (start + j) % 10; per[d]++; S.total[d]++; if (rand() < SIM[d]) { perM[d]++; S.match[d]++; } }
+    S.answers += nAns;
+    const top = Math.max(...per), cand = per.map((v, i) => (v === top ? i : -1)).filter((i) => i >= 0), d = cand[Math.floor(rand() * cand.length)];
+    const matched = perM[d] * 2 >= per[d];
+    const base = matched ? SV[d] : AV[d], cnt = STARS.filter((s) => s.d === d && s.m === matched).length, j = .05 + .02 * Math.sqrt(cnt);
+    const target = new THREE.Vector3(base.x + gauss() * j, base.y + gauss() * j, base.z + gauss() * j * 1.5);
+    const sa = rand() * 6.2832, from = new THREE.Vector3(Math.cos(sa) * 9, Math.sin(sa) * 6, 4 + rand() * 4);
+    const ctrl = from.clone().add(target).multiplyScalar(.5).add(new THREE.Vector3(gauss() * 1.5, gauss() * 1.5, 0));
+    const full = nAns >= 60, bright = [.66, .82, 1][close - 1];
+    let story = null;
+    if (rater) story = rater.story; else if (rand() < .55) { const st = STORIES[Math.floor(rand() * STORIES.length)]; story = { tag: st[0], text: st[1], author: rand() < .7 ? "익명" : HANDLES[Math.floor(rand() * HANDLES.length)] }; }
+    if (story) Object.assign(story, { close, shared: false });
+    const star = { d, m: matched, close, nAns, full, target, from, ctrl, t0: S.t, dur: ceremony ? (reduce ? .2 : 1.2) : .55, col: full ? [1, .82, .54] : [bright, bright * .97, 1], size: full ? 2.3 : [.75, .95, 1.25][close - 1] * (1 + .25 * Math.min(1, nAns / 48)), landed: false, landAt: 0, ceremony, rater: !!rater, story, score: Math.round((perM.reduce((a, b) => a + b, 0) / nAns) * 100) };
+    STARS.push(star); return star;
+  }
+  function syncVal() { let s = 0, k = 0; for (let d = 0; d < 10; d++) if (S.total[d]) { s += S.match[d] / S.total[d]; k++; } return k ? (100 * s) / k : null; }
+  function onLand(st) {
+    st.landed = true; st.landAt = S.t;
+    const prev = stageOf(S.obs.length); S.obs.push(st);
+    if (st.story) { S.stories.unshift(st.story); S.unread++; }
+    const n = S.obs.length, cur = stageOf(n);
+    S.clusT = clamp((n - 3) / 3, 0, 1); S.nebT = clamp((n - 8) / 12, 0, 1); S.galT = clamp((n - 25) / 60, 0, 1);
+    if (st.rater) { buzz(st.full ? [20, 40, 20, 40, 60] : [10, 30, 16]); raterResult(st); }
+    else if (st.ceremony) {
+      buzz(st.full ? [20, 40, 20, 40, 60] : [8, 30, 14]);
+      toast(cur !== prev ? `「${cur[1]}」 단계가 됐어요` : st.full ? "60개를 다 답한 친구가 황금별을 달아 줬어요" : st.story ? "새 별과 이야기가 도착했어요" : "새 별이 도착했어요");
+    } else if (cur !== prev && !S.queue.length) toast(`「${cur[1]}」 단계가 됐어요`);
+    hud();
+  }
+  function hud() {
+    const syn = syncVal();
+    $("#sync").innerHTML = syn === null ? "—" : `${Math.round(syn)}<small>%</small>`;
+    $("#syncNote").textContent = syn === null ? "관측 전 · 기록판 ›" : `${syn >= 85 ? "보이는 그대로인 사람" : syn >= 70 ? "대부분 보여 주는 사람" : "알수록 새로운 사람"} · 기록판 ›`;
+    const b = $("#badge"); b.hidden = !S.unread; b.textContent = S.unread;
+  }
+
+  const tmp = new THREE.Vector3();
+  const toScreen = (v) => { tmp.copy(v); C.localToWorld(tmp); tmp.project(camera); return [(tmp.x * .5 + .5) * innerWidth, (-tmp.y * .5 + .5) * innerHeight]; };
+  function drawLines(alpha, segs) {
+    C.updateMatrixWorld(); const P = SV.map(toScreen); let d = "";
+    EDGES.slice(0, segs).forEach(([a, b]) => { d += `M${P[a][0].toFixed(1)},${P[a][1].toFixed(1)}L${P[b][0].toFixed(1)},${P[b][1].toFixed(1)}`; });
+    $("#cPath").setAttribute("d", d); $("#cPath").setAttribute("stroke-opacity", alpha.toFixed(3));
+  }
+
+  // ---------- pages ----------
+  const toastEl = $("#toast"); let tT;
+  function toast(m) { toastEl.textContent = m; toastEl.classList.add("on"); clearTimeout(tT); tT = setTimeout(() => toastEl.classList.remove("on"), 2600); }
+  let zTop = 7;
+  const showPage = (id) => { const el = $("#" + id), was = el.hidden; el.style.zIndex = String(++zTop); el.hidden = false; if (was) el.scrollTop = 0; };
+  const head = (id, title, back = "내 별") => `<div class="pghead"><button class="back press" type="button" data-back="${id}"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2L4 7l5 5" fill="none" stroke="#F4F4F7" stroke-width="1.4"></path></svg>${back}</button><h2>${title}</h2></div>`;
+  const closeCounts = () => [3, 2, 1].map((c) => S.obs.filter((o) => o.close === c).length);
+  function radarSVG() {
+    const sc = 120 / 2.2, pt = (v) => `${(v.x * sc).toFixed(1)},${(-v.y * sc).toFixed(1)}`;
+    const self = DIMS.map((_, d) => pt(vtx(d, S.ans[d], S.str[d]))).join(" ");
+    const has = DIMS.every((_, d) => S.total[d]);
+    const fr = has ? `<polygon points="${DIMS.map((_, d) => { const b = friendB(d); return pt(vtx(d, b >= .5 ? 1 : 0, Math.abs(b - .5) * 2)); }).join(" ")}" fill="rgba(202,215,255,.08)" stroke="#CAD7FF" stroke-width="1.6" stroke-linejoin="round"></polygon>` : "";
+    const lab = DIMS.map((dm, d) => { const a = Math.PI / 2 - d * Math.PI / 5, x = Math.cos(a) * 140, y = -Math.sin(a) * 132; const gap = S.total[d] >= 2 && S.match[d] / S.total[d] < .5; return `<text x="${x.toFixed(1)}" y="${y.toFixed(1)}" text-anchor="middle" dominant-baseline="middle" font-size="11" fill="${gap ? "#CAD7FF" : "#A9A9B1"}">${dm.n}</text>`; }).join("");
+    const grid = [1.15, 2.1].map((r) => `<polygon points="${DIMS.map((_, d) => { const a = Math.PI / 2 - d * Math.PI / 5; return `${(Math.cos(a) * r * sc).toFixed(1)},${(-Math.sin(a) * r * sc).toFixed(1)}`; }).join(" ")}" fill="none" stroke="rgba(255,255,255,.08)"></polygon>`).join("");
+    return `<svg class="radar" viewBox="-170 -160 340 320" role="img" aria-label="10면 비교: 점선은 내 답, 실선은 친구 눈">${grid}<polygon points="${self}" fill="none" stroke="#FFFFFF" stroke-opacity=".8" stroke-width="1.2" stroke-dasharray="3 5"></polygon>${fr}${lab}</svg>`;
+  }
+  function poleRows() {
+    return DIMS.map((dm, d) => {
+      const sb = selfB(d), fb = friendB(d), t = S.total[d], r = t ? Math.round((100 * S.match[d]) / t) : null, gap = t >= 2 && S.match[d] / t < .5;
+      return `<div class="pole${gap ? " gap" : ""}"><div class="ph"><b>${dm.n}</b><span class="pct">${r === null ? "친구 답 없음" : `같게 본 비율 ${r}%`}</span></div>
+        <div class="track" aria-hidden="true"><span class="mk me" style="left:${(sb * 100).toFixed(1)}%"></span>${fb === null ? "" : `<span class="mk fr" style="left:${(fb * 100).toFixed(1)}%"></span>`}</div>
+        <div class="ends"><span>${dm.sa}</span><span>${dm.sb}</span></div></div>`;
+    }).join("");
+  }
+  function openBoard() {
+    const syn = syncVal(), comp = clamp(S.answers / 60, 0, 1), n = S.obs.length, left = Math.max(0, 60 - S.answers);
+    const [c3, c2, c1] = closeCounts(), gold = S.obs.filter((o) => o.full).length, st = stageOf(n);
+    const canReport = S.answers >= 60 && !S.reports.some((r) => Date.now() - r.at < 7 * 864e5);
+    const fT = n ? typeOf(friendB) : null, sT = typeOf(selfB);
+    const typeBox = (label, T) => `<div class="type"><span>${label}</span><b>${T ? T.title : "아직 관측 중"}</b><span>${T ? `${T.line}이에요. 상징 별자리는 ${T.emblem}.` : "친구 답이 모이면 정해져요."}</span></div>`;
+    $("#boardIn").innerHTML = `${head("board", "기록판")}
+      <div class="blk"><h3>싱크로율</h3><div class="big">${syn === null ? "—" : Math.round(syn) + "<small>%</small>"}</div>
+        <p class="txt">${syn === null ? "친구가 답하면 내가 고른 답과 얼마나 같은지 계산돼요." : `친구들이 고른 답의 ${Math.round(syn)}%가 내 답과 같아요. 아래 10면의 「같게 본 비율」을 평균 낸 값이에요.`}</p></div>
+      <div class="blk"><h3>남이 본 나 · 내가 본 나</h3>${typeBox("친구들이 본 나", fT)}${typeBox("내가 본 나", sT)}</div>
+      <div class="blk"><h3>10면 비교</h3>${radarSVG()}<div class="legend"><span><i></i>내 답</span><span><i class="f"></i>친구 눈</span></div>
+        <p class="sub">○ 내 답 · ● 친구들 답. 두 점이 가까울수록 같게 본 거예요. 별빛 색 숫자는 친구 눈에만 보이는 면이에요.</p>${poleRows()}</div>
+      <div class="blk"><h3>답 · 보고서</h3><div class="kv"><span>완성도 ${Math.round(comp * 100)}%</span><span>친구 답 ${fmt(S.answers)}개${S.answers < 60 ? ` · 60개까지 ${left}개` : ""}</span></div><div class="pbar"><i style="width:${comp * 100}%"></i></div>
+        <button class="btn${canReport ? " on" : ""}" type="button" data-report ${canReport ? "" : "disabled"}>${S.answers < 60 ? `보고서는 친구 답 60개부터 · ${left}개 남음` : canReport ? "보고서 발행하기" : "이번 주 발행 완료 · 다음 주에 새 호"}</button>
+        <p class="sub">한 사람이 60개를 다 답해 줘도 열려요. 발행은 일주일에 한 번, 발행한 보고서는 「내 계정」에 모여요.</p></div>
+      <div class="blk"><h3>답해 준 친구</h3><div class="kv"><span>${n}명 · ${st[1]}</span><span>찐친·가족 ${c3} · 친구 ${c2} · 아는 사이 ${c1}</span></div><div class="kv"><span>황금별</span><span>${gold}명이 60개를 다 답해 줬어요</span></div></div>`;
+    showPage("board");
+  }
+  function buildReport() {
+    const syn = syncVal(), n = S.obs.length, [c3, c2, c1] = closeCounts(), gold = S.obs.filter((o) => o.full).length;
+    const items = DIMS.map((dm, d) => ({ d, t: S.total[d], m: S.match[d], r: S.total[d] ? S.match[d] / S.total[d] : null })).filter((x) => x.t >= 2);
+    const same = [...items].sort((a, b) => b.r - a.r).slice(0, 2).filter((x) => x.r >= .5), gaps = items.filter((x) => x.r < .5).sort((a, b) => a.r - b.r);
+    const pside = (d, flip) => (flip ? 1 - S.ans[d] : S.ans[d]);
+    const pole = (d, flip) => (pside(d, flip) ? DIMS[d].b : DIMS[d].a) + " 사람";
+    const short = (d, flip) => (pside(d, flip) ? DIMS[d].sb : DIMS[d].sa);
+    const selfN = (d) => Math.round((S.ans[d] ? selfB(d) : 1 - selfB(d)) * 6);
+    const fT = typeOf(friendB), sT = typeOf(selfB), now = new Date();
+    return { at: Date.now(), date: `${now.getFullYear()}.${String(now.getMonth() + 1).padStart(2, "0")}.${String(now.getDate()).padStart(2, "0")}`, n, answers: S.answers, syn, sections: [
+      { h: "요약", p: `친구 ${n}명이 남긴 답 ${fmt(S.answers)}개 중 ${Math.round(syn)}%가 내가 직접 고른 답과 같았어요. ${syn >= 85 ? "보이는 모습과 속이 거의 같은 사람이에요." : syn >= 70 ? "대부분을 그대로 보여 주고, 몇 가지는 아직 나만 알고 있어요." : "아직 다 보여 주지 않은 면이 많아요."}`, ev: [`10면별 「같게 본 비율」의 평균 = ${Math.round(syn)}%`] },
+      ...same.map((x) => ({ h: `또렷하게 겹친 면 · ${DIMS[x.d].n}`, p: `나도, 친구들도 「${pole(x.d)}」이라고 봤어요.`, ev: [`내 답: 이 면의 6문항 중 ${selfN(x.d)}개가 「${short(x.d)}」 쪽`, `친구 답: ${fmt(x.t)}개 중 ${fmt(x.m)}개(${Math.round(x.r * 100)}%)가 같은 쪽`] })),
+      ...gaps.slice(0, 2).map((x) => ({ h: `친구 눈에만 보이는 면 · ${DIMS[x.d].n}`, p: `나는 「${pole(x.d)}」이라고 답했지만, 친구들은 「${pole(x.d, true)}」으로 더 많이 봤어요. 내가 생각하는 것보다 이 모습이 밖으로 더 드러나 있다는 뜻이에요.`, ev: [`내 답: 이 면의 6문항 중 ${selfN(x.d)}개가 「${short(x.d)}」 쪽`, `친구 답: ${fmt(x.t)}개 중 ${fmt(x.t - x.m)}개(${Math.round((1 - x.r) * 100)}%)가 「${short(x.d, true)}」 쪽`] })),
+      { h: "남이 본 나 · 내가 본 나", p: `친구들이 본 나는 「${fT.title}」, 내가 본 나는 「${sT.title}」${josa(sT.title, "이에요", "예요")}. ${fT.title === sT.title ? "두 시선이 같은 유형으로 모였어요." : `네 축 중 ${TYPE_AXES.filter((d, i) => fT.bits[i] !== sT.bits[i]).map((d) => DIMS[d].n).join("·")}에서 시선이 갈렸어요.`}`, ev: [`친구들이 본 나: ${fT.line}`, `내가 본 나: ${sT.line}`] },
+      { h: "누가 답해 줬나", p: `찐친·가족 ${c3}명, 친구 ${c2}명, 아는 사이 ${c1}명이 답해 줬어요.${gold ? ` 그중 ${gold}명은 60개를 다 답해 황금별을 달아 줬어요.` : ""}`, ev: [] },
+    ] };
+  }
+  function openReport(r) {
+    $("#reportIn").innerHTML = `${head("report", `결 보고서 ${S.reports.indexOf(r) + 1}호`, "뒤로")}<p class="sub">${r.date} 발행 · 친구 ${r.n}명 · 답 ${fmt(r.answers)}개 기준. 발행한 날의 숫자가 그대로 보관돼요.</p>
+      ${r.sections.map((s) => `<div class="blk"><h3>${s.h}</h3><p class="txt">${s.p}</p>${s.ev.map((e) => `<p class="ev">${e}</p>`).join("")}</div>`).join("")}
+      <p class="sub">기록판의 숫자를 글로 정리한 무료 보고서예요. 근거 줄은 모두 실제 답 개수에서 나와요.</p>`;
+    showPage("report");
+  }
+  function openStories() {
+    S.unread = 0; hud();
+    const list = S.stories.length ? S.stories.map((s, i) => `<article class="story"><div class="top"><div class="who"><span class="tag">${s.tag}</span><span>${CLOSE[s.close - 1]} · ${s.author}</span></div><button class="sw" type="button" role="switch" aria-checked="${s.shared}" aria-label="모두의 이야기에 공유" data-share="${i}"><i></i></button></div><p>${s.text}</p>${s.shared ? `<span class="on">모두의 이야기에 올라가 있어요</span>` : ""}</article>`).join("") : `<p class="sub">아직 받은 이야기가 없어요. 친구가 별을 달 때 이야기를 함께 남길 수 있어요.</p>`;
+    $("#storiesIn").innerHTML = `${head("stories", "받은 이야기")}<p class="sub">스위치를 켜면 「모두의 이야기」에 이름 없이 올라가요. 끄면 바로 내려가요.</p>${list}`;
+    showPage("stories");
+  }
+  function openSpace() {
+    const mine = S.stories.filter((s) => s.shared).map((s) => ({ ...s, to: "나", likes: s.likes || 0, mine: true, ref: s }));
+    let list = [...mine, ...S.feed];
+    if (S.feedSort === "hot") list = [...list].sort((a, b) => (b.likes + (b.liked ? 1 : 0)) - (a.likes + (a.liked ? 1 : 0)));
+    const top = [...S.feed].sort((a, b) => b.likes - a.likes)[0];
+    const card = (s, k, feat) => `<article class="story${feat ? " feat" : ""}"><div class="top"><div class="who"><span class="tag">${s.tag}</span><span>${s.mine ? "내가 받은 이야기" : `${s.author}이 남긴 이야기`}</span></div></div><p>${s.text}</p>
+      <div class="top"><button class="heart press" type="button" aria-pressed="${!!s.liked}" data-like="${k}" aria-label="좋아요"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="${s.liked ? "#FFB3C4" : "none"}" stroke="${s.liked ? "#FFB3C4" : "#F4F4F7"}" stroke-width="1.4"></path></svg>${fmt(s.likes + (s.liked ? 1 : 0))}</button>${feat ? `<span class="pill">오늘 가장 많은 마음</span>` : ""}</div></article>`;
+    S._spaceList = list; S._top = top;
+    $("#spaceIn").innerHTML = `${head("space", "모두의 이야기")}<p class="sub">친구가 친구에게 써 준 이야기 중, 받은 사람이 직접 고른 것만 올라와요. 누가 누구에게 썼는지는 보이지 않아요.</p>
+      ${card(top, "top", true)}
+      <div class="seg2" role="group" aria-label="정렬"><button type="button" data-sort="new" aria-pressed="${S.feedSort === "new"}">최신</button><button type="button" data-sort="hot" aria-pressed="${S.feedSort === "hot"}">마음 많은 순</button></div>
+      ${list.filter((s) => s !== top).map((s, k) => card(s, k)).join("")}`;
+    showPage("space");
+  }
+  function openAcct() {
+    const n = S.obs.length;
+    const reps = S.reports.length ? S.reports.map((r, i) => `<button class="row" type="button" data-open-report="${i}"><span class="t"><span>결 보고서 ${i + 1}호</span><small>${r.date} · 친구 ${r.n}명 · 답 ${fmt(r.answers)}개</small></span><span>읽기 ›</span></button>`).join("") : `<p class="sub">친구 답이 60개 모이면 첫 보고서를 발행할 수 있어요. 지금 ${fmt(S.answers)}개.</p>`;
+    $("#acctIn").innerHTML = `${head("acct", "내 계정")}
+      <div class="prof"><div class="ava" aria-hidden="true">민</div><div><b>민지</b><span>@minji.k · ${stageOf(n)[1]} · 친구 ${n}명</span></div></div>
+      <div class="blk"><h3>내 리포트</h3><span class="pill" style="justify-self:start">무료 · 결 보고서</span>${reps}
+        <span class="pill" style="justify-self:start;margin-top:6px">심층 리포트 · 유료</span>
+        <button class="row" type="button" data-soon><span class="t"><span>나라는 사람</span><small>2026.11.03 구매 · 사주 × MBTI</small></span><span>읽기 ›</span></button>
+        <button class="row" type="button" data-soon><span class="t"><span>나의 2027</span><small>2026.12.01 구매 · 세운</small></span><span>읽기 ›</span></button>
+        <p class="sub">예시예요. 지금까지 구매한 책은 그대로 이 칸으로 옮겨져요.</p>
+        <button class="btn press" type="button" data-soon>더 깊이 보기 · 사주 · 자미두수 리포트</button></div>
+      <div class="blk"><h3>이야기</h3><button class="row" type="button" data-go-stories><span>받은 이야기</span><span>${S.stories.length}개 · 공유 ${S.stories.filter((s) => s.shared).length}</span></button><button class="row" type="button" data-soon><span>내가 별을 달아 준 사람</span><span>3명</span></button></div>
+      <div class="blk"><h3>설정</h3>
+        <button class="row" type="button" data-soon><span>내 별자리 공개 페이지</span><span>켜짐 · gyeolreport.com/@minji.k</span></button>
+        <button class="row" type="button" data-soon><span>아이디</span><span>@minji.k · 30일에 한 번 변경</span></button>
+        <button class="row" type="button" data-soon><span>알림</span><span>새 별 · 새 이야기 · 이메일</span></button>
+        <button class="row" type="button" data-soon><span>로그인 수단</span><span>카카오</span></button>
+        <button class="row" type="button" data-soon><span>로그아웃</span><span></span></button>
+        <button class="row" type="button" data-soon><span>탈퇴</span><span>내 별과 답이 모두 지워져요</span></button></div>`;
+    showPage("acct");
+  }
+  document.addEventListener("click", (e) => {
+    const bk = e.target.closest("[data-back]"); if (bk) { $("#" + bk.dataset.back).hidden = true; return; }
+    const rp = e.target.closest("[data-report]"); if (rp && !rp.disabled) { const r = buildReport(); S.reports.push(r); openBoard(); openReport(r); return; }
+    const or = e.target.closest("[data-open-report]"); if (or) { openReport(S.reports[+or.dataset.openReport]); return; }
+    if (e.target.closest("[data-go-stories]")) { openStories(); return; }
+    const sh = e.target.closest("[data-share]"); if (sh) { const s = S.stories[+sh.dataset.share]; s.shared = !s.shared; if (s.likes === undefined) s.likes = 0; buzz(8); openStories(); return; }
+    const lk = e.target.closest("[data-like]"); if (lk) { const k = lk.dataset.like, s = k === "top" ? S._top : S._spaceList.filter((x) => x !== S._top)[+k]; const tgt = s.ref || s; tgt.liked = !tgt.liked; s.liked = tgt.liked; buzz(8); openSpace(); return; }
+    const so = e.target.closest("[data-sort]"); if (so) { S.feedSort = so.dataset.sort; openSpace(); return; }
+    if (e.target.closest("[data-soon]")) toast("이 화면은 개발 때 이어서 설계해요");
+  });
+
+  // ---------- share card ----------
+  function miniSVG() {
+    const sc = 100 / 2.2, P = SV.map((v) => [v.x * sc, -v.y * sc]);
+    return EDGES.map(([a, b]) => `<line x1="${P[a][0].toFixed(1)}" y1="${P[a][1].toFixed(1)}" x2="${P[b][0].toFixed(1)}" y2="${P[b][1].toFixed(1)}" stroke="#fff" stroke-opacity=".7" stroke-width="1"></line>`).join("") + P.map(([x, y]) => `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="3" fill="#fff"></circle>`).join("") + `<circle cx="0" cy="0" r="4" fill="#FFF3E6"></circle>`;
+  }
+  function fillCard() {
+    const syn = syncVal(), n = S.obs.length;
+    $("#cNum").innerHTML = `${syn === null ? "—" : Math.round(syn) + "%"}<small>싱크로율</small>`;
+    $("#cStage").hidden = !S.showStage; $("#cStage").textContent = `${stageOf(n)[1]} · 친구 ${n}명이 별을 달아 줬어요`;
+    $("#cSw").setAttribute("aria-checked", String(S.showStage));
+    const card = $("#card"), photo = S.layout === "photo" && S.photo;
+    card.classList.toggle("photo", !!photo); card.style.backgroundImage = photo ? `url("${S.photo}")` : "none";
+    const mini = $("#cMini"); mini.hidden = !photo; if (photo) mini.innerHTML = miniSVG();
+    document.querySelectorAll("[data-lay]").forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.lay === S.layout)));
+  }
+  function openCard() { S.card = true; $("#cardwrap").hidden = false; $("#home").style.visibility = "hidden"; fillCard(); }
+  function closeCard() { S.card = false; $("#cardwrap").hidden = true; $("#home").style.visibility = ""; }
+  $("#cToggle").addEventListener("click", () => { S.showStage = !S.showStage; buzz(8); fillCard(); });
+  document.querySelectorAll("[data-lay]").forEach((b) => b.addEventListener("click", () => { if (b.dataset.lay === "photo" && !S.photo) { $("#photoIn").click(); return; } S.layout = b.dataset.lay; fillCard(); }));
+  $("#photoIn").addEventListener("change", (e) => { const f = e.target.files && e.target.files[0]; if (!f) return; if (S.photo) URL.revokeObjectURL(S.photo); S.photo = URL.createObjectURL(f); S.layout = "photo"; fillCard(); });
+  $("#cShare").addEventListener("click", () => toast("실서비스에서는 이 카드가 이미지로 저장돼 스토리에 올라가요"));
+  $("#cClose").addEventListener("click", closeCard);
+
+  // ---------- friend view: answer → finish → (story) → star lands → result ----------
+  const R = { close: 2, step: 0, n: 0, tag: 2 };
+  const name = "민지";
+  function raterRender() {
+    const box = $("#rbox");
+    if (R.step === 0) box.innerHTML = `<span class="rk">친구 시점 미리보기 · @minji.k가 올린 링크로 들어왔어요</span><h3>${name}의 결에<br>별 하나를 달아 주세요</h3>
+      <span class="rk">${name}와 나는</span><div class="three" role="group" aria-label="친밀도">${CLOSE.map((l, i) => `<button type="button" data-lv="${i + 1}" aria-pressed="${R.close === i + 1}">${l}</button>`).join("")}</div>
+      <span class="rk">${CLOSE_CAP[R.close - 1]} · 가까울수록 더 밝은 별이 돼요</span><button class="cta press" type="button" data-r="go">시작하기 · 12문항 1분</button>`;
+    else if (R.step === 1) box.innerHTML = `<span class="rk">${name}의 질문 · ${R.n + 1}~${R.n + 12}번째 / 60</span><h3>단체 사진을 찍을 때<br>${name}는?</h3>
+      <div class="opts" style="margin-top:0"><button class="opt press" type="button" data-r="ans"><b>A</b><span>가운데서 분위기를 띄운다</span></button><button class="opt press" type="button" data-r="ans"><b>B</b><span>찍어 주는 쪽이 편하다</span></button></div><span class="rk">시안이라 한 번 누르면 12문항 몫이 채워져요.</span>`;
+    else if (R.step === 2) box.innerHTML = `<span class="rk">${name}의 질문 · ${R.n} / 60</span><h3>${R.n}개 다 답했어요</h3>
+      <button class="cta press" type="button" data-r="finish">질문 끝내기</button>
+      <button class="btn press" type="button" data-r="more">계속 답하기 · 60개를 다 하면 황금별 (${60 - R.n}개 남음)</button>`;
+    else if (R.step === 3) box.innerHTML = `<span class="rk">마지막으로, 하고 싶은 말이 있다면</span><h3>${name} 이야기 하나 남길래요?</h3>
+      <div class="chips" role="group" aria-label="이야기 종류">${TAGS.map((t, i) => `<button type="button" data-tag="${i}" aria-pressed="${R.tag === i}">${t}</button>`).join("")}</div>
+      <label class="rk" for="rStory">${name}에게 남기는 이야기 · 기본은 이름 없이 전해져요</label><textarea id="rStory" rows="4">수학여행 때 자기가 지도 본다더니 30분 동안 반대로 걸었음. 근데 계속 웃겨서 하나도 안 힘들었어.</textarea>
+      <button class="cta press" type="button" data-r="attach">별 달기</button><button class="linkbtn" type="button" data-r="attach-only">이야기 없이 별 달기</button>`;
+  }
+  function raterResult(st) {
+    const box = $("#rbox");
+    box.innerHTML = `<span class="rk">${st.full ? "황금별" : "별"}이 ${name}의 별자리에 달렸어요</span>
+      <h3>${st.full ? `${name}에게 황금별을 달아 줬어요` : `${name}에게 별을 달아 줬어요`}</h3>
+      <div class="score"><b>${st.score}%</b><span>너는 ${name}를<br>이만큼 알고 있어요</span></div>
+      <div class="mystar"><i class="${st.full ? "g" : ""}"></i><span>${st.full ? "60개를 다 답한 친구만 다는 황금별" : `${CLOSE[st.close - 1]}의 별 · 답 ${st.nAns}개`}</span></div>
+      <button class="cta press" type="button" data-r="mine">나도 내 별 만들기</button><span class="rk" style="text-align:center">만들고 나면 ${name}에게도 내 별자리 링크를 보낼 수 있어요.</span>
+      <button class="linkbtn" type="button" data-r="close">닫기</button>`;
+    $("#rater").hidden = false;
+  }
+  $("#rbox").addEventListener("click", (e) => {
+    const lv = e.target.closest("[data-lv]"); if (lv) { R.close = +lv.dataset.lv; buzz(8); raterRender(); return; }
+    const tg = e.target.closest("[data-tag]"); if (tg) { R.tag = +tg.dataset.tag; raterRender(); return; }
+    const b = e.target.closest("[data-r]"); if (!b) return; const a = b.dataset.r;
+    if (a === "go") { R.step = 1; R.n = 0; }
+    else if (a === "ans") { R.n = Math.min(60, R.n + 12); buzz(10); R.step = R.n >= 60 ? 3 : 2; }
+    else if (a === "more") R.step = 1;
+    else if (a === "finish") R.step = 3;
+    else if (a === "attach" || a === "attach-only") {
+      const txt = (document.getElementById("rStory") || {}).value || "";
+      const story = a === "attach" && txt.trim() ? { tag: TAGS[R.tag], text: txt.trim(), author: "익명" } : null;
+      $("#rater").hidden = true; addObserver(R.n, R.close, true, { story }); return;
+    }
+    else if (a === "mine") { $("#rater").hidden = true; toast("실서비스에서는 로그인 → 내 질문 60개 → 빅뱅으로 이어져요"); return; }
+    else if (a === "close") { $("#rater").hidden = true; return; }
+    raterRender();
+  });
+  $("#raterBtn").addEventListener("click", () => { if (S.phase !== "home") return; R.step = 0; R.n = 0; raterRender(); $("#rater").hidden = false; });
+
+  // ---------- flow ----------
+  function showScene(id) { ["login", "quiz", "home"].forEach((s) => { const el = $("#" + s); if (s === id) { el.hidden = false; requestAnimationFrame(() => el.classList.remove("fade")); } else { el.classList.add("fade"); setTimeout(() => { if (S.phase !== s && !(s === "quiz" && S.phase === "collapse")) el.hidden = true; }, 900); } }); }
+  function renderQ() { const q = QS[S.qi]; $("#qt").textContent = q.q; $("#qa").textContent = q.a; $("#qb").textContent = q.b; const qin = $("#qin"); qin.classList.remove("qin"); void qin.offsetWidth; qin.classList.add("qin"); }
+  function orbScreen() { tmp.copy(orb.position); tmp.project(camera); return [(tmp.x * .5 + .5) * innerWidth, (-tmp.y * .5 + .5) * innerHeight]; }
+  function beam(btn, onHit) {
+    const r = btn.getBoundingClientRect(), x0 = r.left + r.width * .5, y0 = r.top + r.height * .5, [x1, y1] = orbScreen();
+    const [cr, cg, cb] = heatRGB(Math.min(1, S.heatT + .1)).map((v) => Math.round(v * 255));
+    const mx = (x0 + x1) / 2 + (rand() - .5) * 140, my = (y0 + y1) / 2 + (rand() - .5) * 60, dur = reduce ? 200 : 760 + rand() * 120;
+    for (let k = 0; k < 7; k++) {
+      const el = document.createElement("span"); el.className = "beam"; const sz = 1 - k * .12;
+      el.style.background = `radial-gradient(circle, rgba(255,255,255,${(.95 * sz).toFixed(2)}) 0%, rgba(${cr},${cg},${cb},${(.7 * sz).toFixed(2)}) 35%, rgba(${cr},${cg},${cb},0) 70%)`;
+      el.style.width = el.style.height = `${(14 * sz).toFixed(1)}px`; document.body.appendChild(el);
+      const a = el.animate([{ transform: `translate(${x0}px,${y0}px)`, opacity: 0 }, { transform: `translate(${mx}px,${my}px)`, opacity: .95 * sz, offset: .45 }, { transform: `translate(${x1}px,${y1}px)`, opacity: .9 * sz }], { duration: dur, delay: k * 26, easing: "cubic-bezier(.55,0,.75,.35)", fill: "forwards" });
+      a.onfinish = () => { el.remove(); if (k === 0) onHit(); };
+    }
+  }
+  let lock = false;
+  function setProgress() { $("#qn").textContent = `답 ${S.done} / 60`; $("#qbar").style.transform = `scaleX(${S.done / 60})`; }
+  function answer(i, btn) {
+    if (S.phase !== "quiz" || lock) return; lock = true;
+    const q = QS[S.qi]; S.ans[q.d] = i; S.str[q.d] = .45 + rand() * .55;
+    const before = S.done; S.done = Math.min(60, S.done + 10); S.qi++;
+    buzz(10); if (btn) btn.classList.add("picked");
+    const hit = () => {
+      S.heatT = S.done / 60; S.pulse = 1; setProgress();
+      if (Math.floor(S.done / 12) > Math.floor(before / 12) && S.done < 60) { ringAt = S.t; ringCol = heatRGB(S.heatT); const m = $("#mile"); m.textContent = `답 ${Math.floor(S.done / 12) * 12} / 60 · 별의 온도가 올라가요`; m.classList.add("on"); setTimeout(() => m.classList.remove("on"), 2200); buzz([10, 40, 16]); }
+    };
+    beam(btn || document.querySelectorAll(".opt[data-o]")[i], hit);
+    setTimeout(() => { if (btn) btn.classList.remove("picked"); if (S.qi >= QS.length) setTimeout(collapse, 650); else renderQ(); lock = false; }, btn ? 420 : 60);
+  }
+  function collapse() { for (let d = 0; d < 10; d++) if (S.ans[d] === null) { S.ans[d] = rand() < .5 ? 0 : 1; S.str[d] = .4 + rand() * .6; } buildSelf(); S.phase = "collapse"; S.collapseAt = S.t; $("#quiz").classList.add("fade"); buzz([20, 60, 30]); }
+  function bang() { S.phase = "bang"; S.bangAt = S.t; const f = $("#flash"); f.style.transition = "none"; f.style.opacity = reduce ? .3 : .95; void f.offsetWidth; f.style.transition = "opacity 1.5s cubic-bezier(.2,.75,.1,1)"; f.style.opacity = 0; buzz([40, 30, 80, 40, 120]); }
+  function toHome() { S.phase = "home"; $("#quiz").hidden = true; showScene("home"); hud(); toast("내 별이 태어났어요. 이제 친구들이 별을 달아 줄 차례예요"); }
+  function restart() {
+    Object.assign(S, { phase: "login", qi: 0, done: 0, ans: Array(10).fill(null), heat: 0, heatT: 0, collapseAt: -1, bangAt: -1, total: Array(10).fill(0), match: Array(10).fill(0), obs: [], answers: 0, reports: [], stories: [], unread: 0, showStage: false, nebT: 0, galT: 0, clusT: 0, queue: [] });
+    STARS.length = 0; fG.setDrawRange(0, 0); $("#cPath").setAttribute("d", ""); core.scale.set(0, 0, 1); setProgress(); hud();
+    ["board", "stories", "space", "acct", "report"].forEach((id) => ($("#" + id).hidden = true)); closeCard(); showScene("login"); $("#quiz").hidden = true;
+  }
+  document.querySelectorAll("[data-start]").forEach((b) => b.addEventListener("click", () => { S.phase = "quiz"; S.quizAt = S.t; S.qi = 0; S.done = 0; S.heatT = 0; setProgress(); renderQ(); showScene("quiz"); buzz(10); }));
+  document.querySelectorAll(".opt[data-o]").forEach((b) => b.addEventListener("click", () => answer(+b.dataset.o, b)));
+  $("#skip").addEventListener("click", () => { if (S.phase !== "quiz") return; const left = QS.length - S.qi; for (let j = 0; j < left; j++) setTimeout(() => answer(rand() < .5 ? 0 : 1, null), j * 480); });
+  $("#demoT").addEventListener("click", (e) => { const d = $("#demo"); d.hidden = !d.hidden; e.currentTarget.setAttribute("aria-expanded", String(!d.hidden)); });
+  document.querySelectorAll("[data-add]").forEach((b) => b.addEventListener("click", () => {
+    if (S.phase !== "home") return; const v = b.dataset.add, n = STARS.length + S.queue.length;
+    const cl = () => { const r = rand(); return r < .25 ? 3 : r < .7 ? 2 : 1; };
+    if (v === "1") addObserver(12, cl(), true); else if (v === "j") addObserver(60, cl(), true);
+    else for (let k = n; k < +v; k++) S.queue.push(() => addObserver(rand() < .1 ? 60 : rand() < .3 ? 24 : 12, cl(), false));
+  }));
+  $("#restart").addEventListener("click", restart);
+  $("#syncBtn").addEventListener("click", openBoard);
+  $("#storyBtn").addEventListener("click", openStories);
+  $("#spaceBtn").addEventListener("click", openSpace);
+  $("#meBtn").addEventListener("click", openAcct);
+  $("#shareBtn").addEventListener("click", openCard);
+
+  const look = { x: 0, y: 0, vx: 0 }; let drag = null; const cvEl = $("#gl");
+  cvEl.addEventListener("pointerdown", (e) => { drag = { x: e.clientX, y: e.clientY }; cvEl.setPointerCapture(e.pointerId); });
+  cvEl.addEventListener("pointermove", (e) => { if (!drag) return; const dx = (e.clientX - drag.x) / innerWidth, dy = (e.clientY - drag.y) / innerHeight; look.vx = dx * 2.5; look.x += dx * 2.5; look.y = clamp(look.y + dy * 1.6, -.5, .5); drag = { x: e.clientX, y: e.clientY }; });
+  const endDrag = () => { drag = null; }; cvEl.addEventListener("pointerup", endDrag); cvEl.addEventListener("pointercancel", endDrag);
+
+  function resize() { renderer.setSize(innerWidth, innerHeight, false); camera.aspect = innerWidth / innerHeight; camera.updateProjectionMatrix(); $("#graph").setAttribute("viewBox", `0 0 ${innerWidth} ${innerHeight}`); }
+  addEventListener("resize", resize); resize();
+  let last = performance.now(), frames = 0, acc = 0;
+  const L = (a, b, r, dt) => a + (b - a) * (1 - Math.exp(-dt * r));
+  function frame(now) {
+    const dt = Math.min(.05, (now - last) / 1000); last = now; S.t += dt; const t = S.t;
+    mats.forEach((m) => (m.uniforms.uTime.value = t)); orbMat.uniforms.uTime.value = t;
+    S.heat = L(S.heat, S.heatT, 1.6, dt); S.pulse *= Math.exp(-dt * 3.2);
+    S.neb = L(S.neb, S.nebT, .7, dt); S.gal = L(S.gal, S.galT, .6, dt); S.clus = L(S.clus, S.clusT, .9, dt);
+    const tanH = Math.tan((camera.fov * Math.PI) / 360), Rr = 2.35;
+    let Z = Math.max(Rr / (.72 * tanH * camera.aspect), Rr / (.42 * tanH)) * (1 + .35 * S.gal);
+    let liftT = S.phase === "home" ? -.02 : .14;
+    if (S.card) { const r = $("#card").getBoundingClientRect(); liftT = -(((r.top + r.height * .4) / innerHeight) * 2 - 1); Z *= Math.max(1.2, (innerWidth * .7) / r.width) * 1.05; }
+    S.lift = L(S.lift, liftT, 2, dt); S.zoomZ = L(S.zoomZ || Z, Z, 2.2, dt);
+    camera.position.set(0, 0, S.zoomZ); camera.lookAt(0, 0, 0);
+    world.position.y = S.lift * S.zoomZ * tanH;
+    if (!drag) { look.x += look.vx * dt; look.vx *= Math.exp(-dt * 2.5); look.x *= Math.exp(-dt * .35); look.y *= Math.exp(-dt * .6); }
+    world.rotation.y = look.x + Math.sin(t * .06) * (reduce ? .03 : .14); world.rotation.x = look.y * .5;
+    sky.rotation.y = world.rotation.y * .2 + t * .003; sky.rotation.x = world.rotation.x * .2;
+    gal.rotation.y = t * .025;
+    let skyA = .4, orbA = 0, collapseK = 0, selfA = 0, segs = 0, coreS = 0;
+    if (S.phase === "quiz") { skyA = .1; orbA = clamp((t - S.quizAt) / 1.4, 0, 1); }
+    if (S.phase === "collapse") { const ct = t - S.collapseAt; skyA = .1 * (1 - ease(ct / .8)); collapseK = ease(ct / .8); orbA = ct < .8 ? 1 : Math.max(0, 1 - (ct - .8) / .15); if (ct > 1.25) bang(); }
+    if (S.phase === "bang" || S.phase === "home") {
+      const bt = S.phase === "bang" ? t - S.bangAt : 99;
+      burstMat.uniforms.uBang.value = Math.min(bt, 6); burstMat.uniforms.uOpacity.value = bt < 6 ? 1 : 0;
+      if (bt < 2.2) { ringAt = S.bangAt; ringCol = [1, .95, .9]; }
+      const growth = 1 + .25 * S.clus + .35 * S.neb + .4 * S.gal;
+      const ce = bt < .9 ? ease(bt / .9) * 1.45 : 1.45 - .3 * ease((bt - .9) / 1.2); coreS = ce * growth * (1 + .025 * Math.sin(t * 2));
+      skyA = ease((bt - .6) / 2.6); selfA = ease((bt - .7) / 1.2); segs = Math.floor(ease((bt - .9) / 1.6) * EDGES.length);
+      if (S.phase === "bang" && bt > 3.2) toHome();
+    } else burstMat.uniforms.uOpacity.value = 0;
+    orb.position.set(0, world.position.y, 0);
+    orbMat.uniforms.uHeat.value = S.heat; orbMat.uniforms.uPulse.value = S.pulse; orbMat.uniforms.uAlpha.value = orbA; orbMat.uniforms.uCollapse.value = collapseK;
+    const rk = (t - ringAt) / (S.phase === "bang" ? 1.9 : 1.3);
+    ring.material.opacity = rk >= 0 && rk < 1 ? .7 * (1 - rk) : 0; const rs = S.phase === "bang" ? .3 + rk * 13 : .5 + rk * 4.5; ring.scale.set(rs, rs, 1); ring.position.copy(orb.position); ring.material.color.setRGB(ringCol[0], ringCol[1], ringCol[2]);
+    farMat.uniforms.uOpacity.value = skyA; bandMat.uniforms.uOpacity.value = skyA * .85;
+    selfMat.uniforms.uOpacity.value = selfA; core.scale.set(coreS * 1.4, coreS * 1.4, 1);
+    clusMat.uniforms.uOpacity.value = S.clus * .9; nebMat.uniforms.uOpacity.value = S.neb * .85; galMat.uniforms.uOpacity.value = S.gal * .9;
+    if (S.queue.length && S.phase === "home") { S.qAcc += dt; const step = S.queue.length > 40 ? .03 : .06; while (S.qAcc > step && S.queue.length) { S.queue.shift()(); S.qAcc -= step; } }
+    const p = fG.attributes.position.array, c = fG.attributes.aColor.array, s = fG.attributes.aSize.array, n = Math.min(STARS.length, CAP);
+    for (let i = 0; i < n; i++) {
+      const st = STARS[i]; let x, y, z, sz = st.size;
+      if (!st.landed) { const u = ease((t - st.t0) / st.dur), a = 1 - u; x = a * a * st.from.x + 2 * a * u * st.ctrl.x + u * u * st.target.x; y = a * a * st.from.y + 2 * a * u * st.ctrl.y + u * u * st.target.y; z = a * a * st.from.z + 2 * a * u * st.ctrl.z + u * u * st.target.z; sz = st.size * 1.6; if (t >= st.t0 + st.dur) onLand(st); }
+      else { x = st.target.x; y = st.target.y; z = st.target.z; sz = st.size * (1 + 1.4 * Math.exp(-(t - st.landAt) * 5)) * (st.full ? 1 + .08 * Math.sin(t * 2 + i) : 1); }
+      p[i * 3] = x; p[i * 3 + 1] = y; p[i * 3 + 2] = z; c[i * 3] = st.col[0]; c[i * 3 + 1] = st.col[1]; c[i * 3 + 2] = st.col[2]; s[i] = sz;
+    }
+    fG.setDrawRange(0, n); fG.attributes.position.needsUpdate = true; fG.attributes.aColor.needsUpdate = true; fG.attributes.aSize.needsUpdate = true;
+    renderer.render(scene, camera);
+    if (S.phase === "bang" || S.phase === "home") { const n2 = S.obs.length; drawLines(selfA * (n2 >= 3 ? .62 : n2 >= 1 ? .5 : .4), segs); }
+    frames++; acc += dt;
+    if (frames === 50) { const avg = acc / frames; if (avg > .028 && PR > 1) { PR = Math.max(1, PR - .35); renderer.setPixelRatio(PR); resize(); mats.forEach((m) => (m.uniforms.uPR.value = PR)); } frames = 0; acc = 0; }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+})();
+</script>

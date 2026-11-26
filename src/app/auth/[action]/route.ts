@@ -56,7 +56,10 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   // F: 시험 계정(관리자·누나 계정 + DB 「시험 계정 표」) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
   const { liveTestAccountIds } = await import("../../../lib/ops/notify/deps");
   const testers = await liveTestAccountIds(), isTester = (id: string) => testers.has(id.toLowerCase());
-  if (action !== "session") return handleAccount(request, action, port, false, { isTester });
+  // 「남이 본 나」(명령 1/3): 관문이 열려 있을 때만, "/"(이 서비스)로 시작한 로그인은 동의 · 프로필을 그 화면이 받는다.
+  const { mirrorPublicEnabled } = await import("../../../lib/mirror/gate");
+  const mirrorFlow = (next: string) => mirrorPublicEnabled() && next === "/";
+  if (action !== "session") return handleAccount(request, action, port, false, { isTester, mirrorFlow });
   // 재동의 화면 맨 위 한 줄(P 본문 3): 안 쓴 보상 이용권이 있는 기존 회원에게만(읽기 전용 ops_comp_campaign 'popup').
   const { compCampaignStore } = await import("../../../lib/ops/comp/popup");
   const { createOpsStores } = await import("../../../lib/ops/store");
