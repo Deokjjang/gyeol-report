@@ -1,6 +1,6 @@
 "use client";
 /**
- * 홈 위에 열리는 층: 받은 이야기 · 모두의 이야기(D6) · 기록판 · 결 보고서(D5) · 내 계정(프로필 · 내 리포트 · 설정).
+ * 홈 위에 열리는 층: 받은 이야기 · 모두의 이야기(D6) · 기록판 · 결 보고서(D5). 내 계정은 따로 된 주소 /me(명령 3 D7, components/mirror/account/MeApp.tsx).
  * 서버가 계산한 숫자 · 스냅샷만 그린다(친구 답 원본 · 계정 id 없음). 문구는 SPEC 「문구 정리표」(해요체).
  */
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -10,9 +10,7 @@ import { constellationSvg } from "../../lib/mirror/constellationSvg";
 import { CLOSENESS_LABEL } from "../../lib/mirror/engine";
 import type { IssueRow, PublicStory } from "../../lib/mirror/social";
 import type { ReportSnapshot } from "../../lib/mirror/report/types";
-import { SUPPORT_CHAT_URL } from "../../lib/legal/socialLinks";
-import { legalLinks } from "../legal/LegalPageLayout";
-import { mirrorApi, type ProfileView } from "./client";
+import { mirrorApi } from "./client";
 import { ReportView } from "./report/ReportView";
 import { EmptyPage } from "./screens";
 import s from "./mirror.module.css";
@@ -182,43 +180,5 @@ export function BoardPage({ onBack, onAsk, onShareScene, say, openIssue }: { onB
       <span>{([1, 2, 3] as const).map(k => `${CLOSENESS_LABEL[k]} ${b.byCloseness[k] ?? "-"}`).join(" · ")}</span>
       <span style={{ fontSize: 11, color: "var(--faint)" }}>3명이 안 되는 묶음은 숫자를 숨겨요</span>
     </div>
-  </EmptyPage>;
-}
-
-/* ---------- 내 계정: 프로필 · 내 리포트 · 설정 ---------- */
-export function MePage({ profile, provider, onBack, onAsk, onOpenIssue, onPublic, say }: { profile: ProfileView; provider: "kakao" | "google"; onBack: () => void; onAsk: () => void; onOpenIssue: (no: number) => void; onPublic: (v: boolean) => void; say: Say }) {
-  const [issues, setIssues] = useState<IssueRow[] | null>(null), [answers, setAnswers] = useState(0), [isPublic, setIsPublic] = useState(profile.isPublic);
-  useEffect(() => { void mirrorApi<{ board: BoardView; issues: IssueRow[] }>("board").then(r => { if (r.ok) { setIssues(r.data.issues); setAnswers(r.data.board.answers); } else setIssues([]); }); }, []);
-  async function togglePublic() {
-    const next = !isPublic; setIsPublic(next);
-    const r = await mirrorApi("settings", { method: "POST", body: { isPublic: next } });
-    if (!r.ok) { setIsPublic(!next); say(r.data.error ?? "저장하지 못했어요."); return; }
-    onPublic(next); say(next ? "이제 링크로 답을 받아요" : "이제 링크로 답을 받지 않아요");
-  }
-  async function logout() {
-    const r = await fetch("/auth/logout", { method: "POST", headers: { "content-type": "application/json" }, body: "{}" }).catch(() => null);
-    if (r?.ok) location.replace("/"); else say("로그아웃하지 못했어요. 다시 시도해 주세요.");
-  }
-  const terms = legalLinks.find(l => l.href === "/terms")!, privacy = legalLinks.find(l => l.href === "/privacy")!, business = legalLinks.find(l => l.href === "/business")!;
-  return <EmptyPage page="me" onBack={onBack}>
-    <div className={f.prof}><span className={f.avatar}>{[...profile.name][0]}</span><div><b>{profile.name}</b><span>@{profile.handle} · {provider === "kakao" ? "카카오" : "Google"} 로그인</span></div></div>
-    <h3 className={s.sub} style={{ margin: 0 }}>내 리포트</h3>
-    <div className={f.group}>
-      {issues && issues.length ? issues.map(x => <button key={x.issueNo} type="button" className={f.item} onClick={() => onOpenIssue(x.issueNo)} data-me-issue={x.issueNo}><span>결 보고서 {x.issueNo}호</span><small>{mdLabel(x.issuedAt)} ›</small></button>)
-        : answers >= 60 ? <button type="button" className={f.item} onClick={() => onOpenIssue(0)} data-me-issue-ready><span>결 보고서(무료)<br /><small>친구 답 {answers}개 · 받을 수 있어요</small></span><small>결 보고서 받기 ›</small></button>
-        : <button type="button" className={f.item} onClick={onAsk}><span>결 보고서(무료)<br /><small>친구 답 60개부터 · 지금 {answers}개</small></span><small>친구에게 물어보기 ›</small></button>}
-      <a className={f.item} href="/account"><span>심층 리포트</span><small>내 서재 ›</small></a>
-      <a className={f.item} href="/products"><span>더 깊이 알아보기</span><small>›</small></a>
-    </div>
-    <h3 className={s.sub} style={{ margin: 0 }}>설정</h3>
-    <div className={f.group}>
-      <div className={f.item}><span>내 페이지 공개<br /><small>끄면 링크로 답을 받지 않아요</small></span>
-        <button type="button" role="switch" aria-checked={isPublic} className={cx(f.switch, isPublic && f.switchOn)} onClick={() => void togglePublic()} data-public><i /></button></div>
-      <a className={f.item} href={SUPPORT_CHAT_URL} target="_blank" rel="noopener noreferrer"><span>고객센터</span><small>카카오톡 채팅 ›</small></a>
-      <a className={f.item} href={terms.href}><span>{terms.labelKo}</span><small>›</small></a>
-      <a className={f.item} href={privacy.href}><span>{privacy.labelKo}</span><small>›</small></a>
-      <a className={f.item} href={business.href} data-me-business><span>{business.labelKo}</span><small>상호 · 대표자 · 주소 · 연락처 · 사업자등록번호 · 통신판매업 신고번호 ›</small></a>
-    </div>
-    <div className={f.danger}><button type="button" onClick={() => void logout()}>로그아웃</button><a href="/account#withdraw" data-withdraw-link>탈퇴</a></div>
   </EmptyPage>;
 }

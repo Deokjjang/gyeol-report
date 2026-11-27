@@ -1,33 +1,61 @@
-// 「남이 본 나」 주소 · 관문: /@아이디(마침표 포함) → /u/아이디, 배포 빌드에서는 새 화면 · API · "/" 전환이 모두 닫혀 있다.
+// 「남이 본 나」 주소 · 관문(명령 3: routes · root 두 개): /@아이디(마침표 포함) → /u/아이디, 배포 빌드에서는 상수로만 연다(지금은 둘 다 닫힘 — 배포 전 정지).
 import { readFileSync } from "node:fs";
 import { NextRequest, NextResponse } from "next/server";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { config, mirrorHandleFromPath, proxy } from "../../../src/proxy";
-import { mirrorPublicEnabled } from "../../../src/lib/mirror/gate";
+import { ACCOUNT_MOVED_TO_ME, MIRROR_ROOT_LIVE, MIRROR_ROUTES_LIVE, accountMovedToMe, mirrorAppPath, mirrorRootEnabled, mirrorRoutesEnabled } from "../../../src/lib/mirror/gate";
+import { safeAccountNext } from "../../../src/lib/account/policy";
+import { maskEmail, safeMirrorNext } from "../../../src/lib/mirror/api";
 import { handleAccount, type AccountPort } from "../../../src/lib/account/handler";
 import { ACCOUNT_POLICY_VERSIONS } from "../../../src/lib/account/policy";
 
 afterEach(() => { vi.unstubAllEnvs(); });
 
-describe("공개 관문", () => {
-  it("로컬 개발(next dev)에서만 열린다", () => {
-    vi.stubEnv("NODE_ENV", "development"); expect(mirrorPublicEnabled()).toBe(true);
-    vi.stubEnv("NODE_ENV", "production"); expect(mirrorPublicEnabled()).toBe(false);
-    vi.stubEnv("NODE_ENV", "test"); expect(mirrorPublicEnabled()).toBe(false);
+describe("공개 관문 두 개(routes · root)", () => {
+  it("배포 전 정지: 두 배포 상수는 꺼져 있다(숨은 공개 · 정식 공개는 덕짱님 지시 뒤 상수 커밋으로만)", () => {
+    expect(MIRROR_ROUTES_LIVE).toBe(false);
+    expect(MIRROR_ROOT_LIVE).toBe(false);
+  });
+  it("로컬 개발(next dev)에서는 둘 다 열리고, 배포 빌드 · 시험에서는 상수(꺼짐)를 따른다", () => {
+    vi.stubEnv("NODE_ENV", "development"); expect([mirrorRoutesEnabled(), mirrorRootEnabled(), mirrorAppPath()]).toEqual([true, true, "/"]);
+    vi.stubEnv("NODE_ENV", "production"); expect([mirrorRoutesEnabled(), mirrorRootEnabled(), mirrorAppPath()]).toEqual([false, false, "/start"]);
+    vi.stubEnv("NODE_ENV", "test"); expect([mirrorRoutesEnabled(), mirrorRootEnabled()]).toEqual([false, false]);
+  });
+  it("root는 routes가 열려 있을 때만 · /account → /me는 대조 완료 + root가 열려 있을 때만", () => {
+    const src = readFileSync("src/lib/mirror/gate.ts", "utf8");
+    expect(src).toMatch(/return dev\(\) \|\| \(MIRROR_ROUTES_LIVE && MIRROR_ROOT_LIVE\);/);
+    expect(src).toMatch(/ACCOUNT_MOVED_TO_ME && mirrorRootEnabled\(\)/);
+    expect(ACCOUNT_MOVED_TO_ME).toBe(true);
+    vi.stubEnv("NODE_ENV", "production"); expect(accountMovedToMe()).toBe(false);
+    vi.stubEnv("NODE_ENV", "development"); expect(accountMovedToMe()).toBe(true);
   });
   it("관문은 요청 값 · 환경 변수로 열 수 없다(소스에 NODE_ENV 비교 하나뿐)", () => {
     const src = readFileSync("src/lib/mirror/gate.ts", "utf8").replace(/\/\*[\s\S]*?\*\//g, "");
     expect(src.match(/process\.env\.[A-Z_]+/g)).toEqual(["process.env.NODE_ENV"]);
   });
-  it("API · 랜딩 · 홈은 관문 뒤에 있다", () => {
-    expect(readFileSync("src/app/api/mirror/[action]/route.ts", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
-    expect(readFileSync("src/app/u/[handle]/page.tsx", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) notFound\(\)/);
-    // 명령 2: 링크 미리보기 이미지 · 탈퇴 연결도 관문 뒤
-    expect(readFileSync("src/app/api/mirror/og/[handle]/route.tsx", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
-    expect(readFileSync("src/app/auth/[action]/route.ts", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return \{\};/);
-    const home = readFileSync("src/app/page.tsx", "utf8");
-    expect(home.indexOf("mirrorPublicEnabled()")).toBeGreaterThan(-1);
-    expect(home.indexOf("mirrorPublicEnabled()")).toBeLessThan(home.indexOf("bookExperiencePublicEnabled()"));
+  it("새 주소(API · 랜딩 · 미리보기 · /start · /me · 탈퇴 연결 · 문항 통계)는 routes 관문 뒤, \"/\" 전환은 root 관문 뒤", () => {
+    const read = (p: string) => readFileSync(p, "utf8");
+    expect(read("src/app/api/mirror/[action]/route.ts")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
+    expect(read("src/app/u/[handle]/page.tsx")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) notFound\(\)/);
+    expect(read("src/app/api/mirror/og/[handle]/route.tsx")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
+    expect(read("src/app/start/page.tsx")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) notFound\(\);\s+if \(mirrorRootEnabled\(\)\)/);
+    expect(read("src/app/me/page.tsx")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) notFound\(\)/);
+    expect(read("src/app/admin/mirror-items/page.tsx")).toMatch(/mirrorRoutesEnabled\(\)/);
+    expect(read("src/app/auth/[action]/route.ts")).toMatch(/if \(!mirrorRoutesEnabled\(\)\) return \{\};/);
+    const home = read("src/app/page.tsx");
+    expect(home.indexOf("mirrorRootEnabled()")).toBeGreaterThan(-1);
+    expect(home.indexOf("mirrorRootEnabled()")).toBeLessThan(home.indexOf("bookExperiencePublicEnabled()"));
+    expect(read("src/app/account/page.tsx")).toMatch(/if \(accountMovedToMe\(\)\) redirect\("\/me"\)/);
+  });
+  it("로그인 콜백: 이 서비스 시작 주소로 시작한 로그인만 동의 · 프로필을 그 화면이 받는다(\"/\"는 root, /start는 routes) — 상품 · 결제 · 책 · /me는 지금처럼", () => {
+    expect(readFileSync("src/app/auth/[action]/route.ts", "utf8")).toMatch(/const mirrorFlow = \(next: string\) => \(next === "\/" && mirrorRootEnabled\(\)\) \|\| \(next === "\/start" && mirrorRoutesEnabled\(\)\);/);
+  });
+  it("돌아갈 곳: /start · /me · /products 허용(관문이 닫히면 그 주소가 404), 이 서비스 넘김은 /start · /me · /@아이디만", () => {
+    expect(["/start", "/me", "/products", "/report/new?product=saju-mbti-full", "/reports/report_abcdefghijklm"].map(v => safeAccountNext(v))).toEqual(["/start", "/me", "/products", "/report/new?product=saju-mbti-full", "/reports/report_abcdefghijklm"]);
+    expect(["/start", "/me", "/@minji.k", "/u/minji.k", "/", "/products", "https://x.com", "/me/x"].map(safeMirrorNext)).toEqual(["/start", "/me", "/@minji.k", "/u/minji.k", "/", "/", "/", "/"]);
+  });
+  it("가린 이메일: 앞 세 글자(짧으면 한 글자)만", () => {
+    expect([maskEmail("minji99@kakao.com"), maskEmail("ab@x.com"), maskEmail(null), maskEmail("not-an-email")]).toEqual(["min***@kakao.com", "a***@x.com", null, null]);
   });
 });
 
@@ -50,6 +78,7 @@ describe("/@아이디 주소", () => {
 
 describe("proxy matcher", () => {
   it("모든 matcher가 Next의 path-to-regexp로 컴파일된다(하나라도 실패하면 proxy 전체가 빠진다) · /@아이디만 잡는다", async () => {
+    // @ts-expect-error -- Next가 안에 넣은 path-to-regexp는 타입 선언이 없다(typecheck:all만 tests를 본다).
     const { pathToRegexp } = await import("next/dist/compiled/path-to-regexp") as { pathToRegexp: (p: string, k: unknown[], o: object) => RegExp };
     const res = config.matcher.map(m => pathToRegexp(m, [], {}));
     const hits = (path: string) => res.some(r => r.test(path));

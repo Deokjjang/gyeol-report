@@ -1,5 +1,5 @@
 import { bookExperiencePublicEnabled } from "../lib/book/publicGate";
-import { mirrorPublicEnabled } from "../lib/mirror/gate";
+import { mirrorRootEnabled } from "../lib/mirror/gate";
 import { MirrorEntry } from "../components/mirror/MirrorEntry";
 import { BookHomeRoute } from "../components/book/BookRoutes";
 import Link from "next/link";
@@ -15,8 +15,9 @@ import styles from "./home.module.css";
 export const revalidate = 60;
 
 export default function Home() {
-  // 「남이 본 나」(명령 1/3): 공개 관문(로컬 개발에서만 열림)이 열려 있으면 "/"는 이 서비스. 닫혀 있으면(배포 빌드) 지금 홈 그대로.
-  if (mirrorPublicEnabled()) return <MirrorEntry />;
+  // 「남이 본 나」(명령 3/3): root 관문(정식 공개)이 열려 있으면 "/"는 이 서비스. 기존 책 홈은 /products(같은 BookHomeRoute · 이벤트 팝업 · 판매 시각 관문)로 간다.
+  // 숨은 공개(routes만)에서는 "/"는 지금 홈 그대로이고, 이 서비스는 /start에서 열린다.
+  if (mirrorRootEnabled()) return <MirrorEntry appPath="/" />;
   if (bookExperiencePublicEnabled()) return <BookHomeRoute />;
   return (
     <main className={styles.home}>

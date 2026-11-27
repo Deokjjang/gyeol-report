@@ -1,7 +1,8 @@
 "use client";
 /**
  * 결 보고서 한 호(D5): 발행 때 저장한 스냅샷(ReportSnapshot)만 그린다 — 다시 계산하지 않는다.
- * 결론은 크게, 근거 줄은 작게. 꼭지 2 · 3 장면에는 「공유」(장면 공유 카드), 꼭지 8에는 「친구에게 물어보기」. 맨 아래 「근거 모두 보기」(접힘)와 심층 리포트 한 줄.
+ * 꼭지마다 첫 문장(크게) → 문장들 → 장면 목록(근거 줄은 작게) · 이야기 → 마지막 한 줄(명령 3 1-2 규칙 f · g).
+ * 꼭지 2 · 3 장면에는 「공유」(장면 공유 카드), 꼭지 8에는 「친구에게 물어보기」. 맨 아래 「근거 모두 보기」(접힘)와 심층 리포트 한 줄.
  */
 import { kstMonthDay, sceneLine } from "../../../lib/mirror/report/format";
 import type { ReportSnapshot } from "../../../lib/mirror/report/types";
@@ -20,24 +21,26 @@ export function ReportView({ snapshot: r, onShareScene, onAsk }: ReportViewProps
       <h1 className={s.verdict}>{r.verdict.title}</h1>
       <p className={s.sync}><b>{r.verdict.sync}<small>%</small></b><span>싱크로율</span></p>
       <p className={s.summary}>{r.verdict.summary}</p>
+      {r.verdict.compare ? <p className={s.summary}>{r.verdict.compare}</p> : null}
     </header>
     {r.sections.map(sec => <section key={sec.key} className={s.section} data-section={sec.key}>
       <h2 className={s.title}>{sec.title}</h2>
       {sec.lead.map((line, i) => <p key={i} className={s.lead}>{line}</p>)}
+      {sec.body.map((line, i) => <p key={i} className={s.body}>{line}</p>)}
+      {sec.notes.map((line, i) => <p key={i} className={s.note}>{line}</p>)}
       {sec.scenes.length ? <ul className={s.scenes}>
         {sec.scenes.map(sc => <li key={sc.itemId} className={s.scene} data-item={sc.itemId}>
           <p className={s.sceneLine}>{sceneLine(sec.key, sc)}</p>
           <div className={s.sceneFoot}>
             <small className={s.count}>{sc.count}</small>
-            {sc.share && onShareScene ? <button type="button" className={s.share} onClick={() => onShareScene(sc.share!)} aria-label={`이 장면 공유하기: ${sc.share.text}`}>공유</button> : null}
+            {sc.share && onShareScene ? <button type="button" className={s.share} onClick={() => onShareScene(sc.share!)} aria-label={`장면 공유하기: ${sc.share.text}`}>공유</button> : null}
           </div>
         </li>)}
       </ul> : null}
       {sec.stories?.length ? <ul className={s.stories}>
         {sec.stories.map((st, i) => <li key={i} className={s.story}><small className={s.storyTag}>{st.kindLabel} · {st.closenessLabel}</small><p>{st.body}</p></li>)}
       </ul> : null}
-      {sec.body.map((line, i) => <p key={i} className={s.body}>{line}</p>)}
-      {sec.notes.map((line, i) => <p key={i} className={s.note}>{line}</p>)}
+      {sec.closing ? <p className={s.closing} data-closing>{sec.closing}</p> : null}
       {sec.ask && onAsk ? <button type="button" className={s.ask} onClick={onAsk}>친구에게 물어보기</button> : null}
       {sec.key === "next" ? <a className={s.bridge} href={r.bridge.href}>{r.bridge.text}</a> : null}
     </section>)}

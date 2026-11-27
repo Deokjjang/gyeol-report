@@ -48,9 +48,16 @@ export const handoffHash = (token: string): string => createHash("sha256").updat
 const newToken = () => randomBytes(32).toString("base64url");
 /** 질문 순서 · 보기 순서 시드(계정 id를 그대로 보내지 않는다). */
 export const personSeed = (userId: string): string => hash32(`mirror-seed:${userId}`).toString(36);
+/** 「min***@kakao.com」: 앞 세 글자(세 글자 이하면 한 글자)만 남기고 가린다. 없거나 꼴이 아니면 null. */
+export function maskEmail(email: string | null): string | null {
+  const m = typeof email === "string" ? /^([^@\s]+)@([^@\s]+)$/.exec(email.trim()) : null;
+  if (!m) return null;
+  const keep = m[1].length > 3 ? 3 : 1;
+  return `${m[1].slice(0, keep)}***@${m[2]}`;
+}
 /** 다른 브라우저로 넘어간 뒤 돌아갈 곳: 이 서비스 화면만. */
 export function safeMirrorNext(value: unknown): string {
-  return typeof value === "string" && /^\/(?:@[A-Za-z0-9._]{3,20}|u\/[A-Za-z0-9._]{3,20})?$/.test(value) ? value : "/";
+  return typeof value === "string" && /^\/(?:@[A-Za-z0-9._]{3,20}|u\/[A-Za-z0-9._]{3,20}|start|me)?$/.test(value) ? value : "/";
 }
 
 /** 같은 출처: 운영은 정해진 공개 주소, 로컬 개발은 요청 Host 그대로(같은 Wi-Fi 폰 확인용). */
@@ -66,7 +73,7 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
   const finish = (response: NextResponse) => { for (const [k, v] of Object.entries(noStore)) response.headers.set(k, v); return account ? account.finish(response) : response; };
   const json = (body: object, status = 200) => finish(NextResponse.json(body, { status }));
   if (!account || !store) return json({ code: "MIRROR_UNAVAILABLE", error: "준비 중이에요. 잠시 후 다시 시도해 주세요." }, 503);
-  const routes: Record<string, "GET" | "POST"> = { session: "GET", handle: "GET", profile: "POST", answer: "POST", complete: "POST", handoff: request.method === "GET" ? "GET" : "POST", ...SOCIAL_ROUTES };
+  const routes: Record<string, "GET" | "POST"> = { session: "GET", handle: "GET", prefill: "GET", profile: "POST", answer: "POST", complete: "POST", handoff: request.method === "GET" ? "GET" : "POST", ...SOCIAL_ROUTES };
   if (!routes[action]) return json({ code: "NOT_FOUND" }, 404);
   if (request.method !== routes[action]) return json({ code: "METHOD_NOT_ALLOWED" }, 405);
   if (request.method === "POST") {
@@ -117,6 +124,8 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
 
     const user = await account.currentUser();
     if (!user) return withDevice(action === "session" ? json({ account: "guest" }) : json({ code: "LOGIN_REQUIRED", error: "로그인이 만료됐어요. 다시 로그인해 주세요." }, 401));
+    // 유료 대상 정보 입력 화면(명령 3 D7): 프로필의 생년월일 · 출생시간만(없으면 null). 화면은 폼 값만 채운다 — 계산 · 결제 경로는 그대로.
+    if (action === "prefill") { const p = await store.profile(user.id); return json({ birthDate: p?.birthDate ?? null, birthTime: p?.birthTime ?? null }); }
     const snapshot = await account.read(user);
     if (!snapshot) return json({ code: "ACCOUNT_UNAVAILABLE", error: "로그인 상태를 확인하지 못했어요." }, 503);
     let status = accountSession(user, snapshot).status;
@@ -132,6 +141,8 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
         profile: profile ? { name: profile.name, handle: profile.handle, isPublic: profile.isPublic, birthDate: profile.birthDate, birthTime: profile.birthTime, handleChangeAllowedAt: handleChangeAllowedAt(profile.handleChangedAt) } : null,
         self: { answers: self, completedAt: profile?.selfCompletedAt ?? null, seed: personSeed(user.id) },
         home, share: share ?? { line: null, showCount: false },
+        // 내 계정(명령 3 D7): 아이디가 없는 기존 회원도 계정 정보(이름 · 가린 이메일)를 본다. 이메일 원문은 보내지 않는다.
+        who: { name: snapshot.contact?.name ?? snapshot.profile?.displayName ?? user.displayName, email: maskEmail(snapshot.contact?.email ?? user.email ?? null) },
       };
     };
 

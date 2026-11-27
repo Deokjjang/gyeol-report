@@ -13,7 +13,7 @@ import type { StoryKind } from "../../src/data/mirror/stories";
 import { friendAttachment, openItemCount, selfAttachment, type AttachmentType, type Choice, type Closeness, type FriendChoice, type FriendSession, type SelfAnswers } from "../../src/lib/mirror/engine";
 import { hash32, seededRandom } from "../../src/lib/mirror/hash";
 import { pickBundle } from "../../src/lib/mirror/order";
-import { buildReport, repetitionFindings, reportToText } from "../../src/lib/mirror/report/engine";
+import { buildReport, repetitionFindings, reportToText, sameOwnerSkeletons, styleFindings } from "../../src/lib/mirror/report/engine";
 import type { ReportSnapshot, ReportStory } from "../../src/lib/mirror/report/types";
 
 const args = process.argv.slice(2);
@@ -41,7 +41,7 @@ type Pattern = {
 
 const PATTERNS: Pattern[] = [
   { file: "01-one-friend-60", title: "친구 1명이 60개를 다 답함", name: "민지", attach: "secure", groups: [{ closeness: 2, count: 1, answers: "all" }], skip: 0, stories: 1 },
-  { file: "02-three-friends", title: "친구 3명(친구 · 가까운 사이 · 친구) · 답 72개", name: "서준", attach: "anxious", groups: [{ closeness: 2, count: 2, answers: 24 }, { closeness: 3, count: 1, answers: 24 }] },
+  { file: "02-three-friends", title: "친구 3명(친구 · 가까운 사이 · 친구) · 1명당 24개", name: "서준", attach: "anxious", groups: [{ closeness: 2, count: 2, answers: 24 }, { closeness: 3, count: 1, answers: 24 }] },
   { file: "03-nine-friends", title: "친구 9명(아는 사이 3 · 친구 3 · 가까운 사이 3) · 감정 면이 밖에서 다르게 보임", name: "하은", attach: "avoidant", self: { emo: 1 }, bias: { emo: .82 },
     groups: [{ closeness: 1, count: 3, answers: 10 }, { closeness: 2, count: 3, answers: 24 }, { closeness: 3, count: 3, answers: 12 }], stories: 3 },
   { file: "04-forty-friends", title: "친구 40명 · 사교 면이 가까울수록 다르게 보임 · 걱정 면은 반반", name: "지훈", attach: "fearful", self: { soc: 2, worry: 5 },
@@ -140,6 +140,7 @@ mkdirSync(OUT, { recursive: true });
 const index: string[] = ["결 보고서 견본 10개(D5) — scripts/dev/mirror-report-samples.ts · 합성 데이터 · 외부 호출 0", ""];
 const attachSeen = new Set<string>();
 const snapshots: { file: string; snap: ReportSnapshot }[] = [];
+const issuePairs: { file: string; prev: ReportSnapshot; snap: ReportSnapshot }[] = [];
 for (const p of PATTERNS) {
   const rand = seededRandom(hash32(p.file));
   const self = selfFor(p, rand), sessions = sessionsFor(p, self, rand), stories = storiesFor(p, sessions);
@@ -154,6 +155,7 @@ for (const p of PATTERNS) {
   writeFileSync(join(OUT, `${p.file}.txt`), reportToText(snap) + "\n");
   writeFileSync(join(OUT, `${p.file}.json`), JSON.stringify(snap, null, 2) + "\n");
   snapshots.push({ file: p.file, snap });
+  if (previous) { issuePairs.push({ file: p.file, prev: previous, snap }); writeFileSync(join(OUT, `${p.file}.1호.txt`), reportToText(previous) + "\n"); }
   const sa = selfAttachment(self), fa = friendAttachment(sessions, self);
   if (sa) attachSeen.add(sa.type);
   index.push(`${p.file}.txt — ${p.title}`);
@@ -165,10 +167,13 @@ for (const p of PATTERNS) {
 }
 index.push(`자가 애착 유형 등장: ${[...attachSeen].sort().join(", ")}`);
 
-// 자체 점검(검사 기준 3차): (a) 한 보고서 안 — 이어진 문단의 끝맺음 낱말 · 이음말 · 첫머리 겹침, 같은 끝맺음 3번 이상,
-// (c) 다른 사람 사이 — 같은 꼭지에서 글자까지 똑같은 문장 마디(쉼표 단위, 숫자 포함). 하나라도 있으면 실패 코드로 끝난다. (b) 같은 사람의 호끼리는 report.test.ts가 본다.
-const findings = repetitionFindings(snapshots.map(x => ({ id: x.file.slice(0, 2), snapshot: x.snap })));
-index.push("", `자체 점검(한 보고서 안 · 글자 그대로): ${findings.length}건`, ...findings.map(f => `  ${f}`));
+// 자체 점검: 반복(한 보고서 안 · 같은 사람의 호끼리 · 다른 사람 사이 글자 그대로) + 문장 규칙(명령 3 1-2 a~h, styleFindings). 하나라도 있으면 실패 코드로 끝난다.
+const findings = [
+  ...repetitionFindings(snapshots.map(x => ({ id: x.file.slice(0, 2), snapshot: x.snap }))),
+  ...issuePairs.flatMap(x => sameOwnerSkeletons(x.prev, x.snap).map(k => `${x.file.slice(0, 2)} 1호 · 2호 같은 뼈대 ${k}`)),
+  ...snapshots.flatMap(x => styleFindings(x.file.slice(0, 2), x.snap)),
+];
+index.push("", `자체 점검(반복 · 문장 규칙 a~h): ${findings.length}건`, ...findings.map(f => `  ${f}`));
 writeFileSync(join(OUT, "00-index.txt"), index.join("\n") + "\n");
 console.log(JSON.stringify({ out: OUT, files: PATTERNS.length, attach: [...attachSeen].sort(), findings: findings.length }));
 for (const f of findings) console.log(f);

@@ -37,7 +37,7 @@ const CLOSENESS: readonly { id: Closeness; label: string; hint: string }[] = [
   { id: 3, label: "가까운 사이", hint: "가족 · 연인 · 오래된 단짝" },
 ];
 
-export default function FriendApp({ handle, name, line, shape }: { handle: string; name: string; line: string | null; shape: ConstellationShape | null }) {
+export default function FriendApp({ handle, name, line, shape, appPath = "/" }: { handle: string; name: string; line: string | null; shape: ConstellationShape | null; appPath?: "/" | "/start" }) {
   const [step, setStep] = useState<Step>("boot"), [landing, setLanding] = useState<Landing | null>(null);
   const [session, setSession] = useState<Summary | null>(null), [bundle, setBundle] = useState<FriendItem[]>([]), [qi, setQi] = useState(0);
   const [picked, setPicked] = useState<Record<string, 0 | 1 | 2>>({}), [busy, setBusy] = useState(false), [toast, setToast] = useState("");
@@ -115,7 +115,7 @@ export default function FriendApp({ handle, name, line, shape }: { handle: strin
       <Field />
       {svg ? <div className={f.fshape} dangerouslySetInnerHTML={{ __html: svg }} /> : null}
     </div>
-    {step === "owner" ? <Frame><div className={f.mid}><p className={f.fsub}>내 페이지예요</p><Link className={cx(s.cta, s.press)} href="/?ask=1" style={{ display: "grid", placeItems: "center", textDecoration: "none", width: "100%" }}>친구에게 물어보기</Link></div></Frame> : null}
+    {step === "owner" ? <Frame><div className={f.mid}><p className={f.fsub}>내 페이지예요</p><Link className={cx(s.cta, s.press)} href={`${appPath}?ask=1`} style={{ display: "grid", placeItems: "center", textDecoration: "none", width: "100%" }}>친구에게 물어보기</Link></div></Frame> : null}
     {step === "closed" ? <Frame><div className={f.mid}><h1 className={f.ftitle}>지금은 답을 받지 않고 있어요</h1></div></Frame> : null}
     {step === "error" ? <Frame><div className={f.mid}><p className={f.fsub}>{error}</p></div></Frame> : null}
     {step === "landing" && landing ? <Frame>
@@ -155,7 +155,7 @@ export default function FriendApp({ handle, name, line, shape }: { handle: strin
         {result.know !== null ? <p className={f.big} data-know={result.know}>{josa(ownerName, "을를")} <b>{result.know}%</b><br />알고 있어요</p> : null}
         {result.rank ? <p className={f.fsub} data-rank={`${result.rank.rank}/${result.rank.total}`}>지금까지 답한 친구 {result.rank.total}명 중 {result.rank.rank}등</p> : null}
       </div>
-      <Link className={cx(s.cta, s.press)} href="/" style={{ display: "grid", placeItems: "center", textDecoration: "none" }} data-try-me>나도 해 보기</Link>
+      <Link className={cx(s.cta, s.press)} href={appPath} style={{ display: "grid", placeItems: "center", textDecoration: "none" }} data-try-me>나도 해 보기</Link>
       <p className={f.note}>내 링크를 만들어 {ownerName}에게도 물어볼 수 있어요</p>
       {result.session.asked < result.session.open ? <div className={f.minor}><button className={s.link} type="button" disabled={busy} onClick={() => void more()}>더 답하기 · 황금별까지 {result.session.open - result.session.asked}개</button></div> : null}
     </Frame> : null}

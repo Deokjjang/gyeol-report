@@ -130,6 +130,7 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
         } catch { /* 사본 복원은 선택 */ }
         const restored = restoreBookForm(JSON.parse(sessionStorage.getItem(key) ?? "null"), policy.currentYear), saved = restored ? pinAnnualYear(book.id, restored) : null;
         if (saved) {
+          restoredDraft.current = true;
           setState(saved);
           const returnToReceipt = sessionStorage.getItem(checkoutReturnKey(book.productKey)) === "1" || sessionStorage.getItem(ticketPendingKey(book.productKey)) !== null;
           const persons = pair ? [saved.person, saved.personB] : [saved.person];
@@ -157,6 +158,19 @@ function BookForm({ book, internal, now, initial, authEnabled, ticketShopEnabled
   useEffect(() => { if (!publishing) return; const timer = setInterval(() => setDecoration(n => Math.min(3, n + 1)), 1000); return () => clearInterval(timer); }, [publishing]);
   // AM2-14 4부 세운 → 대운 반값: 대운 입력은 회원이면 자격을 늘 조회한다(금액은 서버 판정). 세운 책 끝 · 서재 버튼(?from=)으로 왔으면 그 세운의 사람을
   // 미리 채운다 — 첫 쪽부터, 바꿀 수 있다(같은 사람 조건 없음). 링크 없이 들어왔으면 채우지 않고 반값만 보인다.
+  // 「남이 본 나」(명령 3 D7): 프로필에 생년월일 · 출생시간이 있으면 빈 입력칸만 미리 채운다(초안을 복원했거나 이미 쓴 값이 있으면 그대로). 폼 값만 — 계산 · 결제 코드는 그대로다.
+  // /api/mirror/prefill은 공개 관문 뒤라 닫혀 있으면 404(아무것도 채우지 않는다).
+  const restoredDraft = useRef(false);
+  useEffect(() => {
+    if (!ready || !authEnabled || internal || restoredDraft.current) return;
+    let live = true;
+    void fetch("/api/mirror/prefill", { cache: "no-store" }).then(r => (r.ok ? r.json() : null)).then((p: { birthDate?: string | null; birthTime?: string | null } | null) => {
+      if (!live || !p || typeof p.birthDate !== "string" || !/^\d{4}-\d{2}-\d{2}$/.test(p.birthDate)) return;
+      const time = typeof p.birthTime === "string" && /^\d{2}:\d{2}$/.test(p.birthTime) ? p.birthTime : null;
+      setState(st => (st.person.birthDate ? st : { ...st, person: { ...st.person, birthDate: p.birthDate!, ...(time ? { birthTime: time, paidBirthTimeMode: "exact" as const, birthTimeUnknown: false, timeBranch: "" as never } : {}) } }));
+    }).catch(() => undefined);
+    return () => { live = false; };
+  }, [ready, authEnabled, internal]);
   const [discount, setDiscount] = useState<MajorDiscountView | null>(null);
   useEffect(() => {
     // 초안 복원(ready) 뒤에 — 같은 탭에 남은 대운 초안이 미리 채운 세운 사람을 덮지 않게.

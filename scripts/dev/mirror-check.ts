@@ -7,7 +7,7 @@
  *   pnpm exec tsx scripts/dev/mirror-check.ts og               # 링크 미리보기 이미지 2장 + 메타 태그
  *   pnpm exec tsx scripts/dev/mirror-check.ts stories          # 이야기 거르기 · 본인 작성 · 모두에게 공유 · 마음 · 신고 3번 숨김
  *   pnpm exec tsx scripts/dev/mirror-check.ts board            # 기록판 · 결 보고서 받기 · 장면 공유
- *   pnpm exec tsx scripts/dev/mirror-check.ts home 100|400     # 별자리 가독성(친구 100 · 400명, 3D · 2D)
+ *   pnpm exec tsx scripts/dev/mirror-check.ts home 40|100|400|all # 별자리 가독성 · 성장 보상(all = 40 · 100 · 400명 3D · 2D + 비교 그림 · 밝기 숫자)
  *   pnpm exec tsx scripts/dev/mirror-check.ts withdraw         # 탈퇴 → /@아이디 404 · 데이터 정리
  *   pnpm exec tsx scripts/dev/mirror-check.ts screens          # 로그인 사업자 정보 줄 · 내 계정 · 이야기 쓰기(글자 수)
  */
@@ -313,20 +313,92 @@ async function board() {
   await ctx.close(); await b.close();
 }
 
-async function home(n: number) {
+/**
+ * 별자리 가독성 · 성장 보상(명령 3 1-3): 친구 n명 홈을 3D · 2D로 찍는다(home-040-3d.png …).
+ * 「home all」 = 40 · 100 · 400명을 다 찍고, 나란히 놓은 비교 그림(home-compare-3d · 2d.png)과 밝기 숫자(home-metrics.json)를 남긴다.
+ * 숫자: 화면 평균 밝기 · 은하 쪽(별자리 둘레 30~160px) 평균 밝기 · 색 진하기, 받침(내 별 둘레 8~20px · 선 가운데 둘레) 평균 밝기, 별 대 받침 대비, 싱크로율 글자 뒤 밝기.
+ */
+type HomeShot = { n: number; mode: "3d" | "2d"; file: string; stars: [number, number][]; mids: [number, number][]; sync: { x: number; y: number; w: number; h: number } | null };
+async function homeShots(b: Browser, n: number): Promise<HomeShot[]> {
   const who = "flow072602";
   const id = uid(who);
   const have = Number(psql(`select count(*) from public.mirror_friend_sessions where owner_id=${q(id)};`));
   if (have !== n) { const { spawnSync } = await import("node:child_process"); spawnSync("pnpm", ["exec", "tsx", "scripts/dev/mirror-seed.ts", "--as", who, "--friends", String(n), "--reset", "--seed", "7"], { stdio: "inherit" }); }
-  const b = await browser();
+  const out: HomeShot[] = [];
   for (const mode of ["3d", "2d"] as const) {
     const ctx = await b.newContext(VIEW);
     await ctx.addInitScript({ content: "try{localStorage.setItem('gyeol-mirror-seen-v1:minji.k','9999')}catch(e){}" });
     const page = await login(ctx, who, mode === "2d" ? "/?sky=2d" : "/");
-    await page.waitForSelector("[data-mirror-screen=home]", { timeout: 40000 }); await page.waitForTimeout(mode === "3d" ? 6000 : 2500);
-    await shot(page, "home", `home-${n}-${mode}`);
+    await page.waitForSelector("[data-mirror-screen=home]", { timeout: 40000 }); await page.waitForTimeout(mode === "3d" ? 7500 : 2500);
+    check(await page.getAttribute("canvas[data-sky-mode]", "data-sky-mode") === mode, `친구 ${n}명 ${mode} 하늘`);
+    const name = `home-${String(n).padStart(3, "0")}-${mode}`;
+    await shot(page, "home", name);
+    // 내 별 · 선 자리(화면 좌표): 3D는 캔버스 위 SVG 선의 끝점, 2D는 별자리 그림의 흰 점.
+    const geo = await page.evaluate(() => {
+      const stars: [number, number][] = [], mids: [number, number][] = [];
+      const d = document.querySelector("svg path")?.getAttribute("d") ?? "";
+      for (const m of d.matchAll(/M([\d.]+),([\d.]+)L([\d.]+),([\d.]+)/g)) { const [x1, y1, x2, y2] = m.slice(1).map(Number); stars.push([x1, y1], [x2, y2]); mids.push([(x1 + x2) / 2, (y1 + y2) / 2]); }
+      if (!stars.length) {
+        const dots = [...document.querySelectorAll<SVGCircleElement>("[data-sky2d] circle[fill='#fff']")].filter(c => Number(c.getAttribute("r")) > 1.5).map(c => { const r = c.getBoundingClientRect(); return [r.x + r.width / 2, r.y + r.height / 2] as [number, number]; });
+        stars.push(...dots);
+        for (const l of document.querySelectorAll<SVGLineElement>("[data-sky2d] line")) { const r = l.getBoundingClientRect(); mids.push([r.x + r.width / 2, r.y + r.height / 2]); }
+      }
+      const s = document.querySelector("[data-sync] b")?.getBoundingClientRect();
+      return { stars, mids, sync: s ? { x: s.x, y: s.y, w: s.width, h: s.height } : null };
+    });
+    check(geo.stars.length >= 6, `친구 ${n}명 ${mode} 별 자리 ${geo.stars.length}개`);
+    out.push({ n, mode, file: join(REVIEW, "home", `${name}.png`), ...geo });
     await ctx.close();
   }
+  return out;
+}
+async function homeCompare(b: Browser, shots: HomeShot[]) {
+  const { readFileSync } = await import("node:fs");
+  const ctx = await b.newContext({ viewport: { width: 1250, height: 950 }, deviceScaleFactor: 2 }), page = await ctx.newPage();
+  // tsx(esbuild)가 함수 이름을 살리려고 넣는 __name 도우미를 브라우저 쪽에도 둔다(문자열로 — 이 줄 자체는 변환되지 않게).
+  await page.evaluate("globalThis.__name = (f) => f");
+  const metrics: Record<string, unknown>[] = [];
+  for (const sh of shots) {
+    const url = `data:image/png;base64,${readFileSync(sh.file).toString("base64")}`;
+    const m = await page.evaluate(async ({ url, stars, mids, sync }) => {
+      const img = new Image(); img.src = url; await img.decode();
+      const cv = document.createElement("canvas"); cv.width = img.width; cv.height = img.height; const g = cv.getContext("2d")!; g.drawImage(img, 0, 0);
+      const px = g.getImageData(0, 0, cv.width, cv.height).data, k = img.width / 390, W = img.width;
+      const lum = (i: number) => (0.2126 * px[i] + 0.7152 * px[i + 1] + 0.0722 * px[i + 2]) / 255;
+      const chroma = (i: number) => (Math.max(px[i], px[i + 1], px[i + 2]) - Math.min(px[i], px[i + 1], px[i + 2])) / 255;
+      const pts = [...stars, ...mids].map(([x, y]) => [x * k, y * k]);
+      let all = 0, nAll = 0, gal = 0, gc = 0, nGal = 0;
+      for (let y = 0; y < img.height; y += 2) for (let x = 0; x < W; x += 2) {
+        const i = (y * W + x) * 4, l = lum(i); all += l; nAll++;
+        let dm = 1e9; for (const [sx, sy] of pts) dm = Math.min(dm, Math.hypot(sx - x, sy - y)); if (dm > 30 * k && dm < 160 * k) { gal += l; gc += chroma(i); nGal++; }
+      }
+      const ringAt = (list: number[][], r0: number, r1: number) => { let s = 0, n = 0; for (const [sx, sy] of list) for (let dy = -r1 * k; dy <= r1 * k; dy += 2) for (let dx = -r1 * k; dx <= r1 * k; dx += 2) { const d = Math.hypot(dx, dy) / k; if (d < r0 || d > r1) continue; const x = Math.round(sx + dx), y = Math.round(sy + dy); if (x < 0 || y < 0 || x >= W || y >= img.height) continue; s += lum((y * W + x) * 4); n++; } return n ? s / n : 0; };
+      const starPts = stars.map(([x, y]) => [x * k, y * k]), midPts = mids.map(([x, y]) => [x * k, y * k]);
+      const core = ringAt(starPts, 0, 2.5), ring = ringAt(starPts, 8, 20), midRing = ringAt(midPts, 5, 14);
+      let syncL = null as number | null;
+      if (sync) { let s = 0, n = 0; for (let y = sync.y * k; y < (sync.y + sync.h) * k; y += 2) for (let x = sync.x * k; x < (sync.x + sync.w) * k; x += 2) { const i = (Math.round(y) * W + Math.round(x)) * 4; const l = lum(i); if (l < .8) { s += l; n++; } } syncL = n ? s / n : null; }
+      const r3 = (v: number) => Math.round(v * 1000) / 1000;
+      return { frameMean: r3(all / nAll), galaxyMean: r3(gal / nGal), galaxyChroma: r3(gc / nGal), starCore: r3(core), starRing: r3(ring), lineRing: r3(midRing), starContrast: r3((core + .05) / (ring + .05)), syncBack: syncL === null ? null : r3(syncL) };
+    }, { url, stars: sh.stars, mids: sh.mids, sync: sh.sync });
+    metrics.push({ friends: sh.n, mode: sh.mode, ...m });
+    log(`  친구 ${sh.n}명 ${sh.mode}`, JSON.stringify(m));
+  }
+  writeFileSync(join(REVIEW, "home", "home-metrics.json"), JSON.stringify(metrics, null, 2));
+  for (const mode of ["3d", "2d"] as const) {
+    const row = shots.filter(s => s.mode === mode);
+    const cells = row.map(s => `<figure><img src="data:image/png;base64,${readFileSync(s.file).toString("base64")}"><figcaption>친구 ${s.n}명 · ${mode.toUpperCase()}</figcaption></figure>`).join("");
+    await page.setContent(`<!doctype html><meta charset="utf-8"><style>body{margin:0;background:#111;font-family:sans-serif;color:#eee}main{display:flex;gap:20px;padding:20px}figure{margin:0;text-align:center}img{width:390px;height:844px;display:block;border-radius:12px}figcaption{margin-top:10px;font-size:20px;font-weight:600}</style><main>${cells}</main>`);
+    await page.waitForTimeout(300);
+    await page.screenshot({ path: join(REVIEW, "home", `home-compare-${mode}.png`), fullPage: true }); log("  📸", `home/home-compare-${mode}.png`);
+  }
+  await ctx.close();
+}
+async function home(arg: string) {
+  const ns = arg === "all" ? [40, 100, 400] : [Number(arg)];
+  if (ns.some(n => !Number.isInteger(n) || n < 0 || n > 1000)) throw new Error("사용: home 40|100|400|all");
+  const b = await browser(), shots: HomeShot[] = [];
+  for (const n of ns) shots.push(...await homeShots(b, n));
+  if (ns.length > 1) await homeCompare(b, shots);
   await b.close();
 }
 
@@ -363,10 +435,11 @@ async function screens() {
   const o = await b.newContext(VIEW), op = await login(o, OWNER.as, "/");
   await op.waitForSelector("[data-mirror-screen=home]", { timeout: 20000 });
   check(await op.locator("[data-business-line]").count() === 0, "내 홈에는 사업자 정보 줄이 없다");
-  await op.getByRole("button", { name: "내 계정" }).click(); await op.waitForSelector("[data-mirror-page=me]");
+  // 명령 3 D7: 내 계정은 따로 된 주소 /me(프로필 + 「내 리포트 ›」 · 「설정 ›」).
+  await op.getByRole("button", { name: "내 계정" }).click(); await op.waitForURL(u => new URL(u).pathname === "/me"); await op.waitForSelector("[data-me-profile]");
   await shot(op, "screens", "02-me");
-  await op.evaluate(() => document.querySelector("[data-mirror-page=me]")?.scrollTo(0, 99999)); await shot(op, "screens", "03-me-settings");
-  check(await op.locator("[data-me-business]").count() === 1 && await op.locator("[data-withdraw-link]").count() === 1, "내 계정 > 설정: 사업자정보 · 탈퇴 링크");
+  await op.click("[data-me-row=settings]"); await op.waitForSelector("[data-me-legal]"); await shot(op, "screens", "03-me-settings");
+  check(await op.locator('[data-me-legal="/business"]').count() === 1 && await op.locator("[data-me-withdraw]").count() === 1, "내 계정 > 설정: 사업자정보 · 탈퇴");
   await o.close();
   const f = await b.newContext(VIEW), fp = await f.newPage();
   await fp.goto(`${BASE}/@${OWNER.handle}`); await fp.waitForSelector("[data-mirror-friend=landing]");
@@ -381,6 +454,6 @@ async function screens() {
 }
 
 const cmd = process.argv[2];
-const run: Record<string, () => Promise<void> | void> = { prep, friend, share, og, stories, board, withdraw, screens, home: () => home(Number(process.argv[3] ?? 100)) };
+const run: Record<string, () => Promise<void> | void> = { prep, friend, share, og, stories, board, withdraw, screens, home: () => home(process.argv[3] ?? "100") };
 if (!run[cmd]) { console.error(`사용: ${Object.keys(run).join(" | ")}`); process.exit(2); }
 Promise.resolve(run[cmd]()).then(() => { log(failures ? `실패 ${failures}` : "모두 통과"); process.exit(failures ? 1 : 0); }).catch(e => { console.error(e); process.exit(1); });

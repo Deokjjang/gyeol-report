@@ -38,7 +38,7 @@ describe("예시 리포트 데이터", () => {
     expect(html).toMatch(/data-example-tag[^>]*>예시 · 가상의 인물</);
     expect(html).toContain("data-book-report");
     expect(exampleLeaks(html)).toEqual([]);
-    expect(EXAMPLE_CTA).toEqual({ label: "내 리포트 만들기", href: "/" });
+    expect(EXAMPLE_CTA).toEqual({ label: "내 리포트 만들기", href: "/products" });
   });
   it("공유 미리보기(og 제목·이미지)", async () => {
     const { metadata } = await import("../../../src/app/example/page");

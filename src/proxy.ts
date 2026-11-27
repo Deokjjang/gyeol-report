@@ -1,6 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { devRoutesBlocked, isDevPath } from "./lib/devRouteGate";
-import { mirrorPublicEnabled } from "./lib/mirror/gate";
+import { mirrorRoutesEnabled } from "./lib/mirror/gate";
 
 /** 「남이 본 나」 링크 gyeolreport.com/@아이디 → 내부 주소 /u/아이디(Next 폴더 이름 @는 병렬 라우트라 쓰지 않는다). 아이디에 마침표가 있어도(@minji.k) 정적 파일로 보지 않는다. */
 export function mirrorHandleFromPath(pathname: string): string | null {
@@ -16,7 +16,7 @@ export function proxy(request: NextRequest) {
     return new NextResponse(null, { status: 404, headers: { "cache-control": "no-store", "x-robots-tag": "noindex, nofollow" } });
   }
   const handle = mirrorHandleFromPath(path);
-  if (handle && mirrorPublicEnabled()) {
+  if (handle && mirrorRoutesEnabled()) {
     const url = request.nextUrl.clone();
     url.pathname = `/u/${handle}`;
     return NextResponse.rewrite(url);

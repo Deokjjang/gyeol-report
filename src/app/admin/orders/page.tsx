@@ -6,6 +6,7 @@ import { compSummary, delayedOrders, legacyMembers, parseSearch, providerState, 
 import { compStateLabel, kst, maskEmail, paymentStatusLabel, productLabel, requestReasonLabel, requestResolutionLabel } from "../../../lib/ops/admin/format";
 import { ALL_PRODUCTS } from "../../../lib/ops/config";
 import { createOpsStores } from "../../../lib/ops/store";
+import { mirrorRoutesEnabled } from "../../../lib/mirror/gate";
 import { CompDesignate, ExportCsv, ProviderEnableButton, RequestDoneForm, TicketBookRegenerate, TossBatchCheck } from "./AdminClient";
 import { AdminShell, Badge, Dl, ExpiredView, LoadError, OrderItem } from "./ui";
 
@@ -28,6 +29,8 @@ export default async function Page({ searchParams }: { searchParams: Promise<Par
       <h1>주문 관리</h1>
       <nav className={styles.tabs} aria-label="관리 메뉴">
         {TABS.map(([k, label]) => <Link key={k} href={`/admin/orders?tab=${k}`} aria-current={k === tab ? "page" : undefined}>{label}</Link>)}
+        {/* 「남이 본 나」 문항 통계: 공개 관문(숨은 공개)이 열린 뒤에만 링크를 둔다. */}
+        {mirrorRoutesEnabled() ? <Link href="/admin/mirror-items">문항 통계</Link> : null}
       </nav>
       {tab === "search" ? <SearchTab filters={parseSearch(params)} />
         : tab === "delayed" ? <DelayedTab />

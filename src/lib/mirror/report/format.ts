@@ -11,7 +11,7 @@ export function sceneLine(section: SectionKey, scene: ReportScene): string {
     case "blind": return `${q} 직접 고른 답은 「${scene.mine}」, 친구 다수는 「${scene.picked}」`;
     case "hidden": return `${q} 직접 고른 답은 「${scene.mine}」`;
     case "closer": return `${q} 가까운 사이는 「${scene.picked}」 쪽`;
-    case "one": return scene.mine === scene.picked ? `${q} → ${scene.picked}` : `${q} 직접 고른 답은 「${scene.mine}」, 이 친구는 「${scene.picked}」`;
+    case "one": return `${q} → 친구 답 「${scene.picked}」`;
     default: return `${q} → ${scene.picked}`;
   }
 }

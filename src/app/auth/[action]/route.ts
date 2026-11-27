@@ -56,9 +56,10 @@ async function handle(request: NextRequest, context: { params: Promise<{ action:
   // F: 시험 계정(관리자·누나 계정 + DB 「시험 계정 표」) — 세션 응답·로그인 콜백이 「시험」 브라우저 표시를 남긴다(퍼널·메타 전송 제외).
   const { liveTestAccountIds } = await import("../../../lib/ops/notify/deps");
   const testers = await liveTestAccountIds(), isTester = (id: string) => testers.has(id.toLowerCase());
-  // 「남이 본 나」(명령 1/3): 관문이 열려 있을 때만, "/"(이 서비스)로 시작한 로그인은 동의 · 프로필을 그 화면이 받는다.
-  const { mirrorPublicEnabled } = await import("../../../lib/mirror/gate");
-  const mirrorFlow = (next: string) => mirrorPublicEnabled() && next === "/";
+  // 「남이 본 나」(명령 3/3): 이 서비스 시작 주소("/" — 정식 공개, "/start" — 숨은 공개)로 시작한 로그인만 동의 · 프로필을 그 화면이 받는다.
+  // 상품 · 결제 · 책 · 내 계정(/me)에서 시작한 로그인은 지금처럼 돌아갈 곳(next)으로 바로 간다 — 프로필 · 질문지로 빠지지 않는다.
+  const { mirrorRootEnabled, mirrorRoutesEnabled } = await import("../../../lib/mirror/gate");
+  const mirrorFlow = (next: string) => (next === "/" && mirrorRootEnabled()) || (next === "/start" && mirrorRoutesEnabled());
   if (action !== "session") return handleAccount(request, action, port, false, { isTester, mirrorFlow });
   // 재동의 화면 맨 위 한 줄(P 본문 3): 안 쓴 보상 이용권이 있는 기존 회원에게만(읽기 전용 ops_comp_campaign 'popup').
   const { compCampaignStore } = await import("../../../lib/ops/comp/popup");
@@ -99,8 +100,8 @@ async function opsAccountAction(request: NextRequest, action: "profile" | "withd
 export const GET = handle;
 export const POST = handle;
 async function mirrorWithdrawDep(): Promise<{ mirrorWithdraw?: (userId: string) => Promise<boolean> }> {
-  const { mirrorPublicEnabled } = await import("../../../lib/mirror/gate");
-  if (!mirrorPublicEnabled()) return {};
+  const { mirrorRoutesEnabled } = await import("../../../lib/mirror/gate");
+  if (!mirrorRoutesEnabled()) return {};
   const { createMirrorStore } = await import("../../../lib/mirror/store");
   const store = createMirrorStore();
   return store ? { mirrorWithdraw: id => store.withdraw(id) } : {};

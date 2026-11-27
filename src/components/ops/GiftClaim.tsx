@@ -36,7 +36,7 @@ export function GiftClaim({ token }: { token: string }) {
   if (!peek) return <p role="status" className={status.message}>선물을 확인하고 있어요.</p>;
   if (!peek.ok) return peek.code === "NETWORK" ? <p role="alert" className={status.message}>잠시 후 다시 열어 주세요.</p> : title(GONE);
   // 내가 받은 사람이면(다시 열어도) 받은 상태로.
-  if (claim === "done" || (peek.status === "claimed" && peek.received)) return <>{title("이용권 1장이 서재에 들어왔어요")}<p className={status.message}>{kstDay(peek.expiresAt) ? `${kstDay(peek.expiresAt)}까지 쓸 수 있어요.` : ""}</p><p><Link className={`${s.button} ${s.dark}`} href="/">책 고르러 가기 →</Link></p></>;
+  if (claim === "done" || (peek.status === "claimed" && peek.received)) return <>{title("이용권 1장이 서재에 들어왔어요")}<p className={status.message}>{kstDay(peek.expiresAt) ? `${kstDay(peek.expiresAt)}까지 쓸 수 있어요.` : ""}</p><p><Link className={`${s.button} ${s.dark}`} href="/products">책 고르러 가기 →</Link></p></>;
   if (peek.status !== "gifted") return peek.status === "claimed" && peek.mine ? title("친구가 이 선물을 받았어요") : title(GONE);
   if (peek.mine) return <>{title("내가 보낸 선물 링크예요")}<p className={status.message}>친구에게 이 주소를 보내 주세요.</p></>;
   const head = title("결리포트 이용권 1장을 선물받았어요");

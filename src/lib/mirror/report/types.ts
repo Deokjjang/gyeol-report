@@ -40,8 +40,10 @@ export type ReportScene = {
   picked: string;
   /** 주인이 직접 고른 보기 문장. */
   mine: string;
-  /** "친구 9명 중 9명" 같은 근거 줄. */
+  /** "친구 9명 중 9명" 같은 근거 줄(작게). */
   count: string;
+  /** 그 문항에 들어온 친구 답 수(규칙 d: 3개 이상일 때만 장면 줄을 쓴다 — 한 사람이 본 나는 1). */
+  n: number;
   /** 장면 공유 카드에 들어갈 문장(꼭지 2 · 3만): count + 친구용 문장, 예 "친구 9명 중 9명: 민지는 모임이 끝나고 나면 아직 텐션이 남아 있다". */
   share?: { count: string; text: string };
 };
@@ -49,11 +51,14 @@ export type ReportScene = {
 export type ReportSection = {
   key: SectionKey;
   title: string;
-  /** 결론 한두 문장(먼저 말한다). */
+  /** 첫 문장(규칙 c: 장면들과 같은 면 · 장면이 여러 면이면 면을 특정하지 않는다). */
   lead: string[];
+  /** 장면 목록(규칙 f: 꼭지 문장 뒤에 모아 그린다). */
   scenes: ReportScene[];
-  /** 장면 뒤 풀이 문단(해요체). */
+  /** 첫 문장 다음 문장들(해요체 · 한 문장에 숫자 쌍 하나 · 70자 이하 · 쉼표 한 번). */
   body: string[];
+  /** 꼭지 마지막 한 줄(규칙 g: 답에 근거한 짧은 단정형). 화면은 장면 · 이야기 뒤에 그린다. */
+  closing: string;
   /** 작은 근거 줄(예: "10개 질문으로 본 경향이에요"). */
   notes: string[];
   /** 꼭지 7: 고른 이야기. */
@@ -70,8 +75,8 @@ export type ReportSnapshot = {
   issuedAt: string;
   nextIssueAt: string;
   ownerName: string;
-  /** 한 줄 판정(꼭지 1): "본인만 차분한 줄 아는 기발한 모험가". */
-  verdict: { title: string; sync: number; summary: string };
+  /** 한 줄 판정(꼭지 1): "본인만 차분한 줄 아는 기발한 모험가". summary = 첫 문단(규칙 h: 친구 수 · 답 수 → 싱크로율 → 총평), compare = 지난 호와 견준 한 줄(2호부터). */
+  verdict: { title: string; sync: number; summary: string; compare?: string };
   /** 꼭지 2~9(또는 「한 사람이 본 나」) — 열린 것만 순서대로. 꼭지 1은 verdict. */
   sections: ReportSection[];
   /** 맨 아래 「근거 모두 보기」(접힘): 12면 표와 답 개수. */

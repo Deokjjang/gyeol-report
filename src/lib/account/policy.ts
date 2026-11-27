@@ -50,7 +50,8 @@ export function safeAccountNext(value: unknown, local = false): string {
     const product = value.slice(`${inputPath}?product=`.length);
     if (bookForProduct(product)) return `${inputPath}?product=${product}`;
   }
-  const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new", "/free"];
+  // 「남이 본 나」(명령 3): 새 시작 주소 /start · 새 내 계정 /me · 상품 목록 /products(정식 공개 뒤 기존 책 홈). 관문이 닫혀 있으면 그 주소가 404라 들어가지 못한다.
+  const allowed = local ? ["/dev/account", "/dev/account/tickets", "/dev/book-flow", "/dev/book-flow/input"] : ["/account", "/account/tickets", "/", "/report/new", "/free", "/start", "/me", "/products"];
   const report = local ? /^\/dev\/book-flow\/report\/(?:book-local-[a-f0-9-]{36}|report_[a-z0-9_-]{13,80})$/i : /^\/reports\/report_[a-z0-9_-]{13,80}$/i;
   if (report.test(value)) return value;
   // P6d-ops 6: 선물 링크(로그인 뒤 돌아와 받기).

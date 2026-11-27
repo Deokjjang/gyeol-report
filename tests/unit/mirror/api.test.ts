@@ -165,3 +165,20 @@ describe("다른 브라우저로 넘어가기(일회용 토큰)", () => {
     expect(["//evil.example", "https://evil.example", "/account", "/@a", "/@minji.k/../x", 3].map(safeMirrorNext)).toEqual(["/", "/", "/", "/", "/", "/"]);
   });
 });
+
+describe("명령 3: 유료 입력 미리 채움 · 내 계정 계정 정보", () => {
+  it("prefill: 로그인한 회원의 프로필 생년월일 · 출생시간만(없으면 null), 로그인 전 401", async () => {
+    const f = fakes({ snapshot: consented });
+    expect((await (await run(f, "prefill")).json())).toEqual({ birthDate: null, birthTime: null });
+    await run(f, "profile", { method: "POST", body: profileBody({ birthDate: "1996-12-06", birthTime: "09:30" }) });
+    expect((await (await run(f, "prefill")).json())).toEqual({ birthDate: "1996-12-06", birthTime: "09:30" });
+    expect((await run(fakes({ user: null }), "prefill")).status).toBe(401);
+  });
+  it("session: 아이디가 없어도 계정 이름 · 가린 이메일(원문 이메일은 보내지 않는다)", async () => {
+    const f = fakes({ user: { ...USER, email: "minji99@kakao.com" }, snapshot: { ...consented, contact: { name: "장민지", email: "minji99@kakao.com" } } });
+    const body = await (await run(f, "session")).json();
+    expect(body.profile).toBeNull();
+    expect(body.who).toEqual({ name: "장민지", email: "min***@kakao.com" });
+    expect(JSON.stringify(body)).not.toContain("minji99@");
+  });
+});

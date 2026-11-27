@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
-import { mirrorPublicEnabled } from "../../../lib/mirror/gate";
+import { mirrorAppPath, mirrorRoutesEnabled } from "../../../lib/mirror/gate";
 import { handleProblem, normalizeHandle } from "../../../lib/mirror/profileRules";
 
 // 「남이 본 나」 링크 랜딩(gyeolreport.com/@아이디 → src/proxy.ts가 여기로 넘김). 명령 2/3: 친구 응답 흐름(D3) + 링크 미리보기(D4).
@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 type Params = { params: Promise<{ handle: string }> };
 
 async function lookup(params: Params["params"]) {
-  if (!mirrorPublicEnabled()) notFound();
+  if (!mirrorRoutesEnabled()) notFound();
   const raw = decodeURIComponent((await params).handle), handle = normalizeHandle(raw);
   if (handleProblem(handle) && handleProblem(handle) !== "reserved") notFound();
   const { landingData } = await import("../../../lib/mirror/landing");
@@ -22,7 +22,7 @@ async function lookup(params: Params["params"]) {
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
-  if (!mirrorPublicEnabled()) return { robots: { index: false, follow: false } };
+  if (!mirrorRoutesEnabled()) return { robots: { index: false, follow: false } };
   const d = await lookup(params);
   const image = `/api/mirror/og/${d.handle}`, description = "질문 12개 · 1분 · 이름은 남지 않아요";
   return {
@@ -33,10 +33,10 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
 }
 
 export default async function MirrorLanding({ params }: Params) {
-  if (!mirrorPublicEnabled()) notFound();
+  if (!mirrorRoutesEnabled()) notFound();
   const d = await lookup(params);
   const { FriendEntry } = await import("../../../components/mirror/friend/FriendEntry");
   return <main data-mirror-landing={d.handle} style={{ minHeight: "100dvh", background: "#000" }}>
-    <FriendEntry handle={d.handle} name={d.name} line={d.line} shape={d.shape} />
+    <FriendEntry handle={d.handle} name={d.name} line={d.line} shape={d.shape} appPath={mirrorAppPath()} />
   </main>;
 }

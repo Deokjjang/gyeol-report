@@ -1,0 +1,21 @@
+/* 새 내 계정(/me): 「남이 본 나」 어두운 화면 톤. 기존 서재 · 가입 정보 · 혜택 알림 · 탈퇴 부품은 원래 흰 바탕 디자인이라 흰 종이(paper) 안에 그대로 둔다. */
+.root { overflow: hidden; }
+.home { text-decoration: none; color: var(--pearl); }
+.profile { display: flex; align-items: center; gap: 14px; padding: 4px 0; }
+.who { display: grid; gap: 2px; min-width: 0; flex: 1; }
+.who b { font-size: 17px; font-weight: 500; }
+.who span { font-size: 13px; color: var(--mist); }
+.who small { font-size: 12px; color: var(--faint); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.edit { flex: none; height: 34px; padding: 0 12px; border-radius: 999px; border: 1px solid var(--line); background: none; font-size: 12px; cursor: pointer; }
+.star { display: grid; gap: 6px; padding: 16px; border-radius: 16px; border: 1px solid rgba(202, 215, 255, .35); background: radial-gradient(120% 140% at 0% 0%, rgba(202, 215, 255, .14), rgba(255, 255, 255, .02)); color: var(--pearl); text-decoration: none; }
+.star b { font-size: 16px; font-weight: 600; }
+.star span { font-size: 13px; line-height: 1.6; color: var(--mist); }
+.star small { font-size: 12px; color: var(--star); }
+.h { margin: 6px 0 -8px; font-size: 13px; font-weight: 500; color: var(--mist); }
+.h small { font-size: 11px; color: var(--faint); margin-left: 4px; font-weight: 400; }
+.paper { border-radius: 16px; background: #FFFFFF; color: #111111; padding: 18px 16px; color-scheme: light; font-family: var(--font); }
+.paper a { color: #111111; }
+.paperLink { margin: 8px 0 0; font-size: 14px; }
+.paperNote { margin: 8px 0 0; font-size: 12px; color: #777777; line-height: 1.6; }
+.readonly { min-height: 50px; display: flex; align-items: center; padding: 0 14px; border-radius: 12px; border: 1px dashed var(--line); font-size: 14px; color: var(--mist); }
+.notice { margin: 0; padding: 12px 14px; border-radius: 12px; background: rgba(255, 208, 138, .1); color: var(--gold); font-size: 13px; }

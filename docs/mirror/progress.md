@@ -1,4 +1,4 @@
-# 「남이 본 나」 진행 (명령 1~2/3 · 브랜치 mirror/01 · 기준 origin/master e9d82f02)
+# 「남이 본 나」 진행 (명령 1~3/3 · 브랜치 mirror/01 · 기준 origin/master e9d82f02)
 
 | 단계 | 상태 | 메모 |
 |---|---|---|
@@ -15,6 +15,25 @@
 | 추가 2 별자리 가독성 | 통과 | scene3d.ts: 내 별 크기 하한 1.9 · 어두운 테두리 · 맨 앞 그리기, 친구 별 상한 1.1 · 친구 수에 따라 옅게, 성단 · 성운 · 은하 뒤쪽 깊이 + 밝기 상한(GROWTH_CAP). 친구 100 · 400명 3D · 2D 확인 |
 | 추가 3 탈퇴 | 통과 | mirror_withdraw(security definer) ← src/lib/account/profile.ts(mirrorWithdraw, 기존 탈퇴 뒤 · auth 소프트 삭제 앞, 감사 기록 mirror=done/failed). PGlite 시험 + 로컬 실제 탈퇴 흐름 |
 | 명령 2 검증 | 통과 | tsc 0 · lint 0 · pnpm test 6,155 중 실패 1(writerThinking, 기준선 목록) · build OK(ƒ Proxy 등록) · 로컬 실제 브라우저 mirror-check: friend(아는 사이 50 · 친구 60 황금별, 가까운 사이 12 + 이야기, 이어서 하기 · 주인 · 비공개 · 404 · 옛 아이디 308 · 0.3초 무효) · share(버튼 전부 · Web Share 없음 폴백 · 파일 공유 · WebKit · 사진 미전송) · og(PNG 2장 · 메타) · stories(거르기 5 · 본인 작성 · 미리보기 · ♥ · 신고 3번 숨김) · board(1호 발행 · 장면 공유) · home 100 · 400 · withdraw · screens 모두 통과. 배포 모드(next start) 새 주소 전부 404 · "/" 책 홈 그대로. 보고서 견본 10개 Sonnet 검사 26 → 26 → 30 → 12 → 8 → 1 → 5 → 4 → 1 → 0(기록 reports-10/99-review-log.txt) |
+| 0 준비(명령 3) | 통과 | 용어 확인(숨은 공개 · 정식 공개 · 말끝 흐림 · 면 근거 짝). 추가 지시(2026-11-28): 운영 일(운영 migration · 운영 DB 조회 · master · Production 배포) 전부 보류, mirror/01까지만 |
+| 1-1 문항 4개 | 통과 | imag-1 · imag-3 · trust-4 · check-5(version 1 그대로, 자가 · 친구 같은 행동), SPEC 표 · items-120.txt(scripts/dev/mirror-items-text.ts) |
+| 1-2 결 보고서 규칙 | 통과 | 뱅크 · 꼭지 만들기 다시 씀(src/data/mirror/reportBank.ts · src/lib/mirror/report/engine.ts), 점검기 styleFindings(규칙 a~h) + repetitionFindings, report.test.ts 35개(무작위 40판 포함), 견본 10개 reports-10/(이전 reports-10-old/), Sonnet 검사 차수별 36 → 9 → 7 → 8 → (기록 reports-10/99-review-log.txt) |
+| 1-3 홈 성장 보상 | 통과 | 은하 밝기 상한(GROWTH_CAP)을 없애고 growthOf(n) 표 — 100 · 400명이 40명보다 밝고 · 색이 진하고 · 크다. 별자리 뒤에만 어두운 받침(3D 선 · 별 밑, 2D 같은 층). home/home-compare-3d · 2d.png, home-metrics.json |
+| D7 내 계정 | 통과 | /me(src/app/me, components/mirror/account/MeApp.tsx): 프로필 + 「내 리포트 ›」 · 「설정 ›」. 아이디 없는 회원도 들어온다. 서재 대조 0건 → ACCOUNT_MOVED_TO_ME = true(정식 공개 때만 /account → /me). 유료 입력 생년월일 · 출생시간 미리 채움(/api/mirror/prefill, 폼 값만) |
+| 3 관문 두 개 | 통과 | mirrorRoutesEnabled(/@아이디 · /start · /api/mirror/* · /me · 문항 통계) · mirrorRootEnabled("/" 전환, /start → "/"). 배포 상수 둘 다 false(배포 전 정지). 로그인 콜백은 "/"(root) · /start(routes)로 시작했을 때만 이 서비스가 동의를 받는다. 「책 고르기」류 링크 "/" → /products |
+| D8 점검 | 부분 | release:check · 공유 회귀 · 화면 폭 3개 · UA 6개 · 기존 회원 (a)~(e) · "/" 흐름 · 내 계정 대조 · 문항 통계(/admin/mirror-items) · migration CREATE만 시험 · 묶음 크기(scripts/dev/mirror-launch-check.ts bundle) · 배포 빌드 세 판(관문 끔 · 숨은 공개 · 정식 공개, next start 로컬). 운영 DB 조회(옛 비회원 주문) · 운영 migration 적용은 보류(추가 지시 1) |
+
+결정 기록(명령 3, 2026-11-28):
+- 친구 1명 보고서(한 사람이 본 나)는 규칙 d의 예외(덕짱님 선택): 장면은 비율 없이 그 친구가 고른 보기, 면 문장은 그 친구가 그 면 5문항을 다 답했을 때만.
+- 꼭지 모양: 첫 문장 → 문장들 → 장면 · 이야기 → 마지막 한 줄. 장면이 두 면 이상이면 첫 문장은 숫자 문장(LEADS, 면을 특정하지 않음).
+- 애착(규칙 a): 두 면 모두 5/5(친구는 90% 이상)일 때만 「~이에요」, 그 밖은 「~에 가까워요」. 2호부터는 자가 유형을 다시 말하지 않는다(자가 답은 바뀌지 않는다 — 지난 호와 같다는 숫자만).
+- 확인 · 거리 면의 숫자 · 장면은 「가까운 관계의 나」만(꼭지 2~4에서 같은 숫자를 되풀이하지 않게). 「나만 아는 나」 면의 문항은 「나만 모르는 나」 장면으로 쓰지 않는다.
+- 끝맺음: 바로 앞 문장과 다르고, 한 보고서 3번까지(문장이 짧아져 2 → 3), 한 꼭지 안 한 번. 같은 사람의 2호는 지난 호 같은 꼭지의 뼈대 · 앞 네 낱말을 피한다.
+- 다른 사람 사이 글자 그대로 점검에서 빼는 줄: 형식이 정해진 줄(친구 수 · 싱크로율 · 날짜 · 열림 안내), 애착 유형 문장(규칙 a 꼴), 가까운 관계의 나 추측 한 줄(문항 · 쪽마다 한 문장), 꼭지 마지막 한 줄(면 · 쪽 · 유형마다 정한 결론). 한 보고서 안 · 같은 사람의 호끼리는 이 줄들도 본다.
+- 총평 정도 말은 숫자에 맞춘다(「정확히」 95%+ · 「거의 다」 85%+ · 「거의 다 알아봤어요」류는 싱크로율 90%+). 「헷갈렸다」 · 「본인만 알아요」(친구 40~60%가 같은 쪽)는 쓰지 않는다.
+- 내 계정 /me: 기존 /account의 동의 · 가입 정보 · 가입 이용권 팝업 · 카카오 채널 안내 · 혜택 알림 · 탈퇴 부품을 그대로 쓴다. 로그인 전 화면은 이 서비스 로그인 + 채널 안내 한 줄 + 「로그인 없이 둘러보기」(/products).
+- 하늘 성장 값(growthOf · GROWTH · BACKING · heatRGB)은 sky/growth.ts에 둔다: Sky2D가 scene3d.ts에서 가져오면 WebGL이 없는 폰 · ?sky=2d에서도 3D 장면 코드(약 27KB)를 받았다. 옮긴 뒤 2D 판은 three · 3D 코드 0KB.
+- 로컬 결제 시험: 개발 서버에 tools/p6d/toss-mock.mjs(서버 쪽 토스 승인 대역) + 가짜 test_ 키(프로세스 환경에만, 파일에 쓰지 않음) + OPS_MOCK_WRITER=ok. 브라우저의 토스 스크립트는 막는다(외부 호출 0).
 
 결정 기록(명령 1): 별자리 SHAPE(lean 0.24 · inner 0.16 · span 0.66 · 흔들림 0.05/0.10 · 선 끊기 0.6 · 최소 간격 0.09) — 무작위 100명 × 30번 최저 99%.
 결정 기록(명령 1): 처음 만든 아이디는 바로 한 번 바꿀 수 있고 그 뒤 30일(handle_changed_at null로 시작). 홈 숫자는 서버 계산만 보낸다(친구 답 원본 · 세션 id 미전송).
@@ -36,5 +55,5 @@
 - 친구가 1명이면 꼭지 제목도 「친구가 남긴 이야기」(SPEC 표의 「친구들이」를 숫자에 맞춤).
 - 기록판 · 이야기 · 내 계정 페이지가 열려 있는 동안 홈 글자는 숨기고(visibility · inert) 별만 뒤에 비친다(배포 전 확인 때 홈 글자가 비쳐 보였다).
 
-검증 스크립트: scripts/dev/mirror-check.ts(prep · friend · share · og · stories · board · home 100|400 · withdraw · screens), 보고서 견본 scripts/dev/mirror-report-samples.ts.
-다음 할 일: 명령 3(D7 내 계정 마무리 · D8 출시 점검 · 공개 관문 열기). 카카오 공유는 덕짱 수동 설정 뒤 실기기 확인.
+검증 스크립트: scripts/dev/mirror-check.ts(prep · friend · share · og · stories · board · home 40|100|400|all · withdraw · screens), scripts/dev/mirror-launch-check.ts(existing · root · me · viewports · ua · peek), 보고서 견본 scripts/dev/mirror-report-samples.ts, 문항 원문 scripts/dev/mirror-items-text.ts.
+다음 할 일: 배포 전 정지 — 덕짱님 검증 · 추가 개발 뒤 따로 지시(숨은 공개 → 폰 확인 → 정식 공개). 운영 migration 2개 적용 · 옛 비회원 주문 조회는 그때. 카카오 JavaScript 키는 운영 환경 변수에 이미 있음(덕짱님 확인).

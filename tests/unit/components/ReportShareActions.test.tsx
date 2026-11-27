@@ -13,7 +13,8 @@ describe("ReportShareActions", () => {
     expect(html).toContain("나도 내 리포트 보기");
     expect(html).toContain("다른 리포트 보기");
     expect(html).toContain('href="/report/new?product=saju-mbti-full"');
-    expect(html).toContain('href="/"');
+    // 「남이 본 나」(명령 3): 정식 공개 뒤 "/"는 새 서비스 — 다른 리포트 보기는 책 홈(/products)으로 간다.
+    expect(html).toContain('href="/products"');
     expect(html).not.toContain("구매하기");
     expect(html).not.toContain("결제하기");
   });

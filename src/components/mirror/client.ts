@@ -7,7 +7,7 @@ export type ProfileView = { name: string; handle: string; isPublic: boolean; bir
 export type SessionView =
   | { account: "guest" }
   | { account: "needs_consent" | "member"; provider: "kakao" | "google"; policy: { terms: string; privacy: string }; prefillName?: string; profile: ProfileView | null; self: { answers: Record<string, Choice>; completedAt: string | null; seed: string };
-      home: (HomeView & { stories: number }) | null; share: { line: string | null; showCount: boolean } };
+      home: (HomeView & { stories: number }) | null; share: { line: string | null; showCount: boolean }; who: { name: string; email: string | null } };
 export type ApiError = { code?: string; error?: string };
 
 export async function mirrorApi<T>(action: string, init: { method?: "GET" | "POST"; body?: unknown; query?: string } = {}): Promise<{ ok: true; data: T } | { ok: false; status: number; data: ApiError }> {

@@ -10,7 +10,7 @@ import { selfAnsweredCount, selfComplete, type Choice } from "../../lib/mirror/e
 import { selfQuizOrder } from "../../lib/mirror/order";
 import { mirrorApi, useHideSiteFooter, type SessionView } from "./client";
 import { HomeScreen, IntroScreen, LoginScreen, MILESTONES, ProfileScreen, QuizScreen, type PageKey } from "./screens";
-import { BoardPage, MePage, SpacePage, StoriesPage } from "./pages";
+import { BoardPage, SpacePage, StoriesPage } from "./pages";
 import { ShareSheet } from "./share/ShareSheet";
 import { Sky, type SkyHandle } from "./sky/Sky";
 import s from "./mirror.module.css";
@@ -25,7 +25,7 @@ function phaseFor(view: SessionView): Phase {
   return view.self.completedAt ? "home" : "intro";
 }
 
-export default function MirrorApp() {
+export default function MirrorApp({ appPath = "/" }: { appPath?: "/" | "/start" }) {
   const [session, setSession] = useState<SessionView | null>(null), [phase, setPhase] = useState<Phase>("boot");
   const [answers, setAnswers] = useState<Record<string, Choice>>({}), [qi, setQi] = useState(0), [busy, setBusy] = useState(false);
   const [milestone, setMilestone] = useState<string | null>(null), [page, setPage] = useState<PageKey | null>(null);
@@ -65,14 +65,14 @@ export default function MirrorApp() {
     // 인앱 → 기본 브라우저로 넘어온 경우: 주소의 일회용 토큰으로 이전 기기 상태를 잇는다(인앱 안에서는 쓰지 않는다).
     const h = new URLSearchParams(location.search).get("h");
     // 친구 링크(/@내아이디)의 「친구에게 물어보기」로 들어오면 홈에서 공유 시트를 바로 연다.
-    if (new URLSearchParams(location.search).get("ask") === "1") { askOnHome.current = true; history.replaceState(null, "", "/"); }
+    if (new URLSearchParams(location.search).get("ask") === "1") { askOnHome.current = true; history.replaceState(null, "", appPath); }
     if (h && /^[A-Za-z0-9_-]{43}$/.test(h) && !inAppBrowser(navigator.userAgent)) { location.replace(`/api/mirror/handoff?t=${h}`); return; }
     void mirrorApi<SessionView>("session").then(r => {
       if (!r.ok) { setPhase("login"); say(r.data.error ?? "잠시 후 다시 시도해 주세요."); return; }
       apply(r.data); enter(phaseFor(r.data), r.data);
     });
     return () => { document.documentElement.style.overflow = ""; document.body.style.overflow = ""; };
-  }, [apply, enter, say]);
+  }, [apply, enter, say, appPath]);
 
   const member = session && session.account !== "guest" ? session as Member : null;
   const seed = member?.self.seed ?? "guest";
@@ -135,6 +135,8 @@ export default function MirrorApp() {
     setSheet({ scene });
   }
   function openPage(p: PageKey | null) {
+    // 내 계정은 따로 된 주소(/me — 명령 3 D7): 아이디가 없는 기존 회원도 같은 화면을 쓴다.
+    if (p === "me") { location.assign("/me"); return; }
     if (p === "stories" && member?.profile) {
       try { localStorage.setItem(`${STORIES_SEEN_KEY}:${member.profile.handle}`, String(member.home?.stories ?? 0)); } catch { /* 저장소 없음 */ }
       setStoriesNew(0);
@@ -146,7 +148,7 @@ export default function MirrorApp() {
   const skyPhase = phase === "quiz" ? "quiz" : phase === "collapse" ? "collapse" : phase === "home" ? "home" : "idle";
   return <div className={s.root} data-mirror-phase={phase}>
     <Sky ref={sky} phase={skyPhase} heat={phase === "quiz" || phase === "collapse" ? done / 60 : 0} shape={shape} stars={phase === "home" ? stars : []} newFrom={newFrom} onHome={onHome} />
-    {phase === "login" ? <LoginScreen /> : null}
+    {phase === "login" ? <LoginScreen next={appPath} /> : null}
     {phase === "profile" && member ? <ProfileScreen session={member} onSaved={view => { apply(view); enter(phaseFor(view), view); }} /> : null}
     {phase === "intro" ? <IntroScreen answered={done} onStart={() => { setQi(firstOpen(answers) % order.length); setPhase("quiz"); }} /> : null}
     {phase === "quiz" && order[qi] ? <QuizScreen item={order[qi]} seed={seed} done={done} picked={answers[order[qi].id]} milestone={milestone} busy={busy}
@@ -155,8 +157,6 @@ export default function MirrorApp() {
     {page === "stories" ? <StoriesPage onBack={() => openPage(null)} onAsk={() => ask()} say={say} /> : null}
     {page === "space" ? <SpacePage onBack={() => openPage(null)} say={say} /> : null}
     {page === "board" ? <BoardPage onBack={() => openPage(null)} onAsk={() => ask()} onShareScene={sc => ask(sc)} say={say} openIssue={openIssue} /> : null}
-    {page === "me" && member?.profile ? <MePage profile={member.profile} provider={member.provider} onBack={() => openPage(null)} onAsk={() => ask()} say={say}
-      onOpenIssue={no => { setOpenIssue(no); setPage("board"); }} onPublic={v => setSession(x => x && x.account !== "guest" && x.profile ? { ...x, profile: { ...x.profile, isPublic: v } } : x)} /> : null}
     {sheet && member?.profile ? <ShareSheet handle={member.profile.handle} name={member.profile.name} sync={member.home?.sync ?? null} friends={member.home?.friends ?? 0} shape={shape} share={member.share}
       scene={sheet.scene} say={say} onClose={() => setSheet(null)} onSaved={sh => setSession(x => x && x.account !== "guest" ? { ...x, share: sh } : x)} /> : null}
     <div className={`${s.toast} ${toast ? s.toastOn : ""}`} role="status" aria-live="polite">{toast}</div>

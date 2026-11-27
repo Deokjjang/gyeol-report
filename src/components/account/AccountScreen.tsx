@@ -16,7 +16,7 @@ import { rememberPopup } from "../../lib/ops/comp/popupSelect";
 
 /** 선물 링크로 로그인·가입을 시작한 경우(P 추가 F): 가입 정보까지 마치면 그 선물 화면으로 돌아가 자동으로 받는다(10분 돌아오기 쿠키가 지나도). */
 export const GIFT_PENDING_KEY = "gyeol-gift-pending-v1";
-function pendingGiftPath(): string | null {
+export function pendingGiftPath(): string | null {
   try {
     const raw = localStorage.getItem(GIFT_PENDING_KEY); if (!raw) return null;
     const v = JSON.parse(raw) as { token?: string; at?: number };
@@ -26,7 +26,7 @@ function pendingGiftPath(): string | null {
 }
 
 /** 결제하기 → 로그인을 거친 입력 사본(BookCheckout, 30분)이 있으면 그 상품 결제 화면으로 돌아간다(돌아오기 쿠키가 지나도). */
-function pendingCheckoutPath(): string | null {
+export function pendingCheckoutPath(): string | null {
   try {
     const v = JSON.parse(localStorage.getItem("gyeol-book-return-backup-v1") ?? "null") as { productKey?: string; at?: number } | null;
     return v && typeof v.productKey === "string" && /^[a-z_]{3,40}$/.test(v.productKey) && typeof v.at === "number" && Date.now() - v.at < 30 * 60_000 ? `/report/new?product=${v.productKey}` : null;
@@ -46,7 +46,7 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
   const saved = (next?: string, joined?: ProfileSaved) => {
     const to = next ?? pendingGiftPath() ?? pendingCheckoutPath();
     // F 퍼널: 신규 가입·가입 이용권 지급은 서버(/auth/profile)가 처음 유입 값으로 센다.
-    if (joined?.signupGift) { setWelcome({ gift: joined.signupGift, to: to ?? null, pick: pendingCheckoutPath() ?? "/" }); return; }
+    if (joined?.signupGift) { setWelcome({ gift: joined.signupGift, to: to ?? null, pick: pendingCheckoutPath() ?? (local ? "/dev/book-flow" : "/products") }); return; }
     if (to) { window.location.assign(to); return; }
     announceAccountChange(); void refresh();
   };
@@ -115,7 +115,7 @@ export function AccountScreen({ local = false, loginError = false, next, ticketS
         <button className={s.small} disabled={busy} onClick={() => run("logout")}>로그아웃</button>
       </>}
       {message || error ? <p className={s.error} role="alert">{message || "로그인 상태를 확인하지 못했어요. 다시 시도해 주세요."}</p> : null}
-      {session.status !== "member" ? <Link className={s.guest} href={guest}>로그인 없이 둘러보기 →</Link> : null}
+      {session.status !== "member" ? <Link className={s.guest} href={local ? guest : "/products"}>로그인 없이 둘러보기 →</Link> : null}
     </section>
     {welcome ? <EventPopup id="signup" state={{ member: true, comp: null, event: welcome.gift.event, signup: { active: true, mine: { status: "available", expiresAt: welcome.gift.expiresAt } } }}
       onDone={() => leaveWelcome(welcome.to)} onPick={() => leaveWelcome(welcome.pick)} /> : null}

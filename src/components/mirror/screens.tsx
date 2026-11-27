@@ -18,7 +18,8 @@ export function Wordmark({ size, sweep = false }: { size: "sm" | "lg"; sweep?: b
 }
 
 /* ---------- 로그인 ---------- */
-export function LoginScreen() {
+/** next: 로그인 뒤 돌아올 곳(이 서비스 시작 주소 또는 /me). */
+export function LoginScreen({ next = "/", extra }: { next?: "/" | "/start" | "/me"; extra?: ReactNode }) {
   // 이 화면은 브라우저에서만 그려진다(MirrorEntry ssr:false) — 첫 그림에서 바로 판별한다.
   const [inApp] = useState<{ kind: InAppKind; ua: string } | null>(() => { const ua = navigator.userAgent, kind = inAppBrowser(ua); return kind ? { kind, ua } : null; });
   const [busy, setBusy] = useState(false), [message, setMessage] = useState("");
@@ -36,7 +37,7 @@ export function LoginScreen() {
   async function start(provider: "kakao" | "google") {
     if (busy) return; setBusy(true); setMessage("");
     try {
-      const r = await fetch("/auth/start", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ provider, next: "/" }) });
+      const r = await fetch("/auth/start", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify({ provider, next }) });
       const data = await r.json().catch(() => ({}));
       if (r.ok && typeof data.url === "string") { location.assign(data.url); return; }
       setMessage(data.error ?? "로그인을 시작하지 못했어요. 다시 시도해 주세요.");
@@ -61,7 +62,8 @@ export function LoginScreen() {
         {help ? <><p>{IN_APP_MENU_HINT[inApp.kind]}</p><button className={cx(s.inAppBtn, s.press)} type="button" onClick={async () => setMessage(await copyText(handoff ?? location.href) ? "복사했어요" : "주소를 복사하지 못했어요")}>링크 복사</button></> : null}
       </div> : <button className={cx(s.google, s.press)} type="button" disabled={busy} onClick={() => start("google")}><span className={s.gmark} aria-hidden="true">G</span>Google로 시작하기</button>}
       {message ? <p className={s.error} role="status">{message}</p> : null}
-      {process.env.NODE_ENV === "development" ? <p className={s.fine}><a href="/dev/v5-login?next=/" data-dev-login>로컬 검수 계정으로 들어가기</a></p> : null}
+      {extra}
+      {process.env.NODE_ENV === "development" ? <p className={s.fine}><a href={`/dev/v5-login?next=${encodeURIComponent(next)}`} data-dev-login>로컬 검수 계정으로 들어가기</a></p> : null}
     </div>
   </div><div className={sf.bizLogin}><BusinessLine /></div></section>;
 }

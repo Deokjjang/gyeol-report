@@ -56,7 +56,7 @@ export function FreeLanding({ signup, event, examples }: { signup: SignupPublicV
       {member ? ticket ? <>
         <p className={s.benefit} data-free-state="ticket">{FREE_COPY.ticketTitle}</p>
         <p className={s.benefitNote}>{md(ticket.expiresAt)}까지 쓸 수 있어요</p>
-        <Link className={s.cta} href="/">{FREE_COPY.ticketCta}</Link>
+        <Link className={s.cta} href="/products">{FREE_COPY.ticketCta}</Link>
       </> : <>
         <p className={s.benefit} data-free-state="member">{FREE_COPY.memberTitle}</p>
         <p className={s.benefitNote}>{FREE_COPY.memberBody}</p>
@@ -70,7 +70,7 @@ export function FreeLanding({ signup, event, examples }: { signup: SignupPublicV
           : <a className={s.cta} href={FREE_LOGIN_PATH} data-free-cta onClick={e => { e.currentTarget.href = freeLoginHref(); }}>{FREE_COPY.cta}</a>}
       </> : <>
         <p className={s.benefit} data-free-state="general">나를 한 권의 책으로 만나 보세요</p>
-        <Link className={s.cta} href="/" data-free-cta-general>{FREE_COPY.generalCta}</Link>
+        <Link className={s.cta} href="/products" data-free-cta-general>{FREE_COPY.generalCta}</Link>
       </>}
       {eventOn ? <p className={s.eventLine} data-free-event-line>{FREE_COPY.eventLine(until)}</p> : null}
     </section>

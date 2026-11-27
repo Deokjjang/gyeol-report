@@ -53,7 +53,7 @@ export function LibraryHome() {
     <section className={s.shelfSection} aria-labelledby="shelf-title">
       <h2 id="shelf-title" className={s.shelfTitle}>만든 리포트</h2>
       {books.length ? <ul className={s.shelf} aria-label="내 책 목록">{books.map(b => <ShelfCard key={b.reportId} book={b} onChanged={() => load(true)} />)}</ul>
-        : <div className={s.empty} data-library-empty><p>아직 만든 리포트가 없어요.</p><Link href="/">책 고르기 →</Link></div>}
+        : <div className={s.empty} data-library-empty><p>아직 만든 리포트가 없어요.</p><Link href="/products">책 고르기 →</Link></div>}
     </section>
     {gift && wallet ? <GiftSheet wallet={wallet} onClose={() => setGift(false)} onChanged={() => load(true)} /> : null}
   </>;

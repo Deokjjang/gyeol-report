@@ -71,7 +71,7 @@ export function SignupPopupBody({ titleId, bodyId, eventOn, eventUntil = "", onP
     <h2 id={titleId} className={s.title}>{SIGNUP_POPUP_TITLE}</h2>
     <p id={bodyId} className={s.body}>{SIGNUP_POPUP_BODY}</p>
     <div className={s.actions}>
-      <Link className={s.primary} href="/" data-signup-pick onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname) || custom) e.preventDefault(); onPick(); }}>책 고르기</Link>
+      <Link className={s.primary} href="/products" data-signup-pick onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname) || custom) e.preventDefault(); onPick(); }}>책 고르기</Link>
     </div>
     {eventOn ? <p className={s.small} data-signup-event-line>{signupPopupEventLine(eventUntil)}</p> : null}
   </>;
@@ -112,7 +112,7 @@ export function EventPopup({ id, state, clock = Date.now, onDone, onPick }: { id
         {ticketDays > 0 ? <p className={s.small}>{eventTicketValidityLine(ticketDays)}</p> : null}
         <div className={s.actions}>
           <a className={s.secondary} href="/example" onClick={() => done("close")}>예시 먼저 보기</a>
-          <Link className={s.primary} href="/" onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname)) e.preventDefault(); done("close"); }}>리포트 고르기</Link>
+          <Link className={s.primary} href="/products" onClick={e => { if (/^\/(products)?\/?$/.test(window.location.pathname)) e.preventDefault(); done("close"); }}>리포트 고르기</Link>
         </div>
       </> : comp ? <>
         <p className={s.eyebrow}>새로 쓴 결리포트</p>

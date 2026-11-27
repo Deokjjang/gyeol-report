@@ -166,7 +166,7 @@ export default function ReportShareActions({ productSlug = "saju-mbti-full", cla
         </div>
         <div className={styles.reentryActions}>
           <Link className={styles.reentryPrimary} href={productHref}>나도 내 리포트 보기 <ArrowIcon /></Link>
-          <Link className={styles.reentrySecondary} href="/">다른 리포트 보기</Link>
+          <Link className={styles.reentrySecondary} href="/products">다른 리포트 보기</Link>
         </div>
       </aside>
     </div>
