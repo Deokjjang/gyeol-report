@@ -270,6 +270,8 @@ function Consent({ compWaiting, name, onDone }: { compWaiting: boolean; name: st
     {compWaiting ? <p className={m.notice} data-comp-waiting>업그레이드 기념 이용권이 서재에서 기다리고 있어요</p> : null}
     <p className={s.sub}>{name ? `${name}님, ` : ""}지금 이용약관과 개인정보처리방침을 확인해 주세요.</p>
     <div className={s.form} data-me-consent>
+      {/* 기존 /account와 같은 「전체 동의」(두 필수 칸을 한 번에). */}
+      <label className={cx(s.check, m.all)}><input type="checkbox" checked={terms && privacy} onChange={e => { setTerms(e.target.checked); setPrivacy(e.target.checked); }} name="all" />전체 동의</label>
       <label className={s.check}><input type="checkbox" checked={terms} onChange={e => setTerms(e.target.checked)} name="terms" />[필수] 이용약관 동의<a href="/terms" target="_blank" rel="noreferrer">보기</a></label>
       <label className={s.check}><input type="checkbox" checked={privacy} onChange={e => setPrivacy(e.target.checked)} name="privacy" />[필수] 개인정보처리방침 동의<a href="/privacy" target="_blank" rel="noreferrer">보기</a></label>
       {error ? <p className={s.error} role="alert">{error}</p> : null}

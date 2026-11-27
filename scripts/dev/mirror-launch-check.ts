@@ -207,7 +207,9 @@ async function me() {
   const nc = await b.newContext(VIEW), np = await login(nc, fresh, "/me");
   await np.waitForSelector("[data-me-consent]", { timeout: 30_000 });
   check(true, "동의 전 회원: /me가 약관 동의를 받는다(기존 /account 동의와 같은 /auth/consent)"); await shot(np, "me-1-consent");
-  await np.check("input[name=terms]"); await np.check("input[name=privacy]"); await np.getByRole("button", { name: "동의하고 계속하기" }).click();
+  await np.check("input[name=all]");
+  check(await np.isChecked("input[name=terms]") && await np.isChecked("input[name=privacy]"), "전체 동의 → 이용약관 · 개인정보 두 칸 모두(기존 /account와 같다)");
+  await np.getByRole("button", { name: "동의하고 계속하기" }).click();
   await np.waitForSelector("[data-me-contact-required] [data-profile-form]", { timeout: 30_000 });
   check(true, "동의 뒤 가입 정보(이름 · 이메일) 카드 — 기존 ProfileForm"); await shot(np, "me-2-contact-required", true);
   await np.getByLabel("이름(필수)").fill("검수 새회원");
