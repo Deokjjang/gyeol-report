@@ -205,7 +205,7 @@ export const ITEM_PUNCH: Readonly<Record<string, { A: string; B: string }>> = {
 type LeadV = { k: number; n: number; m: number; g1: number; g3: number };
 export const LEADS: Readonly<Record<"open" | "blind" | "hidden" | "closer", F<LeadV>>> = {
   open: [v => `친구 ${v.n}명 대부분이 본인과 같은 답을 고른 질문이 ${v.k}개예요.`, v => `친구 ${v.n}명이 거의 다 본인처럼 고른 질문은 ${v.k}개예요.`, v => `친구 ${v.n}명 다수가 본인과 같은 쪽을 고른 질문이 ${v.k}개 있어요.`,
-    v => `친구 ${v.n}명 눈에 그대로 비친 질문이 ${v.k}개 나왔어요.`, v => `본인과 친구 ${v.n}명이 거의 똑같이 고른 질문은 모두 ${v.k}개예요.`],
+    v => `친구 ${v.n}명 다수가 본인 답을 맞힌 질문이 ${v.k}개 나왔어요.`, v => `본인과 친구 ${v.n}명이 거의 똑같이 고른 질문은 모두 ${v.k}개예요.`],
   blind: [v => `친구 ${v.n}명 중 다수가 본인과 반대로 고른 질문이 ${v.k}개예요.`, v => `친구 ${v.n}명 가운데 다수가 반대로 고른 질문은 ${v.k}개예요.`, v => `스스로 본 쪽과 친구 ${v.n}명이 본 쪽이 갈린 질문이 ${v.k}개 보여요.`,
     v => `친구 ${v.n}명 눈에 반대로 비친 질문이 ${v.k}개 나왔어요.`, v => `직접 고른 답과 친구 ${v.n}명 다수의 답이 다른 질문은 모두 ${v.k}개예요.`],
   hidden: [v => `본인은 뚜렷하게 골랐는데 친구 답 ${v.m}개는 갈린 면이 ${v.k}개예요.`, v => `본인은 뚜렷한데 친구 답 ${v.m}개가 갈린 면이 ${v.k}개 잡혔어요.`, v => `직접 고른 쪽은 또렷한데 친구 답 ${v.m}개에선 덜 보인 면이 ${v.k}개예요.`,
@@ -263,7 +263,7 @@ export const BLIND_SPLIT: F<{ name: string; a: number; b: number }> = [
 ];
 export const BLIND_SAME: F<{ name: string; n: number; k: number }> = [
   v => `${v.name} 면 전체로는 친구 답 ${v.n}개 중 ${v.k}개가 본인과 같아요.`,
-  v => `${v.name} 면 전체로 보면 ${v.n}개 중 ${v.k}개가 본인과 같은 답이에요.`,
+  v => `${v.name} 면 전체로 보면 친구 답 ${v.n}개 중 ${v.k}개가 본인과 같은 쪽이에요.`,
   v => `${v.name} 면 전체 친구 답은 ${v.n}개 중 ${v.k}개가 본인 쪽으로 기울었어요.`,
 ];
 export const HIDDEN_SELF: F<{ name: string; k5: number; noun: string }> = [
@@ -354,12 +354,13 @@ export const ATTACH_UNDECIDED: F<{ n: number }> = [
   v => `그래서 가까운 사람 ${v.n}명 눈에 비친 유형은 아직 비워 둬요.`,
   v => `그래서 가까운 사람 ${v.n}명이 본 유형은 아직 말하지 않아요.`,
   v => `가까운 사람 ${v.n}명이 본 유형은 다음 호에서 다시 봐요.`,
-  v => `유형은 가까운 사람 ${v.n}명 답이 기울면 그때 말해요.`,
+  v => `가까운 사람이 더 답하면 그때 유형을 말할게요.`,
 ];
 export const ATTACH_THIN: F<{ need: number }> = [
   // 규칙 d: 답이 6개 안 되는 면은 이름을 대지 않는다 — 모자란 기준(면마다 6개)만 말한다.
-  v => `가까운 사람 답이 ${v.need}개 안 되는 면이 있어 유형은 아직 말하지 않아요.`,
-  v => `가까운 사람 답이 면마다 ${v.need}개는 모여야 유형을 말할 수 있어요.`,
+  // 주어를 밝힌다 — 바로 앞 문장이 본인 유형을 말한다.
+  v => `가까운 사람이 본 유형은 답이 ${v.need}개 안 되는 면이 있어 아직 말하지 않아요.`,
+  v => `가까운 사람이 본 유형은 면마다 답이 ${v.need}개는 모여야 말할 수 있어요.`,
 ];
 /** 확인 · 거리 10문항: 친구 · 가까운 사이 80% 이상이 한쪽을 고른 장면이 있을 때 한 번(꼭지당 유일한 추측 문장 — 「~일 거예요」). */
 export const ATTACH_ITEM: Readonly<Record<string, { A: string; B: string }>> = {
@@ -481,7 +482,6 @@ export const NEXT_HINT: Readonly<Record<"perItem" | "closer" | "attach" | "facet
   storiesOne: ["친구가 이야기를 남기면 「친구가 남긴 이야기」가 열려요.", "「친구가 남긴 이야기」는 친구가 이야기를 남기면 생겨요."],
 };
 export const NEXT_NOBLIND: F<{ n: number }> = [v => `답 ${v.n}개 안에서는 반대로 본 장면이 아직 없어요.`, v => `반대로 본 장면은 답 ${v.n}개를 모아도 아직 없어요.`, v => `친구 다수가 반대로 고른 질문은 답 ${v.n}개 중에 아직 나오지 않았어요.`, () => "아직은 본인과 반대로 본 질문이 하나도 없어요."];
-export const NEXT_ONE = "한 질문에 친구가 3명 모이면 친구들 답이 모인 쪽이 보여요.";
 export const NEXT_CLOSE: F<{ date: string }> = [v => `다음 호는 ${v.date}에 열려요.`, v => `${v.date}부터 다음 호를 받을 수 있어요.`, v => `${v.date}에 다음 호가 나와요.`, v => `다음 호 날짜는 ${v.date}이에요.`];
 
 /* ───────── 한 사람이 본 나(친구 1명) ───────── */

@@ -2,7 +2,7 @@
  * 「남이 본 나」 명령 3 로컬 확인(실제 브라우저 · 로컬 DB · 개발 서버 http://localhost:3300, 두 관문 모두 열린 next dev). 운영 · 외부 호출 없음.
  * 결제는 tools/p6d/toss-mock.mjs 대역(개발 서버를 NODE_OPTIONS="--import …/toss-mock.mjs" TOSS_MOCK_DIR=… OPS_MOCK_WRITER=ok 로 띄운다), 작가는 목업.
  *   pnpm exec tsx scripts/dev/mirror-launch-check.ts existing     # 아이디 · 질문지 없는 기존 회원(p6e-cust, 책 보유): (a) 책 주소 (b) 공유 링크 (c) 내 계정 → 심층 리포트 (d) 결제 → 발행 → 책 열기 (e) 이용권으로 책 시작
- *   pnpm exec tsx scripts/dev/mirror-launch-check.ts root         # 같은 처지의 회원(p6e-oldmember)이 "/"로 들어갈 때만 프로필 → 질문지 → 홈, 끝난 뒤 서재 책 그대로
+ *   pnpm exec tsx scripts/dev/mirror-launch-check.ts root         # 같은 처지의 회원(p6e-oldmember, 또는 MIRROR_ROOT_AS)이 "/"로 들어갈 때만 프로필 → 질문지 → 홈, 끝난 뒤 서재 책 그대로
  *   pnpm exec tsx scripts/dev/mirror-launch-check.ts me           # 서재 기능 대조표의 기능 하나하나를 새 내 계정(/me)에서 실행
  *   pnpm exec tsx scripts/dev/mirror-launch-check.ts viewports    # 390×844 · 360×780 · 430×932 전체 흐름(가로 넘침 0)
  *   pnpm exec tsx scripts/dev/mirror-launch-check.ts ua           # 인스타 · 카톡 인앱, iOS 사파리, 안드로이드 크롬 UA로 로그인 분기
@@ -155,7 +155,8 @@ async function existing() {
 
 /* ───────── "/"로 들어갈 때만 프로필 → 질문지, 끝나도 서재 그대로 ───────── */
 async function root() {
-  const AS = "oldmember";
+  // 한 번 돌면 그 회원에게 아이디가 생긴다 — 다시 돌릴 때는 책 있고 아이디 없는 다른 로컬 회원을 MIRROR_ROOT_AS로 준다(예: friend).
+  const AS = process.env.MIRROR_ROOT_AS ?? "oldmember";
   check(mirrorProfile(AS) === 0, `p6e-${AS}: 아이디 없음`);
   const before = booksOf(AS);
   const b = await launch(), ctx = await b.newContext(VIEW);

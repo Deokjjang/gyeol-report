@@ -25,7 +25,7 @@ import { MIRROR_FACETS, MIRROR_FACET_IDS, MIRROR_ITEMS, MIRROR_ITEM_BY_ID, facet
 import {
   ATTACH_CLOSE, ATTACH_DIFF, ATTACH_FRIEND, ATTACH_ITEM, ATTACH_SELF_AGAIN, ATTACH_NOTE, ATTACH_NOUN, ATTACH_SAME, ATTACH_SELF, ATTACH_SPLIT_BOTH, ATTACH_SPLIT_ONE, ATTACH_THIN, ATTACH_UNDECIDED,
   BAND, BAND_FACETS, BAND_TOP, BLIND_EXCEPT, BLIND_EXCEPT_SCENE, BLIND_FACET, BLIND_SAME, BLIND_SPLIT, CLOSE, CLOSE_PLAIN, CLOSER_G1, CLOSER_G1_NAMED, CLOSER_G3, CLOSER_ONE,
-  HEDGE, HIDDEN_FRIEND, HIDDEN_SELF, LEADS, MODIFIERS, MODIFIER_FALLBACK, NEXT_CLOSE, NEXT_GROWTH, NEXT_HINT, NEXT_LEAD, NEXT_NOBLIND, NEXT_ONE,
+  HEDGE, HIDDEN_FRIEND, HIDDEN_SELF, LEADS, MODIFIERS, MODIFIER_FALLBACK, NEXT_CLOSE, NEXT_GROWTH, NEXT_HINT, NEXT_LEAD, NEXT_NOBLIND,
   ITEM_PUNCH, ONE_CLOSE, ONE_FACET, ONE_LEAD, ONE_PERFECT, OPEN_FACET, POINTER, SECTION_TITLE, SELF_COUNT, SELF_COUNT_AGAIN, SIDE_NOUN, STORIES_CLOSE, STORIES_LEAD, STORIES_REST,
   SUMMARY_COUNT, SUMMARY_PREV, SUMMARY_SYNC, UNKNOWN_BODY, UNKNOWN_CLOSE, UNKNOWN_EVEN, UNKNOWN_EVEN_CLOSE, UNKNOWN_LEAD, UNKNOWN_QUESTION, VAGUE_SUMMARY,
   bandLevel, bestWord, hiddenBucket, ida, numIra, numRo, type ModifierKind,
@@ -662,11 +662,10 @@ export function buildReport(input: ReportInput): ReportSnapshot {
     const prev = input.previous, date = kstMonthDay(input.nextIssueAt);
     const lead = [prev && answers > prev.stats.answers ? say(NEXT_GROWTH, { d: answers - prev.stats.answers }, "next:growth") : say(NEXT_LEAD, { n: answers, no: issueNo }, "next:lead")];
     const body: string[] = [];
-    if (one) body.push(emit(NEXT_ONE));
     if (!one && flags.perItem3 && !opened.has("blind")) body.push(say(NEXT_NOBLIND, { n: answers }, "next:noblind"));
     // 열릴 꼭지: 두 개까지, 한 문장에 하나씩.
     const hints: (readonly [string, string])[] = [];
-    if (!one && !flags.perItem3) hints.push(NEXT_HINT.perItem);
+    if (!flags.perItem3) hints.push(NEXT_HINT.perItem);
     if (!one && !opened.has("closer") && (groupSize(1) < REPORT_RULES.closerMinFriends || groupSize(3) < REPORT_RULES.closerMinFriends)) hints.push(NEXT_HINT.closer);
     if (!opened.has("attach") && closeFriends.length < REPORT_RULES.attachMinFriends) hints.push(NEXT_HINT.attach);
     if (!one && !flags.facet6) hints.push(NEXT_HINT.facet);
@@ -724,7 +723,7 @@ const COUNT_LINE = /^친구 (\d+명|한 명)이 \d+개를 답했어요\.$/;
 /** 형식이 정해진 줄(다른 사람 사이 반복 점검에서 뺀다): 요약 첫 두 문장 · 다음 호 열림 안내 · 날짜 줄 · 친구 한 명 안내 · 가까운 사람 답 모자람 안내. */
 const FIXED_LINE = new RegExp([
   "^친구 (\\d+명|한 명)이 \\d+개를 답했어요\\.$", "싱크로율은 \\d+%예요\\.$", "^다음 호는 \\d+월 \\d+일에 열려요\\.$", "^\\d+월 \\d+일부터 다음 호를 받을 수 있어요\\.$", "^\\d+월 \\d+일에 다음 호가 나와요\\.$", "^다음 호 날짜는 \\d+월 \\d+일이에요\\.$",
-  ...Object.values(NEXT_HINT).flat().map(h => `^${h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`), `^${NEXT_ONE}$`,
+  ...Object.values(NEXT_HINT).flat().map(h => `^${h.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`),
   // 가까운 관계의 나 — 답이 모자랄 때 안내(기준 개수만 담은 정해진 줄).
   ...NEXT_LEAD.map(f => `^${f({ n: 0, no: 1 }).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`),
   ...ATTACH_THIN.map(f => `^${f({ need: REPORT_RULES.facetMinAnswers }).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}$`),
