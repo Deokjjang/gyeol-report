@@ -102,7 +102,7 @@
 .hspace { flex: 1; }
 
 /* 빈 화면 층(받은 이야기 · 모두의 이야기 · 내 계정 · 기록판) */
-.page { position: fixed; inset: 0; z-index: 7; overflow-y: auto; background: rgba(0, 0, 0, .9); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-sizing: border-box; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: calc(14px + env(safe-area-inset-top, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)); animation: up .45s var(--ease) both; }
+.page { position: fixed; inset: 0; z-index: 7; overflow-y: auto; background: rgba(0, 0, 0, .965); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-sizing: border-box; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: calc(14px + env(safe-area-inset-top, 0px)) calc(28px + env(safe-area-inset-bottom, 0px)); animation: up .45s var(--ease) both; }
 .pg { max-width: 480px; margin: 0 auto; display: grid; gap: 20px; }
 .pghead { display: flex; align-items: center; gap: 10px; }
 .back { height: 38px; padding: 0 12px 0 8px; border-radius: 999px; border: 1px solid var(--line); background: none; cursor: pointer; font-size: 13px; display: flex; align-items: center; gap: 4px; }

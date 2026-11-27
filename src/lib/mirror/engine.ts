@@ -14,7 +14,8 @@ export type Strength = 1 | 2 | 3;
 export type SelfAnswers = Readonly<Record<string, Choice>>;
 export type FriendAnswer = { itemId: string; choice: FriendChoice };
 /** ownerDevice: 주인 본인 기기에서 들어온 세션 — 친구 답에 넣지 않는다(SPEC 「주인 본인 기기」). */
-export type FriendSession = { id: string; closeness: Closeness; ownerDevice?: boolean; answers: readonly FriendAnswer[] };
+/** golden: 저장된 황금별 표시(기록판 숫자용 — 계산은 isGolden). */
+export type FriendSession = { id: string; closeness: Closeness; ownerDevice?: boolean; golden?: boolean; answers: readonly FriendAnswer[] };
 
 export const CLOSENESS_LABEL: Readonly<Record<Closeness, string>> = { 1: "아는 사이", 2: "친구", 3: "가까운 사이" };
 export const STRENGTH_LABEL: Readonly<Record<Strength, string>> = { 1: "약함", 2: "보통", 3: "뚜렷함" };

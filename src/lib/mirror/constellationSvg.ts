@@ -6,7 +6,8 @@ import { facetAngle, SHAPE, type ConstellationShape } from "./constellation";
 import { hash32, seededRandom } from "./hash";
 import type { FriendStar } from "./home";
 
-export type SvgOptions = { size?: number; background?: string | null; lineOpacity?: number; friends?: readonly FriendStar[]; labels?: readonly string[] | null; margin?: number };
+/** friendDim: 친구 별 밝기 · 크기 비율(친구가 많을수록 낮춘다 — 내 별자리가 늘 가장 또렷하게). */
+export type SvgOptions = { size?: number; background?: string | null; lineOpacity?: number; friends?: readonly FriendStar[]; friendDim?: number; labels?: readonly string[] | null; margin?: number };
 
 const f1 = (n: number) => n.toFixed(1);
 export function constellationSvg(shape: ConstellationShape, opts: SvgOptions = {}): string {
@@ -18,19 +19,19 @@ export function constellationSvg(shape: ConstellationShape, opts: SvgOptions = {
     `<radialGradient id="c" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#FFF3E6" stop-opacity=".9"/><stop offset=".25" stop-color="#FFE6CC" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>`];
   if (opts.background !== null) parts.push(`<rect width="${size}" height="${size}" fill="${opts.background ?? "#000"}"/>`);
   parts.push(`<circle cx="${f1(half)}" cy="${f1(half)}" r="${f1(scale * 0.22)}" fill="url(#c)"/>`);
-  for (const [a, b] of shape.edges) {
-    const p = pts.get(a), q = pts.get(b);
-    if (p && q) parts.push(`<line x1="${f1(X(p.x))}" y1="${f1(Y(p.y))}" x2="${f1(X(q.x))}" y2="${f1(Y(q.y))}" stroke="#fff" stroke-opacity="${opts.lineOpacity ?? 0.55}" stroke-width="${f1(Math.max(1, size / 320))}" stroke-linecap="round"/>`);
-  }
-  // 친구 별: 3D와 같은 자리(맞으면 내 별 옆, 다르면 반대쪽으로 비켜선 자리) + 작은 흔들림.
+  // 친구 별: 3D와 같은 자리(맞으면 내 별 옆, 다르면 반대쪽으로 비켜선 자리) + 작은 흔들림. 선 · 내 별보다 먼저(뒤에) 그린다.
   for (const star of opts.friends ?? []) {
     const p = pts.get(star.facet);
     if (!p) continue;
     const r = seededRandom(hash32(`star3d:${star.key}`)), j = 0.035;
     const base = star.matched ? { x: p.x, y: p.y } : (() => { const a = facetAngle(p.index) + (p.side === "A" ? -SHAPE.lean : SHAPE.lean), rr = SHAPE.inner + SHAPE.span * (1 - p.strength * 0.55); return { x: Math.cos(a) * rr, y: Math.sin(a) * rr }; })();
     const x = base.x + (r() - 0.5) * 2 * j, y = base.y + (r() - 0.5) * 2 * j;
-    const color = star.golden ? "#FFD08A" : "#CAD7FF", rad = (star.golden ? 2.6 : [1.3, 1.6, 2][star.closeness - 1]) * size / 320;
-    parts.push(`<circle cx="${f1(X(x))}" cy="${f1(Y(y))}" r="${f1(rad)}" fill="${color}" fill-opacity="${star.golden ? 1 : [0.6, 0.78, 0.95][star.closeness - 1]}"/>`);
+    const k = opts.friendDim ?? 1, color = star.golden ? "#FFD08A" : "#CAD7FF", rad = (star.golden ? 2.2 : [1.2, 1.45, 1.75][star.closeness - 1]) * (.7 + .3 * k) * size / 320;
+    parts.push(`<circle cx="${f1(X(x))}" cy="${f1(Y(y))}" r="${f1(rad)}" fill="${color}" fill-opacity="${((star.golden ? .95 : [0.55, 0.7, 0.85][star.closeness - 1]) * k).toFixed(2)}"/>`);
+  }
+  for (const [a, b] of shape.edges) {
+    const p = pts.get(a), q = pts.get(b);
+    if (p && q) parts.push(`<line x1="${f1(X(p.x))}" y1="${f1(Y(p.y))}" x2="${f1(X(q.x))}" y2="${f1(Y(q.y))}" stroke="#fff" stroke-opacity="${opts.lineOpacity ?? 0.55}" stroke-width="${f1(Math.max(1, size / 320))}" stroke-linecap="round"/>`);
   }
   for (const p of shape.points) {
     const r = (2.2 + 2.6 * p.brightness) * size / 320;

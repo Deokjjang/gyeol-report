@@ -27,6 +27,11 @@ export type SkyOptions = {
   onBang?: () => void; onHome?: () => void; onLand?: (star: FriendStar) => void;
 };
 
+/** 내 별 크기 하한 · 친구 별 크기 상한(친구 별은 늘 내 별보다 작다). 성장 연출 밝기 상한(내 별자리를 가리지 않게). */
+export const SELF_SIZE_MIN = 1.9, FRIEND_SIZE_MAX = 1.1;
+export const GROWTH_CAP = { clus: .45, neb: .45, gal: .34, core: .7 } as const;
+/** 친구 수에 따른 친구 별 밝기 · 크기 비율(100명 0.85 · 400명 0.55). */
+export const friendDim = (n: number) => clamp(1.05 - n / 500, .55, 1);
 /** 단위 원 좌표 → 세계 좌표(시안의 별 반지름 1.15~2.1과 비슷한 크기). */
 const WORLD = 2.7;
 const clamp = (x: number, a: number, b: number) => Math.min(b, Math.max(a, x));
@@ -137,35 +142,42 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
   const SV = Array.from({ length: N }, () => new THREE.Vector3()), AV = Array.from({ length: N }, () => new THREE.Vector3());
   const present = new Array<boolean>(N).fill(false);
   let edges: [number, number][] = [];
+  // 가독성(명령 2 추가 2): 성단 · 성운 · 은하는 내 별자리 뒤쪽 깊이에 두고 밝기 상한(GROWTH_CAP)을 둔다. 내 별(점)은 맨 앞 · 가장 크고 밝게, 선은 SVG로 캔버스 위에 그린다.
   const clusMat = mat(VS); clusMat.uniforms.uOpacity.value = 0; clusMat.uniforms.uTw.value = .3;
-  const clusG = geo(520, (i, p, c, s, sd) => { const t = tcol(), b = .5 + .5 * rand(); c[i * 3] = t[0] * b; c[i * 3 + 1] = t[1] * b; c[i * 3 + 2] = t[2] * b; s[i] = .25 + .45 * Math.pow(rand(), 2); sd[i] = rand(); });
-  C.add(new THREE.Points(clusG, clusMat));
+  const clusG = geo(520, (i, p, c, s, sd) => { const t = tcol(), b = .35 + .35 * rand(); c[i * 3] = t[0] * b; c[i * 3 + 1] = t[1] * b; c[i * 3 + 2] = t[2] * b; s[i] = .2 + .35 * Math.pow(rand(), 2); sd[i] = rand(); });
+  const clusPts = new THREE.Points(clusG, clusMat); clusPts.renderOrder = 3; C.add(clusPts);
   const nebMat = mat(VS); nebMat.uniforms.uTw.value = 0; nebMat.uniforms.uOpacity.value = 0;
   const centers = Array.from({ length: 8 }, (_, k) => ({ a: k * .78 + rand() * .3, r: .8 + rand() * 1.8, sg: .55 + rand() * .7, cool: k % 3 !== 1 }));
   world.add(new THREE.Points(geo(2600, (i, p, c, s, sd) => {
     const cc = centers[i % centers.length];
-    p[i * 3] = Math.cos(cc.a) * cc.r + gauss() * cc.sg; p[i * 3 + 1] = Math.sin(cc.a) * cc.r * .8 + gauss() * cc.sg * .7; p[i * 3 + 2] = -1.4 + gauss() * cc.sg * .6;
+    p[i * 3] = Math.cos(cc.a) * cc.r + gauss() * cc.sg; p[i * 3 + 1] = Math.sin(cc.a) * cc.r * .8 + gauss() * cc.sg * .7; p[i * 3 + 2] = -3.4 + gauss() * cc.sg * .6;
     const b = .045 + .06 * rand(); if (cc.cool) { c[i * 3] = .5 * b; c[i * 3 + 1] = .66 * b; c[i * 3 + 2] = 1 * b; } else { c[i * 3] = 1 * b; c[i * 3 + 1] = .7 * b; c[i * 3 + 2] = .5 * b; }
     s[i] = 1.3 + 2.4 * rand(); sd[i] = rand();
-  }), nebMat));
+  }), nebMat)); world.children[world.children.length - 1].renderOrder = 1;
   const galMat = mat(VS); galMat.uniforms.uTw.value = .06; galMat.uniforms.uOpacity.value = 0;
   const gal = new THREE.Points(geo(14000, (i, p, c, s, sd) => {
     let x, y, z, rr;
     if (i % 5 === 0) { rr = Math.abs(gauss()) * .55; const th = rand() * 6.2832, ph = Math.acos(2 * rand() - 1); x = rr * Math.sin(ph) * Math.cos(th); y = rr * Math.cos(ph) * .45; z = rr * Math.sin(ph) * Math.sin(th); }
     else { const arm = i % 2, t = Math.pow(rand(), .8) * 3.4; rr = .45 * Math.exp(.55 * t); const a = t * 1.15 + arm * Math.PI + gauss() * .28 / (1 + t * .4); x = Math.cos(a) * rr + gauss() * .08 * rr; z = Math.sin(a) * rr + gauss() * .08 * rr; y = gauss() * .06 * (1 + rr * .3); }
     p[i * 3] = x; p[i * 3 + 1] = y; p[i * 3 + 2] = z;
-    const k = clamp(rr / 3.2, 0, 1), b = .14 + .34 * rand() * (1 - k * .4);
+    const k = clamp(rr / 3.2, 0, 1), b = (.14 + .34 * rand() * (1 - k * .4)) * (i % 5 === 0 ? .4 : 1);
     c[i * 3] = (1 - .35 * k) * b; c[i * 3 + 1] = (.9 - .05 * k) * b; c[i * 3 + 2] = (.76 + .24 * k) * b;
     s[i] = .3 + .7 * rand(); sd[i] = rand();
-  }), galMat); gal.rotation.set(1.18, 0, .3); gal.position.set(0, 0, -1.2); gal.scale.setScalar(1.05); world.add(gal);
+  }), galMat); gal.rotation.set(1.18, 0, .3); gal.position.set(0, 0, -4.2); gal.scale.setScalar(1.25); gal.renderOrder = 2; world.add(gal);
 
-  const selfMat = mat(VS); selfMat.uniforms.uOpacity.value = 0; selfMat.uniforms.uTw.value = .06;
+  // 내 별 뒤의 어두운 테두리(일반 섞기): 뒤쪽 성단 · 친구 별 빛을 별 둘레에서만 눌러 점이 또렷이 떠 보이게 한다.
+  const haloMat = new THREE.ShaderMaterial({ uniforms: { uPR: { value: PR }, uOpacity: { value: 0 } }, transparent: true, depthWrite: false, depthTest: false, blending: THREE.NormalBlending,
+    vertexShader: "attribute float aSize; uniform float uPR; void main(){ vec4 mv = modelViewMatrix * vec4(position,1.0); gl_PointSize = min(aSize * uPR * (300.0 / -mv.z), 96.0 * uPR); gl_Position = projectionMatrix * mv; }",
+    fragmentShader: "uniform float uOpacity; void main(){ float d = length(gl_PointCoord - .5); float a = smoothstep(.5, .12, d) * .7 * uOpacity; gl_FragColor = vec4(0.0, 0.0, 0.0, a); }" });
+  const haloG = geo(N, (i, p, c, s, sd) => { s[i] = 0; sd[i] = 0; });
+  const halo = new THREE.Points(haloG, haloMat); halo.renderOrder = 5; C.add(halo);
+  const selfMat = mat(VS); selfMat.uniforms.uOpacity.value = 0; selfMat.uniforms.uTw.value = .06; selfMat.depthTest = false;
   const selfG = geo(N, (i, p, c, s, sd) => { c[i * 3] = 1; c[i * 3 + 1] = .96; c[i * 3 + 2] = .9; s[i] = 0; sd[i] = rand(); });
-  C.add(new THREE.Points(selfG, selfMat));
+  const selfPts = new THREE.Points(selfG, selfMat); selfPts.renderOrder = 6; C.add(selfPts);
   const CAP = 420;
   const friendMat = mat(VS); friendMat.uniforms.uTw.value = .1;
   const fG = geo(CAP, (i, p, c, s, sd) => { sd[i] = rand(); }); fG.setDrawRange(0, 0);
-  C.add(new THREE.Points(fG, friendMat));
+  const friendPts = new THREE.Points(fG, friendMat); friendPts.renderOrder = 4; C.add(friendPts);
   function spikeTex() {
     const cv = document.createElement("canvas"); cv.width = cv.height = 256; const g = cv.getContext("2d")!;
     const r = g.createRadialGradient(128, 128, 0, 128, 128, 128); r.addColorStop(0, "rgba(255,255,255,1)"); r.addColorStop(.05, "rgba(255,248,238,.95)"); r.addColorStop(.18, "rgba(255,236,214,.22)"); r.addColorStop(.5, "rgba(200,210,255,.04)"); r.addColorStop(1, "rgba(0,0,0,0)");
@@ -175,7 +187,7 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
   }
   const coreTex = spikeTex();
   const coreMat = new THREE.SpriteMaterial({ map: coreTex, transparent: true, blending: THREE.AdditiveBlending, depthWrite: false });
-  const core = new THREE.Sprite(coreMat); core.scale.set(0, 0, 1); C.add(core);
+  const core = new THREE.Sprite(coreMat); core.scale.set(0, 0, 1); core.renderOrder = 4; C.add(core);
   const ringGeo = new THREE.RingGeometry(.985, 1, 180);
   const ringMat = new THREE.MeshBasicMaterial({ color: 0xFFF3E6, transparent: true, opacity: 0, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
   const ring = new THREE.Mesh(ringGeo, ringMat); scene.add(ring);
@@ -190,7 +202,8 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
     present.fill(false);
     edges = shape ? shape.edges : [];
     const p = selfG.attributes.position.array as Float32Array, sz = selfG.attributes.aSize.array as Float32Array;
-    for (let i = 0; i < N; i++) sz[i] = 0;
+    const hp = haloG.attributes.position.array as Float32Array, hs = haloG.attributes.aSize.array as Float32Array;
+    for (let i = 0; i < N; i++) { sz[i] = 0; hs[i] = 0; }
     const jr = seededRandom(shape?.seed ?? 1);
     for (const pt of shape?.points ?? []) {
       const i = pt.index; present[i] = true;
@@ -199,18 +212,20 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
       const a2 = facetAngle(i) + (pt.side === "A" ? -SHAPE.lean : SHAPE.lean), r2 = (SHAPE.inner + SHAPE.span * (1 - pt.strength * .55)) * WORLD;
       AV[i].set(Math.cos(a2) * r2, Math.sin(a2) * r2, SV[i].z);
       p[i * 3] = SV[i].x; p[i * 3 + 1] = SV[i].y; p[i * 3 + 2] = SV[i].z;
-      sz[i] = .8 + .9 * pt.brightness;
+      hp[i * 3] = SV[i].x; hp[i * 3 + 1] = SV[i].y; hp[i * 3 + 2] = SV[i].z;
+      sz[i] = SELF_SIZE_MIN + 1.2 * pt.brightness; hs[i] = 4.6;
     }
     selfG.attributes.position.needsUpdate = true; selfG.attributes.aSize.needsUpdate = true;
+    haloG.attributes.position.needsUpdate = true; haloG.attributes.aSize.needsUpdate = true;
     const cp = clusG.attributes.position.array as Float32Array, idx = SV.map((_, i) => i).filter(i => present[i]);
-    for (let i = 0; i < 520; i++) { const v = SV[idx.length ? idx[i % idx.length] : 0], j = .12 + .3 * Math.pow(rand(), .7); cp[i * 3] = v.x + gauss() * j; cp[i * 3 + 1] = v.y + gauss() * j; cp[i * 3 + 2] = v.z + gauss() * j; }
+    for (let i = 0; i < 520; i++) { const v = SV[idx.length ? idx[i % idx.length] : 0], j = .14 + .32 * Math.pow(rand(), .7); cp[i * 3] = v.x + gauss() * j; cp[i * 3 + 1] = v.y + gauss() * j; cp[i * 3 + 2] = v.z - .9 + gauss() * j * .6; }
     clusG.attributes.position.needsUpdate = true;
     for (const st of STARS) placeStar(st);
   }
   function placeStar(st: Star) {
     const r = seededRandom(hash32(`star3d:${st.data.key}`)), g = () => { let u = 0, v = 0; while (!u) u = r(); while (!v) v = r(); return Math.sqrt(-2 * Math.log(u)) * Math.cos(6.2832 * v); };
     const base = (st.data.matched ? SV : AV)[st.data.facet], same = STARS.filter(s => s !== st && s.data.facet === st.data.facet && s.data.matched === st.data.matched).length, j = .05 + .02 * Math.sqrt(same);
-    st.target.set(base.x + g() * j, base.y + g() * j, base.z + g() * j * 1.5);
+    st.target.set(base.x + g() * j, base.y + g() * j, base.z - .3 + g() * j * 1.5);
     const sa = r() * 6.2832; st.from.set(Math.cos(sa) * 9, Math.sin(sa) * 6, 4 + r() * 4);
     st.ctrl.copy(st.from).add(st.target).multiplyScalar(.5).add(new THREE.Vector3(g() * 1.5, g() * 1.5, 0));
   }
@@ -219,10 +234,12 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
   }
   function setFriends(stars: readonly FriendStar[], newFrom: number) {
     STARS.length = 0;
+    // 친구가 많아질수록 친구 별 하나하나는 작고 옅게(내 별보다 늘 작게 — FRIEND_SIZE_MAX < SELF_SIZE_MIN).
+    const k = friendDim(stars.length);
     stars.slice(0, CAP).forEach((data, i) => {
-      const bright = [.66, .82, 1][data.closeness - 1];
-      const st: Star = { data, target: new THREE.Vector3(), from: new THREE.Vector3(), ctrl: new THREE.Vector3(), t0: 0, dur: o.reduce ? .2 : 1.2, col: data.golden ? [1, .82, .54] : [bright, bright * .97, 1],
-        size: data.golden ? 2.3 : [.75, .95, 1.25][data.closeness - 1], landed: i < newFrom, landAt: -10, animate: i >= newFrom };
+      const bright = [.6, .74, .88][data.closeness - 1] * k;
+      const st: Star = { data, target: new THREE.Vector3(), from: new THREE.Vector3(), ctrl: new THREE.Vector3(), t0: 0, dur: o.reduce ? .2 : 1.2, col: data.golden ? [.95 * k, .78 * k, .5 * k] : [bright, bright * .97, Math.min(1, bright * 1.12)],
+        size: (data.golden ? FRIEND_SIZE_MAX : [.55, .68, .82][data.closeness - 1]) * (.75 + .25 * k), landed: i < newFrom, landAt: -10, animate: i >= newFrom };
       placeStar(st); STARS.push(st);
     });
     // 새 별은 하나씩 날아와 달린다(시안의 「+ 친구」 연출). 이미 본 별은 제자리.
@@ -282,7 +299,7 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
       const bt = S.phase === "bang" ? t - S.bangAt : 99;
       burstMat.uniforms.uBang.value = Math.min(bt, 6); burstMat.uniforms.uOpacity.value = bt < 6 ? 1 : 0;
       if (bt < 2.2) { ringAt = S.bangAt; ringCol = [1, .95, .9]; }
-      const growth = 1 + .25 * S.clus + .35 * S.neb + .4 * S.gal;
+      const growth = 1 + .1 * S.clus + .1 * S.neb + .1 * S.gal;
       const ce = bt < .9 ? ease(bt / .9) * 1.45 : 1.45 - .3 * ease((bt - .9) / 1.2); coreS = ce * growth * (1 + .025 * Math.sin(t * 2));
       skyA = ease((bt - .6) / 2.6); selfA = ease((bt - .7) / 1.2); segs = Math.floor(ease((bt - .9) / 1.6) * edges.length);
       if (S.phase === "bang" && bt > 3.2) { S.phase = "home"; o.onHome?.(); }
@@ -292,8 +309,9 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
     const rk = (t - ringAt) / (S.phase === "bang" ? 1.9 : 1.3);
     ringMat.opacity = rk >= 0 && rk < 1 ? .7 * (1 - rk) : 0; const rs = S.phase === "bang" ? .3 + rk * 13 : .5 + rk * 4.5; ring.scale.set(rs, rs, 1); ring.position.copy(orb.position); ringMat.color.setRGB(ringCol[0], ringCol[1], ringCol[2]);
     farMat.uniforms.uOpacity.value = skyA; bandMat.uniforms.uOpacity.value = skyA * .85;
-    selfMat.uniforms.uOpacity.value = selfA; core.scale.set(coreS * .9, coreS * .9, 1);
-    clusMat.uniforms.uOpacity.value = S.clus * .9; nebMat.uniforms.uOpacity.value = S.neb * .85; galMat.uniforms.uOpacity.value = S.gal * .9;
+    selfMat.uniforms.uOpacity.value = selfA; core.scale.set(coreS * .9, coreS * .9, 1); coreMat.opacity = 1 - (1 - GROWTH_CAP.core) * Math.max(S.neb, S.gal);
+    clusMat.uniforms.uOpacity.value = S.clus * GROWTH_CAP.clus; nebMat.uniforms.uOpacity.value = S.neb * GROWTH_CAP.neb; galMat.uniforms.uOpacity.value = S.gal * GROWTH_CAP.gal;
+    haloMat.uniforms.uOpacity.value = selfA;
     // 친구 별: 홈에서만 날아와 달린다.
     const p = fG.attributes.position.array as Float32Array, c = fG.attributes.aColor.array as Float32Array, s = fG.attributes.aSize.array as Float32Array;
     const n = S.phase === "home" || S.phase === "bang" ? STARS.length : 0;
@@ -310,11 +328,11 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
     }
     fG.setDrawRange(0, drawn); fG.attributes.position.needsUpdate = true; fG.attributes.aColor.needsUpdate = true; fG.attributes.aSize.needsUpdate = true;
     renderer.render(scene, camera);
-    if (S.phase === "bang" || S.phase === "home") drawLines(selfA * (S.landedCount >= 3 ? .62 : S.landedCount >= 1 ? .5 : .4), segs);
+    if (S.phase === "bang" || S.phase === "home") drawLines(selfA * (S.landedCount >= 40 ? .78 : S.landedCount >= 3 ? .66 : S.landedCount >= 1 ? .54 : .44), segs);
     else o.path.setAttribute("d", "");
     // 저사양: 50프레임 평균이 느리면 해상도를 낮춘다(시안 규칙, 0.6배까지).
     frames++; acc += dt;
-    if (frames === 50) { const avg = acc / frames; if (avg > .028 && PR > .6) { PR = Math.max(.6, PR - .35); renderer.setPixelRatio(PR); resize(); for (const m of mats) m.uniforms.uPR.value = PR; } frames = 0; acc = 0; }
+    if (frames === 50) { const avg = acc / frames; if (avg > .028 && PR > .6) { PR = Math.max(.6, PR - .35); renderer.setPixelRatio(PR); resize(); for (const m of mats) m.uniforms.uPR.value = PR; haloMat.uniforms.uPR.value = PR; } frames = 0; acc = 0; }
   }
   raf = requestAnimationFrame(frame);
 
@@ -337,7 +355,7 @@ export function createSky3D(THREE: Three, o: SkyOptions): SkyController {
       disposed = true; cancelAnimationFrame(raf); removeEventListener("resize", resize);
       o.canvas.removeEventListener("pointerdown", down); o.canvas.removeEventListener("pointermove", move); o.canvas.removeEventListener("pointerup", up); o.canvas.removeEventListener("pointercancel", up);
       for (const g of geos) g.dispose(); for (const m of mats) m.dispose();
-      orbGeo.dispose(); orbMat.dispose(); coreTex.dispose(); coreMat.dispose(); ringGeo.dispose(); ringMat.dispose();
+      orbGeo.dispose(); orbMat.dispose(); haloMat.dispose(); coreTex.dispose(); coreMat.dispose(); ringGeo.dispose(); ringMat.dispose();
       renderer.dispose();
     },
   };

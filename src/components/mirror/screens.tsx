@@ -8,7 +8,9 @@ import { optionOrder } from "../../lib/mirror/order";
 import { birthProblem, handleProblem, HANDLE_MESSAGES, nameProblem, normalizeHandle, normalizeName } from "../../lib/mirror/profileRules";
 import type { HomeView } from "../../lib/mirror/home";
 import { copyText, displayLink, mirrorApi, type ProfileView, type SessionView } from "./client";
+import { BusinessLine } from "./BusinessLine";
 import s from "./mirror.module.css";
+import sf from "./social.module.css";
 
 const cx = (...c: (string | false | null | undefined)[]) => c.filter(Boolean).join(" ");
 export function Wordmark({ size, sweep = false }: { size: "sm" | "lg"; sweep?: boolean }) {
@@ -61,7 +63,7 @@ export function LoginScreen() {
       {message ? <p className={s.error} role="status">{message}</p> : null}
       {process.env.NODE_ENV === "development" ? <p className={s.fine}><a href="/dev/v5-login?next=/" data-dev-login>로컬 검수 계정으로 들어가기</a></p> : null}
     </div>
-  </div></section>;
+  </div><div className={sf.bizLogin}><BusinessLine /></div></section>;
 }
 
 /* ---------- 프로필 설정 ---------- */
@@ -156,12 +158,13 @@ export function QuizScreen({ item, seed, done, picked, milestone, onPick, onBack
 
 /* ---------- 홈 ---------- */
 export type PageKey = "stories" | "space" | "me" | "board";
-export function HomeScreen({ profile, home, onOpen, onAsk }: { profile: ProfileView; home: HomeView; onOpen: (p: PageKey) => void; onAsk: () => void }) {
-  return <section className={s.scene} data-mirror-screen="home" data-friends={home.friends}><div className={s.wrap}>
+export function HomeScreen({ profile, home, storiesNew = 0, covered = false, onOpen, onAsk }: { profile: ProfileView; home: HomeView; storiesNew?: number; covered?: boolean; onOpen: (p: PageKey) => void; onAsk: () => void }) {
+  // 페이지(기록판 · 이야기 · 내 계정)가 위에 열리면 홈 글자는 숨기고 포커스도 막는다 — 별(Sky)만 뒤에 비친다.
+  return <section className={s.scene} data-mirror-screen="home" data-friends={home.friends} inert={covered} style={covered ? { visibility: "hidden" } : undefined}><div className={s.wrap}>
     <div className={s.hbar}>
       <Wordmark size="sm" />
       <div className={s.hbarR}>
-        <button className={s.icon} type="button" aria-label="받은 이야기" onClick={() => onOpen("stories")}><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="#F4F4F7" strokeWidth="1.4" strokeLinejoin="round" /><path d="M4 7l8 6 8-6" fill="none" stroke="#F4F4F7" strokeWidth="1.4" /></svg></button>
+        <button className={s.icon} type="button" aria-label={storiesNew ? `받은 이야기 · 새 이야기 ${storiesNew}개` : "받은 이야기"} onClick={() => onOpen("stories")} data-stories-new={storiesNew}><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v12H4z" fill="none" stroke="#F4F4F7" strokeWidth="1.4" strokeLinejoin="round" /><path d="M4 7l8 6 8-6" fill="none" stroke="#F4F4F7" strokeWidth="1.4" /></svg>{storiesNew ? <span className={s.badge}>{storiesNew > 99 ? "99+" : storiesNew}</span> : null}</button>
         <button className={s.icon} type="button" aria-label="모두의 이야기" onClick={() => onOpen("space")}><svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z" fill="none" stroke="#F4F4F7" strokeWidth="1.4" strokeLinejoin="round" /></svg></button>
         <button className={s.icon} type="button" aria-label="내 계정" onClick={() => onOpen("me")}>{[...profile.name][0] ?? "나"}</button>
       </div>
@@ -177,7 +180,7 @@ export function HomeScreen({ profile, home, onOpen, onAsk }: { profile: ProfileV
 }
 
 const PAGE_TITLES: Readonly<Record<PageKey, string>> = { stories: "받은 이야기", space: "모두의 이야기", me: "내 계정", board: "기록판" };
-/** 아이콘 3개 · 싱크로율 뒤의 화면(명령 1/3은 빈 화면만 — 내용은 명령 2). */
+/** 아이콘 3개 · 싱크로율 뒤의 화면 틀(내용은 pages.tsx). */
 export function EmptyPage({ page, onBack, children }: { page: PageKey; onBack: () => void; children?: ReactNode }) {
   return <section className={s.page} aria-label={PAGE_TITLES[page]} data-mirror-page={page}><div className={s.pg}>
     <div className={s.pghead}><button className={cx(s.back, s.press)} type="button" onClick={onBack}><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2L4 7l5 5" fill="none" stroke="#F4F4F7" strokeWidth="1.4" /></svg>내 별</button><h2>{PAGE_TITLES[page]}</h2></div>

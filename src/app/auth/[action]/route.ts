@@ -92,7 +92,16 @@ async function opsAccountAction(request: NextRequest, action: "profile" | "withd
     funnel: (user, steps) => scheduleServerFunnel(request.cookies, user.id, steps),
     unlinkKakao: id => kakaoUnlink(id, process.env.KAKAO_ADMIN_KEY),
     deleteUser: async id => { if (!ops.db) return false; const { error } = await ops.db.auth.admin.deleteUser(id, true); return !error; },
+    // 「남이 본 나」(명령 2/3): 공개 관문이 열려 있을 때만(배포 빌드는 지금과 같다 — 이 기능의 표가 없다).
+    ...(await mirrorWithdrawDep()),
   });
 }
 export const GET = handle;
 export const POST = handle;
+async function mirrorWithdrawDep(): Promise<{ mirrorWithdraw?: (userId: string) => Promise<boolean> }> {
+  const { mirrorPublicEnabled } = await import("../../../lib/mirror/gate");
+  if (!mirrorPublicEnabled()) return {};
+  const { createMirrorStore } = await import("../../../lib/mirror/store");
+  const store = createMirrorStore();
+  return store ? { mirrorWithdraw: id => store.withdraw(id) } : {};
+}

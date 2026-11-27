@@ -8,14 +8,16 @@ import { inAppBrowser } from "../../lib/account/inAppBrowser";
 import { selfConstellation } from "../../lib/mirror/constellation";
 import { selfAnsweredCount, selfComplete, type Choice } from "../../lib/mirror/engine";
 import { selfQuizOrder } from "../../lib/mirror/order";
-import { copyText, mirrorApi, myLink, type SessionView } from "./client";
-import { EmptyPage, HomeScreen, IntroScreen, LoginScreen, MILESTONES, ProfileScreen, QuizScreen, type PageKey } from "./screens";
+import { mirrorApi, useHideSiteFooter, type SessionView } from "./client";
+import { HomeScreen, IntroScreen, LoginScreen, MILESTONES, ProfileScreen, QuizScreen, type PageKey } from "./screens";
+import { BoardPage, MePage, SpacePage, StoriesPage } from "./pages";
+import { ShareSheet } from "./share/ShareSheet";
 import { Sky, type SkyHandle } from "./sky/Sky";
 import s from "./mirror.module.css";
 
 type Phase = "boot" | "login" | "profile" | "intro" | "quiz" | "collapse" | "home";
 type Member = Extract<SessionView, { account: "needs_consent" | "member" }>;
-const SEEN_KEY = "gyeol-mirror-seen-v1";
+const SEEN_KEY = "gyeol-mirror-seen-v1", STORIES_SEEN_KEY = "gyeol-mirror-stories-seen-v1";
 
 function phaseFor(view: SessionView): Phase {
   if (view.account === "guest") return "login";
@@ -28,8 +30,11 @@ export default function MirrorApp() {
   const [answers, setAnswers] = useState<Record<string, Choice>>({}), [qi, setQi] = useState(0), [busy, setBusy] = useState(false);
   const [milestone, setMilestone] = useState<string | null>(null), [page, setPage] = useState<PageKey | null>(null);
   const [toast, setToast] = useState<string | null>(null), [newFrom, setNewFrom] = useState(0);
+  const [sheet, setSheet] = useState<{ scene: { count: string; text: string } | null } | null>(null), [storiesNew, setStoriesNew] = useState(0), [openIssue, setOpenIssue] = useState<number | null>(null);
+  const askOnHome = useRef(false);
   const sky = useRef<SkyHandle>(null), toastTimer = useRef(0), mileTimer = useRef(0);
   const reduce = typeof window !== "undefined" && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  useHideSiteFooter();
 
   const say = useCallback((m: string) => { setToast(m); clearTimeout(toastTimer.current); toastTimer.current = window.setTimeout(() => setToast(null), 2600); }, []);
   const apply = useCallback((view: SessionView) => {
@@ -43,6 +48,12 @@ export default function MirrorApp() {
       let seen = 0;
       try { seen = Number(localStorage.getItem(key) ?? "0") || 0; localStorage.setItem(key, String(total)); } catch { /* 저장소 없음 */ }
       setNewFrom(Math.min(seen, total));
+      // 받은 이야기 숫자(앱 안 표시): 이 기기에서 마지막으로 열어 본 뒤 새로 온 수.
+      const sk = `${STORIES_SEEN_KEY}:${view.profile.handle}`, all = view.home?.stories ?? 0;
+      let read = all;
+      try { const v = localStorage.getItem(sk); read = v === null ? 0 : Number(v) || 0; } catch { /* 저장소 없음 */ }
+      setStoriesNew(Math.max(0, all - read));
+      if (askOnHome.current) { askOnHome.current = false; setSheet({ scene: null }); }
     }
     setPhase(next);
   }, []);
@@ -53,6 +64,8 @@ export default function MirrorApp() {
     document.documentElement.style.overflow = "hidden"; document.body.style.overflow = "hidden";
     // 인앱 → 기본 브라우저로 넘어온 경우: 주소의 일회용 토큰으로 이전 기기 상태를 잇는다(인앱 안에서는 쓰지 않는다).
     const h = new URLSearchParams(location.search).get("h");
+    // 친구 링크(/@내아이디)의 「친구에게 물어보기」로 들어오면 홈에서 공유 시트를 바로 연다.
+    if (new URLSearchParams(location.search).get("ask") === "1") { askOnHome.current = true; history.replaceState(null, "", "/"); }
     if (h && /^[A-Za-z0-9_-]{43}$/.test(h) && !inAppBrowser(navigator.userAgent)) { location.replace(`/api/mirror/handoff?t=${h}`); return; }
     void mirrorApi<SessionView>("session").then(r => {
       if (!r.ok) { setPhase("login"); say(r.data.error ?? "잠시 후 다시 시도해 주세요."); return; }
@@ -117,9 +130,17 @@ export default function MirrorApp() {
     say("내 별자리가 생겼어요"); enter("home", latestSession.current);
   }, [enter, say]);
 
-  async function ask() {
+  function ask(scene: { count: string; text: string } | null = null) {
     if (!member?.profile) return;
-    say(await copyText(myLink(member.profile.handle)) ? "복사했어요" : "링크를 복사하지 못했어요");
+    setSheet({ scene });
+  }
+  function openPage(p: PageKey | null) {
+    if (p === "stories" && member?.profile) {
+      try { localStorage.setItem(`${STORIES_SEEN_KEY}:${member.profile.handle}`, String(member.home?.stories ?? 0)); } catch { /* 저장소 없음 */ }
+      setStoriesNew(0);
+    }
+    if (p !== "board") setOpenIssue(null);
+    setPage(p);
   }
 
   const skyPhase = phase === "quiz" ? "quiz" : phase === "collapse" ? "collapse" : phase === "home" ? "home" : "idle";
@@ -130,8 +151,14 @@ export default function MirrorApp() {
     {phase === "intro" ? <IntroScreen answered={done} onStart={() => { setQi(firstOpen(answers) % order.length); setPhase("quiz"); }} /> : null}
     {phase === "quiz" && order[qi] ? <QuizScreen item={order[qi]} seed={seed} done={done} picked={answers[order[qi].id]} milestone={milestone} busy={busy}
       onPick={pick} canBack={qi > 0} onBack={() => setQi(i => Math.max(0, i - 1))} /> : null}
-    {phase === "home" && member?.profile && member.home ? <HomeScreen profile={member.profile} home={member.home} onOpen={setPage} onAsk={ask} /> : null}
-    {page ? <EmptyPage page={page} onBack={() => setPage(null)} /> : null}
+    {phase === "home" && member?.profile && member.home ? <HomeScreen profile={member.profile} home={member.home} storiesNew={storiesNew} covered={!!page} onOpen={openPage} onAsk={() => ask()} /> : null}
+    {page === "stories" ? <StoriesPage onBack={() => openPage(null)} onAsk={() => ask()} say={say} /> : null}
+    {page === "space" ? <SpacePage onBack={() => openPage(null)} say={say} /> : null}
+    {page === "board" ? <BoardPage onBack={() => openPage(null)} onAsk={() => ask()} onShareScene={sc => ask(sc)} say={say} openIssue={openIssue} /> : null}
+    {page === "me" && member?.profile ? <MePage profile={member.profile} provider={member.provider} onBack={() => openPage(null)} onAsk={() => ask()} say={say}
+      onOpenIssue={no => { setOpenIssue(no); setPage("board"); }} onPublic={v => setSession(x => x && x.account !== "guest" && x.profile ? { ...x, profile: { ...x.profile, isPublic: v } } : x)} /> : null}
+    {sheet && member?.profile ? <ShareSheet handle={member.profile.handle} name={member.profile.name} sync={member.home?.sync ?? null} friends={member.home?.friends ?? 0} shape={shape} share={member.share}
+      scene={sheet.scene} say={say} onClose={() => setSheet(null)} onSaved={sh => setSession(x => x && x.account !== "guest" ? { ...x, share: sh } : x)} /> : null}
     <div className={`${s.toast} ${toast ? s.toastOn : ""}`} role="status" aria-live="polite">{toast}</div>
   </div>;
 }

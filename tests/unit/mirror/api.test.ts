@@ -125,7 +125,7 @@ describe("자가 질문지", () => {
     await run(f, "answer", { method: "POST", body: { itemId: MIRROR_ITEMS[59].id, version: 1, choice: 0 } });
     const done = await (await run(f, "complete", { method: "POST", body: {} })).json();
     expect(done.self.completedAt).toBe("2026-11-27T00:00:00.000Z");
-    expect(done.home).toEqual({ sync: null, answers: 0, completeness: 0, reportReady: false, friends: 0, stage: 0, stars: [] });
+    expect(done.home).toEqual({ sync: null, answers: 0, completeness: 0, reportReady: false, friends: 0, stage: 0, stars: [], stories: 0 });
     expect((await run(f, "answer", { method: "POST", body: { itemId: "soc-1", version: 1, choice: 0 } })).status).toBe(409);
   });
   it("세션은 로그인한 기기를 기록한다(주인 기기 답 제외용)", async () => {

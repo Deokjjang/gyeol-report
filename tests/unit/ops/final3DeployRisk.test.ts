@@ -62,9 +62,9 @@ describe("/dev/* : 배포 빌드(NODE_ENV=production)에서는 404, 로컬 개�
     expect(["/dev", "/dev/", "/dev/v5-login", "/dev/book-preview", "/dev/account/api/x"].every(isDevPath)).toBe(true);
     expect(["/developer", "/devices", "/reports/report_x", "/r/token", "/"].some(isDevPath)).toBe(false);
   });
-  it("proxy: matcher는 /dev/:path*와 「남이 본 나」 /@:path*만, production에서 /dev/* 404, 개발에서는 통과", () => {
-    // /@:path*는 「남이 본 나」 링크(명령 1/3, 공개 관문 뒤 — tests/unit/mirror/routes.test.ts).
-    expect(config).toEqual({ matcher: ["/dev/:path*", "/@:path*"] });
+  it("proxy: matcher는 /dev/:path*와 「남이 본 나」 /@아이디만, production에서 /dev/* 404, 개발에서는 통과", () => {
+    // /@아이디는 「남이 본 나」 링크(명령 1~2/3, 공개 관문 뒤 — tests/unit/mirror/routes.test.ts가 matcher 컴파일까지 본다).
+    expect(config).toEqual({ matcher: ["/dev/:path*", "/@:handle([A-Za-z0-9._]{3,20})"] });
     vi.stubEnv("NODE_ENV", "production");
     for (const path of ["/dev/v5-login?next=/reports/x", "/dev/book-preview", "/dev/account/api/ticket-redeem", "/dev"]) {
       const r = proxy(new NextRequest(`https://www.gyeolreport.com${path}`));

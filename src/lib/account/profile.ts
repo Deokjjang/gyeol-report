@@ -30,6 +30,8 @@ export type ProfileDeps = {
   unlinkKakao(kakaoId: string | null): Promise<"done" | "skipped" | "failed">;
   /** 탈퇴: Supabase auth 사용자 소프트 삭제(로그인 불가, 다시 가입하면 새 계정). */
   deleteUser(userId: string): Promise<boolean>;
+  /** 탈퇴: 「남이 본 나」 데이터(mirror_withdraw — 받은 것은 지우고 남긴 것은 익명, 아이디는 「사용됨」). 없으면(관문 닫힘 · 시험) 건너뛴다. */
+  mirrorWithdraw?(userId: string): Promise<boolean>;
   /** F: 가입 완료(가입 정보 첫 저장) 직후 가입 이용권 지급. 없으면 지급하지 않는다(로컬 검수 포트 등). */
   signupGrant?(user: AccountIdentity): Promise<SignupGrant | null>;
   /** F 후속 퍼널: 신규 가입(가입 정보 첫 저장)·가입 이용권 지급을 서버가 처음 유입 값으로 센다(응답 뒤, 사용자 id 저장 없음). */
@@ -75,8 +77,10 @@ export async function handleProfile(request: NextRequest, action: "profile" | "w
       const unlink = user.provider === "kakao" ? await deps.unlinkKakao(user.kakaoId ?? null) : "skipped";
       const done = await deps.ops.call("withdraw", user.id, { retainUntil: retainUntil.toISOString() });
       if (!done.ok) return json({ code: "WITHDRAW_FAILED", error: "탈퇴를 완료하지 못했습니다. 잠시 후 다시 시도해 주세요." }, 503);
+      // 「남이 본 나」: 계정 · 주문 · 책 처리(위 withdraw)는 그대로 두고, 이 기능의 데이터만 따로 정리한다(실패해도 탈퇴는 진행 · 감사 기록에 남김).
+      const mirror = deps.mirrorWithdraw ? (await deps.mirrorWithdraw(user.id).catch(() => false) ? "done" : "failed") : "skipped";
       const deleted = await deps.deleteUser(user.id);
-      await deps.audit({ actor: "system", action: "account_withdrawn", target: user.id, detail: { provider: user.provider, kakaoUnlink: unlink, authDeleted: deleted, retainedOrders: done.retainedOrders ?? 0, closedBooks: done.closedBooks ?? 0 } });
+      await deps.audit({ actor: "system", action: "account_withdrawn", target: user.id, detail: { provider: user.provider, kakaoUnlink: unlink, authDeleted: deleted, retainedOrders: done.retainedOrders ?? 0, closedBooks: done.closedBooks ?? 0, ...(mirror !== "skipped" ? { mirror } : {}) } });
       await port.logout();
       return json({ ok: true });
     }

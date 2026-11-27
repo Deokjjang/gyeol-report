@@ -5,7 +5,7 @@ import type { ConstellationShape } from "../../../lib/mirror/constellation";
 import { constellationSvg } from "../../../lib/mirror/constellationSvg";
 import { seededRandom } from "../../../lib/mirror/hash";
 import type { FriendStar } from "../../../lib/mirror/home";
-import { heatRGB, type SkyPhase } from "./scene3d";
+import { friendDim, GROWTH_CAP, heatRGB, type SkyPhase } from "./scene3d";
 import s from "../mirror.module.css";
 
 export type Sky2DHandle = { pulse(): void; ring(): void; collapse(): void; orbScreen(): [number, number]; heatColor(): [number, number, number] };
@@ -54,12 +54,12 @@ export const Sky2D = forwardRef<Sky2DHandle, Props>(function Sky2D(p, ref) {
   const quiz = p.phase === "quiz" && !collapsing, showShape = banged || p.phase === "home";
   const col = heatRGB(p.heat), size = 60 + 140 * p.heat;
   const growth = Math.min(1, landed / 40);
-  const svg = useMemo(() => p.shape ? constellationSvg(p.shape, { size: 320, background: null, friends: p.stars.slice(0, landed) }) : "", [p.shape, p.stars, landed]);
+  const svg = useMemo(() => p.shape ? constellationSvg(p.shape, { size: 320, background: null, friends: p.stars.slice(0, landed), friendDim: friendDim(p.stars.length), lineOpacity: p.stars.length >= 40 ? .72 : .6 }) : "", [p.shape, p.stars, landed]);
   return <div className={s.sky2d} data-sky2d aria-hidden="true">
     <svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid slice" style={{ opacity: quiz ? .25 : showShape ? 1 : .5, transition: "opacity 1.6s" }}>
       {field.map((d, i) => <circle key={i} cx={d.x} cy={d.y} r={d.r * .18} fill="#fff" fillOpacity={d.o} />)}
     </svg>
-    {growth > 0 ? <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 40% at 50% 44%, rgba(160,180,255,${(.18 * growth).toFixed(3)}), transparent 70%)` }} /> : null}
+    {growth > 0 ? <div style={{ position: "absolute", inset: 0, background: `radial-gradient(60% 40% at 50% 44%, rgba(160,180,255,${(.18 * GROWTH_CAP.neb * growth).toFixed(3)}), transparent 70%)` }} /> : null}
     <div className={s.orb2d} key={pulse} style={{ top: `${ORB_Y * 100}%`, width: collapsing ? 6 : size, height: collapsing ? 6 : size, opacity: (p.phase === "quiz" || collapsing) && !banged ? 1 : 0,
       background: `radial-gradient(circle, #fff 0%, ${rgb(col)} 22%, ${rgb(col, .35)} 45%, transparent 70%)` }} />
     {showShape && p.shape ? <div className={s.shape2d} style={{ position: "absolute", left: "50%", top: "44%", width: "min(86vw, 62vh, 440px)", aspectRatio: "1", transform: "translate(-50%, -50%)", opacity: 1 }}

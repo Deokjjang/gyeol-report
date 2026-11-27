@@ -12,6 +12,7 @@ import { selfComplete, type Choice, type FriendSession, type SelfAnswers } from 
 import { hash32 } from "./hash";
 import { homeView } from "./home";
 import { birthProblem, handleChangeAllowedAt, handleProblem, HANDLE_MESSAGES, nameProblem, normalizeHandle, normalizeName } from "./profileRules";
+import { handleSocial, SOCIAL_ROUTES, type SocialStore } from "./social";
 
 export type MirrorProfile = { name: string; handle: string; handleChangedAt: string | null; birthDate: string | null; birthTime: string | null; isPublic: boolean; selfCompletedAt: string | null };
 export type SaveProfileResult = { ok: true } | { ok: false; code: "HANDLE_TAKEN" | "HANDLE_COOLDOWN" | "AGE_REQUIRED" | "INPUT_INVALID" | "STORAGE_UNAVAILABLE"; until?: string };
@@ -33,7 +34,10 @@ export type MirrorStore = {
   mintHandoff(tokenHash: string, deviceToken: string, next: string, expiresAt: string): Promise<boolean>;
   redeemHandoff(tokenHash: string, nowIso: string): Promise<{ deviceToken: string | null; next: string } | null>;
 };
-export type MirrorDeps = { enabled: boolean; account: AccountPort | null; store: MirrorStore | null; now?: () => Date; dev?: boolean };
+/** social: 명령 2(친구 응답 · 공유 · 기록판 · 보고서 · 이야기) 저장소. notify: 운영 알림(처리 봇). ip: 시험용(없으면 배포의 x-vercel-forwarded-for). */
+export type MirrorDeps = { enabled: boolean; account: AccountPort | null; store: MirrorStore | null; social?: SocialStore | null; notify?: (text: string) => Promise<void>; ip?: string | null; now?: () => Date; dev?: boolean };
+/** 요청 IP: Vercel이 덮어쓰는 머리글만 믿는다(호출자가 보낸 forwarded-for는 쓰지 않는다). 로컬은 없음. */
+export const requestIp = (request: NextRequest): string | null => process.env.VERCEL === "1" ? request.headers.get("x-vercel-forwarded-for")?.split(",")[0]?.trim() || null : null;
 
 export const DEVICE_COOKIE = "gyeol-mirror-device";
 const DEVICE_RE = /^[A-Za-z0-9_-]{43}$/;
@@ -62,7 +66,7 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
   const finish = (response: NextResponse) => { for (const [k, v] of Object.entries(noStore)) response.headers.set(k, v); return account ? account.finish(response) : response; };
   const json = (body: object, status = 200) => finish(NextResponse.json(body, { status }));
   if (!account || !store) return json({ code: "MIRROR_UNAVAILABLE", error: "준비 중이에요. 잠시 후 다시 시도해 주세요." }, 503);
-  const routes: Record<string, "GET" | "POST"> = { session: "GET", handle: "GET", profile: "POST", answer: "POST", complete: "POST", handoff: request.method === "GET" ? "GET" : "POST" };
+  const routes: Record<string, "GET" | "POST"> = { session: "GET", handle: "GET", profile: "POST", answer: "POST", complete: "POST", handoff: request.method === "GET" ? "GET" : "POST", ...SOCIAL_ROUTES };
   if (!routes[action]) return json({ code: "NOT_FOUND" }, 404);
   if (request.method !== routes[action]) return json({ code: "METHOD_NOT_ALLOWED" }, 405);
   if (request.method === "POST") {
@@ -105,6 +109,12 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
       return json({ handle, available: !taken, ...(taken ? { message: HANDLE_MESSAGES.taken } : {}) });
     }
 
+    if (SOCIAL_ROUTES[action]) {
+      if (!deps.social) return json({ code: "MIRROR_UNAVAILABLE", error: "준비 중이에요. 잠시 후 다시 시도해 주세요." }, 503);
+      return await handleSocial({ request, now, account, store, social: deps.social, body, deviceHash: deviceHash(device), json, withDevice, notify: deps.notify,
+        ip: deps.ip !== undefined ? deps.ip : requestIp(request), seedOf: personSeed }, action);
+    }
+
     const user = await account.currentUser();
     if (!user) return withDevice(action === "session" ? json({ account: "guest" }) : json({ code: "LOGIN_REQUIRED", error: "로그인이 만료됐어요. 다시 로그인해 주세요." }, 401));
     const snapshot = await account.read(user);
@@ -114,18 +124,21 @@ export async function handleMirror(request: NextRequest, action: string, deps: M
     const sessionView = async () => {
       const [profile, self] = await Promise.all([store.profile(user.id), store.selfAnswers(user.id)]);
       const prefill = profile ? null : (await store.contactName(user.id)) ?? snapshot.profile?.displayName ?? user.displayName;
-      const home = profile?.selfCompletedAt ? homeView(self, await store.board(user.id)) : null;
+      const [board, share, stories] = profile?.selfCompletedAt ? await Promise.all([store.board(user.id), deps.social?.shareSettings(user.id) ?? null, deps.social?.storyCount(user.id) ?? 0]) : [null, null, 0];
+      const home = profile?.selfCompletedAt && board ? { ...homeView(self, board), stories } : null;
       return {
         account: status, provider: user.provider, policy: ACCOUNT_POLICY_VERSIONS,
         ...(prefill ? { prefillName: normalizeName(prefill).slice(0, 10) } : {}),
         profile: profile ? { name: profile.name, handle: profile.handle, isPublic: profile.isPublic, birthDate: profile.birthDate, birthTime: profile.birthTime, handleChangeAllowedAt: handleChangeAllowedAt(profile.handleChangedAt) } : null,
         self: { answers: self, completedAt: profile?.selfCompletedAt ?? null, seed: personSeed(user.id) },
-        home,
+        home, share: share ?? { line: null, showCount: false },
       };
     };
 
     if (action === "session") {
       await store.touchDevice(deviceHash(device), user.id).catch(() => undefined);
+      // 친구로 답한 세션(이 기기 · 아직 안 이은 것)을 가입한 계정에 잇는다.
+      await deps.social?.linkFriendSessions(deviceHash(device), user.id).catch(() => undefined);
       return withDevice(json(await sessionView()));
     }
 

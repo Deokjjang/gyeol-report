@@ -1,0 +1,132 @@
+/* 「남이 본 나」 명령 2 화면: 친구 응답 · 공유 시트 · 이야기 · 기록판 · 내 계정. 색 · 글꼴 변수는 mirror.module.css의 .root를 그대로 쓴다. */
+
+/* 키프레임 이름은 CSS 모듈마다 따로라 여기 다시 둔다(mirror.module.css와 같은 값). */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes up { from { opacity: 0; transform: translateY(10px); filter: blur(6px); } to { opacity: 1; transform: none; filter: none; } }
+
+/* ---------- 친구 응답 ---------- */
+.fsky { position: fixed; inset: 0; overflow: hidden; background: radial-gradient(120% 80% at 50% 34%, #08080E 0%, #000 72%); pointer-events: none; }
+.fsky svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.fshape { position: absolute; left: 50%; top: 30%; width: min(78vw, 46vh, 400px); aspect-ratio: 1; transform: translate(-50%, -50%); transition: opacity 1s, transform 1.2s cubic-bezier(.2, .75, .1, 1); animation: breathe 7s ease-in-out infinite; }
+.fshape svg { width: 100%; height: 100%; }
+.dim .fshape { opacity: .28; transform: translate(-50%, -58%) scale(.82); }
+@keyframes breathe { 0%, 100% { filter: brightness(1); } 50% { filter: brightness(1.18); } }
+.fwrap { justify-content: flex-end; gap: 14px; }
+.ftitle { margin: 0; font-size: clamp(26px, 7.4vw, 32px); font-weight: 400; letter-spacing: -.03em; line-height: 1.32; text-wrap: balance; }
+.fsub { margin: 0; font-size: 13px; color: var(--mist); line-height: 1.6; }
+.mid { margin: auto 0; display: grid; gap: 12px; text-align: center; justify-items: center; }
+.choices { display: grid; gap: 10px; }
+.choice { display: grid; gap: 3px; text-align: left; padding: 16px 18px; border-radius: 14px; border: 1px solid var(--line); background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); cursor: pointer; }
+.choice b { font-size: 16px; font-weight: 500; }
+.choice span { font-size: 12px; color: var(--mist); }
+.minor { display: flex; justify-content: center; gap: 6px; }
+.ghost { height: 50px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .32); background: none; font-size: 14px; cursor: pointer; }
+
+.kinds { display: flex; flex-wrap: wrap; gap: 8px; }
+.kind { height: 36px; padding: 0 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--glass); font-size: 13px; cursor: pointer; }
+.kindOn { border-color: var(--pearl); background: rgba(255, 255, 255, .14); }
+.area { width: 100%; box-sizing: border-box; min-height: 148px; resize: none; border-radius: 14px; border: 1px solid var(--line); background: rgba(8, 8, 11, .8); color: var(--pearl); font: inherit; font-size: 16px; line-height: 1.6; padding: 14px; }
+.area:focus { outline: none; border-color: rgba(255, 255, 255, .5); }
+.count { margin: -6px 2px 0 auto; font-size: 11px; color: var(--faint); font-variant-numeric: tabular-nums; }
+.countOver { color: #FFB3C4; }
+
+.fly { position: fixed; left: 50%; top: 88%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; background: radial-gradient(circle, #fff 0%, var(--star) 40%, rgba(202, 215, 255, 0) 72%); box-shadow: 0 0 22px 6px rgba(202, 215, 255, .5); z-index: 4; pointer-events: none; }
+.flyGold { background: radial-gradient(circle, #fff 0%, var(--gold) 40%, rgba(255, 208, 138, 0) 72%); box-shadow: 0 0 26px 8px rgba(255, 208, 138, .55); width: 16px; height: 16px; margin: -8px 0 0 -8px; }
+.result { display: grid; gap: 10px; text-align: center; justify-items: center; animation: up .9s var(--ease) both; }
+.big { margin: 6px 0 0; font-size: clamp(30px, 9vw, 40px); font-weight: 300; letter-spacing: -.03em; line-height: 1.25; }
+.big b { font-weight: 500; }
+.gold { color: var(--gold); }
+
+/* ---------- 공유 시트 ---------- */
+.sheetBack { position: fixed; inset: 0; z-index: 20; background: rgba(0, 0, 0, .6); animation: fadeIn .3s both; }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 21; max-height: 94dvh; overflow-y: auto; box-sizing: border-box; padding: 16px max(16px, env(safe-area-inset-left, 0px)) calc(18px + env(safe-area-inset-bottom, 0px)); border-radius: 22px 22px 0 0; background: #0B0B10; border-top: 1px solid var(--line); animation: sheetUp .45s cubic-bezier(.2, .75, .1, 1) both; }
+@keyframes sheetUp { from { transform: translateY(100%); } to { transform: none; } }
+.sheetIn { max-width: 480px; margin: 0 auto; display: grid; gap: 14px; }
+.grab { width: 36px; height: 4px; border-radius: 2px; background: rgba(255, 255, 255, .22); margin: 0 auto 2px; }
+.cards { display: flex; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 4px; scrollbar-width: none; }
+.cards::-webkit-scrollbar { display: none; }
+.card { width: min(54vw, 44dvh * .5625, 236px); aspect-ratio: 9 / 16; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); position: relative; background: #000; touch-action: none; }
+.card canvas { width: 100%; height: 100%; display: block; }
+.cardOn { border-color: var(--pearl); }
+.cardWrap { margin: 0; flex: none; display: grid; gap: 6px; justify-items: center; scroll-snap-align: center; }
+.cardTag { font-size: 12px; color: var(--faint); }
+.cardTagOn { color: var(--pearl); }
+.photoPick { position: absolute; inset: 0; display: grid; place-content: center; gap: 6px; text-align: center; font-size: 13px; color: var(--mist); background: none; border: 0; cursor: pointer; }
+.toggle { display: flex; align-items: center; justify-content: space-between; gap: 12px; font-size: 14px; }
+.switch { position: relative; width: 46px; height: 28px; flex: none; border-radius: 999px; border: 1px solid var(--line); background: rgba(255, 255, 255, .08); cursor: pointer; padding: 0; }
+.switch i { position: absolute; top: 3px; left: 3px; width: 20px; height: 20px; border-radius: 50%; background: var(--mist); transition: transform .25s, background .25s; }
+.switchOn { background: rgba(255, 255, 255, .85); }
+.switchOn i { transform: translateX(18px); background: #000; }
+.actions { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; }
+.act { display: grid; justify-items: center; gap: 6px; padding: 8px 0; border: 0; background: none; font-size: 11px; color: var(--mist); cursor: pointer; }
+.act i { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; border: 1px solid var(--line); background: rgba(255, 255, 255, .05); font-style: normal; }
+.act[disabled] { opacity: .35; cursor: default; }
+.actKakao i { background: var(--kakao); border-color: var(--kakao); }
+.note { margin: 0; font-size: 11px; color: var(--faint); line-height: 1.6; text-align: center; }
+
+/* ---------- 이야기 ---------- */
+.storyCard { display: grid; gap: 10px; padding: 16px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
+.storyHead { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; font-size: 12px; color: var(--mist); }
+.pill { padding: 3px 9px; border-radius: 999px; border: 1px solid var(--line); font-size: 11px; color: var(--pearl); }
+.pillWarm { border-color: rgba(255, 208, 138, .5); color: var(--gold); }
+.storyBody { margin: 0; font-size: 15px; line-height: 1.7; white-space: pre-wrap; overflow-wrap: anywhere; }
+.clamp { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.more { justify-self: start; background: none; border: 0; padding: 0; font-size: 13px; color: var(--mist); cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }
+.storyFoot { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; }
+.heart { display: inline-flex; align-items: center; gap: 5px; height: 32px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--line); background: none; font-size: 13px; cursor: pointer; }
+.heartOn { border-color: #FF8FA8; color: #FFB3C4; }
+.dots { width: 32px; height: 32px; border-radius: 50%; border: 0; background: none; font-size: 18px; color: var(--mist); cursor: pointer; line-height: 1; }
+.menu { display: grid; gap: 6px; padding: 10px; border-radius: 12px; border: 1px solid var(--line); background: #111118; }
+.menu button { height: 40px; border-radius: 10px; border: 0; background: rgba(255, 255, 255, .06); font-size: 13px; cursor: pointer; }
+.tabs { display: flex; gap: 6px; }
+.tab { height: 36px; padding: 0 16px; border-radius: 999px; border: 1px solid var(--line); background: none; font-size: 13px; cursor: pointer; color: var(--mist); }
+.tabOn { border-color: var(--pearl); color: var(--pearl); }
+.top { display: grid; gap: 8px; }
+.topLabel { font-size: 12px; color: var(--gold); }
+.preview { display: grid; gap: 12px; padding: 16px; border-radius: 16px; border: 1px solid rgba(255, 255, 255, .3); background: #101017; }
+.row { display: flex; gap: 8px; }
+.row > * { flex: 1; }
+.empty { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 36px 0; color: var(--mist); font-size: 14px; }
+
+/* ---------- 기록판 ---------- */
+.stat { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.box { display: grid; gap: 4px; padding: 14px; border-radius: 14px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); }
+.box b { font-size: 30px; font-weight: 300; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.box b small { font-size: 14px; color: var(--mist); margin-left: 2px; }
+.box span { font-size: 12px; color: var(--mist); }
+.overlay { position: relative; width: min(100%, 360px); aspect-ratio: 1; margin: 0 auto; }
+.overlay > div { position: absolute; inset: 0; }
+.overlay svg { width: 100%; height: 100%; }
+.legend { display: flex; justify-content: center; gap: 14px; font-size: 12px; color: var(--mist); }
+.legend i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; vertical-align: 1px; }
+.domain { display: grid; gap: 10px; }
+.domain h4 { margin: 0; font-size: 12px; font-weight: 500; color: var(--faint); letter-spacing: .02em; }
+.facet { display: grid; gap: 6px; }
+.facetTop { display: flex; justify-content: space-between; font-size: 12px; color: var(--mist); }
+.facetTop b { color: var(--pearl); font-weight: 500; }
+.track { position: relative; height: 22px; }
+.track::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: rgba(255, 255, 255, .2); }
+.mark { position: absolute; top: 50%; width: 12px; height: 12px; margin: -6px 0 0 -6px; border-radius: 50%; }
+.markSelf { border: 1.5px solid var(--pearl); background: #000; z-index: 1; }
+.markFriend { background: var(--star); }
+.ends { display: flex; justify-content: space-between; gap: 10px; font-size: 11px; color: var(--faint); }
+.ends span:last-child { text-align: right; }
+.list { display: grid; gap: 8px; }
+.issue { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 14px 16px; border-radius: 14px; border: 1px solid var(--line); background: none; font-size: 14px; cursor: pointer; text-align: left; }
+.issue small { color: var(--faint); font-size: 12px; }
+
+/* ---------- 내 계정 · 사업자 정보 ---------- */
+.group { display: grid; gap: 2px; border-radius: 16px; border: 1px solid var(--line); overflow: hidden; }
+.item { display: flex; justify-content: space-between; align-items: center; gap: 10px; min-height: 52px; padding: 0 16px; background: rgba(255, 255, 255, .03); border: 0; font-size: 14px; color: var(--pearl); text-decoration: none; cursor: pointer; text-align: left; }
+.item small { color: var(--faint); font-size: 12px; }
+.prof { display: flex; align-items: center; gap: 14px; }
+.avatar { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; background: rgba(255, 255, 255, .1); font-size: 20px; }
+.prof b { display: block; font-size: 17px; font-weight: 500; }
+.prof span { font-size: 13px; color: var(--mist); }
+.biz { margin: 0; font-size: 10.5px; line-height: 1.7; color: var(--faint); text-align: center; word-break: keep-all; }
+.biz a { color: var(--mist); text-decoration: underline; text-underline-offset: 2px; }
+.bizLogin { position: fixed; left: 0; right: 0; bottom: 0; z-index: 3; padding: 0 16px calc(10px + env(safe-area-inset-bottom, 0px)); pointer-events: auto; }
+.bizBox { display: grid; gap: 6px; padding: 14px 16px; border-radius: 16px; border: 1px solid var(--line); background: rgba(255, 255, 255, .03); font-size: 12px; color: var(--mist); line-height: 1.7; }
+.bizBox a { color: var(--pearl); }
+.danger { justify-self: center; display: flex; gap: 18px; font-size: 12px; }
+.danger a, .danger button { color: var(--faint); background: none; border: 0; font-size: 12px; cursor: pointer; text-decoration: underline; text-underline-offset: 3px; }

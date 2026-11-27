@@ -24,4 +24,6 @@ export function proxy(request: NextRequest) {
   return NextResponse.next();
 }
 
-export const config = { matcher: ["/dev/:path*", "/@:path*"] };
+// 주의(명령 2/3): "/@:path*"는 Next 안의 path-to-regexp가 "앞뒤 구분자 없이 반복 불가"로 거부해 proxy 전체가 등록되지 않았다(/dev 차단 포함).
+// 아이디 규칙(3~20자, 영문 · 숫자 · . · _)을 그대로 패턴으로 둔다 — tests/unit/mirror/routes.test.ts가 Next의 path-to-regexp로 컴파일을 확인한다.
+export const config = { matcher: ["/dev/:path*", "/@:handle([A-Za-z0-9._]{3,20})"] };

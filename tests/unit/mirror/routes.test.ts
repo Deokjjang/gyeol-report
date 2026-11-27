@@ -22,6 +22,9 @@ describe("공개 관문", () => {
   it("API · 랜딩 · 홈은 관문 뒤에 있다", () => {
     expect(readFileSync("src/app/api/mirror/[action]/route.ts", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
     expect(readFileSync("src/app/u/[handle]/page.tsx", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) notFound\(\)/);
+    // 명령 2: 링크 미리보기 이미지 · 탈퇴 연결도 관문 뒤
+    expect(readFileSync("src/app/api/mirror/og/[handle]/route.tsx", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return new NextResponse\(null, \{ status: 404 \}\)/);
+    expect(readFileSync("src/app/auth/[action]/route.ts", "utf8")).toMatch(/if \(!mirrorPublicEnabled\(\)\) return \{\};/);
     const home = readFileSync("src/app/page.tsx", "utf8");
     expect(home.indexOf("mirrorPublicEnabled()")).toBeGreaterThan(-1);
     expect(home.indexOf("mirrorPublicEnabled()")).toBeLessThan(home.indexOf("bookExperiencePublicEnabled()"));
@@ -34,7 +37,7 @@ describe("/@아이디 주소", () => {
     expect(["/@ab", "/@minji/x", "/minji.k", "/@minji.k.png/", "/@" + "a".repeat(21), "/@한글"].map(mirrorHandleFromPath)).toEqual([null, null, null, null, null, null]);
   });
   it("개발: /@minji.k는 정적 파일이 아니라 /u/minji.k로 넘긴다 · 배포 빌드: 넘기지 않는다(그대로 404)", () => {
-    expect(config.matcher).toContain("/@:path*");
+    expect(config.matcher).toContain("/@:handle([A-Za-z0-9._]{3,20})");
     vi.stubEnv("NODE_ENV", "development");
     const dev = proxy(new NextRequest("http://localhost:3100/@minji.k"));
     expect(dev.headers.get("x-middleware-rewrite")).toBe("http://localhost:3100/u/minji.k");
@@ -42,6 +45,16 @@ describe("/@아이디 주소", () => {
     const prod = proxy(new NextRequest("https://www.gyeolreport.com/@minji.k"));
     expect(prod.headers.get("x-middleware-rewrite")).toBeNull();
     expect(prod.headers.get("x-middleware-next")).toBe("1");
+  });
+});
+
+describe("proxy matcher", () => {
+  it("모든 matcher가 Next의 path-to-regexp로 컴파일된다(하나라도 실패하면 proxy 전체가 빠진다) · /@아이디만 잡는다", async () => {
+    const { pathToRegexp } = await import("next/dist/compiled/path-to-regexp") as { pathToRegexp: (p: string, k: unknown[], o: object) => RegExp };
+    const res = config.matcher.map(m => pathToRegexp(m, [], {}));
+    const hits = (path: string) => res.some(r => r.test(path));
+    expect(["/@minji.k", "/@seo_a.lee", "/@abc", "/dev/v5-login", "/dev"].every(hits)).toBe(true);
+    expect(["/@ab", "/@minji/x", "/minji.k", "/", "/reports/x", "/api/mirror/session", "/u/minji.k"].some(hits)).toBe(false);
   });
 });
 
