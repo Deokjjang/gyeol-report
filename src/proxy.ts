@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { devRoutesBlocked, isDevPath } from "./lib/devRouteGate";
 import { mirrorRoutesEnabled } from "./lib/mirror/gate";
+import { mirrorTrialMode } from "./lib/mirror/trial";
 
 /** 「남이 본 나」 링크 gyeolreport.com/@아이디 → 내부 주소 /u/아이디(Next 폴더 이름 @는 병렬 라우트라 쓰지 않는다). 아이디에 마침표가 있어도(@minji.k) 정적 파일로 보지 않는다. */
 export function mirrorHandleFromPath(pathname: string): string | null {
@@ -12,7 +13,8 @@ export function mirrorHandleFromPath(pathname: string): string | null {
 // 「남이 본 나」(명령 1/3): /@아이디는 공개 관문이 열려 있을 때만 /u/아이디로 넘긴다(닫혀 있으면 그대로 → 404, 지금과 같다).
 export function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  if (devRoutesBlocked() && isDevPath(path)) {
+  // 로컬 시험 모드(next start + 로컬 Supabase, Vercel 아님)에서만 검수용 로그인 하나를 연다.
+  if (devRoutesBlocked() && isDevPath(path) && !(path === "/dev/v5-login" && mirrorTrialMode())) {
     return new NextResponse(null, { status: 404, headers: { "cache-control": "no-store", "x-robots-tag": "noindex, nofollow" } });
   }
   const handle = mirrorHandleFromPath(path);

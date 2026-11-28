@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import type { Choice } from "../../lib/mirror/engine";
 import type { HomeView } from "../../lib/mirror/home";
+import { onTrialHost } from "../../lib/mirror/trial";
 
 export type ProfileView = { name: string; handle: string; isPublic: boolean; birthDate: string | null; birthTime: string | null; handleChangeAllowedAt: string | null };
 export type SessionView =
@@ -32,7 +33,9 @@ export async function copyText(text: string): Promise<boolean> {
 
 /** 내 링크 주소: 운영은 gyeolreport.com, 로컬은 지금 주소. */
 export const myLink = (handle: string): string => `${location.hostname.endsWith("gyeolreport.com") ? "https://gyeolreport.com" : location.origin}/@${handle}`;
-export const displayLink = (handle: string): string => `gyeolreport.com/@${handle}`;
+/** 보이는 링크 글자 · 카드 주소의 호스트: 늘 gyeolreport.com, 로컬 시험 모드 터널 주소에서 열렸을 때만 그 주소(친구 폰에서 바로 열리게). */
+export const linkHost = (): string => typeof location !== "undefined" && onTrialHost(location.hostname) ? location.host : "gyeolreport.com";
+export const displayLink = (handle: string): string => `${linkHost()}/@${handle}`;
 
 /**
  * 「남이 본 나」 화면(홈 · 질문지 · 친구 응답)에는 사이트 공통 푸터를 두지 않는다(명령 2 추가 1 — 사업자 정보는 로그인 화면 맨 아래 한 줄과 내 계정 > 설정에).

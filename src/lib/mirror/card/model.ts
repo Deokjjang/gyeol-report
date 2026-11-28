@@ -6,13 +6,14 @@ export const DEFAULT_LINE = "나는 어떤 사람이야?";
 export const LINE_MAX = 20;
 export type CardText = { handle: string; sync: string; syncLabel: string; count: string | null; line: string; link: string };
 
-export function cardText(o: { handle: string; sync: number | null; friends: number; showCount: boolean; line: string | null }): CardText {
+/** host: 카드에 찍을 주소의 호스트(기본 gyeolreport.com — 로컬 시험 모드에서만 터널 주소). */
+export function cardText(o: { handle: string; sync: number | null; friends: number; showCount: boolean; line: string | null; host?: string }): CardText {
   return {
     handle: `@${o.handle}`,
     sync: o.sync === null ? "?%" : `${o.sync}%`,
     syncLabel: "싱크로율",
     count: o.showCount && o.friends > 0 ? `친구 ${o.friends}명이 답해 줬어요` : null,
     line: o.line?.trim() || DEFAULT_LINE,
-    link: `gyeolreport.com/@${o.handle}`,
+    link: `${o.host ?? "gyeolreport.com"}/@${o.handle}`,
   };
 }

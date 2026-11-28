@@ -8,6 +8,7 @@ import { optionOrder } from "../../lib/mirror/order";
 import { birthProblem, handleProblem, HANDLE_MESSAGES, nameProblem, normalizeHandle, normalizeName } from "../../lib/mirror/profileRules";
 import type { HomeView } from "../../lib/mirror/home";
 import { copyText, displayLink, mirrorApi, type ProfileView, type SessionView } from "./client";
+import { MIRROR_TRIAL_ACCOUNTS, onTrialHost } from "../../lib/mirror/trial";
 import { BusinessLine } from "./BusinessLine";
 import s from "./mirror.module.css";
 import sf from "./social.module.css";
@@ -64,6 +65,7 @@ export function LoginScreen({ next = "/", extra }: { next?: "/" | "/start" | "/m
       {message ? <p className={s.error} role="status">{message}</p> : null}
       {extra}
       {process.env.NODE_ENV === "development" ? <p className={s.fine}><a href={`/dev/v5-login?next=${encodeURIComponent(next)}`} data-dev-login>로컬 검수 계정으로 들어가기</a></p> : null}
+      {onTrialHost(location.hostname) ? <p className={s.fine} data-trial-login>시험 계정 · {MIRROR_TRIAL_ACCOUNTS.map((a, i) => <span key={a.as}>{i ? " · " : ""}<a href={`/dev/v5-login?as=${a.as}&next=${encodeURIComponent(a.next ?? next)}`} data-trial-as={a.as}>{a.label}</a></span>)}</p> : null}
     </div>
   </div><div className={sf.bizLogin}><BusinessLine /></div></section>;
 }

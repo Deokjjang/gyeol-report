@@ -1,14 +1,17 @@
+import { mirrorTrialMode } from "./trial";
+
 /**
  * 「남이 본 나」 공개 관문 두 개(명령 3/3).
  *  - mirrorRoutesEnabled(): 새 주소를 연다 — /@아이디, 새 시작 주소 /start, /api/mirror/*, 새 내 계정(/me). 「숨은 공개」 = 이것만 true.
  *  - mirrorRootEnabled(): "/"를 이 서비스로 바꾼다(기존 책 홈은 /products, /start · /account는 새 화면으로). 「정식 공개」 = 둘 다 true.
  * 로컬 개발(next dev, NODE_ENV=development)에서는 둘 다 열린다. 배포 빌드(Vercel Production · Preview, next start)는 아래 상수만 따른다.
  * 요청 값(쿼리 · 쿠키 · 헤더)이나 환경 변수로 열 수 없다 — 바꾸려면 상수를 고친 커밋을 배포한다.
+ * 예외 하나: 로컬 시험 모드(trial.ts, 세 조건 — 시험 변수 · 로컬 Supabase · Vercel 아님)는 로컬 next start에서 둘 다 연다. Vercel에서는 켜지지 않는다.
  */
 export const MIRROR_ROUTES_LIVE: boolean = false;
 export const MIRROR_ROOT_LIVE: boolean = false;
 
-const dev = () => process.env.NODE_ENV === "development";
+const dev = () => process.env.NODE_ENV === "development" || mirrorTrialMode();
 export function mirrorRoutesEnabled(): boolean {
   return dev() || MIRROR_ROUTES_LIVE;
 }

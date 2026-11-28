@@ -1,5 +1,6 @@
 import { isPublicSameOrigin } from "../account/origin";
 import { localDevAuthAllowed } from "../account/localDevAccount";
+import { mirrorTrialRequestOrigin } from "../mirror/trial";
 
 /**
  * P6d-ops 새 엔드포인트(가입 정보·문의·선물·탈퇴·관리자)의 출처 검사. 운영은 기존과 같이 운영 도메인 같은 출처만.
@@ -11,8 +12,8 @@ export function opsSameOrigin(request: Request, env: Readonly<Record<string, str
   const origin = new URL(request.url).origin;
   return /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin) && request.headers.get("origin") === origin;
 }
-/** GET(읽기)용: 운영 도메인 또는 로컬 개발. */
+/** GET(읽기)용: 운영 도메인 또는 로컬 개발(+ 로컬 시험 모드의 터널 주소 한 개, Vercel에서는 꺼짐). */
 export function opsOriginAllowed(request: Request, env: Readonly<Record<string, string | undefined>> = process.env): boolean {
   const origin = new URL(request.url).origin;
-  return origin === "https://gyeolreport.com" || origin === "https://www.gyeolreport.com" || (localDevAuthAllowed(env) && /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin));
+  return origin === "https://gyeolreport.com" || origin === "https://www.gyeolreport.com" || (localDevAuthAllowed(env) && /^http:\/\/(localhost|127\.0\.0\.1):\d+$/.test(origin)) || mirrorTrialRequestOrigin(request, env) !== null;
 }

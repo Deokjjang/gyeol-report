@@ -12,7 +12,7 @@ import { CARD_H, CARD_W, drawCard, photoRect, type CardPhoto, type CardScene } f
 import type { ConstellationShape } from "../../../lib/mirror/constellation";
 import { charCount, normalizeLine, storyProblem } from "../../../lib/mirror/storyFilter";
 import { kakaoShareCard, type KakaoSdk } from "../../../lib/sharing/shareBrowser";
-import { copyText, mirrorApi, myLink } from "../client";
+import { copyText, linkHost, mirrorApi, myLink } from "../client";
 import s from "../mirror.module.css";
 import f from "../social.module.css";
 
@@ -38,7 +38,7 @@ export function ShareSheet(p: ShareSheetProps) {
   const blobs = useRef<{ shape: Blob | null; photo: Blob | null }>({ shape: null, photo: null }), saved = useRef<Share>(p.share);
   const url = useMemo(() => myLink(p.handle), [p.handle]);
   const normalized = normalizeLine(line);
-  const text = useMemo(() => cardText({ handle: p.handle, sync: p.sync, friends: p.friends, showCount, line: normalized || null }), [p.handle, p.sync, p.friends, showCount, normalized]);
+  const text = useMemo(() => cardText({ handle: p.handle, sync: p.sync, friends: p.friends, showCount, line: normalized || null, host: linkHost() }), [p.handle, p.sync, p.friends, showCount, normalized]);
 
   // 카드 그리기(글꼴이 준비된 뒤) + PNG 미리 만들기.
   const render = useCallback((which: "shape" | "photo") => {

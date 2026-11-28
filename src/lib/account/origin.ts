@@ -2,6 +2,8 @@
 // preview escape hatch on public account and purchase endpoints.
 // P6d-ops: 로컬 E2E만 예외 — next dev(NODE_ENV=development)이고 Supabase가 로컬일 때 localhost 출처를 받는다(/dev/v5-login과 같은 조건).
 // 운영 빌드(NODE_ENV=production)와 시험(NODE_ENV=test)에서는 열리지 않는다.
+// 「남이 본 나」 로컬 시험 모드(src/lib/mirror/trial.ts, Vercel에서는 꺼짐)에서만 터널 주소 한 개를 더 받는다 — 그 밖의 결과는 그대로다.
+import { mirrorTrialRequestOrigin } from "../mirror/trial";
 export function isPublicOrigin(value: string | null): boolean {
   return value === "https://gyeolreport.com" || value === "https://www.gyeolreport.com";
 }
@@ -10,7 +12,7 @@ function isLocalDevOrigin(value: string, env: Readonly<Record<string, string | u
 }
 export function publicRequestOrigin(request: Request): string | null {
   const origin = new URL(request.url).origin;
-  return isPublicOrigin(origin) || isLocalDevOrigin(origin) ? origin : null;
+  return isPublicOrigin(origin) || isLocalDevOrigin(origin) ? origin : mirrorTrialRequestOrigin(request);
 }
 export function isPublicSameOrigin(request: Request): boolean {
   const origin = publicRequestOrigin(request);

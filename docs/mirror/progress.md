@@ -22,6 +22,7 @@
 | D7 내 계정 | 통과 | /me(src/app/me, components/mirror/account/MeApp.tsx): 프로필 + 「내 리포트 ›」 · 「설정 ›」. 아이디 없는 회원도 들어온다. 서재 대조 0건 → ACCOUNT_MOVED_TO_ME = true(정식 공개 때만 /account → /me). 유료 입력 생년월일 · 출생시간 미리 채움(/api/mirror/prefill, 폼 값만) |
 | 3 관문 두 개 | 통과 | mirrorRoutesEnabled(/@아이디 · /start · /api/mirror/* · /me · 문항 통계) · mirrorRootEnabled("/" 전환, /start → "/"). 배포 상수 둘 다 false(배포 전 정지). 로그인 콜백은 "/"(root) · /start(routes)로 시작했을 때만 이 서비스가 동의를 받는다. 「책 고르기」류 링크 "/" → /products |
 | D8 점검 | 부분 | release:check · 공유 회귀 · 화면 폭 3개 · UA 6개 · 기존 회원 (a)~(e) · "/" 흐름 · 내 계정 대조 · 문항 통계(/admin/mirror-items) · migration CREATE만 시험 · 묶음 크기(scripts/dev/mirror-launch-check.ts bundle) · 배포 빌드 세 판(관문 끔 · 숨은 공개 · 정식 공개, next start 로컬). 운영 DB 조회(옛 비회원 주문) · 운영 migration 적용은 보류(추가 지시 1) |
+| 로컬 시험 서버 | 통과 | pnpm mirror:trial(scripts/dev/mirror-trial.ts): 로컬 DB → 시험 계정(t0 · t5 · t40 · t100 · cust) → 로컬 배포 빌드 → Cloudflare 빠른 터널 → next start → Caddy 기본 인증. 시험 모드 src/lib/mirror/trial.ts(시험 변수 · 로컬 Supabase · Vercel 아님 셋 다일 때만, tests/unit/mirror/trial.test.ts): 관문 둘 · /dev/v5-login(as=new는 매번 새 계정) · 터널 주소 한 개 출처 · 링크 · 카드 호스트. 유료 키 빈 값 · 토스 대역. 터널 주소로 맥 · 폰 크기 E2E 15/15 |
 
 결정 기록(명령 3, 2026-11-28):
 - 친구 1명 보고서(한 사람이 본 나)는 규칙 d의 예외(덕짱님 선택): 장면은 비율 없이 그 친구가 고른 보기, 면 문장은 그 친구가 그 면 5문항을 다 답했을 때만.

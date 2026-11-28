@@ -10,6 +10,9 @@ import { cardText } from "./card/model";
 import type { ConstellationShape } from "./constellation";
 import { constellationSvg } from "./constellationSvg";
 import coverage from "./fonts/coverage.json";
+import { mirrorTrialOrigin } from "./trial";
+/** 로컬 시험 모드에서만 터널 호스트(그 밖에는 undefined → gyeolreport.com). */
+const trialHost = (): string | undefined => { const o = mirrorTrialOrigin(); return o ? new URL(o).host : undefined; };
 
 let subset: Promise<Buffer> | undefined, full: Promise<Buffer> | undefined;
 const covered = (ranges: readonly number[][], c: string) => { const p = c.codePointAt(0)!; return ranges.some(([a, b]) => p >= a && p <= b); };
@@ -23,7 +26,7 @@ export type MirrorOgInput = { name: string; handle: string; title: string; sync:
 
 export async function renderMirrorOg(o: MirrorOgInput): Promise<ImageResponse> {
   subset ??= readFile(`${process.cwd()}/src/lib/mirror/fonts/NotoSansKR-Mirror.woff`);
-  const t = cardText({ handle: o.handle, sync: o.sync, friends: o.friends, showCount: o.showCount, line: o.line });
+  const t = cardText({ handle: o.handle, sync: o.sync, friends: o.friends, showCount: o.showCount, line: o.line, host: trialHost() });
   const title = mirrorOgText(o.title), handle = mirrorOgText(t.handle), link = mirrorOgText(t.link), count = t.count ? mirrorOgText(t.count) : null;
   const all = [title, handle, link, count ?? "", t.sync, t.syncLabel, "결리포트 GYEOL REPORT"].join("");
   const fonts: { name: string; data: Buffer; weight: 700; style: "normal" }[] = [{ name: "Mirror", data: await subset, weight: 700, style: "normal" }];
